@@ -1,0 +1,149 @@
+<!-- WIDGET 4 — İç mekan LED bölümü -->
+<style>
+    .ledajans-indoor { padding: 6rem 1rem; background-color: #ffffff; }
+    .ledajans-indoor-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-indoor-container { grid-template-columns: 1fr 1fr; }
+    }
+    .ledajans-indoor-image-wrapper { order: 1; }
+    @media (min-width: 1024px) { .ledajans-indoor-image-wrapper { order: 2; } }
+    .ledajans-indoor-content { order: 2; }
+    @media (min-width: 1024px) { .ledajans-indoor-content { order: 1; } }
+    .ledajans-indoor-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) { .ledajans-indoor-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .ledajans-indoor-title { font-size: 3.75rem; } }
+    .ledajans-indoor-tags { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .ledajans-indoor-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid #F46F2C;
+      background-color: rgba(244, 111, 44, 0.06);
+      border-radius: 12px;
+      transition: box-shadow 0.3s ease;
+    }
+    .ledajans-indoor-tag:hover { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 640px) { .ledajans-indoor-tag { padding: 0.75rem 1.5rem; } }
+    .ledajans-indoor-tag svg { width: 16px; height: 16px; color: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-indoor-tag svg { width: 20px; height: 20px; } }
+    .ledajans-indoor-tag span { font-weight: 600; color: #111827; font-size: 0.875rem; }
+    @media (min-width: 640px) { .ledajans-indoor-tag span { font-size: 1rem; } }
+    .ledajans-indoor-desc { font-size: 1rem; color: #4B5563; margin-bottom: 2rem; line-height: 1.7; }
+    .ledajans-indoor-desc a { color: #F46F2C; text-decoration: none; font-weight: 500; }
+    .ledajans-indoor-desc a:hover { text-decoration: underline; }
+    .ledajans-indoor-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    @media (min-width: 640px) { .ledajans-indoor-features { flex-direction: row; } }
+    .ledajans-indoor-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+      border-radius: 16px;
+      flex: 1;
+    }
+    .ledajans-indoor-feature-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background-color: #F46F2C;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-indoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
+    .ledajans-indoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
+    .ledajans-indoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-indoor-image-container {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .ledajans-indoor-image {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      max-height: 350px;
+      object-fit: cover;
+    }
+    @media (min-width: 768px) { .ledajans-indoor-image { max-height: 450px; } }
+    @media (min-width: 1024px) {
+      .ledajans-indoor-container { align-items: stretch; }
+      .ledajans-indoor-image-wrapper { display: flex; }
+      .ledajans-indoor-image-container { flex: 1; display: flex; }
+      .ledajans-indoor-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: none;
+      }
+    }
+    </style>
+    
+    <section class="ledajans-indoor" style="background-color: #f9fafb">
+      <div class="ledajans-indoor-container">
+        <div class="ledajans-indoor-image-wrapper">
+          <div class="ledajans-indoor-image-container">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png"
+              alt="İç Mekan LED Ekran - Indoor LED Ekran Çözümleri"
+              class="ledajans-indoor-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+        <div class="ledajans-indoor-content">
+          <h2 class="ledajans-indoor-title">İÇ MEKAN - INDOOR LED</h2>
+          <div class="ledajans-indoor-tags">
+            <div class="ledajans-indoor-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Kaliteli</span>
+            </div>
+            <div class="ledajans-indoor-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Güvenli</span>
+            </div>
+          </div>
+          <p class="ledajans-indoor-desc">
+            Daha önceki yıllarda iç mekan görüntülemede kullanılan ürünlerin aydınlık ortamda görüntü netliğinin bozulması belirli açılardan bakıldığında da görülememesi led ekran teknolojisinin gelişmesi ile yerlerini led ekranlara bırakmışlardır. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan/indoor Led ekranlar</a>da 0,9mm'ye varan pikseller, 3840Hz ve daha üstü refresh/yenileme hızına sahip olmaları, indoor led ekranların, TV stüdyoları başta olmak üzere hemen her alanda kullanılmasının önünü açmıştır.
+          </p>
+          <div class="ledajans-indoor-features">
+            <div class="ledajans-indoor-feature">
+              <div class="ledajans-indoor-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="ledajans-indoor-feature-title">Sertifika</h3>
+                <p class="ledajans-indoor-feature-desc">Uluslararası sertifikalara sahibiz.</p>
+              </div>
+            </div>
+            <div class="ledajans-indoor-feature">
+              <div class="ledajans-indoor-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <h3 class="ledajans-indoor-feature-title">2 Yıl Garanti</h3>
+                <p class="ledajans-indoor-feature-desc">2 yıl boyunca teknik hizmet garanti kapsamında ücretsiz.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    

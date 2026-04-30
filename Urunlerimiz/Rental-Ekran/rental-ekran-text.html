@@ -1,0 +1,194 @@
+<style>
+    .indoor-content-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-wrapper { padding: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-wrapper { padding: 2rem; }
+    }
+    .indoor-content {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .indoor-content { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content { padding: 2.5rem; }
+    }
+    .indoor-content-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid #F46F2C;
+    }
+    @media (min-width: 768px) {
+      .indoor-content-title { font-size: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-title { font-size: 2.25rem; margin-bottom: 2rem; }
+    }
+    .indoor-content-section {
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-section { margin-bottom: 2.5rem; }
+    }
+    .indoor-content-section:last-child {
+      margin-bottom: 0;
+    }
+    .indoor-content-section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-section-title { font-size: 1.5rem; }
+    }
+    .indoor-content-section-title::before {
+      content: '';
+      width: 4px;
+      height: 1.5rem;
+      background: #F46F2C;
+      border-radius: 2px;
+    }
+    .indoor-content-text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0 0 1.25rem 0;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-text { font-size: 1rem; }
+    }
+    .indoor-content-text:last-child {
+      margin-bottom: 0;
+    }
+    .indoor-content-highlight {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.1) 0%, rgba(244, 111, 44, 0.05) 100%);
+      padding: 1.25rem 1.5rem;
+      border-left: 4px solid #F46F2C;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-highlight { padding: 1.5rem 2rem; }
+    }
+    .indoor-content-highlight:hover {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.15) 0%, rgba(244, 111, 44, 0.1) 100%);
+      border-left-color: #e55a1f;
+      box-shadow: 0 10px 25px -5px rgba(244, 111, 44, 0.2), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-2px);
+    }
+    .indoor-content-highlight-text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-highlight-text { font-size: 1rem; }
+    }
+    .indoor-content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .indoor-content-list-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #374151;
+      background: #f3f4f6;
+      border-radius: 0.375rem;
+      border: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-list-item { font-size: 0.875rem; padding: 0.5rem 0.875rem; }
+    }
+    .indoor-content-list-item::before {
+      content: '•';
+      color: #F46F2C;
+      font-weight: 700;
+      margin-right: 0.5rem;
+      font-size: 1.125rem;
+      line-height: 0;
+    }
+    .indoor-content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 768px) {
+      .indoor-content-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .indoor-content-card {
+      background: #f9fafb;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card { padding: 1.5rem; }
+    }
+    .indoor-content-card:hover {
+      background: #ffffff;
+      border-color: #F46F2C;
+      box-shadow: 0 10px 25px -5px rgba(244, 111, 44, 0.15), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-4px);
+    }
+    .indoor-content-card:hover .indoor-content-card-title {
+      color: #F46F2C;
+    }
+    .indoor-content-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card-title { font-size: 1.125rem; }
+    }
+    .indoor-content-card-text {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #6b7280;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card-text { font-size: 0.9375rem; }
+    }
+  </style>
+  
+  <div class="indoor-content-wrapper">
+    <div class="indoor-content">
+      <h2 class="indoor-content-title">Rental Ekran</h2>
+      
+      <div class="indoor-content-section">
+        <p class="indoor-content-text">
+          LED Rental Kabinler, etkinliklerinizi ve sahne gösterilerinizi bir üst seviyeye taşımak için ideal bir çözümdür. Modüler yapısıyla kolayca kurulabilen bu LED ekranlar, yüksek çözünürlükte görüntü sunarak izleyicilere etkileyici bir görsel deneyim yaşatır. İster konser, ister konferans olsun, her türlü etkinlik için uygun olan bu kiralanabilir LED ekranlarla, büyük ve dinamik dijital sahneler oluşturabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </div>

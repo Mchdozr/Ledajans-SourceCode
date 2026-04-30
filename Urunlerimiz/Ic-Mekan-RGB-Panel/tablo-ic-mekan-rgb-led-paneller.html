@@ -1,0 +1,313 @@
+<!-- LEDAJANS - İç Mekan RGB Panel ANA SAYFA: Ürün hub (premium) -->
+<style>
+    .la-ic-hub {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2.5rem 1rem;
+      color: #1f2937;
+      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 12%);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .la-ic-hub::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f46f2c, #1a1a2e);
+      border-radius: 16px 16px 0 0;
+    }
+    @media (min-width: 1024px) {
+      .la-ic-hub-inner { display: flex; gap: 2.5rem; align-items: flex-start; }
+      .la-ic-hub { padding: 3rem 2rem; }
+    }
+    .la-ic-hub h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .la-ic-hub h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 4px;
+      background: #f46f2c;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+    .la-ic-hub-intro {
+      color: #4b5563;
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+      font-size: 1rem;
+      max-width: 42rem;
+    }
+    /* Sidebar */
+    .la-ic-hub-nav {
+      flex-shrink: 0;
+      width: 100%;
+    }
+    @media (min-width: 1024px) {
+      .la-ic-hub-nav { width: 240px; position: sticky; top: 1.5rem; }
+    }
+    .la-ic-hub-nav-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.85rem;
+    }
+    .la-ic-hub-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    @media (min-width: 1024px) {
+      .la-ic-hub-nav-list { flex-direction: column; gap: 0.35rem; }
+    }
+    .la-ic-hub-nav-list a {
+      display: block;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.25s ease;
+    }
+    .la-ic-hub-nav-list a:hover {
+      background: #1a1a2e;
+      color: #fff;
+      border-color: #1a1a2e;
+      transform: translateX(4px);
+    }
+    @media (min-width: 1024px) {
+      .la-ic-hub-nav-list a:hover { transform: translateX(6px); }
+    }
+    .la-ic-hub-nav-list a:focus-visible {
+      outline: 2px solid #f46f2c;
+      outline-offset: 2px;
+    }
+    /* Cards */
+    .la-ic-hub-main { flex: 1; min-width: 0; }
+    .la-ic-hub-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .la-ic-hub-cards { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .la-ic-hub-cards { gap: 1.5rem; }
+    }
+    .la-ic-hub-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .la-ic-hub-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #f46f2c, #e05a1e);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .la-ic-hub-card:hover {
+      border-color: rgba(244, 111, 44, 0.4);
+      box-shadow: 0 12px 28px rgba(26, 26, 46, 0.08), 0 4px 12px rgba(244, 111, 44, 0.06);
+      transform: translateY(-3px);
+    }
+    .la-ic-hub-card:hover::before { opacity: 1; }
+    
+    /* Kart tamamı tıklanabilir */
+    .la-ic-hub-card-link{
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 1.35rem 1.35rem 1.35rem 1.5rem;
+      height: 100%;
+    }
+    .la-ic-hub-card-link:focus-visible {
+      outline: 2px solid #f46f2c;
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+    
+    .la-ic-hub-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .la-ic-hub-card:hover .la-ic-hub-card-title { color: #16213e; }
+    .la-ic-hub-card-spec {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .la-ic-hub-card-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #f46f2c !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.25s ease, color 0.2s ease;
+    }
+    .la-ic-hub-card:hover .la-ic-hub-card-cta {
+      color: #e05a1e !important;
+      gap: 0.65rem;
+    }
+    .la-ic-hub-card-cta svg {
+      width:18px;
+      height:18px;
+      flex-shrink: 0;
+      stroke:#f46f2c !important;
+      transition: transform 0.25s ease;
+    }
+    .la-ic-hub-card:hover .la-ic-hub-card-cta svg {
+      transform: translateX(3px);
+    }
+    /* Küçük piksel badge */
+    .la-ic-hub-card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #f46f2c;
+      background: rgba(244, 111, 44, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+    </style>
+    
+    <div class="la-ic-hub">
+      <h2>İç Mekan RGB LED Paneller</h2>
+      <p class="la-ic-hub-intro">
+        İç mekan LED ekran projeleriniz için farklı piksel aralığı ve yenileme hızına sahip RGB panel modellerimiz. Her model için teknik özellikler, döküman ve fiyat bilgisi ilgili sayfada yer alır.
+      </p>
+    
+      <div class="la-ic-hub-inner">
+        <nav class="la-ic-hub-nav" aria-label="İç mekan RGB panel modelleri">
+          <div class="la-ic-hub-nav-title">Modeller</div>
+          <ul class="la-ic-hub-nav-list">
+            <li><a href="https://ledajans.com/p0-93-ic-mekan-led-ekran/">P0.93</a></li>
+            <li><a href="https://ledajans.com/h1-25-ic-mekan-rgb-panel/">H1.25</a></li>
+            <li><a href="https://ledajans.com/h1-53-ic-mekan-rgb-led-panel/">H1.53</a></li>
+            <li><a href="https://ledajans.com/h1-86-ic-mekan-rgb-led-panel/">H1.86</a></li>
+            <li><a href="https://ledajans.com/p2-5-ic-mekan-rgb-panel/">P2.5 1920Hz</a></li>
+            <li><a href="https://ledajans.com/p2-5-3840hz-ic-mekan-rgb-panel/">P2.5 3840Hz</a></li>
+            <li><a href="https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/">H2.5 6000Hz</a></li>
+            <li><a href="https://ledajans.com/p3-07-ic-mekan-rgb-panel/">P3.07</a></li>
+            <li><a href="https://ledajans.com/p4-ic-mekan-rgb-panel/">P4</a></li>
+          </ul>
+        </nav>
+    
+        <div class="la-ic-hub-main">
+          <div class="la-ic-hub-cards">
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/p0-93-ic-mekan-led-ekran/">
+                <span class="la-ic-hub-card-badge">0.93 / 1.86 mm</span>
+                <div class="la-ic-hub-card-title">P0.93 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">Dinamik 0.93mm / Gerçek 1.86mm · 577.812 nokta/m² · ≥3840Hz</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/h1-25-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">1.25 mm</span>
+                <div class="la-ic-hub-card-title">H1.25 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">1.25mm · 640.000 nokta/m² · SMD1010 · 1/64 tarama</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/h1-53-ic-mekan-rgb-led-panel/">
+                <span class="la-ic-hub-card-badge">1.53 mm</span>
+                <div class="la-ic-hub-card-title">H1.53 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">1.53mm · 422.500 nokta/m² · SMD1212 · ≥3840Hz</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/h1-86-ic-mekan-rgb-led-panel/">
+                <span class="la-ic-hub-card-badge">1.86 mm</span>
+                <div class="la-ic-hub-card-title">H1.86 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">1.86mm · 288.906 nokta/m² · SMD1515 · ≥3840Hz</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/p2-5-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">2.5 mm · 1920Hz</span>
+                <div class="la-ic-hub-card-title">P2.5 1920Hz İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">2.5mm · 160.000 piksel/m² · SMD2121/2020 · ≥1920Hz · IP65</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/p2-5-3840hz-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">2.5 mm · 3840Hz</span>
+                <div class="la-ic-hub-card-title">P2.5 3840Hz İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">2.5mm · 160.000 nokta/m² · SMD1515 · ≥3840Hz · 1/64 tarama</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">2.5 mm · 6000Hz</span>
+                <div class="la-ic-hub-card-title">H2.5 6000Hz İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">2.5mm · 160.000 nokta/m² · ≥6000Hz · 14bit · Kamera uyumlu</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/p3-07-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">3.076 mm</span>
+                <div class="la-ic-hub-card-title">P3.07 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">3.076mm · 105.625 nokta/m² · SMD2020 · ≥3840Hz · 1/26 tarama</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-ic-hub-card">
+              <a class="la-ic-hub-card-link" href="https://ledajans.com/p4-ic-mekan-rgb-panel/">
+                <span class="la-ic-hub-card-badge">4 mm</span>
+                <div class="la-ic-hub-card-title">P4 İç Mekan RGB Panel</div>
+                <div class="la-ic-hub-card-spec">4mm · 62.500 nokta/m² · SMD2121 · ≥1920Hz · 1/20 tarama</div>
+                <span class="la-ic-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>

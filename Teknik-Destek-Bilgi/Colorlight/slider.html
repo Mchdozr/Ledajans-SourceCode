@@ -1,0 +1,100 @@
+<!-- LEDAJANS - Colorlight Görsel Slider (Kesintisiz Sonsuz) -->
+<style>
+    .ledajans-colorlight-slider{
+      padding: 2.2rem 0;
+      background: #f9fafb;
+      overflow: hidden;
+      position: relative;
+    }
+    @media (min-width:768px){
+      .ledajans-colorlight-slider{ padding: 3rem 0; }
+    }
+    
+    .ledajans-colorlight-slider::before,
+    .ledajans-colorlight-slider::after{
+      content:"";
+      position:absolute;
+      top:0; bottom:0;
+      width:64px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .ledajans-colorlight-slider::before{
+      left:0;
+      background: linear-gradient(90deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    .ledajans-colorlight-slider::after{
+      right:0;
+      background: linear-gradient(270deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    
+    .ledajans-colorlight-track{
+      display:flex;
+      width:max-content;
+      will-change: transform;
+      animation: ledajans-colorlight-scroll 28s linear infinite;
+    }
+    
+    .ledajans-colorlight-item{
+      flex:0 0 auto;
+      width:220px;
+      height:130px;
+      margin:0 .75rem;
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      box-shadow:0 6px 14px rgba(15,23,42,.06);
+    }
+    @media (min-width:768px){
+      .ledajans-colorlight-item{
+        width:300px;
+        height:170px;
+        margin:0 1rem;
+      }
+    }
+    
+    .ledajans-colorlight-item a{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .ledajans-colorlight-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s ease;
+    }
+    .ledajans-colorlight-item:hover img{ transform:scale(1.03); }
+    
+    /* 3 set olduğu için 1 set kadar kaydırıp başa sarar */
+    @keyframes ledajans-colorlight-scroll{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-33.333%); }
+    }
+    </style>
+    
+    <section class="ledajans-colorlight-slider" aria-label="Colorlight görsel slider">
+      <div class="ledajans-colorlight-track">
+    
+        <!-- SET 1 -->
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi"></a></div>
+    
+        <!-- SET 2 -->
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi"></a></div>
+    
+        <!-- SET 3 -->
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli"></a></div>
+        <div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi"></a></div>
+    
+      </div>
+    </section>

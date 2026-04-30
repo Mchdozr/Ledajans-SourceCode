@@ -1,0 +1,1164 @@
+<style>
+    .control-cards-tables-wrapper {
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .control-cards-models-menu { order: 1; }
+    .control-cards-table-section { order: 2; }
+    
+    @media (min-width: 640px) {
+      .control-cards-tables-wrapper { margin-bottom: 2.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-tables-wrapper { margin-bottom: 3rem; }
+    }
+    
+    .control-cards-tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .control-cards-tables-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .control-cards-models-menu { width: 100%; }
+    @media (min-width: 1024px) {
+      .control-cards-models-menu {
+        width: auto;
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+      }
+    }
+    
+    .control-cards-models-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-card { padding: 2rem; }
+    }
+    
+    .control-cards-models-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-title { font-size: 1.25rem; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    }
+    
+    .control-cards-models-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) { .control-cards-models-nav { gap: 0.75rem; } }
+    
+    .control-cards-model-button {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.75rem;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    @media (min-width: 640px) {
+      .control-cards-model-button { padding: 1rem 1.5rem; border-radius: 1rem; font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-model-button { font-size: 1rem; }
+    }
+    
+    .control-cards-model-button.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .control-cards-model-button:not(.active) { color: #374151; }
+    .control-cards-model-button:not(.active):hover {
+      background: #f9fafb;
+      color: #F46F2C;
+    }
+    
+    .control-cards-table-section { width: 100%; min-width: 0; }
+    
+    .control-cards-table-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-card { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-table-card { padding: 3rem; }
+    }
+    
+    .control-cards-downloads {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-downloads { margin-bottom: 2rem; } }
+    @media (min-width: 768px) { .control-cards-downloads { margin-bottom: 2.5rem; } }
+    
+    .control-cards-download-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #F46F2C;
+      color: white;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-download-link { gap: 0.75rem; padding: 1rem 2rem; border-radius: 1rem; font-size: 0.875rem; width: auto; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-download-link { padding: 1.25rem 2.5rem; font-size: 1rem; }
+    }
+    .control-cards-download-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      color: white;
+    }
+    
+    .control-cards-download-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) { .control-cards-download-icon { width: 1rem; height: 1rem; } }
+    @media (min-width: 768px) { .control-cards-download-icon { width: 1.25rem; height: 1.25rem; } }
+    
+    .control-cards-table-container {
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 600px;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-container {
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+    }
+    
+    .control-cards-table-wrapper { min-width: 100%; display: inline-block; }
+    @media (min-width: 768px) { .control-cards-table-wrapper { display: block; } }
+    
+    .control-cards-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      min-width: 600px;
+    }
+    @media (min-width: 640px) { .control-cards-table { font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table { font-size: 1rem; min-width: 0; } }
+    
+    .control-cards-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f9fafb;
+    }
+    .control-cards-table thead tr { background: #f9fafb; }
+    .control-cards-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    @media (min-width: 640px) { .control-cards-table th { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table th { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      color: #374151;
+      font-size: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-table td { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table td { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table-hidden { display: none; }
+    
+    .control-cards-section-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 2rem 0;
+    }
+    @media (min-width: 768px) {
+      .control-cards-section-title {
+        font-size: 2.25rem;
+        padding-left: 23rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-section-title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .control-cards-table h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 2rem 0 1rem 0;
+      padding-top: 1rem;
+      border-top: 2px solid #e5e7eb;
+    }
+    .control-cards-table h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table h3 { font-size: 1.5rem; }
+    }
+    </style>
+    
+    <div class="control-cards-tables-wrapper" id="colorlight-control-cards-wrapper">
+      <h2 class="control-cards-section-title">Colorlight Serisi Kontrol Kartları</h2>
+      <div class="control-cards-tables-container">
+        <div class="control-cards-models-menu">
+          <div class="control-cards-models-card">
+            <h3 class="control-cards-models-title">Modeller</h3>
+            <nav class="control-cards-models-nav">
+              <button class="control-cards-model-button active" data-model="e80" onclick="showColorlightTable('e80')">E80</button>
+              <button class="control-cards-model-button" data-model="e120" onclick="showColorlightTable('e120')">E120</button>
+              <button class="control-cards-model-button" data-model="5a75e" onclick="showColorlightTable('5a75e')">5A-75E</button>
+              <button class="control-cards-model-button" data-model="a35" onclick="showColorlightTable('a35')">A35</button>
+              <button class="control-cards-model-button" data-model="a60" onclick="showColorlightTable('a60')">A60</button>
+              <button class="control-cards-model-button" data-model="a200" onclick="showColorlightTable('a200')">A200</button>
+              <button class="control-cards-model-button" data-model="x2m" onclick="showColorlightTable('x2m')">X2M</button>
+              <button class="control-cards-model-button" data-model="x4m" onclick="showColorlightTable('x4m')">X4M</button>
+              <button class="control-cards-model-button" data-model="x6" onclick="showColorlightTable('x6')">X6</button>
+              <button class="control-cards-model-button" data-model="x7" onclick="showColorlightTable('x7')">X7</button>
+              <button class="control-cards-model-button" data-model="x8e" onclick="showColorlightTable('x8e')">X8E</button>
+              <button class="control-cards-model-button" data-model="x12" onclick="showColorlightTable('x12')">X12</button>
+              <button class="control-cards-model-button" data-model="x16e" onclick="showColorlightTable('x16e')">X16E</button>
+              <button class="control-cards-model-button" data-model="x20m" onclick="showColorlightTable('x20m')">X20M</button>
+              <button class="control-cards-model-button" data-model="x40m" onclick="showColorlightTable('x40m')">X40M</button>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="control-cards-table-section">
+          <!-- E80 -->
+          <div id="control-cards-table-e80" class="control-cards-table-card">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/E80-Neutral-Specification-V4.2.1.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>E80 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>8 bit</strong></td><td>8 bit renk derinliği video kaynak girişi ve çıkışı, monokrom gri ton 256, 16,777,216 farklı karışık renk ile eşleşebilir.</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>Adaptif kare hızı teknolojisi; 23.98/24/29.97/30/50/59.94/60Hz gibi düzenli ve kesirli kare hızlarını destekler, aynı zamanda 120/240Hz yüksek kare hızında görüntüler çıkartır ve görüntü akıcılığını artırır, film sürüklenmesini azaltır (*yükü etkileyebilir).</td></tr>
+                    <tr><td><strong>Renk Sıcaklığı Ayarı</strong></td><td>Renk sıcaklığı ayarı, doygunluk ayarı; görüntünün ifade gücünü artırmak için kullanılır.</td></tr>
+                    <tr><td><strong>Düşük Parlaklıkta Daha İyi Gri</strong></td><td>Gamma ölçüm algoritmasının optimize edilmesiyle, ekranın düşük parlaklıkta gri tonların bütünlüğünü ve mükemmel görüntüsünü koruması sağlanır, düşük parlaklık ve yüksek gri ton gösterim etkisi sağlar.</td></tr>
+                    <tr><td><strong>Kalibrasyon</strong></td><td>8 bit hassasiyetle parlaklık ve renk düzeltme, lamba noktalarının renk sapmalarını etkili bir şekilde ortadan kaldırır, ekranın tümünün renk parlaklık birliğini ve tutarlılığını sağlar, genel görüntüleme etkisini iyileştirir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kısa Süreli İşlemler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Kabinet Vurgusu</strong></td><td>Kontrol yazılımını kullanarak, seçilen hedef kabini hızlı bir şekilde işaretleyebilir, kabin önünde yanıp sönen bir kutu gösterir ve kabin göstergesinin yanıp sönme sıklığını değiştirebilir, bu da ön ve arka bakım için kolaylık sağlar.</td></tr>
+                    <tr><td><strong>Hızlı OSD</strong></td><td>Kontrol yazılımını kullanarak, Ethernet portuna karşılık gelen alıcı kartın gerçek donanım bağlantı seri numarasını hızlı bir şekilde işaretleyebilir, bu da ekranın bağlantı ilişkisini ayarlamayı kolaylaştırır.</td></tr>
+                    <tr><td><strong>Görüntü Döndürme</strong></td><td>Tek kabin görüntüsü 90°/180°/270° açıyla döndürülebilir ve ana kontrol ile birlikte, tek kabin görüntüsü herhangi bir açıyla döndürülüp gösterilebilir.</td></tr>
+                    <tr><td><strong>Veri Grubu Ofseti</strong></td><td>Veri grupları birimiyle ekran ofseti, basit özel şekilli ekranlar için uygundur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Donanım İzleme</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Bit Hata Tespiti</strong></td><td>Alıcı kartlar arasındaki veri iletim kalitesi ve hata kodlarını tespit eder, anormal donanım bağlantısına sahip kabini kolayca tanımlayıp bakım sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Yedeklilik</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Döngü Yedekliliği</strong></td><td>Yedek Ethernet portu, iletim ekipmanıyla bağlantıyı artırmak ve cihazlar arasındaki kaskadın güvenilirliğini artırmak için kullanılır. Bir devre arızalandığında, diğer devreye kesintisiz geçiş sağlanır ve ekranın normal görüntülemesi sağlanır.</td></tr>
+                    <tr><td><strong>Firmware Yedekliliği</strong></td><td>Firmware program yedeği destekler ve güvenli bir şekilde güncellenebilir. Güncelleme sürecinde kablo bağlantısı kopması veya güç kesintisi nedeniyle firmware programının kaybolması endişesi yoktur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Sistem Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Donanım Arayüzü</strong></td><td>HUB75</td></tr>
+                    <tr><td><strong>Ethernet Portu</strong></td><td>1Gbps</td></tr>
+                  </tbody>
+                </table>
+                <h3>İletim Hızı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Ethernet Portu</strong></td><td>1Gbps</td></tr>
+                  </tbody>
+                </table>
+                <h3>Mesafe</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Gigabit Anahtarla İletim</strong></td><td>CAT5e kablo ≤100m</td></tr>
+                  </tbody>
+                </table>
+                <h3>Uyumluluk</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Önerilen</strong></td><td>Gigabit fiber dönüştürücü; Gigabit anahtar</td></tr>
+                  </tbody>
+                </table>
+                <h3>Boyut</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Boyut (U×G×Y) / mm</strong></td><td>863mm (34") × 217.9mm (8.6") × 18.4mm (0.72")</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Ağırlık</strong></td><td>0.86kg / 1.9lbs</td></tr>
+                  </tbody>
+                </table>
+                <h3>Elektrik Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Nominal Güç</strong></td><td>DC 3.8~5V, 0.6A</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çalışma Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Gövde Statik Elektrik Direnci</strong></td><td>2KV</td></tr>
+                    <tr><td><strong>Sıcaklık ve Taşıma Ortamı</strong></td><td></td></tr>
+                    <tr><td><strong>Depolama Sıcaklığı</strong></td><td>-25°C~75°C (-13°F~167°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>≤95%RH yoğunlaşmasız</td></tr>
+                    <tr><td><strong>Sıcaklık</strong></td><td>-40°C~125°C (-40°F~257°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>≤90%RH yoğunlaşmasız</td></tr>
+                    <tr><td><strong>Paket Bilgisi</strong></td><td></td></tr>
+                    <tr><td><strong>Nem</strong></td><td>≤80%RH yoğunlaşmasız</td></tr>
+                    <tr><td><strong>Fiziksel Boyut (G×Y×D) / mm</strong></td><td>603mm (23") × 463mm (18") × 140mm (5.51")</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- 5A-75E -->
+          <div id="control-cards-table-5a75e" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/5A-75E-Neutral-Specification-V8.2.2.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>5A-75E DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ekran Görüntüleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>8 bit</strong></td><td>8 bit video girişi ve çıkışı: Renk başına 256 gri ton seviyesi, 16,777,216 farklı renk kombinasyonunu destekler.</td></tr>
+                    <tr><td><strong>Yüksek Kare Hızı</strong></td><td>Adaptif kare hızı teknolojisi; standart ve kesirli kare hızlarını destekler: 30/50/59.94/60/100Hz. 120/144/240Hz yüksek kare hızında görüntüler çıkartır, görüntü akıcılığını önemli ölçüde artırır ve hareket bulanıklığını azaltır.</td></tr>
+                    <tr><td><strong>Renk Sıcaklığı Ayarı</strong></td><td>Doygunluk ayarı aracılığıyla görüntünün görsel etkisini artırır.</td></tr>
+                    <tr><td><strong>Düşük Parlaklıkta Daha İyi Gri</strong></td><td>Optimize edilmiş gamma tablosu algoritması, düşük parlaklıktan kaynaklanan gri ton kaybını etkili bir şekilde ele alır, düşük parlaklık koşullarında gri ton performansını iyileştirir.</td></tr>
+                    <tr><td><strong>8 bit Kalibrasyon</strong></td><td>Yüksek hassasiyetle piksel düzeyinde parlaklık ve kroma kalibrasyonu, LED'lerin renk farkını etkili bir şekilde ortadan kaldırır, gelişmiş görüntüleme ve tek tip renk ve parlaklık sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kolay Bakım</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Kabinet Vurgusu</strong></td><td>Kontrol yazılımı aracılığıyla hedef kabini vurgulamayı destekler. Kabin kenarları yanıp söner ve gösterge yanıp sönme sıklığı değişir, LED ekranın hem önünden hem de arkasından verimli bakım sağlar.</td></tr>
+                    <tr><td><strong>Hızlı Numaralandırma</strong></td><td>Kontrol yazılımıyla çalışır, gönderim kartının seçilen ağ portuna bağlı alıcı kartları gerçek yönlendirme sırasına göre hızlı bir şekilde numaralandırmayı sağlar, ekran eşleme ayarını kolaylaştırır.</td></tr>
+                    <tr><td><strong>Görüntü Döndürme</strong></td><td>Tek kabin görüntüsünü 90°/180°/270° açıyla döndürmeyi destekler.</td></tr>
+                    <tr><td><strong>Veri Grubu Ofseti</strong></td><td>Veri gruplarıyla görüntü ofsetini destekler, temel düzensiz şekilli ekranlar için uygundur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Donanım İzleme</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Bit Hata Tespiti</strong></td><td>Alıcı kart arasındaki veri iletim durumunu ve bit hata oranını tespit eder, donanım bağlantı hatalarına sahip kabinleri hızlı bir şekilde tanımlayarak bakımı kolaylaştırır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Yedeklilik</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Döngü Yedekliliği</strong></td><td>Yedek port, gönderim cihazına ekstra bir bağlantı sağlar, kaskad güvenilirliğini artırır. Birincil bağlantı başarısız olursa, yedek kesintisiz devreye girer, kesintisiz görüntüleme sağlar.</td></tr>
+                    <tr><td><strong>Firmware Yedekliliği</strong></td><td>Kablo bağlantısının kopması veya güç kesintisi nedeniyle firmware kaybı riski olmadan güvenli güncellemeler sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Genel Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Donanım Portu</strong></td><td>Ethernet arayüzü: 1 Gbps</td></tr>
+                    <tr><td><strong>Ayar</strong></td><td>HUB75 arayüzleri</td></tr>
+                    <tr><td><strong>İletim Mesafesi</strong></td><td>CAT5e kablolarla uyumlu ≤100m</td></tr>
+                    <tr><td><strong>Boyut</strong></td><td>U×G×Y = 145.2mm (5.72") × 91.7mm (3.61") × 18.4mm (0.72")</td></tr>
+                    <tr><td><strong>Ağırlık</strong></td><td>94g (0.21lbs)</td></tr>
+                    <tr><td><strong>Uyumlu Cihazlar</strong></td><td>Gigabit switch, Gigabit fiber transceiver, Gigabit fiber switch</td></tr>
+                  </tbody>
+                </table>
+                <h3>Elektrik Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş Gücü</strong></td><td>DC 3.8–5.5 V, 0.6 A</td></tr>
+                    <tr><td><strong>Nominal Güç</strong></td><td>3.0 W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çevresel Koşullar</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Çalışma Ortamı</strong></td><td>Sıcaklık −25°C ~ 75°C (−13°F ~ 167°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>0–80% RH; Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+                <h3>Paket Bilgisi</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td>−40℃ ~ 125℃ (−40°F ~ 257°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>0–90% RH; Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- A35 -->
+          <div id="control-cards-table-a35" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/A35-Neutral-Specification-V3.0.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>A35 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Temel Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Donanım Performansı</strong></td><td>Yüksek çözünürlüklü donanım dekodlama.</td></tr>
+                    <tr><td><strong>Depolama</strong></td><td>8GB (4GB kullanılabilir).</td></tr>
+                    <tr><td><strong>Yük Kapasitesi</strong></td><td>Maksimum 650,000 piksel, en fazla 4096 piksel genişlik veya 3840 piksel yükseklik.</td></tr>
+                    <tr><td><strong>İşletim Sistemi</strong></td><td>Android.</td></tr>
+                    <tr><td><strong>Dosya Formatı</strong></td><td>HEVC (H.265), H.264, MPEG-4 Part 2, Motion JPEG.</td></tr>
+                    <tr><td><strong>Program Takvimi</strong></td><td>Çoklu program ardışık oynatma, program zamanlama ayarı desteği.</td></tr>
+                    <tr><td><strong>Pencere Bölme</strong></td><td>Pencerelerin rastgele bölünmesi ve üst üste bindirilmesi, çoklu sayfa oynatma.</td></tr>
+                    <tr><td><strong>Video Formatı</strong></td><td>HEVC (H.265), H.264, MPEG-4 Part 2 ve Motion JPEG.</td></tr>
+                    <tr><td><strong>Ses Formatı</strong></td><td>AAC-LC, HE-AAC, HE-AAC v2, MP3, Linear PCM.</td></tr>
+                    <tr><td><strong>Görüntü Formatı</strong></td><td>BMP, JPG, PNG, GIF vb.</td></tr>
+                    <tr><td><strong>Metin Formatı</strong></td><td>TXT, RTF, Word, PPT, Excel vb. (Yazılım ile birlikte kullanılır).</td></tr>
+                    <tr><td><strong>Metin Görüntüleme</strong></td><td>Tek satır metin, çok satırlı metin, statik metin ve kaydırılan metin.</td></tr>
+                    <tr><td><strong>Çok Pencere Görüntüleme</strong></td><td>Tek HD video penceresi veya en fazla 3 SD video penceresi, çoklu resim/metin, kaydırılan metin, kaydırılan resim, LOGO, tarih/saat/hafta ve hava durumu pencereleri. Farklı alanlarda esnek içerik görüntüleme.</td></tr>
+                    <tr><td><strong>Pencere Üst Üste Bindirme</strong></td><td>Saydam ve opak efektlerle rastgele üst üste bindirme.</td></tr>
+                    <tr><td><strong>RTC</strong></td><td>Gerçek zamanlı saat görüntüleme ve yönetimi.</td></tr>
+                    <tr><td><strong>USB Desteği</strong></td><td>U disk tak-çalıştır desteği.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Bağlantı Noktaları ve İşlevleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Fonksiyonu</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td><strong>CONFIG</strong></td><td>USB-B portu, cihazı kontrol etmek için, ekran parametrelerini ayarlama ve program yayınlama gibi.</td></tr>
+                    <tr><td>2</td><td><strong>USB</strong></td><td>USB-A portu, USB sürücüsü aracılığıyla program güncellemeleri için USB 3.0 desteği.</td></tr>
+                    <tr><td>3</td><td><strong>WIFI ANT</strong></td><td>Harici WiFi anteni, kalıcı WiFi hotspot sağlama veya diğer WiFi yönlendiricilere bağlanma.</td></tr>
+                    <tr><td>4</td><td><strong>SENSOR 1/2</strong></td><td>RJ11 portu, otomatik parlaklık ayarı, ortam parlaklığı, duman, sıcaklık, nem, hava kalitesi vb. göstergelerin izlenmesi ve görüntülenmesi için bir sensöre bağlanır.</td></tr>
+                    <tr><td>5</td><td><strong>SIM Kart Yuvası</strong></td><td>Mikro-SIM kart yuvası (4G modülü ile birlikte kullanılır).</td></tr>
+                    <tr><td>6</td><td><strong>4G ANT</strong></td><td>4G antenine bağlanır (isteğe bağlı).</td></tr>
+                    <tr><td>7</td><td><strong>DC 5V-12V</strong></td><td>Güç girişi.</td></tr>
+                    <tr><td>8</td><td><strong>LAN</strong></td><td>Hızlı Ethernet portu, kablolu ağa erişim.</td></tr>
+                    <tr><td>9</td><td><strong>AUDIO</strong></td><td>3.5mm, HIFI stereo çıkış.</td></tr>
+                    <tr><td>10</td><td><strong>DISPLAY</strong></td><td>RJ45, sinyal çıkışı, alıcı kartlara bağlantı.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Teknik Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Parametre</th><th>Spesifikasyon</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Kutu Açılmamış Boyutları</strong></td><td>108.0mm (4.25") x 128.0mm (5.04") x 26.0mm (1.02")</td></tr>
+                    <tr><td><strong>Kutu Boyutları</strong></td><td>370.0mm (14.57") x 320.0mm (12.6") x 52.0mm (2.05")</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>0.33kg (1.83lbs)</td></tr>
+                    <tr><td><strong>Güç Girişi</strong></td><td>DC 5-12V</td></tr>
+                    <tr><td><strong>Nominal Güç Girişi</strong></td><td>10W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çalışma Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td>-40°C ile 80°C arası</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>0%RH-95%RH, yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- A60 -->
+          <div id="control-cards-table-a60" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/A60-Neutral-Specification-V1.1.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>A60 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Kutu Açılmamış Boyutları</strong></td><td>108.0mm (4.25") x 128.0mm (5.04") x 26.0mm (1.02")</td></tr>
+                    <tr><td><strong>Kutu Boyutları</strong></td><td>370.0mm (14.57") x 320.0mm (12.6") x 52.0mm (2.05")</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>0.33kg (1.83lbs)</td></tr>
+                    <tr><td><strong>Güç Girişi</strong></td><td>DC 5-12V</td></tr>
+                    <tr><td><strong>Nominal Güç Girişi</strong></td><td>10W</td></tr>
+                    <tr><td><strong>Çalışma Ortamı</strong></td><td>Sıcaklık: -40°C ile 80°C, Nem: 0%RH-95%RH, yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+                <h3>Program ve Format Desteği</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Program Sınıflandırması</strong></td><td>Program pencere sınıflandırmasını, rastgele üst üste bindirmeyi ve çoklu sayfa oynatmayı destekler.</td></tr>
+                    <tr><td><strong>Video Formatı</strong></td><td>HEVC (H.265), H.264, H.263, MVC, MPEG-4, MPEG-1/2, GOOGLE VP8, GOOGLE VP9, VC-1, MOTION JPEG.</td></tr>
+                    <tr><td><strong>Ses Formatı</strong></td><td>AAC-LC, HE-AAC, HE-AAC V2, MP3, Linear PCM.</td></tr>
+                    <tr><td><strong>Görüntü Formatı</strong></td><td>BMP, JPG, PNG, GIF, WEBP vb.</td></tr>
+                    <tr><td><strong>Metin Formatı</strong></td><td>TXT, RTF, Word, PPT, Excel, PC üzerinden yazılım ile.</td></tr>
+                    <tr><td><strong>Metin Görüntüleme</strong></td><td>Tek satır ve çok satırlı metin desteği, statik ve dinamik görüntüleme için.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çoklu Pencere ve Kontrol Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Çok Pencere Görüntüleme</strong></td><td>Tek 1080P video penceresi veya en fazla 3 720P video penceresi, çoklu grafik ve metin, kaydırılan alt yazılar, kaydırılan resimler, LOGO, tarih ve saat, hava durumu. Farklı alanlarda içerik serbest bölme ve görüntüleme fonksiyonu sağlar.</td></tr>
+                    <tr><td><strong>Pencere Üst Üste Bindirme</strong></td><td>Pencerelerin rastgele üst üste bindirilmesi, saydam, opak ve diğer efektlerle.</td></tr>
+                    <tr><td><strong>RTC</strong></td><td>Gerçek zamanlı saat görüntüleme ve yönetimi.</td></tr>
+                    <tr><td><strong>Terminal Yönetimi ve Otomatik Kontrol</strong></td><td>Bağlantı: USB kablo, LAN veya Wi-Fi. Program güncelleme: U-disk tak-çalıştır, yönetim terminali kablosuz iletim, USB kablo ile doğrudan bağlantı. Cihaz yönetimi: PC, Android, iOS gibi akıllı terminaller. Kablosuz kontrol: Parlaklık ayarı, senkron ve asenkron geçiş, LED ekran açma/kapama, sistem parametreleri yapılandırma, program oynatma kontrolü, kablosuz program iletimi.</td></tr>
+                    <tr><td><strong>Otomatik Parlaklık Ayarı</strong></td><td>Sabit zaman veya çevresel parlaklığa göre ekran parlaklığının otomatik ayarlanması (sensörler ayrı olarak satın alınmalıdır).</td></tr>
+                    <tr><td><strong>LAN Zamanlama</strong></td><td>Program oynatma modunu kesme ve döngüleme, zamanlı parlaklık ayarı, zamanlı uyku, uyanma, yeniden başlatma destekler.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X4M -->
+          <div id="control-cards-table-x4m" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X4m-Neutral-Specification-V1.5.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X4M DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş</strong></td><td>DVI</td></tr>
+                    <tr><td><strong>Renk Alanı</strong></td><td>RGB</td></tr>
+                    <tr><td><strong>Örnekleme</strong></td><td>04:04:04</td></tr>
+                    <tr><td><strong>Renk Derinliği</strong></td><td>8 bit</td></tr>
+                    <tr><td><strong>Maksimum Çözünürlük</strong></td><td>1920x1080@60Hz</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td><strong>Giriş</strong></td><td>HDMI 1.4</td></tr>
+                    <tr><td><strong>Renk Alanı</strong></td><td>YCbCr</td></tr>
+                    <tr><td><strong>Örnekleme</strong></td><td>04:02:02</td></tr>
+                    <tr><td><strong>Renk Derinliği</strong></td><td>8 bit</td></tr>
+                    <tr><td><strong>Maksimum Çözünürlük</strong></td><td>1920x1080@60Hz</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td><strong>Şase Boyutları (En x Yükseklik x Derinlik)</strong></td><td>482.6mm (19.0") x 44.0mm (1.7") x 292.0mm (11.5")</td></tr>
+                    <tr><td><strong>Paket Boyutları (En x Yükseklik x Derinlik)</strong></td><td>523.0mm (20.6") x 95.0mm (3.7") x 340.0mm (13.4")</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>3.13kg (6.90lbs)</td></tr>
+                    <tr><td><strong>Brüt Ağırlık</strong></td><td>4.16kg (9.17lbs)</td></tr>
+                    <tr><td><strong>Giriş Gücü</strong></td><td>AC100-240V, 50/60Hz</td></tr>
+                    <tr><td><strong>Güç Tüketimi</strong></td><td>10W</td></tr>
+                    <tr><td><strong>Çalışma Sıcaklığı</strong></td><td>-20°C ~ 65°C (-4°F ~ 149°F)</td></tr>
+                    <tr><td><strong>Çalışma Nemi</strong></td><td>%0 RH ~ %80 RH, Yoğuşmasız</td></tr>
+                    <tr><td><strong>Depolama Sıcaklığı</strong></td><td>-30°C ~ 80°C (-22°F ~ 176°F)</td></tr>
+                    <tr><td><strong>Depolama Nemi</strong></td><td>%0 RH ~ %90 RH, Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X6 -->
+          <div id="control-cards-table-x6" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X4m-Neutral-Specification-V1.5.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X6 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş</strong></td><td>DVI</td></tr>
+                    <tr><td><strong>Renk Alanı</strong></td><td>RGB</td></tr>
+                    <tr><td><strong>Örnekleme</strong></td><td>04:04:04</td></tr>
+                    <tr><td><strong>Renk Derinliği</strong></td><td>8 bit</td></tr>
+                    <tr><td><strong>Maksimum Çözünürlük</strong></td><td>1920x1080@60Hz</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td><strong>Giriş</strong></td><td>HDMI 1.4</td></tr>
+                    <tr><td><strong>Renk Alanı</strong></td><td>YCbCr</td></tr>
+                    <tr><td><strong>Örnekleme</strong></td><td>04:02:02</td></tr>
+                    <tr><td><strong>Renk Derinliği</strong></td><td>8 bit</td></tr>
+                    <tr><td><strong>Maksimum Çözünürlük</strong></td><td>1920x1080@60Hz</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td><strong>Giriş</strong></td><td>HDMI 1.4</td></tr>
+                    <tr><td><strong>Renk Alanı</strong></td><td>RGB</td></tr>
+                    <tr><td><strong>Örnekleme</strong></td><td>04:04:04</td></tr>
+                    <tr><td><strong>Renk Derinliği</strong></td><td>8 bit</td></tr>
+                    <tr><td><strong>Maksimum Çözünürlük</strong></td><td>1920x1080@60Hz</td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td><strong>Şase Boyutları (En x Yükseklik x Derinlik)</strong></td><td>482.6mm (19.0") x 44.0mm (1.7") x 292.0mm (11.5")</td></tr>
+                    <tr><td><strong>Paket Boyutları (En x Yükseklik x Derinlik)</strong></td><td>523.0mm (20.6") x 95.0mm (3.7") x 340.0mm (13.4")</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>3.13kg (6.90lbs)</td></tr>
+                    <tr><td><strong>Brüt Ağırlık</strong></td><td>4.16kg (9.17lbs)</td></tr>
+                    <tr><td><strong>Giriş Gücü</strong></td><td>AC100-240V, 50/60Hz</td></tr>
+                    <tr><td><strong>Güç Tüketimi</strong></td><td>10W</td></tr>
+                    <tr><td><strong>Çalışma Sıcaklığı</strong></td><td>-20°C ~ 65°C (-4°F ~ 149°F)</td></tr>
+                    <tr><td><strong>Çalışma Nemi</strong></td><td>%0 RH ~ %80 RH, Yoğuşmasız</td></tr>
+                    <tr><td><strong>Depolama Sıcaklığı</strong></td><td>-30°C ~ 80°C (-22°F ~ 176°F)</td></tr>
+                    <tr><td><strong>Depolama Nemi</strong></td><td>%0 RH ~ %90 RH, Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X7 -->
+          <div id="control-cards-table-x7" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X7-Neutral-Specification-V1.6.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X7 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Boyutlar (En x Yükseklik x Derinlik)</strong></td><td>482.6mm(19.0") x 44.0mm (1.7") x 306.2mm (12.1"), 1U chassis (w/o foot pads)</td></tr>
+                    <tr><td><strong>Ambalajlı Boyutlar (En x Yükseklik x Derinlik)</strong></td><td>525.0mm (20.7") x 95.0mm (3.7") x 355.0mm (14.0")</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>3.10kg (6.83lbs)</td></tr>
+                    <tr><td><strong>Brüt Ağırlık</strong></td><td>4.26kg (9.39lbs)</td></tr>
+                    <tr><td><strong>Güç Girişi</strong></td><td>AC100-240V, 1.0A, 50/60Hz</td></tr>
+                    <tr><td><strong>Nominal Güç</strong></td><td>30W (Tüm kartlar takılıyken)</td></tr>
+                    <tr><td><strong>Çalışma Sıcaklığı</strong></td><td>-20°C~60°C/-4°F-140°F</td></tr>
+                    <tr><td><strong>Çalışma Nem Oranı</strong></td><td>%0RH~80%RH, yoğuşmasız</td></tr>
+                    <tr><td><strong>Depolama Sıcaklığı</strong></td><td>-30°C-80°C/-22°F~176°F</td></tr>
+                    <tr><td><strong>Depolama Nem Oranı</strong></td><td>%0RH~90%RH, yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X8E -->
+          <div id="control-cards-table-x8e" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X8E-Neutral-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X8E DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Boyut</strong></td><td>2U</td><td></td><td></td></tr>
+                    <tr><td><strong>Aygıt Boyutları</strong></td><td>GxYxD</td><td>482.6mm x 88.0mm x 414.1mm</td><td>mm / inç</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td></td><td>4.8kg</td><td>kg</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td></td><td>10.58lbs</td><td>lbs</td></tr>
+                    <tr><td><strong>Paket Boyutları</strong></td><td>GxYxD</td><td>525.0mm x 150.0mm x 495.0mm</td><td>mm / inç</td></tr>
+                    <tr><td><strong>Paket Net Ağırlığı</strong></td><td></td><td>1.8kg</td><td>kg</td></tr>
+                    <tr><td><strong>Paket Net Ağırlığı</strong></td><td></td><td>3.97lbs</td><td>lbs</td></tr>
+                  </tbody>
+                </table>
+                <h3>Elektrik Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş Voltajı</strong></td><td></td><td>AC 100-240V, 50/60Hz</td><td>V</td></tr>
+                    <tr><td><strong>Güç Tüketimi</strong></td><td></td><td>50W</td><td>W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çalışma Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td></td><td>-20°C ~ 70°C / -4°F ~ 158°F</td><td>°C / °F</td></tr>
+                    <tr><td><strong>Nem</strong></td><td></td><td>0%RH ~ 80%RH, yoğuşmasız</td><td>%</td></tr>
+                  </tbody>
+                </table>
+                <h3>Depolama Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td></td><td>-30°C ~ 80°C / -22°F ~ 176°F</td><td>°C / °F</td></tr>
+                    <tr><td><strong>Nem</strong></td><td></td><td>0%RH ~ 90%RH, yoğuşmasız</td><td>%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X12 -->
+          <div id="control-cards-table-x12" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X12-Neutral-Specification-V1.2.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X12 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Boyut</strong></td><td>2U</td><td></td><td></td></tr>
+                    <tr><td><strong>Aygıt Boyutları</strong></td><td>GxYxD</td><td>482.6mm x 88.0mm x 369.2mm</td><td>mm / inç</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td></td><td>4.6kg</td><td>kg</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td></td><td>10.1lbs</td><td>lbs</td></tr>
+                    <tr><td><strong>Paket Boyutları</strong></td><td>GxYxD</td><td>525.0mm x 150.0mm x 455.0mm</td><td>mm / inç</td></tr>
+                    <tr><td><strong>Paket Net Ağırlığı</strong></td><td></td><td>1.6kg</td><td>kg</td></tr>
+                    <tr><td><strong>Paket Net Ağırlığı</strong></td><td></td><td>3.5lbs</td><td>lbs</td></tr>
+                  </tbody>
+                </table>
+                <h3>Elektrik Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş Voltajı</strong></td><td></td><td>AC 100-240V, 50-60Hz</td><td>V</td></tr>
+                    <tr><td><strong>Güç</strong></td><td></td><td>30W</td><td>W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çalışma Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td></td><td>-30°C ~ 60°C / -22°F ~ 140°F</td><td>°C / °F</td></tr>
+                    <tr><td><strong>Nem</strong></td><td></td><td>0%RH ~ 80%RH, yoğuşmasız</td><td>%</td></tr>
+                  </tbody>
+                </table>
+                <h3>Depolama Ortamı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td></td><td>-40°C ~ 80°C / -40°F ~ 176°F</td><td>°C / °F</td></tr>
+                    <tr><td><strong>Nem</strong></td><td></td><td>0%RH ~ 90%RH, yoğuşmasız</td><td>%</td></tr>
+                  </tbody>
+                </table>
+                <h3>Sinyal Formatı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Açıklama</th><th>Değer</th><th>Birim</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Standart</strong></td><td>HDMI 1.4 spesifikasyonu, HDCP desteği</td><td></td><td></td></tr>
+                    <tr><td><strong>Format</strong></td><td>RGB444</td><td></td><td></td></tr>
+                    <tr><td><strong>Giriş</strong></td><td>8bit YCbCr444, YCbCr422</td><td></td><td></td></tr>
+                    <tr><td><strong>Maksimum Giriş Çözünürlüğü</strong></td><td>1920x1200@60Hz</td><td></td><td></td></tr>
+                    <tr><td><strong>Kare Hızı</strong></td><td>23.98/24/25/29.97/30/50/59.97/60Hz</td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X16E -->
+          <div id="control-cards-table-x16e" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X16E-Neutral-Specification-V1.1.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X16E DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Video Girişi Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Standart</th><th>Açıklama</th><th>Format</th><th>Bit Derinliği</th><th>Maksimum Giriş Çözünürlüğü</th><th>Kare Hızı</th><th>Ses Desteği</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Video Girişi</strong></td><td>HDMI 2.0</td><td>HDMI 2.0 spesifikasyonu, FIA/CEA-861 standardı</td><td>RGB444</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr444</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr422</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td><strong>Video Girişi</strong></td><td>DP 1.2</td><td>DP 1.2 spesifikasyonu, EDID desteği</td><td>RGB444</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr444</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr422</td><td>8bit</td><td>4096x2160@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td><strong>Video Girişi</strong></td><td>HDMI 1.4</td><td>HDMI 1.4 spesifikasyonu, HDCP1.4 uyumlu</td><td>RGB444</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr444</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr422</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td><strong>Video Girişi</strong></td><td>DVI</td><td>HDCP1.4 uyumlu</td><td>RGB444</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr444</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                    <tr><td></td><td></td><td></td><td>YCbCr422</td><td>8bit</td><td>1920x1200@60Hz</td><td>23.98/24/25/29.97/30/50/59.97/60/120/144Hz</td><td>Evet</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X20M -->
+          <div id="control-cards-table-x20m" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1mM-skegU6rWIRrXIXiXk1Q80BAYqJd6L" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X20M DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Sinyal Formatı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Standart</th><th>Renk Alanı</th><th>Örnekleme</th><th>Bit Derinliği</th><th>Maksimum Çözünürlük</th><th>Kare Hızı</th></tr></thead>
+                  <tbody>
+                    <tr><td>Sinyal Formatı</td><td>HDMI 2.0</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>DP 1.2</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>DVI</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>HDMI 1.4</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                  </tbody>
+                </table>
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Alt Kategori</th><th>Değer</th><th>Birimler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Boyutlar (W×H×D)</td><td>Ambalajsız</td><td>482.6mm (19") x 103.0mm (4.1") x 415.0mm (16.3")</td><td>mm/inç</td></tr>
+                    <tr><td></td><td>Ambalajlı</td><td>550.0mm (21.7") x 175.0mm (6.9") x 490.0mm (19.3")</td><td>mm/inç</td></tr>
+                    <tr><td>Ağırlık</td><td>Net Ağırlık</td><td>6.20kg (13.67lbs)</td><td>kg/lbs</td></tr>
+                    <tr><td></td><td>Brüt Ağırlık</td><td>8.90kg (19.62lbs)</td><td>kg/lbs</td></tr>
+                    <tr><td>Elektriksel Özellikler</td><td>Güç Girişi</td><td>AC100-240V, 2.1A, 50/60Hz</td><td>V/A/Hz</td></tr>
+                    <tr><td></td><td>Nominal Güç</td><td>80W</td><td>W</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>-20°C~65°C (-4°F~149°F)</td><td>°C/°F</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH~80%RH, yoğuşmasız</td><td>%RH</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>-30°C~80°C (-22°F~176°F)</td><td>°C/°F</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH~90%RH, yoğuşmasız</td><td>%RH</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+    
+          <!-- E120 -->
+          <div id="control-cards-table-e120" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1MymiBu3ryCTigZdsGCMKtKLlrBiqIBOf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>E120 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ekran Görüntüleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>8 bit</strong></td><td>8 bit video girişi ve çıkışı: Renk başına 256 gri ton seviyesi, 16,777,216 farklı renk kombinasyonunu destekler.</td></tr>
+                    <tr><td><strong>Yüksek Kare Hızı</strong></td><td>Adaptif kare hızı teknolojisi; standart ve kesirli kare hızlarını destekler: 30/50/59.94/60/100Hz. 120/144/240Hz yüksek kare hızında görüntüler çıkartır, görüntü akıcılığını önemli ölçüde artırır ve hareket bulanıklığını azaltır.</td></tr>
+                    <tr><td><strong>Renk Sıcaklığı Ayarı</strong></td><td>Doygunluk ayarı aracılığıyla görüntünün görsel etkisini artırır.</td></tr>
+                    <tr><td><strong>Düşük Parlaklıkta Daha İyi Gri</strong></td><td>Optimize edilmiş gamma tablosu algoritması, düşük parlaklıktan kaynaklanan gri ton kaybını etkili bir şekilde ele alır, düşük parlaklık koşullarında gri ton performansını iyileştirir.</td></tr>
+                    <tr><td><strong>8 bit Kalibrasyon</strong></td><td>Yüksek hassasiyetle piksel düzeyinde parlaklık ve kroma kalibrasyonu, LED'lerin renk farkını etkili bir şekilde ortadan kaldırır, gelişmiş görüntüleme ve tek tip renk ve parlaklık sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kolay Bakım</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Kabinet Vurgusu</strong></td><td>Kontrol yazılımı aracılığıyla hedef kabini vurgulamayı destekler. Kabin kenarları yanıp söner ve gösterge yanıp sönme sıklığı değişir, LED ekranın hem önünden hem de arkasından verimli bakım sağlar.</td></tr>
+                    <tr><td><strong>Hızlı Numaralandırma</strong></td><td>Kontrol yazılımıyla çalışır, gönderim kartının seçilen ağ portuna bağlı alıcı kartları gerçek yönlendirme sırasına göre hızlı bir şekilde numaralandırmayı sağlar, ekran eşleme ayarını kolaylaştırır.</td></tr>
+                    <tr><td><strong>Görüntü Döndürme</strong></td><td>Tek kabin görüntüsünü 90°/180°/270° açıyla döndürmeyi destekler.</td></tr>
+                    <tr><td><strong>Veri Grubu Ofseti</strong></td><td>Veri gruplarıyla görüntü ofsetini destekler, temel düzensiz şekilli ekranlar için uygundur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Donanım İzleme</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Bit Hata Tespiti</strong></td><td>Alıcı kart arasındaki veri iletim durumunu ve bit hata oranını tespit eder, donanım bağlantı hatalarına sahip kabinleri hızlı bir şekilde tanımlayarak bakımı kolaylaştırır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Yedeklilik</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Döngü Yedekliliği</strong></td><td>Yedek port, gönderim cihazına ekstra bir bağlantı sağlar, kaskad güvenilirliğini artırır. Birincil bağlantı başarısız olursa, yedek kesintisiz devreye girer, kesintisiz görüntüleme sağlar.</td></tr>
+                    <tr><td><strong>Firmware Yedekliliği</strong></td><td>Kablo bağlantısının kopması veya güç kesintisi nedeniyle firmware kaybı riski olmadan güvenli güncellemeler sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Genel Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Donanım Portu</strong></td><td>Ethernet arayüzü: 1 Gbps</td></tr>
+                    <tr><td><strong>Ayar</strong></td><td>HUB75 arayüzleri</td></tr>
+                    <tr><td><strong>İletim Mesafesi</strong></td><td>CAT5e kablolarla uyumlu ≤100m</td></tr>
+                    <tr><td><strong>Boyut</strong></td><td>U×G×Y = 145.2mm (5.72") × 91.7mm (3.61") × 18.4mm (0.72")</td></tr>
+                    <tr><td><strong>Ağırlık</strong></td><td>94g (0.21lbs)</td></tr>
+                    <tr><td><strong>Uyumlu Cihazlar</strong></td><td>Gigabit switch, Gigabit fiber transceiver, Gigabit fiber switch</td></tr>
+                  </tbody>
+                </table>
+                <h3>Elektrik Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Giriş Gücü</strong></td><td>DC 3.8–5.5 V, 0.6 A</td></tr>
+                    <tr><td><strong>Nominal Güç</strong></td><td>3.0 W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çevresel Koşullar</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Çalışma Ortamı</strong></td><td>Sıcaklık −25°C ~ 75°C (−13°F ~ 167°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>0–80% RH; Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+                <h3>Paket Bilgisi</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Sıcaklık</strong></td><td>−40℃ ~ 125℃ (−40°F ~ 257°F)</td></tr>
+                    <tr><td><strong>Nem</strong></td><td>0–90% RH; Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- A200 -->
+          <div id="control-cards-table-a200" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1CztuZ-Zu4y3rz1bVmx0mp1VMNzC0mCnC" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>A200 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Donanım Performansı</strong></td><td>4K HD donanım kod çözme ile oynatma</td></tr>
+                    <tr><td><strong>Depolama</strong></td><td>8GB kullanılabilir</td></tr>
+                    <tr><td><strong>Yükleme Kapasitesi</strong></td><td>En fazla 2.3 milyon piksel, en fazla 4096 piksel genişliğinde veya en fazla 2560 piksel yüksekliğinde</td></tr>
+                    <tr><td><strong>İşletim Sistemi</strong></td><td>Android</td></tr>
+                    <tr><td><strong>Dosya Formatı</strong></td><td></td></tr>
+                    <tr><td><strong>Program</strong></td><td>Çoklu program sıralı oynatma, program zamanlaması desteği</td></tr>
+                    <tr><td><strong>Bölünmüş Program Penceresi</strong></td><td>Pencerelerin keyfi bölünmesi ve üst üste bindirilmesi, çoklu sayfa oynatma</td></tr>
+                    <tr><td><strong>Video Formatı</strong></td><td>HEVC (H.265), H.264, VP9, MPEG-4 Part 2 ve Motion JPEG</td></tr>
+                    <tr><td><strong>Ses Formatı</strong></td><td>AAC LC, HE-AAC, HE-AAC v2, MP3, Linear PCM</td></tr>
+                    <tr><td><strong>Görüntü Formatı</strong></td><td>BMP, JPG, PNG, GIF, etc.</td></tr>
+                    <tr><td><strong>Metin Formatı</strong></td><td>TXT, RTF, WORD, PPT, EXCEL, etc.</td></tr>
+                    <tr><td><strong>Metin Gösterimi</strong></td><td>Tek satırlı metin, çok satırlı metin, statik metin ve kayan metin</td></tr>
+                    <tr><td><strong>Çoklu Pencere Gösterimi</strong></td><td>Çoklu video pencereleri, çoklu resim/metin, kayan metinler, kayan çubuklar, tarih/saat/hafta ve hava durumu tahmin pencereleri. Farklı alanlarda esnek içerik gösterimi</td></tr>
+                    <tr><td><strong>Üst Üste Bindirme</strong></td><td>Şeffaf ve opak efektlerle keyfi üst üste bindirme</td></tr>
+                    <tr><td><strong>RTC</strong></td><td>Gerçek zamanlı saat gösterimi ve yönetimi</td></tr>
+                    <tr><td><strong>U Disk Tak ve Oynat</strong></td><td>Desteklenir</td></tr>
+                  </tbody>
+                </table>
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Parametre</th><th>Değerler (mm, inç)</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Boyutlar (En x Yükseklik x Derinlik)</strong></td><td></td></tr>
+                    <tr><td>Ambalajsız</td><td>234.8mm (9.24 inç) x 26.0mm (1.02 inç) x 137.4mm (5.41 inç)</td></tr>
+                    <tr><td>Ambalajlı</td><td>360.0mm (14.17 inç) x 93.0mm (3.66 inç) x 225.0mm (8.86 inç)</td></tr>
+                    <tr><td><strong>Ağırlık</strong></td><td></td></tr>
+                    <tr><td>Net Ağırlık</td><td>0.83kg (1.83 lbs)</td></tr>
+                    <tr><td>Brüt Ağırlık (Ambalajlı)</td><td>1.70kg (3.75 lbs)</td></tr>
+                    <tr><td><strong>Elektriksel Özellikler</strong></td><td></td></tr>
+                    <tr><td>Güç Girişi</td><td>DC 12V</td></tr>
+                    <tr><td>Nominal Güç</td><td>15W</td></tr>
+                    <tr><td><strong>Çalışma Ortamı</strong></td><td></td></tr>
+                    <tr><td>Sıcaklık</td><td>%0-95 RH, yoğuşmasız, 0°C - 45°C</td></tr>
+                    <tr><td>Nem</td><td>%20-65, 4°F - 149°F</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X2M -->
+          <div id="control-cards-table-x2m" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/X2m-Neutral-Specification-V1.5.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X2M DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Sinyal Formatı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Giriş</th><th>Renk Alanı</th><th>Örnekleme</th><th>Renk Derinliği</th><th>Maksimum Çözünürlük</th><th>Kare Hızı</th></tr></thead>
+                  <tbody>
+                    <tr><td>DVI</td><td>RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1080@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td>HDMI 1.4</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>1920x1080@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                    <tr><td>HDMI 1.4</td><td>RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1080@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.94, 60, 100, 120</td></tr>
+                  </tbody>
+                </table>
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer (mm, inç)</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Şase Boyutları (En x Yükseklik x Derinlik)</strong></td><td>482.6mm (19.0 inç) x 44.0mm (1.7 inç) x 292.0mm (11.5 inç)</td></tr>
+                    <tr><td><strong>Paket Boyutları (En x Yükseklik x Derinlik)</strong></td><td>523.0mm (20.6 inç) x 95.0mm (3.7 inç) x 340.0mm (13.4 inç)</td></tr>
+                    <tr><td><strong>Net Ağırlık</strong></td><td>3.13kg (6.90 lbs)</td></tr>
+                    <tr><td><strong>Brüt Ağırlık</strong></td><td>4.16kg (9.17 lbs)</td></tr>
+                    <tr><td><strong>Giriş Gücü</strong></td><td>AC100-240V, 50/60Hz</td></tr>
+                    <tr><td><strong>Güç Tüketimi</strong></td><td>10W</td></tr>
+                    <tr><td><strong>Çalışma Sıcaklığı</strong></td><td>-20°C ~ 65°C (-4°F ~ 149°F)</td></tr>
+                    <tr><td><strong>Çalışma Nemi</strong></td><td>%0 RH ~ %80 RH, Yoğuşmasız</td></tr>
+                    <tr><td><strong>Depolama Sıcaklığı</strong></td><td>-30°C ~ 80°C (-22°F ~ 176°F)</td></tr>
+                    <tr><td><strong>Depolama Nemi</strong></td><td>%0 RH ~ %90 RH, Yoğuşmasız</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- X40M -->
+          <div id="control-cards-table-x40m" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1Im7nM9FqrUUd_usskmxswk903z-NQ7jc" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>X40M DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Sinyal Formatı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Standart</th><th>Renk Alanı</th><th>Örnekleme</th><th>Bit Derinliği</th><th>Maksimum Çözünürlük</th><th>Kare Hızı</th></tr></thead>
+                  <tbody>
+                    <tr><td>Sinyal Formatı</td><td>HDMI 2.0</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>DP 1.2</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>4096x2160@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>DVI</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td>HDMI 1.4</td><td>YCbCr</td><td>04:02:02</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                    <tr><td></td><td></td><td>YCbCr/RGB</td><td>04:04:04</td><td>8 bit</td><td>1920x1200@60Hz</td><td>23.98, 24, 25, 29.97, 30, 50, 59.97, 60, 120, 144, 200, 240</td></tr>
+                  </tbody>
+                </table>
+                <h3>Boyut ve Ağırlık</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Alt Kategori</th><th>Değer</th><th>Birimler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Boyutlar (W×H×D)</td><td>Ambalajsız</td><td>482.6mm (19") x 133.3mm (5.3") x 385.0mm (15.2")</td><td>mm/inç</td></tr>
+                    <tr><td></td><td>Ambalajlı</td><td>560.0mm (22.1") x 240.0mm (9.5") x 480.0mm (18.9")</td><td>mm/inç</td></tr>
+                    <tr><td>Ağırlık</td><td>Net Ağırlık</td><td>6.10kg (13.45lbs)</td><td>kg/lbs</td></tr>
+                    <tr><td></td><td>Brüt Ağırlık</td><td>8.80kg (19.40lbs)</td><td>kg/lbs</td></tr>
+                    <tr><td>Elektriksel Özellikler</td><td>Güç Girişi</td><td>AC100-240V, 2.6A, 50/60Hz</td><td>V/A/Hz</td></tr>
+                    <tr><td></td><td>Nominal Güç</td><td>85W</td><td>W</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>-20°C~65°C (-4°F~149°F)</td><td>°C/°F</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH~80%RH, yoğuşmasız</td><td>%RH</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>-30°C~80°C (-22°F~176°F)</td><td>°C/°F</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH~90%RH, yoğuşmasız</td><td>%RH</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    function showColorlightTable(model) {
+      var wrapper = document.getElementById('colorlight-control-cards-wrapper');
+      if (!wrapper) return;
+      wrapper.querySelectorAll('.control-cards-table-card').forEach(function(card) {
+        card.classList.add('control-cards-table-hidden');
+      });
+      wrapper.querySelectorAll('.control-cards-model-button').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      var table = wrapper.querySelector('#control-cards-table-' + model);
+      if (table) table.classList.remove('control-cards-table-hidden');
+      var btn = wrapper.querySelector('[data-model="' + model + '"]');
+      if (btn) btn.classList.add('active');
+    }
+    </script>
+    

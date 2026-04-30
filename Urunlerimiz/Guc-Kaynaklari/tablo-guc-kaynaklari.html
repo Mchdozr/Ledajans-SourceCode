@@ -1,0 +1,675 @@
+<style>
+    .power-supply-tables-wrapper {
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .power-supply-models-menu { order: 1; }
+    .power-supply-table-section { order: 2; }
+    
+    @media (min-width: 640px) {
+      .power-supply-tables-wrapper { margin-bottom: 2.5rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-tables-wrapper { margin-bottom: 3rem; }
+    }
+    
+    .power-supply-tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .power-supply-tables-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .power-supply-models-menu { width: 100%; }
+    @media (min-width: 1024px) {
+      .power-supply-models-menu {
+        width: auto;
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+      }
+    }
+    
+    .power-supply-models-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .power-supply-models-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-models-card { padding: 2rem; }
+    }
+    
+    .power-supply-models-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .power-supply-models-title { font-size: 1.25rem; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-models-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    }
+    
+    .power-supply-models-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) { .power-supply-models-nav { gap: 0.75rem; } }
+    
+    .power-supply-model-button {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.75rem;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    @media (min-width: 640px) {
+      .power-supply-model-button { padding: 1rem 1.5rem; border-radius: 1rem; font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-model-button { font-size: 1rem; }
+    }
+    
+    .power-supply-model-button.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .power-supply-model-button:not(.active) { color: #374151; }
+    .power-supply-model-button:not(.active):hover {
+      background: #f3f4f6;
+      color: #111827;
+    }
+    
+    .power-supply-table-section {
+      width: 100%;
+    }
+    
+    .power-supply-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #F46F2C;
+    }
+    @media (min-width: 640px) {
+      .power-supply-section-title { font-size: 1.75rem; margin-bottom: 2rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+    }
+    
+    .power-supply-table-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+    @media (min-width: 640px) {
+      .power-supply-table-card { border-radius: 1.5rem; padding: 2rem; margin-bottom: 2rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-table-card { padding: 2.5rem; margin-bottom: 2.5rem; }
+    }
+    
+    .power-supply-table-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+    
+    .power-supply-table-hidden {
+      display: none;
+    }
+    
+    .power-supply-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+    }
+    @media (min-width: 640px) {
+      .power-supply-table { font-size: 1rem; }
+    }
+    
+    .power-supply-table thead {
+      background: #F46F2C;
+      color: white;
+    }
+    
+    .power-supply-table th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    @media (min-width: 640px) {
+      .power-supply-table th { padding: 1.25rem; font-size: 1rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-table th { padding: 1.5rem; }
+    }
+    
+    .power-supply-table td {
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      color: #374151;
+    }
+    @media (min-width: 640px) {
+      .power-supply-table td { padding: 1rem 1.25rem; }
+    }
+    @media (min-width: 768px) {
+      .power-supply-table td { padding: 1.25rem 1.5rem; }
+    }
+    
+    .power-supply-table tbody tr:hover {
+      background: #f9fafb;
+    }
+    
+    .power-supply-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .power-supply-table strong {
+      color: #111827;
+      font-weight: 600;
+    }
+    </style>
+    
+    <div class="power-supply-tables-wrapper" id="power-supply-wrapper">
+      <h2 class="power-supply-section-title">Power Supply</h2>
+      
+      <div class="power-supply-tables-container">
+        <div class="power-supply-models-menu">
+          <div class="power-supply-models-card">
+            <h3 class="power-supply-models-title">Modeller</h3>
+            <nav class="power-supply-models-nav">
+              <button class="power-supply-model-button active" data-model="150w" onclick="showPowerSupplyTable('150w')">150W Power Supply</button>
+              <button class="power-supply-model-button" data-model="300w-20a" onclick="showPowerSupplyTable('300w-20a')">300W-20A Voltaj Düşürücü</button>
+              <button class="power-supply-model-button" data-model="50w" onclick="showPowerSupplyTable('50w')">50W Power Supply</button>
+              <button class="power-supply-model-button" data-model="100w" onclick="showPowerSupplyTable('100w')">100W Power Supply</button>
+              <button class="power-supply-model-button" data-model="200w" onclick="showPowerSupplyTable('200w')">200W Power Supply</button>
+              <button class="power-supply-model-button" data-model="300w-60a" onclick="showPowerSupplyTable('300w-60a')">300W Power Supply (60A)</button>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="power-supply-table-section">
+          <div class="power-supply-table-card" id="power-supply-table-150w">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Giriş Gerilimi</strong></td>
+                  <td>10-32V</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Gerilimi</strong></td>
+                  <td>12-35V (ayarlanabilir)</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akımı</strong></td>
+                  <td>6A (MAX)</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Akımı</strong></td>
+                  <td>10A (MAX) (eğer fazla 10A)</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Gücü</strong></td>
+                  <td>150W (MAX) (soğutucu fan ile)</td>
+                </tr>
+                <tr>
+                  <td><strong>Dönüşüm Verimliliği</strong></td>
+                  <td>%94 (Giriş 16V, Çıkış 19V, 2.5A ölçülen)</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Dalgalanması</strong></td>
+                  <td>%2 (MAX) 20M-bant genişliği</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı</strong></td>
+                  <td>Endüstriyel (-40 °C ila +85 °C)</td>
+                </tr>
+                <tr>
+                  <td><strong>Tam Yük Sıcaklık Artışı</strong></td>
+                  <td>45 °C</td>
+                </tr>
+                <tr>
+                  <td><strong>PWM Frekansı</strong></td>
+                  <td>180KHz</td>
+                </tr>
+                <tr>
+                  <td><strong>Boştaki Akım</strong></td>
+                  <td>25mA</td>
+                </tr>
+                <tr>
+                  <td><strong>Gerilim Regülasyonu</strong></td>
+                  <td>±0.5%</td>
+                </tr>
+                <tr>
+                  <td><strong>Dinamik Tepki Hızı</strong></td>
+                  <td>%5 200µs</td>
+                </tr>
+                <tr>
+                  <td><strong>Koruma Özellikleri</strong></td>
+                  <td>Aşırı yük koruması, aşırı ısınma koruması, kısa devre koruması</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="power-supply-table-card power-supply-table-hidden" id="power-supply-table-300w-20a">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Model</strong></td>
+                  <td>300W-20A Voltaj Düşürücü Dönüştürücü</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltajı</strong></td>
+                  <td>6V-40VDC (tavsiye edilen 10V ile 40V arası)</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Voltajı</strong></td>
+                  <td>1.2V-36VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akımı</strong></td>
+                  <td>20A (Maksimum), 15A (tavsiye edilen)</td>
+                </tr>
+                <tr>
+                  <td><strong>Verimlilik</strong></td>
+                  <td>%97 (24V-12V)</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Dalgalanması</strong></td>
+                  <td>≤50mV</td>
+                </tr>
+                <tr>
+                  <td><strong>Bağlantı Tipi</strong></td>
+                  <td>Baraj Bağlantısı Giriş/Çıkış</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı</strong></td>
+                  <td>-10°C ile +75°C</td>
+                </tr>
+                <tr>
+                  <td><strong>Dahili Güç Anahtarı</strong></td>
+                  <td>Evet</td>
+                </tr>
+                <tr>
+                  <td><strong>VO+</strong></td>
+                  <td>Çıkış Pozitif</td>
+                </tr>
+                <tr>
+                  <td><strong>VO-</strong></td>
+                  <td>Çıkış Negatif</td>
+                </tr>
+                <tr>
+                  <td><strong>+IN</strong></td>
+                  <td>Giriş Pozitif</td>
+                </tr>
+                <tr>
+                  <td><strong>-IN</strong></td>
+                  <td>Giriş Negatif</td>
+                </tr>
+                <tr>
+                  <td><strong>CV Potansiyometre</strong></td>
+                  <td>Çıkış Voltaj Ayarı</td>
+                </tr>
+                <tr>
+                  <td><strong>CC Potansiyometre</strong></td>
+                  <td>Çıkış Akım Ayarı</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="power-supply-table-card power-supply-table-hidden" id="power-supply-table-50w">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Giriş Voltaj Alt Değer</strong></td>
+                  <td>85</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltaj Üst Değer</strong></td>
+                  <td>264</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Güç (W)</strong></td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Voltajı (Vdc)</strong></td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Min Amper</strong></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Max Amper</strong></td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı Alt</strong></td>
+                  <td>-30</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı Üst</strong></td>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <td><strong>Dim</strong></td>
+                  <td>Yok</td>
+                </tr>
+                <tr>
+                  <td><strong>Kasa Türü</strong></td>
+                  <td>Kutulu - Enclosed</td>
+                </tr>
+                <tr>
+                  <td><strong>IP Sınıfı</strong></td>
+                  <td>IP 20 (12mm'den Büyük Katı Cisimlere - Korumasız)</td>
+                </tr>
+                <tr>
+                  <td><strong>Verim (%)</strong></td>
+                  <td>83</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Sayısı</strong></td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akım Ayarı</strong></td>
+                  <td>Hayır</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Voltaj Ayarı</strong></td>
+                  <td>Evet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="power-supply-table-card power-supply-table-hidden" id="power-supply-table-100w">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Giriş Voltajı Alt Sınırı</strong></td>
+                  <td>176</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltajı Üst Sınırı</strong></td>
+                  <td>264</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Gücü (W)</strong></td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Voltajı (Vdc)</strong></td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Minimum Amper</strong></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>1. Çıkış Maksimum Amper</strong></td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı Alt Sınırı</strong></td>
+                  <td>-20°C</td>
+                </tr>
+                <tr>
+                  <td><strong>Çalışma Sıcaklığı Üst Sınırı</strong></td>
+                  <td>60°C</td>
+                </tr>
+                <tr>
+                  <td><strong>Karartma</strong></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>Kasa Tipi</strong></td>
+                  <td>Kapalı</td>
+                </tr>
+                <tr>
+                  <td><strong>IP Derecelendirmesi</strong></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>Verimlilik (%)</strong></td>
+                  <td>80</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Sayısı</strong></td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akımı Ayarı</strong></td>
+                  <td>Hayır</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Voltajı Ayarı</strong></td>
+                  <td>Hayır</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="power-supply-table-card power-supply-table-hidden" id="power-supply-table-200w">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Giriş Voltajı (AC)</strong></td>
+                  <td>90<del>132VAC / 180</del>264VAC</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltajı (DC)</strong></td>
+                  <td>254~370VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Sayısı</strong></td>
+                  <td>Tek Çıkış</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Voltajı (1)</strong></td>
+                  <td>5VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akımı (1)</strong></td>
+                  <td>40.00 Amper</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Gücü</strong></td>
+                  <td>200 Watt</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Ayarı</strong></td>
+                  <td>4.5~5.5VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Ebat</strong></td>
+                  <td>215x115x50mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="power-supply-table-card power-supply-table-hidden" id="power-supply-table-300w-60a">
+            <table class="power-supply-table">
+              <thead>
+                <tr>
+                  <th>Özellik</th>
+                  <th>Değer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Giriş Voltajı (AC)</strong></td>
+                  <td>85~264VAC</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltajı (DC)</strong></td>
+                  <td>120~370VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Sayısı</strong></td>
+                  <td>Tek Çıkış</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Voltajı (1)</strong></td>
+                  <td>5VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Akımı (1)</strong></td>
+                  <td>60.00 Amper</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Gücü</strong></td>
+                  <td>300 Watt</td>
+                </tr>
+                <tr>
+                  <td><strong>Çıkış Ayarı</strong></td>
+                  <td>4.3~5.8VDC</td>
+                </tr>
+                <tr>
+                  <td><strong>Ebat</strong></td>
+                  <td>199x98x38mm</td>
+                </tr>
+                <tr>
+                  <td><strong>RoHS</strong></td>
+                  <td>Uyumlu</td>
+                </tr>
+                <tr>
+                  <td><strong>Uygulama</strong></td>
+                  <td>ITE EN/UL/IEC 60950</td>
+                </tr>
+                <tr>
+                  <td><strong>Net Ağırlık (Gram)</strong></td>
+                  <td>940</td>
+                </tr>
+                <tr>
+                  <td><strong>Teknoloji</strong></td>
+                  <td>AC/DC</td>
+                </tr>
+                <tr>
+                  <td><strong>Güç Formatı</strong></td>
+                  <td>Kutu Tipi - Kapalı</td>
+                </tr>
+                <tr>
+                  <td><strong>Giriş Voltajı (V)</strong></td>
+                  <td>110/230 Evrensel Giriş (90 - 305)</td>
+                </tr>
+                <tr>
+                  <td><strong>IP Derecelendirme</strong></td>
+                  <td>IP atanmamış</td>
+                </tr>
+                <tr>
+                  <td><strong>Genişlik (mm)</strong></td>
+                  <td>105</td>
+                </tr>
+                <tr>
+                  <td><strong>Yükseklik (mm)</strong></td>
+                  <td>41</td>
+                </tr>
+                <tr>
+                  <td><strong>Derinlik (mm)</strong></td>
+                  <td>199</td>
+                </tr>
+                <tr>
+                  <td><strong>Kontrol Sinyalleri</strong></td>
+                  <td>DC Tamam</td>
+                </tr>
+                <tr>
+                  <td><strong>Uzak</strong></td>
+                  <td>Yok</td>
+                </tr>
+                <tr>
+                  <td><strong>Karartma Teknolojisi</strong></td>
+                  <td>Karartma yok</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    function showPowerSupplyTable(model) {
+      const wrapper = document.getElementById('power-supply-wrapper');
+      if (!wrapper) return;
+      
+      wrapper.querySelectorAll('.power-supply-table-card').forEach(function(card) {
+        card.classList.add('power-supply-table-hidden');
+      });
+      
+      wrapper.querySelectorAll('.power-supply-model-button').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      
+      const table = wrapper.querySelector('#power-supply-table-' + model);
+      if (table) table.classList.remove('power-supply-table-hidden');
+      
+      const btn = wrapper.querySelector('[data-model="' + model + '"]');
+      if (btn) btn.classList.add('active');
+    }
+    </script>
+    

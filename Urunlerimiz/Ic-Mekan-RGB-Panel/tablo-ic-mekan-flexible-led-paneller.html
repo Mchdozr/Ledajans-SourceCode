@@ -1,0 +1,93 @@
+<!-- LEDAJANS - İç Mekan Flexible LED Paneller ANA SAYFA: Ürün hub (tablolar kaldırıldı, her model kendi sayfasına link) -->
+<!-- Bu blok, sayfadaki ledajans-indoor-flexible-tables (sidebar+tablolar) yerine kullanılır. -->
+<style>
+    .la-flex-hub { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 80rem; margin: 0 auto; padding: 2.5rem 1rem; color: #1f2937; background: linear-gradient(180deg, #fafbfc 0%, #ffffff 12%); border-radius: 16px; position: relative; overflow: hidden; }
+    .la-flex-hub::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #f46f2c, #1a1a2e); border-radius: 16px 16px 0 0; }
+    @media (min-width: 1024px) { .la-flex-hub-inner { display: flex; gap: 2.5rem; align-items: flex-start; } .la-flex-hub { padding: 3rem 2rem; } }
+    .la-flex-hub h2 { font-size: 1.75rem; font-weight: 800; color: #1a1a2e; margin: 0 0 0.75rem 0; letter-spacing: -0.02em; line-height: 1.2; }
+    .la-flex-hub h2::after { content: ""; display: block; width: 48px; height: 4px; background: #f46f2c; margin-top: 0.5rem; border-radius: 2px; }
+    .la-flex-hub-intro { color: #4b5563; margin-bottom: 2.25rem; line-height: 1.75; font-size: 1rem; max-width: 42rem; }
+    .la-flex-hub-nav { flex-shrink: 0; width: 100%; }
+    @media (min-width: 1024px) { .la-flex-hub-nav { width: 240px; position: sticky; top: 1.5rem; } }
+    .la-flex-hub-nav-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 0.85rem; }
+    .la-flex-hub-nav-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    @media (min-width: 1024px) { .la-flex-hub-nav-list { flex-direction: column; gap: 0.35rem; } }
+    .la-flex-hub-nav-list a { display: block; padding: 0.65rem 1rem; background: #f8fafc; color: #374151; text-decoration: none; font-weight: 600; font-size: 0.875rem; border-radius: 10px; border: 1px solid #e2e8f0; transition: all 0.25s ease; }
+    .la-flex-hub-nav-list a:hover { background: #1a1a2e; color: #fff; border-color: #1a1a2e; transform: translateX(4px); }
+    @media (min-width: 1024px) { .la-flex-hub-nav-list a:hover { transform: translateX(6px); } }
+    .la-flex-hub-nav-list a:focus-visible { outline: 2px solid #f46f2c; outline-offset: 2px; }
+    .la-flex-hub-main { flex: 1; min-width: 0; }
+    .la-flex-hub-cards { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 640px) { .la-flex-hub-cards { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+    .la-flex-hub-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 0; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .la-flex-hub-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #f46f2c, #e05a1e); opacity: 0; transition: opacity 0.25s ease; }
+    .la-flex-hub-card:hover { border-color: rgba(244, 111, 44, 0.4); box-shadow: 0 12px 28px rgba(26, 26, 46, 0.08), 0 4px 12px rgba(244, 111, 44, 0.06); transform: translateY(-3px); }
+    .la-flex-hub-card:hover::before { opacity: 1; }
+    .la-flex-hub-card a { text-decoration: none; color: inherit; display: block; padding: 1.35rem 1.35rem 1.35rem 1.5rem; }
+    .la-flex-hub-card a:focus-visible { outline: 2px solid #f46f2c; outline-offset: 2px; border-radius: 14px; }
+    .la-flex-hub-card-title { font-size: 1.125rem; font-weight: 700; color: #1a1a2e; margin: 0 0 0.5rem 0; line-height: 1.3; }
+    .la-flex-hub-card:hover .la-flex-hub-card-title { color: #16213e; }
+    .la-flex-hub-card-spec { font-size: 0.8125rem; color: #6b7280; margin-bottom: 1rem; line-height: 1.5; }
+    .la-flex-hub-card-cta { font-size: 0.875rem; font-weight: 600; color: #f46f2c; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.25s ease, color 0.2s ease; }
+    .la-flex-hub-card:hover .la-flex-hub-card-cta { color: #e05a1e; gap: 0.65rem; }
+    .la-flex-hub-card-cta svg { flex-shrink: 0; transition: transform 0.25s ease; }
+    .la-flex-hub-card:hover .la-flex-hub-card-cta svg { transform: translateX(3px); }
+    .la-flex-hub-card-badge { display: inline-block; font-size: 0.7rem; font-weight: 600; color: #f46f2c; background: rgba(244, 111, 44, 0.1); padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.6rem; }
+    </style>
+    
+    <div id="la-flex-hub" class="la-flex-hub">
+      <h2>İç Mekan Flexible LED Paneller</h2>
+      <p class="la-flex-hub-intro">
+        Silikon kılıf ve esnek PCB ile üretilen iç mekan Flexible (esnek) LED panel modellerimiz. 150°~180° bükülme açısı ile eğrisel yüzeyler ve özel formlar için uygun. Her model için teknik özellikler ve döküman ilgili sayfada yer alır.
+      </p>
+    
+      <div class="la-flex-hub-inner">
+        <nav class="la-flex-hub-nav" aria-label="İç mekan flexible panel modelleri">
+          <div class="la-flex-hub-nav-title">Modeller</div>
+          <ul class="la-flex-hub-nav-list">
+            <li><a href="https://ledajans.com/q1-25-ic-mekan-flexible-led-panel/">Q1.25</a></li>
+            <li><a href="https://ledajans.com/q1-53-ic-mekan-flexible-led-panel/">Q1.53</a></li>
+            <li><a href="https://ledajans.com/q1-86-ic-mekan-flexible-led-panel/">Q1.86</a></li>
+            <li><a href="https://ledajans.com/q2-5-ic-mekan-flexible-led-panel/">Q2.5</a></li>
+          </ul>
+        </nav>
+    
+        <div class="la-flex-hub-main">
+          <div class="la-flex-hub-cards">
+            <div class="la-flex-hub-card">
+              <a href="https://ledajans.com/q1-25-ic-mekan-flexible-led-panel/">
+                <span class="la-flex-hub-card-badge">1.25 mm · Esnek</span>
+                <div class="la-flex-hub-card-title">Q1.25 Flexible İç Mekan LED Panel</div>
+                <div class="la-flex-hub-card-spec">1.25mm · 640.000 nokta/m² · SMD1010 · HUB320 · 150°~180° bükülme · 7.5mm kalınlık</div>
+                <span class="la-flex-hub-card-cta">Teknik özellikler ve döküman<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+            <div class="la-flex-hub-card">
+              <a href="https://ledajans.com/q1-53-ic-mekan-flexible-led-panel/">
+                <span class="la-flex-hub-card-badge">1.53 mm · Esnek</span>
+                <div class="la-flex-hub-card-title">Q1.53 Flexible İç Mekan LED Panel</div>
+                <div class="la-flex-hub-card-spec">1.53mm · 422.500 nokta/m² · SMD1212 · HUB75 · 150°~180° bükülme · 7.5mm kalınlık</div>
+                <span class="la-flex-hub-card-cta">Teknik özellikler ve döküman<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+            <div class="la-flex-hub-card">
+              <a href="https://ledajans.com/q1-86-ic-mekan-flexible-led-panel/">
+                <span class="la-flex-hub-card-badge">1.86 mm · Esnek</span>
+                <div class="la-flex-hub-card-title">Q1.86 Flexible İç Mekan LED Panel</div>
+                <div class="la-flex-hub-card-spec">1.86mm · 288.906 nokta/m² · SMD1515 · HUB75 · 150°~180° bükülme · 7.5mm kalınlık</div>
+                <span class="la-flex-hub-card-cta">Teknik özellikler ve döküman<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+            <div class="la-flex-hub-card">
+              <a href="https://ledajans.com/q2-5-ic-mekan-flexible-led-panel/">
+                <span class="la-flex-hub-card-badge">2.5 mm · Esnek</span>
+                <div class="la-flex-hub-card-title">Q2.5 Flexible İç Mekan LED Panel</div>
+                <div class="la-flex-hub-card-spec">2.5mm · 160.000 nokta/m² · SMD1515 · HUB75 · 150°~180° bükülme · 7.5mm kalınlık · ≥400 cd/m²</div>
+                <span class="la-flex-hub-card-cta">Teknik özellikler ve döküman<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    

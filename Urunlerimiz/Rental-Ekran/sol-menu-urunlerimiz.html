@@ -1,0 +1,144 @@
+<style>
+    /* WordPress Layout Container */
+    .wp-product-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    @media (min-width: 1024px) {
+      .wp-product-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    /* Sidebar Wrapper */
+    .product-sidebar-wrapper {
+      width: 100%;
+    }
+    
+    @media (min-width: 1024px) {
+      .product-sidebar-wrapper {
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+        align-self: start;
+      }
+    }
+    
+    .product-sidebar-card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-sidebar-card {
+        padding: 2rem;
+      }
+    }
+    
+    .product-sidebar-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .product-sidebar-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.25rem;
+      }
+    }
+    
+    .product-sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .product-sidebar-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.875rem;
+      text-decoration: none;
+      color: #374151;
+    }
+    
+    @media (min-width: 640px) {
+      .product-sidebar-link {
+        font-size: 1rem;
+      }
+    }
+    
+    .product-sidebar-link:hover {
+      background: #f9fafb;
+      color: #F46F2C;
+    }
+    
+    .product-sidebar-link.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .product-sidebar-link.active:hover {
+      background: #F46F2C;
+      color: white;
+    }
+    
+    .product-sidebar-card.has-active .product-sidebar-title {
+      background: #F46F2C;
+      color: white;
+      padding: 1rem;
+      margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+      border-radius: 1.5rem 1.5rem 0 0;
+      border-bottom: none;
+    }
+    
+    @media (min-width: 640px) {
+      .product-sidebar-card.has-active .product-sidebar-title {
+        padding: 1.25rem;
+        margin: -2rem -2rem 2rem -2rem;
+      }
+    }
+    </style>
+    
+    <div class="wp-product-layout">
+      <!-- Sidebar -->
+      <div class="product-sidebar-wrapper">
+        <div class="product-sidebar-card">
+          <h3 class="product-sidebar-title">Ürünlerimiz</h3>
+          <nav class="product-sidebar-nav">
+            <a href="/cob-ekran" class="product-sidebar-link ">COB – Smart Screen</a>
+            <a href="https://ledajans.com/ic-mekan-led-ekran" class="product-sidebar-link">İç Mekan Led Ekran</a>
+            <a href="https://ledajans.com/dis-mekan-led-ekran" class="product-sidebar-link">Dış Mekan Led Ekran</a>
+            <a href="https://ledajans.com/rental-ekran/" class="product-sidebar-link active">Rental Ekran</a>
+            <a href="https://ledajans.com/ic-mekan-rgb-panel/" class="product-sidebar-link">İç Mekan RGB Panel</a>
+            <a href="https://ledajans.com/dis-mekan-rgb-panel/" class="product-sidebar-link">Dış Mekan RGB Panel</a>
+            <a href="https://ledajans.com/kontrol-kartlari/" class="product-sidebar-link">Kontrol kartları</a>
+            <a href="https://ledajans.com/power-supply/" class="product-sidebar-link">Güç Kaynakları</a>
+          </nav>
+        </div>
+      </div>
+      
+      <!-- Content Area - Buraya diğer içerikler gelecek -->
+      <div class="wp-product-content">
+        <!-- İçerik buraya eklenecek -->
+      </div>
+    </div>
+    
+    
+    

@@ -1,0 +1,508 @@
+<!-- LEDAJANS Blog Grid - WordPress HTML Widget -->
+<style>
+.ledajans-blog-section {
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9fafb;
+}
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-section { background-color: #f9fafb; }
+}
+.ledajans-blog-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 640px) { .ledajans-blog-container { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .ledajans-blog-container { padding: 0 2rem; } }
+.ledajans-blog-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) { .ledajans-blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .ledajans-blog-grid { grid-template-columns: repeat(3, 1fr); } }
+.ledajans-blog-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-card { background-color: #1f2937; }
+}
+.ledajans-blog-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.ledajans-blog-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-card-img-wrap { background-color: #f9fafb; }
+}
+.ledajans-blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease-out;
+}
+.ledajans-blog-card:hover .ledajans-blog-card-img {
+  transform: scale(1.05) translateY(-2%);
+}
+.ledajans-blog-card-img-wrap a { display: block; width: 100%; height: 100%; }
+.ledajans-blog-card-body { padding: 1.25rem; }
+@media (min-width: 640px) { .ledajans-blog-card-body { padding: 1.5rem; } }
+.ledajans-blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-meta { color: #9ca3af; }
+}
+.ledajans-blog-meta span { display: inline-flex; align-items: center; }
+.ledajans-blog-category {
+  color: #F46F2C;
+  font-weight: 600;
+  text-decoration: none;
+}
+.ledajans-blog-category:hover { text-decoration: underline; }
+.ledajans-blog-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+}
+@media (min-width: 640px) { .ledajans-blog-card h3 { font-size: 1.125rem; } }
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-card h3 { color: #f9fafb; }
+}
+.ledajans-blog-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.ledajans-blog-card h3 a:hover { color: #F46F2C; }
+.ledajans-blog-excerpt {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) { .ledajans-blog-excerpt { font-size: 0.875rem; } }
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-excerpt { color: #d1d5db; }
+}
+.ledajans-blog-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #F46F2C;
+  text-decoration: none;
+}
+.ledajans-blog-link:hover { text-decoration: underline; }
+.ledajans-blog-page { display: none; }
+.ledajans-blog-page.active { display: block; }
+.ledajans-blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.ledajans-blog-pagination a, .ledajans-blog-pagination span:not(.ledajans-pg-ellipsis) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #4b5563;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+.ledajans-blog-pagination .ledajans-pg-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.15em;
+  pointer-events: none;
+}
+.ledajans-blog-pagination a:hover {
+  color: #F46F2C;
+  border-color: #F46F2C;
+  background: #fff7ed;
+}
+.ledajans-blog-pagination a.current, .ledajans-blog-pagination span.current {
+  color: #fff;
+  background: #F46F2C;
+  border-color: #F46F2C;
+}
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-pagination a, .ledajans-blog-pagination span:not(.ledajans-pg-ellipsis) { background: #1f2937; border-color: #374151; color: #d1d5db; }
+  .ledajans-blog-pagination a:hover { background: #374151; color: #F46F2C; }
+  .ledajans-blog-pagination a.current, .ledajans-blog-pagination span.current { background: #F46F2C; color: #fff; border-color: #F46F2C; }
+  .ledajans-blog-pagination .ledajans-pg-ellipsis { color: #9ca3af; background: transparent; border: none; font-size: 1.25rem; font-weight: 700; }
+}
+@keyframes ledajans-search-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244,111,44,0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(244,111,44,0); }
+}
+.ledajans-blog-search-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+.ledajans-search-border-wrap {
+  max-width: 28rem;
+  width: 100%;
+}
+.ledajans-blog-search {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  font-size: 0.9375rem;
+  border: 2px solid #F46F2C;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  animation: ledajans-search-pulse 2s ease-in-out infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0.875rem center;
+  background-size: 1.25rem;
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.ledajans-blog-search::placeholder { color: #9ca3af; }
+.ledajans-blog-search:focus {
+  animation: none;
+  box-shadow: 0 0 0 4px rgba(244,111,44,0.25);
+}
+.ledajans-blog-search-results {
+  display: none;
+}
+.ledajans-blog-search-results.active {
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) { .ledajans-blog-search-results.active { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .ledajans-blog-search-results.active { grid-template-columns: repeat(3, 1fr); } }
+.ledajans-blog-section.search-active .ledajans-blog-pages { display: none; }
+.ledajans-blog-section.search-active .ledajans-blog-pagination { display: none; }
+@media (prefers-color-scheme: dark) {
+  .ledajans-blog-search { background-color: #ffffff; }
+}
+</style>
+
+<div class="ledajans-blog-section">
+  <div class="ledajans-blog-container">
+    <div class="ledajans-blog-search-wrap">
+      <div class="ledajans-search-border-wrap">
+        <input type="search" class="ledajans-blog-search" placeholder="Blog yazılarında ara..." autocomplete="off">
+      </div>
+    </div>
+
+    <div class="ledajans-blog-search-results ledajans-blog-grid"></div>
+    <div class="ledajans-blog-pages">
+      <div class="ledajans-blog-page active" data-page="1">
+        <div class="ledajans-blog-grid">
+          <article class="ledajans-blog-card">
+            <div class="ledajans-blog-card-img-wrap">
+              <a href="https://www.colorlight-led.com/colorlight-x4e/">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/Colorlight-X4e-LED-Controller.webp" alt="Colorlight X4E LED ekran prosesörü" class="ledajans-blog-card-img" loading="lazy">
+              </a>
+            </div>
+            <div class="ledajans-blog-card-body">
+              <div class="ledajans-blog-meta">
+                <span>07 Nisan 2026</span><span>Ledajans Ekibi</span>
+                <a href="https://ledajans.com/colorlight/" class="ledajans-blog-category">Colorlight</a>
+              </div>
+              <h3><a href="https://ledajans.com/colorlight-x4e-nedir/">Colorlight X4E ve X4M Nedir? Ledajans ile Profesyonel LED Ekran Kontrol Çözümleri</a></h3>
+              <p class="ledajans-blog-excerpt">X4E orta ölçekli projelerde güçlü fiyat-performans sunarken, X4M geliştirilmiş görüntü işleme ve düşük gecikme ile daha premium LED ekran projelerinde öne çıkar. Ledajans her iki model için doğru ürün seçimi, kurulum ve teknik destek sağlar.</p>
+              <a href="https://ledajans.com/colorlight-x4e-nedir/" class="ledajans-blog-link">Devamını oku</a>
+            </div>
+          </article>
+
+          <article class="ledajans-blog-card">
+            <div class="ledajans-blog-card-img-wrap">
+              <a href="https://ledajans.com/huidu-hd-a5l-controller-karti/">
+                <img src="https://ledajans.com/wp-content/uploads/2026/03/A5-A4.jpg" alt="Huidu HD-A5L LED Ekran Kontrol Kartı" class="ledajans-blog-card-img" loading="lazy">
+              </a>
+            </div>
+            <div class="ledajans-blog-card-body">
+              <div class="ledajans-blog-meta">
+                <span>27 Mart 2026</span><span>Ledajans Ekibi</span>
+                <a href="https://ledajans.com/huidu/" class="ledajans-blog-category">HUIDU</a>
+              </div>
+              <h3><a href="https://ledajans.com/huidu-hd-a5l-controller-karti/">Huidu HD-A5L Nedir? Profesyonel LED Ekran Kontrol Kartı</a></h3>
+              <p class="ledajans-blog-excerpt">Huidu HD-A5L, senkron/asenkron çalışma desteği ve uzaktan yönetim ile LED ekran projelerinde öne çıkan profesyonel kontrol kartı çözümüdür.</p>
+              <a href="https://ledajans.com/huidu-hd-a5l-controller-karti/" class="ledajans-blog-link">Devamını oku</a>
+            </div>
+          </article>
+
+          <article class="ledajans-blog-card">
+            <div class="ledajans-blog-card-img-wrap">
+              <a href="https://ledajans.com/huidu-r712-receiving-card/">
+                <img src="https://ledajans.com/wp-content/uploads/2026/03/Ekran-goruntusu-2026-03-10-100051.png" alt="Huidu R712 Receiving Card" class="ledajans-blog-card-img" loading="lazy">
+              </a>
+            </div>
+            <div class="ledajans-blog-card-body">
+              <div class="ledajans-blog-meta">
+                <span>10 Mart 2026</span><span>Ledajans Ekibi</span>
+                <a href="https://ledajans.com/huidu/" class="ledajans-blog-category">HUIDU</a>
+              </div>
+              <h3><a href="https://ledajans.com/huidu-r712-receiving-card/">Huidu R712 Receiving Card Nedir? Profesyonel LED Ekran Alıcı Kartı</a></h3>
+              <p class="ledajans-blog-excerpt">12 adet HUB75E portu, Gigabit Ethernet ve 65536 seviye gri ton desteği ile rental ve sabit LED ekran projelerinde güvenilir alıcı kart çözümüdür.</p>
+              <a href="https://ledajans.com/huidu-r712-receiving-card/" class="ledajans-blog-link">Devamını oku</a>
+            </div>
+          </article>
+
+          <article class="ledajans-blog-card">
+            <div class="ledajans-blog-card-img-wrap">
+              <a href="https://ledajans.com/colorlight-a500/">
+                <img src="https://ledajans.com/wp-content/uploads/2026/02/a500.png" alt="Colorlight A500 LED Ekran Playback Controller" class="ledajans-blog-card-img" loading="lazy">
+              </a>
+            </div>
+            <div class="ledajans-blog-card-body">
+              <div class="ledajans-blog-meta">
+                <span>25 Şubat 2026</span><span>Ledajans Ekibi</span>
+                <a href="https://ledajans.com/colorlight/" class="ledajans-blog-category">Colorlight</a>
+              </div>
+              <h3><a href="https://ledajans.com/colorlight-a500/">Colorlight A500 Nedir? Yeni Nesil LED Ekran Playback Controller</a></h3>
+              <p class="ledajans-blog-excerpt">Dijital reklamcılık, AVM ekranları ve kurumsal görsel iletişimde hem medya oynatıcı hem kontrol cihazı olarak çalışan yeni nesil playback controller.</p>
+              <a href="https://ledajans.com/colorlight-a500/" class="ledajans-blog-link">Devamını oku</a>
+            </div>
+          </article>
+
+          <article class="ledajans-blog-card">
+            <div class="ledajans-blog-card-img-wrap">
+              <a href="https://ledajans.com/colorlight-a200/">
+                <img src="https://ledajans.com/wp-content/uploads/2026/01/a200-1.png" alt="Colorlight A200 LED Ekran Kontrol Kartı" class="ledajans-blog-card-img" loading="lazy">
+              </a>
+            </div>
+            <div class="ledajans-blog-card-body">
+              <div class="ledajans-blog-meta">
+                <span>20 Ocak 2026</span><span>Ledajans Ekibi</span>
+                <a href="https://ledajans.com/colorlight/" class="ledajans-blog-category">Colorlight</a>
+              </div>
+              <h3><a href="https://ledajans.com/colorlight-a200/">Colorlight A200 Nedir? Senkron ve Asenkron LED Ekran Kontrol Kartı</a></h3>
+              <p class="ledajans-blog-excerpt">Senkron ve asenkron çalışma modları, HDMI giriş ve dahili depolama ile rental ve sabit LED ekran projelerinde profesyonel kontrol çözümüdür.</p>
+              <a href="https://ledajans.com/colorlight-a200/" class="ledajans-blog-link">Devamını oku</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <nav class="ledajans-blog-pagination" aria-label="Sayfa navigasyonu"></nav>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PAGE_SIZE = 6;
+  var currentPage = 1;
+  var section = document.querySelector('.ledajans-blog-section');
+  var pagesContainer = document.querySelector('.ledajans-blog-pages');
+  var searchInput = document.querySelector('.ledajans-blog-search');
+  var searchResults = document.querySelector('.ledajans-blog-search-results');
+  var pagination = document.querySelector('.ledajans-blog-pagination');
+  if (!section || !pagesContainer || !pagination) return;
+
+  function getPages(){ return Array.prototype.slice.call(pagesContainer.querySelectorAll('.ledajans-blog-page')); }
+  function getAllCards(){ return Array.prototype.slice.call(pagesContainer.querySelectorAll('.ledajans-blog-card')); }
+
+  function stripHtml(html){
+    var d = document.createElement('div');
+    d.innerHTML = html || '';
+    return (d.textContent || d.innerText || '').trim();
+  }
+
+  function esc(s){
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function formatDate(iso){
+    try { return new Date(iso).toLocaleDateString('tr-TR', { day:'2-digit', month:'long', year:'numeric' }); }
+    catch(_) { return ''; }
+  }
+
+  function getFeaturedImage(post){
+    var media = post && post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0];
+    if (!media) return getFirstImageFromContent(post);
+    if (media.media_details && media.media_details.sizes) {
+      var sizes = media.media_details.sizes;
+      return (sizes.medium_large && sizes.medium_large.source_url) || (sizes.large && sizes.large.source_url) || (sizes.medium && sizes.medium.source_url) || media.source_url || getFirstImageFromContent(post);
+    }
+    return media.source_url || getFirstImageFromContent(post);
+  }
+
+  function getFirstImageFromContent(post){
+    var html = post && post.content && post.content.rendered;
+    if (!html) return '';
+    var wrap = document.createElement('div');
+    wrap.innerHTML = html;
+    var img = wrap.querySelector('img');
+    if (!img) return '';
+    return img.getAttribute('src') || img.src || '';
+  }
+
+  function getCategory(post){
+    var terms = post && post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0];
+    return terms && terms[0] ? terms[0] : null;
+  }
+
+  function buildCard(post){
+    var image = getFeaturedImage(post);
+    var category = getCategory(post);
+    var title = stripHtml(post && post.title && post.title.rendered);
+    var excerpt = stripHtml(post && post.excerpt && post.excerpt.rendered);
+    var date = formatDate(post && post.date);
+
+    var article = document.createElement('article');
+    article.className = 'ledajans-blog-card';
+    article.innerHTML =
+      '<div class="ledajans-blog-card-img-wrap">' +
+        '<a href="' + esc(post.link) + '">' +
+          (image ? '<img src="' + esc(image) + '" alt="' + esc(title) + '" class="ledajans-blog-card-img" loading="lazy">' : '') +
+        '</a>' +
+      '</div>' +
+      '<div class="ledajans-blog-card-body">' +
+        '<div class="ledajans-blog-meta">' +
+          '<span>' + esc(date) + '</span><span>Ledajans Ekibi</span>' +
+          (category ? '<a href="' + esc(category.link || '#') + '" class="ledajans-blog-category">' + esc(category.name) + '</a>' : '') +
+        '</div>' +
+        '<h3><a href="' + esc(post.link) + '">' + esc(title) + '</a></h3>' +
+        '<p class="ledajans-blog-excerpt">' + esc(excerpt.length > 180 ? excerpt.slice(0,180).trim() + '...' : excerpt) + '</p>' +
+        '<a href="' + esc(post.link) + '" class="ledajans-blog-link">Devamını oku</a>' +
+      '</div>';
+
+    return article;
+  }
+
+  function rebuildPages(cards){
+    pagesContainer.innerHTML = '';
+    var totalPages = Math.max(1, Math.ceil(cards.length / PAGE_SIZE));
+    for (var p = 1; p <= totalPages; p++) {
+      var page = document.createElement('div');
+      page.className = 'ledajans-blog-page';
+      page.setAttribute('data-page', String(p));
+      var grid = document.createElement('div');
+      grid.className = 'ledajans-blog-grid';
+      var start = (p - 1) * PAGE_SIZE;
+      cards.slice(start, start + PAGE_SIZE).forEach(function(card){ grid.appendChild(card); });
+      page.appendChild(grid);
+      pagesContainer.appendChild(page);
+    }
+    return totalPages;
+  }
+
+  function renderPagination(totalPages, activePage){
+    pagination.innerHTML = '';
+    if (totalPages <= 1) return;
+    for (var i = 1; i <= totalPages; i++) {
+      var a = document.createElement('a');
+      a.href = '#';
+      a.className = 'ledajans-pg-link' + (i === activePage ? ' current' : '');
+      a.setAttribute('data-page', String(i));
+      a.textContent = String(i);
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        goToPage(parseInt(this.getAttribute('data-page'), 10));
+      });
+      pagination.appendChild(a);
+    }
+  }
+
+  function goToPage(n){
+    var pages = getPages();
+    var totalPages = pages.length || 1;
+    currentPage = Math.max(1, Math.min(totalPages, parseInt(n, 10) || 1));
+    pages.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-page') === String(currentPage)); });
+    renderPagination(totalPages, currentPage);
+  }
+
+  function runSearch(){
+    var q = (searchInput && searchInput.value || '').trim().toLowerCase();
+    if (!searchResults) return;
+    if (!q) {
+      section.classList.remove('search-active');
+      searchResults.classList.remove('active');
+      searchResults.innerHTML = '';
+      goToPage(currentPage);
+      return;
+    }
+    section.classList.add('search-active');
+    var allCards = getAllCards();
+    var matching = allCards.filter(function(c){ return (c.textContent || '').toLowerCase().indexOf(q) !== -1; });
+    searchResults.innerHTML = '';
+    if (matching.length) {
+      matching.forEach(function(c){ searchResults.appendChild(c.cloneNode(true)); });
+    } else {
+      searchResults.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#6b7280;padding:2rem;">Bu aramaya uygun blog yazısı bulunamadı.</p>';
+    }
+    searchResults.classList.add('active');
+  }
+
+  function getRestRoot(){
+    var host = (window.location.hostname || '').replace(/^www\./, '');
+    if (host === 'ledajans.com' || host.endsWith('.ledajans.com')) return window.location.protocol + '//' + host;
+    return 'https://ledajans.com';
+  }
+
+  async function fetchAllPosts(){
+    var root = getRestRoot();
+    var per = 100;
+    var base = root + '/wp-json/wp/v2/posts?status=publish&orderby=date&order=desc&_embed=1&per_page=' + per;
+    var first = await fetch(base + '&page=1', { cache: 'no-store', credentials: 'omit' });
+    if (!first.ok) throw new Error('Blog API hatasi');
+    var totalPages = parseInt(first.headers.get('X-WP-TotalPages') || '1', 10);
+    var all = await first.json();
+    for (var p = 2; p <= totalPages; p++) {
+      var r = await fetch(base + '&page=' + p, { cache: 'no-store', credentials: 'omit' });
+      if (!r.ok) continue;
+      var arr = await r.json();
+      all = all.concat(arr || []);
+    }
+    return all;
+  }
+
+  async function init(){
+    try {
+      var posts = await fetchAllPosts();
+      var cards = (posts || []).map(buildCard);
+      rebuildPages(cards);
+      goToPage(1);
+    } catch (e) {
+      var fallbackCards = getAllCards();
+      rebuildPages(fallbackCards);
+      goToPage(1);
+    }
+    if (searchInput) searchInput.addEventListener('input', runSearch);
+  }
+
+  init();
+})();
+</script>

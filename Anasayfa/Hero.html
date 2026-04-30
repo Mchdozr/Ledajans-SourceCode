@@ -1,0 +1,484 @@
+<!-- WIDGET 1 — Hero + video modal (Elementor HTML widget'a komple yapıştır) -->
+<style>
+    .ledajans-video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .ledajans-video-modal.active { display: flex; }
+    .ledajans-video-modal-content { position: relative; width: 90%; max-width: 900px; }
+    .ledajans-video-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 10000;
+    }
+    .ledajans-video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .ledajans-video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .ledajans-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #111827;
+      box-sizing: border-box;
+    }
+    .ledajans-hero-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .ledajans-hero-video.loaded { opacity: 1; }
+    .ledajans-hero-poster {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    @media (min-width: 769px) {
+      .ledajans-hero-poster {
+        background-image: url('https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp');
+      }
+    }
+    .ledajans-hero-bg-mobile {
+      display: none;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .ledajans-hero-bg-mobile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .ledajans-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .ledajans-hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 1rem;
+      transform: translateY(-25px);
+    }
+    .ledajans-play-wrap {
+      display: block;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 50;
+      width: 80px;
+      height: 80px;
+    }
+    .ledajans-play-wrap a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: #F46F2C;
+      border-radius: 50%;
+      box-shadow: 0 10px 40px rgba(244, 111, 44, 0.4);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: ledajans-pulse 2s infinite;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ledajans-play-wrap a:hover {
+      transform: scale(1.1);
+      background-color: #e55a1f;
+    }
+    .ledajans-play-wrap a:active {
+      transform: scale(0.95);
+      background-color: #d14e15;
+    }
+    .ledajans-play-icon {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 16px 0 16px 28px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 6px;
+      display: block;
+    }
+    @keyframes ledajans-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .ledajans-hero-title {
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .ledajans-hero-subtitle {
+      font-size: 1.25rem;
+      color: #e5e7eb;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      line-height: 1.6;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
+    }
+    .ledajans-hero-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .ledajans-btn-primary, .ledajans-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      text-decoration: none;
+      min-width: 247px;
+      height: 64px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 20;
+    }
+    .ledajans-btn-primary {
+      background-color: #F46F2C;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(244, 111, 44, 0.3);
+    }
+    .ledajans-btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(244, 111, 44, 0.5);
+      color: #fff;
+    }
+    .ledajans-btn-secondary {
+      background-color: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .ledajans-btn-secondary:hover {
+      background-color: #fff;
+      color: #1a1a1a;
+      transform: scale(1.05);
+    }
+    .ledajans-scroll-indicator { display: none; }
+    .elementor-element-b13dda5 .ledajans-hero { display: flex !important; }
+    @media (max-width: 768px) {
+      .ledajans-hero {
+        height: auto;
+        min-height: 100svh;
+        min-height: 100dvh;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: clamp(2.45rem, 6vw + 1.5rem, 3.95rem);
+        padding-bottom: 2rem;
+      }
+      .ledajans-hero-video { display: none !important; }
+      .ledajans-hero-poster { display: none; }
+      .ledajans-hero-bg-mobile { display: block; }
+      .ledajans-hero-content {
+        transform: none;
+        padding-top: 0.95rem;
+        width: 100%;
+        max-width: 100%;
+      }
+      .ledajans-play-wrap { width: 68px; height: 68px; margin-bottom: 1.25rem; }
+      .ledajans-play-icon {
+        border-width: 14px 0 14px 24px;
+        margin-left: 5px;
+      }
+      .ledajans-hero-title { font-size: 2.5rem; }
+      .ledajans-hero-subtitle { font-size: 1rem; }
+      .ledajans-hero-buttons { flex-direction: column; gap: 1rem; }
+      .ledajans-btn-primary, .ledajans-btn-secondary { width: 100%; max-width: 280px; }
+    }
+    </style>
+    
+    <section class="ledajans-hero">
+      <div class="ledajans-hero-poster"></div>
+      <video class="ledajans-hero-video" id="ledajansHeroVideo"
+             muted playsinline webkit-playsinline
+             preload="none"
+             data-poster="https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp"
+             data-src="https://ledajans.com/wp-content/uploads/2026/03/Firefly-548225-1.mp4">
+      </video>
+      <div class="ledajans-hero-bg-mobile">
+        <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp 768w, https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
+      </div>
+      <div class="ledajans-hero-overlay"></div>
+      <div class="ledajans-hero-content">
+        <div class="ledajans-play-wrap">
+          <a href="#ledajans-video" id="ledajansPlayBtn">
+            <span class="ledajans-play-icon"></span>
+          </a>
+        </div>
+        <h1 class="ledajans-hero-title">LED Ekran Çözümleri</h1>
+        <p class="ledajans-hero-subtitle">
+          Led çözümlerimizle mekanınızı şık bir şekilde aydınlatın.<br>
+          Işığın büyüsüyle etkileyici bir atmosfer yaratın ve müşterilerinizi etkilemenin keyfini yaşayın!
+        </p>
+        <div class="ledajans-hero-buttons">
+          <a href="https://ledajans.com/led-ekran/" class="ledajans-btn-primary">Ürünlerimizi Keşfedin</a>
+          <a href="https://ledajans.com/iletisim/" class="ledajans-btn-secondary">Hemen Arayın</a>
+        </div>
+      </div>
+    </section>
+    
+    <div id="ledajansVideoModal" class="ledajans-video-modal">
+      <div class="ledajans-video-modal-content">
+        <button type="button" class="ledajans-video-modal-close" id="ledajansModalClose">&times;</button>
+        <div class="ledajans-video-wrapper">
+          <iframe id="ledajansYoutubeFrame" src="" title="LEDAJANS tanıtım videosu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    (function(){
+      var playLink = document.getElementById('ledajansPlayBtn');
+      var modal = document.getElementById('ledajansVideoModal');
+      var frame = document.getElementById('ledajansYoutubeFrame');
+      var closeBtn = document.getElementById('ledajansModalClose');
+      var youtubeUrl = 'https://www.youtube.com/embed/riOY6kz7cv4?autoplay=1';
+      var modalOpen = false;
+      function openModal() {
+        if (modalOpen) return;
+        modalOpen = true;
+        if (modal) modal.classList.add('active');
+        if (frame) frame.src = youtubeUrl;
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modalOpen = false;
+        if (modal) modal.classList.remove('active');
+        if (frame) frame.src = '';
+        document.body.style.overflow = '';
+      }
+      if (playLink) {
+        playLink.onclick = function(e) { e.preventDefault(); e.stopPropagation(); openModal(); return false; };
+        playLink.ontouchend = function(e) { e.preventDefault(); e.stopPropagation(); openModal(); return false; };
+      }
+      if (closeBtn) {
+        closeBtn.onclick = function(e) { e.preventDefault(); closeModal(); return false; };
+        closeBtn.ontouchend = function(e) { e.preventDefault(); closeModal(); return false; };
+      }
+      if (modal) {
+        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+        modal.ontouchend = function(e) { if (e.target === modal) { e.preventDefault(); closeModal(); } };
+      }
+      document.onkeydown = function(e) { if (e.key === 'Escape') closeModal(); };
+      var heroVideo = document.getElementById('ledajansHeroVideo');
+      if (heroVideo && window.innerWidth > 768) {
+        heroVideo.muted = true;
+        var posterSrc = heroVideo.getAttribute('data-poster');
+        if (posterSrc) {
+          heroVideo.setAttribute('poster', posterSrc);
+        }
+        var videoSrc = heroVideo.getAttribute('data-src');
+        var videoLoaded = false;
+
+        function loadAndPlay() {
+          if (videoLoaded || !videoSrc) return;
+          videoLoaded = true;
+          var source = document.createElement('source');
+          source.src = videoSrc;
+          source.type = 'video/mp4';
+          heroVideo.appendChild(source);
+          heroVideo.load();
+          heroVideo.muted = true;
+        }
+
+        heroVideo.addEventListener('canplay', function() {
+          heroVideo.muted = true;
+          heroVideo.classList.add('loaded');
+          try { heroVideo.play(); } catch(ex) {}
+        });
+
+        if ('connection' in navigator && navigator.connection.saveData) {
+          return;
+        }
+
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadAndPlay, { timeout: 4000 });
+        } else {
+          setTimeout(loadAndPlay, 2500);
+        }
+      }
+    })();
+    </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ledajans.com/#organization",
+      "name": "LEDAJANS",
+      "legalName": "TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ",
+      "url": "https://ledajans.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+        "width": 300,
+        "height": 100
+      },
+      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "description": "LEDAJANS, LED ekran satış, kiralama, kurulum ve teknik destek hizmetleri sunan, 25 yıllık sektör tecrübesine sahip Türkiye'nin güvenilir LED ekran tedarikçisidir.",
+      "foundingDate": "2001",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 50
+      },
+      "knowsAbout": [
+        "LED Ekran",
+        "LED Panel",
+        "RGB Panel",
+        "LED Ekran Kiralama",
+        "LED Ekran Kurulum",
+        "Dış Mekan LED Ekran",
+        "İç Mekan LED Ekran",
+        "Rental LED Ekran",
+        "COB LED Ekran",
+        "LED Ekran Teknik Destek",
+        "LED Kontrol Kartları",
+        "LED Güç Kaynakları"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/LedAjans/",
+        "https://www.instagram.com/ledajans/",
+        "https://www.linkedin.com/company/led-ajans/",
+        "https://twitter.com/ledajans",
+        "https://www.youtube.com/channel/UCQt5HAPKC0tsJYGvVEL5MoA"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-212-220-40-04",
+          "contactType": "sales",
+          "areaServed": ["TR", "DE", "CY"],
+          "availableLanguage": ["Turkish", "English", "German"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-543-879-51-08",
+          "contactType": "customer support",
+          "areaServed": "TR",
+          "availableLanguage": "Turkish"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Halide Edip Adıvar Mah. Gül 2 Sk. No:10",
+        "addressLocality": "Şişli",
+        "addressRegion": "İstanbul",
+        "postalCode": "34382",
+        "addressCountry": "TR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ledajans.com/#website",
+      "name": "LEDAJANS",
+      "url": "https://ledajans.com",
+      "publisher": { "@id": "https://ledajans.com/#organization" },
+      "inLanguage": "tr-TR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ledajans.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ledajans.com/#localbusiness",
+      "name": "LEDAJANS - LED Ekran Çözümleri",
+      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "url": "https://ledajans.com",
+      "telephone": "+90-212-220-40-04",
+      "email": "info@ledajans.com",
+      "priceRange": "₺₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Halide Edip Adıvar Mah. Gül 2 Sk. No:10",
+        "addressLocality": "Şişli",
+        "addressRegion": "İstanbul",
+        "postalCode": "34382",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0602,
+        "longitude": 28.9744
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Türkiye" },
+        { "@type": "Country", "name": "Almanya" },
+        { "@type": "Country", "name": "Kıbrıs" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "LED Ekran Ürün ve Hizmetleri",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "İç Mekan LED Ekran Satışı" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dış Mekan LED Ekran Satışı" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rental LED Ekran Kiralama" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED Ekran Kurulum Hizmeti" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED Ekran Teknik Destek" } }
+        ]
+      }
+    }
+  ]
+}
+</script>

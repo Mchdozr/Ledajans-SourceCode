@@ -1,0 +1,148 @@
+<!-- WIDGET 5 — Dış mekan LED bölümü -->
+<style>
+    .ledajans-outdoor { padding: 6rem 1rem; background-color: #ffffff; }
+    .ledajans-outdoor-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-outdoor-container { grid-template-columns: 1fr 1fr; }
+    }
+    .ledajans-outdoor-content { order: 2; }
+    .ledajans-outdoor-image-wrapper { order: 1; }
+    .ledajans-outdoor-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) { .ledajans-outdoor-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .ledajans-outdoor-title { font-size: 3.75rem; } }
+    .ledajans-outdoor-tags { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .ledajans-outdoor-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid #F46F2C;
+      background-color: rgba(244, 111, 44, 0.06);
+      border-radius: 12px;
+      transition: box-shadow 0.3s ease;
+    }
+    .ledajans-outdoor-tag:hover { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 640px) { .ledajans-outdoor-tag { padding: 0.75rem 1.5rem; } }
+    .ledajans-outdoor-tag svg { width: 16px; height: 16px; color: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-outdoor-tag svg { width: 20px; height: 20px; } }
+    .ledajans-outdoor-tag span { font-weight: 600; color: #111827; font-size: 0.875rem; }
+    @media (min-width: 640px) { .ledajans-outdoor-tag span { font-size: 1rem; } }
+    .ledajans-outdoor-desc { font-size: 1rem; color: #4B5563; margin-bottom: 2rem; line-height: 1.7; }
+    .ledajans-outdoor-desc a { color: #F46F2C; text-decoration: none; font-weight: 500; }
+    .ledajans-outdoor-desc a:hover { text-decoration: underline; }
+    .ledajans-outdoor-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    @media (min-width: 640px) { .ledajans-outdoor-features { flex-direction: row; } }
+    .ledajans-outdoor-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+      border-radius: 16px;
+      flex: 1;
+    }
+    .ledajans-outdoor-feature-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background-color: #F46F2C;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-outdoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
+    .ledajans-outdoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
+    .ledajans-outdoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-outdoor-image-container {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .ledajans-outdoor-image {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      max-height: 350px;
+      object-fit: cover;
+    }
+    @media (min-width: 768px) { .ledajans-outdoor-image { max-height: 450px; } }
+    @media (min-width: 1024px) {
+      .ledajans-outdoor-image { height: 560px; max-height: none; }
+      .ledajans-outdoor-container { align-items: stretch; }
+      .ledajans-outdoor-image-wrapper { display: flex; }
+      .ledajans-outdoor-image-container { flex: 1; display: flex; }
+      .ledajans-outdoor-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: none;
+      }
+    }
+    </style>
+    
+    <section class="ledajans-outdoor" style="background-color:#f9fafb">
+      <div class="ledajans-outdoor-container">
+        <div class="ledajans-outdoor-content">
+          <h2 class="ledajans-outdoor-title">DIŞ MEKAN - OUTDOOR LED</h2>
+          <div class="ledajans-outdoor-tags">
+            <div class="ledajans-outdoor-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>Kaliteli</span>
+            </div>
+            <div class="ledajans-outdoor-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Güvenli</span>
+            </div>
+          </div>
+          <p class="ledajans-outdoor-desc">
+            <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan / Outdoor Led Ekranlar</a>, açık hava reklamcılığı alanında şirketlerin kendi reklamlarını yapabileceği gibi uzaktan kontrol edilebilir özellikleri sayesinde reklam ajanslarının da reklam alma ve yayınlama aracı haline gelmiştir. Yüksek çözünürlük, yüksek refresh/yenileme hızına sahip olmaları led ekranların sahne ve organizasyon alanlarında vazgeçilmeyecek ilk ürün olmalarını sağlamıştır. <a href="https://rentalekran.com">Rental Led Ekranlar</a> ise kiralama alanında önemli bir yer edinmişlerdir.
+          </p>
+          <div class="ledajans-outdoor-features">
+            <div class="ledajans-outdoor-feature">
+              <div class="ledajans-outdoor-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="ledajans-outdoor-feature-title">Sertifikalı</h3>
+                <p class="ledajans-outdoor-feature-desc">Uluslararası sertifikalara sahibiz.</p>
+              </div>
+            </div>
+            <div class="ledajans-outdoor-feature">
+              <div class="ledajans-outdoor-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <h3 class="ledajans-outdoor-feature-title">2 Yıl Garantili</h3>
+                <p class="ledajans-outdoor-feature-desc">2 yıl boyunca teknik hizmet garanti kapsamında ücretsiz.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ledajans-outdoor-image-wrapper">
+          <div class="ledajans-outdoor-image-container">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png"
+              alt="Dış Mekan LED Ekran - Outdoor LED Ekran Çözümleri"
+              class="ledajans-outdoor-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    

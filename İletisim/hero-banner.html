@@ -1,0 +1,71 @@
+<div class="ledajans-iletisim-hero">
+    <div class="ledajans-iletisim-hero-overlay"></div>
+    <div class="ledajans-iletisim-hero-icerik">
+      <div>
+        <h1 class="ledajans-iletisim-hero-baslik">İletişim</h1>
+        <p class="ledajans-iletisim-hero-alt">Bize Ulaşın</p>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+  .ledajans-iletisim-hero {
+    position: relative;
+    height: 200px;
+    background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) { .ledajans-iletisim-hero { height: 250px; } }
+  @media (min-width: 768px) { .ledajans-iletisim-hero { height: 300px; } }
+  
+  .ledajans-iletisim-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(17,24,39,0.95), rgba(17,24,39,0.7));
+  }
+  
+  .ledajans-iletisim-hero-icerik {
+    position: relative;
+    height: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+  }
+  @media (min-width: 640px) { .ledajans-iletisim-hero-icerik { padding: 0 1.5rem; } }
+  @media (min-width: 1024px) { .ledajans-iletisim-hero-icerik { padding: 0 2rem; } }
+  
+  .ledajans-iletisim-hero-baslik {
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-size: 1.875rem; /* ~text-3xl */
+  }
+  @media (min-width: 640px) { .ledajans-iletisim-hero-baslik { font-size: 2.25rem; } }  /* 4xl */
+  @media (min-width: 768px) { .ledajans-iletisim-hero-baslik { font-size: 3rem; } }     /* 5xl */
+  @media (min-width: 1024px) { .ledajans-iletisim-hero-baslik { font-size: 3.75rem; } } /* 6xl */
+  
+  .ledajans-iletisim-hero-alt {
+    margin: 0;
+    color: #F46F2C;
+    font-weight: 300;
+    font-size: 1.125rem; /* text-lg */
+  }
+  @media (min-width: 640px) { .ledajans-iletisim-hero-alt { font-size: 1.25rem; } } /* xl */
+  @media (min-width: 768px) { .ledajans-iletisim-hero-alt { font-size: 1.5rem; } }  /* 2xl */
+  </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://ledajans.com/"},
+    {"@type":"ListItem","position":2,"name":"İletişim","item":"https://ledajans.com/iletisim/"}
+  ]
+}
+</script>

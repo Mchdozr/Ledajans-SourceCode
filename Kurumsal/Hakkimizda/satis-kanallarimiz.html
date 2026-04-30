@@ -1,0 +1,186 @@
+<!-- LEDAJANS Satış Kanallarımız - WordPress HTML Widget -->
+<style>
+    .ledajans-channels {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 0.75rem;
+      margin-bottom: 8rem;
+    }
+    @media (min-width: 480px) {
+      .ledajans-channels {
+        padding: 2rem 1rem;
+      }
+    }
+    @media (min-width: 640px) {
+      .ledajans-channels {
+        padding: 4rem 1.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-channels {
+        padding: 5rem 2rem;
+      }
+    }
+    
+    .ledajans-channels-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4rem;
+      text-align: center;
+      letter-spacing: -0.025em;
+    }
+    @media (min-width: 640px) {
+      .ledajans-channels-title {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .ledajans-channels-title {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+      }
+    }
+    
+    .ledajans-channels-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .ledajans-channels-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+    
+    .ledajans-channel-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transition: all 0.5s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ledajans-channel-card:hover {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: translateY(-8px);
+    }
+    
+    .ledajans-channel-card-ledarabul {
+      order: 1;
+    }
+    @media (min-width: 768px) {
+      .ledajans-channel-card-ledarabul {
+        order: 2;
+      }
+    }
+    
+    .ledajans-channel-card-kacmasa {
+      order: 2;
+    }
+    @media (min-width: 768px) {
+      .ledajans-channel-card-kacmasa {
+        order: 1;
+      }
+    }
+    
+    .ledajans-channel-card-rental {
+      order: 3;
+    }
+    @media (min-width: 768px) {
+      .ledajans-channel-card-rental {
+        order: 3;
+      }
+    }
+    
+    .ledajans-channel-logo-wrapper {
+      width: 100%;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+    
+    .ledajans-channel-logo {
+      width: 100%;
+      height: auto;
+      max-height: 128px;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .ledajans-channel-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 1rem;
+    }
+    </style>
+    
+    <div class="ledajans-channels">
+      <h2 class="ledajans-channels-title">Satış Kanallarımız</h2>
+      <div class="ledajans-channels-grid">
+        <a
+          href="https://ledarabul.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ledajans-channel-card ledajans-channel-card-ledarabul"
+        >
+          <div class="ledajans-channel-logo-wrapper">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2022/12/ledarabul.png"
+              alt="LedAraBul"
+              class="ledajans-channel-logo"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#9ca3af;font-size:0.875rem;\'>Logo</div>';"
+            />
+          </div>
+          <h3 class="ledajans-channel-name">LedAraBul</h3>
+        </a>
+        <a
+          href="https://kacmasa.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ledajans-channel-card ledajans-channel-card-kacmasa"
+        >
+          <div class="ledajans-channel-logo-wrapper">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2022/12/kacmasa.png"
+              alt="Kacmasa"
+              class="ledajans-channel-logo"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#9ca3af;font-size:0.875rem;\'>Logo</div>';"
+            />
+          </div>
+          <h3 class="ledajans-channel-name">Kacmasa</h3>
+        </a>
+        <a
+          href="https://rentalekran.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ledajans-channel-card ledajans-channel-card-rental"
+        >
+          <div class="ledajans-channel-logo-wrapper">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2025/11/rental-ekran-logo-yatay-1.png"
+              alt="Rental Ekran - Kiralanabilir LED Ekran Çözümleri"
+              class="ledajans-channel-logo"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#9ca3af;font-size:0.875rem;\'>Logo</div>';"
+            />
+          </div>
+          <h3 class="ledajans-channel-name">Rental Ekran</h3>
+        </a>
+      </div>
+    </div>

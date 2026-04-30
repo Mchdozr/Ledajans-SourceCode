@@ -1,0 +1,293 @@
+<!-- Program İndir - İndirme Kartları -->
+<style>
+    .program-downloads-section {
+      padding: clamp(2rem, 5vw, 4rem) max(1rem, env(safe-area-inset-left));
+      padding-bottom: clamp(2rem, 5vw, 4rem);
+      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+    }
+    
+    .program-downloads-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    
+    .program-downloads-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    
+    @media (min-width: 480px) {
+      .program-downloads-grid { gap: 1.5rem; }
+    }
+    
+    @media (min-width: 640px) {
+      .program-downloads-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .program-downloads-grid { gap: 2rem; }
+    }
+    
+    .program-download-card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    
+    @media (min-width: 640px) {
+      .program-download-card { padding: 2rem; }
+    }
+    
+    .program-download-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      line-height: 1.3;
+      text-align: center;
+    }
+    
+    @media (min-width: 640px) {
+      .program-download-card-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.25rem;
+      }
+    }
+    
+    .program-download-card-subtitle {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-align: center;
+      margin: -0.5rem 0 0.875rem 0;
+      line-height: 1.4;
+    }
+    
+    .program-download-card-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .program-download-card-logo img {
+      max-height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .program-download-card-logo.has-title-line {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .program-download-card-logo.has-title-line {
+        margin-bottom: 2rem;
+        padding-bottom: 1.25rem;
+      }
+    }
+    
+    .program-download-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .program-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      min-height: 48px;
+      padding: 0.75rem 1rem;
+      background: #F46F2C;
+      color: #ffffff;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    @media (min-width: 640px) {
+      .program-download-btn { font-size: 1rem; }
+    }
+    
+    .program-download-btn:hover {
+      background: #e55a1a;
+      transform: translateY(-1px);
+      color: #ffffff;
+    }
+    
+    .program-download-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    
+    .program-download-btn span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    @media (max-width: 479px) {
+      .program-download-btn span { white-space: normal; text-align: center; }
+    }
+    </style>
+    
+    <section class="program-downloads-section" id="indirme-listesi">
+      <div class="program-downloads-container">
+        <div class="program-downloads-grid">
+          <!-- 1. Tarama Dosyaları -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">Tarama Dosyaları</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>Tarama Dosyaları</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- 2. Teknik Özellikler -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">Teknik Özellikler</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>Teknik Özellikler</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- 5. Colorlight -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">Colorlight</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.google.com/file/d/1NV5wVmb-rkJ9qz2oQ67GXS_6UFRLXiX2/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>LEDUpgrade V5.2</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+              <a href="https://drive.google.com/file/d/1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>LED Settings V2.2</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+              <a href="https://drive.google.com/file/d/1clcgdzazxoH5Y3o-WJVsKLLg8Tvh03qi/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>LedVision 9.7</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- 6. Colorlight - PlayMasterTR -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">Colorlight - PlayMasterTR</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.google.com/uc?export=download&id=16BqRtYl5XpCOHx04Vy8O0M0hdO5QEvXj" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>Colorlight - PlayMasterTR</span>
+              </a>
+              <a href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>PlayerMaster-User Manual V1.4 TR</span>
+              </a>
+            </div>
+          </div>
+           <!-- 9. HD Kontrol Kartı Programı -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">HD Kontrol Kartı Programı</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.google.com/file/d/13ylhEOkXGu4BDJc6JVFoioqqdoCmQR5x/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>HDSign V2.0.2</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+              <a href="https://drive.google.com/file/d/1Ro4MFVYNcuN98wVSIPQI2XuC-SMITJnP/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>HDSet V4.0.16</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+          
+    
+          
+          <!-- 7. HD Serisi Kontrol Kartı -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">HD Serisi Kontrol Kartı Programı</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>HDPlayer V7.11.8.0</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+          
+         <!-- 4. AnyDesk -->
+          <div class="program-download-card">
+            <div class="program-download-card-logo has-title-line">
+              <img src="https://ledajans.com/wp-content/uploads/2024/08/Screenshot2024-03-21095210-ezgif.com-resize.png" alt="AnyDesk" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="program-download-buttons">
+              <a href="https://anydesk.com/en" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>Anydesk - Uzaktan Destek</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- 8. TF Serisi Kontrol Kartı -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">TF Serisi Kontrol Kartı Programı</h3>
+            <div class="program-download-buttons">
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>TF PowerLed_2.89.4</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+    
+          <!-- 10. LedArt Uygulaması -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">LedArt Uygulaması</h3>
+            <div class="program-download-buttons">
+              <a href="https://www.huidu.cn/qrcode.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>LedArt Mobil Uygulama İndir</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+              <a href="https://www.huidu.cn/User_Manual_APP_en.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>LedArt Mobil Uygulama Kullanma Kılavuzu</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+          <!-- 3. Nova Star Kart -->
+          <div class="program-download-card">
+            <h3 class="program-download-card-title">Nova Star Kart</h3>
+            <div class="program-download-buttons">
+              <a href="https://oss.novastar.tech/uploads/2020/07/NovaLCT-V5.3.1.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>NovaLCT V5.3.1</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+              <a href="https://oss.novastar.tech/uploads/2020/01/NovaLCT-V5.3.0.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
+                <span>NovaLCT V5.3.0</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    

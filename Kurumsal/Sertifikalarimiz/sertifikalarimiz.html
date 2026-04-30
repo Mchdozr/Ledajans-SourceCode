@@ -1,0 +1,865 @@
+<!--
+  LEDAJANS — Sertifikalarımız (WordPress HTML widget). Rank Math: title + meta açıklama.
+  Görseller: Her <img src="..."> ve aynı satırdaki “Sertifikayı Görüntüle” href’ini Medya Kütüphanesi PNG URL’si ile eşleştirin.
+-->
+<style id="ledajans-cert-page-css">
+    .ledajans-cert-page {
+      --cert-orange: #f46f2c;
+      --cert-dark: #111827;
+      --cert-muted: #4b5563;
+      --cert-border: rgba(17, 24, 39, 0.08);
+      --cert-radius: 16px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--cert-dark);
+      background: #f8fafc;
+    }
+    .ledajans-cert-page * {
+      box-sizing: border-box;
+    }
+    /* Diğer sayfalarla uyumlu üst banner (blog hero yapısı) */
+    .ledajans-cert-page .ledajans-blog-hero {
+      position: relative;
+      height: 200px;
+      background-image: url("https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1920");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) {
+      .ledajans-cert-page .ledajans-blog-hero {
+        height: 250px;
+      }
+    }
+    @media (min-width: 768px) {
+      .ledajans-cert-page .ledajans-blog-hero {
+        height: 300px;
+      }
+    }
+    .ledajans-cert-page .ledajans-blog-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+      transition: background-color 0.3s;
+    }
+    .ledajans-cert-page .ledajans-blog-hero-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 640px) {
+      .ledajans-cert-page .ledajans-blog-hero-inner {
+        padding: 0 1.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-cert-page .ledajans-blog-hero-inner {
+        padding: 0 2rem;
+      }
+    }
+    .ledajans-cert-page .ledajans-blog-hero-content {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .ledajans-cert-page .ledajans-blog-hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) {
+      .ledajans-cert-page .ledajans-blog-hero-title {
+        font-size: 2.5rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .ledajans-cert-page .ledajans-blog-hero-title {
+        font-size: 3rem;
+      }
+    }
+    .ledajans-cert-page .ledajans-blog-hero-subtitle {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #d1d5db;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+      max-width: 42rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-cert-page .ledajans-blog-hero-subtitle {
+        font-size: 1rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .ledajans-cert-page .ledajans-blog-hero-subtitle {
+        font-size: 1.125rem;
+      }
+    }
+    .ledajans-cert-narrative {
+      margin: 0 0 1.75rem;
+      padding: 1.35rem 1.5rem;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #374151;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, #fafbfc 100%);
+      border: 1px solid var(--cert-border);
+      border-radius: var(--cert-radius);
+      box-shadow: 0 8px 32px rgba(17, 24, 39, 0.05);
+    }
+    .ledajans-cert-narrative > p {
+      margin: 0;
+    }
+    .ledajans-cert-narrative a {
+      color: #f46f2c;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s ease;
+    }
+    .ledajans-cert-narrative a:hover {
+      color: #e05a1f;
+    }
+    .cert-hero-pills {
+      list-style: none;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem 0.5rem;
+    }
+    .cert-hero-pills li {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #64748b;
+      padding: 0.4rem 0.75rem;
+      background: #fff;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 999px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .ledajans-cert-showcase {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--cert-border);
+      border-radius: calc(var(--cert-radius) + 4px);
+      padding: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 1.75rem;
+      box-shadow: 0 16px 48px rgba(17, 24, 39, 0.07);
+      overflow: hidden;
+    }
+    .ledajans-cert-showcase::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cert-orange), rgba(244, 111, 44, 0.45), var(--cert-orange));
+      opacity: 0.95;
+    }
+    .ledajans-cert-section-head {
+      margin: 0 0 1.35rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--cert-border);
+      text-align: center;
+    }
+    .ledajans-cert-section-head h2 {
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cert-dark);
+    }
+    .ledajans-cert-section-head p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--cert-muted);
+      max-width: 36rem;
+      margin-inline: auto;
+    }
+    .ledajans-cert-section-head p strong {
+      color: #f46f2c;
+      font-weight: 800;
+    }
+    .ledajans-cert-section-head .cert-section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.65rem;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cert-orange);
+      background: rgba(244, 111, 44, 0.09);
+      border-radius: 999px;
+      border: 1px solid rgba(244, 111, 44, 0.2);
+    }
+    .ledajans-cert-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 3vw, 2.25rem) 1.25rem 3.5rem;
+    }
+    .ledajans-cert-intro {
+      background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+      border: 1px solid var(--cert-border);
+      border-radius: var(--cert-radius);
+      padding: 1.6rem 1.65rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 8px 32px rgba(17, 24, 39, 0.05);
+    }
+    .ledajans-cert-intro p {
+      margin: 0;
+      color: var(--cert-muted);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .ledajans-cert-intro a {
+      color: #f46f2c;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+    .ledajans-cert-intro a:hover {
+      color: #e05a1f;
+    }
+    .ledajans-cert-scope {
+      background: #fff;
+      border: 1px solid var(--cert-border);
+      border-radius: var(--cert-radius);
+      padding: 1.35rem 1.65rem;
+      margin-bottom: 2.25rem;
+      box-shadow: 0 8px 32px rgba(17, 24, 39, 0.05);
+      border-top: 3px solid var(--cert-orange);
+    }
+    .ledajans-cert-scope h2 {
+      margin: 0 0 0.65rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cert-dark);
+    }
+    .ledajans-cert-scope p {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--cert-muted);
+    }
+    .ledajans-cert-scope p a {
+      color: #f46f2c;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+    .ledajans-cert-scope p a:hover {
+      color: #e05a1f;
+    }
+    /* Belgeler: kart grid yerine yatırılmış dosya / şerit düzeni */
+    .ledajans-cert-deck {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+    .cert-deck-item {
+      display: grid;
+      gap: 1.25rem;
+      align-items: stretch;
+      margin: 0;
+      padding: 1.35rem 1.25rem;
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 48%, #f1f5f9 100%);
+      border: 1px solid var(--cert-border);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(17, 24, 39, 0.05);
+      transition: box-shadow 0.35s ease, border-color 0.25s ease, transform 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-deck-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--cert-orange), rgba(244, 111, 44, 0.35));
+      border-radius: 20px 0 0 20px;
+      opacity: 0.95;
+    }
+    .cert-deck-item:hover {
+      box-shadow: 0 14px 40px rgba(17, 24, 39, 0.09);
+      border-color: rgba(244, 111, 44, 0.18);
+      transform: translateY(-2px);
+    }
+    .cert-deck-item__index {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--cert-orange);
+      line-height: 1;
+      padding: 0.35rem 0.5rem;
+      background: rgba(244, 111, 44, 0.1);
+      border-radius: 8px;
+      width: fit-content;
+      grid-area: idx;
+    }
+    .cert-deck-item__visual {
+      grid-area: vis;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-deck-item__frame {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      background: linear-gradient(160deg, #e2e8f0 0%, #f8fafc 40%, #fff 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 28px rgba(17, 24, 39, 0.12);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      overflow: hidden;
+    }
+    .cert-deck-item__frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: repeating-linear-gradient(-38deg, #64748b 0, #64748b 1px, transparent 1px, transparent 9px);
+      pointer-events: none;
+    }
+    .cert-deck-item__frame img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      display: block;
+    }
+    .cert-deck-item__main {
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding-left: 0.25rem;
+    }
+    .cert-deck-item__main h3 {
+      margin: 0 0 0.45rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cert-dark);
+      line-height: 1.3;
+    }
+    .cert-deck-item__lead {
+      margin: 0 0 0.85rem;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--cert-muted);
+    }
+    .ledajans-cert-meta {
+      list-style: none;
+      margin: 0;
+      padding: 0.75rem 0 0;
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: #374151;
+      border-top: 1px dashed rgba(17, 24, 39, 0.12);
+      display: grid;
+      gap: 0.25rem;
+    }
+    @media (min-width: 520px) {
+      .ledajans-cert-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .ledajans-cert-meta li {
+      margin: 0;
+    }
+    .ledajans-cert-meta strong {
+      color: var(--cert-dark);
+      font-weight: 600;
+    }
+    /* Tema a:hover renkleri turuncu buton üzerinde yazıyı yutmasın */
+    .ledajans-cert-page a.cert-deck-pdf,
+    .ledajans-cert-page a.cert-deck-pdf:link,
+    .ledajans-cert-page a.cert-deck-pdf:visited {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      padding: 0.62rem 1.2rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #fff !important;
+      background: var(--cert-orange);
+      border-radius: 10px;
+      text-decoration: none !important;
+      width: fit-content;
+      box-shadow: 0 4px 14px rgba(244, 111, 44, 0.35);
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+    .ledajans-cert-page a.cert-deck-pdf:hover,
+    .ledajans-cert-page a.cert-deck-pdf:focus {
+      color: #fff !important;
+      text-decoration: none !important;
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+    }
+    .cert-deck-pdf::after {
+      content: "→";
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+    /* Mobil: üstte önizleme, altta metin */
+    .cert-deck-item {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "idx"
+        "vis"
+        "main";
+    }
+    /* Masaüstü: önizleme solda, metin sağda */
+    @media (min-width: 880px) {
+      .cert-deck-item {
+        grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
+        column-gap: 1.5rem;
+        row-gap: 0.35rem;
+        padding: 1.5rem 1.65rem 1.5rem 1.35rem;
+        grid-template-areas:
+          "idx main"
+          "vis main";
+      }
+      .cert-deck-item__index {
+        align-self: start;
+      }
+      .cert-deck-item__visual {
+        align-self: stretch;
+      }
+      .cert-deck-item__frame {
+        max-width: none;
+        height: 100%;
+        min-height: 200px;
+        margin: 0;
+      }
+    }
+    .ledajans-cert-faq {
+      margin-top: 3rem;
+      background: #fff;
+      border: 1px solid var(--cert-border);
+      border-radius: var(--cert-radius);
+      padding: 1.85rem 1.6rem 2rem;
+      box-shadow: 0 8px 32px rgba(17, 24, 39, 0.05);
+    }
+    .ledajans-cert-faq h2 {
+      margin: 0 0 1.2rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cert-dark);
+    }
+    .ledajans-cert-faq details {
+      border-bottom: 1px solid var(--cert-border);
+      padding: 0.9rem 0;
+    }
+    .ledajans-cert-faq details:last-of-type {
+      border-bottom: none;
+    }
+    .ledajans-cert-faq summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--cert-dark);
+      list-style: none;
+    }
+    .ledajans-cert-faq summary::-webkit-details-marker {
+      display: none;
+    }
+    .ledajans-cert-faq details p {
+      margin: 0.65rem 0 0;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--cert-muted);
+    }
+    .ledajans-cert-faq details p a {
+      color: #f46f2c;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      text-decoration-thickness: 1px;
+    }
+    .ledajans-cert-faq details p a:hover {
+      color: #e05a1f;
+    }
+    .ledajans-cert-cta {
+      margin-top: 2.5rem;
+      text-align: center;
+      padding: 2.1rem 1.5rem;
+      background: #fff;
+      border-radius: var(--cert-radius);
+      border: 1px solid var(--cert-border);
+      box-shadow: 0 4px 24px rgba(17, 24, 39, 0.05);
+    }
+    .ledajans-cert-cta p {
+      margin: 0 0 1.1rem;
+      font-size: 1.02rem;
+      color: var(--cert-muted);
+    }
+    .ledajans-cert-page .ledajans-cert-cta a {
+      display: inline-block;
+      padding: 0.78rem 1.85rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff !important;
+      background: var(--cert-orange);
+      border-radius: 10px;
+      text-decoration: none !important;
+      transition: filter 0.2s ease;
+    }
+    .ledajans-cert-page .ledajans-cert-cta a:hover,
+    .ledajans-cert-page .ledajans-cert-cta a:focus {
+      color: #fff !important;
+      filter: brightness(1.06);
+    }
+  </style>
+  
+  <section class="ledajans-cert-page" aria-label="Sertifikalarımız">
+    <div class="ledajans-blog-hero">
+      <div class="ledajans-blog-hero-overlay"></div>
+      <div class="ledajans-blog-hero-inner">
+        <div class="ledajans-blog-hero-content">
+          <h1 class="ledajans-blog-hero-title">Sertifikalarımız</h1>
+          <span class="ledajans-blog-hero-subtitle" style="color: #f46f2c">Yönetim sistemi ve uygunluk belgelerimizi önce önizleme görselleri ve tam boy PNG bağlantılarıyla inceleyin; ayrıntılı açıklama, kapsam ve SSS aşağıdadır.</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="ledajans-cert-inner">
+      <section class="ledajans-cert-showcase" aria-labelledby="cert-showcase-heading">
+        <header class="ledajans-cert-section-head">
+          <span class="cert-section-badge">Doğrulanmış belgeler</span>
+          <h2 id="cert-showcase-heading">Sertifika ve Uygunluk Belgeleri</h2>
+          <p>Akreditasyon kapsamındaki yönetim sistemi ve uygunluk belgelerimizi aşağıda tek tek sunuyoruz. Her satırda kısa özet ve geçerlilik bilgileri yer alır; belgenin tam görüntüsünü yeni sekmede açmak için <strong>Sertifikayı Görüntüle</strong> düğmesini kullanın.</p>
+        </header>
+        <div class="ledajans-cert-deck">
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">01</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                             <img src="https://ledajans.com/wp-content/uploads/2026/04/tam-carpraz-logo.png" width="612" height="842" alt="TAHA LED Dış Ticaret A.Ş. ISO 9001:2015 kalite yönetim sistemi sertifikası — LED ekran imalat ve montaj" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 9001:2015 — Kalite Yönetim Sistemi</h3>
+              <p class="cert-deck-item__lead">Kalite yönetim sisteminin, belirtilen faaliyet kapsamında uluslararası standardın gerekliliklerine uygunluğu değerlendirilmiştir.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> QMS-013428</li>
+                <li><strong>İlk belgelendirme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+                <li><strong>Periyot:</strong> 3 yıl</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/tam-carpraz-logo.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">02</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/ISO-45001-2018-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO 45001:2018 iş sağlığı ve güvenliği yönetim sistemi sertifikası" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 45001:2018 — İş Sağlığı ve Güvenliği</h3>
+              <p class="cert-deck-item__lead">İş sağlığı ve güvenliği yönetim sisteminin ilgili faaliyetler için standarda uygunluğu belgelenmiştir.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> OHSMS-004149</li>
+                <li><strong>İlk belgelendirme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+                <li><strong>Periyot:</strong> 3 yıl</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/ISO-45001-2018-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">03</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/TAHA-LED-14064-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO 14064-1:2019 sera gazı kurumsal raporlama uygunluk belgesi" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 14064-1:2019 — Sera Gazları</h3>
+              <p class="cert-deck-item__lead">Kuruluş düzeyinde sera gazı salımlarının ve uzaklaştırmalarının hesaplanması ve raporlanmasına ilişkin standardın gerekliliklerine uygunluk.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> ICB.90238.ISO.56428</li>
+                <li><strong>İlk belgelendirme:</strong> 15.01.2026</li>
+                <li><strong>Geçerlilik:</strong> 14.01.2027</li>
+                <li><strong>Periyot:</strong> 3 yıl</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/TAHA-LED-14064-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">04</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/ISO-10002-2018-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO 10002:2018 müşteri memnuniyeti ve şikâyet yönetimi uygunluk belgesi" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 10002:2018 — Müşteri Memnuniyeti</h3>
+              <p class="cert-deck-item__lead">Müşteri memnuniyeti ve şikâyet yönetimine ilişkin yönetim sistemi yaklaşımının standardla uyumluluğu tanınmıştır.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> GCR/CERT-12.2025.006665</li>
+                <li><strong>Düzenlenme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/ISO-10002-2018-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">05</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/ISO-14001-2015-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO 14001:2015 çevre yönetim sistemi sertifikası" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 14001:2015 — Çevre Yönetim Sistemi</h3>
+              <p class="cert-deck-item__lead">Çevresel etkilerin yönetimi ve sürekli iyileştirme için çevre yönetim sisteminin standarda uygunluğu değerlendirilmiştir.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> EMS-013428</li>
+                <li><strong>İlk belgelendirme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+                <li><strong>Periyot:</strong> 3 yıl</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/ISO-14001-2015-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">06</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/ISO-27001-2022-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO IEC 27001:2022 bilgi güvenliği yönetim sistemi sertifikası" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO/IEC 27001:2022 — Bilgi Güvenliği</h3>
+              <p class="cert-deck-item__lead">Belirtilen faaliyetlere ilişkin kayıtların bilgi varlıklarının korunması kapsamında bilgi güvenliği yönetim sistemi uygunluğu.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> 2025/ISMS/002142</li>
+                <li><strong>SoA:</strong> TLD/10.01.2024</li>
+                <li><strong>İlk belgelendirme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+                <li><strong>Periyot:</strong> 3 yıl</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/ISO-27001-2022-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+  
+          <article class="cert-deck-item">
+            <div class="cert-deck-item__index" aria-hidden="true">07</div>
+            <div class="cert-deck-item__visual">
+              <div class="cert-deck-item__frame">
+                <img src="https://ledajans.com/wp-content/uploads/2026/04/ISO-31000-2018-1.png" width="800" height="600" alt="TAHA LED Dış Ticaret A.Ş. ISO 31000:2018 kurumsal risk yönetimi uygunluk belgesi" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="cert-deck-item__main">
+              <h3>ISO 31000:2018 — Risk Yönetimi</h3>
+              <p class="cert-deck-item__lead">Kurumsal risk yönetimi çerçevesi ile uyumlu yönetim sistemi yaklaşımının belge kapsamında tanınması.</p>
+              <ul class="ledajans-cert-meta">
+                <li><strong>Belge no:</strong> GCR/CERT-12.2025.006664</li>
+                <li><strong>Düzenlenme:</strong> 20.12.2025</li>
+                <li><strong>Geçerlilik:</strong> 19.12.2026</li>
+              </ul>
+              <a class="cert-deck-pdf" href="https://ledajans.com/wp-content/uploads/2026/04/ISO-31000-2018-1.png" target="_blank" rel="noopener noreferrer">Sertifikayı Görüntüle</a>
+            </div>
+          </article>
+        </div>
+      </section>
+  
+      <div class="ledajans-cert-narrative">
+        <p>
+          <a href="https://ledajans.com/">LEDAJANS</a>, LED ekran ve LED tabela çözümlerinde satın alma, <a href="https://ledajans.com/rental-ekran/">ekran kiralama</a>, montaj ve teknik destek süreçlerinde güven arayan işletmeler için kalite, çevre, iş sağlığı ve güvenliği, bilgi güvenliği, müşteri memnuniyeti, sera gazı raporlama ve kurumsal risk yönetimi alanlarında uluslararası standartlara uygunluk belgelerini şeffaf biçimde paylaşır. Ürün portföyü için <a href="https://ledajans.com/led-ekran/">LED ekran ürünlerimiz</a> sayfasına; referans görselleri için ana sayfadaki <a href="https://ledajans.com/#projelerimiz">projelerimiz</a> bölümüne göz atabilirsiniz. Yukarıda bu alanlara ilişkin yönetim sistemi ve uygunluk belgelerimizin özeti yer almaktadır.
+        </p>
+        <ul class="cert-hero-pills" aria-label="Öne çıkan standartlar">
+          <li>ISO 9001</li>
+          <li>ISO 14001</li>
+          <li>ISO 45001</li>
+          <li>ISO 27001</li>
+          <li>ISO 14064-1</li>
+          <li>ISO 10002</li>
+          <li>ISO 31000</li>
+        </ul>
+      </div>
+  
+      <div class="ledajans-cert-intro">
+        <p>
+          Hizmet ve ürünlerimiz <strong>TAHA LED Dış Ticaret Anonim Şirketi</strong> çatısı altında yürütülür; <a href="https://ledajans.com/">ledajans.com</a> üzerinden erişilen ticari marka <strong>LEDAJANS</strong> ile sunulur. Belgelerde kayıtlı adres: Halide Adıvar Mah. Gül 2 Sok. Ekşioğlu Karadeniz Apt. No:10A, Şişli / İstanbul, Türkiye.
+        </p>
+      </div>
+  
+      <section class="ledajans-cert-scope" aria-labelledby="cert-scope-heading">
+        <h2 id="cert-scope-heading">Sertifika kapsamı</h2>
+        <p>
+          Belgelerde tanımlı faaliyet alanı: iç ve dış mekan LED ekran imalatı ve montajı; LED modül, elektronik LED panel, LED tabanlı reklam ürünleri ve panel kasaları, RGB ve dimmer cihazları ile elektronik kart devrelerinin üretimi, tamiri, ithalatı, ihracatı ve satışı. ISO/IEC 27001 kapsamında, bu faaliyetlere ilişkin kayıtların bilgi varlıklarının korunması tanımlanmıştır. Bu kapsam, <a href="https://ledajans.com/led-ekran/">ürün ve çözüm</a> tekliflerimizle uyumludur.
+        </p>
+      </section>
+  
+      <section class="ledajans-cert-faq" aria-labelledby="cert-faq-heading">
+        <h2 id="cert-faq-heading">Sık sorulan sorular</h2>
+        <details>
+          <summary>Belgeler hangi tüzel kişi adınadır?</summary>
+          <p>Belgeler <strong>TAHA LED Dış Ticaret Anonim Şirketi</strong> için düzenlenmiştir. <a href="https://ledajans.com/">LEDAJANS</a> markası ile yürütülen LED ekran ve çözüm faaliyetleri bu yapı altındadır.</p>
+        </details>
+        <details>
+          <summary>LED ekran veya LED tabela satın alırken veya kiralarken ISO belgeleri neden önemlidir?</summary>
+          <p>ISO 9001 kalite yönetimi ve ISO 10002 müşteri memnuniyeti ile şikâyet yönetimi gibi belgeler; üretim ve hizmet süreçlerinin izlenebilirliği ile geri bildirimlerin yönetilmesi için bağımsız değerlendirilmiş bir çerçeveyi gösterir. <a href="https://ledajans.com/led-ekran/">Ürünlerimiz</a> ve <a href="https://ledajans.com/rental-ekran/">rental ekran</a> taleplerinizde tedarikçi güveni için referans oluşturur.</p>
+        </details>
+        <details>
+          <summary>Montaj ve saha hizmetlerinde iş güvenliği açısından hangi belge dikkate alınmalıdır?</summary>
+          <p>ISO 45001 iş sağlığı ve güvenliği yönetim sistemi; montaj, bakım ve saha faaliyetlerinde kurumsal OHS yaklaşımının denetlendiğini gösterir. Tek başına tüm saha risklerini kapsamaz; iş güvenliği için yerel mevzuat ve saha koşulları da değerlendirilmelidir.</p>
+        </details>
+        <details>
+          <summary>Teknik destek ve müşteri süreçleri hangi standartlarla ilişkilidir?</summary>
+          <p>ISO 10002 ile ISO 9001; taleplerin kayda alınması, çözüm ve iyileştirme döngüsüyle uyumludur. Uygulama ve eğitim için <a href="https://ledajans.com/teknik-destek-videolari/">teknik destek videoları</a> sayfamıza bakabilirsiniz.</p>
+        </details>
+        <details>
+          <summary>ISO 14064-1 belgesi neyi ifade eder?</summary>
+          <p>ISO 14064-1, kuruluş düzeyinde sera gazı salımlarının ve uzaklaştırmalarının hesaplanması ve raporlanması için uluslararası çerçeveyi tanımlar; pazarlama dilinde “karbon nötr sertifikası” ile özdeşleştirilmemelidir.</p>
+        </details>
+        <details>
+          <summary>Belge numarası ve tarihler için kaynak nedir?</summary>
+          <p>Resmî referans her zaman ilgili <strong>sertifika görüntüsü veya orijinal belge</strong> üzerindeki belge numarası ve geçerlilik bilgileridir. Bu sayfa özet bilgi sunar.</p>
+        </details>
+        <details>
+          <summary>Teklif veya proje görüşmesi için nasıl iletişime geçebilirim?</summary>
+          <p><a href="https://ledajans.com/iletisim/">İletişim</a> sayfamızdan talebinizi iletebilir; <a href="https://ledajans.com/blog/">blog</a> üzerinden LED ekran ve tabela konularında güncel içeriklere ulaşabilirsiniz.</p>
+        </details>
+      </section>
+  
+      <div class="ledajans-cert-cta">
+        <p>LED ekran ve tabela projeleriniz için teknik bilgi ve teklif almak ister misiniz?</p>
+        <a href="https://ledajans.com/iletisim/">İletişim</a>
+      </div>
+    </div>
+  </section>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://ledajans.com/sertifikalarimiz/#webpage",
+        "url": "https://ledajans.com/sertifikalarimiz/",
+        "name": "Sertifikalarımız | LEDAJANS",
+        "description": "LEDAJANS (TAHA LED Dış Ticaret A.Ş.) ISO 9001, ISO 14001, ISO 45001, ISO/IEC 27001, ISO 14064-1, ISO 10002 ve ISO 31000 kapsamında LED ekran ve elektronik ürün faaliyetlerine ilişkin yönetim sistemi ve uygunluk belgeleri.",
+        "isPartOf": { "@type": "WebSite", "name": "LEDAJANS", "url": "https://ledajans.com/" },
+        "about": {
+          "@type": "Organization",
+          "name": "TAHA LED Dış Ticaret Anonim Şirketi",
+          "url": "https://ledajans.com/"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://ledajans.com/sertifikalarimiz/#certlist",
+        "name": "LEDAJANS ISO ve yönetim sistemi belgeleri",
+        "numberOfItems": 7,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "ISO 9001:2015 Kalite yönetim sistemi" },
+          { "@type": "ListItem", "position": 2, "name": "ISO 45001:2018 İş sağlığı ve güvenliği" },
+          { "@type": "ListItem", "position": 3, "name": "ISO 14064-1:2019 Sera gazları raporlama" },
+          { "@type": "ListItem", "position": 4, "name": "ISO 10002:2018 Müşteri memnuniyeti" },
+          { "@type": "ListItem", "position": 5, "name": "ISO 14001:2015 Çevre yönetim sistemi" },
+          { "@type": "ListItem", "position": 6, "name": "ISO/IEC 27001:2022 Bilgi güvenliği" },
+          { "@type": "ListItem", "position": 7, "name": "ISO 31000:2018 Risk yönetimi" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ledajans.com/sertifikalarimiz/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Belgeler hangi tüzel kişi adınadır?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Belgeler TAHA LED Dış Ticaret Anonim Şirketi için düzenlenmiştir. LEDAJANS markası ile yürütülen LED ekran ve çözüm faaliyetleri bu yapı altındadır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "LED ekran veya LED tabela satın alırken veya kiralarken ISO belgeleri neden önemlidir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISO 9001 kalite yönetimi ve ISO 10002 müşteri memnuniyeti ile şikâyet yönetimi gibi belgeler; üretim ve hizmet süreçlerinin izlenebilirliği ile geri bildirimlerin yönetilmesi için bağımsız değerlendirilmiş bir çerçeveyi gösterir. Ürünler ve rental ekran taleplerinizde tedarikçi güveni için referans oluşturur."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Montaj ve saha hizmetlerinde iş güvenliği açısından hangi belge dikkate alınmalıdır?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISO 45001 iş sağlığı ve güvenliği yönetim sistemi; montaj, bakım ve saha faaliyetlerinde kurumsal OHS yaklaşımının denetlendiğini gösterir. Tek başına tüm saha risklerini kapsamaz; iş güvenliği için yerel mevzuat ve saha koşulları da değerlendirilmelidir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Teknik destek ve müşteri süreçleri hangi standartlarla ilişkilidir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISO 10002 ile ISO 9001; taleplerin kayda alınması, çözüm ve iyileştirme döngüsüyle uyumludur. Uygulama ve eğitim için teknik destek videoları sayfasına bakılabilir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ISO 14064-1 belgesi neyi ifade eder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISO 14064-1, kuruluş düzeyinde sera gazı salımlarının ve uzaklaştırmalarının hesaplanması ve raporlanması için uluslararası çerçeveyi tanımlar; pazarlama dilinde karbon nötr sertifikası ile özdeşleştirilmemelidir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Belge numarası ve tarihler için kaynak nedir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Resmî referans her zaman ilgili sertifika görüntüsü veya orijinal belge üzerindeki belge numarası ve geçerlilik bilgileridir. Bu sayfa özet bilgi sunar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Teklif veya proje görüşmesi için nasıl iletişime geçebilirim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "İletişim sayfasından talep iletilebilir; blog üzerinden LED ekran ve tabela konularında güncel içeriklere ulaşılabilir."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  

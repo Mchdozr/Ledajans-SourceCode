@@ -1,0 +1,468 @@
+﻿/**
+ * LEDAJANS — Ek CSS (Final / Sadeleştirilmiş)
+ * Tarih: 2026-04-30
+ * Not: Bu dosya "Görünüm > Özelleştir > Ek CSS" alanına toplu yapıştırmak içindir.
+ */
+
+/* =============================================================================
+   1) Sabit WhatsApp / Chat Butonu
+   ============================================================================= */
+.float {
+  position: fixed;
+  bottom: 40px;
+  right: 45%;
+  background-color: #f46f2d;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 999;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* =============================================================================
+   2) Sidebar Widget Temel Stil
+   ============================================================================= */
+.wp-sidebar .widget,
+.elementor-widget-sidebar .widget {
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 35px 30px;
+  position: relative;
+  font-size: 16px;
+  background: transparent;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.widget_categories ul > li > a,
+.widget_block ul > li > a,
+.widget_archive ul > li > a,
+.wp-sidebar .widget_nav_menu ul > li > a,
+#wp-footer .widget_nav_menu ul > li > a,
+.elementor-widget-sidebar .widget_nav_menu ul > li > a,
+.widget_pages ul > li > a,
+.widget_meta ul > li > a {
+  display: block;
+  text-transform: lowercase !important;
+}
+
+/* =============================================================================
+   3) Scrollbar (WebKit)
+   ============================================================================= */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #f46f2c; }
+
+/* =============================================================================
+   4) Mobil Ortak Düzenlemeler
+   ============================================================================= */
+@media (max-width: 768px) {
+  /* İletişim icon box */
+  .elementor-widget-icon-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+  }
+  .elementor-icon-box-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .elementor-icon-box-icon { flex: 0 0 50px !important; margin-right: 15px !important; }
+  .elementor-icon-box-icon i,
+  .elementor-icon-box-icon svg {
+    font-size: 28px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .elementor-icon-box-content { flex: 1 !important; }
+  .elementor-icon-box-title,
+  .elementor-icon-box-description {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.4em !important;
+  }
+  .elementor-widget-google_maps .elementor-widget-container { height: 300px !important; }
+
+  /* Hero section fallback background */
+  .elementor-1248 .elementor-element-69bd9fd {
+    background-image: url("https://ledajans.com/wp-content/uploads/2026/02/bg-1.jpeg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 60vh !important;
+    padding-bottom: 40px !important;
+    position: relative !important;
+  }
+  .elementor-1248 .elementor-element-69bd9fd .elementor-background-overlay,
+  .elementor-1248 .elementor-element-69bd9fd .elementor-background-slideshow,
+  .elementor-1248 .elementor-element-69bd9fd .swiper-wrapper {
+    display: none !important;
+  }
+
+  .elementor-element-69bd9fd::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1;
+  }
+  .elementor-element-69bd9fd > .elementor-container { position: relative; z-index: 2; }
+
+  .elementor-element-69bd9fd .title,
+  .elementor-element-69bd9fd h2 {
+    color: #fff !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .elementor-element-69bd9fd .description,
+  .elementor-element-69bd9fd p,
+  .elementor-element-69bd9fd .elementor-text-editor {
+    color: #e5e7eb !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    line-height: 1.6 !important;
+    max-width: 90% !important;
+    margin: 0 auto 2rem !important;
+  }
+
+  .elementor-element-69bd9fd a[class*="btn"],
+  .elementor-element-69bd9fd .elementor-button {
+    width: 100% !important;
+    max-width: 280px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .ledajans-hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .ledajans-btn-primary { order: 1; }
+  .ledajans-btn-secondary { order: 2; }
+}
+
+/* =============================================================================
+   5) Widget görünürlük güvence
+   ============================================================================= */
+.elementor-element-b13dda5 { display: block !important; }
+.elementor-element-b13dda5 .ledajans-hero,
+.elementor-element-b13dda5 .ledajans-brands { display: flex !important; }
+
+/* =============================================================================
+   6) Header / Menü (Desktop)
+   ============================================================================= */
+@media (min-width: 1025px) {
+  .elementor-element-123bc72.gv-sticky-menu > .elementor-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    min-height: 76px !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .elementor-element-123bc72 .elementor-element-548f702 {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, calc(-50% - 5px)) !important;
+    width: max-content !important;
+    max-width: min(64vw, 860px) !important;
+    z-index: 5 !important;
+  }
+
+  .elementor-element-123bc72 .site-branding-logo img {
+    height: 36px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    object-fit: contain !important;
+  }
+
+  .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .dropdown-toggle,
+  .gva-offcanvas-button,
+  .hamburger-menu,
+  .mobile-menu-button {
+    display: none !important;
+  }
+}
+
+/* =============================================================================
+   7) Header / Menü (Mobil-Tablet)
+   ============================================================================= */
+@media (max-width: 1024px) {
+  html, body { background: #f46f2c !important; }
+  body { padding-top: calc(52px + env(safe-area-inset-top)) !important; }
+
+  .wp-site-header,
+  header.wp-site-header {
+    background: #f46f2c !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    min-height: calc(48px + env(safe-area-inset-top)) !important;
+    max-height: calc(60px + env(safe-area-inset-top)) !important;
+    padding-top: env(safe-area-inset-top) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1) !important;
+    overflow: hidden !important;
+  }
+
+  .gv-sticky-menu.elementor-element-123bc72,
+  .elementor-element-123bc72 {
+    background: #f46f2c !important;
+    max-height: 56px !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .elementor-element-123bc72 > .elementor-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    min-height: 0 !important;
+    max-height: 52px !important;
+    padding: 4px 0 !important;
+    padding-left: max(4px, env(safe-area-inset-left)) !important;
+    padding-right: calc(44px + max(4px, env(safe-area-inset-right))) !important;
+  }
+
+  .elementor-element-123bc72 .elementor-element-0b7eb5f {
+    order: 1 !important;
+    flex: 0 0 44px !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+  }
+
+  .elementor-element-123bc72 .elementor-element-aa903d8 {
+    order: 2 !important;
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .elementor-element-123bc72 .site-branding-logo img,
+  .elementor-element-123bc72 .elementor-widget-gva-logo img {
+    height: 26px !important;
+    width: auto !important;
+    max-width: min(68vw, 240px) !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .elementor-element-123bc72 .dropdown-toggle,
+  .elementor-element-123bc72 .canvas-menu a.dropdown-toggle,
+  .elementor-element-123bc72 .gva-offcanvas a.dropdown-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    color: #fff !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Font ikonu gelmezse hamburger çizgilerini CSS ile üret */
+  .elementor-element-123bc72 .dropdown-toggle {
+    position: relative !important;
+    font-size: 0 !important;
+  }
+  .elementor-element-123bc72 .dropdown-toggle::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 10px !important;
+    right: 10px !important;
+    top: 11px !important;
+    height: 2px !important;
+    background: #fff !important;
+    border-radius: 2px !important;
+    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff !important;
+  }
+}
+
+/* =============================================================================
+   8) Mobil Offcanvas Menü
+   ============================================================================= */
+#gva-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+.canvas-mobile .gva-offcanvas-content.mobile {
+  background: #ffffff !important;
+  width: min(320px, 85vw) !important;
+  max-width: 320px !important;
+  box-shadow: 4px 0 32px rgba(0, 0, 0, 0.15) !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+}
+
+.canvas-mobile .top-canvas {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background: #ffffff !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
+}
+
+.canvas-mobile .top-canvas .logo-mm img {
+  height: 32px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+}
+
+.canvas-mobile .top-canvas .control-close-mm {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  font-size: 18px !important;
+  text-decoration: none !important;
+}
+
+.canvas-mobile .gva-mobile-menu {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 8px !important;
+}
+
+.canvas-mobile .gva-mobile-menu > li > a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 14px 16px !important;
+  border-radius: 10px !important;
+  color: #1f2937 !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.canvas-mobile .gva-mobile-menu > li > a:hover {
+  background: #fff7ed !important;
+  color: #f46f2c !important;
+}
+
+.canvas-mobile .gva-mobile-menu .submenu-inner > li > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  color: #4b5563 !important;
+  font-size: 0.875rem !important;
+  text-decoration: none !important;
+}
+
+.canvas-mobile .gva-mobile-menu .submenu-inner > li > a:hover {
+  background: rgba(244, 111, 44, 0.08) !important;
+  color: #f46f2c !important;
+}
+
+/* =============================================================================
+   9) Desktop Dropdown Menü
+   ============================================================================= */
+@media (min-width: 1025px) {
+  .gva-main-menu > li { position: relative !important; }
+
+  .gva-main-menu > li > .submenu-inner {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(8px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    min-width: 240px !important;
+    padding: 8px 0 !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,.06) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06) !important;
+    transition: opacity .25s, transform .25s, visibility .25s !important;
+  }
+
+  .gva-main-menu > li:hover > .submenu-inner,
+  .gva-main-menu > li:focus-within > .submenu-inner {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  .gva-main-menu > li > .submenu-inner > li > a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 20px !important;
+    margin: 2px 6px !important;
+    border-radius: 8px !important;
+    color: #374151 !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: background .18s, color .18s, padding-left .18s !important;
+  }
+
+  .gva-main-menu > li > .submenu-inner > li > a:hover {
+    background: rgba(244,111,44,.12) !important;
+    color: #f46f2c !important;
+    padding-left: 24px !important;
+  }
+}
+
+/* Son güvence: header margin/height override çakışmalarını sıfırla */
+@media (max-width: 1024px) {
+  .header-main-wrapper,
+  .header-builder-inner,
+  .wp-site-header .header_default_screen,
+  header.wp-site-header .header_default_screen {
+    margin-top: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}

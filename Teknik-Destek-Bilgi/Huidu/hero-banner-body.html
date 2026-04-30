@@ -1,0 +1,493 @@
+<!-- LEDAJANS Blog - Sayfa Üstü Hero/Banner - HUIDU -->
+<style>
+    .ledajans-huidu-hero {
+      position: relative;
+      height: 200px;
+      background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1920');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero { height: 250px; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero { height: 300px; } }
+    
+    .ledajans-huidu-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+    }
+    
+    .ledajans-huidu-hero-inner {
+      position: relative;
+      height: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-inner { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .ledajans-huidu-hero-inner { padding: 0 2rem; } }
+    
+    .ledajans-huidu-hero-content {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    .ledajans-huidu-hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-title { font-size: 2.5rem; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero-title { font-size: 3rem; } }
+    
+    .ledajans-huidu-hero-subtitle {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #f46f2c;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-subtitle { font-size: 1rem; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero-subtitle { font-size: 1.125rem; } }
+    </style>
+    
+    <div class="ledajans-huidu-hero">
+      <div class="ledajans-huidu-hero-overlay"></div>
+      <div class="ledajans-huidu-hero-inner">
+        <div class="ledajans-huidu-hero-content">
+          <h1 class="ledajans-huidu-hero-title">HUIDU</h1>
+          <span class="ledajans-huidu-hero-subtitle">
+            Huidu işlemci ve kontrol kartı ürünleri ile LED ekran projeleriniz için satış ve yazılım desteği.
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- LEDAJANS - HUIDU Görsel Slider -->
+    <style>
+    .ledajans-huidu-slider{
+      padding: 2.2rem 0;
+      background: #f9fafb;
+      overflow: hidden;
+      position: relative;
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-slider{ padding: 3rem 0; }
+    }
+    
+    .ledajans-huidu-slider::before,
+    .ledajans-huidu-slider::after{
+      content:"";
+      position:absolute;
+      top:0; bottom:0;
+      width:64px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .ledajans-huidu-slider::before{
+      left:0;
+      background: linear-gradient(90deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    .ledajans-huidu-slider::after{
+      right:0;
+      background: linear-gradient(270deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    
+    .ledajans-huidu-track{
+      display:flex;
+      width:max-content;
+      will-change: transform;
+      animation: ledajans-huidu-scroll 30s linear infinite;
+    }
+    
+    .ledajans-huidu-item{
+      position: relative;
+      flex:0 0 auto;
+      width:220px;
+      height:130px;
+      margin:0 .75rem;
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      box-shadow:0 6px 14px rgba(15,23,42,.06);
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-item{
+        width:300px;
+        height:170px;
+        margin:0 1rem;
+      }
+    }
+    
+    .ledajans-huidu-item a{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .ledajans-huidu-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s ease;
+    }
+    .ledajans-huidu-item:hover img{ transform:scale(1.03); }
+    
+    .ledajans-huidu-item-label{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:3;
+      background:rgba(15,23,42,.78);
+      color:#fff;
+      font-size:.72rem;
+      font-weight:700;
+      padding:.3rem .55rem;
+      border-radius:999px;
+      letter-spacing:.02em;
+      pointer-events:none;
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-item-label{ font-size:.78rem; }
+    }
+    
+    @keyframes ledajans-huidu-scroll{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-33.333%); }
+    }
+    </style>
+    
+    <section class="ledajans-huidu-slider" aria-label="Huidu görsel slider">
+      <div class="ledajans-huidu-track">
+    
+        <!-- SET 1 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+        <!-- SET 2 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+        <!-- SET 3 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+      </div>
+    </section>
+    
+    <!-- LEDAJANS - HUIDU SAYFA BLOĞU -->
+    <style>
+    .la-huidu-page{
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+      color: #1f2937;
+    }
+    @media (min-width:1024px){ .la-huidu-page{ padding: 2.5rem 2rem 3.5rem; } }
+    
+    .la-huidu-breadcrumb{
+      margin:1rem 0 1.5rem;
+      font-size:.85rem;
+      color:#6b7280;
+    }
+    .la-huidu-breadcrumb a{ color:#f46f2c; text-decoration:none; }
+    .la-huidu-breadcrumb span{ margin:0 .35rem; color:#9ca3af; }
+    
+    .la-huidu-badge{
+      display:inline-flex; align-items:center;
+      background: rgba(244,111,44,.14);
+      color:#ffd7c3;
+      border:1px solid rgba(244,111,44,.45);
+      padding:.35rem .7rem;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+    
+    .la-huidu-hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media (min-width:992px){ .la-huidu-hero-grid{ grid-template-columns:1fr 1fr; } }
+    
+    .la-huidu-hero-card{
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 300px;
+      background: #0f172a;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .20);
+    }
+    .la-huidu-hero-card-bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+    }
+    .la-huidu-hero-card-bg--software{
+      background-image:
+        linear-gradient(120deg, rgba(15,23,42,.82), rgba(15,23,42,.55)),
+        url("https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png");
+    }
+    .la-huidu-hero-card-bg--manual{
+      background-image:
+        linear-gradient(120deg, rgba(15,23,42,.84), rgba(15,23,42,.58)),
+        url("https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png");
+    }
+    .la-huidu-hero-card-content{
+      position: relative;
+      z-index: 1;
+      padding: 2rem 1.2rem;
+    }
+    @media (min-width:768px){ .la-huidu-hero-card-content{ padding: 2.4rem 1.6rem; } }
+    
+    .la-huidu-title{
+      margin:.8rem 0 .6rem;
+      color:#fff;
+      font-size: clamp(1.45rem, 3.6vw, 2.45rem);
+      font-weight:800;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .la-huidu-subtitle{
+      margin:0;
+      color:#dbe4f0;
+      font-size: clamp(.9rem, 1.8vw, 1.04rem);
+      line-height:1.68;
+      max-width: 56rem;
+    }
+    .la-huidu-actions{
+      margin-top:1.1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.65rem;
+    }
+    .la-huidu-btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.45rem;
+      padding:.72rem 1rem;
+      border-radius:10px;
+      font-size:.88rem;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .la-huidu-btn--primary{
+      background:#f46f2c;
+      color:#fff !important;
+    }
+    .la-huidu-btn--primary:hover{ background:#e35f1d; color:#fff; transform: translateY(-1px); }
+    .la-huidu-btn--secondary{
+      background:rgba(255,255,255,.12);
+      color:#fff !important;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .la-huidu-btn--secondary:hover{ background:rgba(255,255,255,.2); color:#fff; }
+    
+    .la-huidu-section-title{
+      margin: 2rem 0 .8rem;
+      font-size: clamp(1.3rem,2.3vw,1.75rem);
+      font-weight:800;
+      color:#1a1a2e;
+      line-height:1.2;
+    }
+    .la-huidu-section-title::after{
+      content:"";
+      display:block;
+      width:46px; height:4px;
+      margin-top:.5rem;
+      background:#f46f2c;
+      border-radius:999px;
+    }
+    
+    .la-huidu-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media (min-width:768px){ .la-huidu-grid{ grid-template-columns:repeat(3,1fr); } }
+    
+    .la-huidu-card{
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(15,23,42,.05);
+    }
+    .la-huidu-card img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+    }
+    .la-huidu-card-body{ padding:.95rem 1rem 1rem; }
+    .la-huidu-card h3{
+      margin:.05rem 0 .35rem;
+      font-size:1.02rem;
+      line-height:1.35;
+      color:#1a1a2e;
+    }
+    .la-huidu-card p{
+      margin:0;
+      color:#4b5563;
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    
+    .la-huidu-downloads{
+      margin-top:1rem;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.8rem;
+    }
+    @media (min-width:768px){ .la-huidu-downloads{ grid-template-columns:1fr 1fr; } }
+    
+    .la-huidu-dl{
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffffff,#fafafa);
+      padding:1rem;
+    }
+    .la-huidu-dl-title{
+      margin:0 0 .4rem;
+      font-size:1rem;
+      color:#1a1a2e;
+      font-weight:700;
+    }
+    .la-huidu-dl-desc{
+      margin:0 0 .75rem;
+      font-size:.9rem;
+      color:#6b7280;
+      line-height:1.55;
+    }
+    .la-huidu-dl a{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.45rem;
+      background:#f46f2c;
+      color:#fff;
+      padding:.62rem .95rem;
+      border-radius:9px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .la-huidu-dl a:hover{ background:#e35f1d; color:#fff; }
+    
+    .la-huidu-seo{
+      margin-top:1.2rem;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:1rem;
+      background:#f9fafb;
+    }
+    .la-huidu-seo p{
+      margin:.2rem 0;
+      color:#374151;
+      font-size:.93rem;
+      line-height:1.7;
+    }
+    </style>
+    
+    <div class="la-huidu-page">
+      <nav class="la-huidu-breadcrumb">
+        <a href="https://ledajans.com">Ana Sayfa</a><span>›</span>
+        <a href="https://ledajans.com/teknik-destek-bilgi/">Teknik Destek & Bilgi</a><span>›</span>
+        Huidu Program ve Ürünler
+      </nav>
+    
+      <div class="la-huidu-hero-grid">
+        <section class="la-huidu-hero-card">
+          <div class="la-huidu-hero-card-bg la-huidu-hero-card-bg--software"></div>
+          <div class="la-huidu-hero-card-content">
+            <span class="la-huidu-badge">HUIDU YAZILIM DESTEĞİ</span>
+            <h2 class="la-huidu-title">HD Serisi Program İndir</h2>
+            <p class="la-huidu-subtitle">
+              Huidu HD serisi kontrol kartları için güncel program dosyasını indirerek kurulum ve yayın yönetimini hızlıca başlatabilirsiniz.
+            </p>
+            <div class="la-huidu-actions">
+              <a class="la-huidu-btn la-huidu-btn--primary" href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" target="_blank" rel="noopener noreferrer">HD Serisi Programı İndir</a>
+            </div>
+          </div>
+        </section>
+    
+        <section class="la-huidu-hero-card">
+          <div class="la-huidu-hero-card-bg la-huidu-hero-card-bg--manual"></div>
+          <div class="la-huidu-hero-card-content">
+            <span class="la-huidu-badge">SATIŞTA OLAN MODELLER</span>
+            <h2 class="la-huidu-title">Huidu Processor Serisi</h2>
+            <p class="la-huidu-subtitle">
+              VP1240, VP820, VP620, VP410, VP210 ve HDP601 modellerini ürün sayfalarından inceleyebilir, uygun olan modeli doğrudan satın alabilirsiniz.
+            </p>
+            <div class="la-huidu-actions">
+              <a class="la-huidu-btn la-huidu-btn--secondary" href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer">Ürünleri İncele</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      <h2 class="la-huidu-section-title">Öne Çıkan Ürünler</h2>
+      <div class="la-huidu-grid">
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP1240 Processor</h3>
+            <p>Geniş proje kapasitesi ve profesyonel görüntü işleme ile yüksek ölçekli LED ekran projeleri için güçlü çözüm.</p>
+          </div>
+        </article>
+    
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP820 Processor</h3>
+            <p>Orta-üst segment LED ekran uygulamalarında stabil yayın kontrolü ve kolay yönetim sunar.</p>
+          </div>
+        </article>
+    
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP620 Processor</h3>
+            <p>Kompakt projelerde performans ve fiyat dengesi sağlayan, sahada yaygın tercih edilen model.</p>
+          </div>
+        </article>
+      </div>
+    
+      <h2 class="la-huidu-section-title">İndirme ve Satın Alma</h2>
+      <div class="la-huidu-downloads">
+        <div class="la-huidu-dl">
+          <h3 class="la-huidu-dl-title">HD Serisi Kontrol Kartı Programı</h3>
+          <p class="la-huidu-dl-desc">Huidu HD kontrol kartı yazılımını doğrudan indirerek kurulum işlemlerine başlayabilirsiniz.</p>
+          <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" target="_blank" rel="noopener noreferrer">HDPlayer V7.11.8.0 İndir</a>
+        </div>
+        <div class="la-huidu-seo">
+        <h3 class="la-huidu-dl-title">Huidu Processor ve HD Serisi yazılımlar</h3>
+        <p class="la-huidu-dl-desc">LED ekran projelerinde yayın yönetimi, görüntü işleme ve merkezi kontrol süreçlerini kolaylaştırır.</p>
+        <p>Ledajans teknik destek sayfasından güncel yazılımlara ulaşabilir, ürün sayfalarından ihtiyaç duyduğunuz modeli doğrudan satın alabilirsiniz.</p>
+      </div>
+      </div>
+    </div>

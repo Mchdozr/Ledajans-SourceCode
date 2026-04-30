@@ -1,0 +1,395 @@
+<style>
+    .control-cards-content-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content-wrapper { padding: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-content-wrapper { padding: 2rem; }
+    }
+    .control-cards-content {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-content { padding: 2.5rem; }
+    }
+    .control-cards-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #F46F2C;
+    }
+    @media (min-width: 768px) {
+      .control-cards-title { font-size: 1.625rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-title { font-size: 2rem; margin-bottom: 1.25rem; }
+    }
+    .control-cards-section-full {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-section-full {
+        margin-bottom: 1.125rem;
+      }
+    }
+    .control-cards-sections-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-sections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-sections-grid {
+        gap: 1.125rem;
+      }
+    }
+    .control-cards-section {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.625rem;
+      padding: 1rem;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid transparent;
+    }
+    @media (min-width: 640px) {
+      .control-cards-section { padding: 1.125rem; }
+    }
+    .control-cards-section:hover {
+      box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      border-top-color: #F46F2C;
+    }
+    .control-cards-content-section-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.375rem;
+      line-height: 1.3;
+      word-break: break-word;
+      text-align: left;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content-section-title { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-content-section-title { font-size: 0.9375rem; }
+    }
+    .control-cards-content-section-title::before {
+      content: '';
+      width: 3px;
+      height: 0.875rem;
+      background: #F46F2C;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .control-cards-text {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0 0 0.5rem 0;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .control-cards-text { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-text { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-text:last-child {
+      margin-bottom: 0;
+    }
+    .control-cards-section .control-cards-text:last-of-type {
+      margin-bottom: 0;
+    }
+    .control-cards-highlight {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.1) 0%, rgba(244, 111, 44, 0.05) 100%);
+      padding: 0.625rem 0.875rem;
+      border-left: 3px solid #F46F2C;
+      border-radius: 0.375rem;
+      margin: 0.5rem 0;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-highlight { padding: 0.75rem 1rem; }
+    }
+    .control-cards-highlight:hover {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.15) 0%, rgba(244, 111, 44, 0.1) 100%);
+      border-left-color: #e55a1f;
+      box-shadow: 0 8px 20px -5px rgba(244, 111, 44, 0.2), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-1px);
+    }
+    .control-cards-highlight-text {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-highlight-text { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-highlight-text { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-link {
+      color: #F46F2C;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    .control-cards-link:hover {
+      color: #e55a1f;
+    }
+    .control-cards-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+    .control-cards-list-item {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      padding-left: 1.25rem;
+      position: relative;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .control-cards-list-item { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-list-item { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-list-item:last-child {
+      margin-bottom: 0;
+    }
+    .control-cards-list-item::before {
+      content: '•';
+      color: #F46F2C;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+  </style>
+  
+  <div class="control-cards-content-wrapper">
+    <div class="control-cards-content">
+      <h2 class="control-cards-title">İç Mekan LED Ekran – Indoor LED Ekran</h2>
+      
+      <div class="control-cards-section">
+        <p class="control-cards-text">
+          İç mekanda genelde geniş alanlarda uzak mesafeden ve yan açılardan net görüntü alabilmek için son yıllarda LCD'lerin yerini LED ekran almışlardır. Ekranın görülebileceği mesafeye ve ekranın boyutuna göre farklı piksel aralığında ürün seçilebilmektedir.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Piksel Aralığı Tercihleri</h3>
+        <p class="control-cards-text">
+          İç mekanlarda önceki yıllarda ağırlıklı olarak P5 ve P4 kullanılmakla birlikte son dönemde P3, P2,5, P2 hatta P1,86 panellerde tercih edilmeye başlanmıştır. Bazı özel projelerde ise P1,66, P1,53 ve P1,25 paneller kullanılmaktadır.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Ledajans masaüstü menüboard / menüboard LED ekranlarında</strong> ağırlıklı olarak P2 kullanmakla birlikte özel istek üzerine P1,25 paneller kullanmıştır.
+          </p>
+        </div>
+        <p class="control-cards-text">
+          Yine daha önceki yıllarda P6 panel ile P5 panel arasındaki maliyet fiyatının çok yakın olması sebebi ile P6 paneller çok tercih edilmekte iken; gelişen LED ve LED Ekran teknolojisi ile birlikte piyasada P6 panel artık neredeyse LED Ekranlarda hiç kullanılmamaktadır, P5 paneller ise daha büyük ölçüde yapılan LED Ekranlarda veya daha düşük bütçeli işlerde tercih edilmektedir.
+        </p>
+      </div>
+  
+      <div class="control-cards-sections-grid">
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Ledajans Ürün Portföyü</h3>
+          <p class="control-cards-text">
+            Ledajans olarak İç mekan / indoor LED Ekranlar da ağırlıklı olarak <strong>P2 ve P2,5 modüller</strong> kullanmaktadır, modül satışlarında ise en fazla <strong>P2,5 indoor LED Ekran modülleri</strong> satmaktadır.
+          </p>
+        </div>
+  
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Poster & Raket LED Ekranlar</h3>
+          <p class="control-cards-text">
+            Poster LED Ekran / Raket LED Ekran larda ağırlıklı olarak <strong>64×160 cm ve 64×192 cm</strong> dikey, mıknatıslı/magnetli yapıda kasalar ile beraber <strong>P1,86, P2 ve P2,5 RGB LED modülleri</strong> kullanılmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Kontrol Kartları ve İşlevsellik</h3>
+        <p class="control-cards-text">
+          İç mekan LED Ekranlar da sadece processor yardımı ile canlı yayın gösterimi yapılabilmekte iken; LED Ekran kontrol kartı üreten şirketlerin (Novastar ve Huidu gibi) asenkron özellikli kartlarına processor özelliği eklemeleriyle birlikte, LED Ekran kontrol kartları hem senkron hem asenkron özelliğine bürünerek processor olmadan ölçülendirme yaparak canlı yayın verebilecek duruma gelmişlerdir.
+        </p>
+        <p class="control-cards-text">
+          Bu LED Ekran kontrol kartlarına örnek olarak <strong>Novastar TB1, TB2, TB3, TB4, TB6, TB8 Taurus serisi</strong> kartlar ile, Türkiye'de ki LED Ekranlarda çoğunlukla kullanılan <strong>Huidu serisi HD-A4, A5, A6 serisi</strong> LED Ekran kontrol kartlarını gösterebiliriz.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Huidu firması</strong>, söz konusu A4, A5 ve A6 LED Ekran kontrol kartlarına getirdikleri yeni özellik ile bir LED Ekran da canlı yayın ve daha hafızasına yüklenmiş video resim vb. görüntüleri aynı anda gösterebilmektedir, bu şekilde LED Ekranlar pixel ölçülerine ayrılarak farklı amaç ile farklı görüntüler için kullanılabilirler.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Ek Özellikler ve Sensörler</h3>
+        <p class="control-cards-text" style="margin-bottom: 0.5rem;">
+          İlave olarak tercihe göre şu özellikler entegre edilebilmektedir:
+        </p>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item">Ses sistemi</li>
+          <li class="control-cards-list-item">Isı sensörü</li>
+          <li class="control-cards-list-item">Nem sensörü</li>
+          <li class="control-cards-list-item">Rüzgar sensörü</li>
+          <li class="control-cards-list-item">Basınç sensörü</li>
+        </ul>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Güç Kaynağı ve Teknik Özellikler</h3>
+        <p class="control-cards-text">
+          İç mekan LED ekranlarda genelde ince kasalı ve gürültüsüz olması için <strong>fansız SMPS</strong> tercih edilmektedir. İç mekan / indoor LED Ekranlar tarama/scan oranının artması ve kullanılan LED'lerin daha düşük akım çekmesi sebebi ile daha az güce doğal olarak daha az power supply / güç kaynağı adaptöre ihtiyaç duymaktadırlar.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Genel olarak iç mekan LED Ekranlarda</strong> 8 adet indoor / iç mekan LED Ekran modülü için 1 adet 200-5 (40 amper) power supply / güç kaynağı adaptör kullanılmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Güç Kaynağı Markaları</h3>
+        <p class="control-cards-text">
+          Ledajans olarak LED Ekran larımızda <strong>Youyi ve GKGD markalı adaptörler</strong> kullanmakla birlikte, özel isteğe göre bazı LED Ekran projelerinde <strong>Meanwell marka güç kaynağı adaptörlerde</strong> kullanmaktayız.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">LED Çipleri ve Dikkat Edilmesi Gerekenler</h3>
+        <p class="control-cards-text">
+          LED ekran panellerinde kullanılan LED çipleri için bütün firmalar Nationstar markasının kullanıldığını söylemektedirler ve hemen hemen bütün firmalar yüksek ışık şiddetine sahip LED chipler kullanıldığını söylemektedirler. Bu yüzden LED ekran ihtiyaçlarımızı karşılarken dikkat etmeniz gereken en önemli noktalar:
+        </p>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item">Firma tecrübesi ve güvenirliği (Taahhüt ettiği ürünü üretmesi ve satış sonrası destek açısından)</li>
+          <li class="control-cards-list-item">Kullanılacak güç kaynaklarında verim, PFC değeri, kısa devre ve akım koruma özelliklerinin derecesi</li>
+          <li class="control-cards-list-item">Kullanılacak paneldeki LED çipi, LED kılıf, sürücü entegresi ve taramasına (scan) dikkat edilmesi gerekmektedir</li>
+          <li class="control-cards-list-item">LED panel sürücü entegrelerinin refresh (yenileme hızı) hızına dikkat edilmelidir</li>
+          <li class="control-cards-list-item">Kablolama yöntemi ve kablo kesitlerine dikkat edilmelidir</li>
+        </ul>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Kontrol Sistemi Markaları</h3>
+        <p class="control-cards-text">
+          LED ekranlarda kontrol sistemi olarak birçok marka kart tercih edilebilmelidir. <strong>Asenkron ürünlerde Huidu (HD) kartlar</strong> ön plana çıkarken, <strong>senkron ürünlerde Nova ve Linsn</strong> ön plana çıkmaktadır. Bu üreticilerin hepsinin processor bağlantı imkanı vardır.
+        </p>
+      </div>
+  
+      <div class="control-cards-sections-grid">
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Huidu Kontrol Kartları</h3>
+          <p class="control-cards-text">
+            Huidu kartlarda <strong>HD-C36C ve HD-C16C</strong> ön plana çıkarken büyük ebatlı ürünlerde receiver ile entegre çalışan <strong>A3, A4, A5 ve A6</strong> ön plana çıkmaktadır fakat; eski seri olan <strong>A601, A602 ve A603</strong> bazı LED Ekran projelerinde kullanılmaya devam etmektedir.
+          </p>
+          <div class="control-cards-highlight">
+            <p class="control-cards-highlight-text">
+              İsteğe göre bu LED Ekran kartlarına wifi, GPS, 4G ve sensörler ilave edilebilmektedir. Bu LED Ekran kartlarının diğer A serisi Huidu LED Ekran kartlarından tek farkı processor özelliği olmaması nedeni ile canlı yayınlarda ilave processor ihtiyacı duymalarıdır.
+            </p>
+          </div>
+        </div>
+  
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Linsn Kontrol Kartları</h3>
+          <p class="control-cards-text">
+            Linsn kartlarda Sender olarak <strong>T802 üretimi sona erdiğinden</strong> dolayı Linsn kullanılarak yapılacak LED Ekran larda <strong>T921 serisi sender kartlar</strong> kullanılmaktadır, en büyük özelliği ise LED Ekran da kullanılan RGB modüllerin tarama / scan dosyasını geri okuyabilmesidir. Receiver olarak <strong>RV908</strong> ön plana çıkmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Nova Kontrol Kartları</h3>
+        <p class="control-cards-text">
+          Nova kartlarda Sender olarak <strong>MSD300, MSD600</strong> LED Ekran kontrol kartları asenkron ve processor özellikli Taurus serisi LED Ekran kartları nedeni ile yeni üretilen LED Ekranlarda çok fazla tercih edilmemektedir. Receiver olarak <strong>MRV332 ve MRV336</strong> ön plana çıkmaktadır.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Mıknatıslı / Magnetli Sistemler</h3>
+        <p class="control-cards-text">
+          Son dönemde RGB LED modüllerde piksel boyutunun küçülmesi ve çözünürlüğün artması, tabi fiyatlarında önceki yıllara oranla düşmesi nedeni ile daha düşük piksel li LED Ekran üretimi artmıştır. Bu LED Ekranlar iç mekanda olduklarından dolayı çok fazla yer kaplamamaları gerektiğinden, <strong>mıknatıslı / magnetli sistemler</strong> daha fazla tercih edilmeye başlanmıştır.
+        </p>
+        <p class="control-cards-text">
+          Mıknatıslı / magnet li sistemlerde Türkiye'deki LED Ekranlarda genellikle profiller ile yapılan LED Ekran kasaları kullanılırken, Çin ve Avrupa'da daha çok <strong>MG cabinet</strong> dediğimiz kendinden magnetli / mıknatıslı kasalar daha fazla tercih edilmektedir.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            Yukarıda anlattığım LED Ekran bilgilerinde geçen RGB modüller daha çok <strong>Ledajans olarak satışını yaptığımız RGB LED modüller</strong> ile yapılabilecek LED Ekranlar için daha çok geçerlidir.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Rental LED Ekranlar</h3>
+        <p class="control-cards-text">
+          Dünya'da azımsanmayacak kadar LED Ekran kiralama sistemi bulunmaktadır. Bu sistem LED Ekranlar daha çok <strong>Rental LED Ekran</strong> olarak adlandırılmaktadır.
+        </p>
+        <p class="control-cards-text">
+          İç mekan / indoor kiralamada kullanılan Rental LED Ekran lar da çoğunlukla <strong>P3,91, P2,9, P2,6, P1,9 RGB LED Modüller</strong> tercih edilmektedir. Bu Rental LED Ekran modülleri genellikle <strong>250×250 mm</strong> boyutunda olmakla beraber, <strong>50×50 cm ve 50×100 cm</strong> ölçüsünde die cast aluminum dediğimiz rental LED ekran kasaları kullanılmaktadır. Bu kasalarda kilit sistemi ve hanging bar düzeneği olduğundan, ayrıca kablolar plug-in / power icon soketli kablolar kullanıldığından dolayı kurulumu çok basit ve çok hızlıca yapılmaktadır.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Flexible LED Modüller</h3>
+        <p class="control-cards-text">
+          Son olarak son dönemin gözdesi <strong>Flexible LED Modüller</strong> ile üretilen oval, silindir, yarım daire, köşeli geçişler, dalgalı alanlar vb. alanlarda kullanılan LED Ekran sistemleri fazlaca tercih edilmeye başlamıştır.
+        </p>
+        <p class="control-cards-text">
+          Ledajans olarak çoğunlukla <strong>P2,5 esnek modül / flexible modül</strong> ithalatı yapmaktayız ve bu modüller ile ihtiyaç olan LED Ekran ları üretmekteyiz. Flexible modülleri en büyük özelliği isminden de anlaşıldığı gibi çok esnek yapıda olmasından dolayı yatay da istediğimiz şekle girebilmesi ve <strong>kendinden mıknatıslı / magnetli</strong> olmasıdır. Flexible modüller / esnek modüller tarama/scan olarak <strong>1/32 veya 1/64</strong> üretilmektedirler.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Ledajans ile İletişim</h3>
+        <p class="control-cards-text">
+          Sizde LED Ekran alacağınız zaman <strong>21 yıldır LED Ekran sektörü</strong> içinde olan ve sektörünün ithalatta, ihracatta ve LED Ekran çözümlerinde lider firmalardan birisi olan Ledajans ı görmeden aramadan sakın karar vermeyin ve LED Ekran almayın.
+        </p>
+        <p class="control-cards-text">
+          7/24 <a href="https://www.ledajans.com" target="_blank" rel="noopener noreferrer" class="control-cards-link">www.ledajans.com</a> ve <a href="https://www.ledarabul.com" target="_blank" rel="noopener noreferrer" class="control-cards-link">www.ledarabul.com</a> sitelerimizden ürün teknik özelliklerini, programları, tarama dosyalarını, kasa üretimi için gerekli olan DWG (delik dosyası) dosyalarını, kullanım videolarını, LED Ekran video galerimizi (<a href="https://www.youtube.com/channel/UCQt5HAPKC0tsJYGvVEL5MoA" target="_blank" rel="noopener noreferrer" class="control-cards-link">YouTube kanalımız</a>) ve güncel perakende fiyatlarını bulabilirsiniz.
+        </p>
+      </div>
+    </div>
+
+    <div class="control-cards-section control-cards-section-full" style="margin-top: 1.5rem; background: linear-gradient(120deg, rgba(244,111,44,0.05) 0%, rgba(244,111,44,0.02) 100%); border: 1px solid rgba(244,111,44,0.15);">
+      <h3 class="control-cards-content-section-title">İlgili Ürün ve Sayfalar</h3>
+      <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0;">
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/dis-mekan-led-ekran/" class="control-cards-link">Dış Mekan LED Ekran Modelleri ve Fiyatları</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/rental-ekran/" class="control-cards-link">Rental LED Ekran Kiralama Çözümleri</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/cob-ekran/" class="control-cards-link">COB & Smart Screen LED Ekran</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/kontrol-kartlari/" class="control-cards-link">LED Ekran Kontrol Kartları</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/guc-kaynaklari/" class="control-cards-link">LED Ekran Güç Kaynakları</a></li>
+        <li><a href="https://ledajans.com/blog/" class="control-cards-link">LED Ekran Blog - Teknik Yazılar ve Rehberler</a></li>
+      </ul>
+    </div>
+  </div>
