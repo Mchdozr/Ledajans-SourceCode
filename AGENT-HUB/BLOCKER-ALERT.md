@@ -8,3 +8,7 @@ Aşağıdaki kritik blokajlar raporlarda tespit edildi:
 - 2026-05-06-tech-seo.md: [BLOCKER] etiketi bulundu
 
 Onay gerektiren durum: robots/canonical/noindex canlı müdahalesi.
+
+## Approval
+- 2026-05-06 11:20 UTC: Kullanıcı onayı alındı.
+- Kapsam: GSC ham export ile çalışma, SERP baseline standardizasyonu, dry-run sonrası canlı teknik müdahale.

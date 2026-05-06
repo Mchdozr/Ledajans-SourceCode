@@ -23,3 +23,7 @@
 4. P1 / internal-link: kaynak-hedef-anchor matrisi üret ve yerleşim satırı öner.
 5. P1 / serp-watch: baseline sıra, rakip farkı ve haftalık volatilite takibini başlat.
 6. P2 / content: P-003 tamamlanmadan yeni içerik üretimine geçme.
+
+## Blokaj Onayı
+- Kullanıcı onayı alındı: GSC ham export, SERP baseline standardı ve dry-run sonrası canlı teknik müdahale akışı için devam izni verildi.
+- Sonraki adım: agent çıktıları geldikçe otonom döngü ile MASTER-PLAN/TASKS otomatik güncellenecek.
