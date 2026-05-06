@@ -1,45 +1,33 @@
 # SERP Watch Agent Raporu — 2026-05-06
 
+## [BLOCKER]
+- `AGENT-HUB/TASKS.md` dosyası çalışma alanında bulunamadı.
+- Kural gereği görev kaynağına erişim yok; bu nedenle analiz, kullanıcı mesajındaki görev tanımı üzerinden yürütüldü.
+
 ## Rakip gözlemleri
-- Ana sorgu setinde (`led ekran`, `led ekran fiyatları`, `istanbul led ekran`) SERP’i üretici/entegratör siteleri domine ediyor: **Reta LED, Ledcraft, Led Ekran İstanbul, Ledasdo, Led Time, Ledia LED**.
-- Ticari sorgularda “**fiyat + yıl**” başlıkları yoğun; rakipler fiyatı net vermekten çok “fiyatı etkileyen faktörler + teklif formu” kurgusuyla lead topluyor.
-- Yerel sorgularda il/ilçe odaklı landing sayfalar ve “kurulum, kiralama, keşif” hizmet vurgusu öne çıkıyor; güçlü CTA kombinasyonu genelde **Keşif Talebi + WhatsApp + Hızlı Teklif**.
-- Bilgi amaçlı sorgularda (pitch, nits, IP, refresh) rakipler teknik sözlük içeriklerini ticari sayfalara bağlayarak dönüşüm hunisi kuruyor.
+- `led ekran` ve türevlerinde üretici/entegratör domainleri baskın: Reta LED, Ledcraft, Ledasdo, Led Time, Led Ekran İstanbul.
+- Ticari SERP deseninde “fiyat + yıl + teklif al” kombinasyonu öne çıkıyor; rakipler net liste fiyat yerine form/WhatsApp dönüşümüne yönlendiriyor.
+- Yerel niyette şehir bazlı servis landing’leri ve “keşif + kurulum + kiralama” üçlüsü üst sıralarda.
 
-## Fırsat kümeleri (Ledajans)
-1. **Ticari-fiyat kümesi**
-   - Ana niyet: teklif alma
-   - Açılar: `2026 fiyat`, `m2 fiyat`, `kurulum dahil`, `bakım maliyeti`, `kiralama fiyatı`
-2. **Yerel dönüşüm kümesi**
-   - Ana niyet: şehir bazlı tedarikçi bulma
-   - Açılar: `istanbul/ankara/izmir led ekran`, `yakınımdaki led ekran firması`, `aynı gün keşif`
-3. **Dikey kullanım kümesi**
-   - Ana niyet: sektör çözümü
-   - Açılar: `mağaza vitrin`, `eczane tabela`, `belediye bilgi ekranı`, `fuar rental`
-4. **Karar destek kümesi**
-   - Ana niyet: model seçimi
-   - Açılar: `iç mekan vs dış mekan`, `p2 vs p3`, `led vs lcd/projeksiyon`, `cob ne zaman`
-5. **Satın alma sonrası güven kümesi**
-   - Ana niyet: risk azaltma
-   - Açılar: `garanti`, `servis`, `bakım`, `arıza`, `enerji tüketimi`
+## Fırsat kümeleri
+1. **Fiyat/teklif kümeleri:** `led ekran fiyatları`, `m2 fiyat`, `kurulum maliyeti`, `kiralama fiyatı`
+2. **Yerel kümeler:** `istanbul/ankara/izmir led ekran`, `led ekran firmaları`, `yakınımdaki led ekran`
+3. **Sektör kümeleri:** `mağaza vitrin led`, `eczane led tabela`, `fuar led ekran kiralama`, `belediye bilgi ekranı`
+4. **Karşılaştırma kümeleri:** `iç mekan vs dış mekan`, `p2 vs p3`, `led vs lcd/projeksiyon`
+5. **Satın alma sonrası güven:** `garanti`, `servis`, `bakım`, `arıza`
 
-## İlk 10 hedef sorgu (hızlı sıçrama potansiyeli)
-1. led ekran fiyatları 2026  
-2. led ekran m2 fiyatı  
-3. istanbul led ekran fiyat teklifi  
-4. ankara led ekran firmaları  
-5. izmir led ekran kurulumu  
-6. mağaza vitrin led ekran fiyatları  
-7. eczane led tabela fiyatı  
-8. fuar led ekran kiralama fiyatları  
-9. dış mekan led ekran fiyatları  
+## İlk 10 hedef sorgu (hızlı yükseliş potansiyeli)
+1. led ekran fiyatları 2026
+2. led ekran m2 fiyatı
+3. istanbul led ekran fiyat teklifi
+4. ankara led ekran firmaları
+5. izmir led ekran kurulumu
+6. dış mekan led ekran fiyatları
+7. mağaza vitrin led ekran fiyatları
+8. eczane led tabela fiyatı
+9. fuar led ekran kiralama fiyatları
 10. led ekran kurulum maliyeti
 
 ## Uygulama önerisi
-- Mevcut içerik ağacında önce **fiyat + şehir + sektör** üçlüsünü birleştiren yeni landing seti açın (örn. “istanbul led ekran fiyatları”, “fuar led ekran kiralama fiyatları”).
-- Her hedef sayfada aynı şablon: kısa fiyat aralığı, fiyatı etkileyen 5 faktör, referans blok, net CTA (telefon + WhatsApp + form).
-- İç linkte `led-ekran-nedir`, `led-ekran-fiyatlari-2026`, şehir ve sektör sayfaları arasında çift yönlü bağlantı verip dönüşüm sayfalarına link ağırlığını artırın.
-- Başlıklarda yıl ve yer adı kullanın; FAQ schema’yı “fiyat neye göre değişir, kurulum kaç gün sürer, garanti kaç yıl” sorularıyla standartlaştırın.
-
-## Not
-- İstenen `AGENT-HUB/STATE.md` dosyası çalışma alanında bulunamadığı için analiz, mevcut içerik ağacı ve canlı SERP gözlemlerine göre hazırlanmıştır.
+- İlk fazda “şehir + fiyat” landing’leri (İstanbul/Ankara/İzmir) ve “sektör + fiyat” sayfalarını açıp mevcut pillar içeriklere çift yönlü bağlayın.
+- Her hedef sayfada kısa fiyat aralığı, fiyatı etkileyen faktörler, referans ve tek ekranda çoklu CTA (telefon/WhatsApp/form) kullanın.
