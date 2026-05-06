@@ -2,7 +2,7 @@
 
 ## Sprint
 - Sprint: 2026-05 İlk Sprint / Tur-1
-- Orchestrator: LEDAJANS SEO Orkestratörü
+- Orchestrator: lider-orchestrator
 - Öncelik Kuralı: teknik hata > indekslenme > içerik güncelleme > yeni içerik
 
 ## Hedef
@@ -18,4 +18,5 @@
 
 ## Mevcut Durum
 - AGENT-HUB yapısı bu sprint başlangıcında oluşturuldu.
-- İlk turda mevcut pending görevler role göre parçalanacak ve dağıtılacak.
+- İlk tur görev dağıtımı aktif.
+- 20 dakikalık otonom kontrol döngüsü çalışıyor.

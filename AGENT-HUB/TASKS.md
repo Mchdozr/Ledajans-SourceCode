@@ -49,6 +49,38 @@
 | 1 | serp-watch | P-005 | `AGENT-HUB/REPORTS/2026-05-06-serp-watch.md` | Assigned |
 | 1 | content (deferred) | P-006 | `AGENT-HUB/REPORTS/2026-05-06-content.md` | Blocked (ön koşul: P-003) |
 
+## İlk Tur Alt Agent Talimatları (Zorunlu Protokol)
+
+### tech-seo (P-001)
+- Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-tech-seo.md`
+- Teslim formatı: `Scope`, `Findings(P0/P1)`, `Dry-Run Patch Plan`, `Apply Plan`, `Risk`, `Next Actions`
+- Zorunlu alanlar: etkilenen URL, sorun tipi, öncelik, dry-run sonucu, önerilen değişiklik
+- Kritik durumda: satıra `[BLOCKER]` etiketi ekle
+
+### gsc (P-002)
+- Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-gsc.md`
+- Teslim formatı: `Coverage Snapshot`, `Excluded Clusters`, `Indexing Priority Queue`, `Validation Plan`
+- Zorunlu alanlar: URL kümesi, dışlanma nedeni, etki skoru, önerilen aksiyon
+- Kritik durumda: satıra `[BLOCKER]` etiketi ekle
+
+### content (P-003)
+- Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-content.md`
+- Teslim formatı: `Query Mapping`, `Page-Level Gaps`, `On-Page Update Draft`, `Deferred New Content`
+- Zorunlu alanlar: hedef anahtar kelime, hedef URL, eksik alan, revizyon önerisi
+- Kritik durumda: satıra `[BLOCKER]` etiketi ekle
+
+### internal-link (P-004)
+- Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-internal-link.md`
+- Teslim formatı: `Money Pages`, `Source Pages`, `Anchor Set`, `Link Injection Plan`
+- Zorunlu alanlar: kaynak URL, hedef URL, anchor, yerleşim önerisi
+- Kritik durumda: satıra `[BLOCKER]` etiketi ekle
+
+### serp-watch (P-005)
+- Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-serp-watch.md`
+- Teslim formatı: `Keyword Set`, `Baseline Positions`, `Competitor Delta`, `Volatility Notes`
+- Zorunlu alanlar: anahtar kelime, mevcut sıra, rakip, fark, not
+- Kritik durumda: satıra `[BLOCKER]` etiketi ekle
+
 ## Self-Spawn Kuralları
 - Teknik veya indeksleme analizinde yeni bir uzmanlık ihtiyacı doğarsa TASKS'a `"[NEW:<rol>]"` etiketiyle eklenir.
 - Yeni rol yalnızca mevcut rollerin kapsam dışı bıraktığı işi alır.

@@ -1,5 +1,15 @@
 # MASTER PLAN - 2026-05-06
 
+## 0) İlk Tur Görev Dağıtımı (Lider-Orchestrator)
+
+- tech-seo -> `AGENT-HUB/REPORTS/2026-05-06-tech-seo.md`
+- gsc -> `AGENT-HUB/REPORTS/2026-05-06-gsc.md`
+- content -> `AGENT-HUB/REPORTS/2026-05-06-content.md`
+- internal-link -> `AGENT-HUB/REPORTS/2026-05-06-internal-link.md`
+- serp-watch -> `AGENT-HUB/REPORTS/2026-05-06-serp-watch.md`
+
+Teslim kuralı: Her raporda ilgili rol şablon başlıkları dolu olacak, kritik durum varsa satır bazında `[BLOCKER]` etiketi kullanılacak.
+
 ## 1) Critical / High Issues (Öncelik Sırasıyla)
 
 ### Critical (P0)
