@@ -1,0 +1,98 @@
+LEDAJANS SEO widget dosyaları — WordPress'te özel HTML veya Elementor HTML widget içine TÜM dosya içeriğini yapıştırın.
+
+ÖNEMLİ — GÖRÜNÜM (blog ile aynı çizgi):
+  Tüm sayfalar <div class="ledajans-seo-article"> ile sarılıdır. Stiller Ek CSS'te "Bölüm 13" olarak tanımlıdır.
+  WP Admin → Görünüm → Özelleştir → Ek CSS → repo'daki Ek-CSS-final.css dosyasının GÜNCEL halini yapıştırın
+  (en azından /* 13) SEO makale widget */ bloğu şart). Aksi halde kutu, tipografi ve turuncu CTA düzgün görünmez.
+
+Önerilen yayın yolu (slug) — Yoast / RankMath meta açıklaması için dosya başındaki HTML yorumunu kullanın.
+
+Son güncelleme: 2026-05-06
+
+================================================================================
+TEMEL REHBERLER (Cornerstone / Pillar Content — yüksek hacimli ana anahtar kelimeler)
+================================================================================
+- led-ekran-nedir.html              → /led-ekran-nedir/          (ana anahtar: led ekran, led ekran nedir)
+- led-tabela-rehberi.html           → /led-tabela/               (ana anahtar: led tabela, dijital tabela)
+- led-ekran-kurulum-rehberi.html    → /led-ekran-kurulum/        (ana anahtar: led ekran kurulum, nasıl kurulur)
+- led-ekran-bakim-rehberi.html      → /led-ekran-bakim/          (ana anahtar: led ekran bakım, temizlik, arıza)
+
+================================================================================
+SEKTÖR REHBERLERİ
+================================================================================
+- avm-led-ekran-rehberi.html        → /avm-led-ekran-rehberi/
+- stadyum-led-ekran-rehberi.html    → /stadyum-led-ekran/
+- magaza-vitrin-led-rehberi.html    → /magaza-vitrin-led-ekran/
+- belediye-bilgi-ekrani-rehberi.html → /belediye-bilgi-ekrani/
+- eczane-led-tabela-rehberi.html    → /eczane-led-tabela/        [YENİ]
+- cami-led-ekran-rehberi.html       → /cami-led-ekran/           [YENİ]
+
+================================================================================
+KARŞILAŞTIRMA (FAQPage + HowTo JSON-LD dosya içinde)
+================================================================================
+- p2-vs-p3-led-ekran.html           → /p2-vs-p3-led-ekran/
+- ic-mekan-vs-dis-mekan-led.html    → /ic-mekan-dis-mekan-led-farki/
+- cob-led-ne-zaman.html             → /cob-led-ne-zaman/
+- led-ekran-vs-lcd.html             → /led-ekran-lcd-farki/       [YENİ]
+- led-ekran-vs-projeksiyon.html     → /led-ekran-projeksiyon/     [YENİ]
+
+================================================================================
+TEKNİK SÖZLÜK (DefinedTerm JSON-LD)
+================================================================================
+- pitch-led-nedir.html              → /pitch-led-nedir/
+- refresh-hz-nedir.html             → /refresh-hz-nedir/
+- nits-parlaklik-nedir.html         → /nits-parlaklik-nedir/
+- ip-koruma-led-ekran.html          → /ip-koruma-led-ekran/
+- led-panel-nedir.html              → /led-panel-nedir/           [YENİ]
+- smd-led-nedir.html                → /smd-led-nedir/             [YENİ]
+- gob-led-nedir.html                → /gob-led-nedir/             [YENİ]
+
+================================================================================
+ŞEHİR BAZLI SEO SAYFALARI (LocalBusiness + FAQPage JSON-LD)
+================================================================================
+- istanbul-led-ekran.html           → /istanbul-led-ekran/        [YENİ]
+- ankara-led-ekran.html             → /ankara-led-ekran/          [YENİ]
+- izmir-led-ekran.html              → /izmir-led-ekran/           [YENİ]
+
+================================================================================
+KULLANIM ALANLARI (long-tail keyword hedefleri)
+================================================================================
+- havaalani-led-ekran.html          → /havaalani-led-ekran/       [YENİ]
+- otel-led-ekran.html               → /otel-led-ekran/            [YENİ]
+- fuar-led-ekran.html               → /fuar-led-ekran/            [YENİ]
+- billboard-led-ekran.html          → /billboard-led-ekran/        [YENİ]
+- toplanti-odasi-led-ekran.html     → /toplanti-odasi-led-ekran/  [YENİ]
+
+================================================================================
+REFERANS ŞABLONU (200+ kelime özet bölümü)
+================================================================================
+- istanbul-dis-mekan-led-referansi.html → gerçek proje adı/içeriği onay sonrası güncelleyin
+
+================================================================================
+SCHEMA DOSYALARI (WordPress Header/Footer scriptleri bölümüne eklenecek)
+================================================================================
+- schema/organization-schema.html    → Organization + LocalBusiness global schema
+- schema/breadcrumb-template.html    → BreadcrumbList template'leri (Ürün, Blog, Şehir)
+- schema/website-schema.html         → WebSite + SearchAction (Sitelinks Searchbox)
+- schema/navigation-schema.html      → SiteNavigationElement (ana menü)
+
+================================================================================
+İÇ REFERANS (yayınlanmayacak)
+================================================================================
+- ic-link-haritasi.html              → Tüm sayfalar arası iç link haritası
+
+================================================================================
+BLOG İÇERİKLERİ (Blog/ klasöründe)
+================================================================================
+- Blog/led-ekran-fiyatlari-2026-rehber.html → /blog/led-ekran-fiyatlari-2026/
+  (Article + FAQPage JSON-LD, Mayıs 2026 güncel)
+
+================================================================================
+NOTLAR
+================================================================================
+- Schema script'leri (<script type="application/ld+json">) WordPress "Özel HTML" bloklarında genelde çalışır; tema kısıtlıysa RankMath şema modülüne de aktarın.
+- Sektör rehberlerine FAQPage JSON-LD eklendi (2026-05-06).
+- Tüm yeni sayfalar mevcut SEO widget CSS formatını (.ledajans-seo-article) kullanır.
+- İç link haritası (ic-link-haritasi.html) hangi sayfaya hangi linkin eklenmesi gerektiğini gösterir.
+- Şehir sayfaları LocalBusiness schema ile yerel SEO sinyali verir.
+- Cornerstone sayfa (led-ekran-nedir.html) diğer tüm sayfalardan link almalıdır.

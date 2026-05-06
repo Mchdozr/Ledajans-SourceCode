@@ -1,0 +1,116 @@
+<!-- 
+  LEDAJANS BreadcrumbList Schema Templates (JSON-LD)
+  Her sayfa türüne göre uygun breadcrumb template'i kullanılmalıdır.
+  WordPress Header/Footer veya sayfa bazlı ekleme yapılabilir.
+-->
+
+<!-- ========================================== -->
+<!-- TEMPLATE 1: Ürün Kategori Sayfaları        -->
+<!-- Ana Sayfa → Ürünler → [Ürün Kategori]      -->
+<!-- ========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://ledajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ürünler",
+      "item": "https://ledajans.com/urunler/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{URUN_KATEGORI_ADI}}",
+      "item": "https://ledajans.com/urunler/{{URUN_KATEGORI_SLUG}}/"
+    }
+  ]
+}
+</script>
+
+<!-- ========================================== -->
+<!-- TEMPLATE 2: Blog Yazısı Sayfaları          -->
+<!-- Ana Sayfa → Blog → [Blog Yazısı]           -->
+<!-- ========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://ledajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://ledajans.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{BLOG_YAZISI_BASLIK}}",
+      "item": "https://ledajans.com/blog/{{BLOG_YAZISI_SLUG}}/"
+    }
+  ]
+}
+</script>
+
+<!-- ========================================== -->
+<!-- TEMPLATE 3: Şehir LED Ekran Sayfaları      -->
+<!-- Ana Sayfa → [Şehir] LED Ekran              -->
+<!-- ========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://ledajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{SEHIR}} LED Ekran",
+      "item": "https://ledajans.com/{{SEHIR_SLUG}}-led-ekran/"
+    }
+  ]
+}
+</script>
+
+<!-- ========================================== -->
+<!-- KULLANIM NOTLARI                           -->
+<!-- ========================================== -->
+<!--
+  Placeholder'ları sayfa bazında değiştirin:
+  
+  {{URUN_KATEGORI_ADI}}  → Örn: "İç Mekan LED Ekran", "Dış Mekan LED Ekran"
+  {{URUN_KATEGORI_SLUG}} → Örn: "ic-mekan-led-ekran", "dis-mekan-led-ekran"
+  {{BLOG_YAZISI_BASLIK}}  → Örn: "P2 vs P3 LED Ekran Karşılaştırması"
+  {{BLOG_YAZISI_SLUG}}    → Örn: "p2-vs-p3-led-ekran"
+  {{SEHIR}}               → Örn: "İstanbul", "Ankara", "İzmir"
+  {{SEHIR_SLUG}}          → Örn: "istanbul", "ankara", "izmir"
+
+  Örnek ürün kategorileri:
+  - İç Mekan LED Ekran     → ic-mekan-led-ekran
+  - Dış Mekan LED Ekran    → dis-mekan-led-ekran
+  - Rental LED Ekran       → rental-led-ekran
+  - COB Smart Screen       → cob-smart-screen
+  - LED Panel              → led-panel
+
+  Örnek şehirler:
+  - İstanbul, Ankara, İzmir, Bursa, Antalya, Adana, Konya, Gaziantep
+-->

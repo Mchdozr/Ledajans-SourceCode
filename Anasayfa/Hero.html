@@ -1,4 +1,4 @@
-<!-- WIDGET 1 — Hero + video modal (Elementor HTML widget'a komple yapıştır) -->
+<!-- WIDGET 1 — Hero: dosyanın TAMAMINI Elementor HTML widget'a yapıştır | Ek CSS: Ek-CSS-final.css | 2026-05-04 -->
 <style>
     .ledajans-video-modal {
       display: none;
@@ -38,10 +38,327 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
     }
+    .ledajans-launch-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483646;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(17, 24, 39, 0.45);
+      backdrop-filter: blur(2px);
+      padding: 1rem;
+    }
+    .ledajans-launch-modal.active { display: flex; }
+    .ledajans-launch-card {
+      position: relative;
+      width: min(100%, 720px);
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 2.1rem 1.5rem 1.4rem;
+      background:
+        radial-gradient(100% 120% at 15% 0%, rgba(244, 111, 44, 0.2), rgba(244, 111, 44, 0) 45%),
+        radial-gradient(100% 120% at 85% 0%, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0) 45%),
+        linear-gradient(165deg, rgba(15, 23, 42, 0.88) 0%, rgba(17, 24, 39, 0.92) 55%, rgba(30, 41, 59, 0.94) 100%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      text-align: center;
+    }
+    .ledajans-launch-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 0;
+    }
+    .ledajans-launch-close::before {
+      content: "\00d7";
+      font-size: 24px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+    .ledajans-launch-badge {
+      display: inline-flex;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 111, 44, 0.65);
+      background: rgba(244, 111, 44, 0.16);
+      color: #fed7aa;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .ledajans-launch-brand {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+    }
+    .ledajans-launch-brand img {
+      width: auto;
+      height: 34px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+    }
+    .ledajans-launch-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      font-weight: 700;
+      background: linear-gradient(90deg, #f8fafc 0%, #bfdbfe 50%, #fdba74 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 8px 22px rgba(2, 6, 23, 0.55);
+    }
+    .ledajans-launch-meta {
+      margin: 1rem 0 0;
+      color: #e2e8f0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .ledajans-launch-countdown {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .ledajans-launch-unit {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(148, 163, 184, 0.12) 100%);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 14px;
+      padding: 0.8rem 0.35rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    }
+    .ledajans-launch-value {
+      display: block;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .ledajans-launch-label {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      color: #d1d5db;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .ledajans-launch-note {
+      margin: 1rem 0 0;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+    .ledajans-launch-details {
+      margin: 1.1rem auto 0;
+      padding: 0.95rem;
+      border-radius: 16px;
+      background: linear-gradient(160deg, rgba(36, 50, 72, 0.72), rgba(30, 41, 59, 0.52));
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      width: 100%;
+      max-width: none;
+      text-align: left;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+    .ledajans-launch-detail-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0.5rem 0.55rem;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.22);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+    .ledajans-launch-detail-row + .ledajans-launch-detail-row {
+      margin-top: 0.45rem;
+    }
+    .ledajans-launch-detail-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f46f2c, #fb923c);
+      box-shadow: 0 0 0 4px rgba(244, 111, 44, 0.15);
+    }
+    .ledajans-launch-details p {
+      margin: 0;
+      color: #e2e8f0;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .ledajans-launch-details p strong {
+      color: #f8fafc;
+      font-weight: 700;
+    }
+    .ledajans-launch-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.7rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ledajans-launch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.65rem 1.1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .ledajans-launch-btn-call {
+      flex-direction: column;
+      gap: 0.1rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .ledajans-launch-btn-call-number {
+      display: block;
+      font-size: 0.92em;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .ledajans-launch-btn-primary {
+      background: #f46f2c;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(244, 111, 44, 0.35);
+    }
+    .ledajans-launch-btn-primary:hover {
+      background: #e55a1f;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .ledajans-launch-actions .ledajans-launch-btn-primary {
+      min-width: 260px;
+    }
+    @media (min-width: 769px) {
+      .ledajans-launch-actions {
+        flex-wrap: nowrap;
+        align-items: stretch;
+      }
+      .ledajans-launch-actions .ledajans-launch-btn {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+      .ledajans-launch-actions .ledajans-launch-btn-primary {
+        min-width: 0;
+      }
+    }
+    .ledajans-launch-btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .ledajans-launch-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .ledajans-launch-modal {
+        align-items: flex-start;
+        padding: calc(env(safe-area-inset-top) + 0.9rem) 0.75rem 1rem;
+        overflow-y: auto;
+      }
+      .ledajans-launch-card {
+        margin: 0 auto;
+        padding: 1.35rem 0.85rem 1rem;
+        border-radius: 20px;
+      }
+      .ledajans-launch-brand { margin-bottom: 0.6rem; }
+      .ledajans-launch-brand img { height: 28px; }
+      .ledajans-launch-badge {
+        margin-bottom: 0.7rem;
+        font-size: 0.74rem;
+      }
+      .ledajans-launch-title {
+        font-size: clamp(1.35rem, 7vw, 1.8rem);
+      }
+      .ledajans-launch-meta {
+        margin-top: 0.65rem;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+      .ledajans-launch-close {
+        top: 8px;
+        right: 8px;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 22px;
+      }
+      .ledajans-launch-countdown {
+        margin-top: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+      }
+      .ledajans-launch-unit {
+        border-radius: 12px;
+        padding: 0.7rem 0.25rem;
+      }
+      .ledajans-launch-value {
+        font-size: clamp(1.15rem, 7vw, 1.65rem);
+      }
+      .ledajans-launch-label {
+        font-size: 0.72rem;
+      }
+      .ledajans-launch-details {
+        margin-top: 0.8rem;
+        padding: 0.65rem;
+        border-radius: 12px;
+      }
+      .ledajans-launch-detail-row {
+        padding: 0.45rem 0.45rem;
+      }
+      .ledajans-launch-details p {
+        font-size: 0.92rem;
+        line-height: 1.4;
+      }
+      .ledajans-launch-actions {
+        margin-top: 0.8rem;
+        gap: 0.5rem;
+      }
+      .ledajans-launch-btn {
+        width: 100%;
+        min-height: 42px;
+        padding: 0.58rem 0.9rem;
+        font-size: 0.95rem;
+      }
+    }
+    @media (max-width: 420px) {
+      .ledajans-launch-card {
+        padding-left: 0.72rem;
+        padding-right: 0.72rem;
+      }
+      .ledajans-launch-title { font-size: 1.28rem; }
+      .ledajans-launch-meta { font-size: 0.9rem; }
+      .ledajans-launch-details p { font-size: 0.88rem; }
+    }
     .ledajans-hero {
       position: relative;
-      height: 100vh;
-      min-height: 600px;
+      /* 100vh sabit yükseklik + sticky header bazen boş kuşak; min-height + height:auto daha stabil */
+      height: auto;
+      min-height: max(600px, 100vh);
+      min-height: max(600px, 100dvh);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,7 +381,7 @@
       position: absolute;
       inset: 0;
       background-size: cover;
-      background-position: center;
+      background-position: calc(62% + 3px) center;
       z-index: 0;
     }
     @media (min-width: 769px) {
@@ -99,6 +416,236 @@
       text-align: center;
       padding: 0 1rem;
       transform: translateY(-25px);
+      transition: transform 0.75s cubic-bezier(.22,.61,.36,1), max-width 0.75s cubic-bezier(.22,.61,.36,1);
+    }
+    .ledajans-hero-fair-panel {
+      position: absolute;
+      z-index: 11;
+      left: clamp(1rem, 2vw, 2rem);
+      top: 50%;
+      width: min(450px, 38vw);
+      transform: translate(-125%, -50%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.75s cubic-bezier(.22,.61,.36,1), opacity 0.5s ease;
+    }
+    .ledajans-hero-fair-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      padding: 1.35rem 1.2rem;
+      background: linear-gradient(165deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.9));
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+      color: #fff;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .ledajans-hero-fair-close {
+      display: none;
+    }
+    .ledajans-hero-fair-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ledajans-hero-fair-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    .ledajans-hero-fair-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.4);
+      border-color: rgba(244, 111, 44, 0.45);
+    }
+    .ledajans-hero-fair-logos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1.15rem;
+      width: 100%;
+      padding: 0;
+    }
+    .ledajans-hero-fair-logo-box {
+      border: none;
+      background: transparent;
+      border-radius: 0;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      overflow: hidden;
+    }
+    .ledajans-hero-fair-ledajans-logo {
+      height: 28px !important;
+      width: auto !important;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+      max-width: 100%;
+    }
+    .ledajans-hero-fair-sign-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 102px;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      width: 100%;
+      overflow: hidden;
+      transition: filter 0.25s ease, transform 0.25s ease;
+    }
+    .ledajans-hero-fair-sign-logo-wrap:hover {
+      filter: drop-shadow(0 6px 12px rgba(244, 111, 44, 0.24));
+      transform: translateY(-1px);
+    }
+    .ledajans-hero-fair-sign-logo {
+      display: block;
+      width: auto !important;
+      max-width: 100%;
+      height: 76px !important;
+      object-fit: contain;
+    }
+    .ledajans-hero-fair-badge {
+      display: inline-flex;
+      margin-bottom: 0.6rem;
+      border-radius: 999px;
+      padding: 0.34rem 0.56rem;
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fdba74;
+      border: 1px solid rgba(244, 111, 44, 0.45);
+      background: rgba(244, 111, 44, 0.1);
+      font-weight: 700;
+    }
+    .ledajans-hero-fair-slogan {
+      margin: 0 0 0.95rem;
+      padding: 0.5rem 0.62rem;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      background: rgba(30, 41, 59, 0.55);
+      color: #d1d5db;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .ledajans-hero-fair-slogan:hover {
+      border-color: rgba(244, 111, 44, 0.55);
+      background: rgba(244, 111, 44, 0.14);
+      color: #ffedd5;
+    }
+    .ledajans-hero-fair-title {
+      margin: 0 0 0.85rem;
+      font-size: 1.26rem;
+      line-height: 1.25;
+      color: #f8fafc;
+      font-weight: 700;
+      text-transform: none;
+    }
+    .ledajans-hero-fair-meta {
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin-top: 0;
+    }
+    .ledajans-hero-fair-meta-line {
+      display: block;
+      padding: 0.95rem 0.78rem;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      background: rgba(30, 41, 59, 0.62);
+      color: #e2e8f0;
+      font-size: 0.96rem;
+      line-height: 1.35;
+      font-weight: 700;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ledajans-hero-fair-meta-line:hover {
+      transform: translateY(-1px);
+      border-color: rgba(244, 111, 44, 0.35);
+      box-shadow: inset 0 0 0 1px rgba(244, 111, 44, 0.08);
+    }
+    .ledajans-hero-fair-meta-line--date {
+      border-color: rgba(244, 111, 44, 0.42);
+      box-shadow: inset 3px 0 0 #f46f2c;
+      color: #fff7ed;
+      min-height: 72px;
+    }
+    .ledajans-hero-fair-meta-line--location {
+      border-color: rgba(244, 111, 44, 0.24);
+      box-shadow: inset 3px 0 0 #f46f2c;
+      color: #f3f4f6;
+      min-height: 72px;
+    }
+    .ledajans-hero-fair-stand {
+      margin-top: 0.8rem;
+      display: inline-flex;
+      padding: 0.9rem 0.85rem;
+      border-radius: 12px;
+      background: rgba(30, 41, 59, 0.68);
+      border: 1px solid rgba(244, 111, 44, 0.5);
+      box-shadow: inset 3px 0 0 #f46f2c;
+      color: #ffedd5;
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      width: 100%;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .ledajans-hero-fair-cta-hint {
+      margin-top: 0.55rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.58rem;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 111, 44, 0.4);
+      background: rgba(244, 111, 44, 0.12);
+      color: #ffedd5;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      align-self: center;
+    }
+    .ledajans-hero-fair-stand:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(90deg, rgba(244, 111, 44, 0.22), rgba(244, 111, 44, 0.12));
+      box-shadow: 0 8px 20px rgba(244, 111, 44, 0.2);
+    }
+    .ledajans-hero.fair-reveal-active .ledajans-hero-fair-panel {
+      transform: translate(0, -50%);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .ledajans-hero.fair-reveal-active .ledajans-hero-content {
+      transform: translate(170px, -25px);
+      max-width: calc(100% - 455px);
+    }
+    @media (max-width: 1200px) {
+      .ledajans-hero-fair-meta-line { min-height: 64px; }
     }
     .ledajans-play-wrap {
       display: block;
@@ -206,6 +753,39 @@
       transform: scale(1.05);
     }
     .ledajans-scroll-indicator { display: none; }
+    @media (max-width: 768px) {
+      .ledajans-hero-fair-panel {
+        display: none !important;
+      }
+      .ledajans-hero.fair-reveal-active .ledajans-hero-fair-panel {
+        display: none !important;
+      }
+      .ledajans-hero.fair-reveal-active .ledajans-hero-content {
+        transform: none;
+        max-width: 100%;
+      }
+      .ledajans-hero.fair-panel-dismissed .ledajans-hero-fair-panel {
+        display: none !important;
+      }
+      .ledajans-hero-fair-card { padding: 1.05rem 0.9rem; }
+      .ledajans-hero-fair-close {
+        display: inline-flex;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+      }
+    }
     .elementor-element-b13dda5 .ledajans-hero { display: flex !important; }
     @media (max-width: 768px) {
       .ledajans-hero {
@@ -247,9 +827,27 @@
              data-src="https://ledajans.com/wp-content/uploads/2026/03/Firefly-548225-1.mp4">
       </video>
       <div class="ledajans-hero-bg-mobile">
-        <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp 768w, https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
+        <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp 768w, https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp 1200w" sizes="100vw" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
       </div>
       <div class="ledajans-hero-overlay"></div>
+      <aside class="ledajans-hero-fair-panel" id="ledajansHeroFairPanel" aria-label="SIGNISTANBUL fuar duyurusu">
+        <div class="ledajans-hero-fair-card" id="ledajansHeroFairCard">
+          <button type="button" class="ledajans-hero-fair-close" id="ledajansHeroFairClose" aria-label="Kapat">&times;</button>
+          <div class="ledajans-hero-fair-logos">
+            <span class="ledajans-hero-fair-sign-logo-wrap">
+              <img class="ledajans-hero-fair-sign-logo" src="https://ledajans.com/wp-content/uploads/2026/05/signistanbul-3.png" alt="SIGNISTANBUL">
+            </span>
+          </div>
+          <p class="ledajans-hero-fair-slogan">Yeni Tarihinde Yeni Adresinde</p>
+          <h3 class="ledajans-hero-fair-title">LEDAJANS fuarda sizi bekliyor</h3>
+          <p class="ledajans-hero-fair-meta">
+            <span class="ledajans-hero-fair-meta-line ledajans-hero-fair-meta-line--date">23-26 Eylül 2026 (Çarşamba-Cumartesi)</span>
+            <span class="ledajans-hero-fair-meta-line ledajans-hero-fair-meta-line--location">İstanbul Fuar Merkezi (İFM, Yeşilköy)</span>
+          </p>
+          <span class="ledajans-hero-fair-stand">HOL: 7 | STANT: 7A20</span>
+          <span class="ledajans-hero-fair-cta-hint">🗺️ Yol Tarifi Al</span>
+        </div>
+      </aside>
       <div class="ledajans-hero-content">
         <div class="ledajans-play-wrap">
           <a href="#ledajans-video" id="ledajansPlayBtn">
@@ -267,12 +865,58 @@
         </div>
       </div>
     </section>
-    
     <div id="ledajansVideoModal" class="ledajans-video-modal">
       <div class="ledajans-video-modal-content">
         <button type="button" class="ledajans-video-modal-close" id="ledajansModalClose">&times;</button>
         <div class="ledajans-video-wrapper">
           <iframe id="ledajansYoutubeFrame" src="" title="LEDAJANS tanıtım videosu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div id="ledajansLaunchModal" class="ledajans-launch-modal" aria-hidden="true">
+      <div class="ledajans-launch-card" role="dialog" aria-modal="true" aria-labelledby="ledajansLaunchTitle">
+        <button type="button" class="ledajans-launch-close" id="ledajansLaunchClose" aria-label="Kapat">&times;</button>
+        <div class="ledajans-launch-brand">
+          <img src="https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png" alt="LEDAJANS Logo">
+        </div>
+        <span class="ledajans-launch-badge">Lansman Duyurusu</span>
+        <h2 id="ledajansLaunchTitle" class="ledajans-launch-title">Hilton Bomonti Otel Lansmanı</h2>
+        <p class="ledajans-launch-meta">
+          6 Haziran<br>
+          13:00 - 16:00
+        </p>
+        <div class="ledajans-launch-countdown" id="ledajansLaunchCountdown">
+          <div class="ledajans-launch-unit">
+            <span class="ledajans-launch-value" data-countdown="days">00</span>
+            <span class="ledajans-launch-label">Gün</span>
+          </div>
+          <div class="ledajans-launch-unit">
+            <span class="ledajans-launch-value" data-countdown="hours">00</span>
+            <span class="ledajans-launch-label">Saat</span>
+          </div>
+          <div class="ledajans-launch-unit">
+            <span class="ledajans-launch-value" data-countdown="minutes">00</span>
+            <span class="ledajans-launch-label">Dakika</span>
+          </div>
+          <div class="ledajans-launch-unit">
+            <span class="ledajans-launch-value" data-countdown="seconds">00</span>
+            <span class="ledajans-launch-label">Saniye</span>
+          </div>
+        </div>
+        <div class="ledajans-launch-details">
+          <div class="ledajans-launch-detail-row">
+            <span class="ledajans-launch-detail-dot" aria-hidden="true"></span>
+            <p><strong>Lokasyon:</strong> Hilton Bomonti Otel, İstanbul</p>
+          </div>
+          <div class="ledajans-launch-detail-row">
+            <span class="ledajans-launch-detail-dot" aria-hidden="true"></span>
+            <p><strong>Program:</strong> 13:00 lansman başlangıcı, 16:00 kapanış</p>
+          </div>
+        </div>
+        <div class="ledajans-launch-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Hilton+Istanbul+Bomonti+Hotel+%26+Conference+Center%2C+Silahsor+Cad.+No%3A42%2C+34381+Sisli%2FIstanbul&travelmode=driving" target="_blank" rel="noopener noreferrer" class="ledajans-launch-btn ledajans-launch-btn-secondary">🗺️ Yol Tarifi Al</a>
+          <a href="https://ledajans.com/iletisim/" class="ledajans-launch-btn ledajans-launch-btn-primary">Katılım İçin Bize Ulaşın</a>
+          <a href="tel:+905438795108" class="ledajans-launch-btn ledajans-launch-btn-secondary ledajans-launch-btn-call"><span>Hemen Arayın</span><span class="ledajans-launch-btn-call-number">+90 543 879 51 08</span></a>
         </div>
       </div>
     </div>
@@ -285,6 +929,58 @@
       var closeBtn = document.getElementById('ledajansModalClose');
       var youtubeUrl = 'https://www.youtube.com/embed/riOY6kz7cv4?autoplay=1';
       var modalOpen = false;
+      var launchModal = document.getElementById('ledajansLaunchModal');
+      var launchCloseBtn = document.getElementById('ledajansLaunchClose');
+      var heroSection = document.querySelector('.ledajans-hero');
+      var heroFairCloseBtn = document.getElementById('ledajansHeroFairClose');
+      var heroFairCard = document.getElementById('ledajansHeroFairCard');
+      var countdownEls = {
+        days: document.querySelector('[data-countdown="days"]'),
+        hours: document.querySelector('[data-countdown="hours"]'),
+        minutes: document.querySelector('[data-countdown="minutes"]'),
+        seconds: document.querySelector('[data-countdown="seconds"]')
+      };
+      var launchTarget = new Date('2026-06-06T13:00:00+03:00').getTime();
+      var countdownTimer = null;
+      var fairRevealStarted = false;
+      function pad(value) { return value < 10 ? '0' + value : '' + value; }
+      function startFairReveal() {
+        if (fairRevealStarted || !heroSection) return;
+        fairRevealStarted = true;
+        heroSection.classList.remove('fair-panel-dismissed');
+        heroSection.classList.add('fair-reveal-active');
+      }
+      function closeLaunchModal() {
+        if (!launchModal) return;
+        launchModal.classList.remove('active');
+        launchModal.setAttribute('aria-hidden', 'true');
+        startFairReveal();
+      }
+      function updateLaunchCountdown() {
+        if (!countdownEls.days || !countdownEls.hours || !countdownEls.minutes || !countdownEls.seconds) return;
+        var now = Date.now();
+        var diff = launchTarget - now;
+        if (diff <= 0) {
+          countdownEls.days.textContent = '00';
+          countdownEls.hours.textContent = '00';
+          countdownEls.minutes.textContent = '00';
+          countdownEls.seconds.textContent = '00';
+          if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+          }
+          return;
+        }
+        var totalSeconds = Math.floor(diff / 1000);
+        var days = Math.floor(totalSeconds / 86400);
+        var hours = Math.floor((totalSeconds % 86400) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+        countdownEls.days.textContent = pad(days);
+        countdownEls.hours.textContent = pad(hours);
+        countdownEls.minutes.textContent = pad(minutes);
+        countdownEls.seconds.textContent = pad(seconds);
+      }
       function openModal() {
         if (modalOpen) return;
         modalOpen = true;
@@ -310,7 +1006,42 @@
         modal.onclick = function(e) { if (e.target === modal) closeModal(); };
         modal.ontouchend = function(e) { if (e.target === modal) { e.preventDefault(); closeModal(); } };
       }
-      document.onkeydown = function(e) { if (e.key === 'Escape') closeModal(); };
+      if (launchCloseBtn) {
+        launchCloseBtn.onclick = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
+        launchCloseBtn.ontouchend = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
+      }
+      if (launchModal) {
+        if (document.body && launchModal.parentNode !== document.body) {
+          document.body.appendChild(launchModal);
+        }
+        launchModal.onclick = function(e) { if (e.target === launchModal) closeLaunchModal(); };
+        launchModal.classList.add('active');
+        launchModal.setAttribute('aria-hidden', 'false');
+        updateLaunchCountdown();
+        countdownTimer = setInterval(updateLaunchCountdown, 1000);
+      } else {
+        startFairReveal();
+      }
+      if (heroFairCloseBtn && heroSection) {
+        heroFairCloseBtn.onclick = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          heroSection.classList.add('fair-panel-dismissed');
+          return false;
+        };
+      }
+      if (heroFairCard) {
+        heroFairCard.onclick = function(e) {
+          if (e.target && e.target.id === 'ledajansHeroFairClose') return;
+          window.open('https://www.google.com/maps/dir/?api=1&destination=Istanbul+Fuar+Merkezi%2C+Yesilkoy+Istanbul%2C+Fuar+Merkezi%2C+34149+Bakirkoy%2FIstanbul&travelmode=driving', '_blank');
+        };
+      }
+      document.onkeydown = function(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+          closeLaunchModal();
+        }
+      };
       var heroVideo = document.getElementById('ledajansHeroVideo');
       if (heroVideo && window.innerWidth > 768) {
         heroVideo.muted = true;

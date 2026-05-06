@@ -1,0 +1,33 @@
+<!-- 
+  LEDAJANS WebSite + SearchAction Schema (JSON-LD)
+  Bu schema WordPress Header/Footer scriptleri bölümüne eklenecek.
+  Google arama sonuçlarında site arama kutusu (Sitelinks Searchbox) gösterilmesini sağlar.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LEDAJANS",
+  "alternateName": "LED Ajans",
+  "url": "https://ledajans.com",
+  "description": "Türkiye'nin önde gelen LED ekran üreticisi. İç mekan, dış mekan, rental LED ekran çözümleri.",
+  "inLanguage": "tr-TR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "LEDAJANS",
+    "url": "https://ledajans.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ledajans.com/wp-content/uploads/logo.png"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://ledajans.com/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

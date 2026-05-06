@@ -1,10 +1,7 @@
 <!--
-  LEDAJANS üst menü — canlı dışa aktarım + responsive hizalama (2026-04).
-  WordPress: Bu <style> bloğunu “Görünüm → Özelleştir → Ek CSS”e yapıştırabilirsin
-  (header zaten Elementor şablon 43 ile geliyorsa seçiciler çalışır).
-  NOT: Aşağıdaki HTML statik örnektir; canlı menü WP/Elementor üretir. “Dil” metni
-  sitede polylang-menu-dil-yerine-dil-adi.php (Code Snippets) ile değişir — bu dosyayı
-  WordPress’e gömmediğin sürece 15’teki metin canlıyı etkilemez.
+  LEDAJANS — Header HTML widget (Elementor): dosyanın TAMAMINI kopyala / yapıştır.
+  Widget: şablondaki HTML bloğu (ör. 8af5606). Genel stil: Ek-CSS-final.css → WP Ek CSS.
+  GÜNCEL: 2026-05-04. “Dil” metni: polylang Code Snippet.
 -->
 
 <style id="ledajans-header-responsive-css">
@@ -100,6 +97,14 @@
         display: inline-flex !important;
         align-items: center !important;
       }
+      /* Elementor Pro sticky: hafif scroll’da beyaz boşluk (transform geçişi) */
+      .elementor-element-123bc72.elementor-sticky--active,
+      .elementor-element-123bc72.elementor-sticky--effects {
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+      }
     }
     
     /* Orta genişlik: menü + telefon sıkışmasın */
@@ -160,6 +165,88 @@
       .mobile-menu-button {
         display: none !important;
       }
+    }
+    
+    /* Giriş yapılmış: admin bar + Elementor fixed/sticky header top hizası */
+    @media screen and (min-width: 783px) {
+      body.admin-bar .elementor-element-123bc72.elementor-sticky--active,
+      body.admin-bar .elementor-element-123bc72.elementor-sticky--effects,
+      body.admin-bar .gv-sticky-menu.elementor-sticky--active {
+        top: 32px !important;
+      }
+    }
+    @media screen and (max-width: 782px) {
+      body.admin-bar .elementor-element-123bc72.elementor-sticky--active,
+      body.admin-bar .gv-sticky-menu.elementor-sticky--active {
+        top: 46px !important;
+      }
+    }
+    body.single-post .hentry,
+    body.single .site-main > article.hentry {
+      margin-top: 0 !important;
+    }
+    
+    /* 123bc72 gizli + sticky: JS spacer = dev beyaz kuşak (canlı DOM). Header içi spacer kapat */
+    header.wp-site-header .elementor-sticky__spacer,
+    .elementor-element-123bc72 + .elementor-sticky__spacer,
+    .elementor-location-header .elementor-sticky__spacer {
+      display: none !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border: 0 !important;
+      pointer-events: none !important;
+    }
+    .elementor-element-b13dda5,
+    .elementor-element-b13dda5 .elementor-widget-container {
+      min-height: 0 !important;
+    }
+    
+    /* Bölüm 12 — spacer evrensel + gizli 123bc72 sticky öldür (Ek-CSS ile aynı) */
+    .elementor-sticky__spacer,
+    div[class*="sticky__spacer"],
+    .elementor-element-123bc72 ~ .elementor-sticky__spacer,
+    .elementor-43 > .elementor-sticky__spacer {
+      display: none !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      line-height: 0 !important;
+      font-size: 0 !important;
+    }
+    .elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile {
+      position: static !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile.elementor-sticky--active,
+    .elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile.elementor-sticky--effects {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+    }
+    .home #page-content,
+    .home #wp-main-content,
+    .page-id-1248 #page-content {
+      margin-top: 0 !important;
     }
     
     /* Tablet/mobil: turuncu bar — safe-area tek yerde; hamburger+logo aynı containing block */

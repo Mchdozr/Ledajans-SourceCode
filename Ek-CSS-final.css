@@ -1,7 +1,21 @@
 ﻿/**
- * LEDAJANS — Ek CSS (Final / Sadeleştirilmiş)
- * Tarih: 2026-04-30
- * Not: Bu dosya "Görünüm > Özelleştir > Ek CSS" alanına toplu yapıştırmak içindir.
+ * LEDAJANS — WordPress “Ek CSS” (tek seferde kopyala / yapıştır)
+ *
+ * NEREYE: WP Admin → Görünüm → Özelleştir → Ek CSS
+ * NASIL: Bu dosyanın tamamını seç (Ctrl+A), kopyala; Ek CSS kutusundaki eskiyi sil,
+ *        yapıştır → Yayınla → önbellek temizle (LiteSpeed vb.).
+ *
+ * İçerik özeti: tema düzeni + header menü + mobil bar + dropdown + sticky boşluk
+ * düzeltmesi (Bölüm 10–11: admin bar, spacer kapatma — beyaz kuşak fix).
+ * Bölüm 13: SEO makale widget (.ledajans-seo-article) — blog ile uyumlu tipografi/kutu.
+ *
+ * Diğer yapıştırmalar (aynı repo):
+ *   • Elementor Header HTML widget: Ust-Menu/ust-menu.html → dosyanın TAMAMI
+ *   • Anasayfa Hero HTML widget: Anasayfa/Hero.html → dosyanın TAMAMI (hero min-height fix)
+ *   • Beyaz kuşak devam ederse: Code-Snippets/ledajans-elementor-sticky-spacer-kill.js
+ *     → WP Code Snippets ile “Run everywhere” (JS inline height’ı ezer).
+ *
+ * Son güncelleme: 2026-05-04 (Bölüm 13: SEO makale widget — .ledajans-seo-article)
  */
 
 /* =============================================================================
@@ -455,6 +469,121 @@
   }
 }
 
+/* =============================================================================
+   10) Elementor sticky + admin bar: hafif scroll’da beyaz boşluk
+   - Masaüstünde sticky “effects” (transform) geçişi anlık boşluk/şerit bırakabiliyor;
+     mobildeki gibi 123bc72 için transform/transition kapatılır.
+   - Giriş yapılmışken #wpadminbar yüksekliği ile position:fixed header top hizası.
+   - .hentry üst marjı (tema) header altında çift boşluk yapabiliyor.
+   ============================================================================= */
+@media (min-width: 1025px) {
+  .elementor-element-123bc72.elementor-sticky--active,
+  .elementor-element-123bc72.elementor-sticky--effects {
+    transform: none !important;
+    -webkit-transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
+@media screen and (min-width: 783px) {
+  body.admin-bar .elementor-element-123bc72.elementor-sticky--active,
+  body.admin-bar .elementor-element-123bc72.elementor-sticky--effects,
+  body.admin-bar .gv-sticky-menu.elementor-sticky--active {
+    top: 32px !important;
+  }
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .elementor-element-123bc72.elementor-sticky--active,
+  body.admin-bar .gv-sticky-menu.elementor-sticky--active {
+    top: 46px !important;
+  }
+}
+
+body.single-post .hentry,
+body.single .site-main > article.hentry {
+  margin-top: 0 !important;
+}
+
+/* =============================================================================
+   11) Elementor sticky spacer — CANLI KÖK NEDEN (şablon 43):
+   123bc72 bölümü Elementor’da “tüm cihazlarda gizli” iken üzerinde sticky açık kalmış;
+   görünür menü ayrı bölümde (8af5606). JS placeholder yüksekliği header–hero arasında
+   dev beyaz kuşak üretiyor. Header içi spacer kapatılır.
+   Kalıcı çözüm: Elementor’da 123bc72’de Sticky kapat veya gizliliği kaldır (tek menü bölümü).
+   ============================================================================= */
+header.wp-site-header .elementor-sticky__spacer,
+.elementor-element-123bc72 + .elementor-sticky__spacer,
+.elementor-location-header .elementor-sticky__spacer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Anasayfa hero widget sarmalayıcı — tema/Elementor min-height çakışması */
+.elementor-element-b13dda5,
+.elementor-element-b13dda5 .elementor-widget-container {
+  min-height: 0 !important;
+}
+
+/* =============================================================================
+   12) Sticky spacer — kesin çözüm (JS inline height + header dışı konum)
+   Spacer bazen header.wp-site-header içinde değil; sınıf adı varyasyonu olabilir.
+   Şablon 43: 123bc72 tüm kırılımlarda gizli → sticky’yi CSS ile öldür.
+   Ayrıca: Code-Snippets/ledajans-elementor-sticky-spacer-kill.js önerilir (inline ezilir).
+   ============================================================================= */
+.elementor-sticky__spacer,
+div[class*="sticky__spacer"],
+.elementor-element-123bc72 ~ .elementor-sticky__spacer,
+.elementor-43 > .elementor-sticky__spacer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Tüm cihazlarda gizli + sticky: akışta yer kaplamasın, fixed olmasın */
+.elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile {
+  position: static !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  transform: none !important;
+  transition: none !important;
+}
+.elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile.elementor-sticky--active,
+.elementor-element-123bc72.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile.elementor-sticky--effects {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+}
+
+.home #page-content,
+.home #wp-main-content,
+.page-id-1248 #page-content {
+  margin-top: 0 !important;
+}
+
 /* Son güvence: header margin/height override çakışmalarını sıfırla */
 @media (max-width: 1024px) {
   .header-main-wrapper,
@@ -464,5 +593,137 @@
     margin-top: 0 !important;
     min-height: 0 !important;
     height: auto !important;
+  }
+}
+
+/* =============================================================================
+   13) SEO makale widget’ları — blog / teknik sayfalar ile uyumlu tek tip tipografi
+   HTML: SEO-Icerik-Widgets HTML dosyalarinda div.ledajans-seo-article sinifi ile sarma (yorumda div etiketi yazilmaz).
+   WP: Ek CSS’e bu bölüm yapıştırılmış olmalı (üstteki “Ek CSS” talimatı).
+   ============================================================================= */
+.ledajans-seo-article {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  /* Blog / program indir ile aynı genişlik bandı (~1280px) */
+  max-width: min(96vw, 80rem);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1.25rem 1.5rem;
+  line-height: 1.65;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+}
+.ledajans-seo-article *,
+.ledajans-seo-article *::before,
+.ledajans-seo-article *::after {
+  box-sizing: border-box;
+}
+.ledajans-seo-article h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  color: #111827;
+  margin: 2rem 0 0.85rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.ledajans-seo-article h2:first-of-type {
+  margin-top: 0;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid #f46f2c;
+}
+.ledajans-seo-article h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 1.75rem 0 0.65rem;
+}
+.ledajans-seo-article p {
+  margin: 0 0 1rem;
+  color: #374151;
+}
+.ledajans-seo-article a {
+  color: #f46f2c;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.ledajans-seo-article a:hover {
+  color: #e55a1a;
+  text-decoration: underline;
+}
+.ledajans-seo-article ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.35rem;
+}
+.ledajans-seo-article li {
+  margin-bottom: 0.45rem;
+  color: #374151;
+}
+.ledajans-seo-article li strong {
+  color: #111827;
+}
+.ledajans-seo-article .aligncenter,
+.ledajans-seo-article p.aligncenter {
+  text-align: center;
+  margin: 1.35rem 0 0.35rem;
+}
+.ledajans-seo-article .aligncenter img,
+.ledajans-seo-article img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+.ledajans-seo-article p[style*="text-align: center"] em {
+  display: block;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+.ledajans-seo-article .ledajans-seo-cta-wrap {
+  text-align: center;
+  margin: 2.25rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+.ledajans-seo-article a.ledajans-seo-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 2rem;
+  background: #f46f2c;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(244, 111, 44, 0.32);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.ledajans-seo-article a.ledajans-seo-cta:hover {
+  background: #e55a1a;
+  color: #fff !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+@media (min-width: 640px) {
+  .ledajans-seo-article {
+    padding: 2.5rem 2rem 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .ledajans-seo-article {
+    padding: 2.75rem 2.5rem 2rem;
   }
 }
