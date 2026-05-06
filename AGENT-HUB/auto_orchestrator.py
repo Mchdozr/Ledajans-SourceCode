@@ -24,6 +24,13 @@ ROLE_TO_TASK_ID = {
 }
 
 
+FEEDBACK_PATTERN = re.compile(
+    r"\[TO:([a-z0-9-]+)\]\s*\[FB:([A-Za-z0-9_-]+)\]\s*(.+)",
+    flags=re.IGNORECASE,
+)
+RESOLVED_PATTERN = re.compile(r"\[RESOLVED:([A-Za-z0-9_-]+)\]", flags=re.IGNORECASE)
+
+
 def read_text(path: Path) -> str:
     if not path.exists():
         return ""
@@ -71,6 +78,9 @@ def save_state(signature: str) -> None:
 
 def extract_role(file: Path) -> str:
     stem = file.stem
+    for role in sorted(ROLE_TO_TASK_ID.keys(), key=len, reverse=True):
+        if stem.endswith(role):
+            return role
     return stem.split("-")[-1]
 
 
@@ -188,6 +198,73 @@ def ensure_new_role_reports(new_roles: list[str]) -> list[str]:
     return actions
 
 
+def extract_feedback_items(report_files: list[Path]) -> tuple[list[dict], set[str]]:
+    items: list[dict] = []
+    resolved_ids: set[str] = set()
+    for file in report_files:
+        src_role = extract_role(file)
+        content = read_text(file)
+        for line in content.splitlines():
+            m = FEEDBACK_PATTERN.search(line)
+            if m:
+                target_role = m.group(1).lower()
+                fb_id = m.group(2).upper()
+                detail = m.group(3).strip()
+                items.append(
+                    {
+                        "id": fb_id,
+                        "source": src_role,
+                        "target": target_role,
+                        "detail": detail,
+                        "file": file.name,
+                    }
+                )
+        for resolved in RESOLVED_PATTERN.findall(content):
+            resolved_ids.add(resolved.upper())
+    return items, resolved_ids
+
+
+def update_feedback_queue(
+    items: list[dict],
+    resolved_ids: set[str],
+) -> list[str]:
+    tasks = read_text(TASKS)
+    if not tasks:
+        return []
+
+    marker = "## Auto Feedback Queue"
+    before = tasks
+    if marker in tasks:
+        tasks = tasks.split(marker)[0].rstrip() + "\n"
+
+    lines = [
+        "",
+        f"{marker}",
+        "",
+        "| FB-ID | Kaynak Rol | Hedef Rol | Durum | Geri Bildirim | Kaynak Rapor |",
+        "|---|---|---|---|---|---|",
+    ]
+    seen_ids: set[str] = set()
+    for item in items:
+        if item["id"] in seen_ids:
+            continue
+        seen_ids.add(item["id"])
+        status = "Closed" if item["id"] in resolved_ids else "Open"
+        lines.append(
+            f"| {item['id']} | {item['source']} | {item['target']} | {status} | "
+            f"{item['detail']} | `{item['file']}` |"
+        )
+    if not seen_ids:
+        lines.append("| - | - | - | - | Bekleyen feedback yok. | - |")
+
+    updated = tasks.rstrip() + "\n" + "\n".join(lines) + "\n"
+    actions: list[str] = []
+    if updated != before:
+        write_text(TASKS, updated)
+        actions.append("Auto Feedback Queue güncellendi")
+    return actions
+
+
 def run() -> int:
     report_files = get_report_files()
     signature = calc_signature(report_files)
@@ -216,6 +293,8 @@ def run() -> int:
 
     actions = update_tasks(completions, new_roles)
     actions.extend(ensure_new_role_reports(new_roles))
+    feedback_items, resolved_ids = extract_feedback_items(report_files)
+    actions.extend(update_feedback_queue(feedback_items, resolved_ids))
     update_master_plan(changed_files, actions)
     write_blocker_if_needed(blockers)
     save_state(signature)

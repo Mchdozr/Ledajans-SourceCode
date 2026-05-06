@@ -102,10 +102,25 @@ Teslim kuralı: Her raporda ilgili rol şablon başlıkları dolu olacak, kritik
 - Orta vadede: mevcut sayfa optimizasyonu + iç link güçlendirmesiyle "led ekran" ve ticari alt sorgularda sıra kazanımı beklenir.
 - Ölçüm: P-005 baseline'a göre haftalık pozisyon farkı ve indekslenen URL artışı takip edilir.
 
+## 6) Sürekli Brainstorm / Karşı-Argüman Döngüsü
 
+- Frekans: Her 20 dakikada 1 tur.
+- Her rol, diğer 4 rol raporunu okuyup kendi raporuna şu blokları ekler:
+  - `### Cross-Agent Challenges`
+  - `### Counter Arguments`
+  - `### Consensus Update`
+- Kural: Çelişki varsa kanıtla itiraz et; çözülemeyen noktalarda `[BLOCKER]` bırak.
+- Kod değişikliği asla uygulanmaz; sadece `Proposed Changes (No Apply)` güncellenir.
+- Orchestrator görevi:
+  - Çatışmaları toplayıp `TASKS.md` durumlarını güncellemek
+  - Gerekirse `TASKS.md` içine `[NEW:<rol>]` açmak
+  - Kritik blokajı tek onay mesajına indirmek
 
 ## Auto Update Log
 
 - 2026-05-06 11:06 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: TASKS.md durumları güncellendi
-
 - 2026-05-06 11:18 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: TASKS.md durumları güncellendi
+- 2026-05-06 11:46 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: Değişiklik algılandı, no-op
+- 2026-05-06 12:29 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: Auto Feedback Queue güncellendi
+
+- 2026-05-06 12:29 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: TASKS.md durumları güncellendi; Auto Feedback Queue güncellendi

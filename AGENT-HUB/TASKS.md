@@ -4,12 +4,12 @@
 
 | ID | Öncelik | Rol | Görev | Durum |
 |---|---|---|---|---|
-| P-001 | P0 | tech-seo | Crawl/index engelleyen teknik hataları tespit et, dry-run düzeltme planı çıkar | In Progress |
+| P-001 | P0 | tech-seo | Crawl/index engelleyen teknik hataları tespit et, dry-run düzeltme planı çıkar | Done |
 | P-002 | P0 | gsc | Kapsam/indeks raporundan kritik dışlanan URL kümelerini çıkar | Done |
 | P-003 | P1 | content | "led ekran" ve ticari alt kelimeler için mevcut sayfa optimizasyon listesi üret | Done |
-| P-004 | P1 | internal-link | Para sayfalara iç link fırsatlarını çıkar, anchor öneri seti hazırla | Queued (P0 sonrası) |
-| P-005 | P1 | serp-watch | Ana ve ticari alt kelimeler için baseline SERP takip tablosu kur | Queued (P0 sonrası) |
-| P-006 | P2 | content | Yeni içerik ihtiyacını topic cluster olarak öner (yalnızca mevcut içerik güncellemesi sonrası) | Pending |
+| P-004 | P1 | internal-link | Para sayfalara iç link fırsatlarını çıkar, anchor öneri seti hazırla | Done |
+| P-005 | P1 | serp-watch | Ana ve ticari alt kelimeler için baseline SERP takip tablosu kur | Done |
+| P-006 | P2 | content | Yeni içerik ihtiyacını topic cluster olarak öner (yalnızca mevcut içerik güncellemesi sonrası) | Done |
 ## Beklenen Çıktı Formatı (Rol Bazlı)
 
 ### tech-seo
@@ -50,6 +50,14 @@
 
 ## İlk Tur Alt Agent Talimatları (Zorunlu Protokol)
 
+- Global çalışma modu: `report-only`
+- Alt agent kuralları:
+  - Commit/push YASAK
+  - Sadece `AGENT-HUB/*.md` dosyalarına yaz
+  - Kod değişikliği gerekiyorsa yalnızca `proposed changes` olarak raporla, uygulama yapma
+  - Push sadece kullanıcı saat verip açık onayladığında yapılır
+- Standart prompt: `AGENT-HUB/AGENT-PROMPT-STANDARD.md`
+
 ### tech-seo (P-001)
 - Çıktı dosyası: `AGENT-HUB/REPORTS/2026-05-06-tech-seo.md`
 - Teslim formatı: `Scope`, `Findings(P0/P1)`, `Dry-Run Patch Plan`, `Apply Plan`, `Risk`, `Next Actions`
@@ -83,3 +91,33 @@
 ## Self-Spawn Kuralları
 - Teknik veya indeksleme analizinde yeni bir uzmanlık ihtiyacı doğarsa TASKS'a `"[NEW:<rol>]"` etiketiyle eklenir.
 - Yeni rol yalnızca mevcut rollerin kapsam dışı bıraktığı işi alır.
+
+## Sürekli Web Ops Döngüsü (20dk)
+- Her turda tüm roller diğer raporları okuyup sadece itiraz değil, operasyonel çıktı üretir.
+- Zorunlu ek blok:
+  - `## WebOps Round - <yyyy-mm-dd HH:mm TR>`
+  - `### Findings`
+  - `### Cross-Team Notes`
+  - `### Proposed Changes (No Apply)`
+  - `### QA/Validation Plan`
+  - `### Owner & ETA (Round-based)`
+- Kural: Her rol bu turda en az 1 somut iş üretir (bugfix önerisi, içerik revizyonu, ölçüm planı, QA checklist).
+- Kritik durumlar `[BLOCKER]` ile işaretlenir ve `MASTER-PLAN.md`'ye taşınır.
+- Orchestrator görevi: round sonunda kabul edilen maddeleri sprint kuyruğuna işleyip rol sahipliği atamak.
+
+## Otomatik Feedback -> Çözüm Döngüsü
+- İtiraz/geri bildirim formatı zorunlu: `[TO:<rol>] [FB:<id>] <mesaj>`
+- Hedef ajan çözüm ürettiğinde kendi raporuna şunu ekler: `[RESOLVED:<id>] <çözüm özeti>`
+- `auto_orchestrator.py` bu etiketleri otomatik okuyup `Auto Feedback Queue` tablosunu günceller.
+- Durum akışı: `Open` (yanıt bekliyor) -> `Closed` (çözüm üretildi).
+- Kural: `Open` feedback, hedef rolün bir sonraki turunda öncelikli ele alınır.
+
+## Auto Feedback Queue
+
+| FB-ID | Kaynak Rol | Hedef Rol | Durum | Geri Bildirim | Kaynak Rapor |
+|---|---|---|---|---|---|
+| CONTENT-IL-001 | content | internal-link | Open | `/led-ekran/` ve alt para sayfalar için 1 exact-match + semantik varyasyon dağılımına uygun örnek anchor setini bir sonraki turda paylaş. | `2026-05-06-content.md` |
+| GSC-TS-004 | gsc | tech-seo | Open | `/Urunlerimiz/*` için son 28 gün bazında reason kırılımına karşılık gelen dry-run aksiyon matrisi paylaş: `Duplicate/Google chose different canonical`, `Crawled - currently not indexed`, `Blocked by robots.txt` için URL adedi + önerilen fix tipi. | `2026-05-06-gsc.md` |
+| IL-2026-05-06-01 | internal-link | gsc | Open | `/guc-kaynaklari/` vs `/power-supply/` için nihai kanonik URL kararını ve GSC URL Inspection sonucunu paylaş; karar gelmeden ilgili anchor ailesi genişletilmeyecek. | `2026-05-06-internal-link.md` |
+| SW-001 | serp-watch | gsc | Open | `led ekran`, `dış mekan led ekran`, `mağaza led ekran`, `led ekran fiyatları` için aynı gün (TR locale) mobile+desktop URL-level sıra snapshot'larını ve veri kaynağı bilgisini paylaş. | `2026-05-06-serp-watch.md` |
+| TS-SEO-001 | tech-seo | gsc | Open | Para sayfa registry için "kanonik URL listesi + exclusion nedeni" eşleşmesini tek tabloda paylaş; tech-seo tarafı bunu P0 kapanış kriteri doğrulamasında kullanacak. | `2026-05-06-tech-seo.md` |
