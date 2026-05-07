@@ -37,6 +37,12 @@
 - Bölümler: `Keyword Set`, `Baseline Positions`, `Competitor Delta`, `Volatility Notes`
 - Zorunlu alanlar: anahtar kelime, mevcut sıra, rakip, fark, not
 
+## Haftalık SERP Raporlama
+- Ana anahtar kelime: `led ekran`
+- Hedef domain: `ledajans.com`
+- Son baseline: `AGENT-HUB/REPORTS/2026-05-07-serp-watch.md` içinde 1. sıra.
+- Rapor periyodu: haftalık, Perşembe UTC sabah snapshot; önce GSC/rank tracker, yoksa aynı WebSearch kaynağı.
+
 ## 1. Tur Görev Dağıtım Planı
 
 | Tur | Rol | Atanan Görevler | Çıktı Dosyası | Durum |
