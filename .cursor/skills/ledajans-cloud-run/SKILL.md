@@ -63,7 +63,7 @@ Alt alanlar: `temel-rehberler/`, `sektor-rehberleri/`, `karsilastirmalar/`, `soz
 
 ### 4) AGENT-HUB (SEO orkestrasyonu)
 
-**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
+**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, `AGENT-HUB/serp_keyword_led_ekran.py`, isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
 
 **Somut test akışı:**
 
@@ -71,6 +71,7 @@ Alt alanlar: `temel-rehberler/`, `sektor-rehberleri/`, `karsilastirmalar/`, `soz
 cd /workspace
 python3 AGENT-HUB/auto_orchestrator.py && echo OK
 python3 AGENT-HUB/live_dashboard.py && echo OK
+python3 AGENT-HUB/serp_keyword_led_ekran.py && echo OK
 ```
 
 - Orchestrator: `AGENT-HUB/REPORTS/*.md` imzası değişmediyse **no-op** olabilir; test için bir rapor dosyası güncellendi mi veya `TASKS.md` / `.auto-orchestrator-state.json` üretimi gözleniyor mu bak.
@@ -110,6 +111,7 @@ Büyük dosyalar için aynı kalıp; HTML için dosyanın var olduğu ve açıld
 cd /workspace
 python3 AGENT-HUB/auto_orchestrator.py && echo OK
 python3 AGENT-HUB/live_dashboard.py && echo OK
+python3 AGENT-HUB/serp_keyword_led_ekran.py && echo OK
 python3 deploy-to-wordpress.py --dry-run && echo OK
 ```
 
