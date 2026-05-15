@@ -164,11 +164,103 @@
 
   robots.txt kontrol edin (ledajans.com/robots.txt):
   - Sitemap: https://ledajans.com/sitemap_index.xml satırı olmalı
-  - wp-admin ve wp-includes engellenmiş olmalı
+  - wp-admin engellenmiş olmalı
   - Ürün sayfaları ENGELLENMEMİŞ olmalı
+  - /wp-content/plugins/ ve /*.php$ kuralları KALDIRILMALI (render engelleyici)
+  - AI botlar (GPTBot, Google-Extended, CCBot, PerplexityBot) için Allow: / eklenmeli
 
+  Güncel robots.txt taslağı: /workspace/robots.txt dosyasına bakın.
+  
   Eğer robots.txt düzenleme gerekirse:
   Plesk Panel > Dosya Yöneticisi > public_html/robots.txt
+-->
+
+<!-- ============================================================
+  5a. WWW / APEX HOST KANONİKLEŞTİRME (P0 - KRİTİK)
+  ============================================================
+
+  SORUN:
+  - https://www.ledajans.com adresinde TLS sertifika/host doğrulama riski tespit edildi.
+  - www ve apex (ledajans.com) arasında tutarsız yönlendirme, canonical sinyal bölünmesine
+    ve crawl bütçesi israfına yol açıyor.
+
+  KARAR: Kanonik host = https://ledajans.com (apex, www değil)
+
+  UYGULAMA ADIMLARI:
+
+  1. TLS SERTİFİKA KONTROLÜ:
+     - Plesk Panel > Websites & Domains > SSL/TLS Certificates
+     - Sertifikanın hem "ledajans.com" hem "www.ledajans.com" için geçerli olduğunu doğrulayın
+     - Let's Encrypt kullanılıyorsa: "Include www" seçeneği aktif olmalı
+
+  2. 301 REDIRECT AYARI (Plesk / Apache .htaccess):
+     Plesk Panel > Apache & nginx Settings veya public_html/.htaccess:
+
+     RewriteEngine On
+     RewriteCond %{HTTP_HOST} ^www\.ledajans\.com$ [NC]
+     RewriteRule ^(.*)$ https://ledajans.com/$1 [R=301,L]
+
+     VEYA nginx kullanılıyorsa:
+     server {
+       server_name www.ledajans.com;
+       return 301 https://ledajans.com$request_uri;
+     }
+
+  3. KANONİK ETİKET KONTROLÜ:
+     - Tüm sayfalarda <link rel="canonical"> href değeri https://ledajans.com/... olmalı
+     - RankMath > Genel Ayarlar > Webmaster Tools > canonical URL formatı kontrol edin
+
+  4. DOĞRULAMA (deployment sonrası):
+     - curl -I https://www.ledajans.com → 301 + Location: https://ledajans.com/ olmalı
+     - Redirect hop sayısı <= 1 olmalı (www → apex tek adımda)
+     - GSC'de her iki varyantın da doğrulanmış olduğundan emin olun
+     - Hreflang etiketlerinde tüm URL'ler apex hostla yazılmalı
+
+  5. HREFLANG GÜNCELLEMESİ:
+     - Tüm hreflang etiketlerinde https://ledajans.com/ kullanın (www değil)
+     - RankMath veya tema ayarlarından kontrol edin
+-->
+
+<!-- ============================================================
+  5b. CACHE-CONTROL HEADER DÜZELTMESİ (P1)
+  ============================================================
+
+  SORUN:
+  - HTTP yanıtlarında çift Cache-Control header görülüyor (tutarsızlık riski).
+  - Bu durum CDN ve tarayıcı önbellekleme davranışını bozabilir.
+
+  NEDEN:
+  - WordPress veya eklenti seviyesinde bir Cache-Control ayarı var
+  - Sunucu (Apache/nginx) seviyesinde ayrı bir Cache-Control ayarı var
+  - İki katman çakışıyor
+
+  ÇÖZÜM ADIMLARI:
+
+  1. MEVCUT HEADER'LARI KONTROL ET:
+     curl -I https://ledajans.com/ | grep -i cache-control
+     (İki satır görüyorsanız çakışma var)
+
+  2. SUNUCU SEVİYESİ (Plesk):
+     Plesk > Apache & nginx Settings > Additional directives:
+     
+     Apache (.htaccess):
+     <IfModule mod_headers.c>
+       Header set Cache-Control "public, max-age=31536000, immutable" env=!no-cache
+     </IfModule>
+
+     Nginx:
+     add_header Cache-Control "public, max-age=31536000, immutable";
+
+  3. WORDPRESS SEVİYESİ:
+     - W3 Total Cache / LiteSpeed Cache / WP Super Cache eklentisinde
+       cache header ayarını kontrol edin
+     - Eklenti ve sunucu aynı anda header gönderiyorsa, eklenti tarafını devre dışı bırakın
+       ve sunucu seviyesinden yönetin
+
+  4. ÖNERİLEN CACHE POLİTİKASI:
+     - Statik varlıklar (CSS/JS/resim): max-age=31536000, immutable
+     - HTML sayfalar: no-cache, must-revalidate (veya max-age=3600)
+     - API yanıtları: no-store
 -->
 
 <!-- ============================================================
