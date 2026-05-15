@@ -347,6 +347,31 @@
   - /de/kommunikation/ → "Kontaktieren Sie LEDAJANS für LED-Bildschirm-Projekte. Kostenlose Beratung und Preisangebote. Büros in Istanbul, Deutschland und Zypern. Tel: +90 212 220 40 04"
   - /de/case/ → "LED-Bildschirm-Projekte und Referenzen von LEDAJANS. Indoor, Outdoor, Rental-Installationen. Einkaufszentren, Stadien, Messen in der Türkei und Europa."
   - /led-ekran-omru/ → "LED ekran ömrü nedir, kaç yıl dayanır? LED ekran ömrünü etkileyen faktörler ve uzatma yöntemleri. Bakım, kullanım ve çevre koşullarının etkisi. Ledajans rehber."
+  === YÜKSEK: SLUG TUTARSIZLIĞI ve KANONİK URL DÜZELTMELERİ ===
+  
+  SORUN 1: /guc-kaynaklari/ vs /power-supply/
+  - İki slug aynı içeriğe referans veriyor, link otoritesi bölünüyor
+  - KARAR: Kanonik hedef = /guc-kaynaklari/ (TR dil yapısıyla uyumlu)
+  - AKSIYON:
+    1. /power-supply/ → /guc-kaynaklari/ 301 redirect ekleyin
+    2. Tüm iç linkleri /guc-kaynaklari/ hedefine güncelleyin
+    3. Sitemap'ten /power-supply/ kaldırın
+    4. RankMath > Redirections: /power-supply/ → /guc-kaynaklari/ (301)
+  
+  SORUN 2: Trailing slash tutarsızlığı
+  - /dis-mekan-led-ekran vs /dis-mekan-led-ekran/
+  - KARAR: Tüm URL'lerde trailing slash kullanılacak (WordPress varsayılanı)
+  - AKSIYON:
+    1. Tüm iç linklerde trailing slash olduğundan emin olun
+    2. .htaccess'e trailing slash zorunlu kuralı ekleyin:
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteRule ^(.*)([^/])$ /$1$2/ [L,R=301]
+    3. Canonical etiketlerinde trailing slash tutarlılığını kontrol edin
+  
+  SORUN 3: Hreflang URL tutarlılığı
+  - Tüm hreflang etiketlerinde aynı URL formatı (apex host + trailing slash) kullanılmalı
+  - Kontrol: curl -I sayfaURL | grep -i hreflang
+
   === DÜŞÜK: ALT ATTRİBUTE EKSİK GÖRSELLER (12 sayfa) ===
   WordPress'te her görselin alt text'ini doldurun:
   Medya Kütüphanesi > Görseli seçin > "Alternatif Metin" alanını yazın.
