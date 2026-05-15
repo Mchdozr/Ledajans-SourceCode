@@ -142,3 +142,74 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script($handle);
     }
 }, 110);
+
+// 6) Kritik font preload hint'leri
+add_action('wp_head', function () {
+    if (is_admin()) {
+        return;
+    }
+    echo '<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+    echo '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"></noscript>' . "\n";
+}, 1);
+
+// 7) Sayfa bazlı gereksiz Elementor widget CSS'lerini kaldır (mobil TBT azaltma)
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    global $wp_styles;
+    if (empty($wp_styles) || empty($wp_styles->registered)) {
+        return;
+    }
+
+    $nonCriticalHandles = [
+        'elementor-gallery',
+        'elementor-lightbox',
+        'e-animations',
+    ];
+
+    foreach ($nonCriticalHandles as $handle) {
+        if (wp_style_is($handle, 'enqueued')) {
+            wp_dequeue_style($handle);
+        }
+    }
+}, 200);
+
+// 8) Mobil cihazlarda ek optimizasyonlar
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    if (!wp_is_mobile()) {
+        return;
+    }
+
+    $mobileDropHandles = [
+        'elementor-motion-effects',
+        'e-sticky',
+    ];
+
+    global $wp_scripts;
+    if (empty($wp_scripts) || empty($wp_scripts->queue)) {
+        return;
+    }
+
+    foreach ($mobileDropHandles as $handle) {
+        if (wp_script_is($handle, 'enqueued')) {
+            wp_dequeue_script($handle);
+        }
+    }
+}, 200);
+
+// 9) DNS prefetch ek origin'ler (LCP iyileştirme)
+add_filter('wp_resource_hints', function ($urls, $relation_type) {
+    if ('dns-prefetch' !== $relation_type) {
+        return $urls;
+    }
+
+    $urls[] = 'https://images.unsplash.com';
+    $urls[] = 'https://images.pexels.com';
+    return array_unique($urls);
+}, 10, 2);
