@@ -124,3 +124,5 @@ Teslim kuralı: Her raporda ilgili rol şablon başlıkları dolu olacak, kritik
 - 2026-05-06 12:29 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: Auto Feedback Queue güncellendi
 
 - 2026-05-06 12:29 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md | Aksiyon: TASKS.md durumları güncellendi; Auto Feedback Queue güncellendi
+
+- 2026-05-15 06:03 UTC | Raporlar: 2026-05-06-content.md, 2026-05-06-gsc.md, 2026-05-06-internal-link.md, 2026-05-06-serp-watch.md, 2026-05-06-tech-seo.md, 2026-05-15-serp-led-ekran-ledajans.md, serp-led-ekran-weekly-log.md | Aksiyon: Değişiklik algılandı, no-op

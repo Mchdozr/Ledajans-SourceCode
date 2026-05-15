@@ -1,4 +1,4 @@
-# BLOCKER ALERT - 2026-05-06 12:29 UTC
+# BLOCKER ALERT - 2026-05-15 06:03 UTC
 
 Aşağıdaki kritik blokajlar raporlarda tespit edildi:
 - 2026-05-06-content.md: [BLOCKER] etiketi bulundu
