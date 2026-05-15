@@ -125,4 +125,27 @@ $WP post meta update 7490 rank_math_title "LED Ekran Fiyatlari 2026 (Mayis Gunce
 $WP post meta update 7490 rank_math_description "2026 Mayis guncel LED ekran fiyatlari: ic mekan, dis mekan, P2, P3, P4, P5, P10 piksel araligina gore fiyat tablosu. LED ekran maliyet hesaplama rehberi. LEDAJANS."
 $WP post meta update 7490 rank_math_focus_keyword "led ekran fiyatlari,led ekran fiyatlari 2026,led ekran m2 fiyat,led panel fiyat"
 
-echo "TAMAMLANDI - 31 sayfa icin RankMath SEO meta bilgileri ayarlandi!"
+# === EKSIK META DESCRIPTION OLAN SAYFALAR (SEO Denetim Raporu) ===
+
+# /program-indir/
+$WP post meta update $(wp post list --post_type=page --name=program-indir --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "LED ekran yazılımları: Colorlight PlayMaster, Huidu HDPlayer, Nova LCT Mars. Ücretsiz indirme linkleri ve Türkçe kurulum kılavuzları. Ledajans teknik destek."
+
+# /firma-bilgilerimiz/
+$WP post meta update $(wp post list --post_type=page --name=firma-bilgilerimiz --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "TAHA LED DIŞ TİCARET A.Ş. firma bilgileri, banka hesapları ve iletişim detayları. Şişli/İstanbul merkezli LED ekran üreticisi ve tedarikçisi."
+
+# /case/
+$WP post meta update $(wp post list --post_type=page --name=case --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "LED ekran projeleri ve referanslarımız. İç mekan, dış mekan, rental kurulumlar. AVM, stadyum, fuar, mağaza projeleri. Ledajans ile tamamlanan işler."
+
+# /serit-led/
+$WP post meta update $(wp post list --post_type=page --name=serit-led --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "Şerit LED çeşitleri ve uygulamaları. 12V, 24V modeller. Dekoratif aydınlatma, dolap altı, tavan ve cephe uygulamaları için. Ledajans toptan ve perakende."
+
+# /led-ekran-omru/
+$WP post meta update $(wp post list --post_type=page --name=led-ekran-omru --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "LED ekran ömrü nedir, kaç yıl dayanır? LED ekran ömrünü etkileyen faktörler ve uzatma yöntemleri. Bakım, kullanım ve çevre koşulları etkisi."
+
+# /dip-led-panel-tamiri/
+$WP post meta update $(wp post list --post_type=page --name=dip-led-panel-tamiri --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "DIP LED panel tamiri ve bakımı. Piksel arızası, sürücü IC değişimi, nem hasarı onarımı. Ledajans profesyonel LED ekran teknik servis hizmeti."
+
+# /p10-grafik-ekran-kullanimi/
+$WP post meta update $(wp post list --post_type=page --name=p10-grafik-ekran-kullanimi --field=ID --allow-root 2>/dev/null || echo 0) rank_math_description "P10 grafik LED ekran kurulumu ve kullanımı. Kontrol kartı bağlantısı, yazılım ayarları ve kayan yazı programlama rehberi. Ledajans teknik destek."
+
+echo "TAMAMLANDI - 38 sayfa icin RankMath SEO meta bilgileri ayarlandi!"

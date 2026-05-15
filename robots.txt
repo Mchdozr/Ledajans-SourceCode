@@ -1,0 +1,51 @@
+# LEDAJANS - robots.txt
+# Canonical host: https://ledajans.com
+# Son güncelleme: 2026-05-15
+
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/
+Allow: /wp-content/plugins/elementor/assets/
+Allow: /wp-content/plugins/elementor-pro/assets/
+Allow: /wp-includes/css/
+Allow: /wp-includes/js/
+
+# Sitemap
+Sitemap: https://ledajans.com/sitemap_index.xml
+
+# --- AI Bot Politikası ---
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+Disallow: /wp-admin/
+
+# Google AI (Gemini, SGE)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (eğitim veri seti)
+User-agent: CCBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic
+User-agent: anthropic-ai
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple AI (Siri)
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Bing AI (Copilot)
+User-agent: Bingbot
+Allow: /
