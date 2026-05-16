@@ -28,6 +28,7 @@ There is **no build step, no package.json, no compiled application**. The codeba
 | `AGENT-HUB/live_dashboard.py` | Generates `DASHBOARD.md` and `DASHBOARD.html` from report data | `python3 AGENT-HUB/live_dashboard.py` |
 | `AGENT-HUB/run-auto-orchestrator.sh` | Loop wrapper for orchestrator (runs every 20 min) | `bash AGENT-HUB/run-auto-orchestrator.sh` |
 | `AGENT-HUB/run-live-dashboard.sh` | Loop wrapper for dashboard (refreshes every 20s) | `bash AGENT-HUB/run-live-dashboard.sh` |
+| `AGENT-HUB/keyword_led_ekran_rank.py` | "led ekran" için DuckDuckGo HTML proxy sırası; haftalık loga ekler | `python3 AGENT-HUB/keyword_led_ekran_rank.py` |
 
 ### Running Background Services
 
@@ -45,6 +46,7 @@ To view the HTML dashboard: `python3 -m http.server 8080 --directory /workspace/
 - `deploy-to-wordpress.py` has hardcoded WordPress credentials. It will fail with HTTP 403 unless valid WP Application Passwords are configured. Use `--dry-run` flag to test without deploying.
 - The orchestrator reads report files from `AGENT-HUB/REPORTS/` and is a no-op if report signatures haven't changed since last run.
 - All Python scripts use hardcoded paths rooted at `/workspace`. They must be run from the repository root.
+- `AGENT-HUB/keyword_led_ekran_rank.py` logs a **DuckDuckGo HTML** position for `led ekran`, not Google `google.com.tr` organic rank (blocked for headless fetches). Cross-check in Search Console or a SERP API when needed.
 
 ### Linting and Testing
 
@@ -53,5 +55,6 @@ There are no automated test suites or lint configurations in this repo. To valid
 ```bash
 python3 AGENT-HUB/auto_orchestrator.py && echo "OK"
 python3 AGENT-HUB/live_dashboard.py && echo "OK"
+python3 AGENT-HUB/keyword_led_ekran_rank.py && echo "OK"
 python3 deploy-to-wordpress.py --dry-run
 ```
