@@ -1,2 +1,4 @@
 .auto-orchestrator-state.json
 auto-orchestrator.log
+__pycache__/
+*.py[cod]
