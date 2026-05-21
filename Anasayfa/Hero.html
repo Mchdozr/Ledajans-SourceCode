@@ -49,7 +49,12 @@
       backdrop-filter: blur(2px);
       padding: 1rem;
     }
-    .ledajans-launch-modal.active { display: flex; }
+    .ledajans-launch-modal.active {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
     .ledajans-launch-card {
       position: relative;
       width: min(100%, 720px);
@@ -278,6 +283,8 @@
         align-items: flex-start;
         padding: calc(env(safe-area-inset-top) + 0.9rem) 0.75rem 1rem;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
       .ledajans-launch-card {
         margin: 0 auto;
@@ -994,12 +1001,18 @@
         }
       }
 
-      function initDeferredUI() {
+      var heroSection = document.querySelector('.ledajans-hero');
+      var fairRevealStarted = false;
+      function startFairReveal() {
+        if (fairRevealStarted || !heroSection) return;
+        fairRevealStarted = true;
+        heroSection.classList.remove('fair-panel-dismissed');
+        heroSection.classList.add('fair-reveal-active');
+      }
+
+      function initLaunchModal() {
         var launchModal = document.getElementById('ledajansLaunchModal');
         var launchCloseBtn = document.getElementById('ledajansLaunchClose');
-        var heroSection = document.querySelector('.ledajans-hero');
-        var heroFairCloseBtn = document.getElementById('ledajansHeroFairClose');
-        var heroFairCard = document.getElementById('ledajansHeroFairCard');
         var countdownEls = {
           days: document.querySelector('[data-countdown="days"]'),
           hours: document.querySelector('[data-countdown="hours"]'),
@@ -1008,18 +1021,12 @@
         };
         var launchTarget = new Date('2026-06-06T13:00:00+03:00').getTime();
         var countdownTimer = null;
-        var fairRevealStarted = false;
         function pad(v) { return v < 10 ? '0' + v : '' + v; }
-        function startFairReveal() {
-          if (fairRevealStarted || !heroSection) return;
-          fairRevealStarted = true;
-          heroSection.classList.remove('fair-panel-dismissed');
-          heroSection.classList.add('fair-reveal-active');
-        }
         function closeLaunchModal() {
           if (!launchModal) return;
           launchModal.classList.remove('active');
           launchModal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
           startFairReveal();
         }
         function updateCountdown() {
@@ -1036,20 +1043,30 @@
           countdownEls.minutes.textContent = pad(Math.floor((t % 3600) / 60));
           countdownEls.seconds.textContent = pad(t % 60);
         }
+        if (!launchModal) {
+          startFairReveal();
+          return;
+        }
+        if (document.body && launchModal.parentNode !== document.body) {
+          document.body.appendChild(launchModal);
+        }
         if (launchCloseBtn) {
           launchCloseBtn.onclick = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
+          launchCloseBtn.ontouchend = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
         }
-        if (launchModal) {
-          if (document.body && launchModal.parentNode !== document.body) document.body.appendChild(launchModal);
-          launchModal.onclick = function(e) { if (e.target === launchModal) closeLaunchModal(); };
-          launchModal.classList.add('active');
-          launchModal.setAttribute('aria-hidden', 'false');
-          updateCountdown();
-          countdownTimer = setInterval(updateCountdown, 1000);
-          document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLaunchModal(); });
-        } else {
-          startFairReveal();
-        }
+        launchModal.onclick = function(e) { if (e.target === launchModal) closeLaunchModal(); };
+        launchModal.ontouchend = function(e) { if (e.target === launchModal) { e.preventDefault(); closeLaunchModal(); } };
+        launchModal.classList.add('active');
+        launchModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        updateCountdown();
+        countdownTimer = setInterval(updateCountdown, 1000);
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLaunchModal(); });
+      }
+
+      function initDeferredUI() {
+        var heroFairCloseBtn = document.getElementById('ledajansHeroFairClose');
+        var heroFairCard = document.getElementById('ledajansHeroFairCard');
         if (heroFairCloseBtn && heroSection) {
           heroFairCloseBtn.onclick = function(e) {
             e.preventDefault(); e.stopPropagation();
@@ -1064,6 +1081,16 @@
           };
         }
       }
+
+      function bootLaunchModal() {
+        if (document.body) {
+          initLaunchModal();
+          return;
+        }
+        document.addEventListener('DOMContentLoaded', initLaunchModal, { once: true });
+      }
+      bootLaunchModal();
+
       if ('requestIdleCallback' in window) {
         requestIdleCallback(initDeferredUI, { timeout: 3000 });
       } else {
