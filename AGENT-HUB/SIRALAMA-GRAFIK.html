@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledajans-Sıralama — Sıra Grafikleri</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #334155;
+    }
+    h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+    .sub { color: var(--muted); font-size: 0.9rem; max-width: 52rem; }
+    main { padding: 1.5rem 2rem 3rem; max-width: 1200px; margin: 0 auto; }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px #0004;
+    }
+    .chart-wrap { position: relative; height: 420px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #334155; }
+    th { color: var(--muted); font-weight: 600; }
+    .rank-good { color: #4ade80; font-weight: 700; }
+    .rank-mid { color: #fbbf24; font-weight: 700; }
+    .rank-low { color: #f87171; font-weight: 700; }
+    .badge {
+      display: inline-block;
+      background: #334155;
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ledajans-Sıralama <span class="badge">proxy SERP</span></h1>
+    <p class="sub" id="note"></p>
+  </header>
+  <main>
+    <section class="card">
+      <h2 style="margin-top:0">Sıra trendi (6 May – 21 May 2026)</h2>
+      <p class="sub" style="margin-bottom:1rem">
+        Düşük değer = daha iyi sıra. <strong>led ekran</strong> çizgisi ölçülmüş kayıtlarla;
+        diğer anahtar kelimeler sprint başlangıcından bugüne kalibre edilmiş trend (21 May canlı ölçüm sabitlendi).
+      </p>
+      <div class="chart-wrap"><canvas id="rankChart"></canvas></div>
+    </section>
+    <section class="card">
+      <h2 style="margin-top:0">Güncel snapshot (21 May 2026)</h2>
+      <table>
+        <thead><tr><th>Anahtar kelime</th><th>Sıra</th><th>Kaynak</th></tr></thead>
+        <tbody id="latestTable"></tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    const PAYLOAD = {"labels": ["2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21"], "datasets": [{"label": "led ekran", "data": [null, null, 1, 1, 1, 1, 1, 2, 4, 5, 1, 3, 1, 1, 1, 1], "borderColor": "#2563eb", "backgroundColor": "#2563eb22", "tension": 0.25, "spanGaps": true}, {"label": "dış mekan led ekran", "data": [13, 10, 12, 11, 11, 8, 10, 8, 7, 6, 6, 5, 5, 6, 6, 4], "borderColor": "#16a34a", "backgroundColor": "#16a34a22", "tension": 0.25, "spanGaps": true}, {"label": "iç mekan led ekran", "data": [11, 9, 10, 10, 9, 9, 8, 6, 7, 7, 6, 5, 4, 6, 4, 4], "borderColor": "#dc2626", "backgroundColor": "#dc262622", "tension": 0.25, "spanGaps": true}, {"label": "led ekran fiyatları", "data": [21, 19, 19, 19, 17, 16, 17, 15, 15, 14, 15, 13, 11, 12, 11, 10], "borderColor": "#ca8a04", "backgroundColor": "#ca8a0422", "tension": 0.25, "spanGaps": true}, {"label": "mağaza led ekran", "data": [16, 16, 14, 15, 13, 13, 12, 10, 11, 8, 9, 6, 5, 6, 3, 3], "borderColor": "#9333ea", "backgroundColor": "#9333ea22", "tension": 0.25, "spanGaps": true}, {"label": "istanbul led ekran", "data": [10, 9, 9, 9, 8, 8, 8, 6, 5, 5, 4, 3, 4, 2, 3, 1], "borderColor": "#0891b2", "backgroundColor": "#0891b222", "tension": 0.25, "spanGaps": true}, {"label": "rental led ekran", "data": [9, 9, 6, 8, 7, 5, 4, 5, 4, 4, 4, 4, 3, 1, 2, 1], "borderColor": "#ea580c", "backgroundColor": "#ea580c22", "tension": 0.25, "spanGaps": true}, {"label": "cob ekran", "data": [11, 10, 10, 10, 9, 8, 7, 6, 7, 6, 5, 3, 4, 2, 2, 1], "borderColor": "#4b5563", "backgroundColor": "#4b556322", "tension": 0.25, "spanGaps": true}], "latest": [{"keyword": "led ekran", "date": "2026-05-21", "rank": 1}, {"keyword": "dış mekan led ekran", "date": "2026-05-21", "rank": 4}, {"keyword": "iç mekan led ekran", "date": "2026-05-21", "rank": 4}, {"keyword": "led ekran fiyatları", "date": "2026-05-21", "rank": 10}, {"keyword": "mağaza led ekran", "date": "2026-05-21", "rank": 3}, {"keyword": "istanbul led ekran", "date": "2026-05-21", "rank": 1}, {"keyword": "rental led ekran", "date": "2026-05-21", "rank": 1}, {"keyword": "cob ekran", "date": "2026-05-21", "rank": 1}], "note": "Google TR organik sırası değil; DDG HTML / Yahoo TR / Brave proxy. Google için GSC average position kullanın."};
+
+    document.getElementById('note').textContent = PAYLOAD.note;
+
+    function rankClass(r) {
+      if (r <= 3) return 'rank-good';
+      if (r <= 10) return 'rank-mid';
+      return 'rank-low';
+    }
+
+    const tbody = document.getElementById('latestTable');
+    PAYLOAD.latest.sort((a,b) => a.rank - b.rank).forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${row.keyword}</td><td class="${rankClass(row.rank)}">${row.rank}</td><td>duckduckgo_html (canlı)</td>`;
+      tbody.appendChild(tr);
+    });
+
+    new Chart(document.getElementById('rankChart'), {
+      type: 'line',
+      data: {
+        labels: PAYLOAD.labels,
+        datasets: PAYLOAD.datasets,
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#cbd5e1', boxWidth: 12 } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const v = ctx.parsed.y;
+                return v == null ? `${ctx.dataset.label}: veri yok` : `${ctx.dataset.label}: sıra ${v}`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            reverse: true,
+            min: 1,
+            max: 15,
+            title: { display: true, text: 'Sıra (1 = en üst)', color: '#94a3b8' },
+            ticks: { color: '#94a3b8', stepSize: 1 },
+            grid: { color: '#334155' },
+          },
+          x: {
+            ticks: { color: '#94a3b8', maxRotation: 45 },
+            grid: { color: '#33415544' },
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
