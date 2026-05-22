@@ -63,7 +63,7 @@ Alt alanlar: `temel-rehberler/`, `sektor-rehberleri/`, `karsilastirmalar/`, `soz
 
 ### 4) AGENT-HUB (SEO orkestrasyonu)
 
-**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
+**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, `AGENT-HUB/keyword_rank_snapshot.py` (SERP proxy sıra + haftalık log), isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
 
 **Somut test akışı:**
 
