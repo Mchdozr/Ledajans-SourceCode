@@ -63,7 +63,7 @@ Alt alanlar: `temel-rehberler/`, `sektor-rehberleri/`, `karsilastirmalar/`, `soz
 
 ### 4) AGENT-HUB (SEO orkestrasyonu)
 
-**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
+**Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, `AGENT-HUB/scripts/serp_led_ekran_snapshot.py` (DDG tabanlı «led ekran» sıra anlık görüntüsü; çıktı `REPORTS/SERP-LED-EKRAN-HAFTALIK.md` + `REPORTS/data/serp-led-ekran-history.jsonl`), isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
 
 **Somut test akışı:**
 
