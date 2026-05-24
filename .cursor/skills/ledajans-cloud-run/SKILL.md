@@ -113,6 +113,8 @@ python3 AGENT-HUB/live_dashboard.py && echo OK
 python3 deploy-to-wordpress.py --dry-run && echo OK
 ```
 
+**Haftalık SERP (proxy):** `python3 AGENT-HUB/weekly_led_ekran_rank.py` — çıktı `AGENT-HUB/REPORTS/weekly-led-ekran-rank.md` (kaynak: DuckDuckGo Lite, Google ile özdeş değildir). Aynı otomasyon haftada birden fazla koşuyorsa betik 7 gün içinde tekrar satır eklemez; anında ölçüm için `--force`.
+
 ---
 
 ## Bu beceriyi ne zaman güncelle
