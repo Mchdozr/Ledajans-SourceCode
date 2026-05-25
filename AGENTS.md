@@ -28,6 +28,8 @@ There is **no build step, no package.json, no compiled application**. The codeba
 | `AGENT-HUB/live_dashboard.py` | Generates `DASHBOARD.md` and `DASHBOARD.html` from report data | `python3 AGENT-HUB/live_dashboard.py` |
 | `AGENT-HUB/run-auto-orchestrator.sh` | Loop wrapper for orchestrator (runs every 20 min) | `bash AGENT-HUB/run-auto-orchestrator.sh` |
 | `AGENT-HUB/run-live-dashboard.sh` | Loop wrapper for dashboard (refreshes every 20s) | `bash AGENT-HUB/run-live-dashboard.sh` |
+| `AGENT-HUB/serp_led_ekran_weekly.py` | `led ekran` için Google (tr) organik sıra anlık görüntüsü — SerpAPI (`SERPAPI_API_KEY`) | `export SERPAPI_API_KEY=... && python3 AGENT-HUB/serp_led_ekran_weekly.py` |
+| `AGENT-HUB/run-serp-led-ekran-weekly.sh` | Yukarıdaki betiğin ince sarmalayıcısı | `bash AGENT-HUB/run-serp-led-ekran-weekly.sh` |
 
 ### Running Background Services
 

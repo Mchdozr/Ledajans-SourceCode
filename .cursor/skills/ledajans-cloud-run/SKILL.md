@@ -65,6 +65,8 @@ Alt alanlar: `temel-rehberler/`, `sektor-rehberleri/`, `karsilastirmalar/`, `soz
 
 **Betikler:** `AGENT-HUB/auto_orchestrator.py`, `AGENT-HUB/live_dashboard.py`, isteğe bağlı döngüler: `run-auto-orchestrator.sh`, `run-live-dashboard.sh`
 
+**SERP (led ekran):** `AGENT-HUB/serp_led_ekran_weekly.py` — `SERPAPI_API_KEY` ile `led ekran` sorgusunda `ledajans.com` organik sırasını yazar; çıktı `AGENT-HUB/REPORTS/serp-led-ekran-weekly.jsonl` ve `serp-led-ekran-weekly-latest.md`. Haftalık cron için `AGENT-HUB/run-serp-led-ekran-weekly.sh`.
+
 **Somut test akışı:**
 
 ```bash
