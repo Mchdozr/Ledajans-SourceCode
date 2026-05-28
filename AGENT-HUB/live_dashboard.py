@@ -15,6 +15,7 @@ DASHBOARD_HTML = HUB / "DASHBOARD.html"
 TASKS = HUB / "TASKS.md"
 MASTER_PLAN = HUB / "MASTER-PLAN.md"
 LOG_FILE = HUB / "auto-orchestrator.log"
+SERP_LATEST = HUB / "data" / "serp-led-ekran-latest.json"
 
 ROLES = ["tech-seo", "gsc", "content", "internal-link", "serp-watch"]
 TR_TZ = ZoneInfo("Europe/Istanbul")
@@ -129,6 +130,23 @@ def activity_indicator(phase: str, role: str) -> str:
     return "⚪"
 
 
+def serp_led_ekran_summary() -> str:
+    if not SERP_LATEST.exists():
+        return "«led ekran» ölçümü henüz yok (`python3 AGENT-HUB/serp_rank_tracker.py`)."
+    import json
+
+    try:
+        data = json.loads(SERP_LATEST.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return "SERP snapshot okunamadı."
+    rank = data.get("primary_rank")
+    week = data.get("week_id", "—")
+    captured = data.get("captured_at_utc", "—")
+    if rank is None:
+        return f"Hafta {week}: ilk 100 dışı (son ölçüm {captured})"
+    return f"Hafta {week}: **{rank}. sıra** (ledajans.com, son ölçüm {captured})"
+
+
 def build_dashboard() -> str:
     now = datetime.now(TR_TZ).strftime("%Y-%m-%d %H:%M:%S TR")
     lines: list[str] = []
@@ -136,6 +154,7 @@ def build_dashboard() -> str:
     lines.append("")
     lines.append(f"- Son yenileme: **{now}**")
     lines.append("- Mod: report-only (commit/push yok)")
+    lines.append(f"- SERP «led ekran»: {serp_led_ekran_summary()}")
     lines.append("")
     lines.append("## Rol Durumları")
     lines.append("")
