@@ -15,6 +15,8 @@ DASHBOARD_HTML = HUB / "DASHBOARD.html"
 TASKS = HUB / "TASKS.md"
 MASTER_PLAN = HUB / "MASTER-PLAN.md"
 LOG_FILE = HUB / "auto-orchestrator.log"
+SERP_LATEST = HUB / "SERP-RANK-LATEST.md"
+SERP_HISTORY = HUB / "data" / "serp-rank-history.json"
 
 ROLES = ["tech-seo", "gsc", "content", "internal-link", "serp-watch"]
 TR_TZ = ZoneInfo("Europe/Istanbul")
@@ -29,6 +31,41 @@ def read(path: Path) -> str:
 def tail_lines(path: Path, max_lines: int = 12) -> list[str]:
     content = read(path).splitlines()
     return content[-max_lines:] if content else []
+
+
+def serp_rank_summary() -> list[str]:
+    """Son haftalık led ekran sıra ölçümü."""
+    if SERP_LATEST.exists():
+        for line in read(SERP_LATEST).splitlines():
+            stripped = line.strip()
+            if stripped.startswith("- Organik sıra:") or stripped.startswith("- Haftalık değişim:"):
+                return [stripped.lstrip("- ").strip()]
+            if stripped.startswith("- Anahtar kelime:"):
+                return [stripped.lstrip("- ").strip()]
+    if not SERP_HISTORY.exists():
+        return ["led ekran sırası: henüz ölçülmedi"]
+    try:
+        import json
+
+        data = json.loads(read(SERP_HISTORY))
+        items = [m for m in data.get("measurements", []) if m.get("keyword") == "led ekran"]
+        if not items:
+            return ["led ekran sırası: henüz ölçülmedi"]
+        last = items[-1]
+        rank = last.get("rank_position")
+        rank_txt = str(rank) if rank is not None else "100+"
+        delta = last.get("delta_vs_previous")
+        delta_txt = ""
+        if isinstance(delta, int):
+            if delta > 0:
+                delta_txt = f" | haftalık: +{delta} sıra"
+            elif delta < 0:
+                delta_txt = f" | haftalık: {delta} sıra"
+            else:
+                delta_txt = " | haftalık: değişmedi"
+        return [f"led ekran organik sıra: {rank_txt}{delta_txt} ({last.get('date', '?')})"]
+    except Exception:
+        return ["led ekran sırası: okunamadı"]
 
 
 def role_report_path(role: str) -> Path:
@@ -136,6 +173,11 @@ def build_dashboard() -> str:
     lines.append("")
     lines.append(f"- Son yenileme: **{now}**")
     lines.append("- Mod: report-only (commit/push yok)")
+    lines.append("")
+    lines.append("## SERP — led ekran")
+    lines.append("")
+    for item in serp_rank_summary():
+        lines.append(f"- {item}")
     lines.append("")
     lines.append("## Rol Durumları")
     lines.append("")

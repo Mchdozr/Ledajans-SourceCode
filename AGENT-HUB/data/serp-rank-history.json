@@ -1,0 +1,83 @@
+{
+  "keyword": "led ekran",
+  "target_domain": "ledajans.com",
+  "measurements": [
+    {
+      "date": "2026-05-29",
+      "captured_at_utc": "2026-05-29T06:13:26+00:00",
+      "keyword": "led ekran",
+      "locale": "tr-TR",
+      "device": "desktop",
+      "search_engine": "google",
+      "serp_source": "startpage",
+      "rank_position": 1,
+      "target_url": "https://ledajans.com/",
+      "target_domain": "ledajans.com",
+      "in_top_100": true,
+      "top_10": [
+        {
+          "rank": 1,
+          "url": "https://ledajans.com/",
+          "domain": "ledajans.com",
+          "title": "LED Ekran Satış, Kiralama ve Kurulum | LEDAJANS İstanbul"
+        },
+        {
+          "rank": 2,
+          "url": "https://www.ledurunleri.com/led-ekran-panelleri?srsltid=AfmBOop_bbMd_qrwHncvgyH30GzUiCzHm3JCFYgrORBLlgp7DzRZMoyA",
+          "domain": "ledurunleri.com",
+          "title": "Led Ekran Panelleri Teknolojisi ve Kalitesi | Modelleri"
+        },
+        {
+          "rank": 3,
+          "url": "https://en.wikipedia.org/wiki/LED_display",
+          "domain": "en.wikipedia.org",
+          "title": "LED display - Wikipedia"
+        },
+        {
+          "rank": 4,
+          "url": "https://www.ledfon.com/meta-etiket/led-ekran-fiyatlari?srsltid=AfmBOorbgGu4NWa4oW7_KBx-NfUGgH9fkAHG1z8QWBCOADoCQIDcp10M",
+          "domain": "ledfon.com",
+          "title": "led ekran fiyatları-Ledfon.com"
+        },
+        {
+          "rank": 5,
+          "url": "https://www.ledpanelx.com/",
+          "domain": "ledpanelx.com",
+          "title": "Bursa Led Ekran"
+        },
+        {
+          "rank": 6,
+          "url": "https://www.sahibinden.com/led-tabela",
+          "domain": "sahibinden.com",
+          "title": "LED Tabela Fiyatları ve Çeşitli Elektronik Ürünler sahibinden.com'da"
+        },
+        {
+          "rank": 7,
+          "url": "https://lednationusa.com/buy-led-screen/?srsltid=AfmBOoqKzG42ZRMQEoDqQ7LOm7hhqJcQg6VZlFE2sl43udHQBipKVwvu",
+          "domain": "lednationusa.com",
+          "title": "Buy LED Screen Packages - Indoor & Outdoor Led Display Panel"
+        },
+        {
+          "rank": 8,
+          "url": "https://www.donanimhaber.com/samsung-dan-dev-led-ekran-sinema-bu-ekranlara-izlenir--204974",
+          "domain": "donanimhaber.com",
+          "title": "Samsung'dan dev LED ekran: Sinema bu ekranlara izlenir!"
+        },
+        {
+          "rank": 9,
+          "url": "https://www.pinterest.com/safirled/led-ekran/",
+          "domain": "pinterest.com",
+          "title": "Led Ekran için 20 fikir - Pinterest"
+        },
+        {
+          "rank": 10,
+          "url": "https://www.hepsiburada.com/sanec-p2-5-rgb-renkli-led-ekran-ic-mekan-96x96cm-pm-HBC00004ZU2QR",
+          "domain": "hepsiburada.com",
+          "title": "Sanec P2.5 Rgb Renkli LED Ekran Iç Mekan 96X96CM - Hepsiburada"
+        }
+      ],
+      "delta_vs_previous": null,
+      "note": "Startpage üzerinden Google proxy; gerçek Google TR SERP ile küçük farklar olabilir. Kesin ölçüm için SERPAPI_API_KEY tanımlayın."
+    }
+  ]
+}

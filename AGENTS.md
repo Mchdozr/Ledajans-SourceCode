@@ -28,6 +28,8 @@ There is **no build step, no package.json, no compiled application**. The codeba
 | `AGENT-HUB/live_dashboard.py` | Generates `DASHBOARD.md` and `DASHBOARD.html` from report data | `python3 AGENT-HUB/live_dashboard.py` |
 | `AGENT-HUB/run-auto-orchestrator.sh` | Loop wrapper for orchestrator (runs every 20 min) | `bash AGENT-HUB/run-auto-orchestrator.sh` |
 | `AGENT-HUB/run-live-dashboard.sh` | Loop wrapper for dashboard (refreshes every 20s) | `bash AGENT-HUB/run-live-dashboard.sh` |
+| `AGENT-HUB/serp_rank_tracker.py` | Haftalık "led ekran" Google organik sıra ölçümü + rapor | `python3 AGENT-HUB/serp_rank_tracker.py` |
+| `AGENT-HUB/run-serp-weekly.sh` | SERP ölçümü + dashboard yenileme (cron uyumlu) | `bash AGENT-HUB/run-serp-weekly.sh` |
 
 ### Running Background Services
 
@@ -54,4 +56,11 @@ There are no automated test suites or lint configurations in this repo. To valid
 python3 AGENT-HUB/auto_orchestrator.py && echo "OK"
 python3 AGENT-HUB/live_dashboard.py && echo "OK"
 python3 deploy-to-wordpress.py --dry-run
+python3 AGENT-HUB/serp_rank_tracker.py && echo "OK"
 ```
+
+### SERP sıra takibi (led ekran)
+
+- Ölçüm: `python3 AGENT-HUB/serp_rank_tracker.py` — geçmiş `AGENT-HUB/data/serp-rank-history.json`, son rapor `AGENT-HUB/SERP-RANK-LATEST.md`.
+- İsteğe bağlı: ortam değişkeni `SERPAPI_API_KEY` (SerpAPI) tanımlanırsa doğrudan Google TR sonuçları kullanılır; yoksa Startpage (Google proxy) fallback.
+- Haftalık cron: `bash AGENT-HUB/run-serp-weekly.sh` (mevcut otomasyon `0 6 * * *` ile uyumlu).
