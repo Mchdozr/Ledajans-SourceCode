@@ -111,6 +111,13 @@ cd /workspace
 python3 AGENT-HUB/auto_orchestrator.py && echo OK
 python3 AGENT-HUB/live_dashboard.py && echo OK
 python3 deploy-to-wordpress.py --dry-run && echo OK
+python3 AGENT-HUB/keyword_rank_weekly.py --dry-run && echo OK
+```
+
+Haftalık sıra raporu (Google için `SERPAPI_KEY` veya `SERPER_API_KEY` önerilir):
+
+```bash
+bash AGENT-HUB/run-weekly-keyword-rank.sh
 ```
 
 ---

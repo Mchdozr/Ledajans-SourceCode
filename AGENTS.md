@@ -28,6 +28,8 @@ There is **no build step, no package.json, no compiled application**. The codeba
 | `AGENT-HUB/live_dashboard.py` | Generates `DASHBOARD.md` and `DASHBOARD.html` from report data | `python3 AGENT-HUB/live_dashboard.py` |
 | `AGENT-HUB/run-auto-orchestrator.sh` | Loop wrapper for orchestrator (runs every 20 min) | `bash AGENT-HUB/run-auto-orchestrator.sh` |
 | `AGENT-HUB/run-live-dashboard.sh` | Loop wrapper for dashboard (refreshes every 20s) | `bash AGENT-HUB/run-live-dashboard.sh` |
+| `AGENT-HUB/keyword_rank_weekly.py` | Haftalık "led ekran" Google sıra raporu + geçmiş | `python3 AGENT-HUB/keyword_rank_weekly.py` |
+| `AGENT-HUB/run-weekly-keyword-rank.sh` | Haftalık sıra raporu sarmalayıcı | `bash AGENT-HUB/run-weekly-keyword-rank.sh` |
 
 ### Running Background Services
 
@@ -43,6 +45,7 @@ To view the HTML dashboard: `python3 -m http.server 8080 --directory /workspace/
 ### Important Caveats
 
 - `deploy-to-wordpress.py` has hardcoded WordPress credentials. It will fail with HTTP 403 unless valid WP Application Passwords are configured. Use `--dry-run` flag to test without deploying.
+- Haftalık sıra raporu (`keyword_rank_weekly.py`) için kesin **Google** ölçümü: Cursor Automation ortamına `SERPAPI_KEY` veya `SERPER_API_KEY` ekleyin. Anahtar yoksa DuckDuckGo TR HTML yaklaşık değer üretir.
 - The orchestrator reads report files from `AGENT-HUB/REPORTS/` and is a no-op if report signatures haven't changed since last run.
 - All Python scripts use hardcoded paths rooted at `/workspace`. They must be run from the repository root.
 
