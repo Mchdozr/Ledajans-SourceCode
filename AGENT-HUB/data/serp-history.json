@@ -1,0 +1,79 @@
+{
+  "snapshots": [
+    {
+      "captured_at_utc": "2026-05-31T06:05:53+00:00",
+      "keyword": "led ekran",
+      "domain": "ledajans.com",
+      "locale": "tr-TR",
+      "primary": {
+        "source": "duckduckgo_proxy",
+        "engine": "DuckDuckGo TR (proxy)",
+        "position": 1,
+        "url": "https://ledajans.com/"
+      },
+      "sources": {
+        "google_serpapi": {
+          "engine": "Google TR (SerpAPI)",
+          "error": "SERPAPI_API_KEY tanımlı değil",
+          "total_results": 0,
+          "position": null,
+          "url": null,
+          "top_5": []
+        },
+        "google_serper": {
+          "engine": "Google TR (Serper)",
+          "error": "SERPER_API_KEY tanımlı değil",
+          "total_results": 0,
+          "position": null,
+          "url": null,
+          "top_5": []
+        },
+        "duckduckgo_proxy": {
+          "engine": "DuckDuckGo TR (proxy)",
+          "error": null,
+          "total_results": 20,
+          "position": 1,
+          "url": "https://ledajans.com/",
+          "top_5": [
+            {
+              "position": 1,
+              "url": "https://ledajans.com/",
+              "domain": "ledajans.com",
+              "title": ""
+            },
+            {
+              "position": 2,
+              "url": "https://www.ledekransistemleri.com.tr/led-ekran-sistemleri-cesitleri-fiyatlari-ve-uygulama-rehberi-2025/",
+              "domain": "ledekransistemleri.com.tr",
+              "title": ""
+            },
+            {
+              "position": 3,
+              "url": "https://www.ledurunleri.com/led-ekran-panelleri",
+              "domain": "ledurunleri.com",
+              "title": ""
+            },
+            {
+              "position": 4,
+              "url": "https://www.ledsanat.com/led-ekran/",
+              "domain": "ledsanat.com",
+              "title": ""
+            },
+            {
+              "position": 5,
+              "url": "https://www.ledeksan.com/",
+              "domain": "ledeksan.com",
+              "title": ""
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "weekly_reports": [
+    {
+      "generated_at_utc": "2026-05-31T06:05:54+00:00",
+      "path": "AGENT-HUB/REPORTS/2026-05-31-serp-weekly.md"
+    }
+  ]
+}
