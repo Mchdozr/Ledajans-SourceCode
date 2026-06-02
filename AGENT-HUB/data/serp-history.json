@@ -1,0 +1,50 @@
+{
+  "snapshots": [
+    {
+      "captured_at_utc": "2026-06-02T06:17:00+00:00",
+      "results": [
+        {
+          "keyword": "led ekran",
+          "position": 1,
+          "target_url": "https://ledajans.com/",
+          "all_matches": [
+            {
+              "position": 1,
+              "url": "https://ledajans.com/"
+            }
+          ],
+          "top_competitors": [
+            {
+              "position": 2,
+              "domain": "ledurunleri.com",
+              "url": "https://www.ledurunleri.com/led-ekran-panelleri?srsltid=AfmBOopEDXaPxdtfuZEdYuGRfmtONfo3aoNuittbpriuV7zFatNecpbI"
+            },
+            {
+              "position": 3,
+              "domain": "ledfon.com",
+              "url": "https://www.ledfon.com/meta-etiket/led-ekran-fiyatlari?srsltid=AfmBOorJloet6FTDdafCRPUxih-QlHW6_TMYe21kOma7XN1j3VSfnuYu"
+            },
+            {
+              "position": 4,
+              "domain": "sahibinden.com",
+              "url": "https://www.sahibinden.com/led-tabela"
+            },
+            {
+              "position": 5,
+              "domain": "ledeca.com",
+              "url": "https://www.ledeca.com/tr/"
+            },
+            {
+              "position": 6,
+              "domain": "lednationusa.com",
+              "url": "https://lednationusa.com/buy-led-screen/?srsltid=AfmBOoqWf4CrAvQnJlJlRoCnogjP7jyPE-m2ir4_LStQPuB1f55hq6GF"
+            }
+          ],
+          "source": "startpage/google-proxy",
+          "locale": "tr-TR",
+          "captured_at_utc": "2026-06-02T06:17:00+00:00"
+        }
+      ]
+    }
+  ]
+}

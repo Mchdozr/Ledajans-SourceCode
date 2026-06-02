@@ -15,6 +15,7 @@ DASHBOARD_HTML = HUB / "DASHBOARD.html"
 TASKS = HUB / "TASKS.md"
 MASTER_PLAN = HUB / "MASTER-PLAN.md"
 LOG_FILE = HUB / "auto-orchestrator.log"
+SERP_HISTORY = HUB / "data" / "serp-history.json"
 
 ROLES = ["tech-seo", "gsc", "content", "internal-link", "serp-watch"]
 TR_TZ = ZoneInfo("Europe/Istanbul")
@@ -129,6 +130,24 @@ def activity_indicator(phase: str, role: str) -> str:
     return "⚪"
 
 
+def latest_serp_rank() -> str:
+    if not SERP_HISTORY.exists():
+        return "Ölçüm yok"
+    import json
+
+    data = json.loads(SERP_HISTORY.read_text(encoding="utf-8"))
+    snapshots = data.get("snapshots", [])
+    if not snapshots:
+        return "Ölçüm yok"
+    latest = snapshots[-1]
+    for item in latest.get("results", []):
+        if item.get("keyword") == "led ekran":
+            pos = item.get("position")
+            ts = latest.get("captured_at_utc", "")[:16]
+            return f"led ekran → {pos or '50+'}. sıra ({ts} UTC)"
+    return "Ölçüm yok"
+
+
 def build_dashboard() -> str:
     now = datetime.now(TR_TZ).strftime("%Y-%m-%d %H:%M:%S TR")
     lines: list[str] = []
@@ -136,6 +155,7 @@ def build_dashboard() -> str:
     lines.append("")
     lines.append(f"- Son yenileme: **{now}**")
     lines.append("- Mod: report-only (commit/push yok)")
+    lines.append(f"- SERP: {latest_serp_rank()}")
     lines.append("")
     lines.append("## Rol Durumları")
     lines.append("")
@@ -164,6 +184,8 @@ def build_dashboard() -> str:
     lines.append("- TASKS: `AGENT-HUB/TASKS.md`")
     lines.append("- MASTER PLAN: `AGENT-HUB/MASTER-PLAN.md`")
     lines.append("- DAILY SUMMARY: `AGENT-HUB/DAILY-SUMMARY.md`")
+    lines.append("- SERP RANK: `AGENT-HUB/SERP-RANK-LATEST.md`")
+    lines.append("- SERP WEEKLY: `AGENT-HUB/SERP-WEEKLY-REPORT.md`")
     lines.append("")
     lines.append("## Orchestrator Son Log Satırları")
     lines.append("")
