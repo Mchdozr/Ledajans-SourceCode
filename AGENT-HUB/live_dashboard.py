@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 HUB = Path("/workspace/AGENT-HUB")
 REPORTS = HUB / "REPORTS"
+SERP_LATEST = HUB / "SERP-RANK-LATEST.md"
 DASHBOARD = HUB / "DASHBOARD.md"
 DASHBOARD_HTML = HUB / "DASHBOARD.html"
 TASKS = HUB / "TASKS.md"
@@ -137,6 +138,14 @@ def build_dashboard() -> str:
     lines.append(f"- Son yenileme: **{now}**")
     lines.append("- Mod: report-only (commit/push yok)")
     lines.append("")
+    serp = read(SERP_LATEST)
+    if serp:
+        rank_line = next((ln for ln in serp.splitlines() if "ledajans.com sırası" in ln), "")
+        if rank_line:
+            lines.append("## SERP — led ekran")
+            lines.append("")
+            lines.append(rank_line.replace("- ", "- "))
+            lines.append("")
     lines.append("## Rol Durumları")
     lines.append("")
     lines.append("| Rol | Faz | Blocker Sayısı | Son Rapor Güncelleme |")
