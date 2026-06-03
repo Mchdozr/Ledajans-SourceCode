@@ -8,7 +8,7 @@
 | ledajans.com sırası | **1** |
 | Kaynak | duckduckgo_html_snapshot |
 | Locale | tr-TR |
-| Ölçüm zamanı (UTC) | 2026-06-03T06:08:54+00:00 |
+| Ölçüm zamanı (UTC) | 2026-06-03T06:09:08+00:00 |
 | Hedef URL | https://ledajans.com/ |
 
 ## Haftalık delta

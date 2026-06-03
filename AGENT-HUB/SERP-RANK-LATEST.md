@@ -1,6 +1,6 @@
 # SERP Sıra Özeti — ledajans.com
 
-- Son ölçüm (UTC): **2026-06-03T06:08:54+00:00**
+- Son ölçüm (UTC): **2026-06-03T06:09:08+00:00**
 - Anahtar kelime: **led ekran**
 - Kaynak: `duckduckgo_html_snapshot` (duckduckgo)
 - ledajans.com sırası: **1**
@@ -8,7 +8,7 @@
 - Not: Ölçüm HTML anlık görüntüsünden: AGENT-HUB/data/snapshots/led-ekran-tr.html
 
 ## Haftalık değişim
-- Önceki hafta sırası: **None** (None)
+- Önceki hafta sırası: **—** (—)
 - Bu hafta sırası: **1**
 - Delta: **ilk haftalık ölçüm**
 
