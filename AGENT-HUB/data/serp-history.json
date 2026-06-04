@@ -1,0 +1,148 @@
+{
+  "snapshots": [
+    {
+      "keyword": "led ekran",
+      "position": 2,
+      "target_url": "https://ledajans.com/",
+      "source": "ddgs-auto-commercial-filter",
+      "locale": "tr-tr",
+      "domain": "ledajans.com",
+      "captured_at_utc": "2026-06-04T06:07:16+00:00",
+      "top_competitors": [
+        {
+          "position": 1,
+          "url": "https://www.absen.com/",
+          "title": "Absen: Global Leader in LED Display Technology and Solutions",
+          "host": "absen.com"
+        },
+        {
+          "position": 2,
+          "url": "https://ledajans.com/",
+          "title": "LED Ekran Satış, Kiralama ve Kurulum | LEDAJANS İstanbul",
+          "host": "ledajans.com"
+        },
+        {
+          "position": 3,
+          "url": "https://www.ledekransistemleri.com.tr/led-ekran-sistemleri-cesitleri-fiyatlari-ve-uygulama-rehberi-2025/",
+          "title": "LED Ekran Sistemleri 2025 | Fiyatları, Çeşitleri ve Kurulum Rehberi",
+          "host": "ledekransistemleri.com.tr"
+        },
+        {
+          "position": 4,
+          "url": "https://www.ledsanat.com/led-ekran/",
+          "title": "LED Ekran - Hızlı Teklif AL - LEDSANAT | LED Teknolojileri",
+          "host": "ledsanat.com"
+        },
+        {
+          "position": 5,
+          "url": "https://www.ledurunleri.com/led-ekran-panelleri",
+          "title": "Led Ekran Panelleri Teknolojisi ve Kalitesi | Modelleri",
+          "host": "ledurunleri.com"
+        },
+        {
+          "position": 6,
+          "url": "https://www.freeled.com.tr/",
+          "title": "LED Ekran Üreticisi | Dış & İç Mekan LED Ekran — Freeled",
+          "host": "freeled.com.tr"
+        },
+        {
+          "position": 7,
+          "url": "https://www.modulerled.com.tr/",
+          "title": "Led Ekran Üreticisi | İç Mekan Led & Dış Mekan Led Sistemleri - ModülerLED",
+          "host": "modulerled.com.tr"
+        },
+        {
+          "position": 8,
+          "url": "https://www.ledeksan.com/",
+          "title": "Ledeksan – Led Teknolojileri",
+          "host": "ledeksan.com"
+        },
+        {
+          "position": 9,
+          "url": "https://www.ledshop.com.tr/",
+          "title": "LedShop.com.tr | Türkiyenin En İyi Led Ekran ve Led Tabela Sistemleri",
+          "host": "ledshop.com.tr"
+        },
+        {
+          "position": 10,
+          "url": "https://www.planar.com/products/led-video-walls/",
+          "title": "LED Video Walls | Planar",
+          "host": "planar.com"
+        }
+      ],
+      "not_found": false
+    },
+    {
+      "keyword": "led ekran",
+      "position": 2,
+      "target_url": "https://ledajans.com/",
+      "source": "ddgs-auto-commercial-filter",
+      "locale": "tr-tr",
+      "domain": "ledajans.com",
+      "captured_at_utc": "2026-06-04T06:07:35+00:00",
+      "top_competitors": [
+        {
+          "position": 1,
+          "url": "https://www.ledeksan.com/",
+          "title": "Ledeksan – Led Teknolojileri",
+          "host": "ledeksan.com"
+        },
+        {
+          "position": 2,
+          "url": "https://ledajans.com/",
+          "title": "LED Ekran Satış, Kiralama ve Kurulum | LEDAJANS İstanbul",
+          "host": "ledajans.com"
+        },
+        {
+          "position": 3,
+          "url": "https://www.ledekransistemleri.com.tr/led-ekran-sistemleri-cesitleri-fiyatlari-ve-uygulama-rehberi-2025/",
+          "title": "LED Ekran Sistemleri 2025 | Fiyatları, Çeşitleri ve Kurulum Rehberi",
+          "host": "ledekransistemleri.com.tr"
+        },
+        {
+          "position": 4,
+          "url": "https://www.ledsanat.com/led-ekran/",
+          "title": "LED Ekran - Hızlı Teklif AL - LEDSANAT | LED Teknolojileri",
+          "host": "ledsanat.com"
+        },
+        {
+          "position": 5,
+          "url": "https://www.ledurunleri.com/led-ekran-panelleri",
+          "title": "Led Ekran Panelleri Teknolojisi ve Kalitesi | Modelleri",
+          "host": "ledurunleri.com"
+        },
+        {
+          "position": 6,
+          "url": "https://www.freeled.com.tr/",
+          "title": "LED Ekran Üreticisi | Dış & İç Mekan LED Ekran — Freeled",
+          "host": "freeled.com.tr"
+        },
+        {
+          "position": 7,
+          "url": "https://www.modulerled.com.tr/",
+          "title": "Led Ekran Üreticisi | İç Mekan Led & Dış Mekan Led Sistemleri - ModülerLED",
+          "host": "modulerled.com.tr"
+        },
+        {
+          "position": 8,
+          "url": "https://www.ledshop.com.tr/",
+          "title": "LedShop.com.tr | Türkiyenin En İyi Led Ekran ve Led Tabela Sistemleri",
+          "host": "ledshop.com.tr"
+        },
+        {
+          "position": 9,
+          "url": "https://www.planar.com/products/led-video-walls/",
+          "title": "LED Video Walls | Planar",
+          "host": "planar.com"
+        },
+        {
+          "position": 10,
+          "url": "https://www.ledeca.com/",
+          "title": "Ledeca - Led Screen - Led Display - Led Wall",
+          "host": "ledeca.com"
+        }
+      ],
+      "not_found": false
+    }
+  ]
+}
