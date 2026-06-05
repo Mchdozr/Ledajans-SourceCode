@@ -1,0 +1,3 @@
+captured_at_utc,query,locale,device,search_engine,target_url,rank_position,source,notes
+2026-06-05T06:08:32Z,led ekran,tr-TR,desktop,duckduckgo,https://ledajans.com/,1,ddg_html_tr,"Google TR doğrudan ölçümü datacenter IP engeli nedeniyle kullanılamadı; DuckDuckGo HTML (kl=tr-tr) organik proxy. Kesin Google için SERPAPI_API_KEY. Cihaz=desktop; DDG HTML cihaz ayrımı yok, aynı liste."
+2026-06-05T06:08:32Z,led ekran,tr-TR,mobile,duckduckgo,https://ledajans.com/,1,ddg_html_tr,"Google TR doğrudan ölçümü datacenter IP engeli nedeniyle kullanılamadı; DuckDuckGo HTML (kl=tr-tr) organik proxy. Kesin Google için SERPAPI_API_KEY. Cihaz=mobile; DDG HTML cihaz ayrımı yok, aynı liste."
