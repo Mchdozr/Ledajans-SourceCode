@@ -1,0 +1,14 @@
+Sebep,Kaynak,Doğrulama,Sayfa sayısı
+Yönlendirmeli sayfa,Web sitesi,Başlatılmadı,16
+Bulunamadı (404),Web sitesi,Başlatılmadı,13
+Yeniden yönlendirme hatası,Web sitesi,Başlatılmadı,9
+Kullanıcı tarafından seçilen standart sayfa olmadan kopya,Web sitesi,Başlatılmadı,7
+Doğru standart etikete sahip alternatif sayfa,Web sitesi,Başlatılmadı,7
+"""noindex"" etiketi tarafından hariç tutuldu",Web sitesi,Başlatılmadı,6
+Sunucu hatası (5xx),Web sitesi,Başlatılmadı,2
+Robots.txt tarafından engellendi,Web sitesi,Başlatılmadı,2
+Başka bir 4xx sorunu nedeniyle engellendi,Web sitesi,Başlatılmadı,1
+Tarandı - şu anda dizine eklenmiş değil,Google sistemleri,Başlatılmadı,390
+Erişim izni verilmemesi (403) nedeniyle engellendi,Web sitesi,Yok,0
+Keşfedildi - şu anda dizine eklenmiş değil,Google sistemleri,Başarılı,10
+"Kopya, Google kullanıcıdan farklı bir standart sayfa seçti",Google sistemleri,Yok,0

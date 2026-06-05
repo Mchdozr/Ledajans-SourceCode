@@ -1,0 +1,12 @@
+# ============================================
+# BEGIN LEDAJANS BLOG 301 (eski kok URL -> /blog/)
+# Sitemap blokundan HEMEN SONRA, LSCACHE'den ONCE yapistirin.
+# Dosya: scripts/ledajans-blog-301.htaccess (103 kural)
+# ============================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# --- asagidaki RewriteRule satirlarini ledajans-blog-301.htaccess'ten kopyalayin (baslik satirlari haric) ---
+RewriteRule ^led-ekran-nasil-secilir-rehber/?$ /blog/led-ekran-nasil-secilir-rehber/ [R=301,L]
+# ... (103 satir)
+</IfModule>
+# END LEDAJANS BLOG 301

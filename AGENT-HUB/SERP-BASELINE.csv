@@ -1,0 +1,21 @@
+captured_at_utc,query,locale,device,search_engine,target_url,rank_position,serp_features,primary_competitor,competitor_rank,source,notes
+2026-06-03T11:20:00Z,led ekran,tr-TR,mobile,google,https://ledajans.com/,1,,videowall.com.tr,,manual_web_check,GSC Performance ile doğrula
+2026-06-03T11:20:00Z,led ekran,tr-TR,mobile,google,https://ledajans.com/led-ekran/,top3,,,,manual_web_check,Hub görünür — GSC doğrula
+2026-06-03T11:20:00Z,led ekran,tr-TR,desktop,google,https://ledajans.com/,top5,,videowall.com.tr,,audit_2026-06-03,Desktop SERP: GSC export veya manuel kontrol
+2026-06-03T11:20:00Z,led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/led-ekran/,top10,,,,audit_2026-06-03,Hub canonical OK; sıra GSC Queries
+2026-06-03T11:20:00Z,dış mekan led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,top20,,,,audit_2026-06-03,Canonical+sitemap OK; sıra GSC
+2026-06-03T11:20:00Z,iç mekan led ekran,tr-TR,mobile,google,https://ledajans.com/ic-mekan-led-ekran/,top20,,,,audit_2026-06-03,Canonical+sitemap OK; sıra GSC
+2026-06-03T11:20:00Z,rental led ekran,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,top20,,,,audit_2026-06-03,Canonical+sitemap OK; sıra GSC
+2026-06-03T11:20:00Z,cob ekran,tr-TR,mobile,google,https://ledajans.com/cob-ekran/,top20,,,,audit_2026-06-03,Canonical+sitemap OK; sıra GSC
+2026-06-04T12:00:00Z,iç mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/,pending,,,,long_tail_plan,Yayın sonrası GSC Queries
+2026-06-04T12:00:00Z,dış mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/,pending,,,,long_tail_plan,Yayın sonrası GSC Queries
+2026-06-04T12:00:00Z,rental led ekran kiralama fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/rental-led-ekran-kiralama-fiyatlari-2026/,pending,,,,long_tail_plan,Yayın sonrası GSC Queries
+2026-06-04T12:00:00Z,led ekran kiralama,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,pending,,,,long_tail_plan,İç link kümesi — GSC
+2026-06-05T14:21:00Z,led ekran,tr-TR,mobile,google,https://ledajans.com/,6.78,,videowall.com.tr,,gsc_performance_2026-06-05,Clicks=223; Impressions=7691; CTR=2.9%; avg_position=6.78
+2026-06-05T14:21:00Z,led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/led-ekran/,16.02,,,,gsc_performance_2026-06-05,Clicks=10; Impressions=432; CTR=2.31%; avg_position=16.02
+2026-06-05T14:21:00Z,dış mekan led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,15.34,,,,gsc_performance_2026-06-05,Clicks=13; Impressions=860; CTR=1.51%; avg_position=15.34
+2026-06-05T14:21:00Z,iç mekan led ekran,tr-TR,mobile,google,https://ledajans.com/ic-mekan-led-ekran/,13.21,,,,gsc_performance_2026-06-05,Clicks=23; Impressions=896; CTR=2.57%; avg_position=13.21
+2026-06-05T14:21:00Z,rental led ekran,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,13.56,,,,gsc_performance_2026-06-05,Clicks=6; Impressions=108; CTR=5.56%; avg_position=13.56
+2026-06-05T14:21:00Z,iç mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/,15.08,,,,gsc_performance_2026-06-05,Clicks=17; Impressions=298; CTR=5.7%; avg_position=15.08
+2026-06-05T14:21:00Z,dış mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/,20.78,,,,gsc_performance_2026-06-05,Clicks=5; Impressions=167; CTR=2.99%; avg_position=20.78
+2026-06-05T14:21:00Z,led ekran kiralama,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,11.08,,,,gsc_performance_2026-06-05,Clicks=2; Impressions=167; CTR=1.2%; avg_position=11.08

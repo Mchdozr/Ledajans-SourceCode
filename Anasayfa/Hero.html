@@ -1,4 +1,8 @@
 <!-- WIDGET 1 — Hero: dosyanın TAMAMINI Elementor HTML widget'a yapıştır | Ek CSS: Ek-CSS-final.css | 2026-05-04 -->
+<!-- SEO Meta Description (RankMath): LED ekran satış, kiralama ve kurulum | İç-dış mekan, rental ve COB | 25 yıl tecrübe | Ücretsiz teklif — LEDAJANS İstanbul. -->
+<link rel="preconnect" href="https://ledajans.com" crossorigin>
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp" media="(min-width: 769px)" fetchpriority="high">
 <style>
     .ledajans-video-modal {
       display: none;
@@ -48,8 +52,16 @@
       background: rgba(17, 24, 39, 0.45);
       backdrop-filter: blur(2px);
       padding: 1rem;
+      overflow: hidden;
     }
     .ledajans-launch-modal.active { display: flex; }
+    .ledajans-launch-modal[hidden],
+    .ledajans-launch-modal.is-closed {
+      display: none !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      opacity: 0 !important;
+    }
     .ledajans-launch-card {
       position: relative;
       width: min(100%, 720px);
@@ -275,14 +287,24 @@
     }
     @media (max-width: 768px) {
       .ledajans-launch-modal {
-        align-items: flex-start;
-        padding: calc(env(safe-area-inset-top) + 0.9rem) 0.75rem 1rem;
-        overflow-y: auto;
+        align-items: center;
+        justify-content: center;
+        padding: max(0.75rem, env(safe-area-inset-top)) 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+        overflow: hidden;
       }
       .ledajans-launch-card {
+        display: flex;
+        flex-direction: column;
         margin: 0 auto;
         padding: 1.35rem 0.85rem 1rem;
         border-radius: 20px;
+        width: min(100%, 720px);
+        max-height: calc(100dvh - 1.5rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        max-height: calc(100svh - 1.5rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
       }
       .ledajans-launch-brand { margin-bottom: 0.6rem; }
       .ledajans-launch-brand img { height: 28px; }
@@ -299,11 +321,15 @@
         line-height: 1.45;
       }
       .ledajans-launch-close {
-        top: 8px;
-        right: 8px;
+        position: sticky;
+        top: 0;
+        align-self: flex-end;
+        flex-shrink: 0;
         width: 34px;
         height: 34px;
+        margin: -0.35rem 0 0.15rem;
         line-height: 1;
+        z-index: 3;
         /* Mobilde çift ×: HTML &times; + ::before birlikte görünmesin */
         font-size: 0;
       }
@@ -758,11 +784,37 @@
     }
     .ledajans-scroll-indicator { display: none; }
     @media (max-width: 768px) {
-      .ledajans-hero-fair-panel {
+      .ledajans-launch-modal,
+      .ledajans-launch-modal.active {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
       }
-      .ledajans-hero.fair-reveal-active .ledajans-hero-fair-panel {
+      .ledajans-hero-fair-panel {
+        position: relative;
+        left: auto;
+        top: auto;
+        z-index: 12;
+        width: calc(100% - 1.25rem);
+        max-width: 420px;
+        margin: 0 auto 0.75rem;
+        min-height: 0;
+        transform: none;
+        opacity: 1;
+        max-height: none;
+        overflow: hidden;
+        pointer-events: none;
+        display: none;
+        visibility: hidden;
+      }
+      .ledajans-hero.fair-reveal-active:not(.fair-panel-dismissed) .ledajans-hero-fair-panel {
         display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        margin: 0 !important;
+        max-height: 0 !important;
       }
       .ledajans-hero.fair-reveal-active .ledajans-hero-content {
         transform: none;
@@ -770,15 +822,68 @@
       }
       .ledajans-hero.fair-panel-dismissed .ledajans-hero-fair-panel {
         display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        margin: 0 !important;
+        max-height: 0 !important;
       }
-      .ledajans-hero-fair-card { padding: 1.05rem 0.9rem; }
+      .ledajans-hero-fair-card {
+        min-height: 0;
+        padding: 0.95rem 0.82rem 0.85rem;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+      }
+      .ledajans-hero-fair-card:hover {
+        transform: none;
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+        border-color: rgba(148, 163, 184, 0.28);
+      }
+      .ledajans-hero-fair-logos { margin-bottom: 0.75rem; }
+      .ledajans-hero-fair-sign-logo-wrap { min-height: 68px; }
+      .ledajans-hero-fair-sign-logo { height: 52px !important; }
+      .ledajans-hero-fair-slogan {
+        margin-bottom: 0.65rem;
+        padding: 0.42rem 0.5rem;
+        font-size: 0.68rem;
+      }
+      .ledajans-hero-fair-title {
+        margin-bottom: 0.65rem;
+        font-size: 1.02rem;
+      }
+      .ledajans-hero-fair-meta {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+      .ledajans-hero-fair-meta-line,
+      .ledajans-hero-fair-meta-line--date,
+      .ledajans-hero-fair-meta-line--location {
+        min-height: 0;
+        padding: 0.62rem 0.68rem;
+        font-size: 0.84rem;
+        line-height: 1.35;
+      }
+      .ledajans-hero-fair-stand {
+        margin-top: 0.55rem;
+        padding: 0.72rem 0.65rem;
+        font-size: 0.92rem;
+      }
+      .ledajans-hero-fair-cta-hint {
+        margin-top: 0.45rem;
+        font-size: 0.7rem;
+        padding: 0.32rem 0.5rem;
+      }
       .ledajans-hero-fair-close {
         display: inline-flex;
-        position: absolute;
-        top: 8px;
-        right: 8px;
+        position: sticky;
+        top: 0;
+        align-self: flex-end;
+        flex-shrink: 0;
+        z-index: 5;
         width: 30px;
         height: 30px;
+        margin: 0 0 0.25rem;
         align-items: center;
         justify-content: center;
         border: 0;
@@ -796,9 +901,12 @@
         height: auto;
         min-height: 100svh;
         min-height: 100dvh;
-        align-items: flex-start;
-        justify-content: center;
-        padding-top: clamp(2.45rem, 6vw + 1.5rem, 3.95rem);
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        overflow: visible;
+        /* WP mobil header (~89px) + güvenli boşluk */
+        padding-top: max(5.75rem, calc(env(safe-area-inset-top) + 5.25rem));
         padding-bottom: 2rem;
       }
       .ledajans-hero-video { display: none !important; }
@@ -831,7 +939,7 @@
              data-src="https://ledajans.com/wp-content/uploads/2026/03/Firefly-548225-1.mp4">
       </video>
       <div class="ledajans-hero-bg-mobile">
-        <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp 768w, https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp 1200w" sizes="100vw" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
+        <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp 768w, https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp 1200w" sizes="100vw" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
       </div>
       <div class="ledajans-hero-overlay"></div>
       <aside class="ledajans-hero-fair-panel" id="ledajansHeroFairPanel" aria-label="SIGNISTANBUL fuar duyurusu">
@@ -933,6 +1041,118 @@
       var closeBtn = document.getElementById('ledajansModalClose');
       var youtubeUrl = 'https://www.youtube.com/embed/riOY6kz7cv4?autoplay=1';
       var modalOpen = false;
+      var launchModal = document.getElementById('ledajansLaunchModal');
+      var launchCloseBtn = document.getElementById('ledajansLaunchClose');
+      var heroSection = document.querySelector('.ledajans-hero');
+      var heroFairCloseBtn = document.getElementById('ledajansHeroFairClose');
+      var heroFairCard = document.getElementById('ledajansHeroFairCard');
+      var heroFairPanel = document.getElementById('ledajansHeroFairPanel');
+      var isMobileHero = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+      var countdownEls = {
+        days: document.querySelector('[data-countdown="days"]'),
+        hours: document.querySelector('[data-countdown="hours"]'),
+        minutes: document.querySelector('[data-countdown="minutes"]'),
+        seconds: document.querySelector('[data-countdown="seconds"]')
+      };
+      var launchTarget = new Date('2026-06-06T13:00:00+03:00').getTime();
+      var countdownTimer = null;
+      var fairRevealStarted = false;
+      function pad(value) { return value < 10 ? '0' + value : '' + value; }
+      function startFairReveal() {
+        if (isMobileHero) return;
+        if (fairRevealStarted || !heroSection) return;
+        fairRevealStarted = true;
+        heroSection.classList.remove('fair-panel-dismissed');
+        heroSection.classList.add('fair-reveal-active');
+        if (heroFairPanel) {
+          heroFairPanel.removeAttribute('hidden');
+          heroFairPanel.style.display = '';
+        }
+      }
+      function resetLaunchModalScroll() {
+        if (!launchModal) return;
+        launchModal.scrollTop = 0;
+        var launchCard = launchModal.querySelector('.ledajans-launch-card');
+        if (launchCard) launchCard.scrollTop = 0;
+      }
+      function openLaunchModalNow() {
+        if (isMobileHero) {
+          if (launchModal) {
+            launchModal.classList.remove('active');
+            launchModal.classList.add('is-closed');
+            launchModal.setAttribute('hidden', '');
+            launchModal.setAttribute('aria-hidden', 'true');
+          }
+          dismissFairPanel();
+          return;
+        }
+        if (!launchModal || Date.now() >= launchTarget) {
+          startFairReveal();
+          return;
+        }
+        if (document.body && launchModal.parentNode !== document.body) {
+          document.body.appendChild(launchModal);
+        }
+        launchModal.classList.remove('is-closed');
+        launchModal.removeAttribute('hidden');
+        resetLaunchModalScroll();
+        launchModal.classList.add('active');
+        launchModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        updateLaunchCountdown();
+        if (!countdownTimer) {
+          countdownTimer = setInterval(updateLaunchCountdown, 1000);
+        }
+      }
+      function closeLaunchModal() {
+        if (!launchModal) return;
+        resetLaunchModalScroll();
+        launchModal.classList.remove('active');
+        launchModal.classList.add('is-closed');
+        launchModal.setAttribute('hidden', '');
+        launchModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        startFairReveal();
+      }
+      function dismissFairPanel() {
+        if (!heroSection) return;
+        heroSection.classList.remove('fair-reveal-active');
+        heroSection.classList.add('fair-panel-dismissed');
+        if (heroFairPanel) {
+          heroFairPanel.setAttribute('hidden', '');
+          heroFairPanel.style.display = 'none';
+        }
+      }
+      function updateLaunchCountdown() {
+        if (!countdownEls.days || !countdownEls.hours || !countdownEls.minutes || !countdownEls.seconds) return;
+        var now = Date.now();
+        var diff = launchTarget - now;
+        if (diff <= 0) {
+          countdownEls.days.textContent = '00';
+          countdownEls.hours.textContent = '00';
+          countdownEls.minutes.textContent = '00';
+          countdownEls.seconds.textContent = '00';
+          if (launchModal && launchModal.classList.contains('active')) {
+            closeLaunchModal();
+          }
+          if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+          }
+          return;
+        }
+        var totalSeconds = Math.floor(diff / 1000);
+        var days = Math.floor(totalSeconds / 86400);
+        var hours = Math.floor((totalSeconds % 86400) / 3600);
+        var minutes = Math.floor((totalSeconds % 3600) / 60);
+        var seconds = totalSeconds % 60;
+        countdownEls.days.textContent = pad(days);
+        countdownEls.hours.textContent = pad(hours);
+        countdownEls.minutes.textContent = pad(minutes);
+        countdownEls.seconds.textContent = pad(seconds);
+      }
       function openModal() {
         if (modalOpen) return;
         modalOpen = true;
@@ -948,25 +1168,77 @@
       }
       if (playLink) {
         playLink.onclick = function(e) { e.preventDefault(); e.stopPropagation(); openModal(); return false; };
+        playLink.ontouchend = function(e) { e.preventDefault(); e.stopPropagation(); openModal(); return false; };
       }
       if (closeBtn) {
         closeBtn.onclick = function(e) { e.preventDefault(); closeModal(); return false; };
+        closeBtn.ontouchend = function(e) { e.preventDefault(); closeModal(); return false; };
       }
       if (modal) {
         modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+        modal.ontouchend = function(e) { if (e.target === modal) { e.preventDefault(); closeModal(); } };
       }
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
-      });
-
+      if (launchCloseBtn) {
+        launchCloseBtn.onclick = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
+        launchCloseBtn.ontouchend = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
+      }
+      if (launchModal) {
+        launchModal.onclick = function(e) { if (e.target === launchModal) closeLaunchModal(); };
+        launchModal.classList.add('is-closed');
+        launchModal.setAttribute('hidden', '');
+        launchModal.setAttribute('aria-hidden', 'true');
+        if (isMobileHero) {
+          dismissFairPanel();
+        } else if (Date.now() < launchTarget) {
+          openLaunchModalNow();
+        } else if ('requestIdleCallback' in window) {
+          requestIdleCallback(startFairReveal, { timeout: 2000 });
+        } else {
+          setTimeout(startFairReveal, 500);
+        }
+      } else if (isMobileHero) {
+        dismissFairPanel();
+      } else if ('requestIdleCallback' in window) {
+        requestIdleCallback(startFairReveal, { timeout: 2000 });
+      } else {
+        setTimeout(startFairReveal, 500);
+      }
+      if (heroFairCloseBtn && heroSection) {
+        heroFairCloseBtn.onclick = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dismissFairPanel();
+          return false;
+        };
+        heroFairCloseBtn.ontouchend = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dismissFairPanel();
+          return false;
+        };
+      }
+      if (heroFairCard) {
+        heroFairCard.onclick = function(e) {
+          if (e.target && e.target.id === 'ledajansHeroFairClose') return;
+          window.open('https://www.google.com/maps/dir/?api=1&destination=Istanbul+Fuar+Merkezi%2C+Yesilkoy+Istanbul%2C+Fuar+Merkezi%2C+34149+Bakirkoy%2FIstanbul&travelmode=driving', '_blank');
+        };
+      }
+      document.onkeydown = function(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+          closeLaunchModal();
+        }
+      };
       var heroVideo = document.getElementById('ledajansHeroVideo');
       if (heroVideo && window.innerWidth > 768) {
-        if ('connection' in navigator && navigator.connection.saveData) return;
         heroVideo.muted = true;
         var posterSrc = heroVideo.getAttribute('data-poster');
-        if (posterSrc) heroVideo.setAttribute('poster', posterSrc);
+        if (posterSrc) {
+          heroVideo.setAttribute('poster', posterSrc);
+        }
         var videoSrc = heroVideo.getAttribute('data-src');
         var videoLoaded = false;
+
         function loadAndPlay() {
           if (videoLoaded || !videoSrc) return;
           videoLoaded = true;
@@ -977,98 +1249,154 @@
           heroVideo.load();
           heroVideo.muted = true;
         }
+
         heroVideo.addEventListener('canplay', function() {
           heroVideo.muted = true;
           heroVideo.classList.add('loaded');
           try { heroVideo.play(); } catch(ex) {}
         });
-        if ('IntersectionObserver' in window) {
-          var obs = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) { loadAndPlay(); obs.disconnect(); }
-          }, { rootMargin: '200px' });
-          obs.observe(heroVideo);
-        } else if ('requestIdleCallback' in window) {
+
+        if ('connection' in navigator && navigator.connection.saveData) {
+          return;
+        }
+
+        if ('requestIdleCallback' in window) {
           requestIdleCallback(loadAndPlay, { timeout: 4000 });
         } else {
           setTimeout(loadAndPlay, 2500);
         }
       }
-
-      function initDeferredUI() {
-        var launchModal = document.getElementById('ledajansLaunchModal');
-        var launchCloseBtn = document.getElementById('ledajansLaunchClose');
-        var heroSection = document.querySelector('.ledajans-hero');
-        var heroFairCloseBtn = document.getElementById('ledajansHeroFairClose');
-        var heroFairCard = document.getElementById('ledajansHeroFairCard');
-        var countdownEls = {
-          days: document.querySelector('[data-countdown="days"]'),
-          hours: document.querySelector('[data-countdown="hours"]'),
-          minutes: document.querySelector('[data-countdown="minutes"]'),
-          seconds: document.querySelector('[data-countdown="seconds"]')
-        };
-        var launchTarget = new Date('2026-06-06T13:00:00+03:00').getTime();
-        var countdownTimer = null;
-        var fairRevealStarted = false;
-        function pad(v) { return v < 10 ? '0' + v : '' + v; }
-        function startFairReveal() {
-          if (fairRevealStarted || !heroSection) return;
-          fairRevealStarted = true;
-          heroSection.classList.remove('fair-panel-dismissed');
-          heroSection.classList.add('fair-reveal-active');
-        }
-        function closeLaunchModal() {
-          if (!launchModal) return;
-          launchModal.classList.remove('active');
-          launchModal.setAttribute('aria-hidden', 'true');
-          startFairReveal();
-        }
-        function updateCountdown() {
-          if (!countdownEls.days) return;
-          var diff = launchTarget - Date.now();
-          if (diff <= 0) {
-            countdownEls.days.textContent = countdownEls.hours.textContent = countdownEls.minutes.textContent = countdownEls.seconds.textContent = '00';
-            if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
-            return;
-          }
-          var t = Math.floor(diff / 1000);
-          countdownEls.days.textContent = pad(Math.floor(t / 86400));
-          countdownEls.hours.textContent = pad(Math.floor((t % 86400) / 3600));
-          countdownEls.minutes.textContent = pad(Math.floor((t % 3600) / 60));
-          countdownEls.seconds.textContent = pad(t % 60);
-        }
-        if (launchCloseBtn) {
-          launchCloseBtn.onclick = function(e) { e.preventDefault(); closeLaunchModal(); return false; };
-        }
-        if (launchModal) {
-          if (document.body && launchModal.parentNode !== document.body) document.body.appendChild(launchModal);
-          launchModal.onclick = function(e) { if (e.target === launchModal) closeLaunchModal(); };
-          launchModal.classList.add('active');
-          launchModal.setAttribute('aria-hidden', 'false');
-          updateCountdown();
-          countdownTimer = setInterval(updateCountdown, 1000);
-          document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLaunchModal(); });
-        } else {
-          startFairReveal();
-        }
-        if (heroFairCloseBtn && heroSection) {
-          heroFairCloseBtn.onclick = function(e) {
-            e.preventDefault(); e.stopPropagation();
-            heroSection.classList.add('fair-panel-dismissed');
-            return false;
-          };
-        }
-        if (heroFairCard) {
-          heroFairCard.onclick = function(e) {
-            if (e.target && e.target.id === 'ledajansHeroFairClose') return;
-            window.open('https://www.google.com/maps/dir/?api=1&destination=Istanbul+Fuar+Merkezi%2C+Yesilkoy+Istanbul%2C+Fuar+Merkezi%2C+34149+Bakirkoy%2FIstanbul&travelmode=driving', '_blank');
-          };
-        }
-      }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(initDeferredUI, { timeout: 3000 });
-      } else {
-        setTimeout(initDeferredUI, 1500);
-      }
     })();
     </script>
-<!-- JSON-LD @graph ayrı widget'a taşındı: Anasayfa/homepage-schema.html -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ledajans.com/#organization",
+      "name": "LEDAJANS",
+      "legalName": "TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ",
+      "url": "https://ledajans.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+        "width": 300,
+        "height": 100
+      },
+      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "description": "LEDAJANS, LED ekran satış, kiralama, kurulum ve teknik destek hizmetleri sunan, 25 yıllık sektör tecrübesine sahip Türkiye'nin güvenilir LED ekran tedarikçisidir.",
+      "foundingDate": "2001",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 50
+      },
+      "knowsAbout": [
+        "LED Ekran",
+        "LED Panel",
+        "RGB Panel",
+        "LED Ekran Kiralama",
+        "LED Ekran Kurulum",
+        "Dış Mekan LED Ekran",
+        "İç Mekan LED Ekran",
+        "Rental LED Ekran",
+        "COB LED Ekran",
+        "LED Ekran Teknik Destek",
+        "LED Kontrol Kartları",
+        "LED Güç Kaynakları"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/LedAjans/",
+        "https://www.instagram.com/ledajans/",
+        "https://www.linkedin.com/company/led-ajans/",
+        "https://twitter.com/ledajans",
+        "https://www.youtube.com/channel/UCQt5HAPKC0tsJYGvVEL5MoA"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-212-220-40-04",
+          "contactType": "sales",
+          "areaServed": ["TR", "DE", "CY"],
+          "availableLanguage": ["Turkish", "English", "German"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+90-543-879-51-08",
+          "contactType": "customer support",
+          "areaServed": "TR",
+          "availableLanguage": "Turkish"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Halide Edip Adıvar Mah. Gül 2 Sk. No:10",
+        "addressLocality": "Şişli",
+        "addressRegion": "İstanbul",
+        "postalCode": "34382",
+        "addressCountry": "TR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ledajans.com/#website",
+      "name": "LEDAJANS",
+      "url": "https://ledajans.com",
+      "publisher": { "@id": "https://ledajans.com/#organization" },
+      "inLanguage": "tr-TR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ledajans.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ledajans.com/#localbusiness",
+      "name": "LEDAJANS - LED Ekran Çözümleri",
+      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "url": "https://ledajans.com",
+      "telephone": "+90-212-220-40-04",
+      "email": "info@ledajans.com",
+      "priceRange": "₺₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Halide Edip Adıvar Mah. Gül 2 Sk. No:10",
+        "addressLocality": "Şişli",
+        "addressRegion": "İstanbul",
+        "postalCode": "34382",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.0602,
+        "longitude": 28.9744
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Türkiye" },
+        { "@type": "Country", "name": "Almanya" },
+        { "@type": "Country", "name": "Kıbrıs" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "LED Ekran Ürün ve Hizmetleri",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "İç Mekan LED Ekran Satışı" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dış Mekan LED Ekran Satışı" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rental LED Ekran Kiralama" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED Ekran Kurulum Hizmeti" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED Ekran Teknik Destek" } }
+        ]
+      }
+    }
+  ]
+}
+</script>

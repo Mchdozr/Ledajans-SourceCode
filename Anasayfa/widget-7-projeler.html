@@ -1,9 +1,299 @@
+<!-- SEO Meta Description: LEDAJANS LED ekran projeleri; iç mekan, dış mekan, mağaza, fuar ve rental LED ekran kurulum referanslarını inceleyin, projeniz için teklif alın. -->
+<!-- SEO Focus Keyword: LED ekran projeleri -->
 <!-- WIDGET 7 — Projeler (DOCTYPE/html/body YOK; kart basliklari h3) -->
 <style>
+  .ledajans-projects-page {
+        font-family: inherit;
+        color: #0f172a;
+        background: #ffffff;
+        position: relative;
+        isolation: isolate;
+      }
+
+      .ledajans-projects-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.65rem;
+      }
+
+      .ledajans-projects-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.85rem;
+        padding: 0.72rem 1.15rem;
+        border-radius: 999px;
+        font-size: 0.94rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .ledajans-projects-btn-primary {
+        color: #ffffff !important;
+        background: #F46F2C;
+        box-shadow: 0 18px 36px rgba(244, 111, 44, 0.32);
+      }
+
+      .ledajans-projects-btn-outline {
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .ledajans-projects-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .ledajans-projects-seo-block {
+        position: relative;
+        z-index: 20 !important;
+        padding: clamp(2rem, 4vw, 3rem) 1rem;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 52%, #ffffff 100%);
+      }
+
+      .ledajans-projects-seo-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+        gap: clamp(1rem, 2.5vw, 1.75rem);
+        align-items: stretch;
+      }
+
+      .ledajans-projects-copy {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.15rem, 2.5vw, 1.65rem);
+        border-radius: 1.75rem;
+        background:
+          radial-gradient(circle at 90% 10%, rgba(244, 111, 44, 0.28), transparent 34%),
+          linear-gradient(135deg, #111827 0%, #1e293b 100%);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+      }
+
+      .ledajans-projects-copy::after {
+        content: "";
+        position: absolute;
+        right: -3rem;
+        bottom: -3rem;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 999px;
+        background: rgba(244, 111, 44, 0.18);
+      }
+
+      .ledajans-projects-copy h2,
+      .ledajans-projects-faq h2 {
+        margin: 0 0 1rem;
+        color: #0f172a;
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+
+      .ledajans-projects-copy h2 {
+        position: relative;
+        z-index: 1;
+        color: #ffffff !important;
+        font-size: clamp(1.65rem, 3vw, 2.45rem);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.32);
+      }
+
+      .ledajans-projects-copy p,
+      .ledajans-projects-faq p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.85;
+        margin: 0 0 1rem;
+      }
+
+      .ledajans-projects-copy p {
+        position: relative;
+        z-index: 1;
+        color: #dbeafe;
+        font-size: 0.96rem;
+        line-height: 1.62;
+        margin-bottom: 0.7rem;
+      }
+
+      .ledajans-projects-copy-badge {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.7rem;
+        padding: 0.42rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fed7aa;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .ledajans-projects-copy-stats {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.95rem;
+      }
+
+      .ledajans-projects-copy-stat {
+        padding: 0.65rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .ledajans-projects-copy-stat strong {
+        display: block;
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+
+      .ledajans-projects-copy-stat span {
+        display: block;
+        margin-top: 0.18rem;
+        color: #bfdbfe;
+        font-size: 0.76rem;
+        line-height: 1.35;
+      }
+
+      .ledajans-projects-sector-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .ledajans-projects-sector {
+        position: relative;
+        overflow: hidden;
+        padding: 0.95rem;
+        border: 1px solid rgba(244, 111, 44, 0.16);
+        border-radius: 1.35rem;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
+        transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+      }
+
+      .ledajans-projects-sector:hover {
+        transform: translateY(-5px);
+        border-color: rgba(244, 111, 44, 0.38);
+        box-shadow: 0 26px 52px rgba(15, 23, 42, 0.12);
+      }
+
+      .ledajans-projects-sector-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-bottom: 0.65rem;
+        border-radius: 1rem;
+        color: #ffffff;
+        background: linear-gradient(135deg, #F46F2C, #fb923c);
+        box-shadow: 0 14px 28px rgba(244, 111, 44, 0.24);
+        font-size: 0.95rem;
+      }
+
+      .ledajans-projects-sector strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #0f172a;
+      }
+
+      .ledajans-projects-sector span {
+        color: #64748b;
+        font-size: 0.86rem;
+        line-height: 1.42;
+      }
+
+      .ledajans-projects-cta {
+        position: relative;
+        z-index: 20 !important;
+        padding: clamp(3.5rem, 7vw, 5rem) 1rem;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(244, 111, 44, 0.22), transparent 28%),
+          linear-gradient(135deg, #111827, #0f172a);
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .ledajans-projects-cta-inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .ledajans-projects-cta h2 {
+        margin: 0 0 1rem;
+        color: #ffffff !important;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.42);
+      }
+
+      .ledajans-projects-cta p {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 0 auto 1.75rem;
+        max-width: 720px;
+      }
+
+      .ledajans-projects-faq {
+        position: relative;
+        z-index: 20 !important;
+        background: #ffffff;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: clamp(3.5rem, 7vw, 5rem) 1rem;
+      }
+
+      .ledajans-projects-faq details {
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        padding: 1rem 1.15rem;
+        margin-bottom: 0.875rem;
+        background: #ffffff;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+      }
+
+      .ledajans-projects-faq summary {
+        cursor: pointer;
+        color: #0f172a;
+        font-weight: 800;
+      }
+
+      @media (max-width: 768px) {
+        .ledajans-projects-copy-stats,
+        .ledajans-projects-sector-grid,
+        .ledajans-projects-seo-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .ledajans-projects {
+          margin-top: 0;
+          border-radius: 1.5rem 1.5rem 0 0;
+        }
+      }
+
   .ledajans-projects {
+        position: relative;
+        z-index: 20 !important;
         padding: clamp(3.5rem, 8vw, 6rem) 1rem;
         background: linear-gradient(180deg, #f0f7ff 0%, #f8fafc 45%, #ffffff 100%);
+        border-radius: 2.25rem 2.25rem 0 0;
+        margin-top: 0;
         min-height: auto;
+        box-shadow: none;
       }
   
       .ledajans-projects-container {
@@ -399,12 +689,13 @@
       }
   </style>
   
-  <section class="ledajans-projects">
+  <div class="ledajans-projects-page">
+  <section class="ledajans-projects" id="ledajans-proje-listesi">
       <div class="ledajans-projects-container">
         <header class="ledajans-projects-header">
-          <h2 class="ledajans-projects-title">Projeler<span class="highlight">imiz</span></h2>
+          <h2 class="ledajans-projects-title">LED Ekran Projeler<span class="highlight">imiz</span></h2>
           <p class="ledajans-projects-desc">
-            LED ekran, Colorlight ve Huidu kontrol kartları ile modül ve kabin projelerimiz; müşterilerimizle birlikte hazır teslim, en uygun fiyatlarla!
+            Dış mekan, iç mekan ve rental LED ekran projelerinden örnekleri filtreleyin; detaylara tıklayarak uygulama türü, kullanılan ürün grubu ve teslim sürecini inceleyin.
           </p> 
         </header>
   
@@ -569,6 +860,90 @@
           <button type="button" class="ledajans-projects-show-less" id="ledajans-projects-show-less" hidden>Daha Az Göster</button>
         </div>
       </div>
+    </section>
+
+    <section class="ledajans-projects-seo-block" aria-label="LED ekran proje açıklaması">
+      <div class="ledajans-projects-seo-inner">
+        <div class="ledajans-projects-copy">
+          <span class="ledajans-projects-copy-badge">Sahada test edilmiş çözümler</span>
+          <h2>LED ekran projesi seçerken referans neden önemlidir?</h2>
+          <p>
+            LED ekran yatırımı yalnızca panel seçimi değildir; doğru piksel aralığı, parlaklık seviyesi, kontrol kartı, kabin yapısı, montaj ve satış sonrası servis birlikte düşünülmelidir. LEDAJANS projelerinde iç mekan, dış mekan ve rental kullanım senaryolarına göre ürün ve altyapı önerisi yapılır.
+          </p>
+          <p>
+            Bu sayfadaki referanslar; mağaza LED ekran, dış cephe LED ekran, showroom ekranı, etkinlik ekranı ve Colorlight ya da Huidu kontrollü uygulamalar için fikir verir. Projenizin ölçüsü, izleme mesafesi ve kullanım amacı netleştiğinde size özel LED ekran fiyat teklifi hazırlanabilir.
+          </p>
+          <div class="ledajans-projects-copy-stats">
+            <div class="ledajans-projects-copy-stat">
+              <strong>Keşif</strong>
+              <span>Alan ve izleme mesafesi analizi</span>
+            </div>
+            <div class="ledajans-projects-copy-stat">
+              <strong>Kurulum</strong>
+              <span>Kabin, kontrol ve devreye alma</span>
+            </div>
+            <div class="ledajans-projects-copy-stat">
+              <strong>Destek</strong>
+              <span>Garanti ve teknik servis süreci</span>
+            </div>
+          </div>
+        </div>
+        <div class="ledajans-projects-sector-grid">
+          <a href="https://ledajans.com/ic-mekan-led-ekran/" class="ledajans-projects-sector" style="text-decoration:none;color:inherit;">
+            <span class="ledajans-projects-sector-icon">01</span>
+            <strong>Mağaza ve showroom</strong>
+            <span>Ürün tanıtımı, kampanya duyurusu ve marka görünürlüğü için iç mekan LED ekran çözümleri.</span>
+          </a>
+          <a href="https://ledajans.com/dis-mekan-led-ekran/" class="ledajans-projects-sector" style="text-decoration:none;color:inherit;">
+            <span class="ledajans-projects-sector-icon">02</span>
+            <strong>Dış cephe ve açık alan</strong>
+            <span>Yüksek parlaklık, dayanıklı kabin ve uzaktan yönetim odaklı dış mekan LED ekran projeleri.</span>
+          </a>
+          <a href="https://ledajans.com/rental-ekran/" class="ledajans-projects-sector" style="text-decoration:none;color:inherit;">
+            <span class="ledajans-projects-sector-icon">03</span>
+            <strong>Fuar ve etkinlik</strong>
+            <span>Kurulumu hızlı, taşınabilir ve sahneye uygun rental LED ekran uygulamaları.</span>
+          </a>
+          <a href="https://ledajans.com/ic-mekan-led-ekran/" class="ledajans-projects-sector" style="text-decoration:none;color:inherit;">
+            <span class="ledajans-projects-sector-icon">04</span>
+            <strong>Kurumsal alanlar</strong>
+            <span>Toplantı odası, lobi, karşılama ve bilgilendirme ekranları için net görüntü çözümleri.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ledajans-projects-cta">
+      <div class="ledajans-projects-cta-inner">
+        <h2>Benzer bir LED ekran projesi mi planlıyorsunuz?</h2>
+        <p>
+          Kullanım alanınızı, yaklaşık ölçünüzü ve izleme mesafenizi paylaşın; iç mekan, dış mekan veya rental LED ekran için doğru ürün grubunu birlikte netleştirelim.
+        </p>
+        <div class="ledajans-projects-hero-actions">
+          <a href="https://ledajans.com/iletisim/" class="ledajans-projects-btn ledajans-projects-btn-primary">Ücretsiz Teklif Al</a>
+          <a href="tel:+902122204004" class="ledajans-projects-btn ledajans-projects-btn-outline">0212 220 40 04 Ara</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ledajans-projects-faq" aria-label="LED ekran projeleri sık sorulan sorular">
+      <h2>LED ekran projeleri hakkında sık sorulan sorular</h2>
+      <details>
+        <summary>LED ekran projesi için önce hangi bilgiler gerekir?</summary>
+        <p>Kurulum yeri, yaklaşık ekran ölçüsü, izleme mesafesi, iç mekan veya dış mekan kullanımı ve içerik türü yeterli başlangıç bilgisidir.</p>
+      </details>
+      <details>
+        <summary>İç mekan ve dış mekan LED ekran projeleri nasıl ayrılır?</summary>
+        <p>İç mekan projelerinde çözünürlük ve yakın izleme mesafesi öne çıkar; dış mekan projelerinde parlaklık, IP koruma, kabin dayanımı ve uzaktan kontrol daha kritiktir.</p>
+      </details>
+      <details>
+        <summary>Rental LED ekran hangi projeler için uygundur?</summary>
+        <p>Fuar, konser, lansman, sahne ve kısa süreli organizasyonlarda hızlı kurulum ve söküm avantajı nedeniyle rental LED ekran tercih edilir.</p>
+      </details>
+      <details>
+        <summary>LEDAJANS projelerinde garanti ve destek var mı?</summary>
+        <p>Projelerde ürün grubuna göre garanti, yedek parça ve teknik destek süreci teklif aşamasında netleştirilir.</p>
+      </details>
     </section>
   
     <!-- Modal popup -->
@@ -805,3 +1180,28 @@
         applyProjectsView(initial ? initial.getAttribute('data-filter') : 'all');
       })();
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "LED Ekran Projeleri",
+        "url": "https://ledajans.com/projeler/",
+        "description": "LEDAJANS iç mekan, dış mekan ve rental LED ekran proje referansları.",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "LEDAJANS LED ekran proje referansları",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Dış Mekan LED Ekran Projesi" },
+            { "@type": "ListItem", "position": 2, "name": "İç Mekan LED Ekran Projesi" },
+            { "@type": "ListItem", "position": 3, "name": "Rental LED Ekran Projesi" },
+            { "@type": "ListItem", "position": 4, "name": "Mağaza LED Bilgilendirme Ekranı" }
+          ]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "LEDAJANS",
+          "url": "https://ledajans.com"
+        }
+      }
+    </script>
+  </div>

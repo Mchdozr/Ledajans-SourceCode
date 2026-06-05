@@ -21,18 +21,39 @@ except ImportError:
     os.system(f"{sys.executable} -m pip install requests")
     import requests
 
+def load_dotenv(path: str) -> None:
+    if not os.path.isfile(path):
+        return
+    with open(path, encoding="utf-8-sig") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            key, value = key.strip(), value.strip().strip('"').strip("'")
+            if key and key not in os.environ:
+                os.environ[key] = value
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+
 # ======================== AYARLAR ========================
-WP_SITE_URL = "https://ledajans.com"           # Trailing slash YOK
-WP_USERNAME = "ledajans"               # WP Admin kullanıcı adı
-WP_APP_PASSWORD = "Elii WWUP 7B3l WT9A nKe0 oC3P"          # WP → Kullanıcılar → Uygulama Şifreleri
+WP_SITE_URL = os.environ.get("WP_SITE_URL", "https://ledajans.com").rstrip("/")
+WP_USERNAME = os.environ.get("WP_USERNAME", "")
+WP_APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "").replace(" ", "")
 # =========================================================
 
 DRY_RUN = "--dry-run" in sys.argv  # Test modu: gerçekten yayınlamadan kontrol eder
+BLOG_ONLY = "--blog-only" in sys.argv  # Yalnızca Blog/* post kayıtları
 
 API_BASE = f"{WP_SITE_URL}/wp-json/wp/v2"
 
 PAGES_TO_DEPLOY = [
     # (dosya_yolu, slug, başlık, tip: "page" veya "post")
+    # === ANA SAYFA / HUB ===
+    ("Anasayfa/widget-7-projeler.html",                            "projeler",                   "LED Ekran Projeleri",                             "page"),
+
     # === TEMEL REHBERLER ===
     ("SEO-Icerik-Widgets/temel-rehberler/led-ekran-nedir.html",         "led-ekran-nedir",            "LED Ekran Nedir? Kapsamlı Rehber",                "page"),
     ("SEO-Icerik-Widgets/temel-rehberler/led-tabela-rehberi.html",      "led-tabela",                 "LED Tabela Rehberi",                              "page"),
@@ -77,6 +98,10 @@ PAGES_TO_DEPLOY = [
 
     # === BLOG ===
     ("Blog/led-ekran-fiyatlari-2026-rehber.html",  "led-ekran-fiyatlari-2026",  "LED Ekran Fiyatları 2026 (Mayıs Güncel)",  "post"),
+    ("Blog/ic-mekan-led-ekran-fiyatlari-2026-rehber.html", "ic-mekan-led-ekran-fiyatlari-2026", "İç Mekan LED Ekran Fiyatları 2026", "post"),
+    ("Blog/dis-mekan-led-ekran-fiyatlari-2026-rehber.html", "dis-mekan-led-ekran-fiyatlari-2026", "Dış Mekan LED Ekran Fiyatları 2026", "post"),
+    ("Blog/rental-led-ekran-kiralama-fiyatlari-2026-rehber.html", "rental-led-ekran-kiralama-fiyatlari-2026", "Rental LED Ekran Kiralama Fiyatları 2026", "post"),
+    ("Blog/led-ekran-nasil-secilir-rehber.html", "led-ekran-nasil-secilir-rehber", "LED Ekran Nasıl Seçilir? 2026 Rehber", "post"),
 ]
 
 SCHEMA_FILES = [
@@ -85,15 +110,33 @@ SCHEMA_FILES = [
     "SEO-Icerik-Widgets/schema/navigation-schema.html",
 ]
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 session = requests.Session()
 session.auth = (WP_USERNAME, WP_APP_PASSWORD)
-session.headers.update({"Content-Type": "application/json"})
+session.headers.update({
+    "Content-Type": "application/json",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LEDAJANS-Deploy/1.0",
+})
 
 
 def extract_meta_description(html_content: str) -> str:
-    match = re.search(r'<!-- SEO Meta Description:\s*(.+?)\s*-->', html_content)
+    match = re.search(r"<!-- SEO Meta Description:\s*(.+?)\s*-->", html_content)
     return match.group(1).strip() if match else ""
+
+
+def extract_focus_keyword(html_content: str) -> str:
+    match = re.search(r"<!-- SEO Focus Keyword:\s*(.+?)\s*-->", html_content)
+    return match.group(1).strip() if match else ""
+
+
+def build_rankmath_meta(title: str, meta_desc: str, focus_kw: str) -> dict:
+    meta = {}
+    if meta_desc:
+        meta["rank_math_description"] = meta_desc
+    if focus_kw:
+        meta["rank_math_focus_keyword"] = focus_kw
+    if title:
+        meta["rank_math_title"] = title
+    return meta
 
 
 def read_file(rel_path: str) -> str:
@@ -117,6 +160,7 @@ def deploy_page(file_path: str, slug: str, title: str, post_type: str) -> bool:
         return False
 
     meta_desc = extract_meta_description(content)
+    focus_kw = extract_focus_keyword(content)
     endpoint = f"{API_BASE}/{'posts' if post_type == 'post' else 'pages'}"
 
     existing = check_existing(slug, post_type)
@@ -130,9 +174,7 @@ def deploy_page(file_path: str, slug: str, title: str, post_type: str) -> bool:
 
     if meta_desc:
         payload["excerpt"] = meta_desc
-        payload["meta"] = {
-            "_yoast_wpseo_metadesc": meta_desc,
-        }
+        payload["meta"] = build_rankmath_meta(title, meta_desc, focus_kw)
 
     if DRY_RUN:
         status = "GÜNCELLE" if existing else "YENİ"
@@ -186,7 +228,8 @@ def publish_all_drafts():
     print("TASLAKLARI YAYINLA")
     print("=" * 60)
 
-    for _, slug, title, post_type in PAGES_TO_DEPLOY:
+    publish_list = [p for p in PAGES_TO_DEPLOY if p[3] == "post"] if BLOG_ONLY else PAGES_TO_DEPLOY
+    for _, slug, title, post_type in publish_list:
         existing = check_existing(slug, post_type)
         if existing and existing.get("status") == "draft":
             endpoint = f"{API_BASE}/{'posts' if post_type == 'post' else 'pages'}/{existing['id']}"
@@ -202,7 +245,7 @@ def publish_all_drafts():
 
 
 def main():
-    if WP_USERNAME == "KULLANICI_ADINIZ" or WP_APP_PASSWORD == "UYGULAMA_SIFRENIZ":
+    if not WP_USERNAME or not WP_APP_PASSWORD:
         print("=" * 60)
         print("⚠️  ÖNCE AYARLARI YAPIN!")
         print("=" * 60)
@@ -211,9 +254,24 @@ def main():
         print("2) Aşağı kaydır → 'Uygulama Şifreleri' bölümü")
         print("3) Yeni isim gir (örn: 'Deploy Script') → 'Yeni Uygulama Şifresi Ekle'")
         print("4) Oluşan şifreyi kopyala")
-        print("5) Bu dosyayı aç → WP_USERNAME ve WP_APP_PASSWORD değerlerini doldur")
+        print("5) Repo kökünde .env oluştur (.env.example şablonu)")
         print("6) Tekrar çalıştır: python deploy-to-wordpress.py")
         print()
+        print("Detay: scripts/SECURITY-ROTATE-WP-APP-PASSWORD.md")
+        print()
+        if DRY_RUN:
+            print("🔍 Kimlik yok — yalnızca dosya varlık kontrolü (DRY-RUN)\n")
+            ok, fail = 0, 0
+            for file_path, slug, title, _post_type in PAGES_TO_DEPLOY:
+                try:
+                    read_file(file_path)
+                    print(f"  🔍 [DRY-RUN] OK: {title} → /{slug}/")
+                    ok += 1
+                except FileNotFoundError:
+                    print(f"  ❌ DOSYA YOK: {file_path}")
+                    fail += 1
+            print(f"\n  Dosya kontrolü: {ok} OK, {fail} hata")
+            return
         print("İPUCU: Önce test için → python deploy-to-wordpress.py --dry-run")
         return
 
@@ -224,9 +282,19 @@ def main():
         if r.status_code == 200:
             user = r.json()
             print(f"  ✅ Bağlantı OK — {user.get('name', 'Bilinmeyen')}")
+        elif r.status_code == 403 and "nginx" in (r.text or "").lower() and not (r.text or "").strip().startswith("{"):
+            print("  ❌ REST API engelli (nginx 403) — /wp-json/ bu ağdan erişilemiyor.")
+            print("     Şifre doğru olsa bile Cursor/bulut IP'si engellenmiş olabilir.")
+            print("     Çözüm: Komutu kendi PC'nizde PowerShell'den çalıştırın:")
+            print("       python deploy-to-wordpress.py --blog-only")
+            return
         else:
             print(f"  ❌ Kimlik doğrulama hatası (HTTP {r.status_code})")
             print("     Kullanıcı adı ve uygulama şifresini kontrol edin.")
+            try:
+                print(f"     {r.json().get('message', '')[:120]}")
+            except Exception:
+                pass
             return
     except requests.ConnectionError:
         print(f"  ❌ {WP_SITE_URL} adresine bağlanılamadı")
@@ -239,13 +307,15 @@ def main():
         publish_all_drafts()
         return
 
+    deploy_list = [p for p in PAGES_TO_DEPLOY if p[3] == "post"] if BLOG_ONLY else PAGES_TO_DEPLOY
+
     # Ana deploy
     print("\n" + "=" * 60)
-    print(f"SAYFA DEPLOY ({len(PAGES_TO_DEPLOY)} dosya)")
+    print(f"SAYFA DEPLOY ({len(deploy_list)} dosya)" + (" [blog-only]" if BLOG_ONLY else ""))
     print("=" * 60)
 
     success, fail = 0, 0
-    for file_path, slug, title, post_type in PAGES_TO_DEPLOY:
+    for file_path, slug, title, post_type in deploy_list:
         result = deploy_page(file_path, slug, title, post_type)
         if result:
             success += 1
@@ -262,13 +332,14 @@ def main():
     print("=" * 60)
     print(f"  ✅ Başarılı: {success}")
     print(f"  ❌ Hatalı:   {fail}")
-    print(f"  📄 Toplam:   {len(PAGES_TO_DEPLOY)}")
+    print(f"  📄 Toplam:   {len(deploy_list)}")
 
     if not DRY_RUN and success > 0:
         print()
         print("  📝 Tüm sayfalar TASLAK olarak oluşturuldu.")
         print("  📋 WP Admin'den kontrol edin, ardından yayınlamak için:")
-        print("     python deploy-to-wordpress.py --publish")
+        pub_cmd = "python deploy-to-wordpress.py --blog-only --publish" if BLOG_ONLY else "python deploy-to-wordpress.py --publish"
+        print(f"     {pub_cmd}")
         print()
         print("  🔍 Yayın sonrası:")
         print("     - Google Search Console → URL Denetimi → Dizine eklenmesini iste")

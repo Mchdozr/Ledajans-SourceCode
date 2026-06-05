@@ -1,0 +1,19 @@
+.env
+.env.local
+*.env.local
+
+# WordPress deploy secrets
+.wp-credentials
+
+# Local audit artifacts (optional)
+lighthouse.profile*/
+__pycache__/
+*.pyc
+.backup-agenthub/
+seo-deploy.zip
+AGENT-HUB/tmp-*.html
+AGENT-HUB/lh-mobile-*.json
+AGENT-HUB/psi-mobile-*.json
+AGENT-HUB/_snippet-full.txt
+AGENT-HUB/git-pull-log.txt
+*.local.md

@@ -1,0 +1,7 @@
+# Plesk > Apache ve nginx > Additional APACHE directives (nginx DEGIL)
+# Test icin once tek satir:
+
+RewriteEngine On
+RewriteRule ^led-ekran-nasil-secilir-rehber/?$ /blog/led-ekran-nasil-secilir-rehber/ [R=301,L]
+
+# Test OK ise ledajans-blog-301.htaccess icindeki tum RewriteRule satirlarini buraya yapistirin.
