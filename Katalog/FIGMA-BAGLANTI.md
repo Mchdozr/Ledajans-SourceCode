@@ -4,7 +4,10 @@
 
 **LEDAJANS Katalog 2026:** https://www.figma.com/design/nzwEECDoNRqekt8pUo5Jsl
 
-4 örnek A4 sayfa oluşturuldu: Kapak, İçindekiler, İç Mekan LED, İletişim.
+**15 sayfa** tam katalog HTML olarak hazır. Figma'ya aktarım için `generate_figma_design` veya html.to.design kullanın.
+
+### Sayfa Listesi
+01 Kapak · 02 Tanıtım · 03 İçindekiler · 04-13 Ürünler · 14 Referanslar · 15 İletişim
 
 ## 1. Cursor'da Figma MCP Kurulumu
 

@@ -5,125 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LEDAJANS Ürün Kataloğu 2026</title>
   <link rel="stylesheet" href="assets/katalog.css">
-  <style>
-    .viewer-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--brand-dark);
-      color: white;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 12px rgba(0,0,0,.2);
-    }
-    .viewer-header h1 {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    .viewer-header h1 span { color: var(--brand-orange); }
-    .viewer-actions { display: flex; gap: 8px; }
-    .btn {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .btn-primary {
-      background: var(--brand-orange);
-      color: white;
-    }
-    .btn-primary:hover { background: var(--brand-orange-light); }
-    .btn-ghost {
-      background: rgba(255,255,255,.1);
-      color: white;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,.2); }
-    .viewer-nav {
-      position: fixed;
-      left: 0; top: 52px; bottom: 0;
-      width: 220px;
-      background: white;
-      border-right: 1px solid var(--border);
-      padding: 16px;
-      overflow-y: auto;
-      z-index: 90;
-    }
-    .viewer-nav h3 {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-    .viewer-nav a {
-      display: block;
-      padding: 8px 12px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-radius: 6px;
-      margin-bottom: 2px;
-      transition: all .15s;
-    }
-    .viewer-nav a:hover { background: var(--surface-alt); color: var(--brand-orange); }
-    .viewer-nav a.active { background: var(--brand-orange); color: white; font-weight: 600; }
-    .viewer-content {
-      margin-left: 220px;
-      margin-top: 52px;
-      padding: 32px;
-      min-height: calc(100vh - 52px);
-    }
-    .viewer-content .page { margin-bottom: 32px; }
-    @media (max-width: 768px) {
-      .viewer-nav { display: none; }
-      .viewer-content { margin-left: 0; padding: 16px; }
-    }
-    @media print {
-      .viewer-header, .viewer-nav, .no-print { display: none !important; }
-      .viewer-content { margin: 0; padding: 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/viewer.css">
 </head>
 <body>
   <header class="viewer-header no-print">
     <h1><span>LEDA</span>JANS Katalog 2026</h1>
     <div class="viewer-actions">
-      <button class="btn btn-ghost" onclick="window.open('pages/01-kapak.html','_blank')">Tek Sayfa</button>
+      <a class="btn btn-ghost" href="https://www.figma.com/design/nzwEECDoNRqekt8pUo5Jsl" target="_blank">Figma</a>
       <button class="btn btn-primary" onclick="window.print()">PDF İndir / Yazdır</button>
     </div>
   </header>
-
   <nav class="viewer-nav no-print">
-    <h3>Sayfalar</h3>
-    <a href="#kapak" class="active">01 — Kapak</a>
-    <a href="#icindekiler">02 — İçindekiler</a>
-    <a href="#urun">03 — İç Mekan LED</a>
-    <a href="#iletisim">04 — İletişim</a>
+    <h3>Sayfalar (15)</h3>
+    <a href="#01-kapak" class="active">01 — Kapak</a>
+    <a href="#02-tanitim">02 — Kurumsal</a>
+    <a href="#03-icindekiler">03 — İçindekiler</a>
+    <a href="#04-ic-mekan-led">04 — İç Mekan LED Ekran</a>
+    <a href="#05-dis-mekan-led">05 — Dış Mekan LED Ekran</a>
+    <a href="#06-rental-ekran">06 — Rental LED Ekran</a>
+    <a href="#07-cob-smart-screen">07 — COB & Smart Screen</a>
+    <a href="#08-ic-mekan-rgb">08 — İç Mekan RGB Panel</a>
+    <a href="#09-dis-mekan-rgb">09 — Dış Mekan RGB Panel</a>
+    <a href="#10-colorlight-receiver">10 — Colorlight Receiver Cards</a>
+    <a href="#11-colorlight-processor">11 — Colorlight Processor</a>
+    <a href="#12-huidu-kontrol">12 — Huidu Kontrol Kartları</a>
+    <a href="#13-guc-kaynaklari">13 — Güç Kaynakları</a>
+    <a href="#14-referanslar">14 — Referanslar</a>
+    <a href="#15-arka-kapak">15 — İletişim</a>
   </nav>
-
   <main class="viewer-content">
-    <iframe id="kapak" src="pages/01-kapak.html" style="width:210mm;height:297mm;border:none;display:block;margin:0 auto 2rem;box-shadow:0 4px 24px rgba(0,0,0,.12)"></iframe>
-    <iframe id="icindekiler" src="pages/02-icindekiler.html" style="width:210mm;height:297mm;border:none;display:block;margin:0 auto 2rem;box-shadow:0 4px 24px rgba(0,0,0,.12)"></iframe>
-    <iframe id="urun" src="pages/03-urun-ic-mekan.html" style="width:210mm;height:297mm;border:none;display:block;margin:0 auto 2rem;box-shadow:0 4px 24px rgba(0,0,0,.12)"></iframe>
-    <iframe id="iletisim" src="pages/04-arka-kapak.html" style="width:210mm;height:297mm;border:none;display:block;margin:0 auto 2rem;box-shadow:0 4px 24px rgba(0,0,0,.12)"></iframe>
+    <iframe id="01-kapak" src="pages/01-kapak.html" title="01 — Kapak"></iframe>
+    <iframe id="02-tanitim" src="pages/02-tanitim.html" title="02 — Kurumsal"></iframe>
+    <iframe id="03-icindekiler" src="pages/03-icindekiler.html" title="03 — İçindekiler"></iframe>
+    <iframe id="04-ic-mekan-led" src="pages/04-ic-mekan-led.html" title="04 — İç Mekan LED Ekran"></iframe>
+    <iframe id="05-dis-mekan-led" src="pages/05-dis-mekan-led.html" title="05 — Dış Mekan LED Ekran"></iframe>
+    <iframe id="06-rental-ekran" src="pages/06-rental-ekran.html" title="06 — Rental LED Ekran"></iframe>
+    <iframe id="07-cob-smart-screen" src="pages/07-cob-smart-screen.html" title="07 — COB & Smart Screen"></iframe>
+    <iframe id="08-ic-mekan-rgb" src="pages/08-ic-mekan-rgb.html" title="08 — İç Mekan RGB Panel"></iframe>
+    <iframe id="09-dis-mekan-rgb" src="pages/09-dis-mekan-rgb.html" title="09 — Dış Mekan RGB Panel"></iframe>
+    <iframe id="10-colorlight-receiver" src="pages/10-colorlight-receiver.html" title="10 — Colorlight Receiver Cards"></iframe>
+    <iframe id="11-colorlight-processor" src="pages/11-colorlight-processor.html" title="11 — Colorlight Processor"></iframe>
+    <iframe id="12-huidu-kontrol" src="pages/12-huidu-kontrol.html" title="12 — Huidu Kontrol Kartları"></iframe>
+    <iframe id="13-guc-kaynaklari" src="pages/13-guc-kaynaklari.html" title="13 — Güç Kaynakları"></iframe>
+    <iframe id="14-referanslar" src="pages/14-referanslar.html" title="14 — Referanslar"></iframe>
+    <iframe id="15-arka-kapak" src="pages/15-arka-kapak.html" title="15 — İletişim"></iframe>
   </main>
-
-  <script>
-    document.querySelectorAll('.viewer-nav a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelectorAll('.viewer-nav a').forEach(x => x.classList.remove('active'));
-        a.classList.add('active');
-        document.getElementById(a.getAttribute('href').slice(1)).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+  <script src="assets/viewer.js"></script>
 </body>
 </html>
