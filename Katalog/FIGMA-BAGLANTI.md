@@ -1,6 +1,10 @@
 # Figma Bağlantısı — LEDAJANS Katalog
 
-Bu Cloud ortamında Figma MCP sunucusu aktif değil. Figma bağlantısını **kendi bilgisayarınızda** kurmanız gerekiyor.
+## Aktif Figma Dosyası
+
+**LEDAJANS Katalog 2026:** https://www.figma.com/design/nzwEECDoNRqekt8pUo5Jsl
+
+4 örnek A4 sayfa oluşturuldu: Kapak, İçindekiler, İç Mekan LED, İletişim.
 
 ## 1. Cursor'da Figma MCP Kurulumu
 
