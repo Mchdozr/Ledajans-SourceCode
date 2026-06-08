@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>LEDAJANS — İç Mekan LED Ekran</title>
+  <link rel="stylesheet" href="../assets/katalog.css">
+  <style>
+    .product { display: flex; flex-direction: column; }
+    .product-hero {
+      height: 75mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(26,26,46,.3) 0%, rgba(26,26,46,.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10mm var(--margin) 8mm;
+    }
+    .product-body {
+      flex: 1;
+      padding: 8mm var(--margin);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+    }
+    .product-desc .text-body { margin-top: 6px; }
+    .product-features {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 8px;
+    }
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 8.5pt;
+      color: var(--text-secondary);
+    }
+    .feature-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--brand-orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .product-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+    .product-gallery img {
+      width: 100%;
+      height: 32mm;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .product-specs {
+      grid-column: 1 / -1;
+      margin-top: 2mm;
+    }
+    .product-specs h3 {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--brand-orange);
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--border);
+    }
+    .product-footer {
+      padding: 4mm var(--margin);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product-url {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+    }
+    .product-url a { color: var(--brand-orange); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="page product">
+    <div class="product-hero">
+      <img src="https://ledajans.com/wp-content/uploads/2022/12/6ba71365-5d3f-4975-9104-a2219747265f.jpg" alt="İç Mekan LED Ekran">
+      <div class="product-hero-overlay">
+        <span class="badge">Indoor Series</span>
+        <h1 class="heading-lg text-white" style="margin-top:8px">İç Mekan LED Ekran</h1>
+        <p class="text-body text-white" style="opacity:.8;margin-top:4px">P0.93 — P5 · 3840Hz+ · Sessiz Çalışma</p>
+      </div>
+    </div>
+
+    <div class="product-body">
+      <div class="product-desc">
+        <h2 class="heading-md">Profesyonel İç Mekan Çözümleri</h2>
+        <p class="text-body">
+          İç mekan LED ekran modellerimiz; mağaza, stüdyo ve toplantı salonları için yüksek çözünürlük sunar.
+          P2, P2.5 ve P3 seçenekleriyle yakın mesafeden net görüntü sağlar.
+        </p>
+        <div class="product-features">
+          <div class="feature-row"><span class="feature-dot"></span>3840Hz+ yenileme hızı</div>
+          <div class="feature-row"><span class="feature-dot"></span>İnce kasa, sessiz çalışma</div>
+          <div class="feature-row"><span class="feature-dot"></span>Mıknatıslı / magnetli montaj</div>
+          <div class="feature-row"><span class="feature-dot"></span>Huidu & Colorlight uyumlu</div>
+        </div>
+      </div>
+
+      <div class="product-gallery">
+        <img src="https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-9.png" alt="Modül detay">
+        <img src="https://ledajans.com/wp-content/uploads/2022/12/1e33038b-9432-41d0-80f9-09c41db35140.jpg" alt="Kabin yapısı">
+        <img src="https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-8.png" alt="Arka görünüm">
+        <img src="https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-7.png" alt="Kurulum">
+      </div>
+
+      <div class="product-specs">
+        <h3>Teknik Özellikler</h3>
+        <dl class="spec-grid">
+          <div class="spec-item"><dt>Piksel Aralığı</dt><dd>P0.93 — P5</dd></div>
+          <div class="spec-item"><dt>Yenileme Hızı</dt><dd>3840Hz+</dd></div>
+          <div class="spec-item"><dt>Parlaklık</dt><dd>600 — 1200 cd/m²</dd></div>
+          <div class="spec-item"><dt>Koruma</dt><dd>IP30 / IP43</dd></div>
+          <div class="spec-item"><dt>Görüş Açısı</dt><dd>H/V 160°</dd></div>
+          <div class="spec-item"><dt>Garanti</dt><dd>2 Yıl</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="product-footer">
+      <div class="partner-logos">
+        <span style="color:var(--brand-orange)">LEDAJANS</span>
+        <span>GKGD</span>
+        <span>Colorlight</span>
+        <span>Youyi</span>
+        <span>U-MOTION</span>
+      </div>
+      <p class="product-url"><a href="https://ledajans.com/ic-mekan-led-ekran/">ledajans.com/ic-mekan-led-ekran</a></p>
+    </div>
+
+    <div class="page-num page-num--right">04</div>
+  </div>
+</body>
+</html>

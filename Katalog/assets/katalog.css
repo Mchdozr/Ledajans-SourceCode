@@ -1,0 +1,209 @@
+/* LEDAJANS Katalog — Dijital + Baskı (A4) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --brand-orange: #f46f2c;
+  --brand-orange-light: #ff8f5a;
+  --brand-dark: #1a1a2e;
+  --brand-navy: #16213e;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --border: #e5e7eb;
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --bleed: 3mm;
+  --margin: 15mm;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #e8eaed;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── A4 Sayfa ── */
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  page-break-after: always;
+}
+
+.page:last-child { page-break-after: auto; }
+
+/* ── Sayfa numarası ── */
+.page-num {
+  position: absolute;
+  bottom: 10mm;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--brand-orange);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.page-num::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--brand-orange);
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+.page-num--left { left: var(--margin); }
+.page-num--right { right: var(--margin); }
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.logo-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand-orange);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  background: white;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.logo-text {
+  font-size: 14pt;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--brand-orange);
+}
+
+/* ── Tipografi ── */
+.heading-xl {
+  font-size: 32pt;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+.heading-lg {
+  font-size: 22pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.heading-md {
+  font-size: 14pt;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.heading-sm {
+  font-size: 10pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.text-body {
+  font-size: 9.5pt;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.text-accent { color: var(--brand-orange); }
+.text-white { color: #fff; }
+
+/* ── Bileşenler ── */
+.accent-bar {
+  width: 48px;
+  height: 4px;
+  background: var(--brand-orange);
+  border-radius: 2px;
+}
+.accent-bar--wide { width: 100%; height: 3px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(244,111,44,.1);
+  color: var(--brand-orange);
+  font-size: 8pt;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.spec-item {
+  background: var(--surface-alt);
+  border-radius: 8px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--brand-orange);
+}
+.spec-item dt {
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.spec-item dd {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.partner-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 8px 0;
+}
+.partner-logos span {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* ── Baskı ── */
+@media print {
+  body { background: white; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+  .no-print { display: none !important; }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
