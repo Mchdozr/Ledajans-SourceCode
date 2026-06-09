@@ -1,37 +1,38 @@
-# LEDAJANS Katalog — InDesign Kullanim
+# LEDAJANS Katalog — Paket kullanimi
 
-## YONTEM 1 — JSX Script (ONERILEN)
+## EN KOLAY: Matbaa PDF (InDesign yok)
 
-**ONEMLI:** JSX dosyasini **Dosya > Ac** ile DEGIL, **calistirarak** kullan.
+**LEDAJANS-Katalog-MATBAA.pdf** → matbaaya direkt ver.
 
-### Adimlar
+Detay: `BASIT-KILAVUZ.md` veya `INDESIGN-ACILMIYOR.md`
+
+---
+
+## InDesign'da duzenlemek
+
+**IDML dosyasini kullanma** — acilmama hatasi normal.
+
+### Script ile (onerilen)
 
 1. Zip'i `C:\LEDAJANS-Katalog\` gibi yerel klasore cikart
-2. InDesign'i ac
-3. Menuden: **Pencere → Yardimci Programlar → Komut Dosyalari**
-   - Ingilizce InDesign: **Window → Utilities → Scripts**
-4. Sol panelde **Kullanici → Scripts Panel** klasorunu ac
-5. `LEDAJANS-Katalog-Import.jsx` dosyasini bu klasore **kopyala**
-   - Klasor yolu ornek:
-     `C:\Users\KULLANICI\AppData\Roaming\Adobe\InDesign\Version 20.0\tr_TR\Scripts\Scripts Panel\`
-6. Komut Dosyalari panelinde **LEDAJANS-Katalog-Import** uzerine **cift tik**
-7. Acilan pencerede **Links** klasorunu sec
-8. 15 sayfa yerlesince: **Dosya → Disa Aktar → Adobe PDF (Baski)**
+2. InDesign ac
+3. **Dosya → Komut Dosyalari → Diger Komut Dosyasi**
+4. `LEDAJANS-Katalog-Import.jsx` sec
+5. 15 sayfa yerlesince **Dosya → Disa Aktar → Adobe PDF (Baski)**
 
-### JSX bulamazsan
+JSX **Dosya → Ac** ile acilmaz.
 
-**Dosya → Komut Dosyalari → Diger Komut Dosyasi** (Other Script)
-→ `LEDAJANS-Katalog-Import.jsx` sec
+### Manuel
+
+`Links` klasorundeki `page-01.png` … `page-15.png` dosyalarini **Dosya → Yerlestir** ile her sayfaya tek tek koy.
 
 ---
 
-## YONTEM 2 — Hazir PDF (en kolay)
+## Paket icerigi
 
-`LEDAJANS-Katalog-2026-Baski.pdf` — InDesign gerekmez, direkt kullan.
-
----
-
-## YONTEM 3 — IDML
-
-`LEDAJANS-Katalog-2026.idml` → InDesign **Dosya → Ac**
-Link uyarisi → **Links** klasorunu sec.
+| Dosya | Aciklama |
+|-------|----------|
+| LEDAJANS-Katalog-MATBAA.pdf | Matbaa (A4, 300 DPI) |
+| LEDAJANS-Katalog-Import.jsx | InDesign otomatik yerlestirme |
+| Links/page-XX.png | 15 sayfa gorseli |
+| INDESIGN-ACILMIYOR.md | Sorun giderme |

@@ -5,9 +5,22 @@
 #target indesign
 
 (function () {
-    var linksFolder = Folder.selectDialog(
-        "Links klasorunu secin\n(page-01.png ... page-15.png iceren klasor)"
-    );
+    // JSX bir BELGE degil — Dosya > Ac ile acilmaz. Bu panelden veya
+    // Dosya > Komut Dosyalari > Diger Komut Dosyasi ile CALISTIRILIR.
+    var linksFolder = null;
+    try {
+        var scriptFile = File($.fileName);
+        var autoLinks = new Folder(scriptFile.parent.fsName + "/Links");
+        if (autoLinks.exists) {
+            linksFolder = autoLinks;
+        }
+    } catch (e) {}
+
+    if (!linksFolder) {
+        linksFolder = Folder.selectDialog(
+            "Links klasorunu secin\n(page-01.png ... page-15.png iceren klasor)"
+        );
+    }
     if (!linksFolder) return;
 
     var pngFiles = [];
