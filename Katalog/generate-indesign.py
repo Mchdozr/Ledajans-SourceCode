@@ -25,7 +25,8 @@ def esc_attr(s: str) -> str:
 
 
 def uid() -> str:
-    return uuid.uuid4().hex[:6]
+    """InDesign gecerli Self ID: u + 4 hex (orn. ua3f1)."""
+    return "u" + uuid.uuid4().hex[:4]
 
 
 def page_files() -> list[Path]:
@@ -186,11 +187,7 @@ def build_idml(images: list[Path]) -> Path:
     ]
 
     for i, (img, name) in enumerate(zip(images, names), 1):
-        sid = f"Spread_{uid()}"
-        pid = f"Page_{uid()}"
-        rid = f"Rect_{uid()}"
-        iid = f"Image_{uid()}"
-        lid = f"Link_{uid()}"
+        sid, pid, rid, iid, lid = uid(), uid(), uid(), uid(), uid()
         spread_ids.append(sid)
         path = f"Spreads/Spread_{i:02d}.xml"
         spread_files[path] = spread_xml(name, img.name, sid, pid, rid, iid, lid)
@@ -212,22 +209,8 @@ def build_idml(images: list[Path]) -> Path:
   <idPkg:Graphic src="Resources/Graphic.xml"/>
   <idPkg:Fonts src="Resources/Fonts.xml"/>
   <idPkg:Styles src="Resources/Styles.xml"/>
-  <idPkg:MasterSpread src="MasterSpreads/MasterSpread_ub6.xml"/>
   <idPkg:BackingStory src="XML/BackingStory.xml"/>
 </Document>"""
-
-    master = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<idPkg:MasterSpread xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="17.0">
-  <MasterSpread Self="MasterSpread_ub6" Name="A-Master" PageCount="1" BaseName="A"
-    OverriddenPageItemProps="" ShowMasterItems="true" BindingLocation="0">
-    <Page Self="ub6" Name="A" AppliedTrapPreset="TrapPreset/$ID/kDefaultTrapStyleName"
-      GeometricBounds="0 0 841.89 595.276" ItemTransform="1 0 0 1 0 0"
-      MasterPageTransform="1 0 0 1 0 0" AppliedMaster="n">
-      <Properties><PageColor type="enumeration">UseMasterColor</PageColor></Properties>
-      <MarginPreference ColumnCount="1" ColumnGutter="12" Top="0" Bottom="0" Left="0" Right="0"/>
-    </Page>
-  </MasterSpread>
-</idPkg:MasterSpread>"""
 
     backing = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <idPkg:BackingStory xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="17.0">
@@ -256,7 +239,6 @@ def build_idml(images: list[Path]) -> Path:
         zf.writestr("Resources/Graphic.xml", graphic_xml())
         zf.writestr("Resources/Fonts.xml", fonts_xml())
         zf.writestr("Resources/Styles.xml", styles_xml())
-        zf.writestr("MasterSpreads/MasterSpread_ub6.xml", master)
         zf.writestr("XML/BackingStory.xml", backing)
         for path, xml in spread_files.items():
             zf.writestr(path, xml)

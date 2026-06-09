@@ -1,26 +1,37 @@
-# LEDAJANS Katalog — InDesign Paketi
+# LEDAJANS Katalog — InDesign Kullanim
 
-## YONTEM 1 — JSX Script (ONERILEN, %100 calisir)
+## YONTEM 1 — JSX Script (ONERILEN)
 
-1. Zip'i ac
+**ONEMLI:** JSX dosyasini **Dosya > Ac** ile DEGIL, **calistirarak** kullan.
+
+### Adimlar
+
+1. Zip'i `C:\LEDAJANS-Katalog\` gibi yerel klasore cikart
 2. InDesign'i ac
-3. **Pencere → Yardimci Programlar → LEDAJANS-Katalog-Import.jsx** cift tik
-   - Bulamazsan: **Dosya → Komut Dosyasi Calistir** → jsx dosyasini sec
-4. **Links** klasorunu sec (page-01.png ... page-15.png)
-5. 15 sayfa otomatik yerlesir
-6. **Dosya → Disa Aktar → Adobe PDF (Baski)** → Kaydet
+3. Menuden: **Pencere → Yardimci Programlar → Komut Dosyalari**
+   - Ingilizce InDesign: **Window → Utilities → Scripts**
+4. Sol panelde **Kullanici → Scripts Panel** klasorunu ac
+5. `LEDAJANS-Katalog-Import.jsx` dosyasini bu klasore **kopyala**
+   - Klasor yolu ornek:
+     `C:\Users\KULLANICI\AppData\Roaming\Adobe\InDesign\Version 20.0\tr_TR\Scripts\Scripts Panel\`
+6. Komut Dosyalari panelinde **LEDAJANS-Katalog-Import** uzerine **cift tik**
+7. Acilan pencerede **Links** klasorunu sec
+8. 15 sayfa yerlesince: **Dosya → Disa Aktar → Adobe PDF (Baski)**
 
-## YONTEM 2 — IDML dosyasi
+### JSX bulamazsan
 
-1. **LEDAJANS-Katalog-2026.idml** dosyasini InDesign ile ac
-2. Link uyarisi: **Links** klasorunu sec
+**Dosya → Komut Dosyalari → Diger Komut Dosyasi** (Other Script)
+→ `LEDAJANS-Katalog-Import.jsx` sec
 
-## YONTEM 3 — Hazir PDF (InDesign gerekmez)
+---
 
-**LEDAJANS-Katalog-2026-Baski.pdf** dosyasini direkt matbaaya ver.
+## YONTEM 2 — Hazir PDF (en kolay)
 
-## Sorun giderme
+`LEDAJANS-Katalog-2026-Baski.pdf` — InDesign gerekmez, direkt kullan.
 
-- IDML "iyi olusturulmamis" hatasi → Yontem 1 (JSX) kullan
-- Cift tik acmiyorsa → InDesign icinden Dosya → Ac
-- OneDrive senkronu bozabilir → dosyayi yerel Masaustu'ne kopyala
+---
+
+## YONTEM 3 — IDML
+
+`LEDAJANS-Katalog-2026.idml` → InDesign **Dosya → Ac**
+Link uyarisi → **Links** klasorunu sec.
