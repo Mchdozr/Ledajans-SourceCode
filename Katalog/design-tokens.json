@@ -1,0 +1,34 @@
+{
+  "name": "LEDAJANS Katalog",
+  "colors": {
+    "brand-orange": { "value": "#f46f2c", "type": "color" },
+    "brand-orange-light": { "value": "#ff8f5a", "type": "color" },
+    "brand-dark": { "value": "#1a1a2e", "type": "color" },
+    "brand-navy": { "value": "#16213e", "type": "color" },
+    "text-primary": { "value": "#111827", "type": "color" },
+    "text-secondary": { "value": "#4b5563", "type": "color" },
+    "text-muted": { "value": "#9ca3af", "type": "color" },
+    "surface": { "value": "#ffffff", "type": "color" },
+    "surface-alt": { "value": "#f8fafc", "type": "color" },
+    "border": { "value": "#e5e7eb", "type": "color" }
+  },
+  "typography": {
+    "font-family": { "value": "Inter", "type": "fontFamily" },
+    "heading-xl": { "value": "32", "type": "fontSize" },
+    "heading-lg": { "value": "22", "type": "fontSize" },
+    "heading-md": { "value": "14", "type": "fontSize" },
+    "body": { "value": "9.5", "type": "fontSize" },
+    "caption": { "value": "8", "type": "fontSize" }
+  },
+  "spacing": {
+    "page-margin": { "value": "15", "type": "spacing", "unit": "mm" },
+    "bleed": { "value": "3", "type": "spacing", "unit": "mm" },
+    "gap-sm": { "value": "8", "type": "spacing" },
+    "gap-md": { "value": "16", "type": "spacing" },
+    "gap-lg": { "value": "24", "type": "spacing" }
+  },
+  "layout": {
+    "page-width": { "value": "210", "type": "sizing", "unit": "mm" },
+    "page-height": { "value": "297", "type": "sizing", "unit": "mm" }
+  }
+}

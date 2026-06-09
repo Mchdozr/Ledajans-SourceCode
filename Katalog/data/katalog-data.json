@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "title": "LEDAJANS Ürün Kataloğu 2026",
+    "year": "2026",
+    "tagline": "LED Display Systems"
+  },
+  "cover": {
+    "hero": "https://ledajans.com/wp-content/uploads/2022/12/6ba71365-5d3f-4975-9104-a2219747265f.jpg",
+    "categories": [
+      "LED Display / Screen",
+      "LED Moving Signs",
+      "LED Module",
+      "Control Cards",
+      "Power Supply",
+      "Accessories"
+    ]
+  },
+  "intro": {
+    "hero": "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-4.png",
+    "text": "Ledajans serves its valuable customers with LED Screens, LED Poster and marquee panels, which are used in almost every sector and provide more effective advertising. Our company, which is constantly growing in its sector, is an organization that aims to offer you quality products and services at low cost, quickly, continuously and consistently.\n\nIn addition, our company aims to make the variety and quality of your products more visible, to create an active advertising concept that can be constantly updated and renewed, and to make your brand and workplace more attractive.\n\nWelcome to our catalog where you can find information about our products that will help you.",
+    "partners": ["LEDAJANS", "GKGD", "Colorlight", "Youyi", "U-MOTION", "Huidu"]
+  },
+  "toc": [
+    {"title": "İç Mekan LED Ekran", "page": "04"},
+    {"title": "Dış Mekan LED Ekran", "page": "05"},
+    {"title": "Rental LED Ekran", "page": "06"},
+    {"title": "COB & Smart Screen", "page": "07"},
+    {"title": "İç Mekan RGB Panel", "page": "08"},
+    {"title": "Dış Mekan RGB Panel", "page": "09"},
+    {"title": "Colorlight Receiver Cards", "page": "10"},
+    {"title": "Colorlight Processor", "page": "11"},
+    {"title": "Huidu Kontrol Kartları", "page": "12"},
+    {"title": "Güç Kaynakları", "page": "13"},
+    {"title": "Referans Projeler", "page": "14"},
+    {"title": "İletişim", "page": "15"}
+  ],
+  "toc_images": [
+    "https://ledajans.com/wp-content/uploads/2022/12/1e33038b-9432-41d0-80f9-09c41db35140.jpg",
+    "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-9.png",
+    "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-8.png",
+    "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-7.png"
+  ],
+  "products": [
+    {
+      "id": "ic-mekan-led",
+      "file": "04-ic-mekan-led.html",
+      "page": "04",
+      "badge": "Indoor Series",
+      "title": "İç Mekan LED Ekran",
+      "subtitle": "P0.93 — P5 · 3840Hz+ · Sessiz Çalışma",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/6ba71365-5d3f-4975-9104-a2219747265f.jpg",
+      "heading": "Profesyonel İç Mekan Çözümleri",
+      "description": "İç mekan LED ekran modellerimiz; mağaza, stüdyo ve toplantı salonları için yüksek çözünürlük sunar. P2, P2.5 ve P3 seçenekleriyle yakın mesafeden net görüntü sağlar.",
+      "features": ["3840Hz+ yenileme hızı", "İnce kasa, sessiz çalışma", "Mıknatıslı / magnetli montaj", "Huidu & Colorlight uyumlu"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-9.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/1e33038b-9432-41d0-80f9-09c41db35140.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-8.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-7.png"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P0.93 — P5"],
+        ["Yenileme Hızı", "3840Hz+"],
+        ["Parlaklık", "600 — 1200 cd/m²"],
+        ["Koruma", "IP30 / IP43"],
+        ["Görüş Açısı", "H/V 160°"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/ic-mekan-led-ekran/"
+    },
+    {
+      "id": "dis-mekan-led",
+      "file": "05-dis-mekan-led.html",
+      "page": "05",
+      "badge": "Outdoor Series",
+      "title": "Dış Mekan LED Ekran",
+      "subtitle": "P2.5 — P10 · IP65 · 5000+ cd/m²",
+      "hero": "https://ledajans.com/wp-content/uploads/2026/01/Basliksiz-6-11.png",
+      "heading": "Açık Hava Dijital Reklam Çözümleri",
+      "description": "IP65 koruma, yüksek parlaklık ve açık hava reklam panoları için tasarlanmış dış mekan LED ekranlar. Billboard, cephe ve stadyum projelerinde P4–P10 modeller.",
+      "features": ["IP65 su ve toz koruması", "4500-8000 cd/m² parlaklık", "Otomatik parlaklık ayarı", "-20°C ile +40°C çalışma"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/yuvarlak-sag-1-e1766393254389.png",
+        "https://ledajans.com/wp-content/uploads/2026/01/Basliksiz-6-11.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-1-1.png"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P2.5 — P10"],
+        ["Parlaklık", "4500 — 8000 cd/m²"],
+        ["Koruma", "IP65"],
+        ["Sıcaklık", "-20°C — +40°C"],
+        ["Görüş Açısı", "H/V 160°"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/dis-mekan-led-ekran/"
+    },
+    {
+      "id": "rental-ekran",
+      "file": "06-rental-ekran.html",
+      "page": "06",
+      "badge": "Rental Series",
+      "title": "Rental LED Ekran",
+      "subtitle": "P2.6 — P3.91 · Hızlı Kurulum · Flight Case",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/untitled.232-min-1.png",
+      "heading": "Etkinlik ve Fuar LED Ekranları",
+      "description": "Konser, fuar ve kurumsal etkinlikler için hızlı kurulum, die-cast alüminyum kasa ve flight case ile taşınabilir rental LED ekran çözümleri.",
+      "features": ["Hızlı kurulum ve söküm", "Die-cast alüminyum kasa", "Flight case ile taşıma", "Teknik ekip desteği"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2026/01/Air-II-scaled.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-2.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/untitled.227-min-1.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/untitled.226-min-1.png"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P2.6 — P3.91"],
+        ["Kasa", "Die-cast Alüminyum"],
+        ["Koruma", "IP65 (Outdoor)"],
+        ["Parlaklık", "5000+ cd/m²"],
+        ["Kurulum", "Hızlı Lock Sistem"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/rental-ekran/"
+    },
+    {
+      "id": "cob-smart-screen",
+      "file": "07-cob-smart-screen.html",
+      "page": "07",
+      "badge": "COB Technology",
+      "title": "COB & Smart Screen",
+      "subtitle": "P1.25 — P1.56 · Üstün Kontrast · VMD Panel",
+      "hero": "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-2.png",
+      "heading": "Yeni Nesil COB LED Teknolojisi",
+      "description": "Chip-on-Board teknolojisi ile üstün kontrast, darbe dayanımı ve ince panel yapısı. Smart Screen VMD panel teknolojisi ile profesyonel görüntü kalitesi.",
+      "features": ["COB chip-on-board teknoloji", "Üstün kontrast oranı", "Darbe ve toz dayanımı", "VMD Smart Screen panel"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-4.png",
+        "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-6.png",
+        "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-3.png",
+        "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-7.png"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P1.25 — P1.56"],
+        ["Teknoloji", "COB / VMD"],
+        ["Kontrast", "Yüksek Kontrast"],
+        ["Parlaklık", "800 — 1200 cd/m²"],
+        ["Görüş Açısı", "H/V 160°"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/cob-ekran/"
+    },
+    {
+      "id": "ic-mekan-rgb",
+      "file": "08-ic-mekan-rgb.html",
+      "page": "08",
+      "badge": "RGB Module",
+      "title": "İç Mekan RGB Panel",
+      "subtitle": "P0.93 — P1.86 · HUB75 · GOB & Flexible",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/P1.86-I-1.jpg",
+      "heading": "İç Mekan LED Modül Panelleri",
+      "description": "HUB75 arayüzlü iç mekan RGB LED modüller. GOB kaplama ve flexible panel seçenekleriyle mağaza, stüdyo ve özel şekilli ekran uygulamaları.",
+      "features": ["HUB75 standart arayüz", "GOB kaplama seçeneği", "Flexible modül desteği", "Mıknatıslı montaj"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/P1.86-I-1.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/P1.25-I-1.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/P1.53-I-1.jpg"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P0.93 — P1.86"],
+        ["Arayüz", "HUB75"],
+        ["Kaplama", "GOB / Standard"],
+        ["Tip", "Flexible / Sabit"],
+        ["Renk Derinliği", "8-16 bit"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/ic-mekan-rgb-panel/"
+    },
+    {
+      "id": "dis-mekan-rgb",
+      "file": "09-dis-mekan-rgb.html",
+      "page": "09",
+      "badge": "Outdoor RGB",
+      "title": "Dış Mekan RGB Panel",
+      "subtitle": "P2.5 — P5 · IP65 · Ön/Arka Servis",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/P2.5-O.jpg",
+      "heading": "Dış Mekan LED Modül Panelleri",
+      "description": "Açık hava uygulamaları için IP65 korumalı dış mekan RGB LED modüller. Ön ve arka servis imkânı ile kolay bakım.",
+      "features": ["IP65 ön yüzey koruması", "Ön/arka servis erişimi", "-20°C — +60°C çalışma", "Yüksek parlaklık LED"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/P2.5-O.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/P3.076-O.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/P5-O.jpg"
+      ],
+      "specs": [
+        ["Piksel Aralığı", "P2.5 — P5"],
+        ["Koruma", "IP65 / IP43"],
+        ["Sıcaklık", "-20°C — +60°C"],
+        ["Arayüz", "HUB75"],
+        ["Servis", "Ön / Arka"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/dis-mekan-rgb-panel/"
+    },
+    {
+      "id": "colorlight-receiver",
+      "file": "10-colorlight-receiver.html",
+      "page": "10",
+      "badge": "Colorlight",
+      "title": "Colorlight Receiver Cards",
+      "subtitle": "E80 · E120 · 5A-75E · A35 — A200",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/COLORGLIGHT.jpg",
+      "heading": "Colorlight Alıcı Kartları",
+      "description": "Profesyonel LED ekran alıcı kartları. Düşük gecikme, renk sıcaklığı ayarı, döngü yedekliliği ve düzensiz ekran tasarımı desteği.",
+      "features": ["8 bit renk derinliği", "23.976 — 120Hz kare hızı", "Döngü yedekliliği", "HUB75 donanım arayüzü"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/图4.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/3.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/5.jpg"
+      ],
+      "models": ["E80", "E120", "5A-75E", "A35", "A60", "A200"],
+      "specs": [
+        ["Veri Arayüzü", "HUB75"],
+        ["Renk Derinliği", "8 bit"],
+        ["Kare Hızı", "23.976 — 120Hz"],
+        ["Ethernet", "1Gbps"],
+        ["Yedeklilik", "Loop Backup"],
+        ["Kalibrasyon", "8 bit hassasiyet"]
+      ],
+      "url": "https://ledajans.com/kontrol-kartlari/"
+    },
+    {
+      "id": "colorlight-processor",
+      "file": "11-colorlight-processor.html",
+      "page": "11",
+      "badge": "Colorlight",
+      "title": "Colorlight Processor",
+      "subtitle": "X6 · X7 · X8M · X16E · X20 · X40M",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/COLORGLIGHT.jpg",
+      "heading": "Colorlight Video İşlemciler",
+      "description": "Profesyonel rack-mount video işlemciler. Çoklu giriş/çıkış, yüksek çözünürlük ve senkron LED ekran kontrolü için endüstri standardı çözümler.",
+      "features": ["Rack-mount tasarım", "Çoklu video girişi", "Yüksek çözünürlük çıkış", "Senkron kontrol"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/图4.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/3.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/5.jpg"
+      ],
+      "models": ["X6", "X7", "X8M", "X16E", "X20", "X26M", "X40M"],
+      "specs": [
+        ["Seri", "X Serisi"],
+        ["Giriş", "HDMI / DVI / SDI"],
+        ["Çıkış", "Ethernet Port"],
+        ["Çözünürlük", "4K Destek"],
+        ["Kontrol", "Senkron"],
+        ["Montaj", "Rack 1U/2U"]
+      ],
+      "url": "https://ledajans.com/kontrol-kartlari/"
+    },
+    {
+      "id": "huidu-kontrol",
+      "file": "12-huidu-kontrol.html",
+      "page": "12",
+      "badge": "Huidu",
+      "title": "Huidu Kontrol Kartları",
+      "subtitle": "Senkron & Asenkron · A Serisi",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/图4.jpg",
+      "heading": "Huidu LED Ekran Kontrol Sistemleri",
+      "description": "Senkron ve asenkron LED ekran kontrol kartları. Canlı yayın, video oynatma ve çoklu bölge görüntüleme desteği ile esnek kontrol çözümleri.",
+      "features": ["Senkron & asenkron mod", "Canlı yayın desteği", "Çoklu bölge görüntüleme", "Uzaktan yönetim"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/3.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/5.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/COLORGLIGHT.jpg"
+      ],
+      "models": ["A4", "A5", "A6", "C16L", "C35", "HD-C15"],
+      "specs": [
+        ["Mod", "Senkron / Asenkron"],
+        ["Canlı Yayın", "Destekli"],
+        ["Bölge", "Çoklu Bölge"],
+        ["WiFi", "Opsiyonel"],
+        ["Uygulama", "Mobil / PC"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/kontrol-kartlari/"
+    },
+    {
+      "id": "guc-kaynaklari",
+      "file": "13-guc-kaynaklari.html",
+      "page": "13",
+      "badge": "Power Supply",
+      "title": "Güç Kaynakları",
+      "subtitle": "Youyi · GKGD · Meanwell · 200W — 300W",
+      "hero": "https://ledajans.com/wp-content/uploads/2022/12/powersupply-1-2.png",
+      "heading": "LED Ekran Güç Kaynakları",
+      "description": "Youyi, GKGD ve Meanwell marka güç kaynakları. 200W ve 300W kapasiteli, yüksek verimlilik ve uzun ömürlü LED ekran güç çözümleri.",
+      "features": ["200W / 300W kapasite", "Yüksek verimlilik", "Aşırı akım koruması", "Geniş sıcaklık aralığı"],
+      "gallery": [
+        "https://ledajans.com/wp-content/uploads/2022/12/powersupply-1-2.png",
+        "https://ledajans.com/wp-content/uploads/2022/12/CgAGe1x3fbCAeHvTAADp4vG_3rA783.jpg",
+        "https://ledajans.com/wp-content/uploads/2022/12/CgAGe1x3fbCAGufwAAGJHXg4uxM085.jpg"
+      ],
+      "models": ["Youyi 200W", "Youyi 300W", "GKGD 200W", "GKGD 300W", "Meanwell"],
+      "specs": [
+        ["Güç", "200W — 300W"],
+        ["Markalar", "Youyi, GKGD, Meanwell"],
+        ["Verimlilik", "≥85%"],
+        ["Koruma", "OCP / OVP / SCP"],
+        ["Giriş", "AC 100-240V"],
+        ["Garanti", "2 Yıl"]
+      ],
+      "url": "https://ledajans.com/guc-kaynaklari/"
+    }
+  ],
+  "references": {
+    "page": "14",
+    "title": "Referans Projeler",
+    "subtitle": "Uygulama Örnekleri",
+    "items": [
+      {
+        "title": "İstanbul Sabiha Gökçen Havalimanı",
+        "location": "ISTANBUL SABIHA GOKCEN INTERNATIONAL AIRPORT",
+        "image": "https://ledajans.com/wp-content/uploads/2022/12/untitled.225-min-1.png"
+      },
+      {
+        "title": "Teknopark İstanbul",
+        "location": "DEEP TECH DEEP IMPACT",
+        "image": "https://ledajans.com/wp-content/uploads/2022/12/untitled.226-min-1.png"
+      },
+      {
+        "title": "Kurumsal Etkinlik",
+        "location": "CONECT — Zebra",
+        "image": "https://ledajans.com/wp-content/uploads/2022/12/untitled.227-min-1.png"
+      },
+      {
+        "title": "Fuar & Kongre Salonu",
+        "location": "Gıda Endüstrisi Fuarı",
+        "image": "https://ledajans.com/wp-content/uploads/2022/12/untitled.232-min-1.png"
+      },
+      {
+        "title": "Perakende & AVM",
+        "location": "Dijital Reklam Uygulaması",
+        "image": "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-10.png"
+      }
+    ]
+  },
+  "contact": {
+    "page": "15",
+    "offices": [
+      {
+        "country": "TURKEY",
+        "flag": "🇹🇷",
+        "address": "Halide Edip Adıvar Mah.\nGül 2 Sk. No:10 A\nŞişli/İstanbul/TR",
+        "phone": "+90 212 220 4004",
+        "web": "www.ledajans.com",
+        "email": "info@ledajans.com"
+      },
+      {
+        "country": "GERMANY",
+        "flag": "🇩🇪",
+        "address": "Heinrich-Hertz-Straße 50\n40699 Erkrath\nGermany",
+        "phone": "+49 1521 2401915",
+        "web": "www.ledajans.eu",
+        "email": "info@ledajans.de"
+      },
+      {
+        "country": "UNITED KINGDOM",
+        "flag": "🇬🇧",
+        "address": "4 Huxley Parade\nGreat Cambridge Road\nN18 1HY London",
+        "phone": "+44 7932 783 251",
+        "web": "www.ledajans.co.uk",
+        "email": "info@ledajans.co.uk"
+      }
+    ]
+  }
+}
