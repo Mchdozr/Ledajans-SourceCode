@@ -65,6 +65,17 @@ def render_pages() -> list[Path]:
     return paths
 
 
+def render_matbaa_pdf(images: list[Path]) -> Path:
+    import img2pdf
+
+    pdf_path = OUT / "LEDAJANS-Katalog-MATBAA.pdf"
+    layout = img2pdf.get_layout_fun(pagesize=(img2pdf.mm_to_pt(210), img2pdf.mm_to_pt(297)))
+    with open(pdf_path, "wb") as f:
+        f.write(img2pdf.convert([str(p) for p in images], layout_fun=layout))
+    print(f"  matbaa pdf {pdf_path.name}")
+    return pdf_path
+
+
 def render_pdf() -> Path:
     pdf_path = OUT / "LEDAJANS-Katalog-2026-Baski.pdf"
     with sync_playwright() as pw:
@@ -283,12 +294,18 @@ def build_zip():
     if zip_path.exists():
         zip_path.unlink()
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.write(OUT / "LEDAJANS-Katalog-2026.idml", "LEDAJANS-Katalog-2026.idml")
         zf.write(OUT / "LEDAJANS-Katalog-Import.jsx", "LEDAJANS-Katalog-Import.jsx")
-        zf.write(OUT / "OKU-BENI.md", "OKU-BENI.md")
-        pdf = OUT / "LEDAJANS-Katalog-2026-Baski.pdf"
-        if pdf.exists():
-            zf.write(pdf, pdf.name)
+        for name in ("OKU-BENI.md", "BASIT-KILAVUZ.md", "INDESIGN-ACILMIYOR.md"):
+            path = OUT / name
+            if path.exists():
+                zf.write(path, name)
+        for pdf_name in (
+            "LEDAJANS-Katalog-MATBAA.pdf",
+            "LEDAJANS-Katalog-2026-Baski.pdf",
+        ):
+            pdf = OUT / pdf_name
+            if pdf.exists():
+                zf.write(pdf, pdf_name)
         for img in sorted(LINKS.glob("page-*.png")):
             zf.write(img, f"Links/{img.name}")
     return zip_path
@@ -297,9 +314,9 @@ def build_zip():
 def main():
     print("1/3 Sayfalar render...")
     images = render_pages()
-    print("2/3 PDF + IDML...")
+    print("2/3 PDF...")
     render_pdf()
-    build_idml(images)
+    render_matbaa_pdf(images)
     write_readme()
     print("3/3 Zip paketi...")
     zf = build_zip()
