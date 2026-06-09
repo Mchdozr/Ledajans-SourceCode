@@ -1,24 +1,26 @@
 # LEDAJANS Katalog — InDesign Paketi
 
-## İndir ve aç
+## YONTEM 1 — JSX Script (ONERILEN, %100 calisir)
 
-`LEDAJANS-Katalog-InDesign-Paket.zip` dosyasını indir → zip'i aç → klasörde:
+1. Zip'i ac
+2. InDesign'i ac
+3. **Pencere → Yardimci Programlar → LEDAJANS-Katalog-Import.jsx** cift tik
+   - Bulamazsan: **Dosya → Komut Dosyasi Calistir** → jsx dosyasini sec
+4. **Links** klasorunu sec (page-01.png ... page-15.png)
+5. 15 sayfa otomatik yerlesir
+6. **Dosya → Disa Aktar → Adobe PDF (Baski)** → Kaydet
 
-- `LEDAJANS-Katalog-2026.idml`
-- `Links/` (15 sayfa görseli)
+## YONTEM 2 — IDML dosyasi
 
-## Hızlı kullanım (3 adım)
+1. **LEDAJANS-Katalog-2026.idml** dosyasini InDesign ile ac
+2. Link uyarisi: **Links** klasorunu sec
 
-1. **LEDAJANS-Katalog-2026.idml** dosyasını InDesign ile aç (çift tık)
-2. Eksik link uyarısı çıkarsa: aynı klasördeki **Links** klasörünü seç
-3. **Dosya → Dışa Aktar → Adobe PDF (Baskı)** → [Baskı Kalitesi] → Kaydet
+## YONTEM 3 — Hazir PDF (InDesign gerekmez)
 
-## İçerik
-- 15 sayfa A4 + 3mm taşma (bleed)
-- 300 DPI sayfa görselleri (HTML katalogdan render)
+**LEDAJANS-Katalog-2026-Baski.pdf** dosyasini direkt matbaaya ver.
 
-## Yeniden üret
-```bash
-python3 Katalog/generate-katalog.py
-python3 Katalog/generate-indesign.py
-```
+## Sorun giderme
+
+- IDML "iyi olusturulmamis" hatasi → Yontem 1 (JSX) kullan
+- Cift tik acmiyorsa → InDesign icinden Dosya → Ac
+- OneDrive senkronu bozabilir → dosyayi yerel Masaustu'ne kopyala
