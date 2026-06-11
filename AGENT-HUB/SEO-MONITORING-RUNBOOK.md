@@ -6,6 +6,18 @@
 powershell -File scripts/seo-smoke-test.ps1
 ```
 
+SERP (`led ekran`) — organik sıra ölçümü sonrası:
+
+```bash
+cd /workspace
+python3 AGENT-HUB/record-serp-check.py \
+  --rank-position <sıra> \
+  --source google_serp_browser \
+  --notes "kısa gözlem"
+```
+
+Çıktı: `AGENT-HUB/SERP-BASELINE.csv` (yeni satır) + `AGENT-HUB/WEEKLY-MONITORING-YYYY-MM-DD.md`.
+
 ## Haftalık (Gün 7)
 
 | Metrik | Kaynak | Hedef |
