@@ -1,6 +1,6 @@
 # GSC Export Checklist (P0)
 
-Son güncelleme (otomatik canlı crawl): **2026-06-05 14:30 UTC**
+Son güncelleme (otomatik canlı crawl): **2026-06-12 06:07 UTC**
 
 > **Indexed** sütunu: canlı crawl + sitemap; kesin durum için GSC URL Inspection ile doğrula.
 
@@ -15,12 +15,12 @@ Son güncelleme (otomatik canlı crawl): **2026-06-05 14:30 UTC**
 
 | URL | Indexed | Canonical | Last crawl | Sitemap | Not |
 |-----|---------|-----------|------------|---------|-----|
-| https://ledajans.com/ | GSC doğrula | https://ledajans.com/ | canlı 2026-06-05 (Last-Modified: Fri, 05 Jun 2026 13:57:17 GMT) | evet | OK |
-| https://ledajans.com/led-ekran/ | GSC doğrula | https://ledajans.com/led-ekran/ | canlı 2026-06-05 (Last-Modified: n/a) | evet | OK |
-| https://ledajans.com/ic-mekan-led-ekran/ | GSC doğrula | https://ledajans.com/ic-mekan-led-ekran/ | canlı 2026-06-05 (Last-Modified: n/a) | evet | OK |
-| https://ledajans.com/dis-mekan-led-ekran/ | GSC doğrula | https://ledajans.com/dis-mekan-led-ekran/ | canlı 2026-06-05 (Last-Modified: n/a) | evet | OK |
-| https://ledajans.com/rental-ekran/ | GSC doğrula | https://ledajans.com/rental-ekran/ | canlı 2026-06-05 (Last-Modified: n/a) | evet | OK |
-| https://ledajans.com/cob-ekran/ | GSC doğrula | https://ledajans.com/cob-ekran/ | canlı 2026-06-05 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/ | GSC doğrula | https://ledajans.com/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/led-ekran/ | GSC doğrula | https://ledajans.com/led-ekran/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/ic-mekan-led-ekran/ | GSC doğrula | https://ledajans.com/ic-mekan-led-ekran/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/dis-mekan-led-ekran/ | GSC doğrula | https://ledajans.com/dis-mekan-led-ekran/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/rental-ekran/ | GSC doğrula | https://ledajans.com/rental-ekran/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
+| https://ledajans.com/cob-ekran/ | GSC doğrula | https://ledajans.com/cob-ekran/ | canlı 2026-06-12 (Last-Modified: n/a) | evet | OK |
 
 ## Kabul kriteri
 
@@ -30,4 +30,4 @@ Son güncelleme (otomatik canlı crawl): **2026-06-05 14:30 UTC**
 
 ## Ham veri
 
-Dosya: `AGENT-HUB/audit-money-pages-2026-06-05.json`
+Dosya: `AGENT-HUB/audit-money-pages-2026-06-12.json`

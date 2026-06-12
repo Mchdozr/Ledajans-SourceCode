@@ -38,4 +38,15 @@ python AGENT-HUB/audit-money-pages.py
 python deploy-to-wordpress.py --dry-run
 ```
 
+Haftalık SERP (`led ekran`):
+
+```bash
+cd /workspace
+python3 AGENT-HUB/keyword_rank_weekly.py
+```
+
+- Çıktı: `SERP-BASELINE.csv` + `WEEKLY-MONITORING-YYYY-MM-DD.md`
+- Kesin Google SERP: `SERPER_API_KEY` veya `SERPAPI_KEY` ortam değişkeni
+- Cron önerisi: `0 6 * * 1` (Pazartesi 06:00 UTC)
+
 Haftalık kayıt şablonu: `AGENT-HUB/WEEKLY-MONITORING-YYYY-MM-DD.md`
