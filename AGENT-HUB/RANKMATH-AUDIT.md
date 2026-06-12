@@ -1,6 +1,6 @@
 # RankMath / Meta Audit — Para Sayfalar
 
-Tarih: 2026-06-05 14:30 UTC
+Tarih: 2026-06-12 06:07 UTC
 
 | Sayfa | Title (len) | Description (len) | H1 | Canonical OK |
 |-------|-------------|-------------------|-----|--------------|
