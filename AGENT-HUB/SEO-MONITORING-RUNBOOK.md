@@ -14,7 +14,7 @@ powershell -File scripts/seo-smoke-test.ps1
 | CTR ana sayfa + /led-ekran/ | GSC | ↑ veya stabil |
 | Indexed para URL (6) | GSC Pages | 6/6 |
 | Mobil LCP | Lighthouse / CrUX | <4s ara hedef |
-| SERP satırları | `SERP-BASELINE.csv` | Güncel |
+| SERP satırları | `SERP-BASELINE.csv` | Güncel (`AGENT-HUB/keyword_rank_weekly.py`) |
 
 ## Aylık (Gün 28)
 
@@ -35,6 +35,7 @@ powershell -File scripts/seo-smoke-test.ps1
 powershell -File scripts/seo-smoke-test.ps1
 powershell -File scripts/run-weekly-seo-check.ps1
 python AGENT-HUB/audit-money-pages.py
+python3 AGENT-HUB/keyword_rank_weekly.py
 python deploy-to-wordpress.py --dry-run
 ```
 
