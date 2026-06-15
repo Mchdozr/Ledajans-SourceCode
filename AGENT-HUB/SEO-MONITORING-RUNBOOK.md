@@ -38,4 +38,10 @@ python AGENT-HUB/audit-money-pages.py
 python deploy-to-wordpress.py --dry-run
 ```
 
+```bash
+# Haftalık SERP snapshot (led ekran → ledajans.com)
+python3 AGENT-HUB/check-serp-led-ekran.py
+# Opsiyonel: SERPAPI_KEY ile otomatik çekim
+```
+
 Haftalık kayıt şablonu: `AGENT-HUB/WEEKLY-MONITORING-YYYY-MM-DD.md`
