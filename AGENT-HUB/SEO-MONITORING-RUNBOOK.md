@@ -34,6 +34,7 @@ powershell -File scripts/seo-smoke-test.ps1
 ```powershell
 powershell -File scripts/seo-smoke-test.ps1
 powershell -File scripts/run-weekly-seo-check.ps1
+python3 AGENT-HUB/check-serp-weekly.py
 python AGENT-HUB/audit-money-pages.py
 python deploy-to-wordpress.py --dry-run
 ```
