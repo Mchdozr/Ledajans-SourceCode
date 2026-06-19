@@ -16,6 +16,12 @@ powershell -File scripts/seo-smoke-test.ps1
 | Mobil LCP | Lighthouse / CrUX | <4s ara hedef |
 | SERP satırları | `SERP-BASELINE.csv` | Güncel |
 
+Haftalık SERP ölçümü:
+
+```bash
+python3 AGENT-HUB/check-serp-baseline.py
+```
+
 ## Aylık (Gün 28)
 
 - Lighthouse mobile/desktop karşılaştırması (`audit-mobile-full.json` ile diff)
