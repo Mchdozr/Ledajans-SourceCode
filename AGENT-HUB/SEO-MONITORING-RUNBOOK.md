@@ -38,4 +38,10 @@ python AGENT-HUB/audit-money-pages.py
 python deploy-to-wordpress.py --dry-run
 ```
 
+SERP baseline (haftalık cron / Cloud Agent):
+
+```bash
+cd /workspace && python3 AGENT-HUB/check-serp-baseline.py --weekly
+```
+
 Haftalık kayıt şablonu: `AGENT-HUB/WEEKLY-MONITORING-YYYY-MM-DD.md`
