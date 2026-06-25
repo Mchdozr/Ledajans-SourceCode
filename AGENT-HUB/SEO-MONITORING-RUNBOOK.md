@@ -8,8 +8,13 @@ powershell -File scripts/seo-smoke-test.ps1
 
 ## Haftalık (Gün 7)
 
+```bash
+python3 AGENT-HUB/check-serp-rank.py
+```
+
 | Metrik | Kaynak | Hedef |
 |--------|--------|-------|
+| `led ekran` canlı sıra | `check-serp-rank.py` → `SERP-BASELINE.csv` | Stabil veya ↑ |
 | `led ekran` avg position | GSC | Stabil veya ↑ |
 | CTR ana sayfa + /led-ekran/ | GSC | ↑ veya stabil |
 | Indexed para URL (6) | GSC Pages | 6/6 |
