@@ -227,13 +227,15 @@ def append_baseline_rows(rows: list[dict[str, str]]) -> int:
     return len(to_append)
 
 
-def previous_measurement(device: str) -> dict[str, str] | None:
+def previous_measurement(device: str, before_utc: str | None = None) -> dict[str, str] | None:
     if not BASELINE_PATH.is_file():
         return None
     rows = [
         row
         for row in read_csv(BASELINE_PATH)
-        if row.get("query", "").strip().lower() == QUERY and row.get("device") == device
+        if row.get("query", "").strip().lower() == QUERY
+        and row.get("device") == device
+        and (before_utc is None or row.get("captured_at_utc", "") < before_utc)
     ]
     if not rows:
         return None
@@ -280,8 +282,8 @@ def update_weekly_monitoring(captured_at: str, mobile: dict[str, str], desktop: 
     gsc_folder = latest_gsc_queries_dir()
     gsc_label = gsc_folder.name.replace("gsc-performance-", "") if gsc_folder else "yok"
     gsc_age = gsc_export_age_days(gsc_folder) if gsc_folder else None
-    prev_mobile = previous_measurement("mobile")
-    prev_desktop = previous_measurement("desktop")
+    prev_mobile = previous_measurement("mobile", captured_at)
+    prev_desktop = previous_measurement("desktop", captured_at)
 
     lines = [
         f"# Haftalık SEO İzleme — {today.isoformat()}",
