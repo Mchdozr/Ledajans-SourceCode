@@ -5,8 +5,8 @@
 - Ölçüm UTC: `2026-06-28T06:05:12Z`
 - Mobil: sıra **2** | URL `https://ledajans.com/` | kaynak `ddg_html_proxy`
 - Masaüstü: sıra **1** | URL `https://ledajans.com/` | kaynak `ddg_html_proxy`
-- Mobil haftalık delta: değişmedi
-- Masaüstü haftalık delta: değişmedi
+- Mobil haftalık delta: ↑ 5 sıra iyileşme
+- Masaüstü haftalık delta: ↑ 4 sıra iyileşme
 - Satır eklendi: `AGENT-HUB/SERP-BASELINE.csv`
 
 ### Notlar

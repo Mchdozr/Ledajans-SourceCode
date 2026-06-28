@@ -224,7 +224,7 @@ def append_baseline_rows(rows: list[dict[str, str]]) -> int:
     return len(to_append)
 
 
-def latest_baseline_row(device: str) -> dict[str, str] | None:
+def latest_baseline_row(device: str, *, before_captured_at: str | None = None) -> dict[str, str] | None:
     rows = read_csv(BASELINE_PATH)
     matches = [
         row
@@ -232,6 +232,7 @@ def latest_baseline_row(device: str) -> dict[str, str] | None:
         if row.get("query", "").strip().lower() == QUERY
         and row.get("device", "").strip().lower() == device
         and row.get("target_url", "").strip().rstrip("/") == PRIMARY_URL.rstrip("/")
+        and (before_captured_at is None or row.get("captured_at_utc", "") < before_captured_at)
     ]
     return matches[-1] if matches else None
 
@@ -281,8 +282,8 @@ def update_weekly_monitoring(captured_at: str, mobile: dict[str, str], desktop: 
     gsc_folder = latest_gsc_queries_dir()
     gsc_label = gsc_folder.name.replace("gsc-performance-", "") if gsc_folder else "yok"
     gsc_fresh = gsc_is_fresh(gsc_folder) if gsc_folder else False
-    prev_mobile = latest_baseline_row("mobile")
-    prev_desktop = latest_baseline_row("desktop")
+    prev_mobile = latest_baseline_row("mobile", before_captured_at=captured_at)
+    prev_desktop = latest_baseline_row("desktop", before_captured_at=captured_at)
 
     lines = [
         f"# Haftalık SEO İzleme — {today.isoformat()}",
@@ -344,6 +345,8 @@ def build_row(captured_at: str, device: str, result: dict[str, str]) -> dict[str
 
 def main() -> int:
     captured_at = utc_now_iso()
+    prev_mobile = latest_baseline_row("mobile")
+    prev_desktop = latest_baseline_row("desktop")
     mobile = resolve_rank("mobile")
     desktop = resolve_rank("desktop")
     rows = [
@@ -356,6 +359,10 @@ def main() -> int:
     print(f"captured_at={captured_at}")
     print(f"mobile_rank={mobile['rank_position']} source={mobile['source']}")
     print(f"desktop_rank={desktop['rank_position']} source={desktop['source']}")
+    if prev_mobile:
+        print(f"mobile_delta={rank_delta(mobile['rank_position'], prev_mobile)}")
+    if prev_desktop:
+        print(f"desktop_delta={rank_delta(desktop['rank_position'], prev_desktop)}")
     print(f"baseline_appended={appended}")
     print(f"weekly_report={weekly_path.relative_to(ROOT)}")
     return 0
