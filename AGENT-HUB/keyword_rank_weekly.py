@@ -258,13 +258,15 @@ def build_measurement_rows(captured_at: str, existing_rows: list[dict[str, str]]
     return rows
 
 
-def previous_led_ekran_snapshot(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
+def previous_led_ekran_snapshot(rows: list[dict[str, str]], before_utc: str) -> dict[str, dict[str, str]]:
     latest: dict[str, dict[str, str]] = {}
     for row in rows:
         if row.get("query", "").lower() != QUERY:
             continue
+        if row.get("captured_at_utc", "") >= before_utc:
+            continue
         device = row.get("device", "")
-        if device and device not in latest:
+        if device:
             latest[device] = row
     return latest
 
@@ -299,15 +301,21 @@ def write_weekly_report(
             continue
         prev_rank = prev.get("rank_position", "N/A")
         curr_rank = row["rank_position"]
+        prev_source = prev.get("source", "")
+        curr_source = row.get("source", "")
+        prev_date = prev.get("captured_at_utc", "")[:10]
         if str(prev_rank).replace(".", "", 1).isdigit() and str(curr_rank).replace(".", "", 1).isdigit():
             delta = float(prev_rank) - float(curr_rank)
             direction = "↑ iyileşme" if delta > 0 else ("↓ düşüş" if delta < 0 else "→ stabil")
             lines.append(
                 f"- **{device}**: {prev_rank} → {curr_rank} ({direction}, Δ={delta:+.2f}) "
-                f"[{prev.get('captured_at_utc', '')[:10]}]"
+                f"[{prev_date}, {prev_source}]"
             )
         else:
-            lines.append(f"- **{device}**: {prev_rank} → {curr_rank}")
+            lines.append(
+                f"- **{device}**: {prev_rank} → {curr_rank} "
+                f"[{prev_date}, {prev_source} → {curr_source}]"
+            )
 
     lines.extend(
         [
@@ -345,7 +353,7 @@ def main() -> int:
     if append_rows:
         append_baseline_rows(append_rows, fields)
 
-    previous = previous_led_ekran_snapshot(existing_rows)
+    previous = previous_led_ekran_snapshot(existing_rows, captured_at)
     report_path = write_weekly_report(captured_at, new_rows, previous)
 
     for row in new_rows:

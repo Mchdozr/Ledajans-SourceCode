@@ -9,8 +9,8 @@
 
 ## Haftalık delta
 
-- **desktop**: top5 → 3
-- **mobile**: 1 → 13 (↓ düşüş, Δ=-12.00) [2026-06-03]
+- **desktop**: top5 → 3 [2026-06-03, audit_2026-06-03 → playwright_google] — canlı organic ilk ölçümde **3. sıra**
+- **mobile**: 6.78 → 13 (↓ düşüş, Δ=-6.22) [2026-06-05, gsc_performance_2026-06-05 → playwright_google] — GSC avg ile canlı organic farklı metrik; mobil organic **13. sıra**
 
 ## Kayıt
 
