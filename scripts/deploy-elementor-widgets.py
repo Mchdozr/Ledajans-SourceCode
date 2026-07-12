@@ -31,6 +31,30 @@ WIDGETS = [
         "file": "Anasayfa/widget-3.html",
     },
     {
+        "label": "/ic-mekan-led-ekran/ SEO",
+        "page_id": 6004,
+        "widget_id": "9247047",
+        "file": "Urunlerimiz/Ic-Mekan-Led-Ekran/ic-mekan-led-ekran-text.html",
+    },
+    {
+        "label": "/ic-mekan-led-ekran/ FAQ",
+        "page_id": 6004,
+        "widget_id": "2ff9b0d",
+        "file": "Urunlerimiz/Ic-Mekan-Led-Ekran/sss.html",
+    },
+    {
+        "label": "/rental-ekran/ SEO",
+        "page_id": 6083,
+        "widget_id": "2a70be1",
+        "file": "Urunlerimiz/Rental-Ekran/rental-ekran-text.html",
+    },
+    {
+        "label": "/rental-ekran/ FAQ",
+        "page_id": 6083,
+        "widget_id": "2bd89fe",
+        "file": "Urunlerimiz/Rental-Ekran/sss.html",
+    },
+    {
         "label": "/dis-mekan-led-ekran/ FAQ",
         "page_id": 6012,
         "widget_id": "538c2a3",
@@ -38,12 +62,16 @@ WIDGETS = [
     },
 ]
 
-DIS_MEKAN_SEO = {
-    "page_id": 6012,
-    "before_widget": "538c2a3",
-    "marker": "control-cards-content-wrapper",
-    "file": "Urunlerimiz/Dis-Mekan-Led-Ekran/dis-mekan-led-ekran-text.html",
-}
+SEO_INSERT_PAGES = [
+    {
+        "label": "/dis-mekan-led-ekran/ SEO insert",
+        "page_id": 6012,
+        "before_widget": "538c2a3",
+        "marker": "control-cards-content-wrapper",
+        "file": "Urunlerimiz/Dis-Mekan-Led-Ekran/dis-mekan-led-ekran-text.html",
+        "known_widget_id": "7b76b791",
+    },
+]
 
 
 def load_env() -> tuple[str, str, str]:
@@ -112,9 +140,8 @@ def walk_find(el: dict, target: str, path: list | None = None) -> list | None:
     return None
 
 
-def ensure_dis_mekan_seo(site: str, auth: tuple[str, str], apply: bool) -> str | None:
+def ensure_seo_widget(site: str, auth: tuple[str, str], cfg: dict, apply: bool) -> str | None:
     """SEO metin widget yoksa FAQ'dan once ekle; widget id dondur."""
-    cfg = DIS_MEKAN_SEO
     html = read_html(cfg["file"])
     r = requests.get(
         f"{site}/wp-json/wp/v2/pages/{cfg['page_id']}?context=edit",
@@ -123,11 +150,13 @@ def ensure_dis_mekan_seo(site: str, auth: tuple[str, str], apply: bool) -> str |
         headers={"User-Agent": "LEDAJANS-Elementor-Deploy/1.0"},
     )
     if r.status_code != 200:
+        known = cfg.get("known_widget_id")
+        if known:
+            return known
         print(f"  HATA page fetch {r.status_code}")
         return None
     raw = r.json()["meta"]["_elementor_data"]
     if cfg["marker"] in raw:
-        # mevcut widget id bul
         data = json.loads(raw)
         for top in data:
             stack = [top]
@@ -138,7 +167,7 @@ def ensure_dis_mekan_seo(site: str, auth: tuple[str, str], apply: bool) -> str |
                     if cfg["marker"] in h:
                         return el.get("id")
                 stack.extend(el.get("elements") or [])
-        return None
+        return cfg.get("known_widget_id")
 
     if not apply:
         print(f"  [dry-run] SEO widget eklenecek (FAQ oncesi)")
@@ -195,19 +224,20 @@ def main() -> int:
 
     auth = (user, pw)
     ok = 0
-    total = len(WIDGETS) + 1
+    total = len(WIDGETS) + len(SEO_INSERT_PAGES)
 
     print(f"Elementor widget deploy — {'APPLY' if args.apply else 'DRY-RUN'}\n")
 
-    seo_id = ensure_dis_mekan_seo(site, auth, args.apply)
-    if seo_id and seo_id != "new-seo-widget":
-        print(f"\n>> /dis-mekan-led-ekran/ SEO metin (widget {seo_id})")
-        if deploy_widget(site, auth, 6012, seo_id, read_html(DIS_MEKAN_SEO["file"]), args.apply):
+    for cfg in SEO_INSERT_PAGES:
+        print(f"\n>> {cfg['label']}")
+        seo_id = ensure_seo_widget(site, auth, cfg, args.apply)
+        if seo_id and seo_id not in ("new-seo-widget", None):
+            html = read_html(cfg["file"])
+            if deploy_widget(site, auth, cfg["page_id"], seo_id, html, args.apply):
+                ok += 1
+        elif seo_id == "new-seo-widget":
             ok += 1
-    elif seo_id == "new-seo-widget" and args.apply:
-        ok += 1
-    elif seo_id == "new-seo-widget":
-        ok += 1
+        time.sleep(2)
 
     for item in WIDGETS:
         print(f"\n>> {item['label']}")

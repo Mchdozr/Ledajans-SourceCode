@@ -1,10 +1,10 @@
 # RankMath / Meta Audit — Para Sayfalar
 
-Tarih: 2026-06-05 14:30 UTC
+Tarih: 2026-07-12 15:52 UTC
 
 | Sayfa | Title (len) | Description (len) | H1 | Canonical OK |
 |-------|-------------|-------------------|-----|--------------|
-| Ana sayfa | LED Ekran Satış, Kiralama ve Kurulum | LEDAJANS İstanbul… (56) | 132 (OK) | LED Ekran Çözümleri | evet |
+| Ana sayfa | LED Ekran Üreticisi | Satış, Kiralama, Kurulum - LEDAJANS… (57) | 144 (OK) | LED Ekran Çözümleri | evet |
 | LED ekran hub | LED Ekran ve Fiyatları 2026 | İç-Dış Mekan - LEDAJANS… (53) | 151 (OK) | LED Ekran Çözümleri ve Fiyatları | evet |
 | İç mekan | İç Mekan LED Ekran | Indoor P2-P3 Fiyat - LEDAJANS… (50) | 129 (OK) | İç Mekan Led Ekran | evet |
 | Dış mekan | Dış Mekan LED Ekran | Outdoor IP65 P4-P10 - LEDAJANS… (52) | 135 (OK) | Dış Mekan LED Ekran | evet |
@@ -14,8 +14,8 @@ Tarih: 2026-06-05 14:30 UTC
 ## Detay
 
 ### Ana sayfa — https://ledajans.com/
-- **Title:** LED Ekran Satış, Kiralama ve Kurulum | LEDAJANS İstanbul
-- **Description:** LED ekran satış, kiralama ve kurulum. İç mekan, dış mekan, rental çözümler. 25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif ve teklif.
+- **Title:** LED Ekran Üreticisi | Satış, Kiralama, Kurulum - LEDAJANS
+- **Description:** LED ekran satış, kiralama ve kurulum. İç mekan, dış mekan, rental ve COB çözümler. 25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif ve teklif alın.
 - **Robots:** index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 - **H1:** LED Ekran Çözümleri
 
