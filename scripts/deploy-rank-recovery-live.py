@@ -45,17 +45,28 @@ MANUAL_PLESK = """
 """
 
 
+def _parse_env_text(text: str) -> dict[str, str]:
+    data: dict[str, str] = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, _, v = line.partition("=")
+        data[k.strip()] = v.strip().strip("\"'")
+    return data
+
+
 def load_env() -> tuple[str, str, str]:
     path = os.path.join(ROOT, ".env")
     data: dict[str, str] = {}
     if os.path.isfile(path):
         with open(path, encoding="utf-8-sig") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#") or "=" not in line:
-                    continue
-                k, _, v = line.partition("=")
-                data[k.strip()] = v.strip().strip("\"'")
+            data.update(_parse_env_text(f.read()))
+    # Cloud Agent ortaminda yalnizca cursor-deploy inject edilebiliyor;
+    # icinde WP_USERNAME= / WP_APP_PASSWORD= satirlari varsa oku.
+    cursor_deploy = os.environ.get("cursor-deploy", "")
+    if "=" in cursor_deploy:
+        data.update(_parse_env_text(cursor_deploy))
     site = (
         os.environ.get("WP_SITE_URL")
         or data.get("WP_SITE_URL")
@@ -178,7 +189,21 @@ def main() -> int:
         if deploy_blog_file(site, user, pw, file_rel, slug, title, ptype, args.apply):
             blog_ok += 1
 
-    print("\n5) Canli dogrulama...")
+    print("\n5) Elementor HTML widget'lari (canli gorunum)...")
+    rc_el = subprocess.run(
+        [sys.executable, os.path.join(ROOT, "scripts", "deploy-elementor-widgets.py")]
+        + (["--apply"] if args.apply else []),
+        cwd=ROOT,
+    ).returncode
+
+    print("\n6) robots.txt + mu-plugin...")
+    rc_files = subprocess.run(
+        [sys.executable, os.path.join(ROOT, "scripts", "deploy-site-files.py")]
+        + (["--apply"] if args.apply else []),
+        cwd=ROOT,
+    ).returncode
+
+    print("\n7) Canli dogrulama...")
     if args.apply:
         subprocess.run(
             [sys.executable, os.path.join(ROOT, "scripts", "verify-rankmath-p0-meta.py")],
@@ -191,11 +216,11 @@ def main() -> int:
 
     print(MANUAL_PLESK)
 
-    fail = (rc_hub != 0) + (rc_meta != 0) + (blog_ok != len(BLOG_UPDATES))
+    fail = (rc_hub != 0) + (rc_meta != 0) + (blog_ok != len(BLOG_UPDATES)) + (rc_el != 0) + (rc_files != 0)
     if not args.apply:
         print("\nDry-run tamam. Canli icin: python3 scripts/deploy-rank-recovery-live.py --apply")
         return 0
-    print(f"\nREST deploy tamam. Manuel adimlar (mu-plugin, robots, Elementor) yukarida.")
+    print(f"\nDeploy tamam (Elementor + robots + mu-plugin dahil).")
     return 1 if fail else 0
 
 
