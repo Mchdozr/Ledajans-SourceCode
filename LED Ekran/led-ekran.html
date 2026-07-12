@@ -326,6 +326,41 @@
       object-fit: cover;
       object-position: top top; /* varsayılan center center yerine */
     }
+
+    /* GÜVEN BANDI */
+    .la-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: -1.5rem auto 0;
+      padding: 1.5rem 1rem;
+      background: #fff;
+      border: 1px solid #f3f4f6;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px -18px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    .la-trust-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .la-trust-num { font-size: 1.5rem; font-weight: 900; color: var(--la-orange); line-height: 1.1; }
+    .la-trust-label { font-size: 0.85rem; color: #6b7280; }
+
+    /* KARŞILAŞTIRMA TABLOSU */
+    .la-table-wrap { max-width: 1100px; margin: 0 auto; overflow-x: auto; }
+    .la-compare { width: 100%; border-collapse: collapse; background: #fff; border-radius: 1rem; overflow: hidden; }
+    .la-compare th, .la-compare td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; }
+    .la-compare thead th { background: var(--la-dark); color: #fff; font-weight: 700; }
+    .la-compare td a { color: var(--la-orange); font-weight: 700; text-decoration: none; }
+    .la-compare tbody tr:hover { background: #fafafa; }
+
+    @media (max-width: 760px) {
+      .la-trust-bar { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 1rem; }
+      .la-compare thead { display: none; }
+      .la-compare tbody tr { display: block; border: 1px solid #f3f4f6; border-radius: 1rem; margin-bottom: 1rem; }
+      .la-compare td { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #f3f4f6; }
+      .la-compare td:last-child { border-bottom: none; }
+      .la-compare td::before { content: attr(data-label); font-weight: 700; color: #111827; }
+    }
     </style>
     <div class="la-wrapper">
     
@@ -350,7 +385,37 @@
           <a href="https://ledajans.com/cob-ekran/" style="color:#fdba74;text-decoration:none;font-weight:600;">COB ekran</a>
         </p>
       </div>
-    
+
+      <!-- GÜVEN BANDI (E-E-A-T sinyalleri) -->
+      <div class="la-trust-bar" aria-label="Ledajans güven göstergeleri">
+        <div class="la-trust-item"><span class="la-trust-num">25+</span><span class="la-trust-label">Yıl Üretici Tecrübesi</span></div>
+        <div class="la-trust-item"><span class="la-trust-num">2 Yıl</span><span class="la-trust-label">Tam Parça Garanti</span></div>
+        <div class="la-trust-item"><span class="la-trust-num">81 İl</span><span class="la-trust-label">Türkiye Geneli Kurulum</span></div>
+        <div class="la-trust-item"><span class="la-trust-num">CE / TSE</span><span class="la-trust-label">Sertifikalı Üretim</span></div>
+        <div class="la-trust-item"><span class="la-trust-num">48 Saat</span><span class="la-trust-label">Keşif & Teklif</span></div>
+      </div>
+
+      <!-- TEKNİK KARŞILAŞTIRMA / KARAR AKIŞI -->
+      <div class="la-section">
+        <div style="text-align:center;margin-bottom:2rem;">
+          <h2 class="la-section-header">Hangi LED Ekran Size Uygun? (Hızlı Karşılaştırma)</h2>
+          <p style="font-size:1.05rem;color:#6b7280;max-width:760px;margin:0 auto;">Kullanım alanı, izleme mesafesi ve bütçeye göre doğru modeli seçin. Kararsızsanız ücretsiz keşif ile size özel öneri sunarız.</p>
+        </div>
+        <div class="la-table-wrap">
+          <table class="la-compare">
+            <thead>
+              <tr><th>Model</th><th>Piksel (P)</th><th>Parlaklık</th><th>Koruma</th><th>Tipik Kullanım</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Model"><a href="https://ledajans.com/ic-mekan-led-ekran/">İç Mekan LED Ekran</a></td><td data-label="Piksel (P)">P1.25–P3</td><td data-label="Parlaklık">800–1500 nits</td><td data-label="Koruma">IP31</td><td data-label="Tipik Kullanım">Mağaza, stüdyo, toplantı odası</td></tr>
+              <tr><td data-label="Model"><a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan LED Ekran</a></td><td data-label="Piksel (P)">P4–P10</td><td data-label="Parlaklık">5000+ nits</td><td data-label="Koruma">IP65</td><td data-label="Tipik Kullanım">Reklam panosu, totem, cephe, stadyum</td></tr>
+              <tr><td data-label="Model"><a href="https://ledajans.com/rental-ekran/">Rental (Kiralık) LED Ekran</a></td><td data-label="Piksel (P)">P2.6–P4.8</td><td data-label="Parlaklık">1500–5000 nits</td><td data-label="Koruma">IP43–IP65</td><td data-label="Tipik Kullanım">Konser, fuar, etkinlik, sahne</td></tr>
+              <tr><td data-label="Model"><a href="https://ledajans.com/cob-ekran/">COB – Smart Screen</a></td><td data-label="Piksel (P)">P0.9–P1.8</td><td data-label="Parlaklık">600–1000 nits</td><td data-label="Koruma">IP40</td><td data-label="Tipik Kullanım">Kurumsal lobi, kontrol odası, premium alan</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <!-- ÜRÜN KATEGORİLERİ (GÖRSELLİ & ZENGİN) -->
       <div class="la-section">
         <div style="text-align: center; margin-bottom: 3rem;">
@@ -598,6 +663,20 @@
               Tüm LED ekran projelerimiz <strong>2 yıl tam parça garantilidir</strong>. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur.
             </p>
           </div>
+
+          <div class="la-faq-item">
+            <h3 class="la-faq-q">LED ekran kurulumu ne kadar sürer?</h3>
+            <p class="la-faq-a">
+              Standart bir iç mekan LED ekran kurulumu genellikle <strong>1-2 gün</strong>, dış mekan cephe projeleri ise altyapıya bağlı olarak <strong>3-7 gün</strong> içinde tamamlanır. Rental (kiralık) ekranlar etkinlik günü <strong>birkaç saat içinde</strong> kurulup sökülebilir. Keşif sonrası size net bir kurulum takvimi sunarız.
+            </p>
+          </div>
+
+          <div class="la-faq-item">
+            <h3 class="la-faq-q">LED ekran metrekare (m²) hesabı nasıl yapılır?</h3>
+            <p class="la-faq-a">
+              Toplam alan = <strong>en (m) × boy (m)</strong> formülüyle bulunur; ekran modülleri (genelde 50×50 cm veya kabin bazlı) bu alana göre birleştirilir. Fiyat, m² başına seçilen piksel aralığına (P değeri) göre belirlenir. Doğru ölçü için <a href="https://ledajans.com/iletisim/">ücretsiz keşif</a> talep edebilirsiniz.
+            </p>
+          </div>
         </div>
       </div>
     
@@ -643,6 +722,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Tüm LED ekran projelerimiz 2 yıl tam parça garantilidir. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LED ekran kurulumu ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standart bir iç mekan LED ekran kurulumu genellikle 1-2 gün, dış mekan cephe projeleri ise altyapıya bağlı olarak 3-7 gün içinde tamamlanır. Rental (kiralık) ekranlar etkinlik günü birkaç saat içinde kurulup sökülebilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LED ekran metrekare (m²) hesabı nasıl yapılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toplam alan en (m) × boy (m) formülüyle bulunur; ekran modülleri (genelde 50×50 cm veya kabin bazlı) bu alana göre birleştirilir. Fiyat, m² başına seçilen piksel aralığına (P değeri) göre belirlenir."
       }
     }
   ]
@@ -692,5 +787,28 @@
       "url": "https://ledajans.com/dis-mekan-rgb-panel/"
     }
   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ledajans.com/led-ekran/#webpage",
+  "url": "https://ledajans.com/led-ekran/",
+  "name": "LED Ekran Çözümleri ve Fiyatları",
+  "inLanguage": "tr-TR",
+  "datePublished": "2022-01-01",
+  "dateModified": "2026-07-12",
+  "primaryImageOfPage": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5-550x622.png",
+  "about": { "@type": "Thing", "name": "LED Ekran" },
+  "isPartOf": { "@type": "WebSite", "name": "LEDAJANS", "url": "https://ledajans.com/" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Anasayfa", "item": "https://ledajans.com/" },
+      { "@type": "ListItem", "position": 2, "name": "LED Ekran", "item": "https://ledajans.com/led-ekran/" }
+    ]
+  }
 }
 </script>
