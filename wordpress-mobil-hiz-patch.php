@@ -20,6 +20,18 @@ function ledajans_is_projeler_page() {
     return (bool) preg_match('#/projeler/?($|[?#])#i', $path);
 }
 
+// LCP açısından kritik sayfalar: anasayfa (head-term "led ekran") + /projeler/
+// GTM ertelemesi ve ağır asset düşürme bu sayfalarda uygulanır.
+function ledajans_is_lcp_critical_page() {
+    if (is_admin()) {
+        return false;
+    }
+    if (function_exists('is_front_page') && is_front_page()) {
+        return true;
+    }
+    return ledajans_is_projeler_page();
+}
+
 // 1) Gereksiz WordPress frontend yüklerini azalt
 add_action('init', function () {
     if (is_admin()) {
@@ -325,9 +337,9 @@ add_action('wp_print_scripts', function () {
     }
 }, 9999);
 
-// 11) /projeler/ — GTM'yi LCP sonrasına ertele (inline + enqueue)
+// 11) Anasayfa + /projeler/ — GTM'yi LCP sonrasına ertele (inline + enqueue)
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
-    if (is_admin() || !ledajans_is_projeler_page() || empty($src)) {
+    if (is_admin() || !ledajans_is_lcp_critical_page() || empty($src)) {
         return $tag;
     }
 
@@ -340,7 +352,7 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 }, 100, 3);
 
 add_action('template_redirect', function () {
-    if (is_admin() || !ledajans_is_projeler_page()) {
+    if (is_admin() || !ledajans_is_lcp_critical_page()) {
         return;
     }
 
@@ -389,6 +401,44 @@ function ledajans_delay_gtm_html_buffer($html) {
 
     return $html;
 }
+
+// 12) Anasayfa (head-term "led ekran") — render-blocking olmayan CSS'i asenkrona al
+//     ve geç yüklenen sohbet widget'ını LCP sonrasına ertele. CLS'i bozmamak için
+//     yalnızca fold-altı, kesinlikle non-critical handle'lar hedeflenir.
+add_filter('style_loader_tag', function ($tag, $handle, $href) {
+    if (is_admin() || !is_front_page() || empty($href)) {
+        return $tag;
+    }
+
+    $asyncNeedles = ['chaty', 'contact-form-7', 'elementor-icons', 'line-awesome', 'fontawesome'];
+    foreach ($asyncNeedles as $needle) {
+        if (stripos($handle, $needle) !== false || stripos($href, $needle) !== false) {
+            $mediaAsync = 'media="print" onload="this.media=\'all\';this.onload=null;"';
+            if (stripos($tag, 'media=') !== false) {
+                $async = preg_replace('#media=(["\'])[^"\']*\1#i', $mediaAsync, $tag, 1);
+            } else {
+                $async = str_replace(' href=', " {$mediaAsync} href=", $tag);
+            }
+            $fallback = sprintf('<link rel="stylesheet" href="%s" media="all">', esc_url($href));
+            return $async . '<noscript>' . $fallback . '</noscript>';
+        }
+    }
+
+    return $tag;
+}, 20, 3);
+
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin() || !is_front_page()) {
+        return;
+    }
+
+    $chatHandles = ['chaty', 'chaty-front', 'chaty-front-js', 'chaty-front-end-js'];
+    foreach ($chatHandles as $handle) {
+        if (wp_script_is($handle, 'enqueued')) {
+            wp_dequeue_script($handle);
+        }
+    }
+}, 210);
 
 // Rank Math: REST ile sayfa/yazi SEO meta guncellemesi (deploy script)
 add_action('init', function () {
