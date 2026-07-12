@@ -16,13 +16,14 @@ SLUGS = ["led-ekran", "dis-mekan-led-ekran", "rental-ekran", "ic-mekan-led-ekran
 def load_env() -> tuple[str, str, str]:
     path = os.path.join(ROOT, ".env")
     data: dict[str, str] = {}
-    with open(path, encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            k, _, v = line.partition("=")
-            data[k.strip()] = v.strip().strip("\"'")
+    if os.path.isfile(path):
+        with open(path, encoding="utf-8-sig") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, _, v = line.partition("=")
+                data[k.strip()] = v.strip().strip("\"'")
     site = data.get("WP_SITE_URL", "https://ledajans.com").rstrip("/")
     user = data.get("WP_USERNAME", "")
     pw = data.get("WP_APP_PASSWORD", "").replace(" ", "")
@@ -31,9 +32,20 @@ def load_env() -> tuple[str, str, str]:
 
 def main() -> int:
     site, user, pw = load_env()
+    if not user or not pw:
+        print("HATA: .env içinde WP_USERNAME ve WP_APP_PASSWORD gerekli")
+        return 1
     auth = (user, pw)
     headers = {"User-Agent": "LEDAJANS-Verify-RankMath/1.0"}
     fail = 0
+
+    # Anasayfa: canlı <title> smoke kontrolü (marka + kapsam odaklı olmalı)
+    hr = requests.get(f"{site}/", headers=headers, timeout=30)
+    m = re.search(r"<title[^>]*>([^<]+)</title>", hr.text, re.I)
+    print(f"/ (anasayfa): HTTP {hr.status_code}")
+    print(f"  HTML <title>: {m.group(1).strip() if m else '(title bulunamadi)'}")
+    print()
+
     for slug in SLUGS:
         url = f"{site}/{slug}/"
         pr = requests.get(
