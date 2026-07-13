@@ -17,7 +17,7 @@ import websocket
 _SCRIPTS = Path(__file__).resolve().parents[1]
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
-from lib.repo_paths import AGENT_HUB, ROOT
+from lib.repo_paths import AGENT_HUB, OPS_WORDPRESS, ROOT
 
 CHROME_PATH = "/usr/local/bin/google-chrome"
 MOBILE_USER_AGENT = (
@@ -204,6 +204,28 @@ def collect(url: str, includes: list[str]) -> list[dict]:
                 chrome.wait(timeout=5)
 
 
+def build_critical_css(reports: list[dict]) -> str:
+    chunks = [
+        "/* Chrome CSS Coverage — mobil anasayfa, otomatik üretildi. */",
+    ]
+    for report in reports:
+        chunks.append(f"/* {report['url']} */")
+        for item in report["ranges"]:
+            css = str(item["css"]).strip()
+            if not css or css.startswith("("):
+                continue
+            css = css.replace(
+                'url("../images/plus.png")',
+                'url("https://ledajans.com/wp-content/themes/modins/assets/images/plus.png")',
+            )
+            css = css.replace(
+                'url("../images/minium.png")',
+                'url("https://ledajans.com/wp-content/themes/modins/assets/images/minium.png")',
+            )
+            chunks.append(css)
+    return "\n".join(chunks) + "\n"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", default="https://ledajans.com/")
@@ -213,6 +235,11 @@ def main() -> int:
         type=Path,
         default=AGENT_HUB / "REPORTS" / "mobile-critical-css-coverage.json",
     )
+    parser.add_argument(
+        "--css-output",
+        type=Path,
+        default=OPS_WORDPRESS / "mobile-critical-theme.css",
+    )
     args = parser.parse_args()
     includes = args.include or DEFAULT_INCLUDES
     reports = collect(args.url, includes)
@@ -221,6 +248,8 @@ def main() -> int:
         json.dumps({"url": args.url, "stylesheets": reports}, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+    args.css_output.parent.mkdir(parents=True, exist_ok=True)
+    args.css_output.write_text(build_critical_css(reports), encoding="utf-8")
     for report in reports:
         ratio = (report["used_chars"] / report["total_chars"] * 100) if report["total_chars"] else 0
         print(
@@ -228,6 +257,7 @@ def main() -> int:
             f"karakter ({ratio:.1f}%)"
         )
     print(f"OK: {args.output}")
+    print(f"OK: {args.css_output}")
     return 0 if reports else 1
 
 
