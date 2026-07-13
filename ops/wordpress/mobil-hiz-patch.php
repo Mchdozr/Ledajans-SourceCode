@@ -9,8 +9,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter8');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
+define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
 
 function ledajans_is_public_mobile_request() {
     return wp_is_mobile() && !is_user_logged_in();
@@ -35,6 +36,14 @@ add_action('init', function () {
         $w3tcConfig->set('mobile.enabled', $mobileEnabled);
         $w3tcConfig->set('pgcache.reject.front_page', true);
         $w3tcConfig->save();
+    }
+    $criticalCss = ledajans_mobile_critical_theme_css();
+    $uploads = wp_upload_dir();
+    if ($criticalCss !== '' && empty($uploads['error'])) {
+        file_put_contents(
+            trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE,
+            $criticalCss
+        );
     }
     if (function_exists('w3tc_flush_all')) {
         w3tc_flush_all();
@@ -68,9 +77,21 @@ add_action('wp_head', function () {
         return;
     }
     $criticalCss = ledajans_mobile_critical_theme_css();
-    if ($criticalCss !== '') {
-        echo '<style id="ledajans-mobile-critical-theme">' . $criticalCss . '</style>' . "\n";
+    if ($criticalCss === '') {
+        return;
     }
+    $uploads = wp_upload_dir();
+    $criticalPath = trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE;
+    if (empty($uploads['error']) && is_readable($criticalPath)) {
+        $criticalUrl = trailingslashit($uploads['baseurl']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE;
+        echo '<link id="ledajans-mobile-critical-theme" rel="stylesheet" href="'
+            . esc_url($criticalUrl)
+            . '?ver='
+            . rawurlencode(LEDAJANS_PERF_PATCH_VERSION)
+            . '">' . "\n";
+        return;
+    }
+    echo '<style id="ledajans-mobile-critical-theme">' . $criticalCss . '</style>' . "\n";
 }, 0);
 
 function ledajans_drop_mobile_theme_styles() {
@@ -209,7 +230,6 @@ add_action('wp_head', function () {
     }
 
     if (wp_is_mobile()) {
-        echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp" fetchpriority="high">' . "\n";
         return;
     }
 
@@ -239,82 +259,23 @@ add_action('template_redirect', function () {
     ob_start('ledajans_mobile_lcp_lazyload_buffer');
 }, -99999);
 
-function ledajans_mobile_hero_source() {
-    return 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
-}
-
 function ledajans_mobile_lcp_lazyload_buffer($html) {
     if (!is_string($html) || $html === '') {
         return $html;
     }
 
-    $heroUrl = ledajans_mobile_hero_source();
-
-    // W3TC/Elementor dahil tüm mobil hero preload'larını tek canonical isteğe indir.
+    // Mobil hero verisi kritik CSS içinde; eski preload ve derin img isteğini kaldır.
     $html = (string) preg_replace(
         '#<link\b(?=[^>]*\brel=["\']preload["\'])(?=[^>]*(?:ldajsn2-mobile|hero-poster))[^>]*>\s*#i',
         '',
         $html
     );
-    if (strpos($heroUrl, 'data:image/webp;base64,') !== 0) {
-        $preload = '<link rel="preload" as="image" href="' . esc_url($heroUrl) . '" fetchpriority="high">';
-        $html = (string) preg_replace('#<head([^>]*)>#i', '<head$1>' . "\n" . $preload, $html, 1);
-    }
-
-    $pattern = '#<img\b[^>]*ldajsn2-mobile[^>]*>#i';
-
-    return (string) preg_replace_callback(
-        $pattern,
-        static function ($matches) use ($heroUrl) {
-            $tag = $matches[0];
-            $tag = preg_replace('#\sloading=["\']lazy["\']#i', ' loading="eager"', $tag);
-            if (stripos($tag, 'loading=') === false) {
-                $tag = str_replace('<img', '<img loading="eager"', $tag);
-            }
-            if (preg_match('#\sclass=["\']([^"\']*)["\']#i', $tag, $classMatch)) {
-                $classes = preg_split('/\s+/', trim($classMatch[1]));
-                $classes = array_values(array_filter(
-                    (array) $classes,
-                    static function ($className) {
-                        return !in_array(
-                            strtolower((string) $className),
-                            ['lazy', 'entered', 'loaded', 'skip-', 'no-'],
-                            true
-                        );
-                    }
-                ));
-                $classes[] = 'skip-lazy';
-                $classes[] = 'no-lazy';
-                $tag = preg_replace(
-                    '#\sclass=["\'][^"\']*["\']#i',
-                    ' class="' . esc_attr(implode(' ', array_unique($classes))) . '"',
-                    $tag,
-                    1
-                );
-            } else {
-                $tag = str_replace('<img', '<img class="skip-lazy no-lazy"', $tag);
-            }
-            if (stripos($tag, 'data-no-lazy') === false) {
-                $tag = str_replace('<img', '<img data-no-lazy="1"', $tag);
-            }
-            $tag = preg_replace('#\s(?:data-)?srcset=["\'][^"\']*["\']#i', '', $tag);
-            $tag = preg_replace('#\s(?:data-)?sizes=["\'][^"\']*["\']#i', '', $tag);
-            $tag = preg_replace('#\sdata-src=["\'][^"\']*["\']#i', '', $tag);
-            $tag = preg_replace('#\sonerror=(["\']).*?\1#is', '', $tag);
-            $tag = preg_replace('#\ssrc=["\'][^"\']*["\']#i', '', $tag);
-            $tag = preg_replace('#\swidth=["\'][^"\']*["\']#i', '', $tag);
-            $tag = preg_replace('#\sheight=["\'][^"\']*["\']#i', '', $tag);
-            $tag = str_replace(
-                '<img',
-                '<img src="' . esc_attr($heroUrl) . '" width="768" height="375"',
-                $tag
-            );
-            if (stripos($tag, 'fetchpriority=') === false) {
-                $tag = str_replace('<img', '<img fetchpriority="high"', $tag);
-            }
-            return $tag;
-        },
-        $html
+    return (string) preg_replace(
+        '#<img\b[^>]*ldajsn2-mobile[^>]*>#i',
+        '<span class="ledajans-mobile-hero-accessible" role="img" '
+            . 'aria-label="LEDAJANS LED ekran çözümleri"></span>',
+        $html,
+        1
     );
 }
 
