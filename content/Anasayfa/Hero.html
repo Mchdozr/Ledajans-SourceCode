@@ -457,6 +457,9 @@
       pointer-events: none;
       transition: transform 0.75s cubic-bezier(.22,.61,.36,1), opacity 0.5s ease;
     }
+    .ledajans-hero-fair-panel[hidden] {
+      display: none !important;
+    }
     .ledajans-hero-fair-card {
       border-radius: 20px;
       border: 1px solid rgba(148, 163, 184, 0.28);
@@ -480,12 +483,16 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
       background-size: cover;
       background-position: center;
       opacity: 0.2;
       pointer-events: none;
       z-index: 0;
+    }
+    @media (min-width: 769px) {
+      .ledajans-hero-fair-card::before {
+        background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
+      }
     }
     .ledajans-hero-fair-card > * {
       position: relative;
@@ -744,6 +751,15 @@
       justify-content: center;
       align-items: center;
     }
+    .ledajans-hero .ledajans-hero-buttons {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
     .ledajans-btn-primary, .ledajans-btn-secondary {
       display: inline-flex;
       align-items: center;
@@ -940,7 +956,7 @@
         <img class="skip-lazy no-lazy" data-no-lazy="1" src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60-768x375.webp" width="768" height="375" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" loading="eager" decoding="async">
       </div>
       <div class="ledajans-hero-overlay"></div>
-      <aside class="ledajans-hero-fair-panel" id="ledajansHeroFairPanel" aria-label="SIGNISTANBUL fuar duyurusu">
+      <aside class="ledajans-hero-fair-panel" id="ledajansHeroFairPanel" aria-label="SIGNISTANBUL fuar duyurusu" hidden>
         <div class="ledajans-hero-fair-card" id="ledajansHeroFairCard">
           <button type="button" class="ledajans-hero-fair-close" id="ledajansHeroFairClose" aria-label="Kapat">&times;</button>
           <div class="ledajans-hero-fair-logos">

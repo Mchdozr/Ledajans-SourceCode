@@ -9,11 +9,29 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter2');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
         return;
+    }
+    if (function_exists('w3tc_save_user_agent_group')) {
+        w3tc_save_user_agent_group(
+            'ledajans_mobile',
+            'default',
+            '',
+            [
+                'mobile',
+                'iphone',
+                'ipod',
+                'android',
+                'iemobile',
+                'opera mobi',
+                'blackberry',
+                'webos',
+            ],
+            true
+        );
     }
     if (function_exists('w3tc_flush_all')) {
         w3tc_flush_all();
@@ -163,7 +181,7 @@ add_action('template_redirect', function () {
         return;
     }
     ob_start('ledajans_mobile_lcp_lazyload_buffer');
-}, 99999);
+}, -99999);
 
 function ledajans_mobile_lcp_lazyload_buffer($html) {
     if (!is_string($html) || $html === '') {
@@ -283,14 +301,9 @@ add_filter('wp_resource_hints', function ($urls, $relation_type) {
 }, 10, 2);
 
 // 6) Mobil anasayfada tema scriptlerini sıralamayı bozmadan footer'a taşı
-add_action('wp_enqueue_scripts', function () {
-    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
-        return;
-    }
-
-    global $wp_scripts;
-    if (empty($wp_scripts) || empty($wp_scripts->registered)) {
-        return;
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($src)) {
+        return $tag;
     }
 
     $footerHandles = [
@@ -306,15 +319,33 @@ add_action('wp_enqueue_scripts', function () {
         'modins-main',
     ];
 
-    foreach ($footerHandles as $handle) {
-        if (!isset($wp_scripts->registered[$handle])) {
-            continue;
-        }
-        $wp_scripts->registered[$handle]->args = 1;
-        $wp_scripts->add_data($handle, 'group', 1);
-        $wp_scripts->add_data($handle, 'strategy', 'defer');
+    if (!in_array($handle, $footerHandles, true)) {
+        return $tag;
     }
-}, 999);
+    if (!isset($GLOBALS['ledajans_mobile_footer_scripts'])) {
+        $GLOBALS['ledajans_mobile_footer_scripts'] = [];
+    }
+    $GLOBALS['ledajans_mobile_footer_scripts'][] = [
+        'handle' => $handle,
+        'src' => $src,
+    ];
+    return '';
+}, 40, 3);
+
+add_action('wp_footer', function () {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()
+        || empty($GLOBALS['ledajans_mobile_footer_scripts'])) {
+        return;
+    }
+
+    foreach ((array) $GLOBALS['ledajans_mobile_footer_scripts'] as $script) {
+        printf(
+            '<script id="%s-js" defer src="%s"></script>' . "\n",
+            esc_attr($script['handle']),
+            esc_url($script['src'])
+        );
+    }
+}, 1);
 
 // 7) Kritik font preload hint'leri (mobilde sistem font fallback; desktop preload korunur)
 add_action('wp_head', function () {
