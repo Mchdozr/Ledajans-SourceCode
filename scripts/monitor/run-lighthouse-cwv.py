@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import statistics
 import subprocess
 import sys
@@ -90,21 +91,37 @@ def run_lighthouse(url: str, form_factor: str, out_path: Path) -> int:
     return result.returncode
 
 
-def gate_check(metrics: dict, gates: dict) -> tuple[bool, list[str]]:
+def gate_check(metrics: dict, gates: dict, strict_upper: bool = False) -> tuple[bool, list[str]]:
     fails: list[str] = []
     perf = metrics.get("perf")
-    if perf is not None and perf < gates["perf"]:
+    if perf is None:
+        fails.append("perf=missing")
+    elif perf < gates["perf"]:
         fails.append(f"perf={perf:.2f} < {gates['perf']}")
     lcp = metrics.get("lcp_ms")
-    if lcp is not None and lcp > gates["lcp_ms"]:
-        fails.append(f"lcp={lcp:.0f}ms > {gates['lcp_ms']}ms")
+    if lcp is None:
+        fails.append("lcp=missing")
+    elif lcp > gates["lcp_ms"] or (strict_upper and lcp == gates["lcp_ms"]):
+        operator = ">=" if strict_upper else ">"
+        fails.append(f"lcp={lcp:.0f}ms {operator} {gates['lcp_ms']}ms")
     tbt = metrics.get("tbt_ms")
-    if tbt is not None and tbt > gates["tbt_ms"]:
-        fails.append(f"tbt={tbt:.0f}ms > {gates['tbt_ms']}ms")
+    if tbt is None:
+        fails.append("tbt=missing")
+    elif tbt > gates["tbt_ms"] or (strict_upper and tbt == gates["tbt_ms"]):
+        operator = ">=" if strict_upper else ">"
+        fails.append(f"tbt={tbt:.0f}ms {operator} {gates['tbt_ms']}ms")
     cls = metrics.get("cls")
-    if cls is not None and cls > gates["cls"]:
-        fails.append(f"cls={cls:.3f} > {gates['cls']}")
+    if cls is None:
+        fails.append("cls=missing")
+    elif cls > gates["cls"] or (strict_upper and cls == gates["cls"]):
+        operator = ">=" if strict_upper else ">"
+        fails.append(f"cls={cls:.3f} {operator} {gates['cls']}")
     return len(fails) == 0, fails
+
+
+def url_slug(url: str) -> str:
+    path = url.removeprefix("https://ledajans.com").strip("/")
+    return re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
 
 
 def fmt_metrics(m: dict) -> str:
@@ -137,7 +154,8 @@ def write_report(payload: dict, path: Path) -> None:
         lcp = f"{m['lcp_ms'] / 1000:.1f}s" if m.get("lcp_ms") else "?"
         tbt = f"{m['tbt_ms']:.0f}ms" if m.get("tbt_ms") else "?"
         cls = f"{m['cls']:.3f}" if m.get("cls") is not None else "?"
-        lines.append(f"| {row['url']} | {perf} | {lcp} | {tbt} | {cls} |")
+        run_status = f"{row['run_count']}/{row['requested_runs']}"
+        lines.append(f"| {row['url']} ({run_status}) | {perf} | {lcp} | {tbt} | {cls} |")
 
     lines.extend(["", "## Desktop gate", ""])
     for row in payload["desktop"]:
@@ -148,7 +166,7 @@ def write_report(payload: dict, path: Path) -> None:
 
     home_mobile = next((r for r in payload["mobile"] if r["url"].rstrip("/") == "https://ledajans.com"), None)
     if home_mobile:
-        ok, fails = gate_check(home_mobile["metrics"], MOBILE_TARGETS)
+        ok, fails = gate_check(home_mobile["metrics"], MOBILE_TARGETS, strict_upper=True)
         lines.extend(["", "## Mobile target (homepage)", ""])
         lines.append(f"- {'PASS' if ok else 'FAIL: ' + '; '.join(fails)}")
 
@@ -181,8 +199,9 @@ def main() -> int:
 
     for url in urls:
         mobile_runs: list[dict] = []
+        slug = url_slug(url)
         for i in range(args.mobile_runs):
-            out = DATA_BASELINES / f"audit-mobile-{tag}-{i}.json"
+            out = DATA_BASELINES / f"audit-mobile-{tag}-{slug}-{i}.json"
             rc = run_lighthouse(url, "mobile", out)
             if rc == 0 and out.is_file():
                 with out.open(encoding="utf-8") as f:
@@ -190,11 +209,21 @@ def main() -> int:
             time.sleep(2)
         if mobile_runs:
             med = median_metrics(mobile_runs)
-            payload["mobile"].append({"url": url, "metrics": med, "runs": mobile_runs})
+            payload["mobile"].append(
+                {
+                    "url": url,
+                    "metrics": med,
+                    "runs": mobile_runs,
+                    "run_count": len(mobile_runs),
+                    "requested_runs": args.mobile_runs,
+                    "complete": len(mobile_runs) == args.mobile_runs,
+                }
+            )
             print(f"  mobile median {url}: {fmt_metrics(med)}")
+        if len(mobile_runs) != args.mobile_runs:
+            print(f"  mobile incomplete {url}: {len(mobile_runs)}/{args.mobile_runs}")
 
         desktop_runs: list[dict] = []
-        slug = url.replace("https://ledajans.com", "").strip("/") or "home"
         for i in range(args.desktop_runs):
             out = DATA_BASELINES / f"audit-desktop-{tag}-{slug}-{i}.json"
             rc = run_lighthouse(url, "desktop", out)
@@ -204,9 +233,20 @@ def main() -> int:
             time.sleep(2)
         if desktop_runs:
             med = median_metrics(desktop_runs)
-            payload["desktop"].append({"url": url, "metrics": med, "runs": desktop_runs})
+            payload["desktop"].append(
+                {
+                    "url": url,
+                    "metrics": med,
+                    "runs": desktop_runs,
+                    "run_count": len(desktop_runs),
+                    "requested_runs": args.desktop_runs,
+                    "complete": len(desktop_runs) == args.desktop_runs,
+                }
+            )
             ok, fails = gate_check(med, DESKTOP_GATES)
             print(f"  desktop {url}: {fmt_metrics(med)} [{'OK' if ok else 'FAIL'}]")
+        if len(desktop_runs) != args.desktop_runs:
+            print(f"  desktop incomplete {url}: {len(desktop_runs)}/{args.desktop_runs}")
 
     summary_path = DATA_BASELINES / f"cwv-summary-{tag}.json"
     with summary_path.open("w", encoding="utf-8") as f:
@@ -217,10 +257,14 @@ def main() -> int:
     print(f"OK: {report_path}")
 
     home = next((r for r in payload["mobile"] if "ledajans.com/" == r["url"] or r["url"] == "https://ledajans.com/"), None)
-    if home:
-        ok, _ = gate_check(home["metrics"], MOBILE_TARGETS)
-        return 0 if ok else 1
-    return 0
+    mobile_ok = bool(
+        home and home["complete"] and gate_check(home["metrics"], MOBILE_TARGETS, strict_upper=True)[0]
+    )
+    desktop_ok = len(payload["desktop"]) == len(urls) and all(
+        row["complete"] and gate_check(row["metrics"], DESKTOP_GATES)[0]
+        for row in payload["desktop"]
+    )
+    return 0 if mobile_ok and desktop_ok else 1
 
 
 if __name__ == "__main__":
