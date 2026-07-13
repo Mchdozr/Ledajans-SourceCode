@@ -185,12 +185,16 @@ def main() -> int:
         return 1
 
     time.sleep(2)
-    rb = requests.get(f"{site}/robots.txt", timeout=20)
-    crawl = rb.status_code == 200 and "Disallow: /*?s=" in rb.text
     desktop_ua = (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
     )
+    rb = requests.get(
+        f"{site}/robots.txt",
+        timeout=20,
+        headers={"User-Agent": desktop_ua},
+    )
+    crawl = rb.status_code == 200 and "Disallow: /*?s=" in rb.text
     mobile_ua = (
         "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
         "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
@@ -210,7 +214,7 @@ def main() -> int:
     mu_ok = (
         home.status_code == 200
         and "ledajans-mobile-font-fallback" in home.text
-        and "ldajsn2-mobile-q42-768x375-1.webp" in home.text
+        and 'src="data:image/webp;base64,' in home.text
     )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
     print(f"mu-plugin guncel: {'OK' if mu_ok else 'EKSIK'}")
