@@ -9,32 +9,25 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3b');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3c');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
         return;
     }
-    if (function_exists('w3tc_save_user_agent_group')) {
-        w3tc_save_user_agent_group(
-            'ledajans_mobile',
-            'default',
-            '',
-            [
-                'mobile',
-                'iphone',
-                'ipod',
-                'android',
-                'iemobile',
-                'opera mobi',
-                'blackberry',
-                'webos',
-            ],
-            true
-        );
-    }
     if (function_exists('w3tc_config')) {
         $w3tcConfig = w3tc_config();
+        $mobileGroups = $w3tcConfig->get_array('mobile.rgroups');
+        unset($mobileGroups['ledajans_mobile']);
+        $mobileEnabled = false;
+        foreach ($mobileGroups as $mobileGroup) {
+            if (!empty($mobileGroup['enabled'])) {
+                $mobileEnabled = true;
+                break;
+            }
+        }
+        $w3tcConfig->set('mobile.rgroups', $mobileGroups);
+        $w3tcConfig->set('mobile.enabled', $mobileEnabled);
         $w3tcConfig->set('pgcache.reject.front_page', true);
         $w3tcConfig->save();
     }
