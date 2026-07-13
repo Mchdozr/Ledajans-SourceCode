@@ -22,6 +22,7 @@ except ImportError:
     sys.exit(1)
 
 SNIPPET_NAME = "LEDAJANS Write Site Files REST"
+CRITICAL_CSS_PLACEHOLDER = "__LEDAJANS_MOBILE_CRITICAL_CSS_B64__"
 SNIPPET_CODE = r"""if (!defined('ABSPATH')) { exit; }
 
 add_action('rest_api_init', static function (): void {
@@ -99,6 +100,17 @@ def read_b64_file(path: Path) -> str:
         return base64.b64encode(f.read()).decode("ascii")
 
 
+def read_mu_b64() -> str:
+    mu_path = OPS_WORDPRESS / "mobil-hiz-patch.php"
+    css_path = OPS_WORDPRESS / "mobile-critical-theme.css"
+    mu_source = mu_path.read_text(encoding="utf-8")
+    if mu_source.count(CRITICAL_CSS_PLACEHOLDER) != 1:
+        raise RuntimeError("Mobil kritik CSS placeholder tekil olmali")
+    css_b64 = base64.b64encode(css_path.read_bytes()).decode("ascii")
+    rendered = mu_source.replace(CRITICAL_CSS_PLACEHOLDER, css_b64)
+    return base64.b64encode(rendered.encode("utf-8")).decode("ascii")
+
+
 def ensure_snippet(site: str, auth: tuple[str, str]) -> bool:
     sid = 16  # LEDAJANS Write Site Files REST (sabit id, list 403 olabilir)
     r = requests.get(
@@ -150,7 +162,7 @@ def main() -> int:
 
     auth = (user, pw)
     robots_b64 = read_b64_file(OPS / "robots.txt")
-    mu_b64 = read_b64_file(OPS_WORDPRESS / "mobil-hiz-patch.php")
+    mu_b64 = read_mu_b64()
 
     if not args.apply:
         print("DRY-RUN: write-files REST ile robots + mu-plugin")
@@ -214,6 +226,7 @@ def main() -> int:
     mu_ok = (
         home.status_code == 200
         and "ledajans-mobile-font-fallback" in home.text
+        and "ledajans-mobile-critical-theme" in home.text
         and 'src="data:image/webp;base64,' in home.text
     )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
