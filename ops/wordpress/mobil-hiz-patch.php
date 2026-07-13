@@ -9,6 +9,22 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter2');
+
+add_action('init', function () {
+    if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
+        return;
+    }
+    if (function_exists('w3tc_flush_all')) {
+        w3tc_flush_all();
+    }
+    if (function_exists('litespeed_purge_all')) {
+        litespeed_purge_all();
+    }
+    wp_cache_flush();
+    update_option('ledajans_perf_patch_version', LEDAJANS_PERF_PATCH_VERSION, false);
+}, 1);
+
 function ledajans_is_projeler_page() {
     if (is_admin()) {
         return false;
@@ -32,7 +48,7 @@ function ledajans_is_lcp_critical_page() {
     if (ledajans_is_projeler_page()) {
         return true;
     }
-    return ledajans_is_money_page();
+    return wp_is_mobile() && ledajans_is_money_page();
 }
 
 function ledajans_is_money_page() {
@@ -60,7 +76,7 @@ add_action('init', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    if (is_admin()) {
+    if (is_admin() || !wp_is_mobile()) {
         return;
     }
 
@@ -69,17 +85,20 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('wp-block-library-theme');
     wp_dequeue_style('global-styles');
 
-    // jQuery Migrate kaldır (uyumsuz eski eklenti yoksa güvenli)
-    if (!is_admin()) {
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', includes_url('/js/jquery/jquery.min.js'), [], null, true);
-        wp_enqueue_script('jquery');
+    // Mobilde jQuery core kaydını koru, yalnızca migrate bağımlılığını çıkar.
+    $scripts = wp_scripts();
+    if (isset($scripts->registered['jquery'])) {
+        $scripts->registered['jquery']->deps = array_values(
+            array_diff((array) $scripts->registered['jquery']->deps, ['jquery-migrate'])
+        );
     }
+    wp_dequeue_script('jquery-migrate');
+    wp_deregister_script('jquery-migrate');
 }, 100);
 
 // 2) Kaynağa göre gereksiz CSS/JS dosyalarını düşür (audit odaklı)
 add_action('wp_print_styles', function () {
-    if (is_admin()) {
+    if (is_admin() || !wp_is_mobile()) {
         return;
     }
 
@@ -89,8 +108,6 @@ add_action('wp_print_styles', function () {
     }
 
     $dropCssNeedles = [
-        '/line-awesome/',
-        '/fontawesome/',
         '/block-editor/style.min.css',
         '/popup-maker/dist/packages/block-library-style.css',
     ];
@@ -117,8 +134,12 @@ add_action('wp_head', function () {
         return;
     }
 
-    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" media="(max-width: 768px)" fetchpriority="high">' . "\n";
-    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp" media="(min-width: 769px)" fetchpriority="high">' . "\n";
+    if (wp_is_mobile()) {
+        echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60-768x375.webp" fetchpriority="high">' . "\n";
+        return;
+    }
+
+    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp" fetchpriority="high">' . "\n";
 }, 1);
 
 add_filter('wp_get_attachment_image_attributes', function ($attr) {
@@ -138,7 +159,7 @@ add_filter('wp_get_attachment_image_attributes', function ($attr) {
 
 // 3b) W3TC lazyload: mobil LCP görsellerini lazy dışı bırak (skip-lazy + eager)
 add_action('template_redirect', function () {
-    if (is_admin() || !wp_is_mobile()) {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
         return;
     }
     ob_start('ledajans_mobile_lcp_lazyload_buffer');
@@ -149,40 +170,44 @@ function ledajans_mobile_lcp_lazyload_buffer($html) {
         return $html;
     }
 
-    // Çift preload temizliği — yalnızca q60 LCP preload kalsın
-    $seenPreload = false;
-    $html = (string) preg_replace_callback(
-        '#<link[^>]+rel=["\']preload["\'][^>]*ldajsn2-mobile[^>]*>#i',
-        static function ($match) use (&$seenPreload) {
-            $tag = $match[0];
-            if (stripos($tag, 'q72') !== false) {
-                return '';
-            }
-            if ($seenPreload) {
-                return '';
-            }
-            $seenPreload = true;
-            return $tag;
-        },
+    $heroUrl = 'https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60-768x375.webp';
+
+    // W3TC/Elementor dahil tüm mobil hero preload'larını tek canonical isteğe indir.
+    $html = (string) preg_replace(
+        '#<link\b(?=[^>]*\brel=["\']preload["\'])(?=[^>]*(?:ldajsn2-mobile|hero-poster))[^>]*>\s*#i',
+        '',
         $html
     );
+    $preload = '<link rel="preload" as="image" href="' . esc_url($heroUrl) . '" fetchpriority="high">';
+    $html = (string) preg_replace('#<head([^>]*)>#i', '<head$1>' . "\n" . $preload, $html, 1);
 
-    $lcpNeedles = ['ldajsn2-mobile', 'hero-poster', 'ledajans-hero-bg-mobile'];
-    $pattern = '#<img\b([^>]*(?:' . implode('|', array_map('preg_quote', $lcpNeedles)) . ')[^>]*)>#i';
+    $pattern = '#<img\b[^>]*ldajsn2-mobile[^>]*>#i';
 
     return (string) preg_replace_callback(
         $pattern,
-        static function ($matches) {
+        static function ($matches) use ($heroUrl) {
             $tag = $matches[0];
             $tag = preg_replace('#\sloading=["\']lazy["\']#i', ' loading="eager"', $tag);
             if (stripos($tag, 'loading=') === false) {
                 $tag = str_replace('<img', '<img loading="eager"', $tag);
             }
             if (preg_match('#\sclass=["\']([^"\']*)["\']#i', $tag, $classMatch)) {
-                $classes = trim(preg_replace('#(^|\s)lazy(\s|$)#i', ' ', $classMatch[1]) . ' skip-lazy no-lazy');
+                $classes = preg_split('/\s+/', trim($classMatch[1]));
+                $classes = array_values(array_filter(
+                    (array) $classes,
+                    static function ($className) {
+                        return !in_array(
+                            strtolower((string) $className),
+                            ['lazy', 'entered', 'loaded', 'skip-', 'no-'],
+                            true
+                        );
+                    }
+                ));
+                $classes[] = 'skip-lazy';
+                $classes[] = 'no-lazy';
                 $tag = preg_replace(
                     '#\sclass=["\'][^"\']*["\']#i',
-                    ' class="' . esc_attr(preg_replace('/\s+/', ' ', $classes)) . '"',
+                    ' class="' . esc_attr(implode(' ', array_unique($classes))) . '"',
                     $tag,
                     1
                 );
@@ -192,42 +217,26 @@ function ledajans_mobile_lcp_lazyload_buffer($html) {
             if (stripos($tag, 'data-no-lazy') === false) {
                 $tag = str_replace('<img', '<img data-no-lazy="1"', $tag);
             }
-            if (preg_match('#\sdata-src=["\']([^"\']+)["\']#i', $tag, $dataSrc)) {
-                $realSrc = $dataSrc[1];
-                if (!preg_match('#\ssrc=["\'][^"\']+["\']#i', $tag) || preg_match('#\ssrc=["\']data:#i', $tag)) {
-                    $tag = preg_replace('#\ssrc=["\'][^"\']*["\']#i', '', $tag);
-                    $tag = str_replace('<img', '<img src="' . esc_url($realSrc) . '"', $tag);
-                }
-                $tag = preg_replace('#\sdata-src=["\'][^"\']*["\']#i', '', $tag);
-            }
-            $tag = preg_replace('#\ssrc=["\']data:image[^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\s(?:data-)?srcset=["\'][^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\s(?:data-)?sizes=["\'][^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\sdata-src=["\'][^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\sonerror=(["\']).*?\1#is', '', $tag);
+            $tag = preg_replace('#\ssrc=["\'][^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\swidth=["\'][^"\']*["\']#i', '', $tag);
+            $tag = preg_replace('#\sheight=["\'][^"\']*["\']#i', '', $tag);
+            $tag = str_replace(
+                '<img',
+                '<img src="' . esc_url($heroUrl) . '" width="768" height="375"',
+                $tag
+            );
             if (stripos($tag, 'fetchpriority=') === false) {
                 $tag = str_replace('<img', '<img fetchpriority="high"', $tag);
-            }
-            if (stripos($tag, 'ldajsn2-mobile-q60') !== false || stripos($tag, 'ledajans-hero-bg-mobile') !== false) {
-                $tag = preg_replace(
-                    '#\ssrc=["\'][^"\']*["\']#i',
-                    ' src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp"',
-                    $tag,
-                    1
-                );
             }
             return $tag;
         },
         $html
     );
 }
-
-// 3c) Mobilde jQuery defer (anasayfa — TBT düşürme)
-add_filter('script_loader_tag', function ($tag, $handle, $src) {
-    if (is_admin() || !wp_is_mobile() || !is_front_page() || $handle !== 'jquery' || empty($src)) {
-        return $tag;
-    }
-    if (stripos($tag, 'defer') === false) {
-        $tag = str_replace(' src=', ' defer src=', $tag);
-    }
-    return $tag;
-}, 15, 3);
 
 // 4) GTM/GA scriptlerini parse-blocking olmaktan çıkar
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
@@ -273,48 +282,39 @@ add_filter('wp_resource_hints', function ($urls, $relation_type) {
     return array_unique($urls);
 }, 10, 2);
 
-// 6) Home sayfasında ağır scriptleri footer'a it
+// 6) Mobil anasayfada tema scriptlerini sıralamayı bozmadan footer'a taşı
 add_action('wp_enqueue_scripts', function () {
-    if (is_admin() || !is_front_page()) {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
         return;
     }
 
     global $wp_scripts;
-    if (empty($wp_scripts) || empty($wp_scripts->queue)) {
+    if (empty($wp_scripts) || empty($wp_scripts->registered)) {
         return;
     }
 
-    $moveFooterNeedles = [
-        'elementor',
-        'swiper',
+    $footerHandles = [
+        'jquery',
+        'jquery-core',
+        'bootstrap',
+        'jquery-magnific-popup',
+        'jquery-cookie',
+        'jquery-appear',
+        'imagesloaded',
+        'masonry',
+        'jquery-masonry',
+        'modins-main',
     ];
 
-    foreach ((array) $wp_scripts->queue as $handle) {
-        if (empty($wp_scripts->registered[$handle])) {
+    foreach ($footerHandles as $handle) {
+        if (!isset($wp_scripts->registered[$handle])) {
             continue;
         }
-
-        $reg = $wp_scripts->registered[$handle];
-        $src = (string) $reg->src;
-        $hit = false;
-
-        foreach ($moveFooterNeedles as $needle) {
-            if (stripos($handle, $needle) !== false || stripos($src, $needle) !== false) {
-                $hit = true;
-                break;
-            }
-        }
-
-        if (!$hit) {
-            continue;
-        }
-
-        wp_dequeue_script($handle);
-        wp_deregister_script($handle);
-        wp_register_script($handle, $src, $reg->deps, $reg->ver, true);
-        wp_enqueue_script($handle);
+        $wp_scripts->registered[$handle]->args = 1;
+        $wp_scripts->add_data($handle, 'group', 1);
+        $wp_scripts->add_data($handle, 'strategy', 'defer');
     }
-}, 110);
+}, 999);
 
 // 7) Kritik font preload hint'leri (mobilde sistem font fallback; desktop preload korunur)
 add_action('wp_head', function () {
@@ -335,7 +335,7 @@ add_action('wp_head', function () {
 
 // 8) Sayfa bazlı gereksiz Elementor widget CSS'lerini kaldır
 add_action('wp_enqueue_scripts', function () {
-    if (is_admin()) {
+    if (is_admin() || !wp_is_mobile()) {
         return;
     }
 
@@ -524,28 +524,27 @@ function ledajans_delay_gtm_html_buffer($html) {
     return $html;
 }
 
-// 12) Anasayfa — render-blocking olmayan CSS'i asenkrona al (mobilde genişletilmiş liste)
+// 12) Mobil anasayfada fold-altı CSS'i asenkrona al
 add_filter('style_loader_tag', function ($tag, $handle, $href) {
-    if (is_admin() || empty($href)) {
+    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($href)) {
         return $tag;
     }
 
-    $mobileHome = wp_is_mobile() && is_front_page();
-    $desktopHome = !wp_is_mobile() && is_front_page();
-    if (!$mobileHome && !$desktopHome) {
-        return $tag;
-    }
-
-    $asyncNeedles = ['chaty', 'contact-form-7', 'elementor-icons', 'line-awesome', 'fontawesome'];
-    if ($mobileHome) {
-        $asyncNeedles = array_merge($asyncNeedles, [
-            'popup-maker',
-            'swiper',
-            'elementor-widget-',
-            'elementor-animations',
-            'e-animation',
-        ]);
-    }
+    $asyncNeedles = [
+        'chaty',
+        'contact-form-7',
+        'elementor-icons',
+        'line-awesome',
+        'fontawesome',
+        'font-awesome',
+        'fonts.googleapis.com',
+        'magnific',
+        'popup-maker',
+        'swiper',
+        'elementor-widget-',
+        'elementor-animations',
+        'e-animation',
+    ];
 
     foreach ($asyncNeedles as $needle) {
         if (stripos($handle, $needle) !== false || stripos($href, $needle) !== false) {
@@ -563,7 +562,73 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
     return $tag;
 }, 20, 3);
 
-// 12b) Mobilde Chaty — tüm sayfalarda scroll/idle sonrası yükle
+// 12b) Mobil anasayfada fold-altı Elementor JS'ini ilk etkileşime kadar beklet
+add_filter('script_loader_tag', function ($tag, $handle, $src) {
+    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($src)) {
+        return $tag;
+    }
+
+    $delayNeedles = [
+        '/elementor/assets/js/',
+        '/elementor-pro/assets/js/',
+        '/modins-themer/elementor/assets/main.js',
+        '/elementor/assets/lib/swiper/',
+        '/send-app/',
+        '/contact-form-7/',
+        '/jquery/ui/',
+        '/font-awesome/js/',
+    ];
+
+    foreach ($delayNeedles as $needle) {
+        if (stripos($src, $needle) === false) {
+            continue;
+        }
+        if (!isset($GLOBALS['ledajans_mobile_deferred_scripts'])) {
+            $GLOBALS['ledajans_mobile_deferred_scripts'] = [];
+        }
+        $GLOBALS['ledajans_mobile_deferred_scripts'][] = $src;
+        return '';
+    }
+
+    return $tag;
+}, 60, 3);
+
+add_action('wp_footer', function () {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()
+        || empty($GLOBALS['ledajans_mobile_deferred_scripts'])) {
+        return;
+    }
+
+    $urls = array_values(array_unique((array) $GLOBALS['ledajans_mobile_deferred_scripts']));
+    ?>
+<script>
+(function(){
+  var queue=<?php echo wp_json_encode($urls); ?>,started=false;
+  function next(){
+    var url=queue.shift();
+    if(!url){return;}
+    var script=document.createElement('script');
+    script.src=url;
+    script.async=false;
+    script.onload=next;
+    script.onerror=next;
+    document.body.appendChild(script);
+  }
+  function start(){
+    if(started){return;}
+    started=true;
+    next();
+  }
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(eventName){
+    window.addEventListener(eventName,start,{once:true,passive:true});
+  });
+  setTimeout(start,12000);
+})();
+</script>
+    <?php
+}, 98);
+
+// 12c) Mobilde Chaty — tüm sayfalarda scroll/idle sonrası yükle
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
     if (is_admin() || !wp_is_mobile() || empty($src) || stripos($src, 'chaty') === false) {
         return $tag;
@@ -606,7 +671,7 @@ add_action('wp_footer', function () {
     <?php
 }, 99);
 
-// 12c) Anasayfa — geç yüklenen sohbet widget dequeue (desktop; mobil 12b kullanır)
+// 12d) Anasayfa — geç yüklenen sohbet widget dequeue (desktop; mobil 12c kullanır)
 add_action('wp_enqueue_scripts', function () {
     if (is_admin() || !is_front_page() || wp_is_mobile()) {
         return;

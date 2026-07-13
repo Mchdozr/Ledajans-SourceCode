@@ -346,7 +346,12 @@
     function getFeaturedImage(post) {
       if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
         var fm = post._embedded['wp:featuredmedia'][0];
-        return fm.source_url || (fm.media_details && fm.media_details.sizes && fm.media_details.sizes.medium_large && fm.media_details.sizes.medium_large.source_url) || '';
+        var sizes = fm.media_details && fm.media_details.sizes;
+        return (sizes && sizes.medium_large && sizes.medium_large.source_url) ||
+          (sizes && sizes.large && sizes.large.source_url) ||
+          (sizes && sizes.medium && sizes.medium.source_url) ||
+          fm.source_url ||
+          '';
       }
       if (post.content && post.content.rendered) {
         var contentImage = getImageFromContent(post.content.rendered);
@@ -365,7 +370,7 @@
       var date = formatDate(post.date);
       var titlePlain = stripHtml(post.title.rendered || '');
       var imageHtml = imageUrl
-        ? '<img src="' + escAttr(imageUrl) + '" alt="' + escAttr(titlePlain) + '" loading="lazy" decoding="async">'
+        ? '<img src="' + escAttr(imageUrl) + '" width="400" height="192" alt="' + escAttr(titlePlain) + '" loading="lazy" decoding="async" fetchpriority="low">'
         : '<div style="width:100%;height:100%;background:linear-gradient(135deg,#F46F2C 0%,#ea580c 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">LED</div>';
   
       return '<a href="' + escAttr(post.link) + '" class="ledajans-blog-card-wrap">' +
@@ -397,7 +402,7 @@
     }
   
     function loadPosts() {
-      fetch(apiUrl, { credentials: 'omit' })
+      fetch(apiUrl, { credentials: 'omit', priority: 'low' })
         .then(function(response) {
           if (!response.ok) throw new Error('API yanıtı başarısız');
           return response.json();
@@ -436,6 +441,7 @@
       loadPosts();
     };
 
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -443,10 +449,10 @@
           start();
         }
       });
-    }, { rootMargin: '500px 0px' });
+    }, { rootMargin: isMobile ? '150px 0px' : '500px 0px' });
 
     observer.observe(blogSection);
-    setTimeout(start, 5000);
+    setTimeout(start, isMobile ? 15000 : 5000);
   })();
   </script>
   
