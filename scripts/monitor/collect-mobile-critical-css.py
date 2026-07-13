@@ -3,15 +3,19 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
+import re
 import socket
 import subprocess
 import sys
 import tempfile
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
+import requests
 import websocket
 
 _SCRIPTS = Path(__file__).resolve().parents[1]
@@ -24,7 +28,28 @@ MOBILE_USER_AGENT = (
     "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Mobile Safari/537.36"
 )
+DESKTOP_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+)
 DEFAULT_INCLUDES = ["bootstrap.css", "template.css"]
+FULL_CRITICAL_STYLE_IDS = [
+    "elementor-frontend-css",
+    "widget-icon-box-css",
+    "elementor-post-9-css",
+    "elementor-post-43-css",
+    "elementor-post-1248-css",
+    "modins-style-css",
+    "modins-parent-style-css",
+    "modins-child-style-css",
+    "modins-custom-style-color-css",
+]
+EXTRA_CRITICAL_CSS = """
+.gva-offcanvas-content.open{left:0;opacity:1;filter:alpha(opacity=100);visibility:visible}
+.gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu>li.menu-item-has-children.menu-active .caret{background-image:url("https://ledajans.com/wp-content/themes/modins/assets/images/minium.png")}
+#gva-overlay.open{display:block}
+#gva-overlay:hover,.gva-offcanvas-content .top-canvas .control-close-mm:hover{cursor:pointer}
+"""
 
 
 class CdpClient:
@@ -204,7 +229,40 @@ def collect(url: str, includes: list[str]) -> list[dict]:
                 chrome.wait(timeout=5)
 
 
-def build_critical_css(reports: list[dict]) -> str:
+def rewrite_relative_urls(css: str, source_url: str) -> str:
+    def replace(match: re.Match) -> str:
+        raw = match.group(1).strip().strip("\"'")
+        if not raw or raw.startswith(("data:", "http:", "https:", "#")):
+            return match.group(0)
+        return f'url("{urllib.parse.urljoin(source_url, raw)}")'
+
+    return re.sub(r"url\(([^)]+)\)", replace, css, flags=re.IGNORECASE)
+
+
+def fetch_full_critical_styles(url: str) -> list[dict]:
+    response = requests.get(url, headers={"User-Agent": DESKTOP_USER_AGENT}, timeout=60)
+    response.raise_for_status()
+    by_url: dict[str, dict] = {}
+    for tag in re.findall(r"<link\b[^>]*>", response.text, re.IGNORECASE):
+        id_match = re.search(r"\bid=[\"']([^\"']+)", tag, re.IGNORECASE)
+        href_match = re.search(r"\bhref=[\"']([^\"']+)", tag, re.IGNORECASE)
+        if not id_match or not href_match or id_match.group(1) not in FULL_CRITICAL_STYLE_IDS:
+            continue
+        source_url = html.unescape(href_match.group(1))
+        if source_url in by_url:
+            by_url[source_url]["handles"].append(id_match.group(1))
+            continue
+        css_response = requests.get(source_url, headers={"User-Agent": DESKTOP_USER_AGENT}, timeout=60)
+        css_response.raise_for_status()
+        by_url[source_url] = {
+            "handles": [id_match.group(1)],
+            "url": source_url,
+            "css": rewrite_relative_urls(css_response.text, source_url),
+        }
+    return list(by_url.values())
+
+
+def build_critical_css(reports: list[dict], full_styles: list[dict]) -> str:
     chunks = [
         "/* Chrome CSS Coverage — mobil anasayfa, otomatik üretildi. */",
     ]
@@ -223,6 +281,11 @@ def build_critical_css(reports: list[dict]) -> str:
                 'url("https://ledajans.com/wp-content/themes/modins/assets/images/minium.png")',
             )
             chunks.append(css)
+    for style in full_styles:
+        chunks.append(f"/* Full critical: {', '.join(style['handles'])} — {style['url']} */")
+        chunks.append(str(style["css"]))
+    chunks.append("/* Dynamic mobile states */")
+    chunks.append(EXTRA_CRITICAL_CSS.strip())
     return "\n".join(chunks) + "\n"
 
 
@@ -243,13 +306,29 @@ def main() -> int:
     args = parser.parse_args()
     includes = args.include or DEFAULT_INCLUDES
     reports = collect(args.url, includes)
+    full_styles = fetch_full_critical_styles(args.url)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
-        json.dumps({"url": args.url, "stylesheets": reports}, indent=2, ensure_ascii=False),
+        json.dumps(
+            {
+                "url": args.url,
+                "stylesheets": reports,
+                "full_critical_styles": [
+                    {
+                        "handles": style["handles"],
+                        "url": style["url"],
+                        "total_chars": len(style["css"]),
+                    }
+                    for style in full_styles
+                ],
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
         encoding="utf-8",
     )
     args.css_output.parent.mkdir(parents=True, exist_ok=True)
-    args.css_output.write_text(build_critical_css(reports), encoding="utf-8")
+    args.css_output.write_text(build_critical_css(reports, full_styles), encoding="utf-8")
     for report in reports:
         ratio = (report["used_chars"] / report["total_chars"] * 100) if report["total_chars"] else 0
         print(

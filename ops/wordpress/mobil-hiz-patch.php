@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter7b');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter8');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 
 function ledajans_is_public_mobile_request() {
@@ -77,7 +77,20 @@ function ledajans_drop_mobile_theme_styles() {
     if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
         return;
     }
-    foreach (['bootstrap', 'modins-template'] as $handle) {
+    $criticalHandles = [
+        'bootstrap',
+        'modins-template',
+        'elementor-frontend',
+        'widget-icon-box',
+        'elementor-post-9',
+        'elementor-post-43',
+        'elementor-post-1248',
+        'modins-style',
+        'modins-parent-style',
+        'modins-child-style',
+        'modins-custom-style-color',
+    ];
+    foreach ($criticalHandles as $handle) {
         wp_dequeue_style($handle);
         wp_deregister_style($handle);
     }
@@ -618,6 +631,10 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
         'fonts.googleapis.com',
         'elementor-gf-local-roboto',
         'elementor-gf-local-robotoslab',
+        'widget-icon-list',
+        'widget-social-icons',
+        'widget-spacer',
+        'elementor-post-176',
         'magnific',
         'popup-maker',
         'swiper',
