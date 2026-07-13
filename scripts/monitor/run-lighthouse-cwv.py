@@ -189,7 +189,7 @@ def write_report(payload: dict, path: Path) -> None:
         m = row["metrics"]
         perf = int(m["perf"] * 100) if m.get("perf") else "?"
         lcp = f"{m['lcp_ms'] / 1000:.1f}s" if m.get("lcp_ms") else "?"
-        tbt = f"{m['tbt_ms']:.0f}ms" if m.get("tbt_ms") else "?"
+        tbt = f"{m['tbt_ms']:.0f}ms" if m.get("tbt_ms") is not None else "?"
         cls = f"{m['cls']:.3f}" if m.get("cls") is not None else "?"
         run_status = f"{row['run_count']}/{row['requested_runs']}"
         lines.append(f"| {row['url']} ({run_status}) | {perf} | {lcp} | {tbt} | {cls} |")
