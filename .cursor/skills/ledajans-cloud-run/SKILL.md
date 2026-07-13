@@ -86,15 +86,14 @@ Sonra `DASHBOARD.html` yolu (yerel erişim mümkünse).
 
 ### 5) Lighthouse / performans / SEO JSON varlıkları
 
-Kök dizinde: `audit-*.json`, `perf-*.json`, `seo-audit-*.json`, `psi-mobile.json`, `lighthouse-ledajans.report.html`
+Kök dizinde: `audit-mobile-full.json`, `audit-desktop-full.json` (CWV baseline)
 
 **Somut test akışı:**
 
 ```bash
-python3 -m json.tool /workspace/psi-mobile.json > /dev/null && echo "JSON OK"
+python3 -m json.tool /workspace/audit-mobile-full.json > /dev/null && echo "JSON OK"
+python3 scripts/run-cwv-check.py && echo OK
 ```
-
-Büyük dosyalar için aynı kalıp; HTML için dosyanın var olduğu ve açıldığı kontrol edilir.
 
 ### 6) WordPress performans eklentisi
 
