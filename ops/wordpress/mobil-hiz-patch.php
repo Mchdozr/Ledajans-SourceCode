@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter6');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter7');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 
 add_action('init', function () {
@@ -205,7 +205,7 @@ add_filter('wp_get_attachment_image_attributes', function ($attr) {
     }
 
     $src = $attr['src'] ?? '';
-    if (stripos($src, 'ldajsn2-mobile-q60.webp') !== false || stripos($src, 'hero-poster.webp') !== false) {
+    if (stripos($src, 'ldajsn2-mobile-q42-768x375') !== false || stripos($src, 'hero-poster.webp') !== false) {
         $attr['fetchpriority'] = 'high';
         $attr['loading'] = 'eager';
         $attr['decoding'] = 'async';
@@ -223,22 +223,7 @@ add_action('template_redirect', function () {
 }, -99999);
 
 function ledajans_mobile_hero_source() {
-    static $heroSource = null;
-    if (is_string($heroSource)) {
-        return $heroSource;
-    }
-
-    $heroSource = 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
-    $heroPath = WP_CONTENT_DIR . '/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
-    if (!is_readable($heroPath)) {
-        return $heroSource;
-    }
-
-    $heroBytes = file_get_contents($heroPath);
-    if (is_string($heroBytes) && $heroBytes !== '') {
-        $heroSource = 'data:image/webp;base64,' . base64_encode($heroBytes);
-    }
-    return $heroSource;
+    return 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
 }
 
 function ledajans_mobile_lcp_lazyload_buffer($html) {
@@ -627,6 +612,8 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
         'fontawesome',
         'font-awesome',
         'fonts.googleapis.com',
+        'elementor-gf-local-roboto',
+        'elementor-gf-local-robotoslab',
         'magnific',
         'popup-maker',
         'swiper',
@@ -672,11 +659,25 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
         if (stripos($src, $needle) === false) {
             continue;
         }
-        if (!isset($GLOBALS['ledajans_mobile_deferred_scripts'])) {
-            $GLOBALS['ledajans_mobile_deferred_scripts'] = [];
-        }
-        $GLOBALS['ledajans_mobile_deferred_scripts'][] = $src;
-        return '';
+        $GLOBALS['ledajans_has_mobile_deferred_scripts'] = true;
+        return (string) preg_replace_callback(
+            '#<script\b([^>]*)\bsrc=(["\'])([^"\']+)\2([^>]*)>\s*</script>#i',
+            static function ($matches) use ($src) {
+                $attributes = (string) $matches[1] . (string) $matches[4];
+                $attributes = (string) preg_replace(
+                    '#\stype=(["\'])[^"\']*\1#i',
+                    '',
+                    $attributes
+                );
+                return '<script'
+                    . $attributes
+                    . ' type="text/plain" data-ledajans-deferred="1" data-ledajans-src="'
+                    . esc_attr($src)
+                    . '"></script>';
+            },
+            $tag,
+            1
+        );
     }
 
     return $tag;
@@ -684,24 +685,26 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 
 add_action('wp_footer', function () {
     if (is_admin() || !wp_is_mobile() || !is_front_page()
-        || empty($GLOBALS['ledajans_mobile_deferred_scripts'])) {
+        || empty($GLOBALS['ledajans_has_mobile_deferred_scripts'])) {
         return;
     }
-
-    $urls = array_values(array_unique((array) $GLOBALS['ledajans_mobile_deferred_scripts']));
     ?>
 <script>
 (function(){
-  var queue=<?php echo wp_json_encode($urls); ?>,started=false;
+  var queue=Array.prototype.slice.call(document.querySelectorAll('script[data-ledajans-deferred="1"]')),started=false;
   function next(){
-    var url=queue.shift();
-    if(!url){return;}
+    var placeholder=queue.shift();
+    if(!placeholder){return;}
     var script=document.createElement('script');
-    script.src=url;
+    Array.prototype.slice.call(placeholder.attributes).forEach(function(attribute){
+      if(attribute.name==='type'||attribute.name==='data-ledajans-deferred'||attribute.name==='data-ledajans-src'){return;}
+      script.setAttribute(attribute.name,attribute.value);
+    });
+    script.src=placeholder.getAttribute('data-ledajans-src');
     script.async=false;
     script.onload=next;
     script.onerror=next;
-    document.body.appendChild(script);
+    placeholder.parentNode.replaceChild(script,placeholder);
   }
   function start(){
     if(started){return;}
