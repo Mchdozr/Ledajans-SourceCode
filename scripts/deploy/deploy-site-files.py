@@ -103,10 +103,21 @@ def read_b64_file(path: Path) -> str:
 def read_mu_b64() -> str:
     mu_path = OPS_WORDPRESS / "mobil-hiz-patch.php"
     css_path = OPS_WORDPRESS / "mobile-critical-theme.css"
+    hero_path = OPS / "assets" / "ldajsn2-mobile-q42-768x375.webp"
     mu_source = mu_path.read_text(encoding="utf-8")
     if mu_source.count(CRITICAL_CSS_PLACEHOLDER) != 1:
         raise RuntimeError("Mobil kritik CSS placeholder tekil olmali")
-    css_b64 = base64.b64encode(css_path.read_bytes()).decode("ascii")
+    hero_b64 = base64.b64encode(hero_path.read_bytes()).decode("ascii")
+    css_source = css_path.read_text(encoding="utf-8")
+    css_source += (
+        "\n@media (max-width:768px){"
+        ".ledajans-hero-bg-mobile{"
+        f'background-image:url("data:image/webp;base64,{hero_b64}");'
+        "background-size:cover;background-position:center}"
+        ".ledajans-mobile-hero-accessible{display:block;width:100%;height:100%}"
+        "}\n"
+    )
+    css_b64 = base64.b64encode(css_source.encode("utf-8")).decode("ascii")
     rendered = mu_source.replace(CRITICAL_CSS_PLACEHOLDER, css_b64)
     return base64.b64encode(rendered.encode("utf-8")).decode("ascii")
 
@@ -227,7 +238,8 @@ def main() -> int:
         home.status_code == 200
         and "ledajans-mobile-font-fallback" in home.text
         and "ledajans-mobile-critical-theme" in home.text
-        and "ldajsn2-mobile-q42-768x375-1.webp" in home.text
+        and "ledajans-mobile-critical-iter9.css" in home.text
+        and "ledajans-mobile-hero-accessible" in home.text
     )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
     print(f"mu-plugin guncel: {'OK' if mu_ok else 'EKSIK'}")
