@@ -13,6 +13,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import requests
+
 _SCRIPTS = Path(__file__).resolve().parents[1]
 if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
@@ -27,6 +29,16 @@ DEFAULT_URLS = [
 
 MOBILE_TARGETS = {"perf": 0.80, "lcp_ms": 2500, "tbt_ms": 200, "cls": 0.1}
 DESKTOP_GATES = {"perf": 0.90, "lcp_ms": 1500, "tbt_ms": 50, "cls": 0.1}
+LIGHTHOUSE_VERSION = "12.8.2"
+MOBILE_USER_AGENT = (
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+    "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
+    "Mobile/15E148 Safari/604.1"
+)
+DESKTOP_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+)
 
 METRIC_KEYS = {
     "perf": ("categories", "performance", "score"),
@@ -69,7 +81,7 @@ def run_lighthouse(url: str, form_factor: str, out_path: Path) -> int:
     cmd = [
         "npx",
         "--yes",
-        "lighthouse",
+        f"lighthouse@{LIGHTHOUSE_VERSION}",
         url,
         "--only-categories=performance",
         "--output=json",
@@ -124,14 +136,39 @@ def url_slug(url: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-") or "home"
 
 
+def verify_cache_variant_isolation(url: str) -> bool:
+    def has_mobile_marker(user_agent: str) -> tuple[int, bool]:
+        response = requests.get(url, headers={"User-Agent": user_agent}, timeout=60)
+        return response.status_code, "ledajans-mobile-font-fallback" in response.text
+
+    desktop_status, desktop_marker = has_mobile_marker(DESKTOP_USER_AGENT)
+    mobile_status, mobile_marker = has_mobile_marker(MOBILE_USER_AGENT)
+    desktop_second_status, desktop_second_marker = has_mobile_marker(DESKTOP_USER_AGENT)
+    ok = (
+        desktop_status == 200
+        and mobile_status == 200
+        and desktop_second_status == 200
+        and not desktop_marker
+        and mobile_marker
+        and not desktop_second_marker
+    )
+    print(
+        f"  cache variants {url}: "
+        f"desktop={'mobile' if desktop_marker or desktop_second_marker else 'desktop'}, "
+        f"mobile={'mobile' if mobile_marker else 'desktop'} "
+        f"[{'OK' if ok else 'FAIL'}]"
+    )
+    return ok
+
+
 def fmt_metrics(m: dict) -> str:
     perf = m.get("perf")
     lcp = m.get("lcp_ms")
     tbt = m.get("tbt_ms")
     cls = m.get("cls")
-    parts = [f"Perf={int(perf * 100) if perf else '?'}"]
-    parts.append(f"LCP={lcp / 1000:.1f}s" if lcp else "LCP=?")
-    parts.append(f"TBT={tbt:.0f}ms" if tbt else "TBT=?")
+    parts = [f"Perf={int(perf * 100) if perf is not None else '?'}"]
+    parts.append(f"LCP={lcp / 1000:.1f}s" if lcp is not None else "LCP=?")
+    parts.append(f"TBT={tbt:.0f}ms" if tbt is not None else "TBT=?")
     parts.append(f"CLS={cls:.3f}" if cls is not None else "CLS=?")
     return " ".join(parts)
 
@@ -185,6 +222,10 @@ def main() -> int:
     urls = args.urls or DEFAULT_URLS
     if args.homepage_only:
         urls = ["https://ledajans.com/"]
+
+    if not all(verify_cache_variant_isolation(url) for url in urls):
+        print("HATA: mobil/desktop W3TC cache vary izolasyonu yok; Lighthouse iptal edildi.")
+        return 2
 
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     label = args.label or "live"
