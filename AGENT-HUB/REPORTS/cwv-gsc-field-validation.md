@@ -1,7 +1,7 @@
 # GSC CWV Field Data — Doğrulama Runbook
 
 **Tarih:** 2026-07-13  
-**Lab sonuç (iter1 medyan):** Mobil Perf 70, LCP 5.7s, TBT 16ms, CLS 0.000
+**Lab sonuç (iter9c, 5 koşu medyan):** Mobil Perf 97, LCP 2.39s, TBT 0ms, CLS 0.027
 
 ## Neden GSC?
 
@@ -35,6 +35,6 @@ https://pagespeed.web.dev/analysis?url=https://ledajans.com/&form_factor=mobile
 
 CrUX verisi varsa "Discover what your real users are experiencing" bölümünü kaydet.
 
-## Sonraki iterasyon
+## Field doğrulama
 
-Lab hedefi (Perf≥80, LCP<2.5s) tutmazsa `scripts/monitor/run-lighthouse-cwv.py --label iterN` ile tekrar ölç; GSC field 28 gün sonra nihai doğrulama.
+Lab hedefleri tamamlandı. GSC field verisi 28 günlük pencere dolduktan sonra nihai olarak doğrulanacak.
