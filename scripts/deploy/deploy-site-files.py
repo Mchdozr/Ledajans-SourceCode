@@ -227,7 +227,7 @@ def main() -> int:
         home.status_code == 200
         and "ledajans-mobile-font-fallback" in home.text
         and "ledajans-mobile-critical-theme" in home.text
-        and 'src="data:image/webp;base64,' in home.text
+        and "ldajsn2-mobile-q42-768x375-1.webp" in home.text
     )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
     print(f"mu-plugin guncel: {'OK' if mu_ok else 'EKSIK'}")
