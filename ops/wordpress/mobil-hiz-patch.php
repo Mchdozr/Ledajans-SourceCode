@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9c');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9d');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
 
