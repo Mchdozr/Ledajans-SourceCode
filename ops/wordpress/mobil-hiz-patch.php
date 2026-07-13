@@ -9,8 +9,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter7');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter7b');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
+
+function ledajans_is_public_mobile_request() {
+    return wp_is_mobile() && !is_user_logged_in();
+}
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
@@ -60,7 +64,7 @@ function ledajans_mobile_critical_theme_css() {
 }
 
 add_action('wp_head', function () {
-    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
         return;
     }
     $criticalCss = ledajans_mobile_critical_theme_css();
@@ -70,7 +74,7 @@ add_action('wp_head', function () {
 }, 0);
 
 function ledajans_drop_mobile_theme_styles() {
-    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
         return;
     }
     foreach (['bootstrap', 'modins-template'] as $handle) {
@@ -133,7 +137,7 @@ add_action('init', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    if (is_admin() || !wp_is_mobile()) {
+    if (is_admin() || !ledajans_is_public_mobile_request()) {
         return;
     }
 
@@ -155,7 +159,7 @@ add_action('wp_enqueue_scripts', function () {
 
 // 2) Kaynağa göre gereksiz CSS/JS dosyalarını düşür (audit odaklı)
 add_action('wp_print_styles', function () {
-    if (is_admin() || !wp_is_mobile()) {
+    if (is_admin() || !ledajans_is_public_mobile_request()) {
         return;
     }
 
@@ -347,7 +351,7 @@ add_filter('wp_resource_hints', function ($urls, $relation_type) {
 
 // 6) Mobil anasayfada tema scriptlerini sıralamayı bozmadan footer'a taşı
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
-    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($src)) {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page() || empty($src)) {
         return $tag;
     }
 
@@ -378,14 +382,14 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 }, 40, 3);
 
 add_action('wp_footer', function () {
-    if (is_admin() || !wp_is_mobile() || !is_front_page()
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()
         || empty($GLOBALS['ledajans_mobile_footer_scripts'])) {
         return;
     }
 
     foreach ((array) $GLOBALS['ledajans_mobile_footer_scripts'] as $script) {
         printf(
-            '<script id="%s-js" defer src="%s"></script>' . "\n",
+            '<script id="%s-js" src="%s"></script>' . "\n",
             esc_attr($script['handle']),
             esc_url($script['src'])
         );
@@ -600,7 +604,7 @@ function ledajans_delay_gtm_html_buffer($html) {
 
 // 12) Mobil anasayfada fold-altı CSS'i asenkrona al
 add_filter('style_loader_tag', function ($tag, $handle, $href) {
-    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($href)) {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page() || empty($href)) {
         return $tag;
     }
 
@@ -640,7 +644,7 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
 
 // 12b) Mobil anasayfada fold-altı Elementor JS'ini ilk etkileşime kadar beklet
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
-    if (is_admin() || !wp_is_mobile() || !is_front_page() || empty($src)) {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page() || empty($src)) {
         return $tag;
     }
 
@@ -684,7 +688,7 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 }, 60, 3);
 
 add_action('wp_footer', function () {
-    if (is_admin() || !wp_is_mobile() || !is_front_page()
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()
         || empty($GLOBALS['ledajans_has_mobile_deferred_scripts'])) {
         return;
     }
@@ -722,7 +726,8 @@ add_action('wp_footer', function () {
 
 // 12c) Mobilde Chaty — tüm sayfalarda scroll/idle sonrası yükle
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
-    if (is_admin() || !wp_is_mobile() || empty($src) || stripos($src, 'chaty') === false) {
+    if (is_admin() || !ledajans_is_public_mobile_request()
+        || empty($src) || stripos($src, 'chaty') === false) {
         return $tag;
     }
     if (!isset($GLOBALS['ledajans_deferred_chaty'])) {
@@ -733,7 +738,8 @@ add_filter('script_loader_tag', function ($tag, $handle, $src) {
 }, 50, 3);
 
 add_action('wp_footer', function () {
-    if (is_admin() || !wp_is_mobile() || empty($GLOBALS['ledajans_deferred_chaty'])) {
+    if (is_admin() || !ledajans_is_public_mobile_request()
+        || empty($GLOBALS['ledajans_deferred_chaty'])) {
         return;
     }
     $urls = array_values(array_unique((array) $GLOBALS['ledajans_deferred_chaty']));
