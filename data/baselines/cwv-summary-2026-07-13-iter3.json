@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-07-13T11:12:00+00:00",
+  "label": "2026-07-13-iter3",
+  "mobile": [
+    {
+      "url": "https://ledajans.com/",
+      "metrics": {
+        "perf": 0.79,
+        "lcp_ms": 4125.309,
+        "tbt_ms": 0.0,
+        "cls": 0.026638,
+        "fcp_ms": 3281.907,
+        "si_ms": 3648.901197113042
+      },
+      "runs": [
+        {
+          "perf": 0.77,
+          "lcp_ms": 4272.549999999999,
+          "tbt_ms": 0.0,
+          "cls": 0.026546,
+          "fcp_ms": 3447.192,
+          "si_ms": 4306.216704813082
+        },
+        {
+          "perf": 0.89,
+          "lcp_ms": 3634.5675,
+          "tbt_ms": 0.0,
+          "cls": 0.026638,
+          "fcp_ms": 1755.2800000000002,
+          "si_ms": 2874.025911189488
+        },
+        {
+          "perf": 0.79,
+          "lcp_ms": 4125.309,
+          "tbt_ms": 0.0,
+          "cls": 0.026641,
+          "fcp_ms": 3281.907,
+          "si_ms": 3648.901197113042
+        }
+      ],
+      "run_count": 3,
+      "requested_runs": 3,
+      "complete": true
+    }
+  ],
+  "desktop": [
+    {
+      "url": "https://ledajans.com/",
+      "metrics": {
+        "perf": 0.91,
+        "lcp_ms": 1202.1053147125244,
+        "tbt_ms": 0.0,
+        "cls": 0.006371,
+        "fcp_ms": 1140.622,
+        "si_ms": 2018.5110110481426
+      },
+      "runs": [
+        {
+          "perf": 0.91,
+          "lcp_ms": 1202.1053147125244,
+          "tbt_ms": 0.0,
+          "cls": 0.006371,
+          "fcp_ms": 1140.622,
+          "si_ms": 2018.5110110481426
+        }
+      ],
+      "run_count": 1,
+      "requested_runs": 1,
+      "complete": true
+    }
+  ]
+}
