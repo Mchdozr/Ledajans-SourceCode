@@ -1,12 +1,12 @@
 # CWV Iteration Report
 
-Generated: 2026-07-13T11:12:00+00:00
+Generated: 2026-07-13T11:27:48+00:00
 
 ## Mobile (median of runs)
 
 | URL | Perf | LCP | TBT | CLS |
 |-----|------|-----|-----|-----|
-| https://ledajans.com/ (3/3) | 79 | 4.1s | ? | 0.027 |
+| https://ledajans.com/ (3/3) | 75 | 5.1s | 262ms | 0.029 |
 
 ## Desktop gate
 
@@ -14,4 +14,4 @@ Generated: 2026-07-13T11:12:00+00:00
 
 ## Mobile target (homepage)
 
-- FAIL: perf=0.79 < 0.8; lcp=4125ms >= 2500ms
+- FAIL: perf=0.75 < 0.8; lcp=5148ms >= 2500ms; tbt=262ms >= 200ms
