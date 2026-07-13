@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3b');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
@@ -32,6 +32,11 @@ add_action('init', function () {
             ],
             true
         );
+    }
+    if (function_exists('w3tc_config')) {
+        $w3tcConfig = w3tc_config();
+        $w3tcConfig->set('pgcache.reject.front_page', true);
+        $w3tcConfig->save();
     }
     if (function_exists('w3tc_flush_all')) {
         w3tc_flush_all();
