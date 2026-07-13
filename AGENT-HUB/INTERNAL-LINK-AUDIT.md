@@ -2,7 +2,10 @@
 
 Taranan: repo `*.html` (AGENT-HUB hariç)
 
-**Sonuç:** Kritik canonical ihlali veya yasak pattern bulunamadı.
+## Bulgular
+### `Katalog/pages/15-arka-kapak.html`
+- `https://www.ledajans.com` — non_registry_money_path
+
 ## Önerilen para sayfa anchor hedefleri
 
 | Kaynak tip | Hedef |

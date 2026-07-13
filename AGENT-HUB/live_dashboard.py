@@ -8,7 +8,7 @@ import re
 from zoneinfo import ZoneInfo
 
 
-HUB = Path("/workspace/AGENT-HUB")
+HUB = Path(__file__).resolve().parent
 REPORTS = HUB / "REPORTS"
 DASHBOARD = HUB / "DASHBOARD.md"
 DASHBOARD_HTML = HUB / "DASHBOARD.html"
