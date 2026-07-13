@@ -570,5 +570,64 @@
         }
       ]
     }
+  ],
+  "full_critical_styles": [
+    {
+      "handles": [
+        "elementor-frontend-css"
+      ],
+      "url": "https://ledajans.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.1.4",
+      "total_chars": 54666
+    },
+    {
+      "handles": [
+        "widget-icon-box-css"
+      ],
+      "url": "https://ledajans.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css?ver=4.1.4",
+      "total_chars": 4726
+    },
+    {
+      "handles": [
+        "elementor-post-9-css"
+      ],
+      "url": "https://ledajans.com/wp-content/uploads/elementor/css/post-9.css?ver=1783945896",
+      "total_chars": 1423
+    },
+    {
+      "handles": [
+        "elementor-post-1248-css"
+      ],
+      "url": "https://ledajans.com/wp-content/uploads/elementor/css/post-1248.css?ver=1783945896",
+      "total_chars": 5276
+    },
+    {
+      "handles": [
+        "elementor-post-43-css"
+      ],
+      "url": "https://ledajans.com/wp-content/uploads/elementor/css/post-43.css?ver=1783945896",
+      "total_chars": 5780
+    },
+    {
+      "handles": [
+        "modins-style-css",
+        "modins-parent-style-css"
+      ],
+      "url": "https://ledajans.com/wp-content/themes/modins/style.css?ver=7.0.1",
+      "total_chars": 963
+    },
+    {
+      "handles": [
+        "modins-child-style-css"
+      ],
+      "url": "https://ledajans.com/wp-content/themes/modins_child/style.css?ver=7.0.1",
+      "total_chars": 223
+    },
+    {
+      "handles": [
+        "modins-custom-style-color-css"
+      ],
+      "url": "https://ledajans.com/wp-content/themes/modins/assets/css/custom_script.css?ver=7.0.1",
+      "total_chars": 3
+    }
   ]
 }

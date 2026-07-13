@@ -305,7 +305,16 @@ def main() -> int:
     )
     args = parser.parse_args()
     includes = args.include or DEFAULT_INCLUDES
+    existing_reports: list[dict] = []
+    if args.output.is_file():
+        try:
+            existing_payload = json.loads(args.output.read_text(encoding="utf-8"))
+            existing_reports = list(existing_payload.get("stylesheets") or [])
+        except (OSError, ValueError):
+            existing_reports = []
     reports = collect(args.url, includes)
+    if not reports:
+        reports = existing_reports
     full_styles = fetch_full_critical_styles(args.url)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
