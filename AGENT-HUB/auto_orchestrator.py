@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-ROOT = Path("/workspace")
+ROOT = Path(__file__).resolve().parents[1]
 HUB = ROOT / "AGENT-HUB"
 REPORTS = HUB / "REPORTS"
 STATE_FILE = HUB / ".auto-orchestrator-state.json"

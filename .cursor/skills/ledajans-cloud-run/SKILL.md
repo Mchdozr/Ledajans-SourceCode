@@ -27,15 +27,15 @@ Bu depo **derleme adımı içermez**; statik HTML + Python araçlarıdır. Node 
 
 ### 1) HTML içerik ve widget snippet’leri
 
-**Klasörler:** `Anasayfa/`, `Blog/`, `Urunlerimiz/`, `Kurumsal/`, `LED Ekran/`, `Footer/`, `Ust-Menu/`, `İletisim/`, `Teknik-Destek-Bilgi/`, `Code-Snippets/`
+**Klasörler:** `content/Anasayfa/`, `content/Blog/`, `content/Urunlerimiz/`, vb. — tam liste `REPO-STRUCTURE.md`
 
 **Çalıştırma (önizleme):**
 
 ```bash
-cd /workspace && python3 -m http.server 8080
+cd /workspace && python3 -m http.server 8080 --directory content
 ```
 
-Tarayıcıdan ilgili `.html` yolunu aç (ör. `http://localhost:8080/Blog/...html`). Cloud’ta port erişimi kısıtlıysa dosyayı okuyup iç linkleri `grep` ile kontrol et.
+Tarayıcıdan ilgili `.html` yolunu aç (ör. `http://localhost:8080/Anasayfa/...html`).
 
 **Somut test akışı:**
 
@@ -86,20 +86,18 @@ Sonra `DASHBOARD.html` yolu (yerel erişim mümkünse).
 
 ### 5) Lighthouse / performans / SEO JSON varlıkları
 
-Kök dizinde: `audit-mobile-full.json`, `audit-desktop-full.json` (CWV baseline)
+Kök dizinde: `data/baselines/audit-mobile-full.json`, `audit-desktop-full.json` (CWV baseline)
 
 **Somut test akışı:**
 
 ```bash
-python3 -m json.tool /workspace/audit-mobile-full.json > /dev/null && echo "JSON OK"
-python3 scripts/run-cwv-check.py && echo OK
+python3 -m json.tool /workspace/data/baselines/audit-mobile-full.json > /dev/null && echo "JSON OK"
+python3 scripts/monitor/run-cwv-check.py && echo OK
 ```
 
-### 6) WordPress performans eklentisi
+**Dosya:** `ops/wordpress/mobil-hiz-patch.php`
 
-**Dosya:** `wordpress-mobil-hiz-patch.php`
-
-**Test:** PHP sözdizimi — `php -l wordpress-mobil-hiz-patch.php` (ortamda `php` varsa). Dağıtım WordPress dosya sistemi / eklenti kurulumu ile yapılır; bulutta genelde sadece sözdizimi kontrolü.
+**Test:** `php -l ops/wordpress/mobil-hiz-patch.php` (ortamda `php` varsa).
 
 ---
 

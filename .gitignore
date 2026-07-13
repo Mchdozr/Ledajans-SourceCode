@@ -14,7 +14,7 @@ perf-*.json
 psi-mobile.json
 seo-audit-*.json
 lighthouse-ledajans.report.html
-schema-birlesik-header.html
+data/schema-birlesik-header.html
 blog-301-rankmath.csv
 __pycache__/
 *.pyc

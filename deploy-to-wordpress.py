@@ -36,6 +36,8 @@ def load_dotenv(path: str) -> None:
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONTENT_DIR = os.path.join(BASE_DIR, "content")
+DATA_DIR = os.path.join(BASE_DIR, "data")
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # ======================== AYARLAR ========================
@@ -153,7 +155,7 @@ def build_rankmath_meta(title: str, meta_desc: str, focus_kw: str) -> dict:
 
 
 def read_file(rel_path: str) -> str:
-    full = os.path.join(BASE_DIR, rel_path.replace("/", os.sep))
+    full = os.path.join(CONTENT_DIR, rel_path.replace("/", os.sep))
     with open(full, "r", encoding="utf-8") as f:
         return f.read()
 
@@ -227,7 +229,7 @@ def deploy_schemas():
         except FileNotFoundError:
             print(f"  ❌ BULUNAMADI: {sf}")
 
-    output_path = os.path.join(BASE_DIR, "schema-birlesik-header.html")
+    output_path = os.path.join(DATA_DIR, "schema-birlesik-header.html")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n\n".join(combined))
     print(f"\n  💾 Birleşik schema → schema-birlesik-header.html")

@@ -1,6 +1,6 @@
 # AGENT LIVE DASHBOARD
 
-- Son yenileme: **2026-07-13 11:43:32 TR**
+- Son yenileme: **2026-07-13 11:50:59 TR**
 - Mod: report-only (commit/push yok)
 
 ## Rol Durumları
