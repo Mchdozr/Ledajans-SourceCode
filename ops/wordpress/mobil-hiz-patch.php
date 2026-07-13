@@ -9,7 +9,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter5');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter6');
+define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
@@ -40,6 +41,46 @@ add_action('init', function () {
     wp_cache_flush();
     update_option('ledajans_perf_patch_version', LEDAJANS_PERF_PATCH_VERSION, false);
 }, 1);
+
+function ledajans_mobile_critical_theme_css() {
+    static $criticalCss = null;
+    if (is_string($criticalCss)) {
+        return $criticalCss;
+    }
+
+    $encoded = LEDAJANS_MOBILE_CRITICAL_CSS_B64;
+    if (substr($encoded, 0, 2) === '__') {
+        $criticalCss = '';
+        return $criticalCss;
+    }
+
+    $decoded = base64_decode($encoded, true);
+    $criticalCss = is_string($decoded) ? $decoded : '';
+    return $criticalCss;
+}
+
+add_action('wp_head', function () {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
+        return;
+    }
+    $criticalCss = ledajans_mobile_critical_theme_css();
+    if ($criticalCss !== '') {
+        echo '<style id="ledajans-mobile-critical-theme">' . $criticalCss . '</style>' . "\n";
+    }
+}, 0);
+
+function ledajans_drop_mobile_theme_styles() {
+    if (is_admin() || !wp_is_mobile() || !is_front_page()) {
+        return;
+    }
+    foreach (['bootstrap', 'modins-template'] as $handle) {
+        wp_dequeue_style($handle);
+        wp_deregister_style($handle);
+    }
+}
+
+add_action('wp_enqueue_scripts', 'ledajans_drop_mobile_theme_styles', 9999);
+add_action('wp_print_styles', 'ledajans_drop_mobile_theme_styles', 0);
 
 function ledajans_is_projeler_page() {
     if (is_admin()) {
