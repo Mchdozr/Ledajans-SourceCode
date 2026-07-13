@@ -25,6 +25,12 @@ except ImportError:
 
 WIDGETS = [
     {
+        "label": "Anasayfa Hero",
+        "page_id": 1248,
+        "widget_id": "ee08c77",
+        "file": "Anasayfa/Hero.html",
+    },
+    {
         "label": "/led-ekran/ hub",
         "page_id": 5557,
         "widget_id": "25a1bb2",

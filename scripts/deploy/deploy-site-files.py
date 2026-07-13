@@ -154,9 +154,9 @@ def main() -> int:
         return 0
 
     if not ensure_snippet(site, auth):
-        print("HATA: snippet yuklenemedi")
-        return 1
-    print("Snippet hazir.")
+        print("UYARI: snippet guncellenemedi — write-files deneniyor.")
+
+    print("write-files deneniyor...")
     time.sleep(2)
 
     for attempt in range(4):
