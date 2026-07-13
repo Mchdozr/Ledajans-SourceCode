@@ -45,9 +45,9 @@ FULL_CRITICAL_STYLE_IDS = [
     "modins-custom-style-color-css",
 ]
 EXTRA_CRITICAL_CSS = """
-.gva-offcanvas-content.open{left:0;opacity:1;filter:alpha(opacity=100);visibility:visible}
+.gva-offcanvas-content.mobile.open{left:0!important;opacity:1!important;filter:alpha(opacity=100)!important;visibility:visible!important;display:flex!important;z-index:10000!important}
 .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu>li.menu-item-has-children.menu-active .caret{background-image:url("https://ledajans.com/wp-content/themes/modins/assets/images/minium.png")}
-#gva-overlay.open{display:block}
+#gva-overlay.open{display:block!important;z-index:9999!important}
 #gva-overlay:hover,.gva-offcanvas-content .top-canvas .control-close-mm:hover{cursor:pointer}
 """
 

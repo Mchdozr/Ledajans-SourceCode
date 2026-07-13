@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9b');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
 
@@ -760,6 +760,61 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 }, 211);
+
+add_action('wp_footer', function () {
+    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
+        return;
+    }
+    ?>
+<script id="ledajans-mobile-menu-fallback">
+(function(){
+  var panel=document.querySelector('.gva-offcanvas-content.mobile');
+  var overlay=document.getElementById('gva-overlay');
+  if(!panel){return;}
+  function openMenu(){
+    panel.classList.add('open');
+    if(overlay){overlay.classList.add('open');}
+    document.documentElement.style.overflow='hidden';
+    document.body.style.overflow='hidden';
+  }
+  function closeMenu(){
+    panel.classList.remove('open');
+    if(overlay){overlay.classList.remove('open');}
+    document.documentElement.style.overflow='';
+    document.body.style.overflow='';
+  }
+  document.addEventListener('click',function(event){
+    var toggle=event.target.closest('a[data-canvas=".mobile"]');
+    if(toggle){
+      event.preventDefault();
+      event.stopPropagation();
+      openMenu();
+      return;
+    }
+    var close=event.target.closest('.control-close-mm');
+    if(close||event.target===overlay){
+      event.preventDefault();
+      event.stopPropagation();
+      closeMenu();
+      return;
+    }
+    var caret=event.target.closest('#gva-mobile-menu .menu-item-has-children > .caret');
+    if(!caret){return;}
+    event.preventDefault();
+    event.stopPropagation();
+    var item=caret.closest('.menu-item-has-children');
+    var submenu=item.querySelector(':scope > .submenu-inner, :scope > ul');
+    var opening=!item.classList.contains('menu-active');
+    item.classList.toggle('menu-active',opening);
+    if(submenu){submenu.style.display=opening?'block':'none';}
+  },true);
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'){closeMenu();}
+  });
+})();
+</script>
+    <?php
+}, 100);
 
 // Rank Math: REST ile sayfa/yazi SEO meta guncellemesi (deploy script)
 add_action('init', function () {
