@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter4');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter5');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
@@ -181,12 +181,31 @@ add_action('template_redirect', function () {
     ob_start('ledajans_mobile_lcp_lazyload_buffer');
 }, -99999);
 
+function ledajans_mobile_hero_source() {
+    static $heroSource = null;
+    if (is_string($heroSource)) {
+        return $heroSource;
+    }
+
+    $heroSource = 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
+    $heroPath = WP_CONTENT_DIR . '/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
+    if (!is_readable($heroPath)) {
+        return $heroSource;
+    }
+
+    $heroBytes = file_get_contents($heroPath);
+    if (is_string($heroBytes) && $heroBytes !== '') {
+        $heroSource = 'data:image/webp;base64,' . base64_encode($heroBytes);
+    }
+    return $heroSource;
+}
+
 function ledajans_mobile_lcp_lazyload_buffer($html) {
     if (!is_string($html) || $html === '') {
         return $html;
     }
 
-    $heroUrl = 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
+    $heroUrl = ledajans_mobile_hero_source();
 
     // W3TC/Elementor dahil tüm mobil hero preload'larını tek canonical isteğe indir.
     $html = (string) preg_replace(
@@ -194,8 +213,10 @@ function ledajans_mobile_lcp_lazyload_buffer($html) {
         '',
         $html
     );
-    $preload = '<link rel="preload" as="image" href="' . esc_url($heroUrl) . '" fetchpriority="high">';
-    $html = (string) preg_replace('#<head([^>]*)>#i', '<head$1>' . "\n" . $preload, $html, 1);
+    if (strpos($heroUrl, 'data:image/webp;base64,') !== 0) {
+        $preload = '<link rel="preload" as="image" href="' . esc_url($heroUrl) . '" fetchpriority="high">';
+        $html = (string) preg_replace('#<head([^>]*)>#i', '<head$1>' . "\n" . $preload, $html, 1);
+    }
 
     $pattern = '#<img\b[^>]*ldajsn2-mobile[^>]*>#i';
 
@@ -242,7 +263,7 @@ function ledajans_mobile_lcp_lazyload_buffer($html) {
             $tag = preg_replace('#\sheight=["\'][^"\']*["\']#i', '', $tag);
             $tag = str_replace(
                 '<img',
-                '<img src="' . esc_url($heroUrl) . '" width="768" height="375"',
+                '<img src="' . esc_attr($heroUrl) . '" width="768" height="375"',
                 $tag
             );
             if (stripos($tag, 'fetchpriority=') === false) {
@@ -566,10 +587,6 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
         'font-awesome',
         'fonts.googleapis.com',
         'magnific',
-        'bootstrap',
-        'modins-template',
-        'elementor-gf-local-roboto',
-        'elementor-gf-local-robotoslab',
         'popup-maker',
         'swiper',
         'elementor-widget-',
