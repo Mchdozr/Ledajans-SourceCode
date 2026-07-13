@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter3c');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter4');
 
 add_action('init', function () {
     if (get_option('ledajans_perf_patch_version') === LEDAJANS_PERF_PATCH_VERSION) {
@@ -151,7 +151,7 @@ add_action('wp_head', function () {
     }
 
     if (wp_is_mobile()) {
-        echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60-768x375.webp" fetchpriority="high">' . "\n";
+        echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp" fetchpriority="high">' . "\n";
         return;
     }
 
@@ -186,7 +186,7 @@ function ledajans_mobile_lcp_lazyload_buffer($html) {
         return $html;
     }
 
-    $heroUrl = 'https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60-768x375.webp';
+    $heroUrl = 'https://ledajans.com/wp-content/uploads/2026/07/ldajsn2-mobile-q42-768x375-1.webp';
 
     // W3TC/Elementor dahil tüm mobil hero preload'larını tek canonical isteğe indir.
     $html = (string) preg_replace(
@@ -353,8 +353,6 @@ add_action('wp_head', function () {
 
     if (wp_is_mobile()) {
         echo '<style id="ledajans-mobile-font-fallback">@media (max-width:768px){body,.ledajans-hero-content{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif!important}}</style>' . "\n";
-        echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" media="print" onload="this.media=\'all\';this.onload=null;">' . "\n";
-        echo '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"></noscript>' . "\n";
         return;
     }
 
@@ -568,6 +566,10 @@ add_filter('style_loader_tag', function ($tag, $handle, $href) {
         'font-awesome',
         'fonts.googleapis.com',
         'magnific',
+        'bootstrap',
+        'modins-template',
+        'elementor-gf-local-roboto',
+        'elementor-gf-local-robotoslab',
         'popup-maker',
         'swiper',
         'elementor-widget-',
