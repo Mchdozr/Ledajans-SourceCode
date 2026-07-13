@@ -43,6 +43,12 @@ WIDGETS = [
         "file": "Anasayfa/widget-3.html",
     },
     {
+        "label": "Anasayfa Blog",
+        "page_id": 1248,
+        "widget_id": "7551f23",
+        "file": "Anasayfa/widget-9-Blog.html",
+    },
+    {
         "label": "/ic-mekan-led-ekran/ SEO",
         "page_id": 6004,
         "widget_id": "9247047",
@@ -225,6 +231,12 @@ def ensure_seo_widget(site: str, auth: tuple[str, str], cfg: dict, apply: bool) 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument(
+        "--only",
+        action="append",
+        default=[],
+        help="Yalnızca eşleşen label, widget id veya dosyayı deploy et (tekrarlanabilir)",
+    )
     args = parser.parse_args()
 
     site, user, pw = load_env()
@@ -234,11 +246,27 @@ def main() -> int:
 
     auth = (user, pw)
     ok = 0
-    total = len(WIDGETS) + len(SEO_INSERT_PAGES)
+    selectors = [value.casefold() for value in args.only]
+
+    def selected(config: dict) -> bool:
+        if not selectors:
+            return True
+        haystack = " ".join(
+            str(config.get(key, ""))
+            for key in ("label", "widget_id", "known_widget_id", "file")
+        ).casefold()
+        return any(selector in haystack for selector in selectors)
+
+    selected_inserts = [config for config in SEO_INSERT_PAGES if selected(config)]
+    selected_widgets = [config for config in WIDGETS if selected(config)]
+    total = len(selected_widgets) + len(selected_inserts)
+    if total == 0:
+        print("HATA: --only eslesmesi bulunamadi")
+        return 1
 
     print(f"Elementor widget deploy — {'APPLY' if args.apply else 'DRY-RUN'}\n")
 
-    for cfg in SEO_INSERT_PAGES:
+    for cfg in selected_inserts:
         print(f"\n>> {cfg['label']}")
         seo_id = ensure_seo_widget(site, auth, cfg, args.apply)
         if seo_id and seo_id not in ("new-seo-widget", None):
@@ -249,7 +277,7 @@ def main() -> int:
             ok += 1
         time.sleep(2)
 
-    for item in WIDGETS:
+    for item in selected_widgets:
         print(f"\n>> {item['label']}")
         html = read_html(item["file"])
         if deploy_widget(site, auth, item["page_id"], item["widget_id"], html, args.apply):

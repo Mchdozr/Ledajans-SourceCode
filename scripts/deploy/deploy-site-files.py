@@ -67,7 +67,10 @@ function ledajans_rest_write_site_files(WP_REST_Request $request) {
         }
         $written[] = 'mu-plugin';
     }
+    if (function_exists('w3tc_flush_all')) { w3tc_flush_all(); }
     if (function_exists('litespeed_purge_all')) { litespeed_purge_all(); }
+    wp_cache_flush();
+    do_action('w3tc_flush_all');
     do_action('litespeed_purge_all');
     return new WP_REST_Response(array('ok' => true, 'written' => $written), 200);
 }
@@ -159,7 +162,8 @@ def main() -> int:
     print("write-files deneniyor...")
     time.sleep(2)
 
-    for attempt in range(4):
+    retry_delays = [4, 8, 16, 32]
+    for attempt, retry_delay in enumerate(retry_delays, start=1):
         r = requests.post(
             f"{site}/wp-json/ledajans/v1/write-files",
             json={"robots_b64": robots_b64, "mu_b64": mu_b64},
@@ -170,8 +174,9 @@ def main() -> int:
         if r.status_code == 200:
             print("OK:", r.json())
             break
-        if r.status_code == 404:
-            time.sleep(3)
+        if r.status_code in (403, 404, 429, 502, 503, 504):
+            print(f"UYARI {r.status_code}: tekrar {attempt}/4 ({retry_delay}s)")
+            time.sleep(retry_delay)
             continue
         print(f"HATA {r.status_code}: {r.text[:400]}")
         return 1
@@ -182,8 +187,21 @@ def main() -> int:
     time.sleep(2)
     rb = requests.get(f"{site}/robots.txt", timeout=20)
     crawl = "Disallow: /*?s=" in rb.text
-    mu = requests.get(f"{site}/wp-content/mu-plugins/ledajans-perf-patch.php", timeout=20)
-    mu_ok = mu.status_code == 200 and "ledajans_is_lcp_critical_page" in mu.text
+    mobile_ua = (
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
+        "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
+        "Mobile/15E148 Safari/604.1"
+    )
+    home = requests.get(
+        f"{site}/?ledajans-cwv-check={int(time.time())}",
+        timeout=60,
+        headers={"User-Agent": mobile_ua},
+    )
+    mu_ok = (
+        home.status_code == 200
+        and "ledajans-mobile-font-fallback" in home.text
+        and "ldajsn2-mobile-q60-768x375.webp" in home.text
+    )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
     print(f"mu-plugin guncel: {'OK' if mu_ok else 'EKSIK'}")
     return 0 if crawl and mu_ok else 1
