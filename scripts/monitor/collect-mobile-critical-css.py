@@ -45,6 +45,11 @@ FULL_CRITICAL_STYLE_IDS = [
     "modins-custom-style-color-css",
 ]
 EXTRA_CRITICAL_CSS = """
+.gva-offcanvas-content.mobile #gva-mobile-menu ul.gva-nav-menu.gva-mobile-menu{display:block!important;width:100%!important;overflow:visible!important}
+.gva-offcanvas-content.mobile #gva-mobile-menu ul.gva-nav-menu.gva-mobile-menu>li{float:none!important;display:block!important;padding:0!important;width:100%!important;clear:both!important}
+.gva-offcanvas-content.mobile #gva-mobile-menu ul.gva-nav-menu.gva-mobile-menu>li>a{color:#1f2937!important;height:auto!important}
+.gva-offcanvas-content.mobile #gva-mobile-menu .menu-title{display:inline!important;color:inherit!important;font-size:inherit!important;line-height:inherit!important;visibility:visible!important;opacity:1!important}
+.gva-offcanvas-content.mobile #gva-mobile-menu ul.gva-nav-menu.gva-mobile-menu>li>.submenu-inner{opacity:1!important;visibility:visible!important;position:static!important;top:auto!important;left:auto!important;transform:none!important;min-width:0!important;box-shadow:none!important}
 .gva-offcanvas-content.mobile.open{position:fixed!important;inset:0 auto 0 0!important;width:min(360px,92vw)!important;max-width:360px!important;background:#fff!important;left:0!important;opacity:1!important;filter:alpha(opacity=100)!important;visibility:visible!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;transform:none!important;z-index:2147483647!important;border-radius:0 22px 22px 0!important;box-shadow:18px 0 48px rgba(15,23,42,.24)!important}
 .gva-offcanvas-content.mobile .top-canvas{display:flex!important;align-items:center!important;justify-content:space-between!important;flex:0 0 auto!important;min-height:72px!important;padding:calc(14px + env(safe-area-inset-top)) 16px 14px!important;background:linear-gradient(135deg,#fff 0%,#fff7ed 100%)!important;border-bottom:1px solid #fed7aa!important;line-height:1!important}
 .gva-offcanvas-content.mobile .top-canvas .logo-mm{display:flex!important;align-items:center!important;float:none!important;padding:0!important;line-height:1!important}

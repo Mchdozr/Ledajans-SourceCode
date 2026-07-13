@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9d');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-13-iter9e');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
 
@@ -811,7 +811,7 @@ add_action('wp_footer', function () {
       closeMenu();
       return;
     }
-    var caret=event.target.closest('#gva-mobile-menu .menu-item-has-children > .caret');
+    var caret=event.target.closest('#gva-mobile-menu .menu-item-has-children .caret');
     if(!caret){return;}
     event.preventDefault();
     event.stopPropagation();
