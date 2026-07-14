@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-07-13T14:24:34Z",
+  "pages": [
+    {
+      "url": "https://ledajans.com/",
+      "status": 200,
+      "ttfb_proxy_ms": 1202,
+      "size_kb": 394.3,
+      "preload_lcp_hints": true,
+      "webp_hero_refs": true,
+      "gtm_present": true
+    },
+    {
+      "url": "https://ledajans.com/led-ekran/",
+      "status": 200,
+      "ttfb_proxy_ms": 943,
+      "size_kb": 225.2,
+      "preload_lcp_hints": true,
+      "webp_hero_refs": false,
+      "gtm_present": true
+    },
+    {
+      "url": "https://ledajans.com/dis-mekan-led-ekran/",
+      "status": 200,
+      "ttfb_proxy_ms": 952,
+      "size_kb": 288.5,
+      "preload_lcp_hints": true,
+      "webp_hero_refs": false,
+      "gtm_present": true
+    }
+  ],
+  "baseline_before": {
+    "perf_score": 0.42,
+    "lcp_s": 10856.3492
+  }
+}

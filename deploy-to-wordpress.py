@@ -36,6 +36,8 @@ def load_dotenv(path: str) -> None:
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONTENT_DIR = os.path.join(BASE_DIR, "content")
+DATA_DIR = os.path.join(BASE_DIR, "data")
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # ======================== AYARLAR ========================
@@ -64,6 +66,7 @@ PAGES_TO_DEPLOY = [
     ("SEO-Icerik-Widgets/sektor-rehberleri/avm-led-ekran-rehberi.html",           "avm-led-ekran-rehberi",      "AVM LED Ekran Rehberi",          "page"),
     ("SEO-Icerik-Widgets/sektor-rehberleri/stadyum-led-ekran-rehberi.html",       "stadyum-led-ekran",          "Stadyum LED Ekran Rehberi",      "page"),
     ("SEO-Icerik-Widgets/sektor-rehberleri/magaza-vitrin-led-rehberi.html",       "magaza-vitrin-led-ekran",    "Mağaza Vitrin LED Ekran",        "page"),
+    ("SEO-Icerik-Widgets/sektor-rehberleri/seffaf-led-ekran.html",               "seffaf-led-ekran",           "Şeffaf LED Ekran (Cam LED)",     "page"),
     ("SEO-Icerik-Widgets/sektor-rehberleri/belediye-bilgi-ekrani-rehberi.html",   "belediye-bilgi-ekrani",      "Belediye Bilgi Ekranı Rehberi",  "page"),
     ("SEO-Icerik-Widgets/sektor-rehberleri/eczane-led-tabela-rehberi.html",       "eczane-led-tabela",          "Eczane LED Tabela Rehberi",      "page"),
     ("SEO-Icerik-Widgets/sektor-rehberleri/cami-led-ekran-rehberi.html",          "cami-led-ekran",             "Cami LED Ekran Rehberi",         "page"),
@@ -88,11 +91,23 @@ PAGES_TO_DEPLOY = [
     ("SEO-Icerik-Widgets/sehir-sayfalari/istanbul-led-ekran.html",  "istanbul-led-ekran",  "İstanbul LED Ekran",   "page"),
     ("SEO-Icerik-Widgets/sehir-sayfalari/ankara-led-ekran.html",    "ankara-led-ekran",    "Ankara LED Ekran",     "page"),
     ("SEO-Icerik-Widgets/sehir-sayfalari/izmir-led-ekran.html",     "izmir-led-ekran",     "İzmir LED Ekran",      "page"),
+    ("SEO-Icerik-Widgets/sehir-sayfalari/bursa-led-ekran.html",     "bursa-led-ekran",     "Bursa LED Ekran",      "page"),
+    ("SEO-Icerik-Widgets/sehir-sayfalari/antalya-led-ekran.html",   "antalya-led-ekran",   "Antalya LED Ekran",    "page"),
+    ("SEO-Icerik-Widgets/sehir-sayfalari/adana-led-ekran.html",      "adana-led-ekran",     "Adana LED Ekran",      "page"),
+
+    # === REFERANSLAR (E-E-A-T) ===
+    ("SEO-Icerik-Widgets/referanslar/istanbul-dis-mekan-led-referansi.html", "istanbul-dis-mekan-led-referansi", "İstanbul Dış Mekan LED Referansı", "page"),
+    ("SEO-Icerik-Widgets/referanslar/ankara-stadyum-led-referansi.html",     "ankara-stadyum-led-referansi",     "Ankara Stadyum LED Referansı",     "page"),
+    ("SEO-Icerik-Widgets/referanslar/izmir-avm-led-referansi.html",           "izmir-avm-led-referansi",           "İzmir AVM LED Referansı",           "page"),
+    ("SEO-Icerik-Widgets/referanslar/bursa-osb-led-referansi.html",           "bursa-osb-led-referansi",           "Bursa OSB LED Referansı",           "page"),
+    ("SEO-Icerik-Widgets/referanslar/antalya-otel-led-referansi.html",        "antalya-otel-led-referansi",        "Antalya Otel LED Referansı",        "page"),
+    ("SEO-Icerik-Widgets/referanslar/fuar-rental-led-referansi.html",         "fuar-rental-led-referansi",         "Fuar Rental LED Referansı",         "page"),
 
     # === KULLANIM ALANLARI ===
     ("SEO-Icerik-Widgets/kullanim-alanlari/havaalani-led-ekran.html",         "havaalani-led-ekran",         "Havalimanı LED Ekran",          "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/otel-led-ekran.html",              "otel-led-ekran",              "Otel LED Ekran",                "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/fuar-led-ekran.html",              "fuar-led-ekran",              "Fuar LED Ekran",                "page"),
+    ("SEO-Icerik-Widgets/kullanim-alanlari/sahne-led-ekran-kiralama.html",    "sahne-led-ekran-kiralama",    "Sahne LED Ekran Kiralama",      "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/billboard-led-ekran.html",         "billboard-led-ekran",         "Billboard LED Ekran",           "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/toplanti-odasi-led-ekran.html",    "toplanti-odasi-led-ekran",    "Toplantı Odası LED Ekran",      "page"),
 
@@ -140,7 +155,7 @@ def build_rankmath_meta(title: str, meta_desc: str, focus_kw: str) -> dict:
 
 
 def read_file(rel_path: str) -> str:
-    full = os.path.join(BASE_DIR, rel_path.replace("/", os.sep))
+    full = os.path.join(CONTENT_DIR, rel_path.replace("/", os.sep))
     with open(full, "r", encoding="utf-8") as f:
         return f.read()
 
@@ -214,7 +229,7 @@ def deploy_schemas():
         except FileNotFoundError:
             print(f"  ❌ BULUNAMADI: {sf}")
 
-    output_path = os.path.join(BASE_DIR, "schema-birlesik-header.html")
+    output_path = os.path.join(DATA_DIR, "schema-birlesik-header.html")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n\n".join(combined))
     print(f"\n  💾 Birleşik schema → schema-birlesik-header.html")
