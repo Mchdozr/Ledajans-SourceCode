@@ -23,6 +23,7 @@ except ImportError:
 
 SNIPPET_NAME = "LEDAJANS Write Site Files REST"
 CRITICAL_CSS_PLACEHOLDER = "__LEDAJANS_MOBILE_CRITICAL_CSS_B64__"
+MENU_CSS_PLACEHOLDER = "__LEDAJANS_MOBILE_MENU_CSS_B64__"
 SNIPPET_CODE = r"""if (!defined('ABSPATH')) { exit; }
 
 add_action('rest_api_init', static function (): void {
@@ -103,10 +104,13 @@ def read_b64_file(path: Path) -> str:
 def read_mu_b64() -> str:
     mu_path = OPS_WORDPRESS / "mobil-hiz-patch.php"
     css_path = OPS_WORDPRESS / "mobile-critical-theme.css"
+    menu_css_path = OPS_WORDPRESS / "mobile-menu.css"
     hero_path = OPS / "assets" / "ldajsn2-mobile-q42-768x375.webp"
     mu_source = mu_path.read_text(encoding="utf-8")
     if mu_source.count(CRITICAL_CSS_PLACEHOLDER) != 1:
         raise RuntimeError("Mobil kritik CSS placeholder tekil olmali")
+    if mu_source.count(MENU_CSS_PLACEHOLDER) != 1:
+        raise RuntimeError("Mobil menu CSS placeholder tekil olmali")
     hero_b64 = base64.b64encode(hero_path.read_bytes()).decode("ascii")
     css_source = css_path.read_text(encoding="utf-8")
     css_source += (
@@ -118,7 +122,10 @@ def read_mu_b64() -> str:
         "}\n"
     )
     css_b64 = base64.b64encode(css_source.encode("utf-8")).decode("ascii")
-    rendered = mu_source.replace(CRITICAL_CSS_PLACEHOLDER, css_b64)
+    menu_css_b64 = base64.b64encode(menu_css_path.read_bytes()).decode("ascii")
+    rendered = mu_source.replace(CRITICAL_CSS_PLACEHOLDER, css_b64).replace(
+        MENU_CSS_PLACEHOLDER, menu_css_b64
+    )
     return base64.b64encode(rendered.encode("utf-8")).decode("ascii")
 
 
@@ -239,11 +246,25 @@ def main() -> int:
         and "ledajans-mobile-font-fallback" in home.text
         and "ledajans-mobile-critical-theme" in home.text
         and "ledajans-mobile-critical-iter9.css" in home.text
+        and "ledajans-mobile-menu" in home.text
+        and "ledajans-mobile-menu.css" in home.text
+        and "ledajans-mobile-menu-fallback" in home.text
         and "ledajans-mobile-hero-accessible" in home.text
+    )
+    inner = requests.get(
+        f"{site}/led-ekran/?ledajans-cwv-check={verify_stamp}",
+        timeout=60,
+        headers={"User-Agent": mobile_ua},
+    )
+    menu_all_pages_ok = (
+        inner.status_code == 200
+        and "ledajans-mobile-menu.css" in inner.text
+        and "ledajans-mobile-menu-fallback" in inner.text
     )
     print(f"robots crawl kurallari: {'OK' if crawl else 'EKSIK'}")
     print(f"mu-plugin guncel: {'OK' if mu_ok else 'EKSIK'}")
-    return 0 if crawl and mu_ok else 1
+    print(f"mobil menu tum sayfalar: {'OK' if menu_all_pages_ok else 'EKSIK'}")
+    return 0 if crawl and mu_ok and menu_all_pages_ok else 1
 
 
 if __name__ == "__main__":

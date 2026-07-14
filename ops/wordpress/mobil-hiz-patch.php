@@ -9,9 +9,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-14-iter9g');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-14-iter9h');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
+define('LEDAJANS_MOBILE_MENU_CSS_B64', '__LEDAJANS_MOBILE_MENU_CSS_B64__');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
+define('LEDAJANS_MOBILE_MENU_CSS_FILE', 'ledajans-mobile-menu.css');
 
 function ledajans_is_public_mobile_request() {
     return wp_is_mobile() && !is_user_logged_in();
@@ -38,12 +40,21 @@ add_action('init', function () {
         $w3tcConfig->save();
     }
     $criticalCss = ledajans_mobile_critical_theme_css();
+    $menuCss = ledajans_mobile_menu_css();
     $uploads = wp_upload_dir();
-    if ($criticalCss !== '' && empty($uploads['error'])) {
-        file_put_contents(
-            trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE,
-            $criticalCss
-        );
+    if (empty($uploads['error'])) {
+        if ($criticalCss !== '') {
+            file_put_contents(
+                trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE,
+                $criticalCss
+            );
+        }
+        if ($menuCss !== '') {
+            file_put_contents(
+                trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_MENU_CSS_FILE,
+                $menuCss
+            );
+        }
     }
     if (function_exists('w3tc_flush_all')) {
         w3tc_flush_all();
@@ -72,26 +83,60 @@ function ledajans_mobile_critical_theme_css() {
     return $criticalCss;
 }
 
-add_action('wp_head', function () {
-    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
-        return;
+function ledajans_mobile_menu_css() {
+    static $menuCss = null;
+    if (is_string($menuCss)) {
+        return $menuCss;
     }
-    $criticalCss = ledajans_mobile_critical_theme_css();
-    if ($criticalCss === '') {
+
+    $encoded = LEDAJANS_MOBILE_MENU_CSS_B64;
+    if (substr($encoded, 0, 2) === '__') {
+        $menuCss = '';
+        return $menuCss;
+    }
+
+    $decoded = base64_decode($encoded, true);
+    $menuCss = is_string($decoded) ? $decoded : '';
+    return $menuCss;
+}
+
+function ledajans_print_mobile_css_link($file, $css, $element_id) {
+    if ($css === '') {
         return;
     }
     $uploads = wp_upload_dir();
-    $criticalPath = trailingslashit($uploads['basedir']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE;
+    $criticalPath = trailingslashit($uploads['basedir']) . $file;
     if (empty($uploads['error']) && is_readable($criticalPath)) {
-        $criticalUrl = trailingslashit($uploads['baseurl']) . LEDAJANS_MOBILE_CRITICAL_CSS_FILE;
-        echo '<link id="ledajans-mobile-critical-theme" rel="stylesheet" href="'
+        $criticalUrl = trailingslashit($uploads['baseurl']) . $file;
+        echo '<link id="' . esc_attr($element_id) . '" rel="stylesheet" href="'
             . esc_url($criticalUrl)
             . '?ver='
             . rawurlencode(LEDAJANS_PERF_PATCH_VERSION)
             . '">' . "\n";
         return;
     }
-    echo '<style id="ledajans-mobile-critical-theme">' . $criticalCss . '</style>' . "\n";
+    echo '<style id="' . esc_attr($element_id) . '">' . $css . '</style>' . "\n";
+}
+
+add_action('wp_head', function () {
+    if (is_admin() || !ledajans_is_public_mobile_request()) {
+        return;
+    }
+    // Güncel offcanvas menü — tüm mobil sayfalar
+    ledajans_print_mobile_css_link(
+        LEDAJANS_MOBILE_MENU_CSS_FILE,
+        ledajans_mobile_menu_css(),
+        'ledajans-mobile-menu'
+    );
+    if (!is_front_page()) {
+        return;
+    }
+    // Anasayfa CWV kritik tema CSS (menü kurallarını da içerir; çift yükleme zararsız)
+    ledajans_print_mobile_css_link(
+        LEDAJANS_MOBILE_CRITICAL_CSS_FILE,
+        ledajans_mobile_critical_theme_css(),
+        'ledajans-mobile-critical-theme'
+    );
 }, 0);
 
 function ledajans_drop_mobile_theme_styles() {
@@ -762,7 +807,7 @@ add_action('wp_enqueue_scripts', function () {
 }, 211);
 
 add_action('wp_footer', function () {
-    if (is_admin() || !ledajans_is_public_mobile_request() || !is_front_page()) {
+    if (is_admin() || !ledajans_is_public_mobile_request()) {
         return;
     }
     ?>

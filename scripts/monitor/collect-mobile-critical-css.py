@@ -375,6 +375,14 @@ def main() -> int:
     )
     args.css_output.parent.mkdir(parents=True, exist_ok=True)
     args.css_output.write_text(build_critical_css(reports, full_styles), encoding="utf-8")
+    menu_css_path = OPS_WORDPRESS / "mobile-menu.css"
+    menu_css_path.write_text(
+        "/* LEDAJANS mobil offcanvas menü — tüm mobil sayfalar */\n"
+        + EXTRA_CRITICAL_CSS.strip()
+        + "\n",
+        encoding="utf-8",
+    )
+    print(f"OK: {menu_css_path}")
     for report in reports:
         ratio = (report["used_chars"] / report["total_chars"] * 100) if report["total_chars"] else 0
         print(
