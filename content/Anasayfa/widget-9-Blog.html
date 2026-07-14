@@ -1,0 +1,458 @@
+<!--
+  ANASAYFA — AYRI HTML WIDGET (WordPress / Elementor’a bunu yapıştır)
+  _ledajans-home-raw.html sadece tam sayfa yedeği; canlı anasayfadaki blog bloğu bu dosyayla senkron tutulmalı.
+  DOCTYPE / html / body yok.
+  İsteğe bağlı (tema üstü veya bu bloktan önce): window.LEDajansBlogLang='tr' (Polylang)
+  veya window.LEDajansWpJsonBase='https://ledajans.com' (REST kökü sabitleme)
+-->
+<style>
+    .ledajans-blog {
+      padding: 6rem 1rem;
+      background-color: #f9fafb;
+    }
+  
+    .ledajans-blog-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+  
+    @media (min-width: 640px) {
+      .ledajans-blog-inner { padding: 0 1.5rem; }
+    }
+  
+    @media (min-width: 1024px) {
+      .ledajans-blog-inner { padding: 0 2rem; }
+    }
+  
+    .ledajans-blog-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+  
+    .ledajans-blog-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.025em;
+    }
+  
+    @media (min-width: 768px) {
+      .ledajans-blog-title { font-size: 3rem; }
+    }
+  
+    @media (min-width: 1024px) {
+      .ledajans-blog-title { font-size: 3.75rem; }
+    }
+  
+    .ledajans-blog-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      max-width: 42rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  
+    .ledajans-blog-slider-wrap {
+      position: relative;
+      overflow: visible;
+      padding: 0 4rem;
+    }
+  
+    @media (max-width: 640px) {
+      .ledajans-blog-slider-wrap {
+        padding: 0 3rem;
+      }
+    }
+  
+    .ledajans-blog-track {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      padding: 1rem 0;
+      gap: 2rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+    .ledajans-blog-track::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .ledajans-blog-card-wrap {
+      flex-shrink: 0;
+      width: 320px;
+    }
+  
+    @media (max-width: 640px) {
+      .ledajans-blog-card-wrap {
+        width: 280px;
+      }
+    }
+  
+    .ledajans-blog-card {
+      display: block;
+      background: #fff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+      border: 2px solid transparent;
+      transition: box-shadow 0.5s ease, transform 0.5s ease, border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+    }
+  
+    .ledajans-blog-card:hover {
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      transform: translateY(-0.5rem);
+      border-color: #F46F2C;
+    }
+  
+    .ledajans-blog-card-image {
+      height: 192px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+  
+    .ledajans-blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+  
+    .ledajans-blog-card:hover .ledajans-blog-card-image img {
+      transform: scale(1.1);
+    }
+  
+    .ledajans-blog-card-body {
+      padding: 1.5rem;
+    }
+  
+    .ledajans-blog-card-date {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin: 0 0 0.5rem 0;
+    }
+  
+    .ledajans-blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  
+    .ledajans-blog-card-excerpt {
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  
+    .ledajans-blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      color: #F46F2C;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+  
+    .ledajans-blog-card:hover .ledajans-blog-card-link {
+      transform: translateX(0.5rem);
+    }
+  
+    .ledajans-blog-card-link span.arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left-color: #F46F2C;
+      margin-left: 0.5rem;
+    }
+  
+    .ledajans-blog-prev,
+    .ledajans-blog-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: none;
+      background: #F46F2C;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+  
+    .ledajans-blog-slider-wrap:hover .ledajans-blog-prev,
+    .ledajans-blog-slider-wrap:hover .ledajans-blog-next {
+      opacity: 1;
+    }
+  
+    .ledajans-blog-prev:hover,
+    .ledajans-blog-next:hover {
+      background: #e55a1f;
+      transform: translateY(-50%) scale(1.05);
+    }
+  
+    .ledajans-blog-prev:active,
+    .ledajans-blog-next:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+  
+    .ledajans-blog-prev {
+      left: 0.5rem;
+    }
+  
+    .ledajans-blog-next {
+      right: 0.5rem;
+    }
+  
+    .ledajans-blog-loading {
+      text-align: center;
+      padding: 3rem;
+      color: #6b7280;
+    }
+  
+    .ledajans-blog-error {
+      text-align: center;
+      padding: 3rem;
+      color: #dc2626;
+    }
+  
+    @media (max-width: 640px) {
+      .ledajans-blog-prev {
+        left: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-blog-next {
+        right: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+    }
+  </style>
+  
+  <section class="ledajans-blog" aria-label="Blog">
+    <div class="ledajans-blog-inner">
+      <div class="ledajans-blog-header">
+        <h2 class="ledajans-blog-title">Blog</h2>
+        <p class="ledajans-blog-subtitle">LED Ekran Teknolojileri ve Haberleri</p>
+      </div>
+  
+      <div class="ledajans-blog-slider-wrap">
+        <button type="button" class="ledajans-blog-prev" aria-label="Önceki blog yazıları" style="display: none;">
+          <span style="display:block;width:0;height:0;border:10px solid transparent;border-right-color:white;margin-right:12px"></span>
+        </button>
+        <button type="button" class="ledajans-blog-next" aria-label="Sonraki blog yazıları" style="display: none;">
+          <span style="display:block;width:0;height:0;border:10px solid transparent;border-left-color:white;margin-left:12px"></span>
+        </button>
+  
+        <div id="ledajans-blog-track" class="ledajans-blog-track">
+          <div class="ledajans-blog-loading">Yükleniyor...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  (function() {
+    var track = document.getElementById('ledajans-blog-track');
+    var prev = document.querySelector('.ledajans-blog-prev');
+    var next = document.querySelector('.ledajans-blog-next');
+    if (!track) return;
+  
+    // www / önizleme / alt alan yerine her zaman aynı REST kökü (önbellek + sıra tutarlılığı)
+    // İsteğe bağlı: window.LEDajansWpJsonBase = 'https://ledajans.com' (ayrı script bloğunda veya tema üstünde)
+    // Polylang için: window.LEDajansBlogLang = 'tr';
+    function getRestRoot() {
+      if (typeof window.LEDajansWpJsonBase === 'string' && window.LEDajansWpJsonBase) {
+        return window.LEDajansWpJsonBase.replace(/\/$/, '');
+      }
+      var host = (window.location.hostname || '').replace(/^www\./, '');
+      if (host === 'ledajans.com' || host.endsWith('.ledajans.com')) {
+        return window.location.protocol + '//' + host;
+      }
+      return window.location.origin;
+    }
+  
+    function buildApiUrl() {
+      var root = getRestRoot();
+      var params = [
+        'per_page=10',
+        'status=publish',
+        'orderby=date',
+        'order=desc',
+        '_embed=1'
+      ];
+      if (typeof window.LEDajansBlogLang === 'string' && window.LEDajansBlogLang) {
+        params.push('lang=' + encodeURIComponent(window.LEDajansBlogLang));
+      }
+      return root + '/wp-json/wp/v2/posts?' + params.join('&');
+    }
+  
+    var apiUrl = buildApiUrl();
+  
+    function formatDate(dateString) {
+      var date = new Date(dateString);
+      var months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+      return date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+    }
+  
+    function stripHtml(html) {
+      var tmp = document.createElement('DIV');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || '';
+    }
+  
+    function getExcerpt(text, maxLength) {
+      var clean = stripHtml(text);
+      if (clean.length <= maxLength) return clean;
+      return clean.substr(0, maxLength).trim() + '...';
+    }
+  
+    function getImageFromContent(content) {
+      if (!content) return '';
+      var tmp = document.createElement('DIV');
+      tmp.innerHTML = content;
+      var img = tmp.querySelector('img');
+      if (img && img.src) {
+        return img.src;
+      }
+      return '';
+    }
+  
+    function getFeaturedImage(post) {
+      if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+        var fm = post._embedded['wp:featuredmedia'][0];
+        var sizes = fm.media_details && fm.media_details.sizes;
+        return (sizes && sizes.medium_large && sizes.medium_large.source_url) ||
+          (sizes && sizes.large && sizes.large.source_url) ||
+          (sizes && sizes.medium && sizes.medium.source_url) ||
+          fm.source_url ||
+          '';
+      }
+      if (post.content && post.content.rendered) {
+        var contentImage = getImageFromContent(post.content.rendered);
+        if (contentImage) return contentImage;
+      }
+      return '';
+    }
+  
+    function escAttr(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    }
+  
+    function renderPost(post) {
+      var imageUrl = getFeaturedImage(post);
+      var excerpt = post.excerpt ? getExcerpt(post.excerpt.rendered, 150) : '';
+      var date = formatDate(post.date);
+      var titlePlain = stripHtml(post.title.rendered || '');
+      var imageHtml = imageUrl
+        ? '<img src="' + escAttr(imageUrl) + '" width="400" height="192" alt="' + escAttr(titlePlain) + '" loading="lazy" decoding="async" fetchpriority="low">'
+        : '<div style="width:100%;height:100%;background:linear-gradient(135deg,#F46F2C 0%,#ea580c 100%);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">LED</div>';
+  
+      return '<a href="' + escAttr(post.link) + '" class="ledajans-blog-card-wrap">' +
+        '<article class="ledajans-blog-card">' +
+          '<div class="ledajans-blog-card-image">' + imageHtml + '</div>' +
+          '<div class="ledajans-blog-card-body">' +
+            '<p class="ledajans-blog-card-date">' + escAttr(date) + '</p>' +
+            '<h3 class="ledajans-blog-card-title">' + (post.title.rendered || '') + '</h3>' +
+            '<p class="ledajans-blog-card-excerpt">' + escAttr(excerpt) + '</p>' +
+            '<span class="ledajans-blog-card-link">Devamını Oku <span class="arrow"></span></span>' +
+          '</div>' +
+        '</article>' +
+      '</a>';
+    }
+  
+    function initSlider() {
+      if (prev && next && track.children.length > 0) {
+        prev.style.display = 'flex';
+        next.style.display = 'flex';
+      }
+  
+      var step = 400;
+      if (prev) prev.addEventListener('click', function() {
+        track.scrollBy({ left: -step, behavior: 'smooth' });
+      });
+      if (next) next.addEventListener('click', function() {
+        track.scrollBy({ left: step, behavior: 'smooth' });
+      });
+    }
+  
+    function loadPosts() {
+      fetch(apiUrl, { credentials: 'omit', priority: 'low' })
+        .then(function(response) {
+          if (!response.ok) throw new Error('API yanıtı başarısız');
+          return response.json();
+        })
+        .then(function(posts) {
+          if (!posts || posts.length === 0) {
+            track.innerHTML = '<div class="ledajans-blog-error">Henüz blog yazısı bulunmamaktadır.</div>';
+            return;
+          }
+          // API sırası bozulursa diye: yayın tarihine göre yeniden eskiye
+          posts.sort(function(a, b) {
+            var da = new Date(a.date || 0).getTime();
+            var db = new Date(b.date || 0).getTime();
+            return db - da;
+          });
+          // Slider’da ilk kart = en son yazı
+          track.innerHTML = posts.map(renderPost).join('');
+          initSlider();
+        })
+        .catch(function(error) {
+          console.error('Blog yazıları yüklenirken hata:', error);
+          track.innerHTML = '<div class="ledajans-blog-error">Blog yazıları yüklenirken bir hata oluştu.</div>';
+        });
+    }
+
+    var blogSection = document.querySelector('.ledajans-blog');
+    if (!blogSection || !('IntersectionObserver' in window)) {
+      loadPosts();
+      return;
+    }
+
+    var loaded = false;
+    var start = function() {
+      if (loaded) return;
+      loaded = true;
+      loadPosts();
+    };
+
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          start();
+        }
+      });
+    }, { rootMargin: isMobile ? '150px 0px' : '500px 0px' });
+
+    observer.observe(blogSection);
+    setTimeout(start, 15000);
+  })();
+  </script>
+  

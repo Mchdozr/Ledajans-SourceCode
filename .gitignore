@@ -7,6 +7,15 @@
 
 # Local audit artifacts (optional)
 lighthouse.profile*/
+lighthouse.[0-9]*/
+node-compile-cache/
+audit-mobile-after.json
+perf-*.json
+psi-mobile.json
+seo-audit-*.json
+lighthouse-ledajans.report.html
+data/schema-birlesik-header.html
+blog-301-rankmath.csv
 __pycache__/
 *.pyc
 .backup-agenthub/
