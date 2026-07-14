@@ -24,6 +24,7 @@ There is **no build step, no package.json, no compiled application**. The codeba
 | Script | Purpose | How to Run |
 |---|---|---|
 | `deploy-to-wordpress.py` | Deploy HTML content to WordPress REST API | `python3 deploy-to-wordpress.py --dry-run` (safe test) |
+| `AGENT-HUB/keyword_rank_weekly.py` | `led ekran` SERP ölçümü → `SERP-BASELINE.csv` + haftalık özet | `bash AGENT-HUB/run-keyword-rank-weekly.sh` |
 | `AGENT-HUB/auto_orchestrator.py` | SEO agent orchestration — reads reports, updates TASKS.md | `python3 AGENT-HUB/auto_orchestrator.py` |
 | `AGENT-HUB/live_dashboard.py` | Generates `DASHBOARD.md` and `DASHBOARD.html` from report data | `python3 AGENT-HUB/live_dashboard.py` |
 | `AGENT-HUB/run-auto-orchestrator.sh` | Loop wrapper for orchestrator (runs every 20 min) | `bash AGENT-HUB/run-auto-orchestrator.sh` |
