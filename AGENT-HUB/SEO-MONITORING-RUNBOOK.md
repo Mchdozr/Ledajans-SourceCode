@@ -8,6 +8,10 @@ powershell -File scripts/seo-smoke-test.ps1
 
 ## Haftalık (Gün 7)
 
+```bash
+bash AGENT-HUB/run-keyword-rank-weekly.sh
+```
+
 | Metrik | Kaynak | Hedef |
 |--------|--------|-------|
 | `led ekran` avg position | GSC | Stabil veya ↑ |
