@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-14-iter9f');
+define('LEDAJANS_PERF_PATCH_VERSION', '2026-07-14-iter9g');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_B64', '__LEDAJANS_MOBILE_CRITICAL_CSS_B64__');
 define('LEDAJANS_MOBILE_CRITICAL_CSS_FILE', 'ledajans-mobile-critical-iter9.css');
 
@@ -772,6 +772,14 @@ add_action('wp_footer', function () {
   var panel=panels.find(function(candidate){return candidate.querySelector('#gva-mobile-menu');});
   var overlay=document.getElementById('gva-overlay');
   if(!panel){return;}
+  function stripDuplicateCarets(){
+    Array.prototype.forEach.call(panel.querySelectorAll('#gva-mobile-menu li.menu-item-has-children'),function(item){
+      Array.prototype.forEach.call(item.querySelectorAll(':scope > .caret'),function(extra){extra.remove();});
+    });
+  }
+  stripDuplicateCarets();
+  var menuObserver=typeof MutationObserver==='function'?new MutationObserver(function(){stripDuplicateCarets();}):null;
+  if(menuObserver){menuObserver.observe(panel,{childList:true,subtree:true});}
   function openMenu(){
     if(panel.parentNode!==document.body){document.body.appendChild(panel);}
     panel.classList.add('open');
