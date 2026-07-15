@@ -262,10 +262,14 @@ def previous_led_ekran_snapshot(rows: list[dict[str, str]], before_utc: str) -> 
     for row in rows:
         if row.get("query", "").lower() != QUERY:
             continue
-        if row.get("captured_at_utc", "") >= before_utc:
+        captured = row.get("captured_at_utc", "")
+        if captured >= before_utc:
             continue
         device = row.get("device", "")
-        if device:
+        if not device:
+            continue
+        prev = latest.get(device)
+        if not prev or captured > prev.get("captured_at_utc", ""):
             latest[device] = row
     return latest
 
