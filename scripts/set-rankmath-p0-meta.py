@@ -14,6 +14,17 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Anasayfa: marka + kapsam odaklı (hub /led-ekran/ ile "led ekran" head-term
+# yamyamlığını azaltmak için farklı niyet: "led ekran üreticisi/firmaları" + marka).
+HOMEPAGE = {
+    "title": "LED Ekran - RGB Panel - LED Görüntü Sistemleri",
+    "description": (
+        "LED ekran satış, kiralama ve kurulum. İç mekan, dış mekan, rental ve COB "
+        "çözümler. 25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif ve teklif alın."
+    ),
+    "focus": "led ekran üreticisi,led ekran firmaları,ledajans,led ekran",
+}
+
 P0_PAGES = [
     {
         "slug": "led-ekran",
@@ -72,6 +83,25 @@ def load_env() -> tuple[str, str, str]:
     return site, user, pw
 
 
+def find_homepage_id(site: str, auth: tuple[str, str], headers: dict) -> int | None:
+    """Statik anasayfa (page_on_front) id'sini WP settings'ten çözer."""
+    try:
+        r = requests.get(
+            f"{site}/wp-json/wp/v2/settings",
+            auth=auth,
+            headers=headers,
+            timeout=30,
+        )
+    except requests.RequestException:
+        return None
+    if r.status_code != 200:
+        return None
+    data = r.json()
+    if data.get("show_on_front") == "page" and data.get("page_on_front"):
+        return int(data["page_on_front"])
+    return None
+
+
 def find_page_id(site: str, slug: str, auth: tuple[str, str], headers: dict) -> int | None:
     r = requests.get(
         f"{site}/wp-json/wp/v2/pages",
@@ -119,6 +149,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", default=True)
     parser.add_argument("--apply", action="store_true", help="Gerçek yazım")
+    parser.add_argument("--no-homepage", action="store_true", help="Anasayfa metasını atla")
     args = parser.parse_args()
     dry_run = not args.apply
 
@@ -134,6 +165,24 @@ def main() -> int:
     print(f"RankMath P0 meta — {mode} — {site}\n")
 
     ok = 0
+    total = len(P0_PAGES)
+
+    if not args.no_homepage:
+        total += 1
+        print(">> / (anasayfa)")
+        hp_id = find_homepage_id(site, auth, headers)
+        if not hp_id:
+            print("  ATLANDI: statik anasayfa id bulunamadı (show_on_front != page?)")
+        else:
+            hp_meta = {
+                "rank_math_title": HOMEPAGE["title"],
+                "rank_math_description": HOMEPAGE["description"],
+                "rank_math_focus_keyword": HOMEPAGE["focus"],
+            }
+            if apply_meta(site, hp_id, hp_meta, auth, headers, dry_run):
+                print(f"  OK id={hp_id} title={len(HOMEPAGE['title'])} desc={len(HOMEPAGE['description'])}")
+                ok += 1
+
     for page in P0_PAGES:
         slug = page["slug"]
         print(f">> /{slug}/")
@@ -150,8 +199,8 @@ def main() -> int:
             print(f"  OK id={pid} title={len(page['title'])} desc={len(page['description'])}")
             ok += 1
 
-    print(f"\nTamam: {ok}/{len(P0_PAGES)}")
-    return 0 if ok == len(P0_PAGES) else 1
+    print(f"\nTamam: {ok}/{total}")
+    return 0 if ok == total else 1
 
 
 if __name__ == "__main__":

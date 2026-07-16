@@ -12,6 +12,17 @@ Allow: /wp-content/plugins/elementor-pro/assets/
 Allow: /wp-includes/css/
 Allow: /wp-includes/js/
 
+# --- Tarama butcesi korumasi (crawl budget) ---
+# Parametreli/duplike URL'lerin taranmasini engelleyerek para sayfalara
+# tarama butcesi yonlendirir. ("Tarandi - dizine eklenmedi" gurultusu azalir.)
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /*?replytocom=
+Disallow: /*?add-to-cart=
+Disallow: /*?orderby=
+Disallow: /author/
+Disallow: /wp-json/oembed/
+
 # Sitemap
 Sitemap: https://ledajans.com/sitemap_index.xml
 
