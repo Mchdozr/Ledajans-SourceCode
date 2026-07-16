@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Anasayfa: marka + kapsam odaklı (hub /led-ekran/ ile "led ekran" head-term
 # yamyamlığını azaltmak için farklı niyet: "led ekran üreticisi/firmaları" + marka).
 HOMEPAGE = {
-    "title": "LED Ekran Üreticisi | Satış, Kiralama, Kurulum - LEDAJANS",
+    "title": "LED Ekran - RGB Panel - LED Görüntü Sistemleri",
     "description": (
         "LED ekran satış, kiralama ve kurulum. İç mekan, dış mekan, rental ve COB "
         "çözümler. 25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif ve teklif alın."
