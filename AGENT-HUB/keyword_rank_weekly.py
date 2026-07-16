@@ -5,9 +5,11 @@ from __future__ import annotations
 import csv
 import os
 import re
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 import requests
 
@@ -189,9 +191,42 @@ def fetch_via_playwright(query: str, device: str) -> tuple[list[str], str]:
     return urls, "playwright_google"
 
 
+def fetch_via_ddg_lite(query: str, device: str) -> tuple[list[str], str]:
+    del device  # DDG lite has no device split; proxy when Google captcha blocks
+    params = urllib.parse.urlencode({"q": query, "kl": "tr-tr"})
+    url = f"https://lite.duckduckgo.com/lite/?{params}"
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "tr-TR,tr;q=0.9",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        html = response.read().decode("utf-8", errors="replace")
+    links = [unquote(match) for match in re.findall(r"uddg=([^&\"]+)", html)]
+    seen_domains: set[str] = set()
+    urls: list[str] = []
+    for link in links:
+        netloc = domain_from_url(link)
+        if not netloc or netloc in seen_domains:
+            continue
+        seen_domains.add(netloc)
+        urls.append(link)
+    return urls, "duckduckgo_proxy"
+
+
 def resolve_rank(urls: list[str]) -> tuple[str | int, str, str]:
-    competitor = urls[0] if urls else ""
-    competitor_domain = domain_from_url(competitor) if competitor else ""
+    competitor = ""
+    competitor_domain = ""
+    for url in urls:
+        if TARGET_DOMAIN not in urlparse(url).netloc:
+            competitor = url
+            competitor_domain = domain_from_url(url)
+            break
     for index, url in enumerate(urls, start=1):
         if TARGET_DOMAIN in urlparse(url).netloc:
             return index, url, competitor_domain
@@ -214,14 +249,26 @@ def latest_gsc_position(rows: list[dict[str, str]], query: str) -> str | None:
 
 
 def fetch_rank(query: str, device: str) -> tuple[str | int, str, str, str, str]:
-    providers = (fetch_via_serper, fetch_via_serpapi, fetch_via_playwright)
+    providers = (
+        fetch_via_serper,
+        fetch_via_serpapi,
+        fetch_via_playwright,
+        fetch_via_ddg_lite,
+    )
     last_error = ""
     for provider in providers:
         try:
             urls, source = provider(query, device)
             if urls:
                 rank, target_url, competitor = resolve_rank(urls)
-                notes = f"organic_top10={';'.join(domain_from_url(u) for u in urls[:10])}"
+                proxy_note = (
+                    "; Google organic captcha — DDG proxy sırası, doğrulama için SERPER_API_KEY önerilir"
+                    if source == "duckduckgo_proxy"
+                    else ""
+                )
+                notes = (
+                    f"organic_top10={';'.join(domain_from_url(u) for u in urls[:10])}{proxy_note}"
+                )
                 return rank, target_url, competitor, source, notes
         except Exception as exc:
             last_error = str(exc)
@@ -234,10 +281,10 @@ def build_measurement_rows(captured_at: str, existing_rows: list[dict[str, str]]
     rows: list[dict[str, str]] = []
     for device in ("desktop", "mobile"):
         rank, target_url, competitor, source, notes = fetch_rank(QUERY, device)
-        if rank == "error" and device == "mobile" and gsc_mobile:
+        if rank == "error" and gsc_mobile:
             rank = gsc_mobile
             source = "gsc_fallback"
-            notes = f"Canlı SERP başarısız; son GSC avg_position={gsc_mobile}"
+            notes = f"Canlı SERP başarısız; son GSC avg_position={gsc_mobile} (organic değil)"
         rows.append(
             {
                 "captured_at_utc": captured_at,
