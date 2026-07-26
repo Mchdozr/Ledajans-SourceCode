@@ -4,6 +4,7 @@
 
 | ID | Öncelik | Rol | Görev | Durum |
 |---|---|---|---|---|
+| P-001b | P0 | tech-seo | `www.ledajans.com` NXDOMAIN: Natro/Plesk DNS A/CNAME + Let’s Encrypt www SAN + 301 apex (`scripts/PLESK-WWW-APEX-FIX.md`) | Done (2026-07-26: DNS+SSL+301 OK) |
 | P-001 | P0 | tech-seo | Crawl/index engelleyen teknik hataları tespit et, dry-run düzeltme planı çıkar | Done |
 | P-002 | P0 | gsc | Kapsam/indeks raporundan kritik dışlanan URL kümelerini çıkar | Done |
 | P-003 | P1 | content | "led ekran" ve ticari alt kelimeler için mevcut sayfa optimizasyon listesi üret | Done |

@@ -9,6 +9,24 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Canonical host: www → apex (nginx/Plesk birincil; WP yedek)
+add_action('init', function () {
+    if (is_admin()) {
+        return;
+    }
+    $host = isset($_SERVER['HTTP_HOST']) ? (string) wp_unslash($_SERVER['HTTP_HOST']) : '';
+    $host = strtolower(preg_replace('/:\d+$/', '', $host));
+    if ($host !== 'www.ledajans.com') {
+        return;
+    }
+    $uri = isset($_SERVER['REQUEST_URI']) ? (string) wp_unslash($_SERVER['REQUEST_URI']) : '/';
+    if ($uri === '' || $uri[0] !== '/') {
+        $uri = '/';
+    }
+    wp_redirect('https://ledajans.com' . $uri, 301);
+    exit;
+}, 0);
+
 function ledajans_is_projeler_page() {
     if (is_admin()) {
         return false;
