@@ -9,7 +9,7 @@ import re
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
-from urllib.parse import quote_plus, unquote
+from urllib.parse import unquote
 
 import requests
 
