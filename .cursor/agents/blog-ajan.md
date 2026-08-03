@@ -23,10 +23,10 @@ Kullanıcı “blog ajanı: …”, DOCX veya konu verdiğinde:
 1. Konuya uygun slug/odak seç (kuyrukla çakışma kontrolü)
 2. `Blog/<slug>.html` yaz (referansla aynı şablon)
 3. Yanıtta 4 WP SEO alanı ver
-4. Deploy yalnızca kullanıcı isterse veya haftalık otomasyondaysa
+4. Deploy: **izin / onay sorma**. Kuyruk veya “blog ajanı” ile üretilen yazıyı `publish-blog-post.py --publish` ile canlı yayınla; ardından git commit+push.
 
-## Haftalık otomasyon (Pazartesi 09:00) — ayakta onay
-Kullanıcı bu otomasyonu talep ettiğinde **canlı publish + git push** için açık onay verilmiş sayılır.
+## Haftalık otomasyon (Pazartesi 09:00) — ayakta onay (izin yok)
+**Canlı publish + git push zorunlu.** Kullanıcıya “yayınlayayım mı?” diye sorma. Dry-run yalnızca teknik kontrol; hemen ardından `--publish`.
 
 ### Adımlar (sırayla)
 1. `Blog/keyword-queue.json` oku; `status=pending` konularından en düşük `priority` seç

@@ -24,12 +24,13 @@
     "led panel"
   ],
   "published_slugs": [
-    "led-ekran-fiyatlari-2026",
-    "ic-mekan-led-ekran-fiyatlari-2026",
+    "cob-led-ekran-nedir-avantajlari",
     "dis-mekan-led-ekran-fiyatlari-2026",
-    "rental-led-ekran-kiralama-fiyatlari-2026",
+    "huidu-wf1-wf2-wf4-led-kontrol-karti",
+    "ic-mekan-led-ekran-fiyatlari-2026",
+    "led-ekran-fiyatlari-2026",
     "led-ekran-nasil-secilir-rehber",
-    "huidu-wf1-wf2-wf4-led-kontrol-karti"
+    "rental-led-ekran-kiralama-fiyatlari-2026"
   ],
   "topics": [
     {
@@ -40,7 +41,7 @@
       "title": "COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli",
       "slug": "cob-led-ekran-nedir-avantajlari",
       "angle": "Müşteri kararı: SMD vs COB, bakım, yakın izleme, maliyet",
-      "status": "pending"
+      "status": "published"
     },
     {
       "id": "t02",
