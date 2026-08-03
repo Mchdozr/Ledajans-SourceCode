@@ -15,9 +15,10 @@ Her Pazartesi saat **09:00** (Türkiye) bir SEO blog yazısı üret, WordPress�
 1. Repo checkout: `Mchdozr/Ledajans-SourceCode` (master veya tanımlı branch)
 2. `.cursor/agents/blog-ajan.md` + `Blog/keyword-queue.json` oku
 3. Sıradaki `pending` topic’i seç; HTML üret (`Blog/<slug>.html`)
-4. `python scripts/publish-blog-post.py Blog/<slug>.html --dry-run` sonra `--publish`
-5. Queue güncelle, commit, push
-6. Özet yaz: slug, link, KW
+4. **Görsel:** konu/ürünle uyumlu; yoksa üret veya bul → WP medya yükle → HTML’e koy (alakasız stok yasak)
+5. `python scripts/publish-blog-post.py Blog/<slug>.html --dry-run` sonra `--publish`
+6. Queue güncelle, commit, push
+7. Özet yaz: slug, link, KW, görsel URL
 
 ## Ortam
 Cloud Agent’ta `.env` veya secret: `WP_USERNAME`, `WP_APP_PASSWORD`, `WP_SITE_URL=https://ledajans.com`

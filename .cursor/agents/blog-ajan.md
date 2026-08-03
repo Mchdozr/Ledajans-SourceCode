@@ -50,11 +50,21 @@ Kuyruk biterse: yeni 5–10 topic üret (rakip/niyet analizi; “led ekran” 1.
 ## HTML şablon (zorunlu — referansla birebir sınıf)
 - `ledajans-seo-article` style + CTA `#f46f2c` / `ledajans-seo-cta`
 - 📌 giriş · 📑 içindekiler · görsel+alt · bölümler · 🏆 sonuç · 📚 ilgili · 💡 SSS (≥4) · FİYAT ALIN
-- Görsel: mevcut ledajans uploads URL; alt’ta odak KW
+
+## Görsel (zorunlu — konu/ürün uyumu)
+Her yazıda ≥1 ana görsel; **konu veya ürünle görsel olarak uyumlu** olmalı.
+
+Öncelik:
+1. `ledajans.com/wp-content/uploads/...` içinde konuya uyan ürün/proje görseli
+2. Yoksa **üret** (`GenerateImage`) veya güvenilir kaynaktan bul → `wp-json/wp/v2/media` ile yükle → HTML’de o URL
+3. Alakasız / generic stok **yasak** (ör. kart yazısına rastgele vitrin)
+
+Kurallar: `alt`ta odak KW (+ “led ekran”); `loading="lazy"`; telifsiz/üretim veya kendi medya; okunaksız fake UI yazısı yok.
 
 ## Yasaklar
 - Aynı slug’u yeniden yayınlama
 - Generic AI tonu / uydurma teknik iddia
+- Konuyla uyumsuz blog görseli
 - Secret’ı log/commit etme
 - Desktop/perf patch’e dokunma (bu ajan yalnızca blog)
 
