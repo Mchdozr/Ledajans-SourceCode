@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LEDAJANS Mobile Perf
  * Description: Yalnizca mobil UA icin LCP/TBT optimizasyonu. Desktop no-op. Rank Math REST meta kaydi tum cihazlarda acik.
- * Version: 1.2.2
+ * Version: 1.2.4
  * Author: LEDAJANS
  *
  * Alternatif kurulum: wp-content/mu-plugins/ledajans-perf-patch.php
@@ -36,17 +36,24 @@ function ledajans_mp_v11_active() {
     return function_exists('wp_is_mobile') && wp_is_mobile();
 }
 
-// Eski mu-plugin uyarisi (desktop'i kirletmesin diye silinmeli)
-add_action('admin_notices', function () {
-    if (!current_user_can('manage_options')) {
+// Not: Canli kurulum yolu zaten mu-plugins/ledajans-perf-patch.php (write-files).
+
+// Logo PNG (~95KiB) -> WebP (~7KiB). Gorunum ayni; masaustu layout degismez.
+add_action('template_redirect', function () {
+    if (is_admin() || is_feed() || (defined('REST_REQUEST') && REST_REQUEST)) {
         return;
     }
-    $mu = WP_CONTENT_DIR . '/mu-plugins/ledajans-perf-patch.php';
-    if (!file_exists($mu)) {
-        return;
-    }
-    echo '<div class="notice notice-warning"><p><strong>LEDAJANS Mobile Perf:</strong> Eski dosya hala var: <code>wp-content/mu-plugins/ledajans-perf-patch.php</code>. Desktop etkilenmemesi icin bu mu-plugin dosyasini silin.</p></div>';
-});
+    ob_start(static function ($html) {
+        if (!is_string($html) || $html === '') {
+            return $html;
+        }
+        return str_replace(
+            'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png',
+            'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp',
+            $html
+        );
+    });
+}, 0);
 
 // Rank Math REST — tum cihazlar (gorunum/JS yok)
 add_action('init', function () {
