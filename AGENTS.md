@@ -55,3 +55,10 @@ python3 AGENT-HUB/auto_orchestrator.py && echo "OK"
 python3 AGENT-HUB/live_dashboard.py && echo "OK"
 python3 deploy-to-wordpress.py --dry-run
 ```
+
+### Cursor Subagents, MCP, Stack
+
+- **Kalıcı alt ajanlar:** `.cursor/agents/*.md` (ceo-orchestrator, tech-seo, onpage-seo, performance, content-seo, internal-link, schema, visual-ux, gsc-serp, wordpress-deploy, qa-auditor, mcp-connector, risk-guardian). İlgili işte sorgusuz çağrılır.
+- **Router kuralı:** `.cursor/rules/ledajans-subagents.mdc`
+- **MCP şablonu:** `.cursor/mcp.json.example` (token commit etme; WP MCP + Apify)
+- **Araştırma / yol haritası:** `AGENT-HUB/CURSOR-STACK-RESEARCH.md`

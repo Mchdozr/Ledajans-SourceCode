@@ -1,0 +1,30 @@
+---
+description: LEDAJANS kalıcı alt ajanları sorgusuz çağır; SEO/performans/MCP işlerinde ilgili .cursor/agents/*.md ajanını kullan.
+globs:
+alwaysApply: true
+---
+
+# LEDAJANS Subagent Router
+
+İlgili iş geldiğinde kullanıcıya sormadan `.cursor/agents/` altındaki ajanı Task tool ile veya doğrudan rol kurallarıyla uygula:
+
+| Tetik | Ajan |
+|-------|------|
+| Görev dağıtımı, sprint, çok rollü iş | `ceo-orchestrator` |
+| robots/sitemap/canonical/index | `tech-seo` |
+| title/meta/H1/CTR/snippet | `onpage-seo` |
+| LCP/TBT/Lighthouse/mobil hız | `performance` |
+| Yeni/refresh içerik, topic cluster | `content-seo` |
+| İç link / hub-spoke | `internal-link` |
+| JSON-LD / rich results | `schema` |
+| Hero/görsel/kontrast/mikro-kopya | `visual-ux` |
+| GSC coverage / SERP | `gsc-serp` |
+| WP deploy / dry-run | `wordpress-deploy` |
+| MCP/plugin bağlama | `mcp-connector` |
+| QA / regresyon | `qa-auditor` |
+| Deploy/robots/secret riski | `risk-guardian` |
+
+Kurallar:
+- Varsayılan report-only; canlı deploy için açık onay + dry-run.
+- Çalışma dizini `/workspace`. Secret commit yok.
+- Detaylı stack: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "wordpress-ledajans": {
+      "url": "https://ledajans.com/wp-json/YOUR-MCP-NAMESPACE/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LEDAJANS_WP_MCP_TOKEN}"
+      }
+    },
+    "apify": {
+      "url": "https://mcp.apify.com",
+      "headers": {
+        "Authorization": "Bearer ${APIFY_TOKEN}"
+      }
+    }
+  }
+}
