@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LEDAJANS Mobile Perf
  * Description: Yalnizca mobil UA icin LCP/TBT optimizasyonu. Desktop no-op. Rank Math REST meta kaydi tum cihazlarda acik.
- * Version: 1.1.0
+ * Version: 1.2.2
  * Author: LEDAJANS
  *
  * Alternatif kurulum: wp-content/mu-plugins/ledajans-perf-patch.php
@@ -101,10 +101,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('wp-preferences');
     wp_dequeue_style('classic-theme-styles');
 
+    // jQuery footer + defer adayi (head render-blocking ~350ms)
     wp_deregister_script('jquery');
     wp_register_script('jquery', includes_url('/js/jquery/jquery.min.js'), [], null, true);
     wp_enqueue_script('jquery');
 }, 100);
+
 
 add_action('wp_print_styles', function () {
     if (!ledajans_mp_v11_active()) {
@@ -290,6 +292,161 @@ function ledajans_mp_v11_gtm_buffer($html) {
         $html
     );
 
+    // Mobil: 1.2MB Firefly PNG CSS background'unu tamamen kes
+    $html = str_ireplace(
+        "url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png')",
+        'none',
+        $html
+    );
+    $html = str_ireplace(
+        'url("https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png")',
+        'none',
+        $html
+    );
+
+    // Mobil: q72 / hero-poster preload ve srcset baskisini azalt
+    $html = preg_replace(
+        '#<link[^>]+rel=["\']preload["\'][^>]+hero-poster\.webp[^>]*>\s*#i',
+        '',
+        $html
+    );
+    $html = preg_replace(
+        '#<link[^>]+rel=["\']preload["\'][^>]+ldajsn2-mobile-q72\.webp[^>]*>\s*#i',
+        '',
+        $html
+    );
+    $html = preg_replace(
+        '#,\s*https://ledajans\.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72\.webp\s+\d+w#i',
+        '',
+        $html
+    );
+    // onerror ile q72 cekilmesini engelle
+    $html = str_ireplace(
+        "this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp'",
+        "this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp'",
+        $html
+    );
+    $html = str_ireplace(
+        'ldajsn2-mobile-q72.webp',
+        'ldajsn2-mobile-q60.webp',
+        $html
+    );
+
+    // Ana sayfa mobil: Chaty CSS/JS tamamen cikar
+    if (function_exists('is_front_page') && is_front_page()) {
+        $html = preg_replace(
+            '#<link[^>]+href=["\'][^"\']*chaty[^"\']*["\'][^>]*>\s*#i',
+            '',
+            $html
+        );
+        $html = preg_replace(
+            '#<script[^>]+src=["\'][^"\']*chaty[^"\']*["\'][^>]*></script>\s*#i',
+            '',
+            $html
+        );
+    }
+
+    // Logo LCP rekabetini dusur (95KiB PNG)
+    $html = preg_replace(
+        '#(<img[^>]+LedajansLogo\.png[^>]*?)>#i',
+        '$1 fetchpriority="low" loading="lazy" decoding="async">',
+        $html
+    );
+    // Google Fonts (Kumbh) — async
+    $html = preg_replace_callback(
+        '#<link([^>]+fonts\.googleapis\.com[^>]*)>#i',
+        function ($m) {
+            $tag = $m[0];
+            if (stripos($tag, 'onload=') !== false) {
+                return $tag;
+            }
+            if (stripos($tag, 'rel="preload"') !== false || stripos($tag, "rel='preload'") !== false) {
+                return $tag;
+            }
+            if (!preg_match('#href=["\']([^"\']+)#i', $tag, $hm)) {
+                return $tag;
+            }
+            return '<link rel="stylesheet" href="' . esc_url($hm[1]) . '" media="print" onload="this.media=\'all\'">';
+        },
+        $html
+    );
+
+    // Non-critical CSS async (desktop HTML dokunulmaz — buffer sadece mobil UA)
+    $asyncCssNeedles = [
+        'font-awesome',
+        'fontawesome',
+        'swiper.min.css',
+        'chaty-front',
+        'magnific-popup.css',
+        'bootstrap.css',
+        'template.css',
+        'eicons',
+        'widget-spacer',
+        'v4-shims',
+    ];
+    $html = preg_replace_callback(
+        '#<link([^>]+rel=["\']stylesheet["\'][^>]*)>#i',
+        function ($m) use ($asyncCssNeedles) {
+            $tag = $m[0];
+            if (stripos($tag, 'onload=') !== false || stripos($tag, 'media="print"') !== false) {
+                return $tag;
+            }
+            $hit = false;
+            foreach ($asyncCssNeedles as $needle) {
+                if (stripos($tag, $needle) !== false) {
+                    $hit = true;
+                    break;
+                }
+            }
+            if (!$hit) {
+                return $tag;
+            }
+            if (!preg_match('#href=["\']([^"\']+)#i', $tag, $hm)) {
+                return $tag;
+            }
+            $href = $hm[1];
+            return '<link rel="stylesheet" href="' . esc_url($href) . '" media="print" onload="this.media=\'all\'">';
+        },
+        $html
+    );
+
+    // Head'deki tema/plugin scriptlerini body sonuna defer ile tasi (jquery haric)
+    $moved = [];
+    $html = preg_replace_callback(
+        '#<script([^>]+src=["\']([^"\']+)["\'][^>]*)></script>#i',
+        function ($m) use (&$moved) {
+            $full = $m[0];
+            $src = $m[2];
+            $needles = [
+                'bootstrap.min.js',
+                'magnific-popup',
+                'jquery.cookie',
+                'jquery.appear',
+                'imagesloaded',
+                'masonry',
+                'main.js',
+                'swiper.min.js',
+                'v4-shims.min.js',
+            ];
+            $hit = false;
+            foreach ($needles as $n) {
+                if (stripos($src, $n) !== false) {
+                    $hit = true;
+                    break;
+                }
+            }
+            if (!$hit) {
+                return $full;
+            }
+            if (stripos($full, ' defer') === false) {
+                $full = str_ireplace('<script', '<script defer', $full);
+            }
+            $moved[] = $full;
+            return '';
+        },
+        $html
+    );
+
     $delayMs = ledajans_is_projeler_page() ? 4000 : 3000;
     $gtmId = 'GTM-WDLJTMSV';
 
@@ -310,17 +467,24 @@ function ledajans_mp_v11_gtm_buffer($html) {
         $html
     );
 
+    $tail = '';
+    if (!empty($moved)) {
+        $tail .= implode("\n", $moved);
+    }
+
     if (stripos($html, 'ledajansGtmLoaded') === false) {
-        $loader = '<script>(function(){window.dataLayer=window.dataLayer||[];var gtmId='
+        $tail .= '<script>(function(){window.dataLayer=window.dataLayer||[];var gtmId='
             . wp_json_encode($gtmId)
             . ',delayMs='
             . (int) $delayMs
             . ';function loadGtm(){if(window.ledajansGtmLoaded){return;}window.ledajansGtmLoaded=1;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer",gtmId);}function schedule(){setTimeout(loadGtm,delayMs);}if(window.ledajansRunWhenIdle){window.ledajansRunWhenIdle(schedule);}else{setTimeout(schedule,1800);}})();</script>';
+    }
 
+    if ($tail !== '') {
         if (stripos($html, '</body>') !== false) {
-            $html = str_ireplace('</body>', $loader . '</body>', $html);
+            $html = str_ireplace('</body>', $tail . '</body>', $html);
         } else {
-            $html .= $loader;
+            $html .= $tail;
         }
     }
 

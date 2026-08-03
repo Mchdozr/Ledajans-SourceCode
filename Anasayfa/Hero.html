@@ -482,12 +482,18 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
+      background-image: none;
       background-size: cover;
       background-position: center;
       opacity: 0.2;
       pointer-events: none;
       z-index: 0;
+    }
+    /* 1.2MB PNG — yalnizca desktop (mobil LCP/bandwidth) */
+    @media (min-width: 769px) {
+      .ledajans-hero-fair-card::before {
+        background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
+      }
     }
     .ledajans-hero-fair-card > * {
       position: relative;
@@ -835,6 +841,13 @@
         display: flex;
         flex-direction: column;
       }
+      .ledajans-hero-fair-card::before {
+        background-image: none !important;
+        content: none !important;
+      }
+      .ledajans-hero-poster {
+        background-image: none !important;
+      }
       .ledajans-hero-fair-card:hover {
         transform: none;
         box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
@@ -941,7 +954,7 @@
       <div class="ledajans-hero-bg-mobile">
         <picture>
           <source media="(max-width: 768px)" srcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" type="image/webp">
-          <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" width="768" height="1024" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q72.webp';">
+          <img src="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" width="768" height="1024" alt="LEDAJANS LED ekran çözümleri - iç mekan ve dış mekan profesyonel LED ekran sistemleri" fetchpriority="high" loading="eager" decoding="async">
         </picture>
       </div>
       <div class="ledajans-hero-overlay"></div>
