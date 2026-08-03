@@ -1,0 +1,236 @@
+{
+  "primary_keyword": "led ekran",
+  "notes": "Her yazıda Rank Math anahtar listesinde 'led ekran' 1. sırada. Yazı odak kelimesi (focus) topic.focus_keyword. Tekrar yok: status=published olanlar atlanır.",
+  "keyword_priority": [
+    "led ekran",
+    "led ekran fiyatları",
+    "iç mekan led ekran",
+    "dış mekan led ekran",
+    "led ekran kiralama",
+    "rental led ekran",
+    "led tabela",
+    "cob led ekran",
+    "led video wall",
+    "led ekran kurulum",
+    "istanbul led ekran",
+    "p2.5 led ekran",
+    "led ekran kontrol kartı",
+    "sahne led ekran",
+    "mağaza vitrin led ekran",
+    "led billboard",
+    "avm led ekran",
+    "stadyum led ekran",
+    "led ekran bakım",
+    "led panel"
+  ],
+  "published_slugs": [
+    "led-ekran-fiyatlari-2026",
+    "ic-mekan-led-ekran-fiyatlari-2026",
+    "dis-mekan-led-ekran-fiyatlari-2026",
+    "rental-led-ekran-kiralama-fiyatlari-2026",
+    "led-ekran-nasil-secilir-rehber",
+    "huidu-wf1-wf2-wf4-led-kontrol-karti"
+  ],
+  "topics": [
+    {
+      "id": "t01",
+      "priority": 1,
+      "focus_keyword": "cob led ekran",
+      "rankmath_keywords": "led ekran, cob led ekran, cob led nedir, flip chip led",
+      "title": "COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli",
+      "slug": "cob-led-ekran-nedir-avantajlari",
+      "angle": "Müşteri kararı: SMD vs COB, bakım, yakın izleme, maliyet",
+      "status": "pending"
+    },
+    {
+      "id": "t02",
+      "priority": 2,
+      "focus_keyword": "led video wall",
+      "rankmath_keywords": "led ekran, led video wall, video wall nedir, toplantı odası led",
+      "title": "LED Video Wall Nedir? Toplantı ve Lobi İçin Seçim Rehberi",
+      "slug": "led-video-wall-nedir-secim-rehberi",
+      "angle": "Kurumsal alıcı: pitch, kontrol, montaj, bütçe",
+      "status": "pending"
+    },
+    {
+      "id": "t03",
+      "priority": 3,
+      "focus_keyword": "led tabela",
+      "rankmath_keywords": "led ekran, led tabela, mağaza led tabela, eczane led tabela",
+      "title": "LED Tabela Seçerken Dikkat Edilecekler: İşletme Rehberi",
+      "slug": "led-tabela-secim-rehberi",
+      "angle": "KOBİ: boyut, parlaklık, kontrol kartı, fiyat bandı",
+      "status": "pending"
+    },
+    {
+      "id": "t04",
+      "priority": 4,
+      "focus_keyword": "istanbul led ekran",
+      "rankmath_keywords": "led ekran, istanbul led ekran, istanbul led tabela, led ekran montaj istanbul",
+      "title": "İstanbul LED Ekran: Kurulum, Keşif ve Proje Süreci",
+      "slug": "istanbul-led-ekran-kurulum-rehberi",
+      "angle": "Yerel niyet: keşif, lojistik, izin, LEDAJANS İstanbul",
+      "status": "pending"
+    },
+    {
+      "id": "t05",
+      "priority": 5,
+      "focus_keyword": "p2.5 led ekran",
+      "rankmath_keywords": "led ekran, p2.5 led ekran, piksel aralığı, iç mekan led pitch",
+      "title": "P2.5 LED Ekran Ne İşe Yarar? İzleme Mesafesi ve Kullanım",
+      "slug": "p2-5-led-ekran-ne-ise-yarar",
+      "angle": "Teknik alıcı: mesafe formülü, alternatif P değerleri",
+      "status": "pending"
+    },
+    {
+      "id": "t06",
+      "priority": 6,
+      "focus_keyword": "sahne led ekran",
+      "rankmath_keywords": "led ekran, sahne led ekran, rental led, konser led perde",
+      "title": "Sahne LED Ekran: Konser, Lansman ve Event Kullanımı",
+      "slug": "sahne-led-ekran-event-rehberi",
+      "angle": "Ajans/event: rental vs satın alma, pixel, lojistik",
+      "status": "pending"
+    },
+    {
+      "id": "t07",
+      "priority": 7,
+      "focus_keyword": "mağaza vitrin led ekran",
+      "rankmath_keywords": "led ekran, mağaza vitrin led ekran, retail led, vitrin reklam ekranı",
+      "title": "Mağaza Vitrin LED Ekran ile Dikkat ve Dönüşüm",
+      "slug": "magaza-vitrin-led-ekran-rehberi",
+      "angle": "Perakende: boyut, parlaklık, içerik, ROI",
+      "status": "pending"
+    },
+    {
+      "id": "t08",
+      "priority": 8,
+      "focus_keyword": "led billboard",
+      "rankmath_keywords": "led ekran, led billboard, dış mekan led reklam, led panolar",
+      "title": "LED Billboard Reklam: Dış Mekan Yatırımında Dikkat Edilecekler",
+      "slug": "led-billboard-reklam-rehberi",
+      "angle": "Outdoor: IP, nits, enerji, izin",
+      "status": "pending"
+    },
+    {
+      "id": "t09",
+      "priority": 9,
+      "focus_keyword": "avm led ekran",
+      "rankmath_keywords": "led ekran, avm led ekran, alışveriş merkezi led, atrium led",
+      "title": "AVM LED Ekran Uygulamaları: Atrium ve Koridor Kullanımı",
+      "slug": "avm-led-ekran-uygulamalari",
+      "angle": "AVM operasyon: güvenlik, içerik, bakım",
+      "status": "pending"
+    },
+    {
+      "id": "t10",
+      "priority": 10,
+      "focus_keyword": "led ekran bakım",
+      "rankmath_keywords": "led ekran, led ekran bakım, led ekran arıza, modül değişimi",
+      "title": "LED Ekran Bakım Rehberi: Ömür ve Arıza Önleme",
+      "slug": "led-ekran-bakim-rehberi-blog",
+      "angle": "Sahiplik maliyeti: temizlik, yedek, kalibrasyon",
+      "status": "pending"
+    },
+    {
+      "id": "t11",
+      "priority": 11,
+      "focus_keyword": "ankara led ekran",
+      "rankmath_keywords": "led ekran, ankara led ekran, ankara led tabela",
+      "title": "Ankara LED Ekran Projeleri: Keşif ve Montaj Notları",
+      "slug": "ankara-led-ekran-rehberi",
+      "angle": "Şehir sayfası blog uzantısı",
+      "status": "pending"
+    },
+    {
+      "id": "t12",
+      "priority": 12,
+      "focus_keyword": "izmir led ekran",
+      "rankmath_keywords": "led ekran, izmir led ekran, izmir led tabela",
+      "title": "İzmir LED Ekran: İç ve Dış Mekan Seçim İpuçları",
+      "slug": "izmir-led-ekran-rehberi",
+      "angle": "Şehir + iklim/parlaklık",
+      "status": "pending"
+    },
+    {
+      "id": "t13",
+      "priority": 13,
+      "focus_keyword": "fuar led ekran",
+      "rankmath_keywords": "led ekran, fuar led ekran, stand led ekran, fuar kiralama led",
+      "title": "Fuar Standında LED Ekran Kullanımı ve Kiralama",
+      "slug": "fuar-led-ekran-kiralama-rehberi",
+      "angle": "Kısa süreli kullanım, lojistik, pixel",
+      "status": "pending"
+    },
+    {
+      "id": "t14",
+      "priority": 14,
+      "focus_keyword": "led ekran vs lcd",
+      "rankmath_keywords": "led ekran, led ekran vs lcd, video wall lcd farkı",
+      "title": "LED Ekran mı LCD mi? Büyük Format Karşılaştırma",
+      "slug": "led-ekran-mi-lcd-mi",
+      "angle": "Karar matrisi: dikiş, parlaklık, ölçek",
+      "status": "pending"
+    },
+    {
+      "id": "t15",
+      "priority": 15,
+      "focus_keyword": "nits parlaklık led ekran",
+      "rankmath_keywords": "led ekran, nits parlaklık, dış mekan led parlaklık, led ekran nits",
+      "title": "LED Ekranda Nits Parlaklık: İç ve Dış Mekan Değerleri",
+      "slug": "led-ekran-nits-parlaklik-rehberi",
+      "angle": "Teknik sözlük → ticari karar",
+      "status": "pending"
+    },
+    {
+      "id": "t16",
+      "priority": 16,
+      "focus_keyword": "led ekran kurulum maliyeti",
+      "rankmath_keywords": "led ekran, led ekran kurulum, led ekran montaj maliyeti, konstrüksiyon",
+      "title": "LED Ekran Kurulum Maliyeti: Görünmeyen Kalemler",
+      "slug": "led-ekran-kurulum-maliyeti",
+      "angle": "Bütçe şeffaflığı: elektrik, çelik, işçilik",
+      "status": "pending"
+    },
+    {
+      "id": "t17",
+      "priority": 17,
+      "focus_keyword": "stadyum led ekran",
+      "rankmath_keywords": "led ekran, stadyum led ekran, skorboard led, peri led",
+      "title": "Stadyum LED Ekran ve Skorboard Sistemleri",
+      "slug": "stadyum-led-ekran-skorboard",
+      "angle": "Spor tesisi: IP, yenileme, kontrol",
+      "status": "pending"
+    },
+    {
+      "id": "t18",
+      "priority": 18,
+      "focus_keyword": "otel led ekran",
+      "rankmath_keywords": "led ekran, otel led ekran, lobi led video wall",
+      "title": "Otel Lobisinde LED Ekran: Marka ve Misafir Deneyimi",
+      "slug": "otel-led-ekran-lobi-rehberi",
+      "angle": "Otelcilik: estetik, ses, bakım",
+      "status": "pending"
+    },
+    {
+      "id": "t19",
+      "priority": 19,
+      "focus_keyword": "led panel nedir",
+      "rankmath_keywords": "led ekran, led panel nedir, led modül, kabinet led",
+      "title": "LED Panel Nedir? Modül, Kabinet ve Ekran Farkı",
+      "slug": "led-panel-nedir-modül-kabinet",
+      "angle": "Eğitim içeriği → ürün sayfasına köprü",
+      "status": "pending"
+    },
+    {
+      "id": "t20",
+      "priority": 20,
+      "focus_keyword": "belediye led ekran",
+      "rankmath_keywords": "led ekran, belediye led ekran, bilgilendirme ekranı, şehir mobilyası led",
+      "title": "Belediye Bilgilendirme LED Ekranı: İhale ve Teknik Notlar",
+      "slug": "belediye-led-ekran-bilgilendirme",
+      "angle": "Kamu: şartname, dayanıklılık, içerik",
+      "status": "pending"
+    }
+  ]
+}

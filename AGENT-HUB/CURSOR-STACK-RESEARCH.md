@@ -128,6 +128,7 @@ Konum: `.cursor/agents/` (project-level, git’te)
 | onpage-seo.md | onpage-seo |
 | performance.md | performance |
 | content-seo.md | content-seo |
+| blog-ajan.md | blog-ajan (“blog ajanı”, WP HTML blog) |
 | internal-link.md | internal-link |
 | schema.md | schema |
 | visual-ux.md | visual-ux |
