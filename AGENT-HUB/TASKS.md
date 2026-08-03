@@ -10,7 +10,7 @@
 | P-004 | P1 | internal-link | Para sayfalara iç link fırsatlarını çıkar, anchor öneri seti hazırla | Done |
 | P-005 | P1 | serp-watch | Ana ve ticari alt kelimeler için baseline SERP takip tablosu kur | Done |
 | P-006 | P2 | content | Yeni içerik ihtiyacını topic cluster olarak öner (yalnızca mevcut içerik güncellemesi sonrası) | Done |
-| P-010 | P0 | performance | Mobil LCP &lt; 4s: render-blocking, hero preload, unused CSS/JS; patch doğrula | Pending |
+| P-010 | P0 | performance | Mobil LCP &lt; 4s: render-blocking, hero preload, unused CSS/JS; patch doğrula | In Progress (patch uygulandı — canlı mu-plugin + Hero deploy gerekli) |
 | P-011 | P0 | tech-seo / gsc-serp | Index triage + para URL Inspection kuyruğu yenile; open FB’leri kapat | Pending |
 | P-012 | P1 | onpage-seo | CTR düşük sorgular için title/meta revizyon taslağı | Pending |
 | P-013 | P1 | visual-ux | color-contrast, heading-order, link-name düzeltme planı | Pending |
