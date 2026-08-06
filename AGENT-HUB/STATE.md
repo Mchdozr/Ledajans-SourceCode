@@ -10,16 +10,14 @@
 - Kapsam: teknik SEO, indeksleme, içerik iyileştirme, iç linkleme, GSC doğrulama, SERP izleme
 
 ## Agent Rolleri
-- tech-seo
-- content
-- internal-link
-- gsc
-- serp-watch
+- tech-seo, content, internal-link, gsc, serp-watch (rapor rolleri)
+- Cursor kalıcı: `.cursor/agents/` (ceo-orchestrator, tech-seo, onpage-seo, performance, content-seo, internal-link, schema, visual-ux, gsc-serp, wordpress-deploy, qa-auditor, mcp-connector, risk-guardian)
 
 ## Mevcut Durum
 - AGENT-HUB yapısı bu sprint başlangıcında oluşturuldu.
 - İlk tur görev dağıtımı aktif.
 - 20 dakikalık otonom kontrol döngüsü çalışıyor.
+- 2026-08-03: Cursor stack araştırması + kalıcı alt ajanlar eklendi (`CURSOR-STACK-RESEARCH.md`). Backlog P-010…P-015 açıldı.
 
 ## Çalışma Modu (Zorunlu)
 - Rapor-odaklı mod: Sadece `AGENT-HUB/*.md` dosyalarına yaz.

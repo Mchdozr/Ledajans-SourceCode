@@ -4,6 +4,7 @@
 
 # WordPress deploy secrets
 .wp-credentials
+.cursor/mcp.json
 
 # Local audit artifacts (optional)
 lighthouse.profile*/
