@@ -1,0 +1,32 @@
+{
+  "automation": "Ledajans-Sıralama",
+  "note": "Google TR organik sırası değil; DDG HTML / Yahoo TR / Brave proxy. Google için GSC average position kullanın.",
+  "keywords": [
+    "led ekran",
+    "dış mekan led ekran",
+    "iç mekan led ekran",
+    "led ekran fiyatları",
+    "mağaza led ekran",
+    "istanbul led ekran",
+    "rental led ekran",
+    "cob ekran"
+  ],
+  "measured": [
+    {"date": "2026-05-08", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_lite", "source": "repo_branch"},
+    {"date": "2026-05-09", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "repo_branch"},
+    {"date": "2026-05-10", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "repo_branch"},
+    {"date": "2026-05-11", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "repo_branch"},
+    {"date": "2026-05-12", "keyword": "led ekran", "rank": 1, "engine": "yahoo_tr", "source": "repo_branch"},
+    {"date": "2026-05-13", "keyword": "led ekran", "rank": 2, "engine": "brave", "source": "repo_branch"},
+    {"date": "2026-05-16", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "repo_branch"},
+    {"date": "2026-05-18", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "repo_branch"},
+    {"date": "2026-05-21", "keyword": "led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "dış mekan led ekran", "rank": 4, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "iç mekan led ekran", "rank": 4, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "led ekran fiyatları", "rank": 10, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "mağaza led ekran", "rank": 3, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "istanbul led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "rental led ekran", "rank": 1, "engine": "duckduckgo_html", "source": "live"},
+    {"date": "2026-05-21", "keyword": "cob ekran", "rank": 1, "engine": "duckduckgo_html", "source": "live"}
+  ]
+}
