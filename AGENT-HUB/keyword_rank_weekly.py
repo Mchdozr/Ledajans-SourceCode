@@ -8,7 +8,6 @@ import json
 import os
 import re
 import subprocess
-import sys
 import urllib.parse
 from dataclasses import dataclass
 from datetime import UTC, datetime
