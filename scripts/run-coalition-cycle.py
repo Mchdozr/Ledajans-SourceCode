@@ -94,6 +94,14 @@ def main() -> int:
     print(f"Alarmlar: {len(alarms)} | Deploy kilidi: {locked}")
     if locked:
         print(f"Kilit nedeni: {reason}")
+
+    # Telegram ozeti (token yoksa sessizce atlanir)
+    notify = ROOT / "scripts/telegram_notify.py"
+    if notify.exists():
+        code = run_script("scripts/telegram_notify.py", "--coalition-status")
+        if code != 0:
+            print("Telegram bildirimi basarisiz (tur devam etti)")
+
     return 0
 
 
