@@ -161,10 +161,15 @@ Dinleyici: `python3 scripts/telegram_bot_poll.py --loop`
 
 ## Uygulama Kuyruğu
 
+Ajanlar APPLY satırında **insan dili** zorunlu (Telegram onayı için):
+
 ```
-[APPLY:T1] scripts/publish-blog-post.py Blog/slug.html --publish
-[APPLY:T2] deploy-to-wordpress.py (slug: led-ekran-nedir)
+[APPLY:T1] Ne: Blog yazısı yayınlanır | Sayfa: /blog/cob-led-ekran-nedir-avantajlari/ | Gorunur: Yeni yazi + kapak gorseli | Risk: dusuk || scripts/publish-blog-post.py Blog/cob-led-ekran-nedir-avantajlari.html --publish
+[APPLY:T2] Ne: Ana sayfa hero hafifler | Sayfa: https://ledajans.com/ | Gorunur: Ust buyuk gorsel degisir | Risk: orta || scripts/deploy-homepage-hero.py
 ```
+
+Format: `Ne: … | Sayfa: … | Gorunur: … | Risk: … || komut`  
+Telegram mesajı bu alanları nokta atışı gösterir; çıplak komut gösterme.
 
 ## CSS Kilidi (visual-ux)
 

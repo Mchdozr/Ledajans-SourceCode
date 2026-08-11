@@ -186,6 +186,109 @@ def write_coalition_status(
     return path
 
 
+def explain_apply_command(command: str) -> dict[str, str]:
+    """Komuttan insan dili ozet uret (fallback)."""
+    cmd = command.strip()
+    lower = cmd.lower()
+    summary = "Teknik guncelleme uygulanacak"
+    pages = "ledajans.com"
+    visual = "Sayfada buyuk gorsel degisiklik beklenmiyor (teknik)"
+    risk = "Kontrol et"
+
+    if "publish-blog-post" in lower or ("blog/" in lower and "--publish" in lower):
+        m = re.search(r"Blog[/\\]([^\s]+\.html)", cmd, re.I)
+        slug = m.group(1).replace(".html", "") if m else "yeni-yazi"
+        summary = f"Blog yazisi yayinlanacak: {slug}"
+        pages = f"https://ledajans.com/blog/{slug}/"
+        visual = "Blogda yeni yazi + kapak gorseli; ana sayfa blog listesi etkilenebilir"
+        risk = "Dusuk — yeni icerik"
+    elif "deploy-homepage-hero" in lower or (
+        "hero" in lower and "deploy" in lower
+    ):
+        summary = "Ana sayfa hero (ust buyuk gorsel) guncellemesi"
+        pages = "https://ledajans.com/"
+        visual = "Ana sayfa ilk ekran gorseli/banner degisir (boyut, netlik)"
+        risk = "Orta — ilk izlenim"
+    elif "deploy-to-wordpress" in lower or "deploy-money" in lower or "deploy-p1" in lower:
+        summary = "WordPress sayfa/widget icerik guncellemesi"
+        pages = "Ilgili urun/SEO sayfalari"
+        visual = "Sayfa metinleri, tablolar veya widget icerikleri degisebilir"
+        risk = "Orta — canli sayfa icerigi"
+    elif "install-mobile-perf" in lower or "mobil-hiz" in lower:
+        summary = "Mobil hiz / performans yamasi"
+        pages = "Genelde tum sayfalar (ozellikle mobil)"
+        visual = "Tasarim ayni kalmali; yukleme hizi artar"
+        risk = "Orta — performans"
+    elif "rankmath" in lower:
+        summary = "SEO baslik / meta aciklama guncellemesi"
+        pages = "Hedef URL (Google snippet)"
+        visual = "Sayfa ici gorsel degismez; arama sonucu basligi/aciklamasi degisebilir"
+        risk = "Dusuk — snippet"
+    elif "schema" in lower:
+        summary = "Yapisal veri (schema) guncellemesi"
+        pages = "Ilgili sayfa"
+        visual = "Ziyaretciye gorunur degisiklik yok"
+        risk = "Dusuk"
+    elif cmd.startswith("echo "):
+        summary = "Test komutu (site degismez)"
+        pages = "—"
+        visual = "Sitede hicbir sey degismez"
+        risk = "Yok — demo"
+
+    return {
+        "summary": summary,
+        "pages": pages,
+        "visual": visual,
+        "risk": risk,
+        "command": cmd,
+    }
+
+
+def parse_apply_line(raw: str) -> dict[str, str]:
+    """APPLY satirini ayikla.
+
+    Tercih: Ne: ... | Sayfa: ... | Gorunur: ... | Risk: ... || komut
+    """
+    text = raw.strip()
+    command = text
+    meta: dict[str, str] = {}
+
+    if "||" in text:
+        left, command = text.rsplit("||", 1)
+        command = command.strip()
+        for part in re.split(r"\s*\|\s*", left):
+            part = part.strip()
+            if ":" not in part:
+                continue
+            key, _, val = part.partition(":")
+            key_l = key.strip().lower()
+            val = val.strip()
+            if key_l in ("ne", "ne değişir", "ne degisir", "özet", "ozet", "summary"):
+                meta["summary"] = val
+            elif key_l in ("sayfa", "url", "nerede", "page", "pages"):
+                meta["pages"] = val
+            elif key_l in (
+                "görünür",
+                "gorunur",
+                "görsel",
+                "gorsel",
+                "visual",
+                "ui",
+            ):
+                meta["visual"] = val
+            elif key_l in ("risk",):
+                meta["risk"] = val
+
+    explained = explain_apply_command(command)
+    return {
+        "summary": meta.get("summary") or explained["summary"],
+        "pages": meta.get("pages") or explained["pages"],
+        "visual": meta.get("visual") or explained["visual"],
+        "risk": meta.get("risk") or explained["risk"],
+        "command": command,
+    }
+
+
 def extract_apply_commands() -> list[dict[str, str]]:
     reports = sorted((hub_dir() / "REPORTS").glob("*.md"))
     commands: list[dict[str, str]] = []
@@ -195,8 +298,35 @@ def extract_apply_commands() -> list[dict[str, str]]:
             m = APPLY_PATTERN.search(line)
             if not m:
                 continue
-            tier, cmd = m.group(1).upper(), m.group(2).strip()
-            if cmd not in seen:
-                seen.add(cmd)
-                commands.append({"tier": tier, "command": cmd, "source": report.name})
+            tier = m.group(1).upper()
+            parsed = parse_apply_line(m.group(2).strip())
+            key = parsed["command"]
+            if key in seen:
+                continue
+            seen.add(key)
+            commands.append(
+                {
+                    "tier": tier,
+                    "command": parsed["command"],
+                    "summary": parsed["summary"],
+                    "pages": parsed["pages"],
+                    "visual": parsed["visual"],
+                    "risk": parsed["risk"],
+                    "source": report.name,
+                }
+            )
     return commands
+
+
+def format_apply_human_list(commands: list[dict], *, limit: int = 10) -> str:
+    """Telegram icin nokta atisi insan dili liste."""
+    lines: list[str] = []
+    for i, c in enumerate(commands[:limit], 1):
+        lines.append(f"{i}) [{c.get('tier', '?')}] {c.get('summary', 'Guncelleme')}")
+        lines.append(f"   Sayfa: {c.get('pages', '—')}")
+        lines.append(f"   Gorunur etki: {c.get('visual', '—')}")
+        lines.append(f"   Risk: {c.get('risk', '—')}")
+        lines.append("")
+    if len(commands) > limit:
+        lines.append(f"… +{len(commands) - limit} madde daha")
+    return "\n".join(lines).rstrip()

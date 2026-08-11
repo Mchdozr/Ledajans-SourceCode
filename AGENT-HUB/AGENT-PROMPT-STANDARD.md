@@ -42,6 +42,9 @@ Her tur kendi raporuna ekle:
 - `### Completed Analysis`
 - `### Team Sync Notes` (IDEA/OBJECT/AGREE)
 - `### Proposed Changes` / `[APPLY:T1|T2]` (uygunsa)
+  - Zorunlu format:  
+    `[APPLY:T1] Ne: <ziyaretcinin gorecegi degisiklik> | Sayfa: <url> | Gorunur: <gorsel/metin etki> | Risk: dusuk/orta || <komut>`
+  - Telegram onay mesaji bu alanlari kullanir; sadece komut yazma.
 - `### QA / Risk Check`
 - `### Data/Approval Needs`
 - `### Next Step (Owner + ETA)`

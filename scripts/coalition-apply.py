@@ -12,7 +12,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from coalition_common import deploy_locked, extract_apply_commands, hub_dir  # noqa: E402
+from coalition_common import (  # noqa: E402
+    deploy_locked,
+    extract_apply_commands,
+    format_apply_human_list,
+    hub_dir,
+)
 from telegram_gate import (  # noqa: E402
     approval_required,
     is_apply_approved,
@@ -76,23 +81,19 @@ def request_telegram_approval(commands: list[dict]) -> None:
     item = queue_apply_approval(commands)
     lines = [
         "LEDAJANS — ONAY GEREKIYOR",
-        f"ID: {item['id']}",
-        f"Komut sayisi: {len(item['commands'])}",
         "",
+        f"Kod: {item['id']}",
+        "Durum: Senin onayin bekleniyor — sitede henuz bir sey degismedi",
+        f"Kac is: {len(item['commands'])}",
+        "",
+        "Sitede ne degisecek (nokta atisi):",
+        format_apply_human_list(item["commands"]),
+        "",
+        "Ne yapmalisin?",
+        "/onay  → bu degisiklikleri uygula",
+        "/red   → hicbirini uygulama",
+        "/bekleyen → tekrar gor",
     ]
-    for c in item["commands"][:10]:
-        lines.append(f"- [{c['tier']}] {c['command']}")
-    if len(item["commands"]) > 10:
-        lines.append(f"… +{len(item['commands']) - 10}")
-    lines.extend(
-        [
-            "",
-            "Telegram'dan cevapla:",
-            "/onay  — uygula (sonra /uygula veya sonraki tur)",
-            "/red   — iptal",
-            "/bekleyen — liste",
-        ]
-    )
     send_message("\n".join(lines))
 
 

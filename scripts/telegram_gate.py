@@ -103,6 +103,10 @@ def queue_apply_approval(commands: list[dict], *, phase: str = "apply-prep") -> 
             {
                 "tier": c.get("tier", ""),
                 "command": c.get("command", ""),
+                "summary": c.get("summary", ""),
+                "pages": c.get("pages", ""),
+                "visual": c.get("visual", ""),
+                "risk": c.get("risk", ""),
                 "source": c.get("source", ""),
             }
             for c in commands
@@ -199,17 +203,32 @@ def add_order(text: str) -> dict:
 
 
 def format_pending_summary() -> str:
+    from coalition_common import format_apply_human_list
+
     pending = load_gate().get("pending_apply")
     if not pending:
-        return "Bekleyen APPLY yok."
+        return "Bekleyen onay yok."
+
+    status = pending.get("status", "")
+    status_tr = {
+        "awaiting_approval": "Senin onayin bekleniyor",
+        "approved": "Onayladin — henuz uygulanmadi (/uygula veya sonraki tur)",
+        "rejected": "Reddettin — uygulanmayacak",
+        "applied": "Uygulandi",
+    }.get(status, status)
+
     cmds = pending.get("commands") or []
     lines = [
-        f"ID: {pending.get('id')}",
-        f"Durum: {pending.get('status')}",
-        f"Komut: {len(cmds)}",
+        "LEDAJANS — BEKLEYEN DEGISIKLIK",
+        f"Kod: {pending.get('id')}",
+        f"Durum: {status_tr}",
+        f"Madde: {len(cmds)}",
+        "",
+        "Sitede ne degisecek:",
+        format_apply_human_list(cmds),
+        "",
+        "Kararin:",
+        "/onay  — bunlari uygula",
+        "/red   — hicbirini uygulama",
     ]
-    for c in cmds[:8]:
-        lines.append(f"- [{c.get('tier')}] {c.get('command')}")
-    if len(cmds) > 8:
-        lines.append(f"… +{len(cmds) - 8}")
     return "\n".join(lines)
