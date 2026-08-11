@@ -127,12 +127,27 @@ Uzman ajan **doğrudan** yeni ajan oluşturmaz. Format:
 
 ## Deploy Kilidi
 
-`coalition-apply.py` **çalışmaz** (exit 2) eğer:
+`coalition-apply.py` **canlı** çalışmaz (exit 2/3) eğer:
 
-- Açık `[FB:*]` veya `[OBJECT:*]` (çözülmemiş)
-- Açık `[SPAWN-REQ:*]` (lider kararı bekliyor) — isteğe bağlı: sadece T2+ için; varsayılan: spawn talebi deploy’u kilitlemez, yalnızca FB/OBJECT kilitler
+- Açık `[FB:*]` veya `[OBJECT:*]`
 - `BLOCKER-ALERT.md` aktif
-- `.coalition-status.json` → `"deploy_locked": true`
+- Telegram kapısı: `TELEGRAM_REQUIRE_APPROVAL=1` ve `/onay` yok (exit 3)
+
+Dry-run her zaman çalışır; ardından Telegram'a **ONAY GEREKIYOR** mesajı gider.
+
+## İnsan kapısı (Telegram)
+
+Sen bot'a komut yazarsın; ajanlar buna uyar:
+
+| Komut | Etki |
+|-------|------|
+| `/onay` | Bekleyen APPLY → approved |
+| `/red` | Bekleyen APPLY → rejected |
+| `/uygula` | Onaylıysa `coalition-apply` canlı |
+| `/emir …` | `TELEGRAM-ORDERS.md` → ceo-orchestrator |
+| `/durum` `/bekleyen` | Bilgi |
+
+Dinleyici: `python3 scripts/telegram_bot_poll.py --loop`
 
 ---
 

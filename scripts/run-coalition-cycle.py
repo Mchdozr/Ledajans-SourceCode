@@ -102,6 +102,19 @@ def main() -> int:
         if code != 0:
             print("Telegram bildirimi basarisiz (tur devam etti)")
 
+    # Gelen Telegram komutlarini isle (tek tur poll)
+    poll = ROOT / "scripts/telegram_bot_poll.py"
+    if poll.exists():
+        run_script("scripts/telegram_bot_poll.py")
+
+    # apply-prep: dry-run + onay istegi
+    if args.phase == "apply-prep":
+        run_script("scripts/coalition-apply.py", "--dry-run")
+        # Canli sadece Telegram /onay sonrasi (veya kapı kapalıysa)
+        live = run_script("scripts/coalition-apply.py")
+        if live == 3:
+            print("Canli apply Telegram onayi bekliyor")
+
     return 0
 
 

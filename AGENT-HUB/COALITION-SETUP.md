@@ -49,9 +49,29 @@ Test:
 ```bash
 python3 scripts/telegram_notify.py --coalition-status
 python3 scripts/telegram_notify.py --text "LEDAJANS test"
+python3 scripts/telegram_bot_poll.py --announce
 ```
 
-Her `run-coalition-cycle.py` turu sonunda otomatik özet gider (token yoksa atlanır).
+### Komutlar (Telegram'dan sen yazarsın)
+
+| Komut | Anlam |
+|-------|--------|
+| `/yardim` | Komut listesi |
+| `/durum` | Alarm + kilit özeti |
+| `/bekleyen` | Onay bekleyen APPLY |
+| `/onay` | APPLY'i onayla |
+| `/red` | APPLY'i reddet |
+| `/uygula` | Onaylıysa canlı uygula |
+| `/emir <metin>` | Ajanlara emir bırak |
+
+Dinleyici (sürekli):
+```bash
+python3 scripts/telegram_bot_poll.py --loop
+```
+
+Windows: `register-coalition-task.ps1` ayrıca 5 dk'da bir poll kaydeder.
+
+`TELEGRAM_REQUIRE_APPROVAL=1` (varsayılan): canlı deploy sen `/onay` demeden çalışmaz.
 
 ## 4. Mod
 

@@ -19,4 +19,6 @@ AGENT-HUB/_snippet-full.txt
 AGENT-HUB/git-pull-log.txt
 AGENT-HUB/.coalition-status.json
 AGENT-HUB/coalition-task-log.txt
+AGENT-HUB/.telegram-gate.json
+AGENT-HUB/.telegram-offset.json
 *.local.md

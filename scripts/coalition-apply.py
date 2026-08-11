@@ -13,6 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from coalition_common import deploy_locked, extract_apply_commands, hub_dir  # noqa: E402
+from telegram_gate import (  # noqa: E402
+    approval_required,
+    is_apply_approved,
+    mark_apply_done,
+    queue_apply_approval,
+)
+from telegram_notify import send_message  # noqa: E402
 
 
 def run_command(command: str, dry_run: bool) -> int:
@@ -65,10 +72,39 @@ def write_apply_report(results: list[dict], dry_run: bool) -> None:
     report.write_text("\n".join(lines), encoding="utf-8")
 
 
+def request_telegram_approval(commands: list[dict]) -> None:
+    item = queue_apply_approval(commands)
+    lines = [
+        "LEDAJANS — ONAY GEREKIYOR",
+        f"ID: {item['id']}",
+        f"Komut sayisi: {len(item['commands'])}",
+        "",
+    ]
+    for c in item["commands"][:10]:
+        lines.append(f"- [{c['tier']}] {c['command']}")
+    if len(item["commands"]) > 10:
+        lines.append(f"… +{len(item['commands']) - 10}")
+    lines.extend(
+        [
+            "",
+            "Telegram'dan cevapla:",
+            "/onay  — uygula (sonra /uygula veya sonraki tur)",
+            "/red   — iptal",
+            "/bekleyen — liste",
+        ]
+    )
+    send_message("\n".join(lines))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="LEDAJANS koalisyon uygulama")
     parser.add_argument("--dry-run", action="store_true", help="Canli deploy yapma")
     parser.add_argument("--force", action="store_true", help="Deploy kilidini yoksay")
+    parser.add_argument(
+        "--skip-telegram-gate",
+        action="store_true",
+        help="Telegram insan onayini atla",
+    )
     args = parser.parse_args()
 
     locked, reason = deploy_locked()
@@ -81,15 +117,38 @@ def main() -> int:
         print("Uygulanacak [APPLY:T1/T2] komutu yok.")
         return 0
 
-    results: list[dict] = []
+    # Dry-run: her zaman calisir; canli icin Telegram onayi
+    if args.dry_run:
+        results: list[dict] = []
+        for item in commands:
+            code = run_command(item["command"], dry_run=True)
+            results.append({**item, "exit_code": code})
+        write_apply_report(results, True)
+        if approval_required() and not args.skip_telegram_gate:
+            request_telegram_approval(commands)
+            print("Telegram onay istegi gonderildi (/onay veya /red)")
+        return 0
+
+    if approval_required() and not args.skip_telegram_gate:
+        ok, why = is_apply_approved()
+        if not ok:
+            print(f"Telegram kapisi: {why}")
+            # Bekleyen yoksa yeni istek olustur
+            if "Bekleyen onay yok" in why or "Onay bekleniyor" in why:
+                request_telegram_approval(commands)
+            return 3
+
+    results = []
     for item in commands:
-        code = run_command(item["command"], dry_run=args.dry_run)
+        code = run_command(item["command"], dry_run=False)
         results.append({**item, "exit_code": code})
-        if code != 0 and not args.dry_run:
-            write_apply_report(results, args.dry_run)
+        if code != 0:
+            write_apply_report(results, False)
             return code
 
-    write_apply_report(results, args.dry_run)
+    write_apply_report(results, False)
+    mark_apply_done()
+    send_message("LEDAJANS: canli APPLY tamamlandi.")
     return 0
 
 
