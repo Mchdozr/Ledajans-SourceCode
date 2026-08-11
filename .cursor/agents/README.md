@@ -6,6 +6,10 @@ Yönlendirme: `../rules/ledajans-subagents.mdc`
 Protokol: `../../AGENT-HUB/COALITION-PROTOCOL.md`  
 Stack: `../../AGENT-HUB/CURSOR-STACK-RESEARCH.md`
 
+## Model
+- Tüm ajanlar: `model: inherit` (ana sohbet **Auto** modelini kullanır).
+- Task tool: `model: "inherit"` — başka model ID geçme.
+
 ## Koalisyon davranışı
 - **Lider** (`ceo-orchestrator`): görev dağıtır; gerekirse `[NEW:<rol>]` ile yeni ajan açar; `[SPAWN-REQ]` Kabul/Red; `[CEO-DECISION]` tie-break.
 - **Uzmanlar**: birbirleriyle `[IDEA|OBJECT|AGREE|FB]` konuşur; karşı gelebilir; yeni ajan için yalnız lidere `[SPAWN-REQ]` yazar.

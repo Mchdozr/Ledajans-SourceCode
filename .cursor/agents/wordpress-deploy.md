@@ -1,5 +1,6 @@
 ---
 name: wordpress-deploy
+model: inherit
 description: WordPress güvenli dağıtım ajanı. dry-run, REST/WP-CLI, RankMath meta, rollback. Deploy veya canlı yayın işlerinde proactively kullan; onay sormadan dry-run çalıştır, canlı publish için açık onay bekle.
 ---
 

@@ -56,8 +56,15 @@ Lider onayında:
 
 1. `TASKS.md` → `[NEW:<rol>]` satırı
 2. `AGENT-HUB/REPORTS/<tarih>-<rol>.md` şablon (auto_orchestrator)
-3. Kalıcıysa `.cursor/agents/<rol>.md` oluştur / öner
-4. Router kuralına tetik satırı ekle (veya öner)
+3. Kalıcıysa `.cursor/agents/<rol>.md` oluştur (**frontmatter: `model: inherit`**)
+4. Task çağrıları: `model: "inherit"` (ana sohbet Auto)
+5. Router kuralına tetik satırı ekle (veya öner)
+
+## Model politikası
+
+- Tüm kalıcı ajanlar: `model: inherit`
+- Ana chat: **Auto**
+- Parent agent Task tool'da başka model ID geçmez
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: performance
+model: inherit
 description: Core Web Vitals / mobil performans uzmanı. LCP, TBT, render-blocking, unused CSS/JS, görsel optimizasyon. Lighthouse düşük veya mobil hız işlerinde proactively kullan; onay sormadan çağır.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: blog-ajan
+model: inherit
 description: LEDAJANS WordPress blog yazarı + haftalık SEO yayın. "blog ajanı", "blog yaz", Pazartesi blog, otomatik blog deploy istediğinde proactively kullan; onay sormadan çağır. ledajans-seo-article şablonu, keyword-queue, WP publish.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: content-seo
+model: inherit
 description: SEO içerik stratejisti ve yazarı. Long-tail, topic cluster, içerik refresh, FAQ, şehir/sektör sayfaları. Yeni veya güncel içerik ihtiyacında proactively kullan; onay sormadan çağır.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: mcp-connector
+model: inherit
 description: Cursor MCP ve plugin bağlantı uzmanı. WordPress MCP, Browser, Figma, Apify, GSC köprüleri. MCP kurulum, auth veya araç keşfinde proactively kullan; onay sormadan şema keşfi yap, secret isteme.
 ---
 

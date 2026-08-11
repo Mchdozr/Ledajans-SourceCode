@@ -27,6 +27,7 @@ alwaysApply: true
 
 Kurallar:
 - Mod: `apply-with-gates` (`AGENT-HUB/COALITION-PROTOCOL.md`). T3 (robots/canonical/noindex) BLOCKER.
+- **Model:** Tüm kalıcı ajanlar `model: inherit` — ana sohbet **Auto** seçili olsun; Task çağrılarında `model: "inherit"` zorunlu, başka model geçme.
 - **İstisna:** Haftalık blog otomasyonu (`blog-ajan` + `scripts/publish-blog-post.py --publish`) kullanıcı tarafından ayakta onaylıdır.
 - Lider (`ceo-orchestrator`) gerekirse yeni ajan spawn eder (`[NEW:<rol>]`).
 - Diğer ajanlar spawn etmez; `[SPAWN-REQ]` ile lidere talep eder.

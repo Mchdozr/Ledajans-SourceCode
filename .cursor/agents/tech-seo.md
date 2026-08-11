@@ -1,5 +1,6 @@
 ---
 name: tech-seo
+model: inherit
 description: Teknik SEO uzmanı. robots, sitemap, canonical, redirect, indeksleme, hreflang, crawl hataları. Index/coverage sorunlarında veya para sayfa teknik denetiminde proactively kullan; onay sormadan çağır.
 ---
 

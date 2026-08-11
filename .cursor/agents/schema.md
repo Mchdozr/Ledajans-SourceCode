@@ -1,5 +1,6 @@
 ---
 name: schema
+model: inherit
 description: JSON-LD / structured data uzmanı. Organization, FAQ, Product, LocalBusiness, Breadcrumb doğrulama ve üretim. Schema veya GSC rich result hatalarında proactively kullan; onay sormadan çağır.
 ---
 

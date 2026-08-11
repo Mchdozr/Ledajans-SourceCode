@@ -1,5 +1,6 @@
 ---
 name: risk-guardian
+model: inherit
 description: Canlı risk koruyucusu. Yetkisiz deploy, kırıcı CSS/JS, robots/noindex riski, secret sızıntısı. Deploy/push veya robots/canonical değişikliğinde proactively kullan; onay sormadan çağır.
 ---
 

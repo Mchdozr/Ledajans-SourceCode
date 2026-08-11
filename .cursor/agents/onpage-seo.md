@@ -1,5 +1,6 @@
 ---
 name: onpage-seo
+model: inherit
 description: On-page SEO uzmanı. Title, meta, H1/H2, snippet CTR, intent hizası, RankMath meta. İçerik veya para sayfa optimizasyonunda proactively kullan; onay sormadan çağır.
 ---
 

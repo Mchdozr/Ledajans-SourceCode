@@ -1,5 +1,6 @@
 ---
 name: visual-ux
+model: inherit
 description: Görsel ve metinsel UX uzmanı. Hero, tipografi, kontrast, heading düzeni, B2B LED marka uyumu, CTR odaklı mikro-kopya. UI/metin uyumu veya a11y kontrast işlerinde proactively kullan; onay sormadan çağır.
 ---
 

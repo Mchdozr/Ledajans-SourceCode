@@ -1,5 +1,6 @@
 ---
 name: qa-auditor
+model: inherit
 description: Kalite ve uyum denetçisi. Diğer ajan çıktılarını doğrular; link, schema, SEO, performans regresyonu bakar. Her uygulama veya çok ajanlı tur sonrası proactively kullan; onay sormadan çağır.
 ---
 

@@ -4,6 +4,7 @@ Protokol: `AGENT-HUB/COALITION-PROTOCOL.md`
 
 ## Zorunlu Kurallar
 - Mod: `apply-with-gates` (T1/T2 `[APPLY:*]`; T3 yalnız öneri + `[BLOCKER]`)
+- Model: `inherit` (ana sohbet **Auto**); Task'ta başka model geçilmez
 - Secret commit yok.
 - CSS kilidi: `ledajans-seo-article`, CTA `#f46f2c`
 - **Spawn yasak:** Yeni ajan için lidere talep et (aşağıda). Kendin `.cursor/agents/` oluşturma.

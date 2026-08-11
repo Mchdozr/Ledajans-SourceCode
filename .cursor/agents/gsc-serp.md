@@ -1,5 +1,6 @@
 ---
 name: gsc-serp
+model: inherit
 description: GSC ve SERP izleme uzmanı. Coverage, URL Inspection, query/CTR, rakip delta. İndeksleme veya sıralama takibinde proactively kullan; onay sormadan çağır.
 ---
 

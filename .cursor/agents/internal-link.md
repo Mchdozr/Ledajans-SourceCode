@@ -1,5 +1,6 @@
 ---
 name: internal-link
+model: inherit
 description: İç link mimarisi uzmanı. Hub-spoke, para sayfa link akışı, anchor çeşitliliği. Link audit veya content/onpage sonrası proactively kullan; onay sormadan çağır.
 ---
 
