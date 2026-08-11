@@ -231,14 +231,19 @@ def is_apply_approved() -> tuple[bool, str]:
     if pending.get("status") == "applied":
         return False, f"Zaten uygulandi: {pending.get('id')}"
 
-    approved = [
-        c for c in (pending.get("commands") or []) if c.get("decision") == "approved"
-    ]
+    cmds = pending.get("commands") or []
+    # Eski kayit: paket seviyesi onay, madde decision yok
+    if pending.get("status") == "approved" and cmds and all(
+        "decision" not in c for c in cmds
+    ):
+        return True, f"Paket onayli (eski format): {pending.get('id')}"
+
+    approved = [c for c in cmds if c.get("decision") == "approved"]
     if approved:
         return True, f"{len(approved)} madde onayli ({pending.get('id')})"
     return (
         False,
-        f"Henuz onayli madde yok — ornek: /onay 2 veya /onay hepsi",
+        "Henuz onayli madde yok — ornek: /onay 2 veya /onay hepsi",
     )
 
 
@@ -248,11 +253,13 @@ def get_approved_commands() -> list[dict]:
     pending = gate.get("pending_apply")
     if not pending:
         return []
-    out = []
-    for c in pending.get("commands") or []:
-        if c.get("decision") == "approved":
-            out.append(c)
-    return out
+    cmds = pending.get("commands") or []
+    # Eski format: status=approved ve decision yok → hepsi
+    if pending.get("status") == "approved" and cmds and all(
+        "decision" not in c for c in cmds
+    ):
+        return list(cmds)
+    return [c for c in cmds if c.get("decision") == "approved"]
 
 
 def mark_apply_done() -> None:

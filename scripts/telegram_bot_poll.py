@@ -110,8 +110,13 @@ def handle_command(text: str) -> str:
         approved, reason = is_apply_approved()
         if not approved:
             return f"Uygulanamaz: {reason}"
+        # Insan /uygula: FB kilidini as (--force). Telegram onayi zaten kapı.
         proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts/coalition-apply.py")],
+            [
+                sys.executable,
+                str(ROOT / "scripts/coalition-apply.py"),
+                "--force",
+            ],
             cwd=str(ROOT),
             capture_output=True,
             text=True,
