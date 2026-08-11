@@ -2,5 +2,11 @@
 
 Bu klasördeki `.md` dosyalar Cursor custom subagent tanımlarıdır. Ana ajan ilgili işte **onay sormadan** çağırır.
 
-Yönlendirme kuralı: `../rules/ledajans-subagents.mdc`  
-Stack araştırması: `../../AGENT-HUB/CURSOR-STACK-RESEARCH.md`
+Yönlendirme: `../rules/ledajans-subagents.mdc`  
+Protokol: `../../AGENT-HUB/COALITION-PROTOCOL.md`  
+Stack: `../../AGENT-HUB/CURSOR-STACK-RESEARCH.md`
+
+## Koalisyon davranışı
+- **Lider** (`ceo-orchestrator`): görev dağıtır; gerekirse `[NEW:<rol>]` ile yeni ajan açar; `[SPAWN-REQ]` Kabul/Red; `[CEO-DECISION]` tie-break.
+- **Uzmanlar**: birbirleriyle `[IDEA|OBJECT|AGREE|FB]` konuşur; karşı gelebilir; yeni ajan için yalnız lidere `[SPAWN-REQ]` yazar.
+- Açık itiraz/FB varken deploy yok.

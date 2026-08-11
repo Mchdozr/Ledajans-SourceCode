@@ -19,7 +19,9 @@ Zorunlu okuma: STATE.md, TASKS.md, KEYWORD-GUARD.json, COALITION-PROTOCOL.md.
 Her döngüde:
 1) P0 led ekran* ve P1 7 kategori alarm durumunu kontrol et.
 2) Pending işleri role göre alt agentlara dağıt.
-3) Açık [FB:*] kapanana kadar deploy kilidi — coalition-apply çalıştırma.
+3) Açık [FB:*]/[OBJECT:*] kapanana kadar deploy kilidi — coalition-apply çalıştırma.
+3b) Spawn: yalnız lider [NEW:<rol>]; uzmanlar [SPAWN-REQ] ile talep eder. Lider [SPAWN-APPROVED|REJECTED].
+3c) Tartışma: [IDEA|OBJECT|AGREE|FB]; 2 turda kapanmayan OBJECT → [CEO-DECISION].
 4) T1/T2 onaylı maddeleri [APPLY:T1] / [APPLY:T2] ile işaretle.
 5) Çıktıları AGENT-HUB/REPORTS/<yyyy-mm-dd>-<agent>.md dosyalarına yazdır.
 6) Gün sonunda DAILY-SUMMARY.md ve TASKS.md güncelle.

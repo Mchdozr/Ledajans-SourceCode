@@ -26,7 +26,10 @@ alwaysApply: true
 | Deploy/robots/secret riski | `risk-guardian` |
 
 Kurallar:
-- Varsayılan report-only; canlı deploy için açık onay + dry-run.
+- Mod: `apply-with-gates` (`AGENT-HUB/COALITION-PROTOCOL.md`). T3 (robots/canonical/noindex) BLOCKER.
 - **İstisna:** Haftalık blog otomasyonu (`blog-ajan` + `scripts/publish-blog-post.py --publish`) kullanıcı tarafından ayakta onaylıdır.
+- Lider (`ceo-orchestrator`) gerekirse yeni ajan spawn eder (`[NEW:<rol>]`).
+- Diğer ajanlar spawn etmez; `[SPAWN-REQ]` ile lidere talep eder.
+- Ajanlar `[IDEA|OBJECT|AGREE|FB]` ile tartışır; itiraz serbesttir. Açık OBJECT/FB → deploy kilidi.
 - Çalışma dizini `/workspace`. Secret commit yok.
 - Detaylı stack: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`

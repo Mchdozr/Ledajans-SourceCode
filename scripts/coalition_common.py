@@ -11,7 +11,15 @@ FEEDBACK_PATTERN = re.compile(
     r"\[TO:([a-z0-9-]+)\]\s*\[FB:([A-Za-z0-9_-]+)\]\s*(.+)",
     flags=re.IGNORECASE,
 )
+OBJECT_PATTERN = re.compile(
+    r"\[TO:([a-z0-9-]+)\]\s*\[OBJECT:([A-Za-z0-9_-]+)\]\s*(.+)",
+    flags=re.IGNORECASE,
+)
 RESOLVED_PATTERN = re.compile(r"\[RESOLVED:([A-Za-z0-9_-]+)\]", flags=re.IGNORECASE)
+CEO_DECISION_PATTERN = re.compile(
+    r"\[CEO-DECISION:([A-Za-z0-9_-]+)\]",
+    flags=re.IGNORECASE,
+)
 APPLY_PATTERN = re.compile(r"\[APPLY:(T[12])\]\s*(.+)", flags=re.IGNORECASE)
 
 
@@ -83,7 +91,11 @@ def extract_feedback_state() -> tuple[int, set[str]]:
             m = FEEDBACK_PATTERN.search(line)
             if m:
                 items.append(m.group(2).upper())
+            o = OBJECT_PATTERN.search(line)
+            if o:
+                items.append(o.group(2).upper())
         resolved.update(RESOLVED_PATTERN.findall(content))
+        resolved.update(CEO_DECISION_PATTERN.findall(content))
     open_count = len({fb for fb in items if fb not in resolved})
     return open_count, resolved
 

@@ -39,7 +39,28 @@ FEEDBACK_PATTERN = re.compile(
     r"\[TO:([a-z0-9-]+)\]\s*\[FB:([A-Za-z0-9_-]+)\]\s*(.+)",
     flags=re.IGNORECASE,
 )
+OBJECT_PATTERN = re.compile(
+    r"\[TO:([a-z0-9-]+)\]\s*\[OBJECT:([A-Za-z0-9_-]+)\]\s*(.+)",
+    flags=re.IGNORECASE,
+)
 RESOLVED_PATTERN = re.compile(r"\[RESOLVED:([A-Za-z0-9_-]+)\]", flags=re.IGNORECASE)
+CEO_DECISION_PATTERN = re.compile(
+    r"\[CEO-DECISION:([A-Za-z0-9_-]+)\]",
+    flags=re.IGNORECASE,
+)
+SPAWN_REQ_PATTERN = re.compile(
+    r"\[TO:ceo-orchestrator\]\s*\[SPAWN-REQ:([A-Za-z0-9_-]+)\]\s*"
+    r"\[ROLE:([a-z0-9-]+)\]\s*(.+)",
+    flags=re.IGNORECASE,
+)
+SPAWN_APPROVED_PATTERN = re.compile(
+    r"\[SPAWN-APPROVED:([A-Za-z0-9_-]+)\]",
+    flags=re.IGNORECASE,
+)
+SPAWN_REJECTED_PATTERN = re.compile(
+    r"\[SPAWN-REJECTED:([A-Za-z0-9_-]+)\]",
+    flags=re.IGNORECASE,
+)
 
 
 def read_text(path: Path) -> str:
@@ -277,21 +298,117 @@ def extract_feedback_items(report_files: list[Path]) -> tuple[list[dict], set[st
         for line in content.splitlines():
             m = FEEDBACK_PATTERN.search(line)
             if m:
-                target_role = m.group(1).lower()
-                fb_id = m.group(2).upper()
-                detail = m.group(3).strip()
                 items.append(
                     {
-                        "id": fb_id,
+                        "id": m.group(2).upper(),
                         "source": src_role,
-                        "target": target_role,
-                        "detail": detail,
+                        "target": m.group(1).lower(),
+                        "detail": m.group(3).strip(),
                         "file": file.name,
+                        "kind": "FB",
+                    }
+                )
+            o = OBJECT_PATTERN.search(line)
+            if o:
+                items.append(
+                    {
+                        "id": o.group(2).upper(),
+                        "source": src_role,
+                        "target": o.group(1).lower(),
+                        "detail": f"[OBJECT] {o.group(3).strip()}",
+                        "file": file.name,
+                        "kind": "OBJECT",
                     }
                 )
         for resolved in RESOLVED_PATTERN.findall(content):
             resolved_ids.add(resolved.upper())
+        for decided in CEO_DECISION_PATTERN.findall(content):
+            resolved_ids.add(decided.upper())
     return items, resolved_ids
+
+
+def extract_spawn_requests(report_files: list[Path]) -> tuple[list[dict], set[str]]:
+    requests: list[dict] = []
+    closed: set[str] = set()
+    for file in report_files:
+        src_role = extract_role(file)
+        content = read_text(file)
+        for line in content.splitlines():
+            m = SPAWN_REQ_PATTERN.search(line)
+            if m:
+                requests.append(
+                    {
+                        "id": m.group(1).upper(),
+                        "role": m.group(2).lower(),
+                        "detail": m.group(3).strip(),
+                        "source": src_role,
+                        "file": file.name,
+                    }
+                )
+        for approved in SPAWN_APPROVED_PATTERN.findall(content):
+            closed.add(approved.upper())
+        for rejected in SPAWN_REJECTED_PATTERN.findall(content):
+            closed.add(rejected.upper())
+    return requests, closed
+
+
+def update_spawn_queue(
+    requests: list[dict],
+    closed_ids: set[str],
+) -> list[str]:
+    tasks = read_text(TASKS)
+    if not tasks:
+        return []
+
+    marker = "## Spawn Request Queue"
+    # Keep content before spawn marker; if feedback queue follows spawn, preserve order:
+    # Insert spawn queue after feedback queue if both exist.
+    before = tasks
+    if marker in tasks:
+        # Remove old spawn section but keep anything after next ## that isn't spawn
+        parts = tasks.split(marker, 1)
+        head = parts[0].rstrip() + "\n"
+        rest = parts[1]
+        # Drop until next top-level section or end; Keyword Alarms may follow
+        next_sec = re.search(r"\n## ", rest)
+        if next_sec:
+            tasks = head + rest[next_sec.start() + 1 :]
+        else:
+            tasks = head
+
+    lines = [
+        "",
+        marker,
+        "",
+        "| REQ-ID | Kaynak | Istenen Rol | Durum | Gerekce | Kaynak Rapor |",
+        "|---|---|---|---|---|---|",
+    ]
+    seen: set[str] = set()
+    for item in requests:
+        if item["id"] in seen:
+            continue
+        seen.add(item["id"])
+        status = "Closed" if item["id"] in closed_ids else "Open"
+        lines.append(
+            f"| {item['id']} | {item['source']} | {item['role']} | {status} | "
+            f"{item['detail']} | `{item['file']}` |"
+        )
+    if not seen:
+        lines.append("| - | - | - | - | Bekleyen spawn talebi yok. | - |")
+
+    # Place spawn queue after feedback queue if present
+    fb_marker = "## Auto Feedback Queue"
+    if fb_marker in tasks:
+        # append after full tasks (feedback already at end usually)
+        updated = tasks.rstrip() + "\n" + "\n".join(lines) + "\n"
+    else:
+        updated = tasks.rstrip() + "\n" + "\n".join(lines) + "\n"
+
+    actions: list[str] = []
+    if updated != before:
+        write_text(TASKS, updated)
+        actions.append("Spawn Request Queue guncellendi")
+    return actions
 
 
 def update_feedback_queue(
@@ -305,7 +422,11 @@ def update_feedback_queue(
     marker = "## Auto Feedback Queue"
     before = tasks
     if marker in tasks:
-        tasks = tasks.split(marker)[0].rstrip() + "\n"
+        # Truncate from feedback marker; drop trailing spawn/keyword sections after FB
+        # so we can rebuild FB then other sections get rewritten by later helpers.
+        head = tasks.split(marker)[0].rstrip() + "\n"
+        # Preserve Keyword Alarms / Spawn if they appear BEFORE feedback (unlikely)
+        tasks = head
 
     lines = [
         "",
@@ -368,6 +489,8 @@ def run() -> int:
     actions.extend(ensure_new_role_reports(new_roles))
     feedback_items, resolved_ids = extract_feedback_items(report_files)
     actions.extend(update_feedback_queue(feedback_items, resolved_ids))
+    spawn_reqs, spawn_closed = extract_spawn_requests(report_files)
+    actions.extend(update_spawn_queue(spawn_reqs, spawn_closed))
 
     alarms = check_keyword_alarms()
     actions.extend(update_keyword_alarms(alarms))

@@ -106,8 +106,11 @@ Konum: `.cursor/agents/`. Detay: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`.
 - Kritik durumda: satıra `[BLOCKER]` etiketi ekle
 
 ## Self-Spawn Kuralları
-- Teknik veya indeksleme analizinde yeni bir uzmanlık ihtiyacı doğarsa TASKS'a `"[NEW:<rol>]"` etiketiyle eklenir.
+- **Yalnız lider** (`ceo-orchestrator`) yeni ajan açar: `TASKS` + `[NEW:<rol>]` (+ isteğe bağlı `.cursor/agents/<rol>.md`).
+- Uzman ajanlar spawn etmez; talep: `[TO:ceo-orchestrator] [SPAWN-REQ:<id>] [ROLE:<rol>] <gerekçe>`.
+- Lider: `[SPAWN-APPROVED:<id>] [NEW:<rol>]` veya `[SPAWN-REJECTED:<id>]`.
 - Yeni rol yalnızca mevcut rollerin kapsam dışı bıraktığı işi alır.
+- Detay: `AGENT-HUB/COALITION-PROTOCOL.md`.
 
 ## Sürekli Web Ops Döngüsü (20dk)
 - Her turda tüm roller diğer raporları okuyup sadece itiraz değil, operasyonel çıktı üretir.
@@ -139,9 +142,15 @@ Konum: `.cursor/agents/`. Detay: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`.
 | SW-001 | serp-watch | gsc | Open | `led ekran`, `dış mekan led ekran`, `mağaza led ekran`, `led ekran fiyatları` için aynı gün (TR locale) mobile+desktop URL-level sıra snapshot'larını ve veri kaynağı bilgisini paylaş. | `2026-05-06-serp-watch.md` |
 | TS-SEO-001 | tech-seo | gsc | Open | Para sayfa registry için "kanonik URL listesi + exclusion nedeni" eşleşmesini tek tabloda paylaş; tech-seo tarafı bunu P0 kapanış kriteri doğrulamasında kullanacak. | `2026-05-06-tech-seo.md` |
 
+## Spawn Request Queue
+
+| REQ-ID | Kaynak | Istenen Rol | Durum | Gerekce | Kaynak Rapor |
+|---|---|---|---|---|---|
+| - | - | - | - | Bekleyen spawn talebi yok. | - |
+
 ## Keyword Alarms
 
-Son guncelleme: 2026-08-11 08:21 UTC
+Son guncelleme: 2026-08-11 08:29 UTC
 
 | Tier | Sorgu/Kategori | Pozisyon | Durum |
 |---|---|---|---|

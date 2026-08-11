@@ -25,7 +25,9 @@
 - **Keşif turu (09:30 TR):** Rapor + alarm; `python3 scripts/run-coalition-cycle.py --phase discover`
 - **Uygulama turu (13:00 TR):** T1/T2 otomatik; `python3 scripts/coalition-apply.py` (açık FB veya BLOCKER yoksa)
 - **Kapanış turu (17:00 TR):** Doğrulama + `DAILY-SUMMARY.md`
-- **Deploy kilidi:** Açık `[FB:*]` varken `coalition-apply.py` çalışmaz
+- **Deploy kilidi:** Açık `[FB:*]` / `[OBJECT:*]` varken `coalition-apply.py` çalışmaz
+- **Spawn:** Lider `[NEW:<rol>]`; uzmanlar `[SPAWN-REQ]` → lider Kabul/Red
+- **Tartışma:** `[IDEA|OBJECT|AGREE|FB]`; 2 turda kapanmayan OBJECT → `[CEO-DECISION]`
 - **Risk katmanları:** T1/T2 otomatik; T3 (robots/canonical/noindex/ana sayfa hero) → BLOCKER
 - **CSS kilidi:** `visual-ux` — `ledajans-seo-article`, CTA `#f46f2c`, global CSS yasak
 - Kurulum: `AGENT-HUB/COALITION-SETUP.md`
