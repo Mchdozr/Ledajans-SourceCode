@@ -15,11 +15,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from coalition_common import (  # noqa: E402
     deploy_locked,
     extract_apply_commands,
-    format_apply_human_list,
     hub_dir,
 )
 from telegram_gate import (  # noqa: E402
     approval_required,
+    format_pending_summary,
+    get_approved_commands,
     is_apply_approved,
     mark_apply_done,
     queue_apply_approval,
@@ -78,23 +79,12 @@ def write_apply_report(results: list[dict], dry_run: bool) -> None:
 
 
 def request_telegram_approval(commands: list[dict]) -> None:
-    item = queue_apply_approval(commands)
-    lines = [
-        "LEDAJANS — ONAY GEREKIYOR",
-        "",
-        f"Kod: {item['id']}",
-        "Durum: Senin onayin bekleniyor — sitede henuz bir sey degismedi",
-        f"Kac is: {len(item['commands'])}",
-        "",
-        "Sitede ne degisecek (nokta atisi):",
-        format_apply_human_list(item["commands"]),
-        "",
-        "Ne yapmalisin?",
-        "/onay  → bu degisiklikleri uygula",
-        "/red   → hicbirini uygulama",
-        "/bekleyen → tekrar gor",
-    ]
-    send_message("\n".join(lines))
+    queue_apply_approval(commands)
+    send_message(
+        "LEDAJANS — ONAY GEREKIYOR\n"
+        "Sitede henuz bir sey degismedi.\n\n"
+        + format_pending_summary()
+    )
 
 
 def main() -> int:
@@ -127,16 +117,21 @@ def main() -> int:
         write_apply_report(results, True)
         if approval_required() and not args.skip_telegram_gate:
             request_telegram_approval(commands)
-            print("Telegram onay istegi gonderildi (/onay veya /red)")
+            print("Telegram onay istegi gonderildi (/onay 2, /red 1, /onay hepsi)")
         return 0
 
     if approval_required() and not args.skip_telegram_gate:
         ok, why = is_apply_approved()
         if not ok:
             print(f"Telegram kapisi: {why}")
-            # Bekleyen yoksa yeni istek olustur
-            if "Bekleyen onay yok" in why or "Onay bekleniyor" in why:
+            # Bekleyen paket yoksa yeni istek; madde secimi bekliyorsa yeniden kuyruklama
+            if "Bekleyen onay yok" in why:
                 request_telegram_approval(commands)
+            return 3
+        # Sadece Telegram'da onaylanan maddeler
+        commands = get_approved_commands()
+        if not commands:
+            print("Onayli madde yok.")
             return 3
 
     results = []
@@ -149,7 +144,8 @@ def main() -> int:
 
     write_apply_report(results, False)
     mark_apply_done()
-    send_message("LEDAJANS: canli APPLY tamamlandi.")
+    n = len(results)
+    send_message(f"LEDAJANS: canli APPLY tamamlandi ({n} madde).")
     return 0
 
 

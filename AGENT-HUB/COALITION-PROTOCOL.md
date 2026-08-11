@@ -131,7 +131,7 @@ Uzman ajan **doğrudan** yeni ajan oluşturmaz. Format:
 
 - Açık `[FB:*]` veya `[OBJECT:*]`
 - `BLOCKER-ALERT.md` aktif
-- Telegram kapısı: `TELEGRAM_REQUIRE_APPROVAL=1` ve `/onay` yok (exit 3)
+- Telegram kapısı: `TELEGRAM_REQUIRE_APPROVAL=1` ve onaylı madde yok (exit 3); `/onay 2` ile madde seçilebilir
 
 Dry-run her zaman çalışır; ardından Telegram'a **ONAY GEREKIYOR** mesajı gider.
 
@@ -141,11 +141,14 @@ Sen bot'a komut yazarsın; ajanlar buna uyar:
 
 | Komut | Etki |
 |-------|------|
-| `/onay` | Bekleyen APPLY → approved |
-| `/red` | Bekleyen APPLY → rejected |
-| `/uygula` | Onaylıysa `coalition-apply` canlı |
+| `/onay 2` | Sadece 2. maddeyi onayla |
+| `/red 1` | Sadece 1. maddeyi reddet |
+| `/onay 1,3` / `/onay hepsi` | Seçili / hepsi |
+| `/uygula` | Yalnızca ONAYLI maddeleri `coalition-apply` canlı |
 | `/emir …` | `TELEGRAM-ORDERS.md` → ceo-orchestrator |
 | `/durum` `/bekleyen` | Bilgi |
+
+Örnek akış: `/red 1` → `/onay 2` → `/uygula` (sadece blog yayınlanır, hero dokunulmaz).
 
 Dinleyici: `python3 scripts/telegram_bot_poll.py --loop`
 

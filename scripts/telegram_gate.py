@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -101,6 +102,7 @@ def queue_apply_approval(commands: list[dict], *, phase: str = "apply-prep") -> 
         "decided_at": None,
         "commands": [
             {
+                "n": i,
                 "tier": c.get("tier", ""),
                 "command": c.get("command", ""),
                 "summary": c.get("summary", ""),
@@ -108,8 +110,9 @@ def queue_apply_approval(commands: list[dict], *, phase: str = "apply-prep") -> 
                 "visual": c.get("visual", ""),
                 "risk": c.get("risk", ""),
                 "source": c.get("source", ""),
+                "decision": "pending",  # pending | approved | rejected
             }
-            for c in commands
+            for i, c in enumerate(commands, start=1)
         ],
     }
     gate["pending_apply"] = item
@@ -122,13 +125,100 @@ def get_pending_apply() -> dict | None:
     pending = gate.get("pending_apply")
     if not pending:
         return None
-    if pending.get("status") == "awaiting_approval":
+    if pending.get("status") in ("awaiting_approval", "partial", "approved"):
         return pending
     return None
 
 
+def _refresh_batch_status(pending: dict) -> None:
+    cmds = pending.get("commands") or []
+    if not cmds:
+        pending["status"] = "rejected"
+        return
+    decisions = [c.get("decision", "pending") for c in cmds]
+    if all(d == "pending" for d in decisions):
+        pending["status"] = "awaiting_approval"
+    elif all(d != "pending" for d in decisions):
+        pending["status"] = (
+            "approved" if any(d == "approved" for d in decisions) else "rejected"
+        )
+    else:
+        pending["status"] = "partial"  # bazilari kararlasti
+    pending["decided_at"] = _now()
+    pending["decided_by"] = "telegram"
+
+
+def parse_item_numbers(arg: str, total: int) -> tuple[list[int] | None, str]:
+    """arg: '' / hepsi / all / 2 / 1,3 / 1-3 → index list (1-based) veya None=hepsi."""
+    raw = (arg or "").strip().lower()
+    if raw in ("", "hepsi", "hepsi.", "all", "tumu", "tümü", "*"):
+        return None, "hepsi"
+    nums: set[int] = set()
+    for token in re.split(r"[,\s]+", raw):
+        token = token.strip()
+        if not token:
+            continue
+        if "-" in token:
+            a, _, b = token.partition("-")
+            try:
+                start, end = int(a), int(b)
+            except ValueError:
+                return [], f"Gecersiz aralik: {token}"
+            for n in range(min(start, end), max(start, end) + 1):
+                nums.add(n)
+        else:
+            try:
+                nums.add(int(token))
+            except ValueError:
+                return [], f"Gecersiz madde no: {token}"
+    invalid = [n for n in nums if n < 1 or n > total]
+    if invalid:
+        return [], f"Olmayan madde: {invalid} (1-{total})"
+    return sorted(nums), ""
+
+
+def set_apply_decision(
+    decision: str,
+    arg: str = "",
+) -> tuple[bool, str]:
+    """decision: approved | rejected. arg: madde no (2 veya 1,3) veya hepsi."""
+    gate = load_gate()
+    pending = gate.get("pending_apply")
+    if not pending:
+        return False, "Onay bekleyen paket yok"
+    if pending.get("status") == "applied":
+        return False, "Bu paket zaten uygulandi"
+
+    cmds = pending.get("commands") or []
+    if not cmds:
+        return False, "Pakette madde yok"
+
+    # Eski kayitlarda decision yoksa ekle
+    for i, c in enumerate(cmds, start=1):
+        c.setdefault("n", i)
+        c.setdefault("decision", "pending")
+
+    indices, err = parse_item_numbers(arg, len(cmds))
+    if err and indices == []:
+        return False, err
+
+    targets = range(1, len(cmds) + 1) if indices is None else indices
+    changed = []
+    for n in targets:
+        cmds[n - 1]["decision"] = decision
+        changed.append(str(n))
+
+    _refresh_batch_status(pending)
+    pending["commands"] = cmds
+    gate["pending_apply"] = pending
+    save_gate(gate)
+
+    label = "ONAY" if decision == "approved" else "RED"
+    return True, f"{label} → madde {', '.join(changed)} | paket: {pending['status']}"
+
+
 def is_apply_approved() -> tuple[bool, str]:
-    """Canli apply icin onay var mi?"""
+    """Canli apply icin en az 1 onayli madde var mi?"""
     if not approval_required():
         return True, "Telegram onay kapisi kapali"
 
@@ -136,40 +226,106 @@ def is_apply_approved() -> tuple[bool, str]:
     pending = gate.get("pending_apply")
     if not pending:
         return False, "Bekleyen onay yok — once kuyruk olusturun"
-    status = pending.get("status")
-    if status == "approved":
-        return True, f"Onayli: {pending.get('id')}"
-    if status == "rejected":
+    if pending.get("status") == "rejected":
         return False, f"Reddedildi: {pending.get('id')}"
-    if status == "awaiting_approval":
-        return False, f"Onay bekleniyor: {pending.get('id')} — Telegram: /onay veya /red"
-    if status == "applied":
+    if pending.get("status") == "applied":
         return False, f"Zaten uygulandi: {pending.get('id')}"
-    return False, f"Bilinmeyen durum: {status}"
+
+    approved = [
+        c for c in (pending.get("commands") or []) if c.get("decision") == "approved"
+    ]
+    if approved:
+        return True, f"{len(approved)} madde onayli ({pending.get('id')})"
+    return (
+        False,
+        f"Henuz onayli madde yok — ornek: /onay 2 veya /onay hepsi",
+    )
 
 
-def set_apply_decision(decision: str) -> tuple[bool, str]:
-    """decision: approved | rejected"""
+def get_approved_commands() -> list[dict]:
+    """Uygulanacak (onayli) maddeler."""
     gate = load_gate()
     pending = gate.get("pending_apply")
-    if not pending or pending.get("status") != "awaiting_approval":
-        return False, "Onay bekleyen APPLY yok"
-    pending["status"] = decision
-    pending["decided_at"] = _now()
-    pending["decided_by"] = "telegram"
-    gate["pending_apply"] = pending
-    save_gate(gate)
-    return True, f"{pending['id']} → {decision}"
+    if not pending:
+        return []
+    out = []
+    for c in pending.get("commands") or []:
+        if c.get("decision") == "approved":
+            out.append(c)
+    return out
 
 
 def mark_apply_done() -> None:
     gate = load_gate()
     pending = gate.get("pending_apply")
-    if pending and pending.get("status") == "approved":
+    if not pending:
+        return
+    # Onaylilar applied; pending kalan varsa paket partial kalir
+    cmds = pending.get("commands") or []
+    for c in cmds:
+        if c.get("decision") == "approved":
+            c["decision"] = "applied"
+    pending["commands"] = cmds
+    if any(c.get("decision") == "pending" for c in cmds):
+        pending["status"] = "partial"
+    else:
         pending["status"] = "applied"
         pending["applied_at"] = _now()
-        gate["pending_apply"] = pending
-        save_gate(gate)
+    gate["pending_apply"] = pending
+    save_gate(gate)
+
+
+def format_pending_summary() -> str:
+    pending = load_gate().get("pending_apply")
+    if not pending:
+        return "Bekleyen onay yok."
+
+    status = pending.get("status", "")
+    status_tr = {
+        "awaiting_approval": "Senin onayin bekleniyor (madde sec)",
+        "partial": "Kismi karar verildi — kalan maddeler bekliyor",
+        "approved": "Secilenler onayli — /uygula ile uygula",
+        "rejected": "Hepsi reddedildi",
+        "applied": "Uygulandi",
+    }.get(status, status)
+
+    cmds = pending.get("commands") or []
+    dec_tr = {
+        "pending": "bekliyor",
+        "approved": "ONAYLI",
+        "rejected": "RED",
+        "applied": "uygulandi",
+    }
+
+    lines = [
+        "LEDAJANS — BEKLEYEN DEGISIKLIK",
+        f"Kod: {pending.get('id')}",
+        f"Durum: {status_tr}",
+        f"Madde: {len(cmds)}",
+        "",
+        "Sitede ne degisecek:",
+    ]
+    for c in cmds:
+        n = c.get("n", "?")
+        d = dec_tr.get(c.get("decision", "pending"), c.get("decision"))
+        lines.append(f"{n}) [{c.get('tier', '?')}] [{d}] {c.get('summary', 'Guncelleme')}")
+        lines.append(f"   Sayfa: {c.get('pages', '—')}")
+        lines.append(f"   Gorunur etki: {c.get('visual', '—')}")
+        lines.append(f"   Risk: {c.get('risk', '—')}")
+        lines.append("")
+
+    lines.extend(
+        [
+            "Tek tek karar ver:",
+            "/onay 2        → sadece 2. maddeyi onayla",
+            "/red 1         → sadece 1. maddeyi reddet",
+            "/onay 2,3      → 2 ve 3'u onayla",
+            "/onay hepsi    → hepsini onayla",
+            "/red hepsi     → hepsini reddet",
+            "/uygula        → onayladiklarini uygula",
+        ]
+    )
+    return "\n".join(lines)
 
 
 def add_order(text: str) -> dict:
@@ -185,7 +341,6 @@ def add_order(text: str) -> dict:
     orders.insert(0, order)
     gate["orders"] = orders[:50]
     save_gate(gate)
-    # Ajanlarin okumasi icin markdown
     orders_md = ROOT / "AGENT-HUB" / "TELEGRAM-ORDERS.md"
     lines = [
         "# Telegram Emirleri",
@@ -200,35 +355,3 @@ def add_order(text: str) -> dict:
     lines.append("")
     orders_md.write_text("\n".join(lines), encoding="utf-8")
     return order
-
-
-def format_pending_summary() -> str:
-    from coalition_common import format_apply_human_list
-
-    pending = load_gate().get("pending_apply")
-    if not pending:
-        return "Bekleyen onay yok."
-
-    status = pending.get("status", "")
-    status_tr = {
-        "awaiting_approval": "Senin onayin bekleniyor",
-        "approved": "Onayladin — henuz uygulanmadi (/uygula veya sonraki tur)",
-        "rejected": "Reddettin — uygulanmayacak",
-        "applied": "Uygulandi",
-    }.get(status, status)
-
-    cmds = pending.get("commands") or []
-    lines = [
-        "LEDAJANS — BEKLEYEN DEGISIKLIK",
-        f"Kod: {pending.get('id')}",
-        f"Durum: {status_tr}",
-        f"Madde: {len(cmds)}",
-        "",
-        "Sitede ne degisecek:",
-        format_apply_human_list(cmds),
-        "",
-        "Kararin:",
-        "/onay  — bunlari uygula",
-        "/red   — hicbirini uygulama",
-    ]
-    return "\n".join(lines)

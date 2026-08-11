@@ -58,11 +58,14 @@ python3 scripts/telegram_bot_poll.py --announce
 |-------|--------|
 | `/yardim` | Komut listesi |
 | `/durum` | Alarm + kilit özeti |
-| `/bekleyen` | Onay bekleyen APPLY |
-| `/onay` | APPLY'i onayla |
-| `/red` | APPLY'i reddet |
-| `/uygula` | Onaylıysa canlı uygula |
+| `/bekleyen` | Onay bekleyen APPLY (madde durumları) |
+| `/onay 2` | Sadece 2. maddeyi onayla |
+| `/red 1` | Sadece 1. maddeyi reddet |
+| `/onay 1,3` / `/onay hepsi` | Seçili veya hepsini onayla |
+| `/uygula` | **Sadece ONAYLI** maddeleri canlı uygula |
 | `/emir <metin>` | Ajanlara emir bırak |
+
+Örnek: 1. maddeyi istemezsen `/red 1`, 2. maddeyi istersen `/onay 2`, sonra `/uygula`.
 
 Dinleyici (sürekli):
 ```bash

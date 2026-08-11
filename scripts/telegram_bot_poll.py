@@ -41,12 +41,15 @@ from telegram_notify import build_coalition_message, send_message, telegram_conf
 HELP = """LEDAJANS komutlari:
 /yardim — bu liste
 /durum — koalisyon ozeti
-/bekleyen — onay bekleyen APPLY
+/bekleyen — onay bekleyen APPLY (madde durumlari)
 /alarm — durum + alarmlar
-/onay — bekleyen APPLY onayla
-/red — bekleyen APPLY reddet
-/uygula — onayliysa canli apply calistir
-/emir <metin> — ajanlara emir birak (ornek: /emir cob sayfa title duzelt)
+/onay 2 — sadece 2. maddeyi onayla
+/red 1 — sadece 1. maddeyi reddet
+/onay 1,3 — secili maddeleri onayla
+/onay hepsi — hepsini onayla
+/red hepsi — hepsini reddet
+/uygula — sadece ONAYLI maddeleri canli uygula
+/emir <metin> — ajanlara emir birak
 
 Sadece senin chat'inden komut kabul edilir."""
 
@@ -75,23 +78,23 @@ def handle_command(text: str) -> str:
         return build_coalition_message()
 
     if cmd in ("/bekleyen", "/pending"):
-        return format_pending_summary() + "\n\n/onay veya /red"
+        return format_pending_summary()
 
     if cmd in ("/onay", "/approve", "/evet"):
-        ok, msg = set_apply_decision("approved")
+        ok, msg = set_apply_decision("approved", arg)
         if not ok:
             return f"Olmadi: {msg}"
         return (
             f"ONAYLANDI\n{msg}\n\n"
-            "Canli uygulama icin /uygula yaz "
-            "(veya 13:00 turu otomatik dener)."
+            f"{format_pending_summary()}\n\n"
+            "Canli uygulama: /uygula (sadece ONAYLI maddeler)"
         )
 
     if cmd in ("/red", "/reject", "/hayir"):
-        ok, msg = set_apply_decision("rejected")
+        ok, msg = set_apply_decision("rejected", arg)
         if not ok:
             return f"Olmadi: {msg}"
-        return f"REDDEDILDI\n{msg}\nAPPLY yapilmayacak."
+        return f"REDDEDILDI\n{msg}\n\n{format_pending_summary()}"
 
     if cmd in ("/emir", "/order"):
         if not arg:

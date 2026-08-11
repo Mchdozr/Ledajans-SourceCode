@@ -30,7 +30,7 @@
 - **Tartışma:** `[IDEA|OBJECT|AGREE|FB]`; 2 turda kapanmayan OBJECT → `[CEO-DECISION]`
 - **Risk katmanları:** T1/T2 otomatik; T3 (robots/canonical/noindex/ana sayfa hero) → BLOCKER
 - **CSS kilidi:** `visual-ux` — `ledajans-seo-article`, CTA `#f46f2c`, global CSS yasak
-- **Telegram kapısı:** Canlı APPLY için `/onay` (varsayılan `TELEGRAM_REQUIRE_APPROVAL=1`)
+- **Telegram kapısı:** Canlı APPLY için madde bazlı `/onay 2` / `/red 1` (varsayılan `TELEGRAM_REQUIRE_APPROVAL=1`)
 - **Telegram emirleri:** `/emir …` → `TELEGRAM-ORDERS.md` → ceo-orchestrator
 - Dinleyici: `python3 scripts/telegram_bot_poll.py --loop` (veya 5 dk scheduled task)
 - Kurulum: `AGENT-HUB/COALITION-SETUP.md`
