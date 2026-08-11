@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-11",
+  "timezone": "Europe/Istanbul",
+  "p0_defense": {
+    "name": "led ekran savunma hattı",
+    "prefix": "led ekran",
+    "queries": [
+      "led ekran",
+      "led ekran fiyatları",
+      "led ekran fiyat",
+      "led ekran m2 fiyatı",
+      "led ekran metrekare fiyatı",
+      "led ekran kiralama",
+      "led ekran kiralık",
+      "led ekran firmaları",
+      "led ekran firması",
+      "led ekran üreticisi",
+      "led ekran kurulum",
+      "led ekran montaj",
+      "led ekran satış",
+      "profesyonel led ekran"
+    ],
+    "target_urls": ["/", "/led-ekran/"],
+    "gsc_target_position": 5.0,
+    "serp_target_rank": 1,
+    "serp_alarm_rank": 2,
+    "gsc_alarm_position_delta": 2.0,
+    "primary_competitor": "videowall.com.tr"
+  },
+  "p1_categories": [
+    {
+      "id": "cob-smart-screen",
+      "name": "COB – Smart Screen",
+      "queries": ["cob ekran", "cob led ekran", "smart screen", "cob led", "cob vs smd led"],
+      "url": "/cob-ekran/",
+      "content_dir": "Urunlerimiz/Cob-Smart-Screen/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "ic-mekan-led",
+      "name": "İç Mekan LED Ekran",
+      "queries": ["iç mekan led ekran", "indoor led ekran", "iç mekan led ekran fiyatları", "p2 led ekran", "p2.5 led ekran"],
+      "url": "/ic-mekan-led-ekran/",
+      "content_dir": "Urunlerimiz/Ic-Mekan-Led-Ekran/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "dis-mekan-led",
+      "name": "Dış Mekan LED Ekran",
+      "queries": ["dış mekan led ekran", "outdoor led ekran", "açık hava led ekran", "ip65 led ekran", "dış mekan led ekran fiyatları"],
+      "url": "/dis-mekan-led-ekran/",
+      "content_dir": "Urunlerimiz/Dis-Mekan-Led-Ekran/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "rental-ekran",
+      "name": "Rental Ekran",
+      "queries": ["rental led ekran", "rental ekran", "led ekran kiralama", "kiralık led ekran", "led ekran kiralama fiyatları"],
+      "url": "/rental-ekran/",
+      "content_dir": "Urunlerimiz/Rental-Ekran/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "ic-mekan-rgb",
+      "name": "İç Mekan RGB Panel",
+      "queries": ["iç mekan rgb panel", "ic mekan rgb panel", "led panel iç mekan", "flexible led panel"],
+      "url": "/ic-mekan-rgb-panel/",
+      "content_dir": "Urunlerimiz/Ic-Mekan-RGB-Panel/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "dis-mekan-rgb",
+      "name": "Dış Mekan RGB Panel",
+      "queries": ["dış mekan rgb panel", "dis mekan rgb panel", "outdoor rgb panel", "led panel dış mekan"],
+      "url": "/dis-mekan-rgb-panel/",
+      "content_dir": "Urunlerimiz/Dis-Mekan-RGB-Panel/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    },
+    {
+      "id": "kontrol-kartlari",
+      "name": "Kontrol Kartları",
+      "queries": ["led kontrol kartı", "led ekran kontrol kartı", "huidu kontrol kartı", "nova kontrol kartı", "colorlight kontrol kartı"],
+      "url": "/case/kontrol-kartlari/",
+      "content_dir": "Urunlerimiz/Kontrol-Kartlari/",
+      "gsc_target_position": 10.0,
+      "gsc_alarm_position_delta": 3.0
+    }
+  ],
+  "risk_tiers": {
+    "T1": ["blog publish", "meta title", "meta description", "internal link", "schema json-ld"],
+    "T2": ["performance patch", "hero preload", "image alt", "unused css dequeue"],
+    "T3": ["robots.txt", "canonical", "noindex", "homepage hero", "main navigation"]
+  }
+}

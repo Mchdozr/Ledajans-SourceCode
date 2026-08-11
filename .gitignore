@@ -17,4 +17,6 @@ AGENT-HUB/lh-mobile-*.json
 AGENT-HUB/psi-mobile-*.json
 AGENT-HUB/_snippet-full.txt
 AGENT-HUB/git-pull-log.txt
+AGENT-HUB/.coalition-status.json
+AGENT-HUB/coalition-task-log.txt
 *.local.md

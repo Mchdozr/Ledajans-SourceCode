@@ -16,6 +16,13 @@
 | P-013 | P1 | visual-ux | color-contrast, heading-order, link-name düzeltme planı | Pending |
 | P-014 | P1 | mcp-connector | WP MCP eklenti seçimi + Cursor MCP bağlama checklist | Pending |
 | P-015 | P2 | content-seo | Long-tail cluster publish checklist (P-006 devamı) | Pending |
+| P-016 | P0 | gsc-serp | `led ekran*` P0 savunma: SERP #1 + GSC avg ≤5 izleme, alarm sprint | Pending |
+| P-017 | P1 | onpage-seo | COB – Smart Screen `/cob-ekran/` intent + title/meta | Pending |
+| P-018 | P1 | onpage-seo | İç/Dış Mekan LED para sayfa top-10 optimizasyonu | Pending |
+| P-019 | P1 | onpage-seo | Rental Ekran `/rental-ekran/` kiralama intent hizası | Pending |
+| P-020 | P1 | onpage-seo | İç/Dış Mekan RGB Panel sayfa optimizasyonu | Pending |
+| P-021 | P1 | content-seo | Kontrol Kartları hub + ürün SSS içerik gap | Pending |
+| P-022 | P1 | internal-link | P1 kategoriler arası hub-spoke cross-link planı | Pending |
 
 ## Cursor kalıcı ajanlar (2026-08-03)
 
@@ -61,12 +68,11 @@ Konum: `.cursor/agents/`. Detay: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`.
 
 ## İlk Tur Alt Agent Talimatları (Zorunlu Protokol)
 
-- Global çalışma modu: `report-only`
+- Global çalışma modu: `apply-with-gates` (bkz. `AGENT-HUB/STATE.md`, `COALITION-PROTOCOL.md`)
 - Alt agent kuralları:
-  - Commit/push YASAK
-  - Sadece `AGENT-HUB/*.md` dosyalarına yaz
-  - Kod değişikliği gerekiyorsa yalnızca `proposed changes` olarak raporla, uygulama yapma
-  - Push sadece kullanıcı saat verip açık onayladığında yapılır
+  - T1/T2: `[APPLY:T1]` / `[APPLY:T2]` ile uygulanabilir diff
+  - T3: yalnız öneri + `[BLOCKER]`
+  - Açık FB varken deploy yok
 - Standart prompt: `AGENT-HUB/AGENT-PROMPT-STANDARD.md`
 
 ### tech-seo (P-001)
@@ -132,3 +138,27 @@ Konum: `.cursor/agents/`. Detay: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`.
 | IL-2026-05-06-01 | internal-link | gsc | Open | `/guc-kaynaklari/` vs `/power-supply/` için nihai kanonik URL kararını ve GSC URL Inspection sonucunu paylaş; karar gelmeden ilgili anchor ailesi genişletilmeyecek. | `2026-05-06-internal-link.md` |
 | SW-001 | serp-watch | gsc | Open | `led ekran`, `dış mekan led ekran`, `mağaza led ekran`, `led ekran fiyatları` için aynı gün (TR locale) mobile+desktop URL-level sıra snapshot'larını ve veri kaynağı bilgisini paylaş. | `2026-05-06-serp-watch.md` |
 | TS-SEO-001 | tech-seo | gsc | Open | Para sayfa registry için "kanonik URL listesi + exclusion nedeni" eşleşmesini tek tabloda paylaş; tech-seo tarafı bunu P0 kapanış kriteri doğrulamasında kullanacak. | `2026-05-06-tech-seo.md` |
+
+## Keyword Alarms
+
+Son guncelleme: 2026-08-11 08:21 UTC
+
+| Tier | Sorgu/Kategori | Pozisyon | Durum |
+|---|---|---|---|
+| P0 | led ekran | 7.87 | Alarm — pozisyon 7.87 >= alarm 2 |
+| P0 | led ekran fiyatları | 16.02 | Alarm — hedef 5.0 ustu: 16.02 |
+| P0 | led ekran m2 fiyatı | 12.0 | Alarm — hedef 5.0 ustu: 12.0 |
+| P0 | led ekran kiralama | 11.08 | Alarm — hedef 5.0 ustu: 11.08 |
+| P1 | cob ekran | 20.0 | Alarm — hedef 10.0 ustu: 20.0 |
+| P1 | cob led ekran | 18.0 | Alarm — hedef 10.0 ustu: 18.0 |
+| P1 | smart screen | 18.0 | Alarm — hedef 10.0 ustu: 18.0 |
+| P1 | iç mekan led ekran | 13.21 | Alarm — hedef 10.0 ustu: 13.21 |
+| P1 | iç mekan led ekran fiyatları | 15.08 | Alarm — hedef 10.0 ustu: 15.08 |
+| P1 | dış mekan led ekran | 15.34 | Alarm — hedef 10.0 ustu: 15.34 |
+| P1 | outdoor led ekran | 16.0 | Alarm — hedef 10.0 ustu: 16.0 |
+| P1 | dış mekan led ekran fiyatları | 20.78 | Alarm — hedef 10.0 ustu: 20.78 |
+| P1 | rental led ekran | 13.56 | Alarm — hedef 10.0 ustu: 13.56 |
+| P1 | led ekran kiralama | 11.08 | Alarm — hedef 10.0 ustu: 11.08 |
+| P1 | kiralık led ekran | 13.0 | Alarm — hedef 10.0 ustu: 13.0 |
+
+- [ALARM:P0] 4 P0 alarm aktif — P-016 sprint oncelikli

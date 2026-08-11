@@ -3,7 +3,7 @@
 - Kaynak klasör: `AGENT-HUB/DATA/gsc-performance-2026-06-05/`
 - Sorgu satırı: 1000
 - Sayfa satırı: 318
-- `SERP-BASELINE.csv` eklenen satır: 8
+- `SERP-BASELINE.csv` eklenen satır: 6
 - Öncelik dosyası: `AGENT-HUB/DATA/gsc-queries-prioritized-2026-06-05.csv`
 
 ## Hedef Sorgular
@@ -18,6 +18,12 @@
 | iç mekan led ekran fiyatları | 17 | 298 | 5.7% | 15.08 |
 | dış mekan led ekran fiyatları | 5 | 167 | 2.99% | 20.78 |
 | led ekran kiralama | 2 | 167 | 1.2% | 11.08 |
+| led ekran firmaları | 5 | 71 | 7.04% | 3.55 |
+| smart screen | 0 | 10 | 0% | 8.2 |
+| led kontrol kartı | 0 | 20 | 0% | 28.6 |
+| led ekran kontrol kartı | 1 | 10 | 10% | 7.8 |
+| kiralık led ekran | 0 | 21 | 0% | 10.9 |
+| outdoor led ekran | 6 | 378 | 1.59% | 17.76 |
 
 ## En İyi Sayfalar
 

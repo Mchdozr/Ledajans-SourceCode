@@ -1,6 +1,6 @@
-# BLOCKER ALERT - 2026-08-03 09:11 UTC
+# BLOCKER ALERT - 2026-08-11 08:21 UTC
 
-Aşağıdaki kritik blokajlar raporlarda tespit edildi:
+Asagidaki kritik blokajlar raporlarda tespit edildi:
 - 2026-05-06-content-agent.md: [BLOCKER] etiketi bulundu
 - 2026-05-06-content.md: [BLOCKER] etiketi bulundu
 - 2026-05-06-gsc.md: [BLOCKER] etiketi bulundu
@@ -10,4 +10,4 @@ Aşağıdaki kritik blokajlar raporlarda tespit edildi:
 - 2026-05-06-tech-seo-agent.md: [BLOCKER] etiketi bulundu
 - 2026-05-06-tech-seo.md: [BLOCKER] etiketi bulundu
 
-Onay gerektiren durum: robots/canonical/noindex canlı müdahalesi.
+Onay gerektiren durum: robots/canonical/noindex canli mudahalesi.

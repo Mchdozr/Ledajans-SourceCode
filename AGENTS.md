@@ -59,6 +59,7 @@ python3 deploy-to-wordpress.py --dry-run
 ### Cursor Subagents, MCP, Stack
 
 - **Kalıcı alt ajanlar:** `.cursor/agents/*.md` (… `blog-ajan` …). “blog ajanı” / blog yazısı → `blog-ajan`.
+- **Otonom koalisyon:** `AGENT-HUB/KEYWORD-GUARD.json` + `COALITION-PROTOCOL.md` + `scripts/run-coalition-cycle.py` / `coalition-apply.py` (mod: `apply-with-gates`).
 - **Haftalık blog:** `Blog/keyword-queue.json` + `scripts/publish-blog-post.py` + `AGENT-HUB/WEEKLY-BLOG-RUNBOOK.md` (Pazartesi 09:00 otomasyon).
 - **Router kuralı:** `.cursor/rules/ledajans-subagents.mdc`
 - **MCP şablonu:** `.cursor/mcp.json.example` (token commit etme; WP MCP + Apify)
