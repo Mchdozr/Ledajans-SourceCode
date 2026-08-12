@@ -16,6 +16,9 @@ $auditExit = $LASTEXITCODE
 Write-Host "`n=== 3) İç Link Audit ===" -ForegroundColor Cyan
 python AGENT-HUB/audit-internal-links.py
 
+Write-Host "`n=== 4) SERP Baseline (led ekran) ===" -ForegroundColor Cyan
+python scripts/capture-serp-baseline.py
+
 Pop-Location
 if ($smokeExit -ne 0) { exit $smokeExit }
 exit 0
