@@ -267,7 +267,6 @@ def mark_apply_done() -> None:
     pending = gate.get("pending_apply")
     if not pending:
         return
-    # Onaylilar applied; pending kalan varsa paket partial kalir
     cmds = pending.get("commands") or []
     for c in cmds:
         if c.get("decision") == "approved":
@@ -275,25 +274,56 @@ def mark_apply_done() -> None:
     pending["commands"] = cmds
     if any(c.get("decision") == "pending" for c in cmds):
         pending["status"] = "partial"
+        gate["pending_apply"] = pending
     else:
         pending["status"] = "applied"
         pending["applied_at"] = _now()
-    gate["pending_apply"] = pending
+        # Arsivle; /bekleyen artik bos kalsin
+        hist = gate.get("apply_history") or []
+        hist.insert(0, pending)
+        gate["apply_history"] = hist[:20]
+        gate["pending_apply"] = None
+        gate["last_apply"] = {
+            "id": pending.get("id"),
+            "applied_at": pending.get("applied_at"),
+            "summary": ", ".join(
+                c.get("summary", "")[:60]
+                for c in cmds
+                if c.get("decision") == "applied"
+            ),
+        }
     save_gate(gate)
 
 
 def format_pending_summary() -> str:
-    pending = load_gate().get("pending_apply")
-    if not pending:
-        return "Bekleyen onay yok."
+    gate = load_gate()
+    pending = gate.get("pending_apply")
+
+    # Sadece gercekten bekleyen / uygulanabilir paket
+    if not pending or pending.get("status") in ("applied", "rejected", None):
+        last = gate.get("last_apply") or {}
+        lines = [
+            "LEDAJANS — BEKLEYEN YOK",
+            "",
+            "Simdi onay bekleyen degisiklik yok.",
+            "Ajanlar yeni APPLY uretince Telegram'a ONAY GEREKIYOR gelir.",
+        ]
+        if last.get("id"):
+            lines.extend(
+                [
+                    "",
+                    f"Son uygulanan: {last.get('id')}",
+                    f"Zaman: {last.get('applied_at', '—')}",
+                    f"Ozet: {last.get('summary') or '—'}",
+                ]
+            )
+        return "\n".join(lines)
 
     status = pending.get("status", "")
     status_tr = {
         "awaiting_approval": "Senin onayin bekleniyor (madde sec)",
         "partial": "Kismi karar verildi — kalan maddeler bekliyor",
         "approved": "Secilenler onayli — /uygula ile uygula",
-        "rejected": "Hepsi reddedildi",
-        "applied": "Uygulandi",
     }.get(status, status)
 
     cmds = pending.get("commands") or []
