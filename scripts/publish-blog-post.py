@@ -34,15 +34,18 @@ def load_env() -> tuple[str, str, str]:
                 continue
             k, _, v = line.partition("=")
             data[k.strip()] = v.strip().strip("\"'")
+    # .env oncekli: cloud inject bazen Plesk URL/yanlis user verir
     site = (
-        os.environ.get("WP_SITE_URL")
-        or data.get("WP_SITE_URL")
+        data.get("WP_SITE_URL")
+        or os.environ.get("WP_SITE_URL")
         or "https://ledajans.com"
     ).rstrip("/")
-    user = os.environ.get("WP_USERNAME") or data.get("WP_USERNAME") or ""
-    pw = (os.environ.get("WP_APP_PASSWORD") or data.get("WP_APP_PASSWORD") or "").replace(
-        " ", ""
-    )
+    if "plesk" in site.lower() or ":8443" in site or "login" in site.lower():
+        site = (data.get("WP_SITE_URL") or "https://ledajans.com").rstrip("/")
+    user = data.get("WP_USERNAME") or os.environ.get("WP_USERNAME") or ""
+    pw = (
+        data.get("WP_APP_PASSWORD") or os.environ.get("WP_APP_PASSWORD") or ""
+    ).replace(" ", "")
     return site, user, pw
 
 
@@ -74,8 +77,13 @@ def find_post(session: requests.Session, site: str, slug: str) -> dict | None:
         timeout=60,
     )
     if r.status_code != 200:
+        print(f"find_post HTTP {r.status_code}: {r.text[:200]}")
         return None
-    items = r.json()
+    try:
+        items = r.json()
+    except ValueError:
+        print(f"find_post non-JSON: {r.text[:200]}")
+        return None
     return items[0] if items else None
 
 
@@ -181,8 +189,12 @@ def main() -> int:
     print(action, r.status_code, r.text[:300])
     if r.status_code not in (200, 201):
         return 1
-
-    link = r.json().get("link")
+    try:
+        body = r.json()
+    except ValueError:
+        print("HATA: WP JSON donmedi (auth/URL?)")
+        return 1
+    link = body.get("link")
     print("link", link)
     if args.publish and not args.no_queue_update:
         mark_queue_published(slug)
