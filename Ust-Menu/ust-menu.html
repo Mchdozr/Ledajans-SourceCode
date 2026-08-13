@@ -937,10 +937,16 @@
       background: transparent !important;
       border-radius: 14px 14px 0 0 !important;
     }
-    .canvas-mobile .gva-mobile-menu > li > a .caret,
+    .canvas-mobile .gva-mobile-menu > li > a .caret {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      pointer-events: none !important;
+    }
     .canvas-mobile .gva-mobile-menu > li > .caret {
       flex-shrink: 0 !important;
       margin: 0 !important;
+      padding: 0 !important;
       width: 28px !important;
       height: 28px !important;
       border: 0 !important;
@@ -949,26 +955,33 @@
       position: absolute !important;
       right: 10px !important;
       top: 10px !important;
-      display: block !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       float: none !important;
+      box-sizing: border-box !important;
+      line-height: 0 !important;
+      cursor: pointer !important;
+      z-index: 4 !important;
     }
-    .canvas-mobile .gva-mobile-menu > li > a .caret::after {
+    .canvas-mobile .gva-mobile-menu > li > .caret::after {
       content: "" !important;
-      position: absolute !important;
-      left: 10px !important;
-      top: 9px !important;
-      width: 7px !important;
-      height: 7px !important;
+      position: static !important;
+      left: auto !important;
+      top: auto !important;
+      width: 8px !important;
+      height: 8px !important;
+      margin: -3px 0 0 !important;
+      border: 0 !important;
       border-right: 2px solid #6b7280 !important;
       border-bottom: 2px solid #6b7280 !important;
       transform: rotate(45deg) !important;
-      transition: transform 0.22s ease, border-color 0.16s ease, top 0.22s ease !important;
     }
-    .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open > a .caret {
+    .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open > .caret {
       background: rgba(244, 111, 44, 0.16) !important;
     }
-    .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open > a .caret::after {
-      top: 12px !important;
+    .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open > .caret::after {
+      margin: 3px 0 0 !important;
       transform: rotate(-135deg) !important;
       border-color: #f46f2c !important;
     }
@@ -1189,39 +1202,54 @@
       min-height: 48px !important;
       box-sizing: border-box !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret,
     .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > a .caret {
+      display: none !important;
+      pointer-events: none !important;
+    }
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret {
       position: absolute !important;
       right: 10px !important;
       top: 10px !important;
-      display: block !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       background: #f3f4f6 none !important;
       background-image: none !important;
       width: 28px !important;
       height: 28px !important;
       margin: 0 !important;
+      padding: 0 !important;
       border: 0 !important;
       border-radius: 8px !important;
-      z-index: 3 !important;
+      z-index: 4 !important;
+      box-sizing: border-box !important;
+      cursor: pointer !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children .caret::after {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret::after {
       content: "" !important;
       display: block !important;
-      position: absolute !important;
-      left: 10px !important;
-      top: 9px !important;
-      width: 7px !important;
-      height: 7px !important;
+      position: static !important;
+      left: auto !important;
+      top: auto !important;
+      width: 8px !important;
+      height: 8px !important;
+      margin: -3px 0 0 !important;
       border: 0 !important;
       border-right: 2px solid #6b7280 !important;
       border-bottom: 2px solid #6b7280 !important;
       transform: rotate(45deg) !important;
       background: none !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open .caret,
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active .caret {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open > .caret,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active > .caret {
       background: rgba(244,111,44,.16) none !important;
       background-image: none !important;
+    }
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open > .caret::after,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active > .caret::after {
+      margin: 3px 0 0 !important;
+      transform: rotate(-135deg) !important;
+      border-color: #f46f2c !important;
     }
     .gva-offcanvas-content.mobile .ledajans-header-mobile-contact {
       display: flex !important;
@@ -1526,16 +1554,20 @@
           }
           var lis = box.querySelectorAll('#gva-mobile-menu li.menu-item-has-children');
           Array.prototype.forEach.call(lis, function (li) {
-            var inner = li.querySelector(':scope > a .caret');
-            var extraCarets = li.querySelectorAll(':scope > .caret');
-            if (inner) {
-              Array.prototype.forEach.call(extraCarets, function (c) {
+            var a = li.querySelector(':scope > a');
+            var sibling = li.querySelector(':scope > .caret');
+            var inner = a ? a.querySelector('.caret') : null;
+            if (!sibling && inner) {
+              li.insertBefore(inner, a ? a.nextSibling : null);
+            }
+            if (a) {
+              Array.prototype.forEach.call(a.querySelectorAll('.caret'), function (c) {
                 if (c.parentNode) c.parentNode.removeChild(c);
               });
-            } else {
-              var a = li.querySelector(':scope > a');
-              var caret = li.querySelector(':scope > .caret');
-              if (a && caret) a.appendChild(caret);
+            }
+            var extraCarets = li.querySelectorAll(':scope > .caret');
+            for (var i = 1; i < extraCarets.length; i++) {
+              if (extraCarets[i].parentNode) extraCarets[i].parentNode.removeChild(extraCarets[i]);
             }
           });
           var host = box.querySelector('#gva-mobile-menu') || box;
