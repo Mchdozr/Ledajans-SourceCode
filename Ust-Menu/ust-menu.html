@@ -876,6 +876,11 @@
       max-width: 100% !important;
       position: relative !important;
     }
+    .canvas-mobile .gva-mobile-menu > li.menu-item-has-children {
+      display: grid !important;
+      grid-template-columns: 1fr 44px !important;
+      grid-template-rows: minmax(48px, auto) auto !important;
+    }
     .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open {
       background: #fff7ed !important;
       box-shadow: inset 3px 0 0 #f46f2c !important;
@@ -952,9 +957,14 @@
       border: 0 !important;
       border-radius: 8px !important;
       background: #f3f4f6 !important;
-      position: absolute !important;
-      right: 10px !important;
-      top: 10px !important;
+      position: relative !important;
+      top: auto !important;
+      right: auto !important;
+      left: auto !important;
+      grid-column: 2 / 3 !important;
+      grid-row: 1 / 2 !important;
+      justify-self: center !important;
+      align-self: center !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -988,6 +998,8 @@
     .canvas-mobile .gva-mobile-menu > li.menu-item-has-children > .submenu-inner {
       display: none !important;
       overflow: hidden !important;
+      grid-column: 1 / -1 !important;
+      grid-row: 2 / 3 !important;
     }
     .canvas-mobile .gva-mobile-menu > li.menu-item-has-children.open > .submenu-inner {
       display: block !important;
@@ -1184,35 +1196,50 @@
       overflow: hidden !important;
       position: relative !important;
     }
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children {
+      display: grid !important;
+      grid-template-columns: 1fr 44px !important;
+      grid-template-rows: minmax(48px, auto) auto !important;
+      align-items: stretch !important;
+    }
     .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open,
     .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active {
       background: #fff7ed !important;
       box-shadow: inset 3px 0 0 #f46f2c !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li > a {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > a {
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
       justify-content: space-between !important;
       width: 100% !important;
-      padding: 13px 48px 13px 14px !important;
+      padding: 13px 14px !important;
       color: #111827 !important;
       font-size: 0.9375rem !important;
       font-weight: 700 !important;
       min-height: 48px !important;
       box-sizing: border-box !important;
+      grid-column: 1 / 2 !important;
+      grid-row: 1 / 2 !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > a .caret {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > a .caret,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children a .caret {
       display: none !important;
       pointer-events: none !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret {
-      position: absolute !important;
-      right: 10px !important;
-      top: 10px !important;
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children .caret {
+      grid-column: 2 / 3 !important;
+      grid-row: 1 / 2 !important;
+      position: relative !important;
+      top: auto !important;
+      right: auto !important;
+      left: auto !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
+      justify-self: center !important;
+      align-self: center !important;
       background: #f3f4f6 none !important;
       background-image: none !important;
       width: 28px !important;
@@ -1225,7 +1252,8 @@
       box-sizing: border-box !important;
       cursor: pointer !important;
     }
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret::after {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .caret::after,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children .caret::after {
       content: "" !important;
       display: block !important;
       position: static !important;
@@ -1241,7 +1269,9 @@
       background: none !important;
     }
     .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open > .caret,
-    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active > .caret {
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active > .caret,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.open .caret,
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children.menu-active .caret {
       background: rgba(244,111,44,.16) none !important;
       background-image: none !important;
     }
@@ -1250,6 +1280,10 @@
       margin: 3px 0 0 !important;
       transform: rotate(-135deg) !important;
       border-color: #f46f2c !important;
+    }
+    .gva-offcanvas-content #gva-mobile-menu ul.gva-mobile-menu > li.menu-item-has-children > .submenu-inner {
+      grid-column: 1 / -1 !important;
+      grid-row: 2 / 3 !important;
     }
     .gva-offcanvas-content.mobile .ledajans-header-mobile-contact {
       display: flex !important;
