@@ -289,8 +289,11 @@
     width: auto !important;
     max-width: min(68vw, 240px) !important;
     object-fit: contain !important;
-    filter: brightness(0) invert(1) !important;
-    transform: translateY(-2px) !important;
+    filter: none !important;
+    mix-blend-mode: screen !important;
+    display: block !important;
+    margin: 0 !important;
+    transform: translateY(3px) !important;
   }
 
   /* Elementor post-43: nav widget margin 30px — header overflow:hidden içinde hamburger kesiliyor */

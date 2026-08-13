@@ -76,6 +76,15 @@ function ledajans_mobile_offcanvas_css()
 .gva-offcanvas-content.mobile .ledajans-mm-wa,.gva-offcanvas-content.mobile .ledajans-mm-call{display:flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;border-radius:12px!important;font-size:.8125rem!important;font-weight:800!important;text-decoration:none!important;color:#fff!important}
 .gva-offcanvas-content.mobile .ledajans-mm-wa{background:#25d366!important}
 .gva-offcanvas-content.mobile .ledajans-mm-call{background:#111827!important}
+@media (max-width:1024px){
+.elementor-element-123bc72 .gsc-logo,
+.elementor-element-123bc72 .elementor-element-fe10ed3,
+.elementor-element-123bc72 .elementor-widget-gva-logo,
+.elementor-element-123bc72 a.site-branding-logo{display:flex!important;align-items:center!important;justify-content:center!important;line-height:0!important;height:100%!important;min-height:44px!important;margin:0 auto!important;padding:0!important}
+.elementor-element-123bc72 a.site-branding-logo img,
+.elementor-element-123bc72 .gsc-logo img,
+.elementor-element-123bc72 .elementor-widget-gva-logo img{display:block!important;margin:0!important;padding:0!important;transform:translateY(3px)!important;filter:none!important;mix-blend-mode:screen!important;height:26px!important;width:auto!important;max-width:min(68vw,240px)!important;object-fit:contain!important;vertical-align:middle!important}
+}
 CSS;
 }
 }
