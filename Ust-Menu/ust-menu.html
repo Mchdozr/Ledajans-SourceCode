@@ -464,14 +464,23 @@
       .elementor-element-123bc72 .nav-one__mobile,
       .elementor-element-123bc72 .nav-screen__mobile,
       .elementor-element-123bc72 .gva-navigation-menu .nav-screen__mobile {
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         visibility: visible !important;
         opacity: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 0 !important;
       }
       .elementor-element-123bc72 .canvas-menu.gva-offcanvas {
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         visibility: visible !important;
         opacity: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       .elementor-element-123bc72 .elementor-widget-gva-logo,
       .elementor-element-123bc72 .elementor-widget-gva-navigation-menu {
@@ -480,10 +489,15 @@
         opacity: 1 !important;
       }
       .elementor-element-123bc72 .elementor-widget-gva-logo .elementor-widget-container,
-      .elementor-element-123bc72 .elementor-widget-gva-navigation-menu .elementor-widget-container {
+      .elementor-element-123bc72 .elementor-widget-gva-navigation-menu .elementor-widget-container,
+      .elementor-43 .elementor-element.elementor-element-548f702 > .elementor-widget-container,
+      .elementor-element-123bc72 .elementor-element-548f702 > .elementor-widget-container,
+      .elementor-element-123bc72 .elementor-element-fe10ed3 > .elementor-widget-container {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       .elementor-element-123bc72 .elementor-element-548f702 {
         position: relative !important;
@@ -495,13 +509,19 @@
         -webkit-transform: none !important;
         margin: 0 !important;
         width: auto !important;
-        max-width: 100% !important;
+        max-width: none !important;
+        --container-widget-width: auto !important;
+        --container-widget-flex-grow: 0 !important;
+        overflow: visible !important;
       }
       .elementor-element-123bc72 .elementor-element-548f702 .elementor-widget-container,
       .elementor-element-123bc72 .gva-element-gva-navigation-menu,
       .elementor-element-123bc72 .gva-navigation-menu {
         width: auto !important;
-        max-width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
       }
       .elementor-element-123bc72 .dropdown-toggle,
       .elementor-element-123bc72 .canvas-menu a.dropdown-toggle,
@@ -516,27 +536,66 @@
         bottom: auto !important;
         transform: none !important;
         color: #ffffff !important;
-        font-size: 22px !important;
-        line-height: 1 !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        z-index: 10 !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        z-index: 20 !important;
         margin: 0 !important;
+        padding: 0 !important;
         flex-shrink: 0 !important;
         visibility: visible !important;
         opacity: 1 !important;
+        overflow: visible !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
         -webkit-tap-highlight-color: transparent;
+      }
+      .elementor-element-123bc72 .dropdown-toggle .ledajans-hamburger-icon {
+        display: block !important;
+        width: 22px !important;
+        height: 16px !important;
+        color: #ffffff !important;
+        fill: currentColor !important;
+        flex-shrink: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      .elementor-element-123bc72 .dropdown-toggle:has(.ledajans-hamburger-icon) i {
+        display: none !important;
       }
       .elementor-element-123bc72 .dropdown-toggle i,
       .elementor-element-123bc72 .canvas-menu a.dropdown-toggle i,
-      .elementor-element-123bc72 .gva-offcanvas a.dropdown-toggle i {
+      .elementor-element-123bc72 .gva-offcanvas a.dropdown-toggle i,
+      .elementor-element-123bc72 .dropdown-toggle .icon {
         display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
         color: #ffffff !important;
-        font-size: 22px !important;
+        font-size: 0 !important;
         line-height: 1 !important;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+      }
+      .elementor-element-123bc72 .dropdown-toggle i::before,
+      .elementor-element-123bc72 .dropdown-toggle .icon::before {
+        font-size: 22px !important;
+        color: #ffffff !important;
+        line-height: 1 !important;
+      }
+      .elementor-element-123bc72 .dropdown-toggle:not(:has(.ledajans-hamburger-icon))::before {
+        content: "" !important;
+        display: block !important;
+        width: 20px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        border-radius: 2px !important;
+        box-shadow: 0 7px 0 #ffffff, 0 14px 0 #ffffff !important;
       }
       .elementor-element-123bc72 .site-branding-logo,
       .elementor-element-123bc72 .elementor-element-fe10ed3,
@@ -993,7 +1052,7 @@
                               </div>
                               <div class="nav-one__mobile nav-screen__mobile">
                                 <div class="canvas-menu gva-offcanvas">
-                                  <a class="dropdown-toggle" data-canvas=".mobile" href="#" aria-label="Menüyü aç"><i class="icon las la-bars" aria-hidden="true"></i></a>
+                                  <a class="dropdown-toggle" data-canvas=".mobile" href="#" aria-label="Menüyü aç"><svg class="ledajans-hamburger-icon" width="22" height="16" viewBox="0 0 22 16" aria-hidden="true" focusable="false"><rect width="22" height="2.4" y="0" rx="1.2" fill="currentColor"/><rect width="22" height="2.4" y="6.8" rx="1.2" fill="currentColor"/><rect width="22" height="2.4" y="13.6" rx="1.2" fill="currentColor"/></svg></a>
                                 </div>
                               </div>
                             </div>
@@ -1171,8 +1230,8 @@
     </script>
     
     <!--
-      Bağımlılıklar: Modins + Gavias Themer (offcanvas JS), Line Awesome (hamburger),
-      Font Awesome (kapat). Telefon ikonları SVG — ek font gerekmez.
+      Bağımlılıklar: Modins + Gavias Themer (offcanvas JS). Hamburger inline SVG
+      (Line Awesome gerekmez). Kapat ikonu Font Awesome. Telefon ikonları SVG.
     
       Mobil alt menü JS: Code Snippets → “Only run on site front-end” → konum **Header**
       (tema/Gavias’tan önce yüklenmeli; sadece Footer’da kalırsa çekmece kapanması sürebilir).

@@ -15,7 +15,7 @@
  *   • Beyaz kuşak devam ederse: Code-Snippets/ledajans-elementor-sticky-spacer-kill.js
  *     → WP Code Snippets ile “Run everywhere” (JS inline height’ı ezer).
  *
- * Son güncelleme: 2026-05-04 (Bölüm 13: SEO makale widget — .ledajans-seo-article)
+ * Son güncelleme: 2026-08-13 (mobil hamburger: 548f702 margin 0 + SVG çizgiler)
  */
 
 /* =============================================================================
@@ -271,6 +271,7 @@
     width: 44px !important;
     min-width: 44px !important;
     max-width: 44px !important;
+    overflow: visible !important;
   }
 
   .elementor-element-123bc72 .elementor-element-aa903d8 {
@@ -292,32 +293,79 @@
     transform: translateY(-2px) !important;
   }
 
+  /* Elementor post-43: nav widget margin 30px — header overflow:hidden içinde hamburger kesiliyor */
+  .elementor-43 .elementor-element.elementor-element-548f702,
+  .elementor-element-123bc72 .elementor-element-548f702 {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    --container-widget-width: auto !important;
+    overflow: visible !important;
+  }
+  .elementor-43 .elementor-element.elementor-element-548f702 > .elementor-widget-container,
+  .elementor-element-123bc72 .elementor-element-548f702 > .elementor-widget-container,
+  .elementor-element-123bc72 .elementor-element-fe10ed3 > .elementor-widget-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .elementor-element-123bc72 .nav-one__mobile,
+  .elementor-element-123bc72 .nav-screen__mobile {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 0 !important;
+  }
+
   .elementor-element-123bc72 .dropdown-toggle,
   .elementor-element-123bc72 .canvas-menu a.dropdown-toggle,
   .elementor-element-123bc72 .gva-offcanvas a.dropdown-toggle {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px !important;
-    height: 40px !important;
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
     color: #fff !important;
-    font-size: 22px !important;
-    line-height: 1 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     visibility: visible !important;
     opacity: 1 !important;
+    overflow: visible !important;
+    z-index: 20 !important;
   }
 
-  /* Font ikonu gelmezse hamburger çizgilerini CSS ile üret */
-  .elementor-element-123bc72 .dropdown-toggle {
-    position: relative !important;
+  .elementor-element-123bc72 .dropdown-toggle .ledajans-hamburger-icon {
+    display: block !important;
+    width: 22px !important;
+    height: 16px !important;
+    color: #fff !important;
+    fill: currentColor !important;
+  }
+  .elementor-element-123bc72 .dropdown-toggle:has(.ledajans-hamburger-icon) i {
+    display: none !important;
+  }
+  .elementor-element-123bc72 .dropdown-toggle i,
+  .elementor-element-123bc72 .dropdown-toggle .icon {
+    color: #fff !important;
+    border: 0 !important;
+    padding: 0 !important;
     font-size: 0 !important;
   }
-  .elementor-element-123bc72 .dropdown-toggle::before {
+  .elementor-element-123bc72 .dropdown-toggle i::before {
+    font-size: 22px !important;
+    color: #fff !important;
+  }
+
+  /* SVG yoksa (eski HTML) CSS ile üç çizgi */
+  .elementor-element-123bc72 .dropdown-toggle:not(:has(.ledajans-hamburger-icon))::before {
     content: "" !important;
-    position: absolute !important;
-    left: 10px !important;
-    right: 10px !important;
-    top: 11px !important;
+    display: block !important;
+    width: 20px !important;
     height: 2px !important;
     background: #fff !important;
     border-radius: 2px !important;
