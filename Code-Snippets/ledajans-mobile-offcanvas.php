@@ -19,9 +19,9 @@ function ledajans_mobile_offcanvas_css()
 #gva-overlay{background:rgba(15,23,42,.55)!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
 .gva-offcanvas-content.mobile{background:#f8fafc!important;width:min(340px,88vw)!important;max-width:340px!important;height:100%!important;height:100dvh!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;border-radius:0 20px 20px 0!important;box-shadow:12px 0 40px rgba(15,23,42,.22)!important;padding:0!important;float:none!important}
 .gva-offcanvas-content.mobile .top-canvas{background:linear-gradient(135deg,#f46f2c 0%,#e25a1a 100%)!important;border-bottom:0!important;padding:12px 14px!important;padding-top:max(12px,env(safe-area-inset-top))!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;flex-shrink:0!important}
-.gva-offcanvas-content.mobile .top-canvas .logo-mm{display:flex!important;align-items:center!important;min-width:0!important;flex:1 1 auto!important;min-height:28px!important;text-decoration:none!important;position:relative!important}
-.gva-offcanvas-content.mobile .top-canvas .logo-mm img{display:none!important;filter:none!important}
-.gva-offcanvas-content.mobile .top-canvas .logo-mm:after{content:"LEDAJANS"!important;color:#fff!important;font-weight:800!important;font-size:1.15rem!important;letter-spacing:.08em!important;line-height:1!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important}
+.gva-offcanvas-content.mobile .top-canvas .logo-mm{display:flex!important;align-items:center!important;min-width:0!important;flex:1 1 auto!important;min-height:32px!important;text-decoration:none!important;position:relative!important;background:transparent!important}
+.gva-offcanvas-content.mobile .top-canvas .logo-mm:after{content:none!important;display:none!important}
+.gva-offcanvas-content.mobile .top-canvas .logo-mm img{display:block!important;height:32px!important;width:auto!important;max-width:min(200px,62vw)!important;object-fit:contain!important;filter:none!important;mix-blend-mode:screen!important;background:transparent!important;opacity:1!important;visibility:visible!important}
 .gva-offcanvas-content.mobile .top-canvas .control-close-mm{width:40px!important;height:40px!important;min-width:40px!important;border-radius:12px!important;background:rgba(255,255,255,.18)!important;color:#fff!important;font-size:0!important;display:flex!important;align-items:center!important;justify-content:center!important;text-decoration:none!important}
 .gva-offcanvas-content.mobile .top-canvas .control-close-mm i{display:none!important}
 .gva-offcanvas-content.mobile .top-canvas .control-close-mm svg{width:18px!important;height:18px!important;display:block!important}
@@ -110,6 +110,14 @@ add_action('wp_footer', static function () {
     try{
     var boxes=document.querySelectorAll('.gva-offcanvas-content.mobile');
     Array.prototype.forEach.call(boxes,function(box){
+      var img=box.querySelector('.logo-mm img');
+      if(img){
+        img.src='https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png';
+        img.removeAttribute('srcset');
+        img.removeAttribute('sizes');
+        img.removeAttribute('data-src');
+        img.alt='LEDAJANS';
+      }
       var close=box.querySelector('.control-close-mm');
       if(close&&!close.querySelector('svg')){
         close.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';

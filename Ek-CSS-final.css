@@ -410,16 +410,17 @@
 }
 
 .canvas-mobile .top-canvas .logo-mm img {
-  display: none !important;
+  display: block !important;
+  height: 32px !important;
+  width: auto !important;
+  max-width: min(200px, 62vw) !important;
+  object-fit: contain !important;
   filter: none !important;
+  mix-blend-mode: screen !important;
 }
 .canvas-mobile .top-canvas .logo-mm::after {
-  content: "LEDAJANS" !important;
-  color: #fff !important;
-  font-weight: 800 !important;
-  font-size: 1.15rem !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1 !important;
+  content: none !important;
+  display: none !important;
 }
 
 .canvas-mobile .top-canvas .control-close-mm {

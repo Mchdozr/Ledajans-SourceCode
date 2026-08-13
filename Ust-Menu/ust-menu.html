@@ -791,16 +791,17 @@
       min-width: 0 !important;
     }
     .canvas-mobile .top-canvas .logo-mm img {
-      display: none !important;
+      display: block !important;
+      height: 32px !important;
+      width: auto !important;
+      max-width: min(200px, 62vw) !important;
+      object-fit: contain !important;
       filter: none !important;
+      mix-blend-mode: screen !important;
     }
     .canvas-mobile .top-canvas .logo-mm::after {
-      content: "LEDAJANS" !important;
-      color: #fff !important;
-      font-weight: 800 !important;
-      font-size: 1.15rem !important;
-      letter-spacing: 0.08em !important;
-      line-height: 1 !important;
+      content: none !important;
+      display: none !important;
     }
     .canvas-mobile .top-canvas .control-close-mm {
       display: flex !important;
@@ -1150,16 +1151,17 @@
       padding-top: max(12px, env(safe-area-inset-top)) !important;
     }
     .gva-offcanvas-content.mobile .top-canvas .logo-mm img {
-      display: none !important;
+      display: block !important;
+      height: 32px !important;
+      width: auto !important;
+      max-width: min(200px, 62vw) !important;
+      object-fit: contain !important;
       filter: none !important;
+      mix-blend-mode: screen !important;
     }
     .gva-offcanvas-content.mobile .top-canvas .logo-mm::after {
-      content: "LEDAJANS" !important;
-      color: #fff !important;
-      font-weight: 800 !important;
-      font-size: 1.15rem !important;
-      letter-spacing: 0.08em !important;
-      line-height: 1 !important;
+      content: none !important;
+      display: none !important;
     }
     .gva-offcanvas-content.mobile .top-canvas .control-close-mm {
       width: 40px !important;
@@ -1582,6 +1584,14 @@
       function injectDrawerExtras() {
         var boxes = document.querySelectorAll('.gva-offcanvas-content.mobile');
         Array.prototype.forEach.call(boxes, function (box) {
+          var img = box.querySelector('.logo-mm img');
+          if (img) {
+            img.src = 'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png';
+            img.removeAttribute('srcset');
+            img.removeAttribute('sizes');
+            img.removeAttribute('data-src');
+            img.alt = 'LEDAJANS';
+          }
           var close = box.querySelector('.control-close-mm');
           if (close && !close.querySelector('svg')) {
             close.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
