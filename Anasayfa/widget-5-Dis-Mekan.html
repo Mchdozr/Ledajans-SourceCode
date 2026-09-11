@@ -67,29 +67,48 @@
     .ledajans-outdoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
     .ledajans-outdoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
     .ledajans-outdoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-outdoor-image-wrapper,
     .ledajans-outdoor-image-container {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      background: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ledajans-outdoor-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-outdoor-image-container {
+      width: 70%;
+      max-width: 380px;
     }
     .ledajans-outdoor-image {
       width: 100%;
       height: auto;
-      min-height: 250px;
-      max-height: 350px;
-      object-fit: cover;
+      max-height: 420px;
+      object-fit: contain;
     }
-    @media (min-width: 768px) { .ledajans-outdoor-image { max-height: 450px; } }
+    @media (min-width: 768px) {
+      .ledajans-outdoor-image-container { max-width: 440px; }
+      .ledajans-outdoor-image { max-height: 480px; }
+    }
     @media (min-width: 1024px) {
-      .ledajans-outdoor-image { height: 560px; max-height: none; }
-      .ledajans-outdoor-container { align-items: stretch; }
-      .ledajans-outdoor-image-wrapper { display: flex; }
-      .ledajans-outdoor-image-container { flex: 1; display: flex; }
+      .ledajans-outdoor-container { align-items: center; }
+      .ledajans-outdoor-image-wrapper {
+        align-self: center;
+      }
+      .ledajans-outdoor-image-container {
+        width: 72%;
+        max-width: 480px;
+      }
       .ledajans-outdoor-image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        max-height: none;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
       }
     }
     </style>
@@ -109,7 +128,7 @@
             </div>
           </div>
           <p class="ledajans-outdoor-desc">
-            <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan / Outdoor Led Ekranlar</a>, açık hava reklamcılığı alanında şirketlerin kendi reklamlarını yapabileceği gibi uzaktan kontrol edilebilir özellikleri sayesinde reklam ajanslarının da reklam alma ve yayınlama aracı haline gelmiştir. Yüksek çözünürlük, yüksek refresh/yenileme hızına sahip olmaları led ekranların sahne ve organizasyon alanlarında vazgeçilmeyecek ilk ürün olmalarını sağlamıştır. <a href="https://rentalekran.com">Rental Led Ekranlar</a> ise kiralama alanında önemli bir yer edinmişlerdir.
+            <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan / Outdoor Led Ekranlar</a>, açık hava reklamcılığı alanında şirketlerin kendi reklamlarını yapabileceği gibi uzaktan kontrol edilebilir özellikleri sayesinde reklam ajanslarının da reklam alma ve yayınlama aracı haline gelmiştir. Yüksek çözünürlük, yüksek refresh/yenileme hızına sahip olmaları led ekranların sahne ve organizasyon alanlarında vazgeçilmeyecek ilk ürün olmalarını sağlamıştır. <a href="https://ledajans.com/rental-ekran/">Rental Led Ekranlar</a> kiralama alanında önemlidir; ayrıca <a href="https://rentalekran.com" target="_blank" rel="nofollow noopener">rentalekran.com</a>.
           </p>
           <div class="ledajans-outdoor-features">
             <div class="ledajans-outdoor-feature">
@@ -135,9 +154,11 @@
         <div class="ledajans-outdoor-image-wrapper">
           <div class="ledajans-outdoor-image-container">
             <img
-              src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png"
+              src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-cephe.webp"
               alt="Dış Mekan LED Ekran - Outdoor LED Ekran Çözümleri"
               class="ledajans-outdoor-image"
+              width="1024"
+              height="892"
               loading="lazy"
               decoding="async"
             />

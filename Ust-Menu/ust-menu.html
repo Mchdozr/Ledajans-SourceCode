@@ -5,56 +5,118 @@
 -->
 
 <style id="ledajans-header-responsive-css">
-    /* ---- Masaüstü / tablet: turuncu bar içinde dikey ortalama ---- */
+    /* ---- Masaüstü: tek satır ~76px; menü relative (absolute/left:50% yok) ---- */
     @media only screen and (min-width: 1025px) {
+      .wp-site-header,
+      header.wp-site-header,
+      .elementor-element-a231664,
+      .elementor-element-123bc72,
       .elementor-element-123bc72.gv-sticky-menu {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        overflow: visible !important;
+        background: #F46F2C !important;
+        background-color: #F46F2C !important;
       }
-      .elementor-element-123bc72.gv-sticky-menu > .elementor-container {
+      .elementor-element-123bc72 .gva-main-menu > li > a,
+      .elementor-element-123bc72 .gva-main-menu > li > a .menu-title,
+      .elementor-element-123bc72 .gva-main-menu > li > a .caret {
+        color: #fff !important;
+      }
+      .elementor-element-123bc72.gv-sticky-menu {
+        min-height: 76px !important;
+        max-height: 80px !important;
+        height: 76px !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+      }
+      .elementor-element-123bc72.gv-sticky-menu > .elementor-container,
+      .elementor-element-123bc72 > .elementor-container {
         display: flex !important;
+        flex-direction: row !important;
         align-items: center !important;
         justify-content: space-between !important;
         flex-wrap: nowrap !important;
+        gap: 8px !important;
         min-height: 76px !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+        max-height: 80px !important;
+        height: 76px !important;
+        padding: 0 16px 0 8px !important;
         position: relative !important;
         overflow: visible !important;
+        box-sizing: border-box !important;
       }
-      /* Menüyü tüm bar genişliğinde ortala (sütunlar containing block olmasın) */
+      .elementor-element-123bc72 > .elementor-container > .elementor-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: 76px !important;
+        max-height: 80px !important;
+      }
+      .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-element-aa903d8,
+      .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-col-50.elementor-element-aa903d8 {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        max-width: 168px !important;
+        position: relative !important;
+      }
+      .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-element-0b7eb5f,
+      .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-col-50.elementor-element-0b7eb5f {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        position: relative !important;
+      }
       .elementor-element-123bc72 .elementor-top-column.elementor-element-aa903d8,
       .elementor-element-123bc72 .elementor-top-column.elementor-element-0b7eb5f {
-        position: static !important;
+        position: relative !important;
       }
       .elementor-element-123bc72 .elementor-element-aa903d8 > .elementor-widget-wrap,
       .elementor-element-123bc72 .elementor-element-0b7eb5f > .elementor-widget-wrap {
-        position: static !important;
+        position: relative !important;
         overflow: visible !important;
+        min-height: 76px !important;
+        max-height: 80px !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       .elementor-element-123bc72 .elementor-top-column > .elementor-widget-wrap {
         display: flex !important;
         align-items: center !important;
         min-height: 76px !important;
+        max-height: 80px !important;
       }
       .elementor-element-aa903d8 > .elementor-widget-wrap {
-        justify-content: flex-start !important;
-        padding-left: clamp(8px, 1.2vw, 16px) !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        align-content: center !important;
+        justify-content: center !important;
+        min-height: 76px !important;
+        height: 76px !important;
+        padding-left: 0 !important;
       }
       .elementor-element-123bc72 .elementor-element-aa903d8 {
         z-index: 6 !important;
       }
-      .elementor-element-123bc72 .site-branding-logo,
-      .elementor-element-123bc72 .gsc-logo {
+      .elementor-element-aa903d8 .elementor-widget-gva-logo,
+      .elementor-element-aa903d8 .elementor-widget-container,
+      .elementor-element-aa903d8 .gva-element-gva-logo,
+      .elementor-element-aa903d8 .gsc-logo,
+      .elementor-element-123bc72 .site-branding-logo {
         display: flex !important;
         align-items: center !important;
-        margin-left: clamp(0.75rem, 1.5vw, 1.75rem) !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 76px !important;
       }
-      .elementor-element-123bc72 .site-branding-logo img {
-        height: 36px !important;
+      .elementor-element-123bc72 .site-branding-logo img,
+      .elementor-element-123bc72 .elementor-widget-gva-logo img {
+        height: 32px !important;
         width: auto !important;
-        max-width: 200px !important;
+        max-width: 160px !important;
         object-fit: contain !important;
         flex-shrink: 0 !important;
       }
@@ -62,40 +124,85 @@
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
-        justify-content: flex-end !important;
+        justify-content: space-between !important;
         width: 100% !important;
-        gap: 0 !important;
+        gap: 12px !important;
       }
-      .elementor-element-123bc72 .elementor-element-548f702 {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, calc(-50% - 5px)) !important;
+      .elementor-element-123bc72 .elementor-element-548f702,
+      .elementor-element-123bc72 .elementor-element-548f702.elementor-widget {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        -webkit-transform: none !important;
         z-index: 5 !important;
-        width: max-content !important;
-        max-width: min(64vw, 860px) !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
         margin: 0 !important;
+        padding: 0 !important;
         pointer-events: auto !important;
       }
       .elementor-element-123bc72 .elementor-element-548f702 .elementor-widget-container,
       .elementor-element-123bc72 .elementor-element-548f702 .gva-navigation-menu {
         overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       .elementor-element-0b7eb5f .elementor-element-b34583d {
         flex: 0 0 auto !important;
-        margin-left: auto !important;
+        flex-shrink: 0 !important;
+        width: auto !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
         z-index: 6 !important;
       }
+      .elementor-element-123bc72 .elementor-element-b34583d .elementor-widget-container,
+      .elementor-element-123bc72 .elementor-element-fe10ed3 .elementor-widget-container {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      #menu-anamenu-desktop,
+      .elementor-element-548f702 .gva-main-menu,
       .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu {
         display: flex !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: center !important;
-        row-gap: 0.35rem !important;
+        width: 100% !important;
+        height: 76px !important;
+        row-gap: 0 !important;
+        margin: 0 !important;
+      }
+      .elementor-element-123bc72 .gva-main-menu > li {
+        display: flex !important;
+        align-items: center !important;
+        height: 76px !important;
+        max-height: 76px !important;
+        padding: 0 4px !important;
+        margin: 0 !important;
       }
       .elementor-element-123bc72 .gva-main-menu > li > a {
         display: inline-flex !important;
         align-items: center !important;
+        white-space: nowrap !important;
+        padding: 0 0.35rem !important;
+        line-height: 1.2 !important;
+        font-size: 0.8125rem !important;
+      }
+      .elementor-element-123bc72 .ledajans-header-phones {
+        flex-shrink: 0 !important;
+        gap: 0.2rem !important;
+        padding: 0 4px 0 0 !important;
+      }
+      .elementor-element-123bc72 .ledajans-header-phone-row {
+        font-size: 0.875rem !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
       }
       /* Elementor Pro sticky: hafif scroll’da beyaz boşluk (transform geçişi) */
       .elementor-element-123bc72.elementor-sticky--active,
@@ -108,11 +215,16 @@
     }
     
     /* Orta genişlik: menü + telefon sıkışmasın */
-    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+      .elementor-element-123bc72 .gva-main-menu > li {
+        padding: 0 2px !important;
+      }
       .elementor-element-123bc72 .gva-main-menu > li > a {
-        padding-left: 0.35rem !important;
-        padding-right: 0.35rem !important;
-        font-size: 0.8125rem !important;
+        padding: 0 0.22rem !important;
+        font-size: 0.75rem !important;
+      }
+      .elementor-element-123bc72 .ledajans-header-phone-row {
+        font-size: 0.75rem !important;
       }
     }
     
@@ -124,7 +236,8 @@
       justify-content: center !important;
       gap: 0.4rem !important;
       margin: 0 !important;
-      padding: 0 !important;
+      padding: 0 4px 0 0 !important;
+      flex-shrink: 0 !important;
     }
     .ledajans-header-phone-row {
       display: flex !important;
@@ -561,7 +674,7 @@
         max-width: min(68vw, 240px) !important;
         object-fit: contain !important;
         flex-shrink: 0 !important;
-        filter: brightness(0) invert(1) !important;
+        filter: none !important;
         display: block !important;
         margin: 0 !important;
         visibility: visible !important;
@@ -929,7 +1042,7 @@
                           <div class="gva-element-gva-logo gva-element">
                             <div class="gsc-logo text-center">
                               <a class="site-branding-logo" href="https://ledajans.com/" title="LEDAJANS" rel="home">
-                                <img src="https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png" alt="LEDAJANS" width="182" height="36" decoding="async" />
+                                <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo-white.webp" alt="LEDAJANS" width="160" height="32" decoding="async" />
                               </a>
                             </div>
                           </div>

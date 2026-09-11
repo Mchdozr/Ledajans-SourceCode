@@ -28,6 +28,7 @@
 - Dış Mekan LED Ekran: P2.5 — P10, IP65 korumalı, 5000+ cd/m² parlaklık
 - Rental LED Ekran: Die-cast alüminyum kasa, hızlı kurulum, flight case
 - COB & Smart Screen: Yeni nesil COB teknolojisi, üstün kontrast ve dayanıklılık
+- GOB LED Ekran: Glue on Board epoksi yüzey; okul, spor, alçak montaj
 - RGB LED Panel Modülleri: İç ve dış mekan, HUB75 arayüz, GOB ve flexible
 - Kontrol Kartları: Huidu, Colorlight, Novastar — senkron ve asenkron
 - Güç Kaynakları: Youyi, GKGD, Meanwell — 200W, 300W
@@ -58,6 +59,7 @@ ISO 9001, ISO 14001, ISO 45001, ISO 27001, ISO 10002, ISO 14064-1, ISO 31000
 - LED Ekran Ürünleri: https://ledajans.com/led-ekran/
 - İç Mekan LED Ekran: https://ledajans.com/ic-mekan-led-ekran/
 - Dış Mekan LED Ekran: https://ledajans.com/dis-mekan-led-ekran/
+- GOB LED Ekran: https://ledajans.com/gob-led-ekran/
 - Rental LED Ekran: https://ledajans.com/rental-ekran/
 - COB Ekran: https://ledajans.com/cob-ekran/
 - Kontrol Kartları: https://ledajans.com/kontrol-kartlari/

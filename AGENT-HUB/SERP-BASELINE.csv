@@ -19,3 +19,30 @@ captured_at_utc,query,locale,device,search_engine,target_url,rank_position,serp_
 2026-06-05T14:21:00Z,iç mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/,15.08,,,,gsc_performance_2026-06-05,Clicks=17; Impressions=298; CTR=5.7%; avg_position=15.08
 2026-06-05T14:21:00Z,dış mekan led ekran fiyatları,tr-TR,mobile,google,https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/,20.78,,,,gsc_performance_2026-06-05,Clicks=5; Impressions=167; CTR=2.99%; avg_position=20.78
 2026-06-05T14:21:00Z,led ekran kiralama,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,11.08,,,,gsc_performance_2026-06-05,Clicks=2; Impressions=167; CTR=1.2%; avg_position=11.08
+2026-08-05T08:00:00Z,led ekran,tr-TR,mobile,google,https://ledajans.com/,7.87,,videowall.com.tr,,gsc_performance_2026-08-05,Clicks=591; Impressions=22812; CTR=2.59%
+2026-08-05T08:00:00Z,led ekran firmaları,tr-TR,mobile,google,https://ledajans.com/led-ekran/,5.0,,,,keyword_guard_baseline,P1 savunma varyasyonu
+2026-08-05T08:00:00Z,led ekran m2 fiyatı,tr-TR,mobile,google,https://ledajans.com/led-ekran/,12.0,,,,keyword_guard_baseline,P0 fiyat varyasyonu
+2026-08-05T08:00:00Z,smart screen,tr-TR,mobile,google,https://ledajans.com/cob-ekran/,18.0,,,,keyword_guard_baseline,P1 COB Smart Screen
+2026-08-05T08:00:00Z,cob led ekran,tr-TR,mobile,google,https://ledajans.com/cob-ekran/,18.0,,,,keyword_guard_baseline,P1 COB Smart Screen
+2026-08-05T08:00:00Z,iç mekan rgb panel,tr-TR,mobile,google,https://ledajans.com/ic-mekan-rgb-panel/,8.09,,,,gsc_pages_2026-06-05,Sayfa avg position
+2026-08-05T08:00:00Z,dış mekan rgb panel,tr-TR,mobile,google,https://ledajans.com/dis-mekan-rgb-panel/,10.63,,,,gsc_pages_2026-06-05,Sayfa avg position
+2026-08-05T08:00:00Z,led kontrol kartı,tr-TR,mobile,google,https://ledajans.com/case/kontrol-kartlari/,7.84,,,,gsc_pages_2026-06-05,P1 Kontrol Kartları
+2026-08-05T08:00:00Z,led ekran kontrol kartı,tr-TR,mobile,google,https://ledajans.com/case/kontrol-kartlari/,8.5,,,,keyword_guard_baseline,P1 Kontrol Kartları
+2026-08-05T08:00:00Z,kiralık led ekran,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,13.0,,,,keyword_guard_baseline,P1 Rental Ekran
+2026-08-05T08:00:00Z,outdoor led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,16.0,,,,keyword_guard_baseline,P1 Dış Mekan LED
+2026-06-05T14:21:00Z,led ekran firmaları,tr-TR,mobile,google,https://ledajans.com/led-ekran/,3.55,,,,gsc_performance_2026-06-05,Clicks=5; Impressions=71; CTR=7.04%; avg_position=3.55
+2026-06-05T14:21:00Z,smart screen,tr-TR,mobile,google,https://ledajans.com/cob-ekran/,8.2,,,,gsc_performance_2026-06-05,Clicks=0; Impressions=10; CTR=0%; avg_position=8.2
+2026-06-05T14:21:00Z,led kontrol kartı,tr-TR,mobile,google,https://ledajans.com/case/kontrol-kartlari/,28.6,,,,gsc_performance_2026-06-05,Clicks=0; Impressions=20; CTR=0%; avg_position=28.6
+2026-06-05T14:21:00Z,led ekran kontrol kartı,tr-TR,mobile,google,https://ledajans.com/case/kontrol-kartlari/,7.8,,,,gsc_performance_2026-06-05,Clicks=1; Impressions=10; CTR=10%; avg_position=7.8
+2026-06-05T14:21:00Z,kiralık led ekran,tr-TR,mobile,google,https://ledajans.com/rental-ekran/,10.9,,,,gsc_performance_2026-06-05,Clicks=0; Impressions=21; CTR=0%; avg_position=10.9
+2026-06-05T14:21:00Z,outdoor led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,17.76,,,,gsc_performance_2026-06-05,Clicks=6; Impressions=378; CTR=1.59%; avg_position=17.76
+2026-08-20T12:00:00Z,iç mekan led ekran,tr-TR,mobile,google,https://ledajans.com/ic-mekan-led-ekran/,13.21,,,,gsc_performance_2026-06-05,cluster apply baseline; case kopya 301 bekliyor
+2026-08-20T12:00:00Z,dış mekan led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,15.34,,,,gsc_performance_2026-06-05,cluster apply baseline; case kopya 301 bekliyor
+2026-08-20T12:00:00Z,gob led ekran,tr-TR,mobile,google,https://ledajans.com/gob-led-ekran/,unranked,,,,cluster_apply_2026-08-20,GSC satır yok; hub taslak/yayın bekliyor
+2026-08-20T12:00:00Z,gob nedir,tr-TR,mobile,google,https://ledajans.com/gob-led-nedir/,unranked,,,,cluster_apply_2026-08-20,canlı 404; sözlük taslak bekliyor
+2026-08-20T12:00:00Z,indoor led ekran,tr-TR,mobile,google,https://ledajans.com/ic-mekan-led-ekran/,pending,,,,cluster_apply_2026-08-20,indoor long-tail
+2026-08-20T12:00:00Z,açık hava led ekran,tr-TR,mobile,google,https://ledajans.com/dis-mekan-led-ekran/,pending,,,,cluster_apply_2026-08-20,outdoor long-tail
+2026-08-20T12:00:00Z,gob led panel,tr-TR,mobile,google,https://ledajans.com/gob-led-ekran/,pending,,,,cluster_apply_2026-08-20,SKU vs hub niyet ayrımı
+2026-06-05T14:21:00Z,gob nedir,tr-TR,mobile,google,https://ledajans.com/gob-led-nedir/,2,,,,gsc_performance_2026-06-05,Clicks=0; Impressions=1; CTR=0%; avg_position=2
+2026-06-05T14:21:00Z,indoor led ekran,tr-TR,mobile,google,https://ledajans.com/ic-mekan-led-ekran/,15.75,,,,gsc_performance_2026-06-05,Clicks=8; Impressions=184; CTR=4.35%; avg_position=15.75
+2026-06-05T14:21:00Z,gob led panel,tr-TR,mobile,google,https://ledajans.com/gob-led-ekran/,6,,,,gsc_performance_2026-06-05,Clicks=0; Impressions=3; CTR=0%; avg_position=6

@@ -72,6 +72,7 @@ PAGES_TO_DEPLOY = [
     ("SEO-Icerik-Widgets/karsilastirmalar/p2-vs-p3-led-ekran.html",              "p2-vs-p3-led-ekran",         "P2 vs P3 LED Ekran Karşılaştırma",    "page"),
     ("SEO-Icerik-Widgets/karsilastirmalar/ic-mekan-vs-dis-mekan-led.html",       "ic-mekan-dis-mekan-led-farki","İç Mekan vs Dış Mekan LED Farkı",     "page"),
     ("SEO-Icerik-Widgets/karsilastirmalar/cob-led-ne-zaman.html",                "cob-led-ne-zaman",           "COB LED Ne Zaman Tercih Edilmeli?",   "page"),
+    ("SEO-Icerik-Widgets/karsilastirmalar/gob-vs-cob-smd.html",                  "gob-vs-cob-smd",             "GOB vs COB vs SMD LED Ekran",         "page"),
     ("SEO-Icerik-Widgets/karsilastirmalar/led-ekran-vs-lcd.html",                "led-ekran-lcd-farki",        "LED Ekran vs LCD Karşılaştırma",      "page"),
     ("SEO-Icerik-Widgets/karsilastirmalar/led-ekran-vs-projeksiyon.html",        "led-ekran-projeksiyon",      "LED Ekran vs Projeksiyon",            "page"),
 
@@ -83,6 +84,9 @@ PAGES_TO_DEPLOY = [
     ("SEO-Icerik-Widgets/sozluk/led-panel-nedir.html",       "led-panel-nedir",       "LED Panel Nedir?",                "page"),
     ("SEO-Icerik-Widgets/sozluk/smd-led-nedir.html",         "smd-led-nedir",         "SMD LED Nedir?",                  "page"),
     ("SEO-Icerik-Widgets/sozluk/gob-led-nedir.html",         "gob-led-nedir",         "GOB LED Nedir?",                  "page"),
+
+    # === P1 PARA SAYFA (GOB hub) ===
+    ("Urunlerimiz/Gob-Led-Ekran/page.html",                 "gob-led-ekran",         "GOB LED Ekran",                   "page"),
 
     # === ŞEHİR SAYFALARI ===
     ("SEO-Icerik-Widgets/sehir-sayfalari/istanbul-led-ekran.html",  "istanbul-led-ekran",  "İstanbul LED Ekran",   "page"),
@@ -102,6 +106,7 @@ PAGES_TO_DEPLOY = [
     ("Blog/dis-mekan-led-ekran-fiyatlari-2026-rehber.html", "dis-mekan-led-ekran-fiyatlari-2026", "Dış Mekan LED Ekran Fiyatları 2026", "post"),
     ("Blog/rental-led-ekran-kiralama-fiyatlari-2026-rehber.html", "rental-led-ekran-kiralama-fiyatlari-2026", "Rental LED Ekran Kiralama Fiyatları 2026", "post"),
     ("Blog/led-ekran-nasil-secilir-rehber.html", "led-ekran-nasil-secilir-rehber", "LED Ekran Nasıl Seçilir? 2026 Rehber", "post"),
+    ("Blog/gob-led-ekran-ne-zaman-tercih-edilir.html", "gob-led-ekran-ne-zaman-tercih-edilir", "GOB LED Ekran Ne Zaman Tercih Edilir?", "post"),
 ]
 
 SCHEMA_FILES = [

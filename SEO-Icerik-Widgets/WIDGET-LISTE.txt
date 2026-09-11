@@ -33,6 +33,7 @@ KARŞILAŞTIRMA (FAQPage + HowTo JSON-LD dosya içinde)
 - p2-vs-p3-led-ekran.html           → /p2-vs-p3-led-ekran/
 - ic-mekan-vs-dis-mekan-led.html    → /ic-mekan-dis-mekan-led-farki/
 - cob-led-ne-zaman.html             → /cob-led-ne-zaman/
+- gob-vs-cob-smd.html               → /gob-vs-cob-smd/           [YENİ]
 - led-ekran-vs-lcd.html             → /led-ekran-lcd-farki/       [YENİ]
 - led-ekran-vs-projeksiyon.html     → /led-ekran-projeksiyon/     [YENİ]
 

@@ -1,402 +1,894 @@
-<!-- Program İndir - İndirme Kartları -->
+<!-- Program İndir - Görsel İndirme Merkezi -->
 <style>
-    .program-downloads-section {
-      padding: clamp(2rem, 5vw, 4rem) max(1rem, env(safe-area-inset-left));
-      padding-bottom: clamp(2rem, 5vw, 4rem);
-      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
-    }
-    
-    .program-downloads-container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-    
-    .program-downloads-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    
-    @media (min-width: 480px) {
-      .program-downloads-grid { gap: 1.5rem; }
-    }
-    
-    @media (min-width: 640px) {
-      .program-downloads-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .program-downloads-grid { gap: 2rem; }
-    }
-    
-    .program-download-card {
-      background: white;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      transition: box-shadow 0.3s, border-color 0.3s;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card { padding: 2rem; }
-    }
-    
-    .program-download-card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #111827;
-      margin: 0 0 1.5rem 0;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
-      line-height: 1.3;
-      text-align: center;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card-title {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        padding-bottom: 1.25rem;
-      }
-    }
-    
-    .program-download-card-subtitle {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: #6b7280;
-      text-align: center;
-      margin: -0.5rem 0 0.875rem 0;
-      line-height: 1.4;
-    }
-    
-    .program-download-card-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    
-    .program-download-card-logo img {
-      max-height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    
-    .program-download-card-logo.has-title-line {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-card-logo.has-title-line {
-        margin-bottom: 2rem;
-        padding-bottom: 1.25rem;
-      }
-    }
-    
-    .program-download-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    
-    .program-download-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      min-height: 48px;
-      padding: 0.75rem 1rem;
-      background: #F46F2C;
-      color: #ffffff;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    @media (min-width: 640px) {
-      .program-download-btn { font-size: 1rem; }
-    }
-    
-    .program-download-btn:hover {
-      background: #e55a1a;
-      transform: translateY(-1px);
-      color: #ffffff;
-    }
-    
-    .program-download-btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-    
-    .program-download-btn span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    @media (max-width: 479px) {
-      .program-download-btn span { white-space: normal; text-align: center; }
-    }
+  .program-downloads-section *,
+  .program-downloads-section *::before,
+  .program-downloads-section *::after { box-sizing: border-box; }
+  .program-downloads-section {
+    font-family: inherit;
+    padding: clamp(1.75rem, 4vw, 3.5rem) max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: clamp(2rem, 5vw, 4rem);
+    background: linear-gradient(180deg, #faf7f4 0%, #f5f1ec 55%, #faf7f4 100%);
+    color: #1f2937;
+  }
+  .program-downloads-container { max-width: 1280px; margin: 0 auto; width: 100%; }
 
-    /* Blog ile aynı arama çubuğu (Program İndir) */
-    @keyframes ledajans-search-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(244,111,44,0.35); }
-      50% { box-shadow: 0 0 0 6px rgba(244,111,44,0); }
-    }
-    .ledajans-blog-search-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      width: 100%;
-    }
-    .ledajans-search-border-wrap {
-      max-width: 28rem;
-      width: 100%;
-    }
-    .ledajans-blog-search {
-      width: 100%;
-      padding: 0.75rem 1rem 0.75rem 2.75rem;
+  .pi-picker { margin-bottom: 1.5rem; scroll-margin-top: 5.5rem; }
+  .pi-picker-title {
+    margin: 0 0 0.4rem 0;
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+  }
+  .pi-picker-sub {
+    margin: 0 auto 1.15rem auto;
+    max-width: 36rem;
+    text-align: center;
+    font-size: 0.9375rem;
+    color: #6b7280;
+    line-height: 1.65;
+  }
+  @media (min-width: 640px) {
+    .pi-picker-sub { font-size: 1rem; }
+  }
+  .pi-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .pi-picker-grid { grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+  }
+  @media (min-width: 1024px) {
+    .pi-picker-grid { grid-template-columns: repeat(6, 1fr); }
+  }
+  .pi-pick {
+    appearance: none;
+    border: 1px solid #ebe4dc;
+    background: #ffffff;
+    border-radius: 0.875rem;
+    padding: 1rem 0.55rem 0.85rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(120, 80, 40, 0.05);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    font-family: inherit;
+    width: 100%;
+    max-width: 100%;
+  }
+  .pi-pick:hover {
+    border-color: #f0c9b0;
+    background: #fffaf7;
+    box-shadow: 0 4px 12px rgba(244, 111, 44, 0.08);
+  }
+  .pi-pick.is-active {
+    border-color: #f46f2c;
+    background: #fff7f2;
+    box-shadow: 0 0 0 2px rgba(244, 111, 44, 0.12);
+  }
+  .pi-pick-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-pick-icon svg { width: 20px; height: 20px; }
+  .pi-pick-icon.c-all,
+  .pi-pick-icon.c-destek,
+  .pi-pick-icon.c-color,
+  .pi-pick-icon.c-huidu,
+  .pi-pick-icon.c-nova,
+  .pi-pick-icon.c-mobil {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-pick.is-active .pi-pick-icon,
+  .pi-pick.is-active .pi-pick-icon.c-all,
+  .pi-pick.is-active .pi-pick-icon.c-destek,
+  .pi-pick.is-active .pi-pick-icon.c-color,
+  .pi-pick.is-active .pi-pick-icon.c-huidu,
+  .pi-pick.is-active .pi-pick-icon.c-nova,
+  .pi-pick.is-active .pi-pick-icon.c-mobil {
+    background: rgba(244, 111, 44, 0.16);
+    color: #f46f2c;
+  }
+  .pi-pick-name {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+  }
+  .pi-pick-hint {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.6875rem;
+    color: #9a8f86;
+    line-height: 1.35;
+  }
+
+  .pi-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.35rem;
+    padding: 0.65rem 0;
+    background: rgba(250, 247, 244, 0.94);
+    backdrop-filter: blur(8px);
+  }
+  .ledajans-blog-search-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .ledajans-search-border-wrap { max-width: 28rem; width: 100%; }
+  .ledajans-blog-search {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.75rem;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    border: 1px solid #e8ddd3;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0.875rem center;
+    background-size: 1.25rem;
+    outline: none;
+    color: #1f2937;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .ledajans-blog-search::placeholder { color: #9ca3af; }
+  .ledajans-blog-search:focus {
+    border-color: #f46f2c;
+    box-shadow: 0 0 0 3px rgba(244,111,44,0.12);
+  }
+  .pi-active-label {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin: 0;
+  }
+  .pi-active-label strong { color: #ea6a2d; font-weight: 600; }
+
+  .pi-cat {
+    margin-bottom: 1.75rem;
+    scroll-margin-top: 7rem;
+  }
+  .pi-cat[hidden] { display: none !important; }
+  .pi-cat-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #ebe4dc;
+  }
+  .pi-cat-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1e8;
+    color: #ea6a2d;
+    flex-shrink: 0;
+  }
+  .pi-cat-badge svg { width: 20px; height: 20px; }
+  .pi-cat-badge.c-destek,
+  .pi-cat-badge.c-color,
+  .pi-cat-badge.c-huidu,
+  .pi-cat-badge.c-nova,
+  .pi-cat-badge.c-mobil {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-cat-head h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 640px) {
+    .pi-cat-head h3 { font-size: 1.25rem; }
+  }
+  .pi-cat-head p {
+    margin: 0.15rem 0 0 0;
+    font-size: 0.8125rem;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+
+  .pi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  @media (min-width: 640px) {
+    .pi-grid { grid-template-columns: repeat(2, 1fr); gap: 1.35rem; }
+  }
+  @media (min-width: 1024px) {
+    .pi-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  }
+  .pi-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #ebe4dc;
+    box-shadow: 0 2px 10px rgba(120, 80, 40, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.25s, border-color 0.25s;
+  }
+  .pi-card:hover {
+    border-color: #f0c9b0;
+    box-shadow: 0 8px 22px rgba(244, 111, 44, 0.1);
+  }
+  .pi-card[hidden] { display: none !important; }
+  .pi-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.15rem 1.15rem 0.35rem;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .pi-card-top { padding: 1.35rem 1.35rem 0.4rem; }
+  }
+  .pi-card-visual {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-card-visual svg { width: 20px; height: 20px; }
+  .pi-card-visual img {
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: contain;
+  }
+  .pi-v-folder,
+  .pi-v-doc,
+  .pi-v-app,
+  .pi-v-pdf,
+  .pi-v-remote,
+  .pi-v-huidu,
+  .pi-v-nova,
+  .pi-v-tf,
+  .pi-v-phone {
+    background: #fff1e8;
+    color: #ea6a2d;
+  }
+  .pi-card-meta { min-width: 0; flex: 1; overflow: hidden; }
+  .pi-type {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: #fff1e8;
+    color: #c45a20;
+    border: none;
+  }
+  .pi-card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  @media (min-width: 640px) {
+    .pi-card-title { font-size: 1.0625rem; }
+  }
+  .pi-card-body {
+    padding: 0.25rem 1.15rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .pi-card-body { padding: 0.25rem 1.35rem 1.35rem; }
+  }
+  .pi-what {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #5b6570;
+    line-height: 1.6;
+  }
+  .pi-btn {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+    background: #f46f2c;
+    color: #ffffff !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-decoration: none !important;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(244, 111, 44, 0.22);
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  @media (min-width: 640px) {
+    .pi-btn {
+      min-height: 46px;
       font-size: 0.9375rem;
-      border: 2px solid #F46F2C;
-      border-radius: 0.5rem;
-      background-color: #ffffff;
-      animation: ledajans-search-pulse 2s ease-in-out infinite;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: 0.875rem center;
-      background-size: 1.25rem;
-      outline: none;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      padding: 0.7rem 0.9rem;
     }
-    .ledajans-blog-search::placeholder { color: #9ca3af; }
-    .ledajans-blog-search:focus {
-      animation: none;
-      box-shadow: 0 0 0 4px rgba(244,111,44,0.25);
-    }
-    .program-download-search-results {
-      display: none;
-      margin-bottom: 0;
-    }
-    .program-download-search-results.active {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    @media (min-width: 640px) {
-      .program-download-search-results.active {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      .program-download-search-results.active { gap: 2rem; }
-    }
-    .program-download-search-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: #6b7280;
-      padding: 2rem;
-      margin: 0;
-    }
-    .program-downloads-section.search-active .program-download-main-grid {
-      display: none;
-    }
-    </style>
-    
-    <section class="program-downloads-section" id="indirme-listesi">
-      <div class="program-downloads-container">
-        <div class="ledajans-blog-search-wrap">
-          <div class="ledajans-search-border-wrap">
-            <label for="ledajans-program-indir-arama" class="screen-reader-text" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Program ve dosyalarda ara</label>
-            <input type="search" id="ledajans-program-indir-arama" class="ledajans-blog-search" placeholder="Program ve dosya adında ara..." autocomplete="off" enterkeyhint="search">
-          </div>
-        </div>
-        <div class="program-download-search-results program-downloads-grid" aria-live="polite"></div>
-        <div class="program-download-main-grid">
-        <div class="program-downloads-grid">
-          <!-- 1. Tarama Dosyaları -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Tarama Dosyaları</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Tarama Dosyaları</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 2. Teknik Özellikler -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Teknik Özellikler</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Teknik Özellikler</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 5. Colorlight -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Colorlight</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/file/d/1NV5wVmb-rkJ9qz2oQ67GXS_6UFRLXiX2/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LEDUpgrade V5.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LED Settings V2.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1clcgdzazxoH5Y3o-WJVsKLLg8Tvh03qi/view?usp=drive_link" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedVision 9.7</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 6. Colorlight - PlayMasterTR -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Colorlight - PlayMasterTR</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/uc?export=download&id=16BqRtYl5XpCOHx04Vy8O0M0hdO5QEvXj" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                <span>Colorlight - PlayMasterTR</span>
-              </a>
-              <a href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                <span>PlayerMaster-User Manual V1.4 TR</span>
-              </a>
-            </div>
-          </div>
-           <!-- 9. HD Kontrol Kartı Programı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">HD Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/file/d/13ylhEOkXGu4BDJc6JVFoioqqdoCmQR5x/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDSign V2.0.2</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://drive.google.com/file/d/1Ro4MFVYNcuN98wVSIPQI2XuC-SMITJnP/view?usp=sharing" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDSet V4.0.16</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-    
-          
-          <!-- 7. HD Serisi Kontrol Kartı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">HD Serisi Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>HDPlayer V7.11.8.0</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-         <!-- 4. AnyDesk -->
-          <div class="program-download-card">
-            <div class="program-download-card-logo has-title-line">
-              <img src="https://ledajans.com/wp-content/uploads/2024/08/Screenshot2024-03-21095210-ezgif.com-resize.png" alt="AnyDesk" loading="lazy" onerror="this.style.display='none'">
-            </div>
-            <div class="program-download-buttons">
-              <a href="https://anydesk.com/en" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>Anydesk - Uzaktan Destek</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          
-          <!-- 8. TF Serisi Kontrol Kartı -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">TF Serisi Kontrol Kartı Programı</h3>
-            <div class="program-download-buttons">
-              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>TF PowerLed_2.89.4</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-    
-          <!-- 10. LedArt Uygulaması -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">LedArt Uygulaması</h3>
-            <div class="program-download-buttons">
-              <a href="https://www.huidu.cn/qrcode.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedArt Mobil Uygulama İndir</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://www.huidu.cn/User_Manual_APP_en.html" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>LedArt Mobil Uygulama Kullanma Kılavuzu</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-          <!-- 3. Nova Star Kart -->
-          <div class="program-download-card">
-            <h3 class="program-download-card-title">Nova Star Kart</h3>
-            <div class="program-download-buttons">
-              <a href="https://oss.novastar.tech/uploads/2020/07/NovaLCT-V5.3.1.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>NovaLCT V5.3.1</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-              <a href="https://oss.novastar.tech/uploads/2020/01/NovaLCT-V5.3.0.zip" class="program-download-btn" target="_blank" rel="noopener noreferrer">
-                <span>NovaLCT V5.3.0</span>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+  }
+  .pi-btn:hover {
+    background: #e55a1a;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(244, 111, 44, 0.28);
+  }
+  .pi-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .pi-btn span { min-width: 0; }
+
+  .pi-empty {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6b7280;
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #ebe4dc;
+  }
+  .pi-empty.is-visible { display: block; }
+  .pi-empty strong { color: #1f2937; }
+</style>
+
+<section class="program-downloads-section" id="indirme-listesi">
+  <div class="program-downloads-container">
+
+    <!-- MARKA SEÇİCİ -->
+    <div class="pi-picker" id="program-secim">
+      <h2 class="pi-picker-title">Hangi programı istiyorsunuz?</h2>
+      <p class="pi-picker-sub">Kontrol kartı markanızı seçin; Colorlight, Huidu, Nova ve TF yazılımları ile destek dosyaları filtrelenir.</p>
+      <div class="pi-picker-grid" role="tablist" aria-label="Program kategorileri">
+        <button type="button" class="pi-pick is-active" data-cat="all" role="tab" aria-selected="true">
+          <span class="pi-pick-icon c-all" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+          <span class="pi-pick-name">Tümü</span>
+          <span class="pi-pick-hint">Hepsini göster</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="destek" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-destek" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></span>
+          <span class="pi-pick-name">Destek & Dosya</span>
+          <span class="pi-pick-hint">AnyDesk · Tarama</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="colorlight" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-color" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Colorlight</span>
+          <span class="pi-pick-hint">PlayMaster · Ayar</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="huidu" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-huidu" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Huidu / HD</span>
+          <span class="pi-pick-hint">HDPlayer · HDSet</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="nova" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-nova" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></span>
+          <span class="pi-pick-name">Nova & TF</span>
+          <span class="pi-pick-hint">NovaLCT · PowerLed</span>
+        </button>
+        <button type="button" class="pi-pick" data-cat="mobil" role="tab" aria-selected="false">
+          <span class="pi-pick-icon c-mobil" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></span>
+          <span class="pi-pick-name">Mobil</span>
+          <span class="pi-pick-hint">LedArt uygulama</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pi-toolbar">
+      <div class="ledajans-blog-search-wrap">
+        <div class="ledajans-search-border-wrap">
+          <label for="ledajans-program-indir-arama" class="screen-reader-text" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Program ve dosyalarda ara</label>
+          <input type="search" id="ledajans-program-indir-arama" class="ledajans-blog-search" placeholder="Örn: PlayMaster, AnyDesk, HDPlayer…" autocomplete="off" enterkeyhint="search">
         </div>
       </div>
-    </section>
+      <p class="pi-active-label" id="pi-active-label">Şu an: <strong>Tüm programlar</strong></p>
+    </div>
+
+    <div class="program-download-main-grid" id="pi-main">
+
+      <!-- DESTEK -->
+      <div class="pi-cat" data-cat="destek">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-destek" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+          <div>
+            <h3>Destek & Ortak Dosyalar</h3>
+            <p>Uzaktan yardım, tarama dosyaları ve teknik özellik belgeleri</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="destek" data-search="anydesk uzak destek masaüstü bağlantı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-remote" aria-hidden="true">
+                <img src="https://ledajans.com/wp-content/uploads/2024/08/Screenshot2024-03-21095210-ezgif.com-resize.png" alt="AnyDesk" loading="lazy" width="200" height="200">
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Uzak destek</span>
+                <h4 class="pi-card-title">AnyDesk</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Uzaktan teknik destek için güvenli bağlantı programı. Ledajans ekibinin yazılım kurulumu yapabilmesi için indirin.</p>
+              <a href="https://anydesk.com/en" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                AnyDesk indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="destek" data-search="tarama dosyaları scan rcfg">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-folder" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Klasör</span>
+                <h4 class="pi-card-title">Tarama Dosyaları</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Ekranınızın doğru görünmesi için kullanılan ayar dosyaları. Google Drive klasörü açılır; kartınıza uygun dosyayı seçin.</p>
+              <a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Tarama klasörünü aç
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="destek" data-search="teknik özellikler datasheet pdf">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-doc" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Belge</span>
+                <h4 class="pi-card-title">Teknik Özellikler</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Ürün ölçüleri, çözünürlük ve teknik bilgiler. Program değil — bilgilendirme dosyasıdır.</p>
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Teknik özellikleri indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- COLORLIGHT -->
+      <div class="pi-cat" data-cat="colorlight">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-color" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Colorlight Programları</h3>
+            <p>Kartınızda “Colorlight” yazıyorsa bu bölümü kullanın</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="colorlight" data-search="playmastertr playmaster colorlight oynatıcı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ana program</span>
+                <h4 class="pi-card-title">PlayMaster TR</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight ekranlara video / yazı yayınlamak için ana Türkçe program. Çoğu kullanıcı önce bunu indirir.</p>
+              <a href="https://drive.google.com/uc?export=download&id=16BqRtYl5XpCOHx04Vy8O0M0hdO5QEvXj" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                PlayMaster TR indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="playmaster manual kılavuz pdf user manual">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-pdf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">PDF kılavuz</span>
+                <h4 class="pi-card-title">PlayMaster Kullanım Kılavuzu</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">PlayMaster’ı adım adım anlatan Türkçe PDF. Program değil — okuma / yazdırma dosyasıdır.</p>
+              <a href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Kılavuzu indir (PDF)
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="led settings ledsettings colorlight ayar">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ayar programı</span>
+                <h4 class="pi-card-title">LED Settings V2.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight kartın ekran ayarlarını (tarama, parlaklık, eşleme) yapan program.</p>
+              <a href="https://drive.google.com/file/d/1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LED Settings indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="ledupgrade upgrade güncelleme colorlight">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Güncelleme</span>
+                <h4 class="pi-card-title">LEDUpgrade V5.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight kartın iç yazılımını (firmware) günceller. Destek ekibi söylemeden indirmeyin.</p>
+              <a href="https://drive.google.com/file/d/1NV5wVmb-rkJ9qz2oQ67GXS_6UFRLXiX2/view?usp=drive_link" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LEDUpgrade indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="colorlight" data-search="ledvision vision colorlight yayın">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-app" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Yayın programı</span>
+                <h4 class="pi-card-title">LedVision 9.7</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Colorlight için alternatif içerik yayın yazılımı. PlayMaster yerine veya yanında kullanılır.</p>
+              <a href="https://drive.google.com/file/d/1clcgdzazxoH5Y3o-WJVsKLLg8Tvh03qi/view?usp=drive_link" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LedVision indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- HUIDU / HD -->
+      <div class="pi-cat" data-cat="huidu">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-huidu" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Huidu / HD Serisi</h3>
+            <p>Kartınızda “HD” veya “Huidu” yazıyorsa buradan indirin</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="huidu" data-search="hdplayer hd serisi huidu oynatıcı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ana program</span>
+                <h4 class="pi-card-title">HDPlayer V7.11.8.0</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD / Huidu serisi kartlara içerik yüklemek için ana program. Çoğu HD kullanıcı bunu indirir.</p>
+              <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDPlayer indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="huidu" data-search="hdsign hd kontrol kartı">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">İçerik / tabela</span>
+                <h4 class="pi-card-title">HDSign V2.0.2</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD kontrol kartı için tabela / yazı içerik programı. Destek ekibi önerdiyse indirin.</p>
+              <a href="https://drive.google.com/file/d/13ylhEOkXGu4BDJc6JVFoioqqdoCmQR5x/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDSign indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="huidu" data-search="hdset ayar hd kontrol">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-huidu" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Ayar programı</span>
+                <h4 class="pi-card-title">HDSet V4.0.16</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">HD kartın ekran / iletişim ayarlarını yapan program. İlk kurulumda sık kullanılır.</p>
+              <a href="https://drive.google.com/file/d/1Ro4MFVYNcuN98wVSIPQI2XuC-SMITJnP/view?usp=sharing" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                HDSet indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- NOVA & TF -->
+      <div class="pi-cat" data-cat="nova">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-nova" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <div>
+            <h3>Nova Star & TF Serisi</h3>
+            <p>Nova / Novastar veya TF yazılı kartlar için</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="nova" data-search="novalct nova star novastar 5.3.1">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-nova" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Önerilen</span>
+                <h4 class="pi-card-title">NovaLCT V5.3.1</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Nova Star kartlar için resmi ayar ve kurulum programı. Genelde bu sürümü kullanın.</p>
+              <a href="https://oss.novastar.tech/uploads/2020/07/NovaLCT-V5.3.1.zip" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                NovaLCT 5.3.1 indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="nova" data-search="novalct nova star 5.3.0">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-nova" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Eski sürüm</span>
+                <h4 class="pi-card-title">NovaLCT V5.3.0</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">NovaLCT’nin bir önceki sürümü. Yeni sürüm açılmazsa bunu deneyin.</p>
+              <a href="https://oss.novastar.tech/uploads/2020/01/NovaLCT-V5.3.0.zip" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                NovaLCT 5.3.0 indir
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="nova" data-search="tf powerled power led serisi">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-tf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">TF kart</span>
+                <h4 class="pi-card-title">TF PowerLed 2.89.4</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">TF serisi kontrol kartı için yayın / ayar programı. Kartınızda “TF” geçiyorsa bunu indirin.</p>
+              <a href="https://drive.usercontent.google.com/download?id=1KoEUv2DC8wKPH53Io_itsQD2Dl1ZTfxh&authuser=0" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                TF PowerLed indir
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- MOBİL -->
+      <div class="pi-cat" data-cat="mobil">
+        <div class="pi-cat-head">
+          <div class="pi-cat-badge c-mobil" aria-hidden="true"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div>
+            <h3>Mobil Uygulama</h3>
+            <p>Telefondan LED ekran yönetmek için (Huidu LedArt)</p>
+          </div>
+        </div>
+        <div class="pi-grid">
+
+          <article class="pi-card" data-cat="mobil" data-search="ledart mobil uygulama huidu app telefon">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-phone" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Telefon uygulaması</span>
+                <h4 class="pi-card-title">LedArt Mobil Uygulama</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">Telefonunuzdan Huidu ekranı yönetmek için uygulama. Bilgisayar programı değil — telefonunuza kurulur.</p>
+              <a href="https://www.huidu.cn/qrcode.html" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                LedArt indir sayfasını aç
+              </a>
+            </div>
+          </article>
+
+          <article class="pi-card" data-cat="mobil" data-search="ledart kılavuz manual app">
+            <div class="pi-card-top">
+              <div class="pi-card-visual pi-v-pdf" aria-hidden="true">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <div class="pi-card-meta">
+                <span class="pi-type">Kılavuz</span>
+                <h4 class="pi-card-title">LedArt Kullanma Kılavuzu</h4>
+              </div>
+            </div>
+            <div class="pi-card-body">
+              <p class="pi-what">LedArt uygulamasının nasıl kullanılacağını anlatan resmi rehber sayfası.</p>
+              <a href="https://www.huidu.cn/User_Manual_APP_en.html" class="pi-btn" target="_blank" rel="noopener noreferrer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                Kılavuzu aç
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+
+    <p class="pi-empty" id="pi-empty" role="status">Bu aramaya / seçime uygun dosya yok. <strong>Tümü</strong>ne tıklayın veya başka kelime deneyin.</p>
+  </div>
+</section>
+
 <script>
 (function () {
   var section = document.getElementById('indirme-listesi');
   if (!section) return;
+
+  var picks = section.querySelectorAll('.pi-pick');
+  var cats = section.querySelectorAll('.pi-cat');
+  var cards = section.querySelectorAll('.pi-card');
   var searchInput = section.querySelector('#ledajans-program-indir-arama');
-  var searchResults = section.querySelector('.program-download-search-results');
-  function getCards() {
-    return section.querySelectorAll('.program-download-main-grid .program-download-card');
+  var label = section.querySelector('#pi-active-label');
+  var empty = section.querySelector('#pi-empty');
+  var activeCat = 'all';
+
+  var names = {
+    all: 'Tüm programlar',
+    destek: 'Destek & Dosyalar',
+    colorlight: 'Colorlight',
+    huidu: 'Huidu / HD',
+    nova: 'Nova & TF',
+    mobil: 'Mobil'
+  };
+
+  function cardText(card) {
+    return ((card.getAttribute('data-search') || '') + ' ' + (card.textContent || '')).toLowerCase();
   }
-  function runSearch() {
+
+  function applyFilter() {
     var q = (searchInput && searchInput.value || '').trim().toLowerCase();
-    if (!searchResults) return;
-    if (!q) {
-      section.classList.remove('search-active');
-      searchResults.classList.remove('active');
-      searchResults.innerHTML = '';
-      return;
-    }
-    section.classList.add('search-active');
-    var matching = Array.prototype.filter.call(getCards(), function (c) {
-      return (c.textContent || '').toLowerCase().indexOf(q) !== -1;
+    var visibleCards = 0;
+
+    cats.forEach(function (cat) {
+      var catKey = cat.getAttribute('data-cat');
+      var catCards = cat.querySelectorAll('.pi-card');
+      var anyVisible = false;
+
+      catCards.forEach(function (card) {
+        var catOk = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+        var searchOk = !q || cardText(card).indexOf(q) !== -1;
+        var show = catOk && searchOk;
+        card.hidden = !show;
+        if (show) {
+          anyVisible = true;
+          visibleCards++;
+        }
+      });
+
+      var showCat = activeCat === 'all' ? anyVisible : (catKey === activeCat && anyVisible);
+      if (activeCat !== 'all' && catKey !== activeCat) showCat = false;
+      if (activeCat === 'all' && !anyVisible) showCat = false;
+      cat.hidden = !showCat;
     });
-    searchResults.innerHTML = '';
-    if (matching.length) {
-      matching.forEach(function (c) { searchResults.appendChild(c.cloneNode(true)); });
-    } else {
-      var p = document.createElement('p');
-      p.className = 'program-download-search-empty';
-      p.textContent = 'Bu aramaya uygun indirme bulunamadı.';
-      searchResults.appendChild(p);
+
+    if (empty) empty.classList.toggle('is-visible', visibleCards === 0);
+
+    if (label) {
+      var base = names[activeCat] || 'Tüm programlar';
+      label.innerHTML = q
+        ? 'Şu an: <strong>' + base + '</strong> · arama: “' + q.replace(/</g, '') + '”'
+        : 'Şu an: <strong>' + base + '</strong>';
     }
-    searchResults.classList.add('active');
   }
-  if (searchInput) searchInput.addEventListener('input', runSearch);
+
+  picks.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeCat = btn.getAttribute('data-cat') || 'all';
+      picks.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      applyFilter();
+      var target = section.querySelector('#pi-main');
+      if (target && activeCat !== 'all') {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  if (searchInput) searchInput.addEventListener('input', applyFilter);
+  applyFilter();
 })();
 </script>
-    

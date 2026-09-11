@@ -1,0 +1,123 @@
+{
+  "phase": "close",
+  "open_feedback_count": 5,
+  "deploy_locked": true,
+  "deploy_lock_reason": "Açık feedback: 5",
+  "alarms": [
+    {
+      "tier": "P0",
+      "query": "led ekran",
+      "position": 7.87,
+      "reason": "pozisyon 7.87 >= alarm 2"
+    },
+    {
+      "tier": "P0",
+      "query": "led ekran fiyatları",
+      "position": 16.02,
+      "reason": "hedef 5.0 üstü: 16.02"
+    },
+    {
+      "tier": "P0",
+      "query": "led ekran m2 fiyatı",
+      "position": 12.0,
+      "reason": "hedef 5.0 üstü: 12.0"
+    },
+    {
+      "tier": "P0",
+      "query": "led ekran kiralama",
+      "position": 11.08,
+      "reason": "hedef 5.0 üstü: 11.08"
+    },
+    {
+      "tier": "P1",
+      "category": "COB – Smart Screen",
+      "query": "cob ekran",
+      "position": 20.0,
+      "reason": "hedef 10.0 üstü: 20.0"
+    },
+    {
+      "tier": "P1",
+      "category": "COB – Smart Screen",
+      "query": "cob led ekran",
+      "position": 18.0,
+      "reason": "hedef 10.0 üstü: 18.0"
+    },
+    {
+      "tier": "P1",
+      "category": "COB – Smart Screen",
+      "query": "smart screen",
+      "position": 18.0,
+      "reason": "hedef 10.0 üstü: 18.0"
+    },
+    {
+      "tier": "P1",
+      "category": "İç Mekan LED Ekran",
+      "query": "iç mekan led ekran",
+      "position": 13.21,
+      "reason": "hedef 10.0 üstü: 13.21"
+    },
+    {
+      "tier": "P1",
+      "category": "İç Mekan LED Ekran",
+      "query": "indoor led ekran",
+      "position": 15.75,
+      "reason": "hedef 10.0 üstü: 15.75"
+    },
+    {
+      "tier": "P1",
+      "category": "İç Mekan LED Ekran",
+      "query": "iç mekan led ekran fiyatları",
+      "position": 15.08,
+      "reason": "hedef 10.0 üstü: 15.08"
+    },
+    {
+      "tier": "P1",
+      "category": "Dış Mekan LED Ekran",
+      "query": "dış mekan led ekran",
+      "position": 15.34,
+      "reason": "hedef 10.0 üstü: 15.34"
+    },
+    {
+      "tier": "P1",
+      "category": "Dış Mekan LED Ekran",
+      "query": "outdoor led ekran",
+      "position": 16.0,
+      "reason": "hedef 10.0 üstü: 16.0"
+    },
+    {
+      "tier": "P1",
+      "category": "Dış Mekan LED Ekran",
+      "query": "dış mekan led ekran fiyatları",
+      "position": 20.78,
+      "reason": "hedef 10.0 üstü: 20.78"
+    },
+    {
+      "tier": "P1",
+      "category": "Rental Ekran",
+      "query": "rental led ekran",
+      "position": 13.56,
+      "reason": "hedef 10.0 üstü: 13.56"
+    },
+    {
+      "tier": "P1",
+      "category": "Rental Ekran",
+      "query": "led ekran kiralama",
+      "position": 11.08,
+      "reason": "hedef 10.0 üstü: 11.08"
+    },
+    {
+      "tier": "P1",
+      "category": "Rental Ekran",
+      "query": "kiralık led ekran",
+      "position": 13.0,
+      "reason": "hedef 10.0 üstü: 13.0"
+    },
+    {
+      "tier": "P1",
+      "category": "Dış Mekan RGB Panel",
+      "query": "dış mekan rgb panel",
+      "position": 10.63,
+      "reason": "hedef 10.0 üstü: 10.63"
+    }
+  ]
+}

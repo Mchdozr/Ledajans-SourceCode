@@ -4,10 +4,18 @@
   "keyword_priority": [
     "led ekran",
     "led ekran fiyatları",
+    "led ekran kiralama",
+    "led ekran m2 fiyatı",
+    "led ekran firmaları",
+    "cob led ekran",
+    "smart screen",
+    "gob led ekran",
     "iç mekan led ekran",
     "dış mekan led ekran",
-    "led ekran kiralama",
     "rental led ekran",
+    "iç mekan rgb panel",
+    "dış mekan rgb panel",
+    "led ekran kontrol kartı",
     "led tabela",
     "cob led ekran",
     "led video wall",
@@ -26,7 +34,7 @@
   "published_slugs": [
     "cob-led-ekran-nedir-avantajlari",
     "dis-mekan-led-ekran-fiyatlari-2026",
-    "huidu-wf1-wf2-wf4-led-kontrol-karti",
+    "huidu-led-kontrol-karti",
     "ic-mekan-led-ekran-fiyatlari-2026",
     "led-ekran-fiyatlari-2026",
     "led-ekran-nasil-secilir-rehber",
@@ -231,6 +239,16 @@
       "title": "Belediye Bilgilendirme LED Ekranı: İhale ve Teknik Notlar",
       "slug": "belediye-led-ekran-bilgilendirme",
       "angle": "Kamu: şartname, dayanıklılık, içerik",
+      "status": "pending"
+    },
+    {
+      "id": "t21",
+      "priority": 21,
+      "focus_keyword": "gob led ekran ne zaman tercih edilir",
+      "rankmath_keywords": "gob led ekran ne zaman tercih edilir, gob led ekran, glue on board",
+      "title": "GOB LED Ekran Ne Zaman Tercih Edilir?",
+      "slug": "gob-led-ekran-ne-zaman-tercih-edilir",
+      "angle": "Temas/darbe senaryosu → /gob-led-ekran/ hub",
       "status": "pending"
     }
   ]

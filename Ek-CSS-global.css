@@ -1,0 +1,521 @@
+/**
+ * LEDAJANS Vizyoner Sayfalar — Global CSS
+ * Yapıştır: Görünüm → Özelleştir → Ek CSS  VEYA  Elementor → Site Ayarları → Custom CSS
+ * Widget HTML'lerde yalnızca ledajans-* sınıfları kullanılır; sayfa içi büyük <style> blokları gerekmez.
+ * Tasarım tokenleri: Hero + widget-4 (Kumbh Sans, #F46F2C, #111827)
+ */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&display=swap");
+
+.ledajans-page {
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 2.5rem 1rem 4rem;
+  background: #fff;
+  color: #111827;
+  line-height: 1.65;
+}
+.ledajans-page--muted { background: #f9fafb; }
+.ledajans-page-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.ledajans-page-inner--wide { max-width: 1280px; }
+
+.ledajans-page h1,
+.ledajans-page-title {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+.ledajans-page h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: #111827;
+}
+.ledajans-page h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.35rem 0 0.55rem;
+  color: #1f2937;
+}
+.ledajans-page p {
+  font-size: 1rem;
+  color: #374151;
+  margin: 0 0 0.9rem;
+  max-width: 68ch;
+}
+.ledajans-page a {
+  color: #F46F2C;
+  font-weight: 600;
+  text-decoration: none;
+}
+.ledajans-page a:hover { text-decoration: underline; }
+
+.ledajans-page-kicker {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #F46F2C;
+  margin: 0 0 0.65rem;
+}
+
+.ledajans-toc {
+  background: #f9fafb;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0 1.75rem;
+}
+.ledajans-toc strong {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+}
+.ledajans-toc ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.ledajans-toc li {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.ledajans-page ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: #374151;
+}
+.ledajans-page li { margin: 0.4rem 0; }
+
+.ledajans-fig { margin: 1.35rem 0; }
+.ledajans-fig img,
+.ledajans-fig video {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 25px 50px -20px rgba(15, 23, 42, 0.28);
+}
+.ledajans-fig figcaption {
+  font-size: 0.85rem;
+  color: #6B7280;
+  text-align: center;
+  margin-top: 0.45rem;
+  font-style: italic;
+}
+
+.ledajans-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.75rem 0;
+}
+.ledajans-page-actions a,
+.ledajans-btn-primary,
+.ledajans-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  font-family: "Kumbh Sans", sans-serif;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.ledajans-btn-primary {
+  background: #F46F2C;
+  color: #fff !important;
+  border: 1px solid #F46F2C;
+}
+.ledajans-btn-primary:hover {
+  background: #e05f22;
+  border-color: #e05f22;
+}
+.ledajans-btn-secondary {
+  background: #fff;
+  color: #111827 !important;
+  border: 1px solid #E5E7EB;
+}
+.ledajans-btn-secondary:hover {
+  border-color: #F46F2C;
+  color: #F46F2C !important;
+}
+
+.ledajans-related {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #E5E7EB;
+  font-size: 0.95rem;
+  color: #4B5563;
+}
+.ledajans-related a { margin-right: 0.75rem; }
+
+/* Kart grid (sektörel hub) */
+.ledajans-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+@media (min-width: 800px) {
+  .ledajans-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.ledajans-card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.ledajans-card:hover {
+  box-shadow: 0 22px 48px -20px rgba(15, 23, 42, 0.3);
+  transform: translateY(-3px);
+}
+.ledajans-card img,
+.ledajans-card video {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+.ledajans-card-body { padding: 1.1rem 1.15rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+.ledajans-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  color: #111827;
+}
+.ledajans-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+  margin: 0;
+  max-width: none;
+}
+.ledajans-card-cta {
+  margin-top: 0.85rem;
+  font-weight: 700;
+  color: #F46F2C;
+  font-size: 0.95rem;
+}
+
+/* Galeri */
+.ledajans-gal { padding: 1rem 0 3rem; }
+.ledajans-gal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0 0 1.5rem;
+}
+.ledajans-gal-filter {
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  color: #374151;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.ledajans-gal-filter.is-active {
+  background: #F46F2C;
+  border-color: #F46F2C;
+  color: #fff;
+}
+.ledajans-gal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .ledajans-gal-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .ledajans-gal-grid { grid-template-columns: repeat(3, 1fr); } }
+.ledajans-gal-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  flex-direction: column;
+}
+.ledajans-gal-card.is-hidden { display: none; }
+.ledajans-gal-media {
+  position: relative;
+  aspect-ratio: 16/11;
+  background: #E5E7EB;
+  overflow: hidden;
+}
+.ledajans-gal-media img,
+.ledajans-gal-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ledajans-gal-badge {
+  position: absolute;
+  inset: auto 0.75rem 0.75rem auto;
+  background: rgba(15, 23, 42, 0.78);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+}
+.ledajans-gal-card-body {
+  padding: 1.1rem 1.15rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ledajans-gal-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #F46F2C;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.35rem;
+}
+.ledajans-gal-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+}
+.ledajans-gal-card p {
+  font-size: 0.9rem;
+  color: #4B5563;
+  margin: 0 0 0.9rem;
+  flex: 1;
+  max-width: none;
+}
+.ledajans-gal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ledajans-gal-actions a,
+.ledajans-gal-video-btn {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  font-family: "Kumbh Sans", sans-serif;
+}
+.ledajans-gal-video-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+.ledajans-video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.88);
+  padding: 1rem;
+}
+.ledajans-video-modal.is-open { display: flex; }
+.ledajans-video-modal-box { width: min(100%, 900px); position: relative; }
+.ledajans-video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.ledajans-video-modal-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+.ledajans-video-modal-frame iframe,
+.ledajans-video-modal-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Hub anasayfa 4 kart — mevcut hub ile uyum */
+.ledajans-hub {
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 4.5rem 1rem;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+}
+.ledajans-hub-inner { max-width: 1280px; margin: 0 auto; }
+.ledajans-hub-head { text-align: center; max-width: 720px; margin: 0 auto 2.75rem; }
+.ledajans-hub-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #F46F2C;
+  margin-bottom: 0.75rem;
+}
+.ledajans-hub-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+}
+.ledajans-hub-desc {
+  font-size: 1.05rem;
+  color: #4B5563;
+  line-height: 1.7;
+  margin: 0;
+}
+.ledajans-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .ledajans-hub-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .ledajans-hub-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+.ledajans-hub-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem 1.4rem;
+  text-decoration: none !important;
+  color: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.ledajans-hub-card:hover {
+  border-color: rgba(244, 111, 44, 0.45);
+  box-shadow: 0 18px 40px -18px rgba(15, 23, 42, 0.28);
+  transform: translateY(-3px);
+}
+.ledajans-hub-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(244, 111, 44, 0.1);
+  color: #F46F2C;
+}
+.ledajans-hub-icon svg { width: 26px; height: 26px; }
+.ledajans-hub-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.55rem;
+}
+.ledajans-hub-card p {
+  font-size: 0.925rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+.ledajans-hub-cta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #F46F2C;
+}
+
+/* Sertifika şeridi */
+.ledajans-cert-strip {
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 3rem 1rem;
+  background: #0f172a;
+  color: #fff;
+}
+.ledajans-cert-strip-inner { max-width: 1280px; margin: 0 auto; }
+.ledajans-cert-strip-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.ledajans-cert-strip-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #F46F2C;
+  margin: 0 0 0.4rem;
+}
+.ledajans-cert-strip-title {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+.ledajans-cert-strip-note {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  margin: 0.55rem 0 0;
+  max-width: 520px;
+  line-height: 1.55;
+}
+.ledajans-cert-strip-link {
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 0.7rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid rgba(244, 111, 44, 0.55);
+  background: rgba(244, 111, 44, 0.18);
+}
+.ledajans-cert-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+@media (min-width: 640px) { .ledajans-cert-badges { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1024px) { .ledajans-cert-badges { grid-template-columns: repeat(7, 1fr); } }
+.ledajans-cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none !important;
+  color: #E2E8F0 !important;
+  padding: 1rem 0.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(30, 41, 59, 0.65);
+}
+.ledajans-cert-badge strong {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.ledajans-cert-badge span {
+  font-size: 0.7rem;
+  color: #94A3B8;
+}
+

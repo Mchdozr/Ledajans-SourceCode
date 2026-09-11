@@ -700,35 +700,18 @@
   </div>
 </div>
 
-<!-- B2B proje fiyatları teklif bazlıdır; Google Product rich result doğrulaması için AggregateOffer minimum alanları eklendi. -->
+<!-- Product/AggregateOffer kaldırıldı: 0 TL + reviewsız Product GSC’de lowPrice/review hatası verir. Fiyat sayfada yok; sahte rating yasak. FAQ + Breadcrumb (hero/sss) kalır. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Dış Mekan LED Ekran - OFC Serisi",
-  "description": "IP65 korumalı, 4500-8000 cd/m² parlaklıklı dış mekan LED ekran. P2.5, P6.67, P8, P10 piksel aralığı seçenekleri. Reklam panoları, stadyumlar ve dış cephe uygulamaları için profesyonel çözüm.",
-  "brand": { "@type": "Brand", "name": "LEDAJANS" },
-  "manufacturer": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
-  "category": "Dış Mekan LED Ekran",
+  "@type": "Service",
+  "name": "Dış Mekan LED Ekran",
+  "serviceType": "Dış mekan LED ekran keşif, satış ve kurulum",
+  "description": "IP65 korumalı dış mekan LED ekran. P4–P10, yüksek parlaklık. Reklam panosu, stadyum ve cephe. Teklif: keşif sonrası.",
+  "provider": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
   "url": "https://ledajans.com/dis-mekan-led-ekran/",
   "image": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png",
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "TRY",
-    "lowPrice": "0",
-    "highPrice": "0",
-    "offerCount": "1",
-    "availability": "https://schema.org/InStock",
-    "seller": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
-    "url": "https://ledajans.com/iletisim/"
-  },
-  "additionalProperty": [
-    { "@type": "PropertyValue", "name": "IP Koruma Sınıfı", "value": "IP65" },
-    { "@type": "PropertyValue", "name": "Parlaklık", "value": "4500-8000 cd/m²" },
-    { "@type": "PropertyValue", "name": "Yenileme Hızı", "value": "≥3840Hz" },
-    { "@type": "PropertyValue", "name": "Ömür", "value": "≥100.000 saat" },
-    { "@type": "PropertyValue", "name": "Garanti", "value": "2 Yıl" }
-  ]
+  "areaServed": { "@type": "Country", "name": "TR" }
 }
 </script>
     

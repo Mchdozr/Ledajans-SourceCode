@@ -3,16 +3,27 @@ import datetime as dt
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 
 
-ROOT = Path("/workspace")
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from coalition_common import (  # noqa: E402
+    check_keyword_alarms,
+    deploy_locked,
+    extract_feedback_state,
+    write_coalition_status,
+)
+
 HUB = ROOT / "AGENT-HUB"
 REPORTS = HUB / "REPORTS"
 STATE_FILE = HUB / ".auto-orchestrator-state.json"
 MASTER_PLAN = HUB / "MASTER-PLAN.md"
 TASKS = HUB / "TASKS.md"
 BLOCKER_ALERT = HUB / "BLOCKER-ALERT.md"
+KEYWORD_GUARD = HUB / "KEYWORD-GUARD.json"
 
 
 ROLE_TO_TASK_ID = {
@@ -61,6 +72,9 @@ def calc_signature(report_files: list[Path]) -> str:
     for file in report_files:
         stat = file.stat()
         payload.append(f"{file.name}:{stat.st_mtime_ns}:{stat.st_size}")
+    if KEYWORD_GUARD.exists():
+        stat = KEYWORD_GUARD.stat()
+        payload.append(f"KEYWORD-GUARD.json:{stat.st_mtime_ns}:{stat.st_size}")
     raw = "|".join(payload).encode("utf-8")
     return hashlib.sha256(raw).hexdigest()
 
@@ -145,6 +159,59 @@ def update_tasks(completions: dict[str, bool], new_roles: list[str]) -> list[str
     if new_tasks != tasks:
         write_text(TASKS, new_tasks)
         actions.append("TASKS.md durumları güncellendi")
+    return actions
+
+
+def update_keyword_alarms(alarms: list[dict]) -> list[str]:
+    if not alarms:
+        return []
+
+    tasks = read_text(TASKS)
+    marker = "## Keyword Alarms"
+    if marker in tasks:
+        tasks = tasks.split(marker)[0].rstrip() + "\n"
+
+    ts = dt.datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M UTC")
+    lines = [
+        "",
+        marker,
+        "",
+        f"Son güncelleme: {ts}",
+        "",
+        "| Tier | Sorgu/Kategori | Pozisyon | Durum |",
+        "|---|---|---|---|",
+    ]
+    for alarm in alarms[:15]:
+        label = alarm.get("query") or alarm.get("category", "-")
+        lines.append(
+            f"| {alarm.get('tier')} | {label} | {alarm.get('position')} | "
+            f"Alarm — {alarm.get('reason')} |"
+        )
+
+    p0_count = sum(1 for a in alarms if a.get("tier") == "P0")
+    if p0_count:
+        lines.append("")
+        lines.append(f"- [ALARM:P0] {p0_count} P0 alarm aktif — P-016 sprint öncelikli")
+
+    updated = tasks.rstrip() + "\n" + "\n".join(lines) + "\n"
+    write_text(TASKS, updated)
+    return [f"Keyword alarm tablosu güncellendi ({len(alarms)} alarm)"]
+
+
+def update_deploy_lock_status() -> list[str]:
+    locked, reason = deploy_locked()
+    open_fb, _ = extract_feedback_state()
+    alarms = check_keyword_alarms()
+    write_coalition_status(
+        phase="orchestrator",
+        alarms=alarms,
+        deploy_locked_flag=locked,
+        deploy_lock_reason=reason,
+    )
+    actions = [f"Deploy kilidi: {'EVET' if locked else 'HAYIR'}"]
+    if locked:
+        actions.append(f"Kilit nedeni: {reason}")
+    actions.append(f"Açık FB: {open_fb}")
     return actions
 
 
@@ -273,6 +340,9 @@ def run() -> int:
     signature = calc_signature(report_files)
     state = load_state()
     if state.get("last_signature") == signature:
+        actions = update_deploy_lock_status()
+        if actions:
+            update_master_plan([], actions)
         return 0
 
     completions: dict[str, bool] = {}
@@ -298,6 +368,11 @@ def run() -> int:
     actions.extend(ensure_new_role_reports(new_roles))
     feedback_items, resolved_ids = extract_feedback_items(report_files)
     actions.extend(update_feedback_queue(feedback_items, resolved_ids))
+
+    alarms = check_keyword_alarms()
+    actions.extend(update_keyword_alarms(alarms))
+    actions.extend(update_deploy_lock_status())
+
     update_master_plan(changed_files, actions)
     write_blocker_if_needed(blockers)
     save_state(signature)

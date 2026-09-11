@@ -33,6 +33,33 @@ P1_PAGES = [
         ),
         "focus": "istanbul led ekran,led ekran istanbul,istanbul led ekran fiyat,istanbul led ekran kiralama",
     },
+    {
+        "slug": "gob-led-ekran",
+        "title": "GOB LED Ekran | Glue on Board Dayanıklı - LEDAJANS",
+        "description": (
+            "GOB LED ekran (Glue on Board). Okul, spor salonu, alçak montaj. "
+            "Darbe ve neme dayanıklı. Teklif: 0212 220 40 04."
+        ),
+        "focus": "gob led ekran,gob led,glue on board,gob led panel",
+    },
+    {
+        "slug": "gob-led-nedir",
+        "title": "GOB LED Nedir? Glue on Board Teknolojisi - LEDAJANS",
+        "description": (
+            "GOB LED nedir: SMD üzerine epoksi dökülerek darbe, nem ve toza karşı koruma. "
+            "GOB LED ekran kullanım alanları. LEDAJANS teknik sözlük."
+        ),
+        "focus": "gob led nedir,gob led,glue on board",
+    },
+    {
+        "slug": "gob-vs-cob-smd",
+        "title": "GOB vs COB vs SMD LED Ekran Karşılaştırma - LEDAJANS",
+        "description": (
+            "GOB, COB ve SMD farkı. GOB LED ekran ne zaman, COB ne zaman. "
+            "Temas riski ve pitch seçimi. LEDAJANS karşılaştırma."
+        ),
+        "focus": "gob vs cob,gob led ekran,cob vs smd",
+    },
 ]
 
 

@@ -181,30 +181,50 @@
    6) Header / Menü (Desktop)
    ============================================================================= */
 @media (min-width: 1025px) {
+  .wp-site-header,
+  header.wp-site-header,
+  .elementor-element-a231664,
+  .elementor-element-123bc72,
+  .elementor-element-123bc72.gv-sticky-menu {
+    background: #F46F2C !important;
+  }
+  .elementor-element-123bc72 .gva-main-menu > li > a,
+  .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
+    color: #fff !important;
+  }
+  .elementor-element-123bc72.gv-sticky-menu {
+    min-height: 76px !important;
+    max-height: 80px !important;
+    height: 76px !important;
+    overflow: visible !important;
+  }
   .elementor-element-123bc72.gv-sticky-menu > .elementor-container {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
     min-height: 76px !important;
+    max-height: 80px !important;
+    height: 76px !important;
     position: relative !important;
     overflow: visible !important;
   }
 
   .elementor-element-123bc72 .elementor-element-548f702 {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, calc(-50% - 5px)) !important;
-    width: max-content !important;
-    max-width: min(64vw, 860px) !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
     z-index: 5 !important;
   }
 
   .elementor-element-123bc72 .site-branding-logo img {
-    height: 36px !important;
+    height: 32px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 160px !important;
     object-fit: contain !important;
   }
 
@@ -212,7 +232,16 @@
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
+    margin: 0 !important;
+  }
+  .elementor-element-123bc72 .gva-main-menu > li {
+    display: flex !important;
+    align-items: center !important;
+    height: 76px !important;
+    max-height: 76px !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
   }
 
   .dropdown-toggle,
@@ -288,7 +317,7 @@
     width: auto !important;
     max-width: min(68vw, 240px) !important;
     object-fit: contain !important;
-    filter: brightness(0) invert(1) !important;
+    filter: none !important;
     transform: translateY(-2px) !important;
   }
 
@@ -602,7 +631,7 @@ div[class*="sticky__spacer"],
    WP: Ek CSS’e bu bölüm yapıştırılmış olmalı (üstteki “Ek CSS” talimatı).
    ============================================================================= */
 .ledajans-seo-article {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   color: #111827;
   /* Blog / program indir ile aynı genişlik bandı (~1280px) */
   max-width: min(96vw, 80rem);
@@ -667,6 +696,19 @@ div[class*="sticky__spacer"],
 .ledajans-seo-article li strong {
   color: #111827;
 }
+.ledajans-seo-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.ledajans-seo-article th,
+.ledajans-seo-article td {
+  border: 1px solid #e5e7eb;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+}
+.ledajans-seo-article thead tr { background: #f3f4f6; }
 .ledajans-seo-article .aligncenter,
 .ledajans-seo-article p.aligncenter {
   text-align: center;
@@ -727,3 +769,19 @@ div[class*="sticky__spacer"],
     padding: 2.75rem 2.5rem 2rem;
   }
 }
+
+/* =============================================================================
+   14) Para sayfa widget’ları — site gövde fontu (Modins: Kumbh Sans)
+   ============================================================================= */
+.control-cards-content-wrapper,
+.indoor-content-wrapper,
+.la-faq-wrap,
+.la-destek-wrap,
+.product-features-section,
+.ledajans-blog-hero,
+.la-wrapper,
+.la-gob-hub,
+.la-ofc-hub {
+  font-family: "Kumbh Sans", sans-serif;
+}
+

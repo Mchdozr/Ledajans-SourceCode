@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">LEDKASA</title>
+  <rect width="64" height="64" rx="14" fill="#101613"/>
+  <path d="M15 14h10v27h24v9H15z" fill="#b8ff3d"/>
+  <path d="M31 14h18v9H31zM31 29h18v9H31z" fill="#f4f1e8"/>
+</svg>
