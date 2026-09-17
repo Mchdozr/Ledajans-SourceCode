@@ -1,6 +1,6 @@
 <!-- WIDGET — LED kabin scroll explode | Elementor HTML (tamamı yapıştır) | Ek CSS gerekmez -->
 <!-- Elementor: tam genişlik, overflow visible. Görseller WP Medya'ya yüklenince data-asset-base güncelle. Canlı yayın onay ister. -->
-<!-- Adobe gerekmez. İstersen PS'de katman WEBP; AE+Lottie 3D explode opsiyonel — video LCP'yi bozar, bu widget scroll ile açar. -->
+<!-- Kaydırma 01 birleşik kabin → 09 açık parçalar. Adobe/AE gerekmez. -->
 <style>
   .la-explode {
     --p: 0;
@@ -33,7 +33,7 @@
     inset: 18% 22%;
     background: radial-gradient(ellipse at center, rgba(244, 111, 44, 0.16), transparent 68%);
     pointer-events: none;
-    opacity: calc(0.35 + (1 - var(--p)) * 0.55);
+    opacity: calc(0.45 + (1 - var(--p)) * 0.4);
     z-index: 0;
   }
   .la-explode-copy {
@@ -90,37 +90,20 @@
   .la-explode-stage {
     position: relative;
     width: 100%;
-    aspect-ratio: 2140 / 1020;
+    aspect-ratio: 1120 / 630;
   }
-  .la-explode-layer {
+  .la-explode-frame {
     position: absolute;
     inset: 0;
-    transform: translate3d(
-      calc((1 - var(--p)) * var(--ax) * 100%),
-      calc((1 - var(--p)) * var(--ay) * 100%),
-      0
-    );
-    will-change: transform;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
     pointer-events: none;
   }
-  .la-explode-layer img {
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: var(--w);
-    height: var(--h);
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
-  }
-  .la-explode-layer--maske { --ax: 0.454; --ay: 0.109; --x: 1.96%; --y: 19.61%; --w: 5.33%; --h: 39.02%; z-index: 5; }
-  .la-explode-layer--modul { --ax: 0.316; --ay: 0.005; --x: 7.80%; --y: 4.02%; --w: 21.12%; --h: 90.98%; z-index: 4; }
-  .la-explode-layer--pcb { --ax: 0.024; --ay: -0.099; --x: 36.17%; --y: 39.31%; --w: 22.90%; --h: 41.08%; z-index: 3; }
-  .la-explode-layer--kabin { --ax: -0.298; --ay: -0.043; --x: 61.68%; --y: 16.47%; --w: 36.26%; --h: 75.69%; z-index: 2; }
+  .la-explode-frame.is-first { opacity: 1; }
   .la-explode-label {
     position: absolute;
-    left: var(--lx);
-    top: var(--ly);
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -129,9 +112,10 @@
     font-weight: 700;
     letter-spacing: 0.02em;
     white-space: nowrap;
-    opacity: var(--p);
+    opacity: clamp(0, calc((var(--p) - 0.22) / 0.35), 1);
     pointer-events: none;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    z-index: 4;
   }
   .la-explode-label i {
     width: 7px;
@@ -141,10 +125,10 @@
     box-shadow: 0 0 0 4px rgba(244, 111, 44, 0.2);
     flex-shrink: 0;
   }
-  .la-explode-layer--maske .la-explode-label { --lx: 0%; --ly: 6%; }
-  .la-explode-layer--modul .la-explode-label { --lx: 8%; --ly: 0%; }
-  .la-explode-layer--pcb .la-explode-label { --lx: 50%; --ly: 76%; }
-  .la-explode-layer--kabin .la-explode-label { --lx: 78%; --ly: 8%; }
+  .la-explode-label--maske { left: 8%; top: 28%; }
+  .la-explode-label--modul { left: 18%; top: 18%; }
+  .la-explode-label--pcb { left: 42%; top: 72%; }
+  .la-explode-label--kabin { left: 72%; top: 22%; }
   .la-explode-foot {
     position: relative;
     z-index: 3;
@@ -211,17 +195,16 @@
     .la-explode-view { padding-top: 4.25rem; padding-bottom: 1rem; }
     .la-explode-desc { font-size: 0.9rem; }
     .la-explode-label { font-size: 0.68rem; }
-    .la-explode-layer--kabin .la-explode-label { --lx: 70%; --ly: 4%; }
+    .la-explode-label--kabin { left: 64%; top: 18%; }
   }
   @media (prefers-reduced-motion: reduce) {
     .la-explode { --p: 1; }
     .la-explode-runway { height: auto; }
     .la-explode-view { position: relative; height: auto; min-height: 100svh; }
-    .la-explode-layer, .la-explode-label { transform: none; }
   }
 </style>
 
-<section class="la-explode" id="laKabinExplode" data-asset-base="assets/kabin-explode" aria-label="LED kabin katmanları">
+<section class="la-explode" id="laKabinExplode" data-asset-base="assets/kabin-explode" data-frames="9" aria-label="LED kabin katmanları">
   <div class="la-explode-runway">
     <div class="la-explode-view">
       <div class="la-explode-copy">
@@ -231,22 +214,19 @@
       </div>
       <div class="la-explode-stage-wrap">
         <div class="la-explode-stage" role="img" aria-label="LED kabin parçalarının kaydırmayla ayrılması">
-          <div class="la-explode-layer la-explode-layer--kabin">
-            <img data-file="part-kabin.webp" alt="" width="776" height="772" decoding="async" loading="eager">
-            <span class="la-explode-label"><i></i>Döküm kabin</span>
-          </div>
-          <div class="la-explode-layer la-explode-layer--pcb">
-            <img data-file="part-pcb.webp" alt="" width="490" height="419" decoding="async" loading="eager">
-            <span class="la-explode-label"><i></i>Sürücü kartı</span>
-          </div>
-          <div class="la-explode-layer la-explode-layer--modul">
-            <img data-file="part-modul.webp" alt="" width="452" height="928" decoding="async" loading="eager">
-            <span class="la-explode-label"><i></i>LED modül</span>
-          </div>
-          <div class="la-explode-layer la-explode-layer--maske">
-            <img data-file="part-maske.webp" alt="" width="114" height="398" decoding="async" loading="eager">
-            <span class="la-explode-label"><i></i>Maske</span>
-          </div>
+          <img class="la-explode-frame is-first" data-file="frame-01.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-02.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-03.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-04.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-05.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-06.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-07.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-08.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <img class="la-explode-frame" data-file="frame-09.webp" alt="" width="1120" height="630" decoding="async" loading="eager">
+          <span class="la-explode-label la-explode-label--maske"><i></i>Maske</span>
+          <span class="la-explode-label la-explode-label--modul"><i></i>LED modül</span>
+          <span class="la-explode-label la-explode-label--pcb"><i></i>Sürücü kartı</span>
+          <span class="la-explode-label la-explode-label--kabin"><i></i>Döküm kabin</span>
         </div>
       </div>
       <div class="la-explode-foot">
@@ -269,16 +249,28 @@
     : document.getElementById('laKabinExplode');
   if (!root) return;
   var base = (root.getAttribute('data-asset-base') || 'assets/kabin-explode').replace(/\/?$/, '/');
-  var imgs = root.querySelectorAll('img[data-file]');
-  for (var i = 0; i < imgs.length; i++) {
-    if (!imgs[i].getAttribute('src')) imgs[i].src = base + imgs[i].getAttribute('data-file');
+  var frames = root.querySelectorAll('.la-explode-frame');
+  var last = frames.length - 1;
+  for (var i = 0; i < frames.length; i++) {
+    if (!frames[i].getAttribute('src')) frames[i].src = base + frames[i].getAttribute('data-file');
   }
+  var hint = root.querySelector('.la-explode-hint');
   function setP(v) {
     var p = v < 0 ? 0 : v > 1 ? 1 : v;
     root.style.setProperty('--p', p.toFixed(4));
     if (hint) hint.textContent = p > 0.92 ? 'Kabin açık' : p < 0.08 ? 'Aşağı kaydırın' : 'Parçalar ayrılıyor';
+    if (!frames.length) return;
+    var t = p * last;
+    var i0 = Math.floor(t);
+    var i1 = i0 >= last ? last : i0 + 1;
+    var mix = t - i0;
+    for (var i = 0; i < frames.length; i++) {
+      var op = 0;
+      if (i === i0) op = 1 - mix;
+      if (i === i1) op = (i === i0) ? 1 : mix;
+      frames[i].style.opacity = String(op);
+    }
   }
-  var hint = root.querySelector('.la-explode-hint');
   var locked = root.getAttribute('data-p');
   if (locked !== null && locked !== '') {
     setP(parseFloat(locked));
