@@ -13,7 +13,18 @@
       .ledajans-outdoor-container { grid-template-columns: 1fr 1fr; }
     }
     .ledajans-outdoor-content { order: 2; }
-    .ledajans-outdoor-image-wrapper { order: 1; }
+    .ledajans-outdoor-image-wrapper {
+      order: 1;
+      position: relative;
+      align-self: stretch;
+      padding: 10px;
+      border-radius: 3.25rem;
+      background: #ffffff;
+      box-shadow:
+        0 22px 44px -18px rgba(17, 24, 39, 0.38),
+        0 0 0 1px rgba(244, 111, 44, 0.22);
+      box-sizing: border-box;
+    }
     .ledajans-outdoor-title {
       font-size: 2.5rem;
       font-weight: 700;
@@ -68,28 +79,45 @@
     .ledajans-outdoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
     .ledajans-outdoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
     .ledajans-outdoor-image-container {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden !important;
+      border-radius: 2.5rem;
+      clip-path: inset(0 round 2.5rem);
+      -webkit-clip-path: inset(0 round 2.5rem);
+      background: #e5e7eb;
+      isolation: isolate;
+      transform: translateZ(0);
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
     }
     .ledajans-outdoor-image {
-      width: 100%;
+      display: block !important;
+      width: 100% !important;
       height: auto;
       min-height: 250px;
-      max-height: 350px;
+      max-height: 360px;
       object-fit: cover;
+      object-position: center;
+      border-radius: 2.5rem !important;
     }
-    @media (min-width: 768px) { .ledajans-outdoor-image { max-height: 450px; } }
+    @media (min-width: 768px) { .ledajans-outdoor-image { max-height: 460px; } }
     @media (min-width: 1024px) {
-      .ledajans-outdoor-image { height: 560px; max-height: none; }
       .ledajans-outdoor-container { align-items: stretch; }
       .ledajans-outdoor-image-wrapper { display: flex; }
-      .ledajans-outdoor-image-container { flex: 1; display: flex; }
+      .ledajans-outdoor-image-container {
+        flex: 1 1 auto;
+        min-height: 480px;
+      }
       .ledajans-outdoor-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0;
         max-height: none;
+        object-fit: cover;
+        object-position: center;
       }
     }
     </style>
@@ -138,6 +166,8 @@
               src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png"
               alt="Dış Mekan LED Ekran - Outdoor LED Ekran Çözümleri"
               class="ledajans-outdoor-image"
+              width="699"
+              height="622"
               loading="lazy"
               decoding="async"
             />
