@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kabin explode kareleri</title>
+  <style>
+    body { margin: 0; background: #05070c; color: #e2e8f0; font-family: system-ui, sans-serif; }
+    h1 { text-align: center; font-size: 1.15rem; margin: 1rem 0 0.35rem; }
+    .sub { text-align: center; color: #94a3b8; margin: 0 0 1rem; font-size: 0.92rem; }
+    .row { display: grid; grid-template-columns: 1fr; gap: 1.25rem; padding: 0 1rem 2rem; }
+    @media (min-width: 1100px) { .row { grid-template-columns: 1fr 1fr 1fr; } }
+    .frame { border: 1px solid rgba(148,163,184,.25); border-radius: 16px; overflow: hidden; background: #05070c; }
+    .cap { padding: 0.55rem 0.8rem; font-weight: 700; color: #fdba74; font-size: 0.85rem; border-bottom: 1px solid rgba(148,163,184,.15); }
+    .la-explode-runway { height: auto !important; }
+    .la-explode-view { position: relative !important; height: auto !important; min-height: 760px; padding-top: 1.1rem !important; }
+    .la-explode-foot .la-explode-ctas { display: none; }
+  </style>
+</head>
+<body>
+  <h1>LED kabin — bütünden parçaya</h1>
+  <p class="sub">Kaydırma ilerledikçe katmanlar ayrılır</p>
+  <div class="row" id="row"></div>
+  <script>
+    var labels = [
+      { p: '0', cap: '1) Bütün — kaydırma başı' },
+      { p: '0.5', cap: '2) Ayrılıyor' },
+      { p: '1', cap: '3) Parçalar — kaydırma sonu' }
+    ];
+    fetch('widget-kabin-explode.html').then(function (r) { return r.text(); }).then(function (html) {
+      var row = document.getElementById('row');
+      labels.forEach(function (item) {
+        var wrap = document.createElement('div');
+        wrap.className = 'frame';
+        wrap.innerHTML = '<div class="cap">' + item.cap + '</div><div class="mount"></div>';
+        wrap.querySelector('.mount').innerHTML = html;
+        var root = wrap.querySelector('.la-explode');
+        root.setAttribute('data-p', item.p);
+        root.style.setProperty('--p', item.p);
+        wrap.querySelectorAll('script').forEach(function (old) {
+          var s = document.createElement('script');
+          s.textContent = old.textContent;
+          old.replaceWith(s);
+        });
+        row.appendChild(wrap);
+      });
+    });
+  </script>
+</body>
+</html>
