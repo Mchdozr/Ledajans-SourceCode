@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LED kabin scroll explode — önizleme</title>
+  <style>
+    html, body { margin: 0; background: #0b1220; color: #e2e8f0; font-family: system-ui, sans-serif; }
+    .la-preview-pad {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .la-preview-pad h1 { margin: 0 0 0.6rem; font-size: 1.6rem; }
+    .la-preview-pad p { margin: 0; color: #94a3b8; }
+    #la-explode-mount:empty { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div class="la-preview-pad">
+    <h1>LEDAJANS kabin explode</h1>
+    <p>Aşağı kaydırın — parçalar bütünden ayrılır.</p>
+  </div>
+  <div id="la-explode-mount"></div>
+  <div class="la-preview-pad">
+    <p>Efekt bitti. Sonraki bölüm buraya gelir.</p>
+  </div>
+  <script>
+    fetch('widget-kabin-explode.html')
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var mount = document.getElementById('la-explode-mount');
+        mount.innerHTML = html;
+        mount.querySelectorAll('script').forEach(function (old) {
+          var s = document.createElement('script');
+          s.textContent = old.textContent;
+          old.replaceWith(s);
+        });
+      });
+  </script>
+</body>
+</html>
