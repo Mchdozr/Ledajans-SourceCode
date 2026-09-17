@@ -15,8 +15,86 @@
  *   • Beyaz kuşak devam ederse: Code-Snippets/ledajans-elementor-sticky-spacer-kill.js
  *     → WP Code Snippets ile “Run everywhere” (JS inline height’ı ezer).
  *
- * Son güncelleme: 2026-05-04 (Bölüm 13: SEO makale widget — .ledajans-seo-article)
+ * Son güncelleme: 2026-09-17 (Bölüm 0: ilk boyama turuncu header + görünür scrollbar)
  */
+
+/* =============================================================================
+   0) Kritik ilk boyama — turuncu header (FOUC) + görünür dikey scrollbar
+   Elementor/tema beyaz barı ve thumb’suz ::-webkit-scrollbar { width } kuralını ezer.
+   ============================================================================= */
+html {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: #f46f2c #eceff3;
+}
+html.ledajans-modal-open,
+body.ledajans-modal-open {
+  overflow: hidden !important;
+}
+body.modins-body-loading {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
+.modins-page-loading {
+  display: none !important;
+  background: #F46F2C !important;
+}
+
+::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+  background: #eceff3;
+}
+::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #eceff3;
+}
+::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #f46f2c;
+  border-radius: 8px;
+  border: 3px solid #eceff3;
+}
+::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #e55a1f;
+}
+
+header.wp-site-header,
+.wp-site-header,
+.header-builder-frontend,
+.header-builder-inner,
+.header-main-wrapper,
+.header_default_screen,
+.elementor-location-header,
+.elementor-43,
+.elementor-element-a231664,
+.elementor-element-a231664 > .elementor-container,
+.elementor-element-123bc72,
+.elementor-element-123bc72.gv-sticky-menu,
+.gv-sticky-menu {
+  background: #F46F2C !important;
+  background-color: #F46F2C !important;
+  background-image: none !important;
+}
+.elementor-element-123bc72 .gva-main-menu > li > a,
+.elementor-element-123bc72 .gva-main-menu > li > a .menu-title,
+.wp-site-header .gva-main-menu > li > a,
+.wp-site-header .gva-main-menu > li > a .menu-title {
+  color: #fff !important;
+}
+.elementor-element-123bc72 .gva-main-menu > li > a .caret,
+.wp-site-header .gva-main-menu > li > a .caret {
+  color: #fff !important;
+  border-top-color: #fff !important;
+}
 
 /* =============================================================================
    1) Sabit WhatsApp / Chat Butonu
@@ -64,12 +142,21 @@
 }
 
 /* =============================================================================
-   3) Scrollbar (WebKit)
+   3) Scrollbar — width + thumb birlikte (canlıdaki `::-webkit-scrollbar { width }`
+      thumb’suz kuralı Chrome’da çubuğu tamamen gizler)
    ============================================================================= */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #111827; }
-::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #f46f2c; }
+::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { width: 14px; height: 14px; background: #eceff3; }
+::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track { background: #eceff3; }
+::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb { background: #f46f2c; border-radius: 8px; border: 3px solid #eceff3; }
+::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover { background: #e55a1f; }
 
 /* =============================================================================
    4) Mobil Ortak Düzenlemeler

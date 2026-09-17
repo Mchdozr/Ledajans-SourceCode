@@ -1,10 +1,39 @@
 <!--
   LEDAJANS — Header HTML widget (Elementor): dosyanın TAMAMINI kopyala / yapıştır.
   Widget: şablondaki HTML bloğu (ör. 8af5606). Genel stil: Ek-CSS-final.css → WP Ek CSS.
-  GÜNCEL: 2026-05-04. “Dil” metni: polylang Code Snippet.
+  GÜNCEL: 2026-09-17. İlk boyama turuncu bar; scrollbar Ek-CSS.
 -->
 
 <style id="ledajans-header-responsive-css">
+    /* İlk boyama: tema beyaz barını anında turuncu yap (media query yok) */
+    header.wp-site-header,
+    .wp-site-header,
+    .header-builder-frontend,
+    .header-builder-inner,
+    .header-main-wrapper,
+    .header_default_screen,
+    .elementor-location-header,
+    .elementor-43,
+    .elementor-element-a231664,
+    .elementor-element-a231664 > .elementor-container,
+    .elementor-element-123bc72,
+    .elementor-element-123bc72.gv-sticky-menu,
+    .gv-sticky-menu {
+      background: #F46F2C !important;
+      background-color: #F46F2C !important;
+      background-image: none !important;
+    }
+    .elementor-element-123bc72 .gva-main-menu > li > a,
+    .elementor-element-123bc72 .gva-main-menu > li > a .menu-title,
+    .wp-site-header .gva-main-menu > li > a,
+    .wp-site-header .gva-main-menu > li > a .menu-title {
+      color: #fff !important;
+    }
+    .elementor-element-123bc72 .gva-main-menu > li > a .caret,
+    .wp-site-header .gva-main-menu > li > a .caret {
+      color: #fff !important;
+      border-top-color: #fff !important;
+    }
     /* ---- Masaüstü / tablet: turuncu bar içinde dikey ortalama ---- */
     @media only screen and (min-width: 1025px) {
       .elementor-element-123bc72.gv-sticky-menu {

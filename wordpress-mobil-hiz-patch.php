@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: LEDAJANS Mobile Perf
- * Description: Yalnizca mobil UA icin LCP/TBT optimizasyonu. Desktop no-op. Rank Math REST meta kaydi tum cihazlarda acik.
- * Version: 1.2.4
+ * Description: Mobil LCP/TBT plus tum cihazlarda kritik header/scrollbar CSS. Rank Math REST meta kaydi acik.
+ * Version: 1.2.6
  * Author: LEDAJANS
  *
  * Alternatif kurulum: wp-content/mu-plugins/ledajans-perf-patch.php
@@ -35,6 +35,10 @@ function ledajans_mp_v11_active() {
     }
     return function_exists('wp_is_mobile') && wp_is_mobile();
 }
+
+add_action('wp_head', function () {
+    echo '<style id="ledajans-critical-chrome">html{overflow-y:scroll!important;overflow-x:hidden!important;scrollbar-gutter:stable;scrollbar-width:auto;scrollbar-color:#f46f2c #eceff3}html.ledajans-modal-open,body.ledajans-modal-open{overflow:hidden!important}body.modins-body-loading{overflow-y:scroll!important;overflow-x:hidden!important}.modins-page-loading{display:none!important;background:#F46F2C!important}::-webkit-scrollbar,html::-webkit-scrollbar,body::-webkit-scrollbar{width:14px;height:14px;background:#eceff3}::-webkit-scrollbar-track,html::-webkit-scrollbar-track,body::-webkit-scrollbar-track{background:#eceff3}::-webkit-scrollbar-thumb,html::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb{background:#f46f2c;border-radius:8px;border:3px solid #eceff3}::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:hover,body::-webkit-scrollbar-thumb:hover{background:#e55a1f}header.wp-site-header,.wp-site-header,.header-builder-frontend,.header-builder-inner,.header-main-wrapper,.header_default_screen,.elementor-location-header,.elementor-43,.elementor-element-a231664,.elementor-element-a231664>.elementor-container,.elementor-element-123bc72,.elementor-element-123bc72.gv-sticky-menu,.gv-sticky-menu{background:#F46F2C!important;background-color:#F46F2C!important;background-image:none!important}.elementor-element-123bc72 .gva-main-menu>li>a,.elementor-element-123bc72 .gva-main-menu>li>a .menu-title,.wp-site-header .gva-main-menu>li>a,.wp-site-header .gva-main-menu>li>a .menu-title{color:#fff!important}.elementor-element-123bc72 .gva-main-menu>li>a .caret,.wp-site-header .gva-main-menu>li>a .caret{color:#fff!important;border-top-color:#fff!important}</style>' . "\n";
+}, 0);
 
 // Not: Canli kurulum yolu zaten mu-plugins/ledajans-perf-patch.php (write-files).
 

@@ -1117,8 +1117,8 @@
         resetLaunchModalScroll();
         launchModal.classList.add('active');
         launchModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
+        document.body.classList.add('ledajans-modal-open');
+        document.documentElement.classList.add('ledajans-modal-open');
         updateLaunchCountdown();
         if (!countdownTimer) {
           countdownTimer = setInterval(updateLaunchCountdown, 1000);
@@ -1131,8 +1131,8 @@
         launchModal.classList.add('is-closed');
         launchModal.setAttribute('hidden', '');
         launchModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
+        document.body.classList.remove('ledajans-modal-open');
+        document.documentElement.classList.remove('ledajans-modal-open');
         startFairReveal();
       }
       function dismissFairPanel() {
@@ -1177,13 +1177,15 @@
         modalOpen = true;
         if (modal) modal.classList.add('active');
         if (frame) frame.src = youtubeUrl;
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('ledajans-modal-open');
+        document.documentElement.classList.add('ledajans-modal-open');
       }
       function closeModal() {
         modalOpen = false;
         if (modal) modal.classList.remove('active');
         if (frame) frame.src = '';
-        document.body.style.overflow = '';
+        document.body.classList.remove('ledajans-modal-open');
+        document.documentElement.classList.remove('ledajans-modal-open');
       }
       if (playLink) {
         playLink.onclick = function(e) { e.preventDefault(); e.stopPropagation(); openModal(); return false; };
