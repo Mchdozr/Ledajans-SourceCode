@@ -1,4 +1,5 @@
 """WP .env yükleme kontrolü — şifre değerini yazdırmaz."""
+import base64
 import os
 import sys
 
@@ -21,7 +22,11 @@ with open(env_path, encoding="utf-8-sig") as f:
             value.startswith("'") and value.endswith("'")
         ):
             value = value[1:-1]
-        if key and key not in os.environ:
+        if not key:
+            continue
+        if key in ("WP_SITE_URL", "WP_USERNAME", "WP_APP_PASSWORD"):
+            os.environ[key] = value
+        elif key not in os.environ:
             os.environ[key] = value
 
 user = os.environ.get("WP_USERNAME", "")
@@ -45,6 +50,9 @@ headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LEDAJANS-Che
 r0 = requests.get(f"{site}/wp-json/", timeout=30, headers=headers)
 print(f"wp-json_public={r0.status_code}")
 
+token = base64.b64encode(f"{user}:{pw}".encode("utf-8")).decode("ascii")
+headers["Authorization"] = f"Basic {token}"
+headers["X-WP-Authorization"] = f"Basic {token}"
 url = f"{site}/wp-json/wp/v2/users/me"
 r = requests.get(url, auth=(user, pw), timeout=30, headers=headers)
 print(f"http_status={r.status_code}")
