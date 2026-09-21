@@ -5,6 +5,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import sys
 from typing import Any
 
@@ -16,6 +17,44 @@ UA = "LEDAJANS-Deploy-Homepage-Hero/1.2"
 MARKER = "ledajans-hero"
 DEFAULT_PAGE_ID = 1248
 DEFAULT_WIDGET_ID = "122e243"
+
+
+def clear_elementor_cache(site: str, user: str, pw: str) -> None:
+    """Elementor Files & Data onbellegi — REST meta yazimi tek basina yetmeyebilir."""
+    sess = requests.Session()
+    sess.headers.update({"User-Agent": UA})
+    sess.get(f"{site}/wp-login.php", timeout=30)
+    sess.post(
+        f"{site}/wp-login.php",
+        data={
+            "log": user,
+            "pwd": pw,
+            "wp-submit": "Log In",
+            "redirect_to": f"{site}/wp-admin/",
+            "testcookie": "1",
+        },
+        timeout=30,
+        allow_redirects=True,
+    )
+    tools = sess.get(f"{site}/wp-admin/admin.php?page=elementor-tools", timeout=30).text
+    nonce = None
+    for pat in (
+        r'id="elementor-clear-cache-button"[^>]*data-nonce="([^"]+)"',
+        r'data-nonce="([^"]+)"[^>]*id="elementor-clear-cache-button"',
+    ):
+        m = re.search(pat, tools)
+        if m:
+            nonce = m.group(1)
+            break
+    if not nonce:
+        print("WARN: elementor clear-cache nonce yok")
+        return
+    r = sess.post(
+        f"{site}/wp-admin/admin-ajax.php",
+        data={"action": "elementor_clear_cache", "_nonce": nonce},
+        timeout=60,
+    )
+    print("elementor_clear_cache", r.status_code, r.text[:120])
 
 
 def load_env() -> tuple[str, str, str]:
@@ -102,6 +141,7 @@ def main() -> int:
     )
     print("hero-widget", r.status_code, r.text[:500])
     if r.status_code in (200, 201):
+        clear_elementor_cache(site, user, pw)
         return 0
 
     # 2) Fallback: yalnizca canli Widget 1 (122e243); diger HTML widget'lara dokunma
@@ -143,7 +183,10 @@ def main() -> int:
         timeout=90,
     )
     print(f"page_update={ru.status_code} {ru.text[:300]}")
-    return 0 if ru.status_code in (200, 201) else 1
+    if ru.status_code in (200, 201):
+        clear_elementor_cache(site, user, pw)
+        return 0
+    return 1
 
 
 if __name__ == "__main__":
