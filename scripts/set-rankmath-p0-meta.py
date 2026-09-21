@@ -17,12 +17,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P0_PAGES = [
     {
         "slug": "led-ekran",
-        "title": "LED Ekran ve Fiyatları 2026 | İç-Dış Mekan - LEDAJANS",
+        "title": "LED Ekran Fiyatları ve Modelleri | İç-Dış Mekan | LEDAJANS",
         "description": (
-            "LED ekran, fiyatları ve m² hesaplama. İç mekan, dış mekan, rental modeller. "
+            "LED ekran fiyatları, modelleri ve m² hesaplama. İç mekan, dış mekan, rental. "
             "25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif — Türkiye geneli teklif alın."
         ),
-        "focus": "led ekran,led ekran fiyatları,led ekran m2 fiyatı,led ekran firmaları",
+        "focus": "led ekran fiyatları,led ekran,led ekran modelleri,led ekran m2 fiyatı",
     },
     {
         "slug": "dis-mekan-led-ekran",

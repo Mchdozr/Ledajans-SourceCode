@@ -1,0 +1,230 @@
+﻿[2026-09-15 09:14:32] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-15 09:14:32] END Ledajans-Coalition-Discover-0930
+[2026-09-15 09:30:01] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-15 09:30:01] END Ledajans-Coalition-Discover-0930
+[2026-09-15 13:00:00] START Ledajans-Coalition-Apply-1300 (apply-prep)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:7 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:8 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-15 13:00:00] END Ledajans-Coalition-Apply-1300
+[2026-09-15 17:00:00] START Ledajans-Coalition-Close-1700 (close)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-15 17:00:00] END Ledajans-Coalition-Close-1700
+[2026-09-16 09:30:01] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-16 09:30:01] END Ledajans-Coalition-Discover-0930
+[2026-09-16 13:00:01] START Ledajans-Coalition-Apply-1300 (apply-prep)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:7 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:8 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-16 13:00:01] END Ledajans-Coalition-Apply-1300
+[2026-09-16 17:00:01] START Ledajans-Coalition-Close-1700 (close)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-16 17:00:01] END Ledajans-Coalition-Close-1700
+[2026-09-17 09:30:01] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-17 09:30:01] END Ledajans-Coalition-Discover-0930
+[2026-09-17 13:00:01] START Ledajans-Coalition-Apply-1300 (apply-prep)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:7 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:8 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-17 13:00:01] END Ledajans-Coalition-Apply-1300
+[2026-09-17 17:00:01] START Ledajans-Coalition-Close-1700 (close)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-17 17:00:01] END Ledajans-Coalition-Close-1700
+[2026-09-18 09:30:01] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-18 09:30:01] END Ledajans-Coalition-Discover-0930
+[2026-09-18 13:00:01] START Ledajans-Coalition-Apply-1300 (apply-prep)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:7 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:8 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-18 13:00:01] END Ledajans-Coalition-Apply-1300
+[2026-09-18 17:00:01] START Ledajans-Coalition-Close-1700 (close)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-18 17:00:01] END Ledajans-Coalition-Close-1700
+[2026-09-21 09:30:01] START Ledajans-Coalition-Discover-0930 (discover)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-21 09:30:01] END Ledajans-Coalition-Discover-0930
+[2026-09-21 13:00:01] START Ledajans-Coalition-Apply-1300 (apply-prep)
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\run-coalition-cycle.py': [Errno 2] No such file or directory
+At line:5 char:1
++ & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe' ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:7 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+python.exe : C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Users\\kacma\\Desk
+top\\Ledajans-SourceCode\\scripts\\coalition-apply.py': [Errno 2] No such file or directory
+At line:8 char:3
++   & 'C:\Users\kacma\AppData\Local\Programs\Python\Python312\python.ex ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\kacma\...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[2026-09-21 13:00:01] END Ledajans-Coalition-Apply-1300

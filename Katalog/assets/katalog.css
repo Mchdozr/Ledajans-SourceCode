@@ -77,6 +77,11 @@ body {
   align-items: center;
   gap: 6px;
 }
+.logo-img {
+  height: 11mm;
+  width: auto;
+  display: block;
+}
 .logo-icon {
   width: 48px; height: 48px;
   position: relative;

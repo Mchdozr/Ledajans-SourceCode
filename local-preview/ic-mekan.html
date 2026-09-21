@@ -1,0 +1,1360 @@
+<!DOCTYPE html><html lang='tr'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>İç Mekan LED Ekran — yerel önizleme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/template.css?ver=1.1.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins_child/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/custom_script.css?ver=7.1">
+<link rel="stylesheet" href="/Ek-CSS-global.css">
+<link rel="stylesheet" href="/Ek-CSS-final.css">
+<style>
+  html, body.lp-body {
+    margin: 0;
+    background: #fff;
+    color: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav {
+    position: sticky; top: 0; z-index: 9999; display: flex; flex-wrap: wrap;
+    gap: 0.5rem 1rem; padding: 0.7rem 1rem; background: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav a { color: #fdba74; text-decoration: none; font-size: 0.875rem; font-weight: 600; }
+  .lp-nav a:hover { color: #fff; }
+  .lp-preview, .lp-preview *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: "Kumbh Sans", sans-serif;
+  }
+</style>
+</head><body class='lp-body'>
+
+<nav class="lp-nav">
+  <a href="/local-preview/">Önizleme</a>
+  <a href="/local-preview/ic-mekan.html">İç mekan</a>
+  <a href="/local-preview/dis-mekan.html">Dış mekan</a>
+  <a href="/local-preview/gob.html">GOB hub</a>
+  <a href="/local-preview/led-ekran.html">LED ekran</a>
+  <a href="/local-preview/anasayfa.html">Anasayfa widget</a>
+  <a href="/local-preview/gob-nedir.html">GOB nedir</a>
+  <a href="/local-preview/gob-vs.html">GOB vs COB</a>
+  <a href="/local-preview/blog-gob.html">GOB blog</a>
+  <a href="/local-preview/rgb-panel.html">RGB panel</a>
+</nav>
+
+<div class='lp-preview'>
+<!-- LEDAJANS Blog - Sayfa Üstü Hero/Banner - İç Mekan Led Ekran -->
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png" fetchpriority="high">
+<style>
+    .ledajans-blog-hero {
+      position: relative;
+      height: 200px;
+      background-image: url('https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero { height: 250px; } }
+    @media (min-width: 768px) { .ledajans-blog-hero { height: 300px; } }
+    .ledajans-blog-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+      transition: background-color 0.3s;
+    }
+    .ledajans-blog-hero-inner {
+      position: relative;
+      height: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-inner { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .ledajans-blog-hero-inner { padding: 0 2rem; } }
+    .ledajans-blog-hero-content {
+      font-family: inherit;
+    }
+    .ledajans-blog-hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-title { font-size: 2.5rem; } }
+    @media (min-width: 768px) { .ledajans-blog-hero-title { font-size: 3rem; } }
+    .ledajans-blog-hero-subtitle {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #d1d5db;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-subtitle { font-size: 1rem; } }
+    @media (min-width: 768px) { .ledajans-blog-hero-subtitle { font-size: 1.125rem; } }
+    </style>
+    
+    <div class="ledajans-blog-hero">
+      <div class="ledajans-blog-hero-overlay"></div>
+      <div class="ledajans-blog-hero-inner">
+        <div class="ledajans-blog-hero-content">
+          <h1 class="ledajans-blog-hero-title">İç Mekan LED Ekran</h1>
+          <span class="ledajans-blog-hero-subtitle" style="color:#f46f2c"><strong>Indoor LED ekran</strong> — P2, P2.5, P3; mağaza, stüdyo, toplantı odası. <a href="https://ledajans.com/p2-vs-p3-led-ekran/" style="color:#fff;text-decoration:underline;">P2 vs P3 rehberi</a> · <a href="https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/" style="color:#fff;text-decoration:underline;">Fiyat rehberi</a> · <a href="https://ledajans.com/iletisim/" style="color:#fff;text-decoration:underline;">Teklif alın</a></span>
+        </div>
+      </div>
+    </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://ledajans.com/"},
+    {"@type":"ListItem","position":2,"name":"Ürünlerimiz","item":"https://ledajans.com/led-ekran/"},
+    {"@type":"ListItem","position":3,"name":"İç Mekan LED Ekran","item":"https://ledajans.com/ic-mekan-led-ekran/"}
+  ]
+}
+</script>
+<style>
+    .control-cards-content-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+      font-family: inherit;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content-wrapper { padding: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-content-wrapper { padding: 2rem; }
+    }
+    .control-cards-content {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-content { padding: 2.5rem; }
+    }
+    .control-cards-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid #F46F2C;
+    }
+    @media (min-width: 768px) {
+      .control-cards-title { font-size: 1.625rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-title { font-size: 2rem; margin-bottom: 1.25rem; }
+    }
+    .control-cards-section-full {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-section-full {
+        margin-bottom: 1.125rem;
+      }
+    }
+    .control-cards-sections-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-sections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-sections-grid {
+        gap: 1.125rem;
+      }
+    }
+    .control-cards-section {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.625rem;
+      padding: 1rem;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      border-top: 3px solid transparent;
+    }
+    @media (min-width: 640px) {
+      .control-cards-section { padding: 1.125rem; }
+    }
+    .control-cards-section:hover {
+      box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      border-top-color: #F46F2C;
+    }
+    .control-cards-content-section-title {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.375rem;
+      line-height: 1.3;
+      word-break: break-word;
+      text-align: left;
+    }
+    @media (min-width: 640px) {
+      .control-cards-content-section-title { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-content-section-title { font-size: 0.9375rem; }
+    }
+    .control-cards-content-section-title::before {
+      content: '';
+      width: 3px;
+      height: 0.875rem;
+      background: #F46F2C;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .control-cards-text {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0 0 0.5rem 0;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .control-cards-text { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-text { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-text:last-child {
+      margin-bottom: 0;
+    }
+    .control-cards-section .control-cards-text:last-of-type {
+      margin-bottom: 0;
+    }
+    .control-cards-highlight {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.1) 0%, rgba(244, 111, 44, 0.05) 100%);
+      padding: 0.625rem 0.875rem;
+      border-left: 3px solid #F46F2C;
+      border-radius: 0.375rem;
+      margin: 0.5rem 0;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-highlight { padding: 0.75rem 1rem; }
+    }
+    .control-cards-highlight:hover {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.15) 0%, rgba(244, 111, 44, 0.1) 100%);
+      border-left-color: #e55a1f;
+      box-shadow: 0 8px 20px -5px rgba(244, 111, 44, 0.2), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-1px);
+    }
+    .control-cards-highlight-text {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-highlight-text { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-highlight-text { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-link {
+      color: #F46F2C;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    .control-cards-link:hover {
+      color: #e55a1f;
+    }
+    .control-cards-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+    .control-cards-list-item {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: #374151;
+      margin-bottom: 0.5rem;
+      padding-left: 1.25rem;
+      position: relative;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .control-cards-list-item { font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-list-item { font-size: 0.9375rem; line-height: 1.65; }
+    }
+    .control-cards-list-item:last-child {
+      margin-bottom: 0;
+    }
+    .control-cards-list-item::before {
+      content: '•';
+      color: #F46F2C;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+    }
+  </style>
+  
+  <div class="control-cards-content-wrapper">
+    <div class="control-cards-content">
+      <h2 class="control-cards-title">İç Mekan LED Ekran – Indoor LED Ekran</h2>
+
+      <div class="control-cards-section control-cards-section-full">
+        <p class="control-cards-text">
+          <strong>İç mekan LED ekran</strong> (indoor LED ekran), mağaza, stüdyo, toplantı salonu ve lobi gibi kapalı alanlarda yüksek çözünürlük ve sessiz çalışma isteyen projeler için üretilen tam ekran çözümüdür. <a href="https://ledajans.com/">LEDAJANS</a>, P2, P2.5 ve P3 başta olmak üzere pitch seçimini izleme mesafesine göre netleştirir; ücretsiz keşif ve kurulum teklifi verir.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            Satın alma kararı: <strong>iç mekan LED ekran</strong> = tamamlanmış kasa + panel + kontrol + güç. Modül toptan alımı için <a href="https://ledajans.com/ic-mekan-rgb-panel/" class="control-cards-link">iç mekan RGB panel</a> sayfasına bakın. Darbe riski yüksek alanlarda <a href="https://ledajans.com/gob-led-ekran/" class="control-cards-link">GOB LED ekran</a> tercih edilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Nerede kullanılır?</h3>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item">Mağaza ve AVM — vitrin, reyon ve menüboard indoor LED ekran</li>
+          <li class="control-cards-list-item">TV stüdyo ve kontrol odası — P1.25–P2, 3840Hz</li>
+          <li class="control-cards-list-item">Toplantı salonu ve lobi — video wall, yakın izleme</li>
+          <li class="control-cards-list-item">Otel, fuar standı, kurumsal ofis — sessiz fansız SMPS</li>
+        </ul>
+      </div>
+
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Pitch seçimi (P1.25–P3)</h3>
+        <p class="control-cards-text">
+          Yakın izleme (1–3 m) için P1.25–P1.86; mağaza ve salon (3–6 m) için <strong>P2 / P2.5 LED ekran</strong>; daha uzak salonlar için P3. Detay: <a href="https://ledajans.com/p2-vs-p3-led-ekran/" class="control-cards-link">P2 vs P3 karşılaştırma</a> ve <a href="https://ledajans.com/pitch-led-nedir/" class="control-cards-link">piksel aralığı nedir</a>.
+        </p>
+      </div>
+
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Teknik özet</h3>
+        <p class="control-cards-text">
+          Tipik iç mekan: 800–1500 nits, ≥3840Hz, görüş açısı ~160°, koruma <strong>IP31</strong> (dış mekan IP65 değil). İnce kasa, fansız güç kaynağı. LED paketi hakkında: <a href="https://en.wikipedia.org/wiki/LED_display" target="_blank" rel="nofollow noopener">Wikipedia LED display</a>.
+        </p>
+      </div>
+
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Fiyatı etkileyenler ve teklif</h3>
+        <p class="control-cards-text">
+          m², pitch, kasa, kontrol kartı ve kurulum süresi fiyatı belirler. Güncel aralıklar: <a href="https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/" class="control-cards-link">iç mekan LED ekran fiyatları</a>. Teklif: <a href="https://ledajans.com/iletisim/" class="control-cards-link">iletişim</a> — 0212 220 40 04.
+        </p>
+      </div>
+
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Piksel aralığı notları (saha)</h3>
+        <p class="control-cards-text">
+          İç mekanlarda önceki yıllarda ağırlıklı olarak P5 ve P4 kullanılmakla birlikte son dönemde P3, P2,5, P2 hatta P1,86 panellerde tercih edilmeye başlanmıştır. Bazı özel projelerde ise P1,66, P1,53 ve P1,25 paneller kullanılmaktadır.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Ledajans masaüstü menüboard / menüboard LED ekranlarında</strong> ağırlıklı olarak P2 kullanmakla birlikte özel istek üzerine P1,25 paneller kullanmıştır.
+          </p>
+        </div>
+        <p class="control-cards-text">
+          Yine daha önceki yıllarda P6 panel ile P5 panel arasındaki maliyet fiyatının çok yakın olması sebebi ile P6 paneller çok tercih edilmekte iken; gelişen LED ve LED Ekran teknolojisi ile birlikte piyasada P6 panel artık neredeyse LED Ekranlarda hiç kullanılmamaktadır, P5 paneller ise daha büyük ölçüde yapılan LED Ekranlarda veya daha düşük bütçeli işlerde tercih edilmektedir.
+        </p>
+      </div>
+  
+      <div class="control-cards-sections-grid">
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Ledajans Ürün Portföyü</h3>
+          <p class="control-cards-text">
+            Ledajans olarak İç mekan / indoor LED Ekranlar da ağırlıklı olarak <strong>P2 ve P2,5 modüller</strong> kullanmaktadır, modül satışlarında ise en fazla <strong>P2,5 indoor LED Ekran modülleri</strong> satmaktadır.
+          </p>
+        </div>
+  
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Poster & Raket LED Ekranlar</h3>
+          <p class="control-cards-text">
+            Poster LED Ekran / Raket LED Ekran larda ağırlıklı olarak <strong>64×160 cm ve 64×192 cm</strong> dikey, mıknatıslı/magnetli yapıda kasalar ile beraber <strong>P1,86, P2 ve P2,5 RGB LED modülleri</strong> kullanılmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Kontrol Kartları ve İşlevsellik</h3>
+        <p class="control-cards-text">
+          İç mekan LED Ekranlar da sadece processor yardımı ile canlı yayın gösterimi yapılabilmekte iken; LED Ekran kontrol kartı üreten şirketlerin (Novastar ve Huidu gibi) asenkron özellikli kartlarına processor özelliği eklemeleriyle birlikte, LED Ekran kontrol kartları hem senkron hem asenkron özelliğine bürünerek processor olmadan ölçülendirme yaparak canlı yayın verebilecek duruma gelmişlerdir.
+        </p>
+        <p class="control-cards-text">
+          Bu LED Ekran kontrol kartlarına örnek olarak <strong>Novastar TB1, TB2, TB3, TB4, TB6, TB8 Taurus serisi</strong> kartlar ile, Türkiye'de ki LED Ekranlarda çoğunlukla kullanılan <strong>Huidu serisi HD-A4, A5, A6 serisi</strong> LED Ekran kontrol kartlarını gösterebiliriz.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Huidu firması</strong>, söz konusu A4, A5 ve A6 LED Ekran kontrol kartlarına getirdikleri yeni özellik ile bir LED Ekran da canlı yayın ve daha hafızasına yüklenmiş video resim vb. görüntüleri aynı anda gösterebilmektedir, bu şekilde LED Ekranlar pixel ölçülerine ayrılarak farklı amaç ile farklı görüntüler için kullanılabilirler.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Ek Özellikler ve Sensörler</h3>
+        <p class="control-cards-text" style="margin-bottom: 0.5rem;">
+          İlave olarak tercihe göre şu özellikler entegre edilebilmektedir:
+        </p>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item">Ses sistemi</li>
+          <li class="control-cards-list-item">Isı sensörü</li>
+          <li class="control-cards-list-item">Nem sensörü</li>
+          <li class="control-cards-list-item">Rüzgar sensörü</li>
+          <li class="control-cards-list-item">Basınç sensörü</li>
+        </ul>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Güç Kaynağı ve Teknik Özellikler</h3>
+        <p class="control-cards-text">
+          İç mekan LED ekranlarda genelde ince kasalı ve gürültüsüz olması için <strong>fansız SMPS</strong> tercih edilmektedir. İç mekan / indoor LED Ekranlar tarama/scan oranının artması ve kullanılan LED'lerin daha düşük akım çekmesi sebebi ile daha az güce doğal olarak daha az power supply / güç kaynağı adaptöre ihtiyaç duymaktadırlar.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            <strong>Genel olarak iç mekan LED Ekranlarda</strong> 8 adet indoor / iç mekan LED Ekran modülü için 1 adet 200-5 (40 amper) power supply / güç kaynağı adaptör kullanılmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Güç Kaynağı Markaları</h3>
+        <p class="control-cards-text">
+          Ledajans olarak LED Ekran larımızda <strong>Youyi ve GKGD markalı adaptörler</strong> kullanmakla birlikte, özel isteğe göre bazı LED Ekran projelerinde <strong>Meanwell marka güç kaynağı adaptörlerde</strong> kullanmaktayız.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">LED Çipleri ve Dikkat Edilmesi Gerekenler</h3>
+        <p class="control-cards-text">
+          LED ekran panellerinde kullanılan LED çipleri için bütün firmalar Nationstar markasının kullanıldığını söylemektedirler ve hemen hemen bütün firmalar yüksek ışık şiddetine sahip LED chipler kullanıldığını söylemektedirler. Bu yüzden LED ekran ihtiyaçlarımızı karşılarken dikkat etmeniz gereken en önemli noktalar:
+        </p>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item">Firma tecrübesi ve güvenirliği (Taahhüt ettiği ürünü üretmesi ve satış sonrası destek açısından)</li>
+          <li class="control-cards-list-item">Kullanılacak güç kaynaklarında verim, PFC değeri, kısa devre ve akım koruma özelliklerinin derecesi</li>
+          <li class="control-cards-list-item">Kullanılacak paneldeki LED çipi, LED kılıf, sürücü entegresi ve taramasına (scan) dikkat edilmesi gerekmektedir</li>
+          <li class="control-cards-list-item">LED panel sürücü entegrelerinin refresh (yenileme hızı) hızına dikkat edilmelidir</li>
+          <li class="control-cards-list-item">Kablolama yöntemi ve kablo kesitlerine dikkat edilmelidir</li>
+        </ul>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Kontrol Sistemi Markaları</h3>
+        <p class="control-cards-text">
+          LED ekranlarda kontrol sistemi olarak birçok marka kart tercih edilebilmelidir. <strong>Asenkron ürünlerde Huidu (HD) kartlar</strong> ön plana çıkarken, <strong>senkron ürünlerde Nova ve Linsn</strong> ön plana çıkmaktadır. Bu üreticilerin hepsinin processor bağlantı imkanı vardır.
+        </p>
+      </div>
+  
+      <div class="control-cards-sections-grid">
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Huidu Kontrol Kartları</h3>
+          <p class="control-cards-text">
+            Huidu kartlarda <strong>HD-C36C ve HD-C16C</strong> ön plana çıkarken büyük ebatlı ürünlerde receiver ile entegre çalışan <strong>A3, A4, A5 ve A6</strong> ön plana çıkmaktadır fakat; eski seri olan <strong>A601, A602 ve A603</strong> bazı LED Ekran projelerinde kullanılmaya devam etmektedir.
+          </p>
+          <div class="control-cards-highlight">
+            <p class="control-cards-highlight-text">
+              İsteğe göre bu LED Ekran kartlarına wifi, GPS, 4G ve sensörler ilave edilebilmektedir. Bu LED Ekran kartlarının diğer A serisi Huidu LED Ekran kartlarından tek farkı processor özelliği olmaması nedeni ile canlı yayınlarda ilave processor ihtiyacı duymalarıdır.
+            </p>
+          </div>
+        </div>
+  
+        <div class="control-cards-section">
+          <h3 class="control-cards-content-section-title">Linsn Kontrol Kartları</h3>
+          <p class="control-cards-text">
+            Linsn kartlarda Sender olarak <strong>T802 üretimi sona erdiğinden</strong> dolayı Linsn kullanılarak yapılacak LED Ekran larda <strong>T921 serisi sender kartlar</strong> kullanılmaktadır, en büyük özelliği ise LED Ekran da kullanılan RGB modüllerin tarama / scan dosyasını geri okuyabilmesidir. Receiver olarak <strong>RV908</strong> ön plana çıkmaktadır.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Nova Kontrol Kartları</h3>
+        <p class="control-cards-text">
+          Nova kartlarda Sender olarak <strong>MSD300, MSD600</strong> LED Ekran kontrol kartları asenkron ve processor özellikli Taurus serisi LED Ekran kartları nedeni ile yeni üretilen LED Ekranlarda çok fazla tercih edilmemektedir. Receiver olarak <strong>MRV332 ve MRV336</strong> ön plana çıkmaktadır.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Mıknatıslı / Magnetli Sistemler</h3>
+        <p class="control-cards-text">
+          Son dönemde RGB LED modüllerde piksel boyutunun küçülmesi ve çözünürlüğün artması, tabi fiyatlarında önceki yıllara oranla düşmesi nedeni ile daha düşük piksel li LED Ekran üretimi artmıştır. Bu LED Ekranlar iç mekanda olduklarından dolayı çok fazla yer kaplamamaları gerektiğinden, <strong>mıknatıslı / magnetli sistemler</strong> daha fazla tercih edilmeye başlanmıştır.
+        </p>
+        <p class="control-cards-text">
+          Mıknatıslı / magnet li sistemlerde Türkiye'deki LED Ekranlarda genellikle profiller ile yapılan LED Ekran kasaları kullanılırken, Çin ve Avrupa'da daha çok <strong>MG cabinet</strong> dediğimiz kendinden magnetli / mıknatıslı kasalar daha fazla tercih edilmektedir.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">
+            Yukarıda anlattığım LED Ekran bilgilerinde geçen RGB modüller daha çok <strong>Ledajans olarak satışını yaptığımız RGB LED modüller</strong> ile yapılabilecek LED Ekranlar için daha çok geçerlidir.
+          </p>
+        </div>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Rental LED Ekranlar</h3>
+        <p class="control-cards-text">
+          Dünya'da azımsanmayacak kadar LED Ekran kiralama sistemi bulunmaktadır. Bu sistem LED Ekranlar daha çok <strong>Rental LED Ekran</strong> olarak adlandırılmaktadır.
+        </p>
+        <p class="control-cards-text">
+          İç mekan / indoor kiralamada kullanılan Rental LED Ekran lar da çoğunlukla <strong>P3,91, P2,9, P2,6, P1,9 RGB LED Modüller</strong> tercih edilmektedir. Bu Rental LED Ekran modülleri genellikle <strong>250×250 mm</strong> boyutunda olmakla beraber, <strong>50×50 cm ve 50×100 cm</strong> ölçüsünde die cast aluminum dediğimiz rental LED ekran kasaları kullanılmaktadır. Bu kasalarda kilit sistemi ve hanging bar düzeneği olduğundan, ayrıca kablolar plug-in / power icon soketli kablolar kullanıldığından dolayı kurulumu çok basit ve çok hızlıca yapılmaktadır.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Flexible LED Modüller</h3>
+        <p class="control-cards-text">
+          Son olarak son dönemin gözdesi <strong>Flexible LED Modüller</strong> ile üretilen oval, silindir, yarım daire, köşeli geçişler, dalgalı alanlar vb. alanlarda kullanılan LED Ekran sistemleri fazlaca tercih edilmeye başlamıştır.
+        </p>
+        <p class="control-cards-text">
+          Ledajans olarak çoğunlukla <strong>P2,5 esnek modül / flexible modül</strong> ithalatı yapmaktayız ve bu modüller ile ihtiyaç olan LED Ekran ları üretmekteyiz. Flexible modülleri en büyük özelliği isminden de anlaşıldığı gibi çok esnek yapıda olmasından dolayı yatay da istediğimiz şekle girebilmesi ve <strong>kendinden mıknatıslı / magnetli</strong> olmasıdır. Flexible modüller / esnek modüller tarama/scan olarak <strong>1/32 veya 1/64</strong> üretilmektedirler.
+        </p>
+      </div>
+  
+      <div class="control-cards-section control-cards-section-full">
+        <h3 class="control-cards-content-section-title">Ledajans ile İletişim</h3>
+        <p class="control-cards-text">
+          Sizde LED Ekran alacağınız zaman <strong>25 yıldır LED Ekran sektörü</strong> içinde olan ve sektörünün ithalatta, ihracatta ve LED Ekran çözümlerinde lider firmalardan birisi olan Ledajans ı görmeden aramadan sakın karar vermeyin ve LED Ekran almayın.
+        </p>
+        <p class="control-cards-text">
+          7/24 <a href="https://ledajans.com" target="_blank" rel="noopener noreferrer" class="control-cards-link">www.ledajans.com</a> ve <a href="https://www.ledarabul.com" target="_blank" rel="noopener noreferrer" class="control-cards-link">www.ledarabul.com</a> sitelerimizden ürün teknik özelliklerini, programları, tarama dosyalarını, kasa üretimi için gerekli olan DWG (delik dosyası) dosyalarını, kullanım videolarını, LED Ekran video galerimizi (<a href="https://www.youtube.com/channel/UCQt5HAPKC0tsJYGvVEL5MoA" target="_blank" rel="noopener noreferrer" class="control-cards-link">YouTube kanalımız</a>) ve güncel perakende fiyatlarını bulabilirsiniz.
+        </p>
+      </div>
+    </div>
+
+    <div class="control-cards-section control-cards-section-full" style="margin-top: 1.5rem; background: linear-gradient(120deg, rgba(244,111,44,0.05) 0%, rgba(244,111,44,0.02) 100%); border: 1px solid rgba(244,111,44,0.15);">
+      <h3 class="control-cards-content-section-title">İlgili Ürün ve Sayfalar</h3>
+      <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0;">
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/dis-mekan-led-ekran/" class="control-cards-link">Dış mekan LED ekran modelleri</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/gob-led-ekran/" class="control-cards-link">GOB LED ekran</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/rental-ekran/" class="control-cards-link">Rental LED ekran kiralama</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/cob-ekran/" class="control-cards-link">COB & Smart Screen</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/hakkimizda/" class="control-cards-link">Hakkımızda</a> · <a href="https://ledajans.com/sertifikalarimiz/" class="control-cards-link">Sertifikalar</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/kontrol-kartlari/" class="control-cards-link">LED Ekran Kontrol Kartları</a></li>
+        <li style="margin-bottom: 0.5rem;"><a href="https://ledajans.com/guc-kaynaklari/" class="control-cards-link">LED Ekran Güç Kaynakları</a></li>
+        <li><a href="https://ledajans.com/blog/" class="control-cards-link">LED Ekran Blog - Teknik Yazılar ve Rehberler</a></li>
+      </ul>
+    </div>
+  </div>
+<style>
+    /* Hizmetlerimiz satır arası azaltılmış - mevcut <style> içeriğinin yerine kopyalayın */
+    
+    .product-features-section {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-section {
+        border-radius: 1.5rem;
+        padding: 2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-section {
+        border-radius: 2rem;
+        padding: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .product-features-section {
+        border-radius: 2.5rem;
+        padding: 4rem;
+      }
+    }
+    
+    .product-features-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .product-features-description {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-description {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-description {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    .product-features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+    
+    .product-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-feature-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .product-feature-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.5rem;
+      background: #F46F2C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-feature-item:hover .product-feature-icon {
+      transform: scale(1.1);
+    }
+    
+    .product-feature-icon svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      color: white;
+    }
+    
+    @media (min-width: 640px) {
+      .product-feature-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+      
+      .product-feature-icon svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    .product-feature-text {
+      font-size: 1rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+    
+    @media (min-width: 640px) {
+      .product-feature-text {
+        font-size: 1.125rem;
+      }
+    }
+    
+    .product-contact-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-section {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-section {
+        margin-top: 3rem;
+        padding-top: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .product-contact-section {
+        margin-top: 3.5rem;
+        padding-top: 3.5rem;
+      }
+    }
+    
+    .product-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+    
+    .product-details-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-details-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-details-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .product-details-text {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-details-text {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-details-text {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    /* Hizmetlerimiz - satır arası azaltıldı */
+    .product-services-title {
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-services-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-services-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+    
+    .product-services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.35;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    @media (min-width: 640px) {
+      .product-services-list {
+        gap: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-services-list {
+        gap: 0.5rem;
+        font-size: 1.125rem;
+      }
+    }
+    
+    .product-service-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      line-height: 1.35;
+    }
+    
+    .product-service-icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+      color: #F46F2C;
+    }
+    
+    @media (min-width: 640px) {
+      .product-service-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    .product-phone-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .product-phone-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-phone-button {
+        padding: 1.25rem 2.5rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        gap: 0.75rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-button {
+        padding: 1.5rem 3rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .product-phone-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .product-phone-button.primary {
+      background: #111827;
+      color: white;
+    }
+    
+    .product-phone-button.secondary {
+      background: #F46F2C;
+      color: white;
+    }
+    
+    .product-phone-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-phone-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    .product-contact-info {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info {
+        gap: 2rem;
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+      }
+    }
+    
+    .product-contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-contact-info-item:hover {
+      transform: translateX(0.25rem);
+    }
+    
+    .product-contact-info-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background: #F46F2C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    
+    .product-contact-info-item:hover .product-contact-info-icon {
+      transform: scale(1.1);
+    }
+    
+    .product-contact-info-icon svg {
+      width: 1rem;
+      height: 1rem;
+      color: white;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+      }
+      
+      .product-contact-info-icon svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1rem;
+      }
+      
+      .product-contact-info-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+    .product-contact-info-content {
+      flex: 1;
+    }
+    
+    .product-contact-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-label {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    .product-contact-info-value {
+      font-size: 0.875rem;
+      color: #111827;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    
+    .product-contact-info-value a {
+      color: #111827;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .product-contact-info-value a:hover {
+      color: #F46F2C;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-value {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-value {
+        font-size: 1.125rem;
+      }
+    }
+    
+    
+    </style>
+    
+    <div class="product-features-section">
+      <h2 class="product-features-title">Ürün Özellikleri</h2>
+      <p class="product-features-description">
+        <strong>İç mekan LED ekran</strong> ve <strong>indoor LED ekran</strong> modellerimiz; <strong>P2 LED ekran</strong>, P2.5 ve <strong>P3 LED ekran</strong> seçenekleriyle mağaza, stüdyo ve toplantı salonları için yüksek çözünürlük sunar.
+        <a href="https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/">İç mekan fiyat rehberi</a> ·
+        <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış mekan modeller</a> ·
+        <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a>.
+      </p>
+    
+      <div class="product-features-grid">
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Ultra yüksek çözünürlük</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Geniş görüş açısı</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Düşük enerji tüketimi</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Uzun ömürlü LED modüller</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Kolay bakım ve servis</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Fansız SMPS / sessiz çalışma</span>
+        </div>
+      </div>
+    
+      <!-- İletişim Bölümü -->
+      <div class="product-contact-section">
+        <div class="product-contact-grid">
+          <!-- Sol: Detaylı Bilgi ve Fiyat -->
+          <div>
+            <h3 class="product-details-title">Detaylı Bilgi ve Fiyat Teklifi</h3>
+            <p class="product-details-text">
+             İç mekan LED ekran fiyat teklifi ve ücretsiz danışmanlık için <a href="https://ledajans.com/iletisim/">iletişime geçin</a>.
+            </p>
+          </div>
+    
+          <!-- Sağ: Hizmetlerimiz -->
+          <div>
+            <h4 class="product-services-title">Hizmetlerimiz</h4>
+            <ul class="product-services-list">
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Ücretsiz keşif ve danışmanlık</span>
+              </li>
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Profesyonel kurulum</span>
+              </li>
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Eğitim ve bakım hizmetleri</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Telefon Butonları -->
+        <div class="product-phone-buttons">
+          <a href="tel:+905438795108" class="product-phone-button primary">
+            <svg class="product-phone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+90 543 879 51 08</span>
+          </a>
+    
+          <a href="tel:+902122204004" class="product-phone-button secondary">
+            <svg class="product-phone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+90 212 220 40 04</span>
+          </a>
+        </div>
+    
+        <!-- E-Mail ve Adres Bilgileri -->
+        <div class="product-contact-info">
+          <div class="product-contact-info-item">
+            <div class="product-contact-info-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="product-contact-info-content">
+              <div class="product-contact-info-label">E-Mail</div>
+              <div class="product-contact-info-value">
+                <a href="mailto:info@ledajans.com">info@ledajans.com</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="product-contact-info-item">
+            <div class="product-contact-info-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div class="product-contact-info-content">
+              <div class="product-contact-info-label">Adres</div>
+              <div class="product-contact-info-value">
+                Halide Edip Adıvar Mah. Gül 2 Sokak No: 10a, 34382 Şişli/İstanbul
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- B2B proje fiyatları teklif bazlıdır; Google Product rich result doğrulaması için AggregateOffer minimum alanları eklendi. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "İç Mekan LED Ekran - Indoor LED Ekran",
+  "description": "P0.93'ten P5'e kadar geniş piksel aralığı seçenekleri ile iç mekan LED ekran. 3840Hz+ yenileme hızı, sessiz çalışma, ince kasa yapısı. Mağazalar, toplantı salonları, TV stüdyoları için profesyonel çözüm.",
+  "brand": { "@type": "Brand", "name": "LEDAJANS" },
+  "manufacturer": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
+  "category": "İç Mekan LED Ekran",
+  "url": "https://ledajans.com/ic-mekan-led-ekran/",
+  "image": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "TRY",
+    "lowPrice": "0",
+    "highPrice": "0",
+    "offerCount": "1",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
+    "url": "https://ledajans.com/iletisim/"
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Koruma", "value": "IP31 (iç mekan)" },
+    { "@type": "PropertyValue", "name": "Yenileme Hızı", "value": "≥3840Hz" },
+    { "@type": "PropertyValue", "name": "Parlaklık", "value": "≥800 cd/m²" },
+    { "@type": "PropertyValue", "name": "Görüş Açısı", "value": "160°" },
+    { "@type": "PropertyValue", "name": "Ömür", "value": "≥100.000 saat" },
+    { "@type": "PropertyValue", "name": "Garanti", "value": "2 Yıl" }
+  ]
+}
+</script>
+    
+<style>
+    .la-faq-wrap { max-width: 900px; margin: 48px auto 0; padding: 0 16px; }
+    .la-faq-wrap h2 { font-size: 1.6rem; font-weight: 700; color: #111827; margin-bottom: 20px; }
+    .la-faq-item { border: 1px solid #e5e7eb; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+    .la-faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; font-weight: 600; font-size: 1rem; color: #111827; cursor: pointer; list-style: none; }
+    .la-faq-item summary::-webkit-details-marker { display: none; }
+    .la-faq-item summary .la-faq-icon { color: #F46F2C; font-size: 1.4rem; font-weight: 700; transition: transform .2s; flex-shrink: 0; margin-left: 12px; }
+    .la-faq-item[open] summary .la-faq-icon { transform: rotate(45deg); }
+    .la-faq-body { padding: 0 20px 16px; color: #4b5563; line-height: 1.7; font-size: 0.95rem; }
+    </style>
+    <div class="la-faq-wrap">
+      <h2>İç Mekan LED Ekran Hakkında Sık Sorulan Sorular</h2>
+      <details class="la-faq-item">
+        <summary>İç Mekan LED Ekran fiyatları nedir? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body"><strong>İç mekan LED ekran fiyatları ekran boyutu, piksel yoğunluğu ve proje gereksinimlerine göre değişir.</strong> İç Mekan LED Ekran fiyatları; ekran boyutu, piksel yoğunluğu (P0.93, P1.25, P1.5, P2, P3, P4 vb.) ve özel proje gereksinimlerine göre değişmektedir. Detaylı fiyat teklifi için +90 212 220 40 04 numaralı hattımızı arayabilirsiniz.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>İç Mekan LED Ekran ile LCD / projeksiyon farkı nedir? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body"><strong>LED ekranlar LCD ve projeksiyona kıyasla daha yüksek parlaklık, geniş görüş açısı ve uzun ömür sunar.</strong> LED ekranlar; LCD veya projeksiyona kıyasla çok daha yüksek parlaklık (≥800 cd/m²), geniş görüş açısı (160°) ve uzun ömür sunar. Aydınlık ortamlarda bile net görüntü sağlar, aydınlatma sorunu yaşanmaz.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>İç Mekan LED Ekran hangi alanlarda kullanılır? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">AVM'ler, mağazalar, oteller, konferans salonları, TV stüdyoları, spor salonları, banka şubeleri, havalimanları ve kurumsal ofisler başta olmak üzere tüm iç mekan reklam ve bilgilendirme alanlarında kullanılır.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>Garanti süresi ve teknik destek nasıl sağlanıyor? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">Tüm iç mekan LED ekranlarımızda 2 yıl garanti ve 7/24 teknik destek hizmeti sunulmaktadır. Uzaktan destek ve saha ziyareti seçenekleri mevcuttur.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>Kurulum süresi ne kadar sürer? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">İç mekan LED ekran kurulum süresi proje büyüklüğüne göre değişmekle birlikte genellikle 1-3 gün arasındadır. Profesyonel kurulum ekibimiz tüm Türkiye'ye hizmet vermektedir.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>Hangi piksel (pixel pitch) seçeneği bana uygun? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">Seyirci mesafesi arttıkça daha büyük piksel aralığı (örn. P3, P4) tercih edilebilir. Yakın mesafe ve yüksek çözünürlük gerektiren uygulamalar (TV stüdyo, konferans salonu) için P0.93, P1.25 veya P1.5 modeller önerilir. Uzmanlarımız proje analizinizi ücretsiz yapar.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>Indoor LED ekran ile iç mekan LED ekran aynı mı? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body"><strong>Evet.</strong> Indoor LED ekran, iç mekan LED ekranın İngilizce karşılığıdır. Aynı ürün ailesi: P2, P2.5, P3, kapalı alan, IP31.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>İç mekan LED ekranda IP65 gerekir mi? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">Kapalı ve kuru ortamda IP31 yeterlidir. IP65 dış mekan / açık hava içindir. Nemli üretim alanı varsa ayrı değerlendirilir.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>P2 mi P3 mü seçmeliyim? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">Yakın izleme ve mağaza için P2/P2.5; daha uzak salon için P3. Karşılaştırma: <a href="https://ledajans.com/p2-vs-p3-led-ekran/">P2 vs P3</a>.</div>
+      </details>
+      <details class="la-faq-item">
+        <summary>GOB iç mekan LED ekran ne zaman gerekir? <span class="la-faq-icon">+</span></summary>
+        <div class="la-faq-body">Alçak montaj, okul, spor salonu gibi temas riskinde <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a> önerilir.</div>
+      </details>
+    </div>
+<style>
+  .la-destek-wrap { max-width: 900px; margin: 32px auto 0; padding: 20px 22px; border: 1px solid #e5e7eb; border-radius: 14px; background: #f9fafb; }
+  .la-destek-wrap h2 { font-size: 1.15rem; font-weight: 700; color: #111827; margin: 0 0 12px; }
+  .la-destek-wrap ul { margin: 0; padding-left: 1.2rem; line-height: 1.75; color: #374151; font-size: 0.95rem; }
+  .la-destek-wrap a { color: #c2410c; font-weight: 600; text-decoration: none; }
+  .la-destek-wrap a:hover { text-decoration: underline; }
+</style>
+<div class="la-destek-wrap">
+  <h2>📚 Teknik rehberler ve fiyat</h2>
+  <ul>
+    <li><a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a></li>
+    <li><a href="https://ledajans.com/ic-mekan-dis-mekan-led-farki/">İç mekan ve dış mekan LED farkı</a></li>
+    <li><a href="https://ledajans.com/pitch-led-nedir/">Piksel aralığı (pitch) nedir?</a></li>
+    <li><a href="https://ledajans.com/magaza-vitrin-led-ekran/">Mağaza vitrin LED ekran rehberi</a></li>
+    <li><a href="https://ledajans.com/blog/led-ekran-fiyatlari-2026/">LED ekran fiyatları 2026</a></li>
+    <li><a href="https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/">İç mekan LED ekran fiyatları rehberi</a></li>
+    <li><a href="https://ledajans.com/p2-vs-p3-led-ekran/">P2 vs P3 LED ekran karşılaştırma</a></li>
+    <li><a href="https://ledajans.com/dis-mekan-led-ekran/">Dış mekan LED ekran</a></li>
+    <li><a href="https://ledajans.com/rental-ekran/">LED ekran kiralama</a></li>
+    <li><a href="https://ledajans.com/led-ekran/">Tüm LED ekran çözümleri</a></li>
+    <li><a href="https://ledajans.com/hakkimizda/">Hakkımızda</a></li>
+  </ul>
+</div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"İç Mekan LED Ekran fiyatları nedir?","acceptedAnswer":{"@type":"Answer","text":"İç mekan LED ekran fiyatları ekran boyutu, piksel yoğunluğu ve proje gereksinimlerine göre değişir. İç Mekan LED Ekran fiyatları; ekran boyutu, piksel yoğunluğu (P0.93, P1.25, P1.5, P2, P3, P4 vb.) ve özel proje gereksinimlerine göre değişmektedir. Detaylı fiyat teklifi için +90 212 220 40 04 numaralı hattımızı arayabilirsiniz."}},
+        {"@type":"Question","name":"İç Mekan LED Ekran ile LCD / projeksiyon farkı nedir?","acceptedAnswer":{"@type":"Answer","text":"LED ekranlar LCD ve projeksiyona kıyasla daha yüksek parlaklık, geniş görüş açısı ve uzun ömür sunar. LED ekranlar; LCD veya projeksiyona kıyasla çok daha yüksek parlaklık (≥800 cd/m²), geniş görüş açısı (160°) ve uzun ömür sunar. Aydınlık ortamlarda bile net görüntü sağlar, aydınlatma sorunu yaşanmaz."}},
+        {"@type":"Question","name":"İç Mekan LED Ekran hangi alanlarda kullanılır?","acceptedAnswer":{"@type":"Answer","text":"AVM'ler, mağazalar, oteller, konferans salonları, TV stüdyoları, spor salonları, banka şubeleri ve kurumsal ofislerde kullanılır."}},
+        {"@type":"Question","name":"Garanti süresi ve teknik destek nasıl sağlanıyor?","acceptedAnswer":{"@type":"Answer","text":"2 yıl garanti ve 7/24 teknik destek hizmeti sunulmaktadır. Uzaktan destek ve saha ziyareti seçenekleri mevcuttur."}},
+        {"@type":"Question","name":"Kurulum süresi ne kadar sürer?","acceptedAnswer":{"@type":"Answer","text":"Genellikle 1-3 gün arasındadır. Profesyonel kurulum ekibimiz tüm Türkiye'ye hizmet vermektedir."}},
+        {"@type":"Question","name":"Hangi piksel (pixel pitch) seçeneği bana uygun?","acceptedAnswer":{"@type":"Answer","text":"Seyirci mesafesi arttıkça daha büyük piksel aralığı (örn. P3, P4) tercih edilebilir. Yakın mesafe ve yüksek çözünürlük gerektiren uygulamalar (TV stüdyo, konferans salonu) için P0.93, P1.25 veya P1.5 modeller önerilir."}},
+        {"@type":"Question","name":"Indoor LED ekran ile iç mekan LED ekran aynı mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Indoor LED ekran, iç mekan LED ekranın İngilizce karşılığıdır. Aynı ürün ailesi: P2, P2.5, P3, kapalı alan, IP31."}},
+        {"@type":"Question","name":"İç mekan LED ekranda IP65 gerekir mi?","acceptedAnswer":{"@type":"Answer","text":"Kapalı ve kuru ortamda IP31 yeterlidir. IP65 dış mekan / açık hava içindir."}},
+        {"@type":"Question","name":"GOB iç mekan LED ekran ne zaman gerekir?","acceptedAnswer":{"@type":"Answer","text":"Alçak montaj, okul, spor salonu gibi temas riskinde GOB LED ekran önerilir."}}
+      ]
+    }
+    </script>
+</div>
+</body></html>

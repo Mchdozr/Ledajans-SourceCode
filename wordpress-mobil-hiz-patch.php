@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LEDAJANS Mobile Perf
  * Description: Yalnizca mobil UA icin LCP/TBT optimizasyonu. Desktop no-op. Rank Math REST meta kaydi tum cihazlarda acik.
- * Version: 1.2.4
+ * Version: 1.2.5
  * Author: LEDAJANS
  *
  * Alternatif kurulum: wp-content/mu-plugins/ledajans-perf-patch.php
@@ -38,7 +38,7 @@ function ledajans_mp_v11_active() {
 
 // Not: Canli kurulum yolu zaten mu-plugins/ledajans-perf-patch.php (write-files).
 
-// Logo PNG (~95KiB) -> WebP (~7KiB). Gorunum ayni; masaustu layout degismez.
+// Yeni marka logosu (turuncu lockup). Eski header/footer URL'lerini tek WebP'ye cevir.
 add_action('template_redirect', function () {
     if (is_admin() || is_feed() || (defined('REST_REQUEST') && REST_REQUEST)) {
         return;
@@ -47,13 +47,26 @@ add_action('template_redirect', function () {
         if (!is_string($html) || $html === '') {
             return $html;
         }
+        $new = 'https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp';
         return str_replace(
-            'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png',
-            'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp',
+            array(
+                'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png',
+                'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp',
+                'https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg',
+                'https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png',
+            ),
+            $new,
             $html
         );
     });
 }, 0);
+
+add_action('wp_head', function () {
+    if (is_admin()) {
+        return;
+    }
+    echo '<style id="ledajans-logo-2026">.elementor-element-123bc72 .site-branding-logo img,.elementor-element-123bc72 .elementor-widget-gva-logo img,.canvas-mobile .top-canvas .logo-mm img{filter:none!important;background:transparent!important}.elementor-element-123bc72 .site-branding-logo img{height:42px!important;width:auto!important;max-width:240px!important;object-fit:contain!important}@media(max-width:1024px){.elementor-element-123bc72 .site-branding-logo img,.elementor-element-123bc72 .elementor-widget-gva-logo img{height:32px!important;max-width:min(68vw,240px)!important;filter:none!important}}</style>' . "\n";
+}, 200);
 
 // Rank Math REST — tum cihazlar (gorunum/JS yok)
 add_action('init', function () {
@@ -299,7 +312,7 @@ function ledajans_mp_v11_gtm_buffer($html) {
         $html
     );
 
-    // Mobil: 1.2MB Firefly PNG CSS background'unu tamamen kes
+    // Mobil: eski Firefly PNG + fuar karti WebP CSS background'unu kes
     $html = str_ireplace(
         "url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png')",
         'none',
@@ -307,6 +320,16 @@ function ledajans_mp_v11_gtm_buffer($html) {
     );
     $html = str_ireplace(
         'url("https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png")',
+        'none',
+        $html
+    );
+    $html = str_ireplace(
+        "url('https://ledajans.com/wp-content/uploads/2026/09/signistanbul-fair-bg.webp')",
+        'none',
+        $html
+    );
+    $html = str_ireplace(
+        'url("https://ledajans.com/wp-content/uploads/2026/09/signistanbul-fair-bg.webp")',
         'none',
         $html
     );

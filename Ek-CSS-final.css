@@ -181,7 +181,8 @@
    6) Header / Menü (Desktop)
    ============================================================================= */
 @media (min-width: 1025px) {
-  .elementor-element-123bc72.gv-sticky-menu > .elementor-container {
+  .elementor-element-123bc72.gv-sticky-menu > .elementor-container,
+  .elementor-element-123bc72 > .elementor-container {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -202,10 +203,11 @@
   }
 
   .elementor-element-123bc72 .site-branding-logo img {
-    height: 36px !important;
+    height: 42px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 240px !important;
     object-fit: contain !important;
+    filter: none !important;
   }
 
   .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu {
@@ -215,11 +217,24 @@
     justify-content: center !important;
   }
 
+  .elementor-element-123bc72 .gva-main-menu > li > a,
+  .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+
   .dropdown-toggle,
   .gva-offcanvas-button,
   .hamburger-menu,
   .mobile-menu-button {
     display: none !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .elementor-element-123bc72 .gva-main-menu > li > a,
+  .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
+    font-size: 0.9rem !important;
   }
 }
 
@@ -284,11 +299,11 @@
 
   .elementor-element-123bc72 .site-branding-logo img,
   .elementor-element-123bc72 .elementor-widget-gva-logo img {
-    height: 26px !important;
+    height: 32px !important;
     width: auto !important;
     max-width: min(68vw, 240px) !important;
     object-fit: contain !important;
-    filter: brightness(0) invert(1) !important;
+    filter: none !important;
     transform: translateY(-2px) !important;
   }
 
@@ -726,4 +741,13 @@ div[class*="sticky__spacer"],
   .ledajans-seo-article {
     padding: 2.75rem 2.5rem 2rem;
   }
+}
+
+/* GSC: /led-ekran/ tema H1 gizle (widget H1 kalsın) */
+body.page-id-5001 .page-title,
+body.page-id-5001 .page-title h1,
+body.page-id-5001 .gva-breadcrumb-content h1,
+body.page-id-5001 header.entry-header h1,
+body.page-id-5001 .title-info > h1.title {
+  display: none !important;
 }

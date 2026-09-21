@@ -1,0 +1,1289 @@
+<!DOCTYPE html><html lang='tr'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Dış Mekan LED Ekran — yerel önizleme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/template.css?ver=1.1.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins_child/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/custom_script.css?ver=7.1">
+<link rel="stylesheet" href="/Ek-CSS-global.css">
+<link rel="stylesheet" href="/Ek-CSS-final.css">
+<style>
+  html, body.lp-body {
+    margin: 0;
+    background: #fff;
+    color: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav {
+    position: sticky; top: 0; z-index: 9999; display: flex; flex-wrap: wrap;
+    gap: 0.5rem 1rem; padding: 0.7rem 1rem; background: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav a { color: #fdba74; text-decoration: none; font-size: 0.875rem; font-weight: 600; }
+  .lp-nav a:hover { color: #fff; }
+  .lp-preview, .lp-preview *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: "Kumbh Sans", sans-serif;
+  }
+</style>
+</head><body class='lp-body'>
+
+<nav class="lp-nav">
+  <a href="/local-preview/">Önizleme</a>
+  <a href="/local-preview/ic-mekan.html">İç mekan</a>
+  <a href="/local-preview/dis-mekan.html">Dış mekan</a>
+  <a href="/local-preview/gob.html">GOB hub</a>
+  <a href="/local-preview/led-ekran.html">LED ekran</a>
+  <a href="/local-preview/anasayfa.html">Anasayfa widget</a>
+  <a href="/local-preview/gob-nedir.html">GOB nedir</a>
+  <a href="/local-preview/gob-vs.html">GOB vs COB</a>
+  <a href="/local-preview/blog-gob.html">GOB blog</a>
+  <a href="/local-preview/rgb-panel.html">RGB panel</a>
+</nav>
+
+<div class='lp-preview'>
+<!-- LEDAJANS Blog - Sayfa Üstü Hero/Banner - Dış Mekan Led Ekran -->
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png" fetchpriority="high">
+<style>
+    .ledajans-blog-hero {
+      position: relative;
+      height: 200px;
+      background-image: url('https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero { height: 250px; } }
+    @media (min-width: 768px) { .ledajans-blog-hero { height: 300px; } }
+    .ledajans-blog-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+      transition: background-color 0.3s;
+    }
+    .ledajans-blog-hero-inner {
+      position: relative;
+      height: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-inner { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .ledajans-blog-hero-inner { padding: 0 2rem; } }
+    .ledajans-blog-hero-content {
+      font-family: inherit;
+    }
+    .ledajans-blog-hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-title { font-size: 2.5rem; } }
+    @media (min-width: 768px) { .ledajans-blog-hero-title { font-size: 3rem; } }
+    .ledajans-blog-hero-subtitle {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #d1d5db;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) { .ledajans-blog-hero-subtitle { font-size: 1rem; } }
+    @media (min-width: 768px) { .ledajans-blog-hero-subtitle { font-size: 1.125rem; } }
+    </style>
+    
+    <div class="ledajans-blog-hero" role="img" aria-label="Dış mekan LED ekran çözümleri">
+      <div class="ledajans-blog-hero-overlay"></div>
+      <div class="ledajans-blog-hero-inner">
+        <div class="ledajans-blog-hero-content">
+          <h1 class="ledajans-blog-hero-title">Dış Mekan LED Ekran</h1>
+          <span class="ledajans-blog-hero-subtitle" style="color:#f46f2c">Outdoor ve açık hava LED ekran — <strong>IP65</strong>, yüksek parlaklık, P4–P10. <a href="https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/" style="color:#fff;text-decoration:underline;">Fiyat rehberi</a> · <a href="https://ledajans.com/ic-mekan-led-ekran/" style="color:#fff;text-decoration:underline;">İç mekan modeller</a> · <a href="https://ledajans.com/iletisim/" style="color:#fff;text-decoration:underline;">Teklif alın</a></span>
+        </div>
+      </div>
+    </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://ledajans.com/"},
+    {"@type":"ListItem","position":2,"name":"Ürünlerimiz","item":"https://ledajans.com/led-ekran/"},
+    {"@type":"ListItem","position":3,"name":"Dış Mekan LED Ekran","item":"https://ledajans.com/dis-mekan-led-ekran/"}
+  ]
+}
+</script>
+<style>
+    .control-cards-content-wrapper { max-width: 1280px; margin: 0 auto; padding: 1rem; font-family: inherit; }
+    @media (min-width: 640px) { .control-cards-content-wrapper { padding: 1.5rem; } }
+    @media (min-width: 1024px) { .control-cards-content-wrapper { padding: 2rem; } }
+    .control-cards-content { background: #ffffff; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 1.5rem; }
+    @media (min-width: 1024px) { .control-cards-content { padding: 2.5rem; } }
+    .control-cards-title { font-size: 1.375rem; font-weight: 700; color: #111827; margin: 0 0 1rem; padding-bottom: 0.75rem; border-bottom: 3px solid #F46F2C; }
+    @media (min-width: 1024px) { .control-cards-title { font-size: 2rem; } }
+    .control-cards-section { background: #fff; border: 1px solid #e5e7eb; border-radius: 0.625rem; padding: 1rem; margin-bottom: 1rem; border-top: 3px solid transparent; }
+    .control-cards-section:hover { border-top-color: #F46F2C; }
+    .control-cards-content-section-title { font-size: 0.9375rem; font-weight: 600; color: #F46F2C; margin: 0 0 0.5rem; }
+    .control-cards-text { font-size: 0.9375rem; line-height: 1.65; color: #374151; margin: 0 0 0.5rem; }
+    .control-cards-highlight { background: linear-gradient(120deg, rgba(244,111,44,0.1) 0%, rgba(244,111,44,0.05) 100%); padding: 0.75rem 1rem; border-left: 3px solid #F46F2C; border-radius: 0.375rem; margin: 0.5rem 0; }
+    .control-cards-link { color: #F46F2C; text-decoration: underline; }
+    .control-cards-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+    .control-cards-list-item { font-size: 0.9375rem; color: #374151; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
+    .control-cards-list-item::before { content: '•'; color: #F46F2C; font-weight: 700; position: absolute; left: 0; }
+    .control-cards-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.875rem; }
+    .control-cards-table th, .control-cards-table td { border: 1px solid #e5e7eb; padding: 0.5rem; text-align: left; }
+    .control-cards-table thead { background: #f3f4f6; }
+  </style>
+  <div class="control-cards-content-wrapper">
+    <div class="control-cards-content">
+      <h2 class="control-cards-title">Dış Mekan LED Ekran – Outdoor LED Ekran</h2>
+      <div class="control-cards-section">
+        <p class="control-cards-text">
+          <strong>Dış mekan LED ekran</strong> (outdoor / açık hava LED ekran), güneş altında okunabilir yüksek parlaklık ve <strong>IP65</strong> su-toz koruması ile üretilen reklam, cephe ve stadyum ekranıdır. <a href="https://ledajans.com/">LEDAJANS</a> P4–P10 aralığında keşif, çelik konstrüksiyon ve kurulum teklifi verir.
+        </p>
+        <div class="control-cards-highlight">
+          <p class="control-cards-highlight-text">Kapalı alan için <a href="https://ledajans.com/ic-mekan-led-ekran/" class="control-cards-link">iç mekan LED ekran</a> kullanın. Kiralama: önce <a href="https://ledajans.com/rental-ekran/" class="control-cards-link">rental LED ekran</a>.</p>
+        </div>
+      </div>
+      <div class="control-cards-section">
+        <h3 class="control-cards-content-section-title">İç mekan mı dış mekan mı?</h3>
+        <table class="control-cards-table">
+          <thead><tr><th>Kriter</th><th>Dış mekan (outdoor)</th><th>İç mekan (indoor)</th></tr></thead>
+          <tbody>
+            <tr><td>Parlaklık</td><td>5000–8000 nits</td><td>800–1500 nits</td></tr>
+            <tr><td>Koruma</td><td>IP65</td><td>IP31</td></tr>
+            <tr><td>Pitch</td><td>P4, P5, P6, P8, P10</td><td>P1.25–P3</td></tr>
+            <tr><td>Kullanım</td><td>Cephe, billboard, stadyum, totem</td><td>Mağaza, stüdyo, lobi</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="control-cards-section">
+        <h3 class="control-cards-content-section-title">IP65, nits ve P4–P10</h3>
+        <p class="control-cards-text">Gündüz okunurluk için genelde ≥5000 nits. 10 m+ izlemede P8/P10 maliyet düşürür; 5–10 m için P4–P6. OFC kasa projelerinde hedef <strong>IP65</strong>; P10 modül spekinde arka yüz IP notu keşifte doğrulanır. Rehber: <a href="https://ledajans.com/ip-koruma-led-ekran/" class="control-cards-link">IP koruma</a>, <a href="https://ledajans.com/nits-parlaklik-nedir/" class="control-cards-link">nits</a>.</p>
+      </div>
+      <div class="control-cards-section">
+        <h3 class="control-cards-content-section-title">Cephe, billboard, stadyum</h3>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item"><a href="https://ledajans.com/billboard-led-ekran/" class="control-cards-link">Billboard LED ekran</a></li>
+          <li class="control-cards-list-item"><a href="https://ledajans.com/stadyum-led-ekran/" class="control-cards-link">Stadyum LED ekran</a></li>
+          <li class="control-cards-list-item">AVM cephe, akaryakıt pilon, belediye pano</li>
+        </ul>
+      </div>
+      <div class="control-cards-section">
+        <h3 class="control-cards-content-section-title">Fiyat ve teklif</h3>
+        <p class="control-cards-text">Pitch, m², konstrüksiyon ve IP sınıfı fiyatı belirler. <a href="https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/" class="control-cards-link">Dış mekan LED ekran fiyatları</a> · <a href="https://ledajans.com/iletisim/" class="control-cards-link">keşif / teklif</a> · 25 yıl tecrübe, 2 yıl garanti.</p>
+      </div>
+      <div class="control-cards-section">
+        <h3 class="control-cards-content-section-title">İlgili sayfalar</h3>
+        <ul class="control-cards-list">
+          <li class="control-cards-list-item"><a href="https://ledajans.com/led-ekran/" class="control-cards-link">LED ekran ürün ailesi</a></li>
+          <li class="control-cards-list-item"><a href="https://ledajans.com/ic-mekan-led-ekran/" class="control-cards-link">İç mekan LED ekran</a></li>
+          <li class="control-cards-list-item"><a href="https://ledajans.com/gob-led-ekran/" class="control-cards-link">GOB LED ekran</a></li>
+          <li class="control-cards-list-item"><a href="https://ledajans.com/sertifikalarimiz/" class="control-cards-link">Sertifikalar</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<style>
+    /* Hizmetlerimiz satır arası azaltılmış - mevcut <style> içeriğinin yerine kopyalayın */
+    
+    .product-features-section {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-section {
+        border-radius: 1.5rem;
+        padding: 2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-section {
+        border-radius: 2rem;
+        padding: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .product-features-section {
+        border-radius: 2.5rem;
+        padding: 4rem;
+      }
+    }
+    
+    .product-features-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .product-features-description {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-features-description {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-description {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    .product-features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+    
+    .product-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-feature-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .product-feature-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 0.5rem;
+      background: #F46F2C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-feature-item:hover .product-feature-icon {
+      transform: scale(1.1);
+    }
+    
+    .product-feature-icon svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      color: white;
+    }
+    
+    @media (min-width: 640px) {
+      .product-feature-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+      
+      .product-feature-icon svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    .product-feature-text {
+      font-size: 1rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+    
+    @media (min-width: 640px) {
+      .product-feature-text {
+        font-size: 1.125rem;
+      }
+    }
+    
+    .product-contact-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-section {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-section {
+        margin-top: 3rem;
+        padding-top: 3rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .product-contact-section {
+        margin-top: 3.5rem;
+        padding-top: 3.5rem;
+      }
+    }
+    
+    .product-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+    
+    .product-details-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-details-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-details-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .product-details-text {
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-details-text {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-details-text {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    /* Hizmetlerimiz - satır arası azaltıldı */
+    .product-services-title {
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-services-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-services-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+    
+    .product-services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      color: #4b5563;
+      line-height: 1.35;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    @media (min-width: 640px) {
+      .product-services-list {
+        gap: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-services-list {
+        gap: 0.5rem;
+        font-size: 1.125rem;
+      }
+    }
+    
+    .product-service-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      line-height: 1.35;
+    }
+    
+    .product-service-icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+      color: #F46F2C;
+    }
+    
+    @media (min-width: 640px) {
+      .product-service-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    .product-phone-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .product-phone-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-phone-button {
+        padding: 1.25rem 2.5rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        gap: 0.75rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-button {
+        padding: 1.5rem 3rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .product-phone-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .product-phone-button.primary {
+      background: #111827;
+      color: white;
+    }
+    
+    .product-phone-button.secondary {
+      background: #F46F2C;
+      color: white;
+    }
+    
+    .product-phone-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-phone-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-phone-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    .product-contact-info {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info {
+        gap: 2rem;
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+      }
+    }
+    
+    .product-contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform 0.3s;
+    }
+    
+    .product-contact-info-item:hover {
+      transform: translateX(0.25rem);
+    }
+    
+    .product-contact-info-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background: #F46F2C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    
+    .product-contact-info-item:hover .product-contact-info-icon {
+      transform: scale(1.1);
+    }
+    
+    .product-contact-info-icon svg {
+      width: 1rem;
+      height: 1rem;
+      color: white;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+      }
+      
+      .product-contact-info-icon svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1rem;
+      }
+      
+      .product-contact-info-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+    .product-contact-info-content {
+      flex: 1;
+    }
+    
+    .product-contact-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-label {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    .product-contact-info-value {
+      font-size: 0.875rem;
+      color: #111827;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    
+    .product-contact-info-value a {
+      color: #111827;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .product-contact-info-value a:hover {
+      color: #F46F2C;
+    }
+    
+    @media (min-width: 640px) {
+      .product-contact-info-value {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .product-contact-info-value {
+        font-size: 1.125rem;
+      }
+    }
+    
+    
+    </style>
+    
+    <div class="product-features-section">
+      <h2 class="product-features-title">Ürün Özellikleri</h2>
+      <p class="product-features-description">
+        <strong>Dış mekan LED ekran</strong> ve <strong>outdoor LED ekran</strong> çözümlerimiz; <strong>IP65</strong> koruma, yüksek parlaklık ve açık hava reklam panoları için tasarlanmıştır.
+        Billboard, cephe ve stadyum projelerinde P4–P10 modeller. <a href="https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/">Dış mekan fiyat rehberi</a> ·
+        <a href="https://ledajans.com/led-ekran/">Tüm LED ekran çözümleri</a>.
+      </p>
+    
+      <div class="product-features-grid">
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Ultra yüksek çözünürlük</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Geniş görüş açısı</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Düşük enerji tüketimi</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Uzun ömürlü LED modüller</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">Kolay bakım ve servis</span>
+        </div>
+        
+        <div class="product-feature-item">
+          <div class="product-feature-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="product-feature-text">IP65 koruma sınıfı</span>
+        </div>
+      </div>
+    
+      <!-- İletişim Bölümü -->
+      <div class="product-contact-section">
+        <div class="product-contact-grid">
+          <!-- Sol: Detaylı Bilgi ve Fiyat -->
+          <div>
+            <h3 class="product-details-title">Detaylı Bilgi ve Fiyat Teklifi</h3>
+            <p class="product-details-text">
+             Dış mekan LED ekran fiyat teklifi ve ücretsiz keşif için <a href="https://ledajans.com/iletisim/">iletişime geçin</a> — 24 saat içinde dönüş.
+            </p>
+          </div>
+    
+          <!-- Sağ: Hizmetlerimiz -->
+          <div>
+            <h4 class="product-services-title">Hizmetlerimiz</h4>
+            <ul class="product-services-list">
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Ücretsiz keşif ve danışmanlık</span>
+              </li>
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Profesyonel kurulum</span>
+              </li>
+              <li class="product-service-item">
+                <svg class="product-service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Eğitim ve bakım hizmetleri</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Telefon Butonları -->
+        <div class="product-phone-buttons">
+          <a href="tel:+905438795108" class="product-phone-button primary">
+            <svg class="product-phone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+90 543 879 51 08</span>
+          </a>
+    
+          <a href="tel:+902122204004" class="product-phone-button secondary">
+            <svg class="product-phone-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+90 212 220 40 04</span>
+          </a>
+        </div>
+    
+        <!-- E-Mail ve Adres Bilgileri -->
+        <div class="product-contact-info">
+          <div class="product-contact-info-item">
+            <div class="product-contact-info-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="product-contact-info-content">
+              <div class="product-contact-info-label">E-Mail</div>
+              <div class="product-contact-info-value">
+                <a href="mailto:info@ledajans.com">info@ledajans.com</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="product-contact-info-item">
+            <div class="product-contact-info-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div class="product-contact-info-content">
+              <div class="product-contact-info-label">Adres</div>
+              <div class="product-contact-info-value">
+                Halide Edip Adıvar Mah. Gül 2 Sokak No: 10a, 34382 Şişli/İstanbul
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+  </div>
+
+<!-- Neden Ledajans Güven Modülü -->
+<div class="la-trust-module" style="margin-top:2.5rem;padding:2rem 1.5rem;border-radius:16px;background:linear-gradient(135deg,#f8fafc,#fff7ed);border:1px solid #fed7aa;">
+  <h3 style="font-size:1.5rem;font-weight:700;color:#1a1a2e;margin:0 0 1.25rem 0;text-align:center;">Neden Ledajans?</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+    <div style="padding:1rem;border-radius:12px;background:#fff;border:1px solid #f3f4f6;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:0.5rem;">🛡️</div>
+      <strong style="color:#1a1a2e;">2 Yıl Garanti</strong>
+      <p style="font-size:0.9rem;color:#6b7280;margin:0.25rem 0 0;">Tüm dış mekan LED ekranlarımız 2 yıl üretici garantisi kapsamındadır.</p>
+    </div>
+    <div style="padding:1rem;border-radius:12px;background:#fff;border:1px solid #f3f4f6;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚡</div>
+      <strong style="color:#1a1a2e;">7/24 Teknik Destek</strong>
+      <p style="font-size:0.9rem;color:#6b7280;margin:0.25rem 0 0;">Uzman ekibimiz ile 7/24 teknik destek ve bakım hizmeti sunuyoruz.</p>
+    </div>
+    <div style="padding:1rem;border-radius:12px;background:#fff;border:1px solid #f3f4f6;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:0.5rem;">📜</div>
+      <strong style="color:#1a1a2e;">ISO Sertifikalı</strong>
+      <p style="font-size:0.9rem;color:#6b7280;margin:0.25rem 0 0;">ISO 9001, ISO 14001, ISO 27001 sertifikalarına sahip güvenilir tedarikçi.</p>
+    </div>
+    <div style="padding:1rem;border-radius:12px;background:#fff;border:1px solid #f3f4f6;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏗️</div>
+      <strong style="color:#1a1a2e;">Ücretsiz Keşif</strong>
+      <p style="font-size:0.9rem;color:#6b7280;margin:0.25rem 0 0;">Projeniz için ücretsiz keşif ve teknik danışmanlık hizmeti veriyoruz.</p>
+    </div>
+  </div>
+</div>
+
+<!-- B2B proje fiyatları teklif bazlıdır; Google Product rich result doğrulaması için AggregateOffer minimum alanları eklendi. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Dış Mekan LED Ekran - OFC Serisi",
+  "description": "IP65 korumalı, 4500-8000 cd/m² parlaklıklı dış mekan LED ekran. P2.5, P6.67, P8, P10 piksel aralığı seçenekleri. Reklam panoları, stadyumlar ve dış cephe uygulamaları için profesyonel çözüm.",
+  "brand": { "@type": "Brand", "name": "LEDAJANS" },
+  "manufacturer": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
+  "category": "Dış Mekan LED Ekran",
+  "url": "https://ledajans.com/dis-mekan-led-ekran/",
+  "image": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "TRY",
+    "lowPrice": "0",
+    "highPrice": "0",
+    "offerCount": "1",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": "LEDAJANS", "url": "https://ledajans.com" },
+    "url": "https://ledajans.com/iletisim/"
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "IP Koruma Sınıfı", "value": "IP65" },
+    { "@type": "PropertyValue", "name": "Parlaklık", "value": "4500-8000 cd/m²" },
+    { "@type": "PropertyValue", "name": "Yenileme Hızı", "value": "≥3840Hz" },
+    { "@type": "PropertyValue", "name": "Ömür", "value": "≥100.000 saat" },
+    { "@type": "PropertyValue", "name": "Garanti", "value": "2 Yıl" }
+  ]
+}
+</script>
+    
+<!-- LEDAJANS - OFC Serisi Dış Mekan LED Ekran ANA SAYFA: Ürün hub (premium) -->
+<style>
+    .la-ofc-hub {
+      font-family: inherit;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2.5rem 1rem;
+      color: #1f2937;
+      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 12%);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .la-ofc-hub::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f46f2c, #1a1a2e);
+      border-radius: 16px 16px 0 0;
+    }
+    @media (min-width: 1024px) {
+      .la-ofc-hub-inner { display: flex; gap: 2.5rem; align-items: flex-start; }
+      .la-ofc-hub { padding: 3rem 2rem; }
+    }
+    .la-ofc-hub h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .la-ofc-hub h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 4px;
+      background: #f46f2c;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+    .la-ofc-hub-intro {
+      color: #4b5563;
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+      font-size: 1rem;
+      max-width: 42rem;
+    }
+    .la-ofc-hub-nav { flex-shrink: 0; width: 100%; }
+    @media (min-width: 1024px) {
+      .la-ofc-hub-nav { width: 240px; position: sticky; top: 1.5rem; }
+    }
+    .la-ofc-hub-nav-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.85rem;
+    }
+    .la-ofc-hub-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    @media (min-width: 1024px) {
+      .la-ofc-hub-nav-list { flex-direction: column; gap: 0.35rem; }
+    }
+    .la-ofc-hub-nav-list a {
+      display: block;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.25s ease;
+    }
+    .la-ofc-hub-nav-list a:hover {
+      background: #1a1a2e;
+      color: #fff;
+      border-color: #1a1a2e;
+      transform: translateX(4px);
+    }
+    @media (min-width: 1024px) {
+      .la-ofc-hub-nav-list a:hover { transform: translateX(6px); }
+    }
+    .la-ofc-hub-main { flex: 1; min-width: 0; }
+    .la-ofc-hub-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .la-ofc-hub-cards { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    .la-ofc-hub-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .la-ofc-hub-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #f46f2c, #e05a1e);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .la-ofc-hub-card:hover {
+      border-color: rgba(244, 111, 44, 0.4);
+      box-shadow: 0 12px 28px rgba(26, 26, 46, 0.08), 0 4px 12px rgba(244, 111, 44, 0.06);
+      transform: translateY(-3px);
+    }
+    .la-ofc-hub-card:hover::before { opacity: 1; }
+    
+    /* Kart tamamı tıklanabilir */
+    .la-ofc-hub-card-link{
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 1.35rem 1.35rem 1.35rem 1.5rem;
+      height: 100%;
+    }
+    .la-ofc-hub-card-link:focus-visible{
+      outline: 2px solid #f46f2c;
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+    
+    .la-ofc-hub-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .la-ofc-hub-card-spec {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .la-ofc-hub-card-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #f46f2c !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap .25s ease, color .2s ease;
+    }
+    .la-ofc-hub-card-cta svg{
+      width:18px;
+      height:18px;
+      stroke:#f46f2c !important;
+      flex-shrink:0;
+      transition:transform .25s ease;
+    }
+    .la-ofc-hub-card:hover .la-ofc-hub-card-cta{
+      color:#e05a1e !important;
+      gap:.65rem;
+    }
+    .la-ofc-hub-card:hover .la-ofc-hub-card-cta svg{
+      transform:translateX(3px);
+    }
+    
+    .la-ofc-hub-card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #f46f2c;
+      background: rgba(244, 111, 44, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+    </style>
+    
+    <div class="la-ofc-hub">
+      <h2>OFC Serisi Dış Mekan LED Ekranlar</h2>
+      <p class="la-ofc-hub-intro">
+        OFC serisi dış mekan LED ekran projeleriniz için farklı piksel aralığında modeller.
+        Her model için teknik özellikler, döküman ve kullanım detayları ilgili ürün sayfasında yer alır.
+      </p>
+    
+      <div class="la-ofc-hub-inner">
+        <nav class="la-ofc-hub-nav" aria-label="OFC dış mekan LED ekran modelleri">
+          <div class="la-ofc-hub-nav-title">Modeller</div>
+          <ul class="la-ofc-hub-nav-list">
+            <li><a href="https://ledajans.com/ofc-p2-5-dis-mekan-led-ekran/">P2.5</a></li>
+            <li><a href="https://ledajans.com/ofc-p6-67-dis-mekan-led-ekran/">P6.67</a></li>
+            <li><a href="https://ledajans.com/ofc-p8-dis-mekan-led-ekran/">P8</a></li>
+            <li><a href="https://ledajans.com/ofc-p10-dis-mekan-led-ekran/">P10</a></li>
+          </ul>
+        </nav>
+    
+        <div class="la-ofc-hub-main">
+          <div class="la-ofc-hub-cards">
+            <article class="la-ofc-hub-card">
+              <a class="la-ofc-hub-card-link" href="https://ledajans.com/ofc-p2-5-dis-mekan-led-ekran/">
+                <span class="la-ofc-hub-card-badge">P2.5 · 3840Hz</span>
+                <div class="la-ofc-hub-card-title">P2.5 OFC Dış Mekan LED Ekran</div>
+                <div class="la-ofc-hub-card-spec">160.000 nokta/m² · SMD1415 · 1/16 tarama · ≥4500 cd/m²</div>
+                <span class="la-ofc-hub-card-cta">
+                  Teknik özellikler ve döküman
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </span>
+              </a>
+            </article>
+    
+            <article class="la-ofc-hub-card">
+              <a class="la-ofc-hub-card-link" href="https://ledajans.com/ofc-p6-67-dis-mekan-led-ekran/">
+                <span class="la-ofc-hub-card-badge">P6.67 · 3840Hz</span>
+                <div class="la-ofc-hub-card-title">P6.67 OFC Dış Mekan LED Ekran</div>
+                <div class="la-ofc-hub-card-spec">22.500 nokta/m² · SMD2727 · 1/6 tarama · ≥4500 cd/m²</div>
+                <span class="la-ofc-hub-card-cta">
+                  Teknik özellikler ve döküman
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </span>
+              </a>
+            </article>
+    
+            <article class="la-ofc-hub-card">
+              <a class="la-ofc-hub-card-link" href="https://ledajans.com/ofc-p8-dis-mekan-led-ekran/">
+                <span class="la-ofc-hub-card-badge">P8 · 3840Hz</span>
+                <div class="la-ofc-hub-card-title">P8 OFC Dış Mekan LED Ekran</div>
+                <div class="la-ofc-hub-card-spec">15.625 nokta/m² · SMD2727 · 1/5 tarama · ≥4500 cd/m²</div>
+                <span class="la-ofc-hub-card-cta">
+                  Teknik özellikler ve döküman
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </span>
+              </a>
+            </article>
+    
+            <article class="la-ofc-hub-card">
+              <a class="la-ofc-hub-card-link" href="https://ledajans.com/ofc-p10-dis-mekan-led-ekran/">
+                <span class="la-ofc-hub-card-badge">P10 · 1920Hz</span>
+                <div class="la-ofc-hub-card-title">P10 OFC Dış Mekan LED Ekran</div>
+                <div class="la-ofc-hub-card-spec">10.000 nokta/m² · SMD3535/2727 · 1/4 tarama · ≥3500 cd/m² · kasa IP65 (ön); P10 modül speki keşifte netleşir</div>
+                <span class="la-ofc-hub-card-cta">
+                  Teknik özellikler ve döküman
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+<style>
+  .la-faq-wrap { max-width: 900px; margin: 48px auto 0; padding: 0 16px; }
+  .la-faq-wrap h2 { font-size: 1.6rem; font-weight: 700; color: #111827; margin-bottom: 20px; }
+  .la-faq-item { border: 1px solid #e5e7eb; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .la-faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; font-weight: 600; font-size: 1rem; color: #111827; cursor: pointer; list-style: none; }
+  .la-faq-item summary::-webkit-details-marker { display: none; }
+  .la-faq-item summary .la-faq-icon { color: #F46F2C; font-size: 1.4rem; font-weight: 700; transition: transform .2s; flex-shrink: 0; margin-left: 12px; }
+  .la-faq-item[open] summary .la-faq-icon { transform: rotate(45deg); }
+  .la-faq-body { padding: 0 20px 16px; color: #4b5563; line-height: 1.7; font-size: 0.95rem; }
+</style>
+<div class="la-faq-wrap">
+<h2>Dış Mekan LED Ekran Hakkında Sık Sorulan Sorular</h2>
+<details class="la-faq-item">
+  <summary>Dış Mekan LED Ekran fiyatları nedir? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">Piksel aralığı (P4-P10), ekran boyutu ve IP koruma sınıfına göre değişir. Detaylı fiyat teklifi için +90 212 220 40 04 numaralı hattımızı arayabilirsiniz.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Dış mekan LED ekran IP koruma sınıfı nedir? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">IP65 koruma sınıfına sahiptir. Yağmur, toz ve güneş ışığına karşı dayanıklıdır. -20°C ile +40°C arasında çalışır.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Dış mekan LED ekranın parlaklığı ne kadardır? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">4500-8000 cd/m² parlaklık sunar. Güneş altında bile net görüntü sağlar. Otomatik parlaklık ayarı mevcuttur.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Dış mekan LED ekran kurulumu nasıl yapılır? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body"><a href="https://ledajans.com/">LEDAJANS</a> profesyonel kurulum ekibi çelik konstrüksiyon, panel montajı, kablolama ve yazılım ayarlarını eksiksiz yapar. Tüm Türkiye'ye hizmet verilmektedir.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Garanti süresi ve teknik destek nasıl sağlanıyor? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">2 yıl garanti ve 7/24 teknik destek. Uzaktan erişim ile anında müdahale. Yedek parça her zaman stokta.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Dış mekan LED ekran hangi alanlarda kullanılır? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">Açık hava reklamcılığı, stadyumlar, AVM dış cepheleri, benzin istasyonları, otoyol tabelaları ve belediye bilgilendirme panolarında kullanılır.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Açık hava LED ekran ile outdoor aynı mı? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">Evet. <strong>Dış mekan LED ekran</strong>, outdoor ve açık hava LED ekran aynı ticari niyeti karşılar. Kapalı salon için <a href="https://ledajans.com/ic-mekan-led-ekran/">iç mekan LED ekran</a>.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Cephe LED ekran için hangi pitch? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">İzleme mesafesine göre P4–P10. Yakın cadde için P4–P6; 10 m+ için P8/P10. Keşifte nits ve IP birlikte seçilir.</div>
+</details>
+<details class="la-faq-item">
+  <summary>P10 IP65 mi? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">Kasa hedefi IP65’tir. P10 modül spekinde ön/arka IP notu keşifte doğrulanır; OFC kartında kasa IP65 (ön) yazılıdır.</div>
+</details>
+<details class="la-faq-item">
+  <summary>Dış mekanda GOB LED ekran kullanılır mı? <span class="la-faq-icon">+</span></summary>
+  <div class="la-faq-body">GOB ek yüzey koruması verir; tam outdoor için IP65 kasa esastır. GOB ticari sayfa: <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a>.</div>
+</details>
+</div>
+<style>
+.la-destek-wrap { max-width: 900px; margin: 32px auto 0; padding: 20px 22px; border: 1px solid #e5e7eb; border-radius: 14px; background: #f9fafb; }
+.la-destek-wrap h2 { font-size: 1.15rem; font-weight: 700; color: #111827; margin: 0 0 12px; }
+.la-destek-wrap ul { margin: 0; padding-left: 1.2rem; line-height: 1.75; color: #374151; font-size: 0.95rem; }
+.la-destek-wrap a { color: #c2410c; font-weight: 600; text-decoration: none; }
+.la-destek-wrap a:hover { text-decoration: underline; }
+</style>
+<div class="la-destek-wrap">
+<h2>📚 Teknik rehberler ve fiyat</h2>
+<ul>
+  <li><a href="https://ledajans.com/ip-koruma-led-ekran/">IP koruma sınıfları rehberi</a></li>
+  <li><a href="https://ledajans.com/nits-parlaklik-nedir/">Parlaklık (nits) nedir?</a></li>
+  <li><a href="https://ledajans.com/stadyum-led-ekran/">Stadyum LED ekran rehberi</a></li>
+  <li><a href="https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/">Dış mekan LED ekran fiyatları rehberi</a></li>
+  <li><a href="https://ledajans.com/blog/led-ekran-fiyatlari-2026/">Genel LED ekran fiyatları 2026</a></li>
+  <li><a href="https://ledajans.com/dis-mekan-led-ekran/">Dış mekan LED ekran modelleri</a></li>
+  <li><a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan LED ekran</a></li>
+  <li><a href="https://ledajans.com/rental-ekran/">LED ekran kiralama</a></li>
+  <li><a href="https://ledajans.com/led-ekran/">LED ekran ürün ailesi</a></li>
+  <li><a href="https://ledajans.com/magaza-vitrin-led-ekran/">Vitrin LED ekran rehberi</a></li>
+  <li><a href="https://ledajans.com/istanbul-led-ekran/">İstanbul LED ekran</a></li>
+  <li><a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a></li>
+</ul>
+</div>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+  {"@type":"Question","name":"Dış Mekan LED Ekran fiyatları nedir?","acceptedAnswer":{"@type":"Answer","text":"Piksel aralığı (P4-P10), ekran boyutu ve IP koruma sınıfına göre değişir. Detaylı fiyat teklifi için +90 212 220 40 04 numaralı hattımızı arayabilirsiniz."}},
+  {"@type":"Question","name":"Dış mekan LED ekran IP koruma sınıfı nedir?","acceptedAnswer":{"@type":"Answer","text":"IP65 koruma sınıfına sahiptir. Yağmur, toz ve güneş ışığına karşı dayanıklıdır. -20°C ile +40°C arasında çalışır."}},
+  {"@type":"Question","name":"Dış mekan LED ekranın parlaklığı ne kadardır?","acceptedAnswer":{"@type":"Answer","text":"4500-8000 cd/m² parlaklık sunar. Güneş altında bile net görüntü sağlar. Otomatik parlaklık ayarı mevcuttur."}},
+  {"@type":"Question","name":"Dış mekan LED ekran kurulumu nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"LEDAJANS profesyonel kurulum ekibi çelik konstrüksiyon, panel montajı, kablolama ve yazılım ayarlarını eksiksiz yapar. Tüm Türkiye'ye hizmet verilmektedir."}},
+  {"@type":"Question","name":"Garanti süresi ve teknik destek nasıl sağlanıyor?","acceptedAnswer":{"@type":"Answer","text":"2 yıl garanti ve 7/24 teknik destek. Uzaktan erişim ile anında müdahale. Yedek parça her zaman stokta."}},
+  {"@type":"Question","name":"Dış mekan LED ekran hangi alanlarda kullanılır?","acceptedAnswer":{"@type":"Answer","text":"Açık hava reklamcılığı, stadyumlar, AVM dış cepheleri, benzin istasyonları, otoyol tabelaları ve belediye bilgilendirme panolarında kullanılır."}},
+  {"@type":"Question","name":"Açık hava LED ekran ile outdoor aynı mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Dış mekan LED ekran, outdoor ve açık hava LED ekran aynı ticari niyeti karşılar."}},
+  {"@type":"Question","name":"Cephe LED ekran için hangi pitch?","acceptedAnswer":{"@type":"Answer","text":"İzleme mesafesine göre P4–P10. Yakın cadde için P4–P6; 10 m+ için P8/P10."}},
+  {"@type":"Question","name":"P10 IP65 mi?","acceptedAnswer":{"@type":"Answer","text":"Kasa hedefi IP65’tir. P10 modül spekinde ön/arka IP notu keşifte doğrulanır."}},
+  {"@type":"Question","name":"Dış mekanda GOB LED ekran kullanılır mı?","acceptedAnswer":{"@type":"Answer","text":"GOB ek yüzey koruması verir; tam outdoor için IP65 kasa esastır."}}
+]
+}
+</script>
+
+</div>
+</body></html>

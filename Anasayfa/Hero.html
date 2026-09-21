@@ -1,5 +1,5 @@
 <!-- WIDGET 1 — Hero: dosyanın TAMAMINI Elementor HTML widget'a yapıştır | Ek CSS: Ek-CSS-final.css | 2026-05-04 -->
-<!-- SEO Meta Description (RankMath): LED ekran satış, kiralama ve kurulum | İç-dış mekan, rental ve COB | 25 yıl tecrübe | Ücretsiz teklif — LEDAJANS İstanbul. -->
+<!-- SEO Meta Description (RankMath): LED ekran satış, kiralama ve kurulum. İç-dış mekan, rental. 25 yıl tecrübe, 2 yıl garanti. Ücretsiz keşif — LEDAJANS İstanbul. -->
 <link rel="preconnect" href="https://ledajans.com" crossorigin>
 <link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" media="(max-width: 768px)" fetchpriority="high" imagesrcset="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" imagesizes="100vw">
 <link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/hero-poster.webp" media="(min-width: 769px)" fetchpriority="high">
@@ -121,10 +121,10 @@
     }
     .ledajans-launch-brand img {
       width: auto;
-      height: 34px;
+      height: 40px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.95;
+      filter: none;
+      opacity: 1;
     }
     .ledajans-launch-title {
       margin: 0;
@@ -484,15 +484,18 @@
       inset: 0;
       background-image: none;
       background-size: cover;
-      background-position: center;
-      opacity: 0.2;
+      background-position: center 42%;
+      opacity: 0.38;
       pointer-events: none;
       z-index: 0;
     }
-    /* 1.2MB PNG — yalnizca desktop (mobil LCP/bandwidth) */
+    /* WebP pinwheel — yalnizca desktop (mobil LCP/bandwidth) */
     @media (min-width: 769px) {
       .ledajans-hero-fair-card::before {
-        background-image: url('https://ledajans.com/wp-content/uploads/2026/05/Firefly_Gemini-Flash-8.png');
+        background-image:
+          linear-gradient(180deg, rgba(12, 8, 28, 0.32) 0%, rgba(12, 8, 28, 0.52) 100%),
+          url('https://ledajans.com/wp-content/uploads/2026/09/signistanbul-fair-bg.webp');
+        opacity: 0.82;
       }
     }
     .ledajans-hero-fair-card > * {
@@ -526,33 +529,27 @@
     .ledajans-hero-fair-ledajans-logo {
       height: 28px !important;
       width: auto !important;
-      filter: brightness(0) invert(1);
-      opacity: 0.95;
+      filter: none;
+      opacity: 1;
       max-width: 100%;
     }
-    .ledajans-hero-fair-sign-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 102px;
-      padding: 0;
-      border-radius: 0;
-      border: none;
-      background: transparent;
+    .ledajans-hero-fair-brand {
+      margin: 0 0 0.2rem;
+      padding: 0.15rem 0 0.35rem;
       width: 100%;
-      overflow: hidden;
-      transition: filter 0.25s ease, transform 0.25s ease;
+      color: #fff;
+      font-size: clamp(2rem, 2.6vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      line-height: 1.05;
+      text-align: center;
+      text-transform: none;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
     }
-    .ledajans-hero-fair-sign-logo-wrap:hover {
-      filter: drop-shadow(0 6px 12px rgba(244, 111, 44, 0.24));
-      transform: translateY(-1px);
-    }
-    .ledajans-hero-fair-sign-logo {
-      display: block;
-      width: auto !important;
-      max-width: 100%;
-      height: 76px !important;
-      object-fit: contain;
+    .ledajans-hero-fair-brand-sign {
+      color: #e85c56;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(232, 92, 86, 0.45);
     }
     .ledajans-hero-fair-badge {
       display: inline-flex;
@@ -676,9 +673,20 @@
       opacity: 1;
       pointer-events: auto;
     }
+    .ledajans-hero.fair-reveal-active {
+      justify-content: flex-start;
+    }
     .ledajans-hero.fair-reveal-active .ledajans-hero-content {
-      transform: translate(170px, -25px);
-      max-width: calc(100% - 455px);
+      transform: translateY(-25px);
+      margin-left: calc(clamp(1rem, 2vw, 2rem) + min(450px, 38vw) + 4rem);
+      margin-right: auto;
+      width: min(680px, calc(100% - min(450px, 38vw) - 4.25rem));
+      max-width: 680px;
+      text-align: center;
+    }
+    .ledajans-hero.fair-reveal-active .ledajans-hero-title {
+      font-size: clamp(2.05rem, 3.45vw, 3.45rem);
+      max-width: 100%;
     }
     @media (max-width: 1200px) {
       .ledajans-hero-fair-meta-line { min-height: 64px; }
@@ -825,9 +833,18 @@
         margin: 0 !important;
         max-height: 0 !important;
       }
+      .ledajans-hero.fair-reveal-active {
+        justify-content: flex-start;
+      }
       .ledajans-hero.fair-reveal-active .ledajans-hero-content {
         transform: none;
         max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .ledajans-hero.fair-reveal-active .ledajans-hero-title {
+        font-size: 2.5rem;
       }
       .ledajans-hero.fair-panel-dismissed .ledajans-hero-fair-panel {
         display: none !important;
@@ -857,8 +874,7 @@
         border-color: rgba(148, 163, 184, 0.28);
       }
       .ledajans-hero-fair-logos { margin-bottom: 0.75rem; }
-      .ledajans-hero-fair-sign-logo-wrap { min-height: 68px; }
-      .ledajans-hero-fair-sign-logo { height: 52px !important; }
+      .ledajans-hero-fair-brand { font-size: 1.65rem; letter-spacing: 0.04em; }
       .ledajans-hero-fair-slogan {
         margin-bottom: 0.65rem;
         padding: 0.42rem 0.5rem;
@@ -965,9 +981,7 @@
         <div class="ledajans-hero-fair-card" id="ledajansHeroFairCard">
           <button type="button" class="ledajans-hero-fair-close" id="ledajansHeroFairClose" aria-label="Kapat">&times;</button>
           <div class="ledajans-hero-fair-logos">
-            <span class="ledajans-hero-fair-sign-logo-wrap">
-              <img class="ledajans-hero-fair-sign-logo" src="https://ledajans.com/wp-content/uploads/2026/05/signistanbul-3.png" alt="SIGNISTANBUL">
-            </span>
+            <p class="ledajans-hero-fair-brand"><span class="ledajans-hero-fair-brand-sign">SIGN</span>İSTANBUL</p>
           </div>
           <p class="ledajans-hero-fair-slogan">Yeni Tarihinde Yeni Adresinde</p>
           <h3 class="ledajans-hero-fair-title">LEDAJANS fuarda sizi bekliyor</h3>
@@ -985,14 +999,13 @@
             <span class="ledajans-play-icon"></span>
           </a>
         </div>
-        <h1 class="ledajans-hero-title">LED Ekran Çözümleri</h1>
+        <h1 class="ledajans-hero-title">LED Ekran Satış, Kiralama ve Kurulum</h1>
         <p class="ledajans-hero-subtitle">
-          İç ve dış mekan LED ekran satış, kiralama ve kurulum çözümleri.<br>
-          Piksel aralığına uygun model seçimi, keşif ve teklif için LEDAJANS ile ilerleyin.
+          LED ekran üreticisi LEDAJANS — iç mekan, dış mekan ve rental modeller.<br>
+          25 yıl tecrübe, 2 yıl garanti, Türkiye geneli keşif ve fiyat teklifi.
         </p>
         <div class="ledajans-hero-buttons">
-          <a href="https://ledajans.com/led-ekran/" class="ledajans-btn-primary">LED Ekranları İncele</a>
-          <a href="https://ledajans.com/iletisim/" class="ledajans-btn-secondary">Hemen Arayın</a>
+          <a href="tel:+902122204004" class="ledajans-btn-primary">Hemen Arayın</a>
         </div>
       </div>
     </section>
@@ -1008,7 +1021,7 @@
       <div class="ledajans-launch-card" role="dialog" aria-modal="true" aria-labelledby="ledajansLaunchTitle">
         <button type="button" class="ledajans-launch-close" id="ledajansLaunchClose" aria-label="Kapat">&times;</button>
         <div class="ledajans-launch-brand">
-          <img src="https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png" alt="LEDAJANS Logo">
+          <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp" alt="LEDAJANS Logo" width="1024" height="218">
         </div>
         <span class="ledajans-launch-badge">Lansman Duyurusu</span>
         <h2 id="ledajansLaunchTitle" class="ledajans-launch-title">Hilton Bomonti Otel Lansmanı</h2>
@@ -1300,11 +1313,11 @@
       "url": "https://ledajans.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
-        "width": 300,
-        "height": 100
+        "url": "https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.jpg",
+        "width": 1024,
+        "height": 218
       },
-      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "image": "https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.jpg",
       "description": "LEDAJANS, LED ekran satış, kiralama, kurulum ve teknik destek hizmetleri sunan, 25 yıllık sektör tecrübesine sahip Türkiye'nin güvenilir LED ekran tedarikçisidir.",
       "foundingDate": "2001",
       "numberOfEmployees": {
@@ -1375,7 +1388,7 @@
       "@type": "LocalBusiness",
       "@id": "https://ledajans.com/#localbusiness",
       "name": "LEDAJANS - LED Ekran Çözümleri",
-      "image": "https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png",
+      "image": "https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.jpg",
       "url": "https://ledajans.com",
       "telephone": "+90-212-220-40-04",
       "email": "info@ledajans.com",

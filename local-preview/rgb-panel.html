@@ -1,0 +1,579 @@
+<!DOCTYPE html><html lang='tr'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>İç mekan RGB panel — yerel önizleme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/template.css?ver=1.1.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins_child/style.css?ver=7.1">
+<link rel="stylesheet" href="https://ledajans.com/wp-content/themes/modins/assets/css/custom_script.css?ver=7.1">
+<link rel="stylesheet" href="/Ek-CSS-global.css">
+<link rel="stylesheet" href="/Ek-CSS-final.css">
+<style>
+  html, body.lp-body {
+    margin: 0;
+    background: #fff;
+    color: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav {
+    position: sticky; top: 0; z-index: 9999; display: flex; flex-wrap: wrap;
+    gap: 0.5rem 1rem; padding: 0.7rem 1rem; background: #111827;
+    font-family: "Kumbh Sans", sans-serif;
+  }
+  .lp-nav a { color: #fdba74; text-decoration: none; font-size: 0.875rem; font-weight: 600; }
+  .lp-nav a:hover { color: #fff; }
+  .lp-preview, .lp-preview *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: "Kumbh Sans", sans-serif;
+  }
+</style>
+</head><body class='lp-body'>
+
+<nav class="lp-nav">
+  <a href="/local-preview/">Önizleme</a>
+  <a href="/local-preview/ic-mekan.html">İç mekan</a>
+  <a href="/local-preview/dis-mekan.html">Dış mekan</a>
+  <a href="/local-preview/gob.html">GOB hub</a>
+  <a href="/local-preview/led-ekran.html">LED ekran</a>
+  <a href="/local-preview/anasayfa.html">Anasayfa widget</a>
+  <a href="/local-preview/gob-nedir.html">GOB nedir</a>
+  <a href="/local-preview/gob-vs.html">GOB vs COB</a>
+  <a href="/local-preview/blog-gob.html">GOB blog</a>
+  <a href="/local-preview/rgb-panel.html">RGB panel</a>
+</nav>
+
+<div class='lp-preview'>
+<style>
+    .indoor-content-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+      font-family: inherit;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-wrapper { padding: 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-wrapper { padding: 2rem; }
+    }
+    .indoor-content {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .indoor-content { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content { padding: 2.5rem; }
+    }
+    .indoor-content-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid #F46F2C;
+    }
+    @media (min-width: 768px) {
+      .indoor-content-title { font-size: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-title { font-size: 2.25rem; margin-bottom: 2rem; }
+    }
+    .indoor-content-section {
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .indoor-content-section { margin-bottom: 2.5rem; }
+    }
+    .indoor-content-section:last-child {
+      margin-bottom: 0;
+    }
+    .indoor-content-section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 0 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-section-title { font-size: 1.5rem; }
+    }
+    .indoor-content-section-title::before {
+      content: '';
+      width: 4px;
+      height: 1.5rem;
+      background: #F46F2C;
+      border-radius: 2px;
+    }
+    .indoor-content-text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0 0 1.25rem 0;
+      text-align: justify;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-text { font-size: 1rem; }
+    }
+    .indoor-content-text:last-child {
+      margin-bottom: 0;
+    }
+    .indoor-content-highlight {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.1) 0%, rgba(244, 111, 44, 0.05) 100%);
+      padding: 1.25rem 1.5rem;
+      border-left: 4px solid #F46F2C;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-highlight { padding: 1.5rem 2rem; }
+    }
+    .indoor-content-highlight:hover {
+      background: linear-gradient(120deg, rgba(244, 111, 44, 0.15) 0%, rgba(244, 111, 44, 0.1) 100%);
+      border-left-color: #e55a1f;
+      box-shadow: 0 10px 25px -5px rgba(244, 111, 44, 0.2), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-2px);
+    }
+    .indoor-content-highlight-text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-highlight-text { font-size: 1rem; }
+    }
+    .indoor-content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .indoor-content-list-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: #374151;
+      background: #f3f4f6;
+      border-radius: 0.375rem;
+      border: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-list-item { font-size: 0.875rem; padding: 0.5rem 0.875rem; }
+    }
+    .indoor-content-list-item::before {
+      content: '•';
+      color: #F46F2C;
+      font-weight: 700;
+      margin-right: 0.5rem;
+      font-size: 1.125rem;
+      line-height: 0;
+    }
+    .indoor-content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 768px) {
+      .indoor-content-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .indoor-content-card {
+      background: #f9fafb;
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card { padding: 1.5rem; }
+    }
+    .indoor-content-card:hover {
+      background: #ffffff;
+      border-color: #F46F2C;
+      box-shadow: 0 10px 25px -5px rgba(244, 111, 44, 0.15), 0 4px 6px -1px rgba(244, 111, 44, 0.1);
+      transform: translateY(-4px);
+    }
+    .indoor-content-card:hover .indoor-content-card-title {
+      color: #F46F2C;
+    }
+    .indoor-content-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card-title { font-size: 1.125rem; }
+    }
+    .indoor-content-card-text {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #6b7280;
+      margin: 0;
+    }
+    @media (min-width: 640px) {
+      .indoor-content-card-text { font-size: 0.9375rem; }
+    }
+  </style>
+  
+  <div class="indoor-content-wrapper">
+    <div class="indoor-content">
+      <h2 class="indoor-content-title">İç Mekan için RGB Panel</h2>
+      
+      <div class="indoor-content-section">
+        <p class="indoor-content-text">
+          İç mekanda genelde geniş alanlarda uzak mesafeden ve yan açılardan net görüntü alabilmek için son yıllarda LCD'lerin yerini LED ekranlar almışlardır. Ekranın görülebileceği mesafeye ve ekranın boyutuna göre farklı piksel aralığında ürün seçilebilmektedir.
+        </p>
+      </div>
+  
+      <div class="indoor-content-section">
+        <h3 class="indoor-content-section-title">Piksel Aralığı Tercihleri</h3>
+        <p class="indoor-content-text">
+          İç mekanlarda önceki yıllarda ağırlıklı olarak P5 ve P4 kullanılmakla birlikte son dönemde P3, P2,5, P2 hatta P1,86 panellerde tercih edilmeye başlanmıştır. Bazı özel projelerde ise P1,66, P1,53 ve P1,25 paneller kullanılmaktadır.
+        </p>
+        <div class="indoor-content-highlight">
+          <p class="indoor-content-highlight-text">
+            <strong>Ledajans masaüstü menüboard / menüboard LED ekranlarında</strong> ağırlıklı olarak P2 kullanmakla birlikte özel istek üzerine P1,25 paneller kullanmıştır.
+          </p>
+        </div>
+        <p class="indoor-content-text">
+          Yine daha önceki yıllarda P6 panel ile P5 panel arasındaki maliyet fiyatının çok yakın olması sebebi ile P6 paneller çok tercih edilmekte iken; gelişen LED ve LED Ekran teknolojisi ile birlikte piyasada P6 panel artık neredeyse LED Ekranlarda hiç kullanılmamaktadır, P5 paneller ise daha büyük ölçüde yapılan LED Ekranlarda veya daha düşük bütçeli işlerde tercih edilmektedir.
+        </p>
+      </div>
+  
+      <div class="indoor-content-section">
+        <h3 class="indoor-content-section-title">Ledajans Ürün Portföyü</h3>
+        <div class="indoor-content-grid">
+          <div class="indoor-content-card">
+            <h4 class="indoor-content-card-title">İç mekan RGB panel</h4>
+            <p class="indoor-content-card-text">
+              Ledajans iç mekan RGB panel satışında ağırlıklı olarak P2 ve P2,5 modül kullanır; toptan modülde en çok P2,5 indoor RGB panel satılır. Tamamlanmış kasa için <a href="https://ledajans.com/ic-mekan-led-ekran/">iç mekan LED ekran</a> sayfasına bakın.
+            </p>
+          </div>
+          <div class="indoor-content-card">
+            <h4 class="indoor-content-card-title">Poster & Raket LED Ekranlar</h4>
+            <p class="indoor-content-card-text">
+              Poster LED Ekran / Raket LED Ekran larda ağırlıklı olarak 64×160 cm ve 64×192 cm dikey, mıknatıslı/magnetli yapıda kasalar ile beraber P1,86, P2 ve P2,5 RGB LED modülleri kullanılmaktadır.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="indoor-content-section">
+        <h3 class="indoor-content-section-title">Kontrol Kartları ve İşlevsellik</h3>
+        <p class="indoor-content-text">
+          İç mekan LED Ekranlar da sadece processor yardımı ile canlı yayın gösterimi yapılabilmekte iken; LED Ekran kontrol kartı üreten şirketlerin (Novastar ve Huidu gibi) asenkron özellikli kartlarına processor özelliği eklemeleriyle birlikte, LED Ekran kontrol kartları hem senkron hem asenkron özelliğine bürünerek processor olmadan ölçülendirme yaparak canlı yayın verebilecek duruma gelmişlerdir.
+        </p>
+        <p class="indoor-content-text">
+          Bu LED Ekran kontrol kartlarına örnek olarak <strong>Novastar TB1, TB2, TB3, TB4, TB6, TB8 Taurus serisi</strong> kartlar ile, Türkiye'de ki LED Ekranlarda çoğunlukla kullanılan <strong>Huidu serisi HD-A4, A5, A6 serisi</strong> LED Ekran kontrol kartlarını gösterebiliriz.
+        </p>
+        <div class="indoor-content-highlight">
+          <p class="indoor-content-highlight-text">
+            <strong>Huidu firması</strong>, söz konusu A4, A5 ve A6 LED Ekran kontrol kartlarına getirdikleri yeni özellik ile bir LED Ekran da canlı yayın ve daha hafızasına yüklenmiş video resim vb. görüntüleri aynı anda gösterebilmektedir, bu şekilde LED Ekranlar pixel ölçülerine ayrılarak farklı amaç ile farklı görüntüler için kullanılabilirler.
+          </p>
+        </div>
+      </div>
+  
+      <div class="indoor-content-section">
+        <h3 class="indoor-content-section-title">Ek Özellikler ve Sensörler</h3>
+        <p class="indoor-content-text" style="margin-bottom: 0.75rem;">
+          İlave olarak tercihe göre şu özellikler entegre edilebilmektedir:
+        </p>
+        <ul class="indoor-content-list">
+          <li class="indoor-content-list-item">Ses sistemi</li>
+          <li class="indoor-content-list-item">Isı sensörü</li>
+          <li class="indoor-content-list-item">Nem sensörü</li>
+          <li class="indoor-content-list-item">Rüzgar sensörü</li>
+          <li class="indoor-content-list-item">Basınç sensörü</li>
+        </ul>
+      </div>
+  
+      <div class="indoor-content-section">
+        <h3 class="indoor-content-section-title">Güç Kaynağı ve Teknik Özellikler</h3>
+        <p class="indoor-content-text">
+          İç mekan LED ekranlarda genelde ince kasalı ve gürültüsüz olması için fansız SMPS tercih edilmektedir. İç mekan / indoor LED Ekranlar tarama/scan oranının artması ve kullanılan LED'lerin daha düşük akım çekmesi sebebi ile daha az güce doğal olarak daha az power supply / güç kaynağı adaptöre ihtiyaç duymaktadırlar.
+        </p>
+        <p class="indoor-content-text">
+          <strong>Genel olarak iç mekan LED Ekranlarda 8 adet indoor / iç mekan LED Ekran modülü için 1 adet 200-5 (40 amper) power supply / güç kaynağı adaptör kullanılmaktadır.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+<!-- LEDAJANS - İç Mekan RGB GOB LED Paneller ANA SAYFA: Ürün hub (premium) -->
+<style>
+    .la-gob-hub {
+      font-family: inherit;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2.5rem 1rem;
+      color: #1f2937;
+      background: linear-gradient(180deg, #fafbfc 0%, #ffffff 12%);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .la-gob-hub::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f46f2c, #1a1a2e);
+      border-radius: 16px 16px 0 0;
+    }
+    @media (min-width: 1024px) {
+      .la-gob-hub-inner { display: flex; gap: 2.5rem; align-items: flex-start; }
+      .la-gob-hub { padding: 3rem 2rem; }
+    }
+    .la-gob-hub h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .la-gob-hub h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 4px;
+      background: #f46f2c;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+    .la-gob-hub-intro {
+      color: #4b5563;
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+      font-size: 1rem;
+      max-width: 42rem;
+    }
+    .la-gob-hub-nav { flex-shrink: 0; width: 100%; }
+    @media (min-width: 1024px) {
+      .la-gob-hub-nav { width: 240px; position: sticky; top: 1.5rem; }
+    }
+    .la-gob-hub-nav-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.85rem;
+    }
+    .la-gob-hub-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    @media (min-width: 1024px) {
+      .la-gob-hub-nav-list { flex-direction: column; gap: 0.35rem; }
+    }
+    .la-gob-hub-nav-list a {
+      display: block;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.25s ease;
+    }
+    .la-gob-hub-nav-list a:hover {
+      background: #1a1a2e;
+      color: #fff;
+      border-color: #1a1a2e;
+      transform: translateX(4px);
+    }
+    @media (min-width: 1024px) {
+      .la-gob-hub-nav-list a:hover { transform: translateX(6px); }
+    }
+    .la-gob-hub-nav-list a:focus-visible {
+      outline: 2px solid #f46f2c;
+      outline-offset: 2px;
+    }
+    .la-gob-hub-main { flex: 1; min-width: 0; }
+    .la-gob-hub-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .la-gob-hub-cards { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    .la-gob-hub-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .la-gob-hub-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #f46f2c, #e05a1e);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .la-gob-hub-card:hover {
+      border-color: rgba(244, 111, 44, 0.4);
+      box-shadow: 0 12px 28px rgba(26, 26, 46, 0.08), 0 4px 12px rgba(244, 111, 44, 0.06);
+      transform: translateY(-3px);
+    }
+    .la-gob-hub-card:hover::before { opacity: 1; }
+    
+    /* Kart tamamı tıklanabilir */
+    .la-gob-hub-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 1.35rem 1.35rem 1.35rem 1.5rem;
+      height: 100%;
+    }
+    .la-gob-hub-card-link:focus-visible {
+      outline: 2px solid #f46f2c;
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+    
+    .la-gob-hub-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .la-gob-hub-card:hover .la-gob-hub-card-title { color: #16213e; }
+    .la-gob-hub-card-spec {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .la-gob-hub-card-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #f46f2c !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.25s ease, color 0.2s ease;
+    }
+    .la-gob-hub-card:hover .la-gob-hub-card-cta {
+      color: #e05a1e !important;
+      gap: 0.65rem;
+    }
+    .la-gob-hub-card-cta svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: #f46f2c !important;
+      transition: transform 0.25s ease;
+    }
+    .la-gob-hub-card:hover .la-gob-hub-card-cta svg {
+      transform: translateX(3px);
+    }
+    .la-gob-hub-card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #f46f2c;
+      background: rgba(244, 111, 44, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+    </style>
+    
+    <div id="la-gob-hub" class="la-gob-hub">
+      <h2>İç Mekan RGB GOB LED Paneller</h2>
+      <p class="la-gob-hub-intro">
+        GOB (Glue on Board) kapsülleme ile üretilen iç mekan RGB LED panel modellerimiz. Tamamlanmış ekran ve teklif için <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a> hub’ına bakın. Epoksi reçine + VMD vakum kapsülleme ve yüksek yenileme hızı seçenekleri. Her model için teknik özellikler ilgili SKU sayfasındadır.
+      </p>
+    
+      <div class="la-gob-hub-inner">
+        <nav class="la-gob-hub-nav" aria-label="İç mekan RGB GOB panel modelleri">
+          <div class="la-gob-hub-nav-title">Modeller</div>
+          <ul class="la-gob-hub-nav-list">
+            <li><a href="https://ledajans.com/p0-93-3840hz-gob-ic-mekan-rgb-panel/">P0.93 3840Hz</a></li>
+            <li><a href="https://ledajans.com/p1-25-6000hz-gob-ic-mekan-rgb-led-panel/">P1.25</a></li>
+            <li><a href="https://ledajans.com/p1-53-6000hz-gob-ic-mekan-rgb-led-panel/">P1.53</a></li>
+            <li><a href="https://ledajans.com/p1-86-6000hz-gob-ic-mekan-rgb-led-panel/">P1.86</a></li>
+            <li><a href="https://ledajans.com/p2-5-gob-ic-mekan-rgb-led-panel/">P2.5</a></li>
+          </ul>
+        </nav>
+    
+        <div class="la-gob-hub-main">
+          <div class="la-gob-hub-cards">
+            <article class="la-gob-hub-card">
+              <a class="la-gob-hub-card-link" href="https://ledajans.com/p0-93-3840hz-gob-ic-mekan-rgb-panel/">
+                <span class="la-gob-hub-card-badge">0.93 / 1.86 mm · GOB</span>
+                <div class="la-gob-hub-card-title">P0.93 3840Hz GOB İç Mekan RGB Panel</div>
+                <div class="la-gob-hub-card-spec">Dinamik 0.93mm / Gerçek 1.86mm · 577.812 nokta/m² · SMD1617 RGGB · ≥3840Hz · IP65</div>
+                <span class="la-gob-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-gob-hub-card">
+              <a class="la-gob-hub-card-link" href="https://ledajans.com/p1-25-6000hz-gob-ic-mekan-rgb-led-panel/">
+                <span class="la-gob-hub-card-badge">1.25 mm · GOB</span>
+                <div class="la-gob-hub-card-title">P1.25 GOB İç Mekan RGB Panel</div>
+                <div class="la-gob-hub-card-spec">1.25mm · 640.000 piksel/m² · SMD1010 · ≥6000Hz · HUB320 · IP65</div>
+                <span class="la-gob-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-gob-hub-card">
+              <a class="la-gob-hub-card-link" href="https://ledajans.com/p1-53-6000hz-gob-ic-mekan-rgb-led-panel/">
+                <span class="la-gob-hub-card-badge">1.53 mm · GOB</span>
+                <div class="la-gob-hub-card-title">P1.53 GOB İç Mekan RGB Panel</div>
+                <div class="la-gob-hub-card-spec">1.53mm · 422.500 piksel/m² · SMD1212 · ≥6000Hz · HUB75 · IP65</div>
+                <span class="la-gob-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-gob-hub-card">
+              <a class="la-gob-hub-card-link" href="https://ledajans.com/p1-86-6000hz-gob-ic-mekan-rgb-led-panel/">
+                <span class="la-gob-hub-card-badge">1.86 mm · GOB</span>
+                <div class="la-gob-hub-card-title">P1.86 GOB İç Mekan RGB Panel</div>
+                <div class="la-gob-hub-card-spec">1.86mm · 288.906 piksel/m² · SMD1515 · ≥6000Hz · HUB75 · IP65</div>
+                <span class="la-gob-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+    
+            <article class="la-gob-hub-card">
+              <a class="la-gob-hub-card-link" href="https://ledajans.com/p2-5-gob-ic-mekan-rgb-led-panel/">
+                <span class="la-gob-hub-card-badge">2.5 mm · GOB</span>
+                <div class="la-gob-hub-card-title">P2.5 GOB İç Mekan RGB Panel</div>
+                <div class="la-gob-hub-card-spec">2.5mm · 160.000 piksel/m² · SMD1515/2020 · ≥3840Hz / ≥6000Hz · 1/32 tarama · IP65</div>
+                <span class="la-gob-hub-card-cta">Teknik özellikler ve döküman<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</body></html>

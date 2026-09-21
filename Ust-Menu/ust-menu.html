@@ -7,12 +7,14 @@
 <style id="ledajans-header-responsive-css">
     /* ---- Masaüstü / tablet: turuncu bar içinde dikey ortalama ---- */
     @media only screen and (min-width: 1025px) {
-      .elementor-element-123bc72.gv-sticky-menu {
+      .elementor-element-123bc72.gv-sticky-menu,
+      .elementor-element-123bc72 {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         overflow: visible !important;
       }
-      .elementor-element-123bc72.gv-sticky-menu > .elementor-container {
+      .elementor-element-123bc72.gv-sticky-menu > .elementor-container,
+      .elementor-element-123bc72 > .elementor-container {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
@@ -52,11 +54,12 @@
         margin-left: clamp(0.75rem, 1.5vw, 1.75rem) !important;
       }
       .elementor-element-123bc72 .site-branding-logo img {
-        height: 36px !important;
+        height: 42px !important;
         width: auto !important;
-        max-width: 200px !important;
+        max-width: 240px !important;
         object-fit: contain !important;
         flex-shrink: 0 !important;
+        filter: none !important;
       }
       .elementor-element-0b7eb5f > .elementor-widget-wrap {
         flex-direction: row !important;
@@ -93,9 +96,12 @@
         justify-content: center !important;
         row-gap: 0.35rem !important;
       }
-      .elementor-element-123bc72 .gva-main-menu > li > a {
+      .elementor-element-123bc72 .gva-main-menu > li > a,
+      .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
         display: inline-flex !important;
         align-items: center !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
       }
       /* Elementor Pro sticky: hafif scroll’da beyaz boşluk (transform geçişi) */
       .elementor-element-123bc72.elementor-sticky--active,
@@ -108,11 +114,12 @@
     }
     
     /* Orta genişlik: menü + telefon sıkışmasın */
-    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-      .elementor-element-123bc72 .gva-main-menu > li > a {
-        padding-left: 0.35rem !important;
-        padding-right: 0.35rem !important;
-        font-size: 0.8125rem !important;
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+      .elementor-element-123bc72 .gva-main-menu > li > a,
+      .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {
+        padding-left: 0.28rem !important;
+        padding-right: 0.28rem !important;
+        font-size: 0.9rem !important;
       }
     }
     
@@ -555,13 +562,13 @@
       }
       .elementor-element-123bc72 .site-branding-logo img,
       .elementor-element-123bc72 .elementor-widget-gva-logo img {
-        height: 26px !important;
+        height: 32px !important;
         width: auto !important;
-        min-height: 22px !important;
+        min-height: 26px !important;
         max-width: min(68vw, 240px) !important;
         object-fit: contain !important;
         flex-shrink: 0 !important;
-        filter: brightness(0) invert(1) !important;
+        filter: none !important;
         display: block !important;
         margin: 0 !important;
         visibility: visible !important;
@@ -929,7 +936,7 @@
                           <div class="gva-element-gva-logo gva-element">
                             <div class="gsc-logo text-center">
                               <a class="site-branding-logo" href="https://ledajans.com/" title="LEDAJANS" rel="home">
-                                <img src="https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png" alt="LEDAJANS" width="182" height="36" decoding="async" />
+                                <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp" alt="LEDAJANS" width="1024" height="218" decoding="async" />
                               </a>
                             </div>
                           </div>
@@ -1033,7 +1040,7 @@
       <div class="gva-offcanvas-content mobile">
         <div class="top-canvas">
           <a class="logo-mm" href="https://ledajans.com/">
-            <img src="https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg" alt="LEDAJANS" decoding="async" />
+            <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp" alt="LEDAJANS" width="1024" height="218" decoding="async" />
           </a>
           <a class="control-close-mm" href="#" aria-label="Menüyü kapat"><i class="far fa-times-circle" aria-hidden="true"></i></a>
         </div>

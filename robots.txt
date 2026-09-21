@@ -4,6 +4,11 @@
 
 User-agent: *
 Disallow: /wp-admin/
+Disallow: /gva_template/
+Disallow: /events/list
+Disallow: /events/liste
+Disallow: /feed/
+Disallow: /*/feed/
 Allow: /wp-admin/admin-ajax.php
 Allow: /wp-content/uploads/
 Allow: /wp-content/themes/

@@ -130,7 +130,16 @@ def main() -> int:
         timeout=90,
     )
     print(f"page_update={ru.status_code} {ru.text[:300]}")
-    return 0 if ru.status_code in (200, 201) else 1
+    if ru.status_code not in (200, 201):
+        return 1
+    dc = requests.delete(
+        f"{site}/wp-json/elementor/v1/cache",
+        auth=auth,
+        headers={"User-Agent": UA},
+        timeout=30,
+    )
+    print(f"elementor_cache_delete={dc.status_code}")
+    return 0
 
 
 if __name__ == "__main__":

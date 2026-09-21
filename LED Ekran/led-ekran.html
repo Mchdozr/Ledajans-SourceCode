@@ -1,6 +1,13 @@
 <style>
 
     .la-card { cursor: pointer; }
+    body.page-id-5001 .page-title,
+    body.page-id-5001 .page-title h1,
+    body.page-id-5001 .gva-breadcrumb-content h1,
+    body.page-id-5001 header.entry-header h1,
+    body.page-id-5001 .title-info > h1.title {
+      display: none !important;
+    }
     /* LEDAJANS GLOBAL STİLLER */
     :root {
       --la-orange: #F46F2C;
@@ -321,21 +328,26 @@
       text-decoration: none !important;
       border-bottom: none !important;
     }
-    /* Tüm kartlarda resmi yukarı kaydırmak için */
     .la-card-img {
       object-fit: cover;
-      object-position: top top; /* varsayılan center center yerine */
+      object-position: center;
+    }
+    .la-card-img-contain {
+      object-fit: contain;
+      background: #111827;
+    }
+    .la-card-img-contain.la-card-img-light {
+      background: #fff;
     }
     </style>
     <div class="la-wrapper">
     
       <!-- HERO SECTION -->
       <div class="la-hero">
-        <h1 class="la-gradient-title">LED Ekran Çözümleri ve Fiyatları</h1>
+        <h1 class="la-gradient-title">LED Ekran Fiyatları ve Modelleri</h1>
         <p class="la-hero-desc">
-          <strong>LED ekran fiyatları</strong>, m² hesaplama ve proje danışmanlığı — iç mekan, dış mekan ve rental için
-          25 yıllık üretici tecrübesi. Türkiye geneli kurulum ve 2 yıl garanti ile <strong>LED ekran firmaları</strong> arasında
-          doğrudan üretici desteği sunuyoruz.
+          <strong>LED ekran</strong> modellerini iç mekan, dış mekan ve rental olarak tek hub’da karşılaştırın.
+          m² fiyatı, P değeri ve kurulum kalemlerini netleştirip 25 yıllık üretici olarak Türkiye geneli teklif veriyoruz.
         </p>
         <div>
           <a href="https://ledajans.com/iletisim/" class="la-btn la-btn-primary">LED Ekran Fiyat Teklifi Al</a>
@@ -365,9 +377,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/ic-mekan-led-ekran/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png"
-                   alt="İç Mekan Indoor LED Ekran"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran.webp"
+                   alt="İç mekan LED ekran — mağaza ve stüdyo indoor panel"
+                   class="la-card-img" width="1200" height="750" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">İç Mekan (Indoor) LED Ekran</h3>
@@ -389,9 +401,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/dis-mekan-led-ekran/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png"
-                   alt="Dış Mekan Outdoor LED Ekran"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-outdoor-led-v2.webp"
+                   alt="Dış mekan LED ekran — IP65 outdoor reklam paneli"
+                   class="la-card-img" width="1200" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">Dış Mekan (Outdoor) LED Ekran</h3>
@@ -413,9 +425,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/rental-ekran/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2022/12/rentalkabin-600x540.png"
-                   alt="Kiralık Rental LED Ekran"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2022/12/untitled.232-min-1.png"
+                   alt="Rental LED ekran kiralama — konser ve fuar kabini"
+                   class="la-card-img" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">Rental (Kiralık) LED Ekran</h3>
@@ -437,9 +449,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/cob-ekran/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-7.png"
-                   alt="COB - Smart Screen"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/cob-smart-screen.webp"
+                   alt="COB Smart Screen LED ekran paneli"
+                   class="la-card-img la-card-img-contain la-card-img-light" width="1024" height="505" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">COB – Smart Screen</h3>
@@ -460,9 +472,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/ic-mekan-rgb-panel/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2026/02/IcMekanRGBPanel.png"
-                   alt="İç Mekan RGB Panel"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-rgb-panel.webp"
+                   alt="İç mekan RGB panel — showroom LED duvar"
+                   class="la-card-img" width="1200" height="800" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">İç Mekan RGB Panel</h3>
@@ -483,9 +495,9 @@
           <article class="la-card"
              onclick="window.location.href='https://ledajans.com/dis-mekan-rgb-panel/';">
             <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2026/02/DisMekanRGBPanel.png"
-                   alt="Dış Mekan RGB Panel"
-                   class="la-card-img" loading="lazy">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-rgb-panel.webp"
+                   alt="Dış mekan RGB panel — outdoor LED kabin"
+                   class="la-card-img la-card-img-contain" width="1024" height="505" loading="lazy" decoding="async">
             </div>
             <div class="la-card-body">
               <h3 class="la-card-title">Dış Mekan RGB Panel</h3>
@@ -514,7 +526,11 @@
               <strong>LED ekran</strong>, binlerce küçük LED çipinin bir araya gelerek oluşturduğu, günümüzün en etkili dijital görüntüleme teknolojisidir. Geleneksel tabelaların aksine, <a href="https://ledajans.com/cob-ekran/">hareketli videolar</a> ve dinamik içerikler yayınlayarak müşterilerinizin dikkatini %400 daha fazla çekersiniz.
             </p>
             <p>
-              Ledajans olarak sunduğumuz <strong>LED ekran sistemleri</strong>, modüler yapısı sayesinde mekanınıza özel (örneğin 3x2 metre veya 10x5 metre) üretilebilir. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan LED ekran</a> modelleri mağaza, stüdyo ve toplantı odalarında tercih edilirken, <a href="https://ledajans.com/dis-mekan-led-ekran/">dış mekan LED ekran çözümleri</a> reklam panoları ve stadyumlarda markanızın prestijini artırır. Kısa süreli projeler için <a href="https://ledajans.com/rental-ekran/">rental LED ekran kiralama</a> seçeneklerimiz de mevcuttur.
+              LEDAJANS olarak sunduğumuz <strong>LED ekran sistemleri</strong>, modüler yapısı sayesinde mekanınıza özel (örneğin 3x2 metre veya 10x5 metre) üretilir. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan LED ekran</a> modelleri mağaza, stüdyo ve toplantı odalarında tercih edilirken, <a href="https://ledajans.com/dis-mekan-led-ekran/">dış mekan LED ekran çözümleri</a> reklam panoları ve stadyumlarda markanızın prestijini artırır. Kısa süreli projeler için <a href="https://ledajans.com/rental-ekran/">rental LED ekran kiralama</a> seçeneklerimiz de mevcuttur.
+            </p>
+            <p>
+              Doğru <strong>LED ekran</strong> seçimi izleme mesafesi, parlaklık (nits) ve IP sınıfıyla başlar; fiyat ise P değeri + m² + kontrol + kurulum toplamıdır.
+              Model karşılaştırması için bu sayfayı, marka ve keşif için <a href="https://ledajans.com/">LEDAJANS ana sayfasını</a> kullanın.
             </p>
             <ul style="list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 2rem;">
               <li style="display: flex; align-items: center; gap: 1rem; font-weight: 600;">
@@ -527,11 +543,30 @@
                 <span style="color: var(--la-orange);">✓</span> Uzaktan Yönetim Yazılımı
               </li>
             </ul>
+            <h3 class="la-card-title" style="margin-top:2rem;">LED ekran tipi nasıl seçilir?</h3>
+            <div style="overflow-x:auto;margin-top:1rem;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+                <thead>
+                  <tr style="background:#111827;color:#fff;">
+                    <th style="padding:0.75rem;text-align:left;">Kullanım</th>
+                    <th style="padding:0.75rem;text-align:left;">Tip</th>
+                    <th style="padding:0.75rem;text-align:left;">Pitch</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:0.75rem;">Mağaza, stüdyo</td><td style="padding:0.75rem;">İç mekan</td><td style="padding:0.75rem;">P1.25–P3</td></tr>
+                  <tr style="border-bottom:1px solid #e5e7eb;"><td style="padding:0.75rem;">Cephe, billboard</td><td style="padding:0.75rem;">Dış mekan IP65</td><td style="padding:0.75rem;">P4–P10</td></tr>
+                  <tr><td style="padding:0.75rem;">Konser, fuar</td><td style="padding:0.75rem;">Rental</td><td style="padding:0.75rem;">P2.6–P4.8</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div>
-            <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5-550x622.png"
-                 alt="Kaliteli LED Ekran Teknolojisi"
-                 style="width: 100%; border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2);">
+            <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-referans.webp"
+                 alt="LED ekran paneli — LEDAJANS üretim ve kurulum"
+                 width="1200" height="1600"
+                 style="width: 100%; height: auto; border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2);"
+                 loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -564,6 +599,18 @@
             <strong style="color:#F46F2C;">Fuar LED ekran rehberi</strong>
             <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Stand ve etkinlik senaryoları</p>
           </a>
+          <a href="https://ledajans.com/led-ekran-nedir/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
+            <strong style="color:#F46F2C;">LED ekran nedir?</strong>
+            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Türler, kullanım ve seçim kriterleri</p>
+          </a>
+          <a href="https://ledajans.com/led-ekran-bakim/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
+            <strong style="color:#F46F2C;">LED ekran bakım rehberi</strong>
+            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Temizlik, arıza ve parça ömrü</p>
+          </a>
+          <a href="https://ledajans.com/toplanti-odasi-led-ekran/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
+            <strong style="color:#F46F2C;">Toplantı odası LED ekran</strong>
+            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Indoor pitch, mesafe ve kurulum</p>
+          </a>
         </div>
       </div>
 
@@ -595,7 +642,22 @@
           <div class="la-faq-item">
             <h3 class="la-faq-q">Garanti ve teknik servis süreciniz nasıl?</h3>
             <p class="la-faq-a">
-              Tüm LED ekran projelerimiz <strong>2 yıl tam parça garantilidir</strong>. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur.
+              Tüm LED ekran projelerimiz <strong>2 yıl tam parça garantilidir</strong>. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Bakım adımları için <a href="https://ledajans.com/led-ekran-bakim/">LED ekran bakım rehberine</a>, kurulum videoları için <a href="https://ledajans.com/teknik-destek-videolari/">teknik destek videolarına</a> bakın.
+            </p>
+          </div>
+
+          <div class="la-faq-item">
+            <h3 class="la-faq-q">LED ekran nasıl seçilir?</h3>
+            <p class="la-faq-a">
+              Önce izleme mesafesini ölçün, ardından iç/dış ortamı netleştirin. Yakın mağaza için P2–P2.5 indoor; güneşli cephe için P4–P10 ve IP65 outdoor; kısa süreli etkinlik için rental kabin doğru ailedir.
+              Adım adım kontrol listesi: <a href="https://ledajans.com/blog/led-ekran-nasil-secilir-rehber/">LED ekran nasıl seçilir</a>.
+            </p>
+          </div>
+
+          <div class="la-faq-item">
+            <h3 class="la-faq-q">LED ekran firması seçerken nelere bakmalıyım?</h3>
+            <p class="la-faq-a">
+              Üretici mi yoksa yalnızca satıcı mı, yerinde keşif, yedek parça stoğu ve yazılı garanti kritiktir. LEDAJANS İstanbul merkezli üretim ve kurulum ekibiyle <strong>LED ekran firmaları</strong> arasında doğrudan üretici desteği verir.
             </p>
           </div>
         </div>
@@ -642,7 +704,23 @@
       "name": "Garanti ve teknik servis süreciniz nasıl?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tüm LED ekran projelerimiz 2 yıl tam parça garantilidir. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur."
+        "text": "Tüm LED ekran projelerimiz 2 yıl tam parça garantilidir. İstanbul merkezli teknik servis ekibimiz yerinde veya uzaktan müdahale eder. Bakım: https://ledajans.com/led-ekran-bakim/ Videolar: https://ledajans.com/teknik-destek-videolari/"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LED ekran nasıl seçilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Önce izleme mesafesini ölçün, ardından iç veya dış ortamı netleştirin. Yakın mağaza için P2–P2.5 indoor; güneşli cephe için P4–P10 ve IP65 outdoor; kısa süreli etkinlik için rental kabin tercih edilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LED ekran firması seçerken nelere bakmalıyım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Üretici mi yoksa yalnızca satıcı mı, yerinde keşif, yedek parça stoğu ve yazılı garanti kritiktir. LEDAJANS İstanbul merkezli üretim ve kurulum ekibiyle doğrudan üretici desteği verir."
       }
     }
   ]
@@ -690,6 +768,24 @@
       "position": 6,
       "name": "Dış Mekan RGB Panel",
       "url": "https://ledajans.com/dis-mekan-rgb-panel/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "LED Ekran Nedir?",
+      "url": "https://ledajans.com/led-ekran-nedir/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "LED Ekran Bakım Rehberi",
+      "url": "https://ledajans.com/led-ekran-bakim/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Toplantı Odası LED Ekran",
+      "url": "https://ledajans.com/toplanti-odasi-led-ekran/"
     }
   ]
 }

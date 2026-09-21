@@ -48,8 +48,7 @@ def generate_cover() -> str:
   <div class="page page--cover">
     <div class="cover-top">
       <div class="logo">
-        <div class="logo-icon"></div>
-        <span class="logo-text">LEDAJANS</span>
+        <img class="logo-img" src="assets/ledajans-logo.webp" alt="LEDAJANS" width="1024" height="218">
       </div>
       <div class="cover-hero-frame">
         <img src="{c['hero']}" alt="LED Ekran Uygulamaları">
@@ -243,8 +242,7 @@ def generate_back() -> str:
     <div class="back-top"></div>
     <div class="back-main">
       <div class="logo">
-        <div class="logo-icon"></div>
-        <span class="logo-text">LEDAJANS</span>
+        <img class="logo-img" src="assets/ledajans-logo.webp" alt="LEDAJANS" width="1024" height="218">
       </div>
       <div class="world-map-wrap">
         <div class="chevrons-h"><div class="chevron-h"></div><div class="chevron-h"></div><div class="chevron-h"></div></div>
