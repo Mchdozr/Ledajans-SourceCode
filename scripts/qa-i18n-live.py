@@ -11,8 +11,8 @@ ORIGIN = "https://ledajans.com"
 UA = "LEDAJANS-I18N-QA/1.0"
 
 PROBES = [
-    (f"{ORIGIN}/en/", 200, None, True),
-    (f"{ORIGIN}/de/", 200, None, True),
+    (f"{ORIGIN}/en/", 301, "/en/home-en", True),
+    (f"{ORIGIN}/de/", 301, "/de/home-de", True),
     (f"{ORIGIN}/en/led-screen/", 200, None, True),
     (f"{ORIGIN}/de/led-display/", 200, None, True),
     (f"{ORIGIN}/en/indoor-led-screen/", 200, None, False),

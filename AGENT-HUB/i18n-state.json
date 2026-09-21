@@ -1,0 +1,583 @@
+{
+  "pages": {
+    "rental-ekran": {
+      "en": 5206,
+      "de": 5207,
+      "tr": 5004
+    },
+    "dis-mekan-led-ekran": {
+      "en": 1140,
+      "de": 5211,
+      "tr": 5003
+    },
+    "ic-mekan-led-ekran": {
+      "en": 5213,
+      "de": 5214,
+      "tr": 5002
+    },
+    "led-ekran": {
+      "en": 5217,
+      "de": 5218,
+      "tr": 5001
+    },
+    "cob-ekran": {
+      "en": 5221,
+      "de": 5222,
+      "tr": 3958
+    },
+    "iletisim": {
+      "en": 30,
+      "de": 5225,
+      "tr": 1262
+    },
+    "tr-2": {
+      "en": 5227,
+      "de": 5228,
+      "tr": 1248
+    },
+    "huidu-processor-hdplayer-indir": {
+      "en": 5257,
+      "de": 5473,
+      "tr": 5017
+    },
+    "markalarimiz": {
+      "en": 5259,
+      "de": 5260,
+      "tr": 5011
+    },
+    "sertifikalarimiz": {
+      "en": 5261,
+      "de": 5262,
+      "tr": 5010
+    },
+    "guc-kaynaklari": {
+      "en": 5263,
+      "de": 5264,
+      "tr": 5009
+    },
+    "kontrol-kartlari": {
+      "en": 5265,
+      "de": 5266,
+      "tr": 5008
+    },
+    "ic-mekan-rgb-panel": {
+      "en": 5267,
+      "de": 5474,
+      "tr": 5006
+    },
+    "toplanti-odasi-led-ekran": {
+      "en": 5269,
+      "de": 5270,
+      "tr": 4994
+    },
+    "billboard-led-ekran": {
+      "en": 5271,
+      "de": 5272,
+      "tr": 4993
+    },
+    "fuar-led-ekran": {
+      "en": 5277,
+      "de": 5278,
+      "tr": 4992
+    },
+    "otel-led-ekran": {
+      "en": 5279,
+      "de": 5280,
+      "tr": 4991
+    },
+    "havaalani-led-ekran": {
+      "en": 5281,
+      "de": 5282,
+      "tr": 4990
+    },
+    "izmir-led-ekran": {
+      "en": 5283,
+      "de": 5284,
+      "tr": 4989
+    },
+    "ankara-led-ekran": {
+      "en": 5285,
+      "de": 5286,
+      "tr": 4988
+    },
+    "istanbul-led-ekran": {
+      "en": 5287,
+      "de": 5288,
+      "tr": 4987
+    },
+    "gob-led-ekran": {
+      "en": 5289,
+      "de": 5290,
+      "tr": 4986
+    },
+    "gob-led-nedir": {
+      "en": 5291,
+      "de": 5292,
+      "tr": 4985
+    },
+    "smd-led-nedir": {
+      "en": 5293,
+      "de": 5294,
+      "tr": 4984
+    },
+    "led-panel-nedir": {
+      "en": 5295,
+      "de": 5296,
+      "tr": 4983
+    },
+    "ip-koruma-led-ekran": {
+      "en": 5297,
+      "de": 5298,
+      "tr": 4982
+    },
+    "nits-parlaklik-nedir": {
+      "en": 5299,
+      "de": 5300,
+      "tr": 4981
+    },
+    "refresh-hz-nedir": {
+      "en": 5301,
+      "de": 5302,
+      "tr": 4980
+    },
+    "pitch-led-nedir": {
+      "en": 5303,
+      "de": 5304,
+      "tr": 4979
+    },
+    "led-ekran-projeksiyon": {
+      "en": 5305,
+      "de": 5306,
+      "tr": 4978
+    },
+    "led-ekran-lcd-farki": {
+      "en": 5307,
+      "de": 5308,
+      "tr": 4977
+    },
+    "gob-vs-cob-smd": {
+      "en": 5309,
+      "de": 5310,
+      "tr": 4976
+    },
+    "cob-led-ne-zaman": {
+      "en": 5311,
+      "de": 5312,
+      "tr": 4975
+    },
+    "ic-mekan-dis-mekan-led-farki": {
+      "en": 5313,
+      "de": 5475,
+      "tr": 4974
+    },
+    "p2-vs-p3-led-ekran": {
+      "en": 5315,
+      "de": 5316,
+      "tr": 4973
+    },
+    "cami-led-ekran": {
+      "en": 5317,
+      "de": 5318,
+      "tr": 4972
+    },
+    "eczane-led-tabela": {
+      "en": 5319,
+      "de": 5320,
+      "tr": 4971
+    },
+    "belediye-bilgi-ekrani": {
+      "en": 5321,
+      "de": 5322,
+      "tr": 4970
+    },
+    "magaza-vitrin-led-ekran": {
+      "en": 5323,
+      "de": 5324,
+      "tr": 4969
+    },
+    "stadyum-led-ekran": {
+      "en": 5325,
+      "de": 5326,
+      "tr": 4968
+    },
+    "avm-led-ekran-rehberi": {
+      "en": 5327,
+      "de": 5328,
+      "tr": 4967
+    },
+    "led-ekran-bakim": {
+      "en": 5329,
+      "de": 5330,
+      "tr": 4966
+    },
+    "led-ekran-kurulum": {
+      "en": 5331,
+      "de": 5332,
+      "tr": 4965
+    },
+    "led-tabela": {
+      "en": 5333,
+      "de": 5334,
+      "tr": 4964
+    },
+    "led-ekran-nedir": {
+      "en": 5335,
+      "de": 5336,
+      "tr": 4963
+    },
+    "projeler": {
+      "en": 5337,
+      "de": 5338,
+      "tr": 4956
+    },
+    "huidu": {
+      "en": 5339,
+      "de": 5340,
+      "tr": 4214
+    },
+    "colorlight": {
+      "en": 5341,
+      "de": 5342,
+      "tr": 4081
+    },
+    "dis-mekan-rgb-panel": {
+      "en": 5343,
+      "de": 5476,
+      "tr": 3795
+    },
+    "program-indir": {
+      "en": 5345,
+      "de": 5477,
+      "tr": 786
+    },
+    "firma-bilgilerimiz": {
+      "en": 5347,
+      "de": 5348,
+      "tr": 1238
+    },
+    "teknik-destek-videolari": {
+      "en": 5349,
+      "de": 5350,
+      "tr": 195
+    },
+    "blog": {
+      "en": 5351,
+      "de": 5352,
+      "tr": 27
+    },
+    "hakkimizda": {
+      "en": 23,
+      "de": 3042,
+      "tr": 1242
+    }
+  },
+  "posts": {
+    "led-ekran-fiyatlari-2026": {
+      "en": 5231,
+      "de": 5232,
+      "tr": 4995
+    },
+    "huidu-wf1-wf2-wf4-led-kontrol-karti": {
+      "en": 5353,
+      "de": 5354,
+      "tr": 5022
+    },
+    "cob-led-ekran-nedir-avantajlari": {
+      "en": 5355,
+      "de": 5356,
+      "tr": 5021
+    },
+    "gob-led-ekran-ne-zaman-tercih-edilir": {
+      "en": 5357,
+      "de": 5358,
+      "tr": 5000
+    },
+    "led-ekran-nasil-secilir-rehber": {
+      "en": 5359,
+      "de": 5360,
+      "tr": 4999
+    },
+    "rental-led-ekran-kiralama-fiyatlari-2026": {
+      "en": 5361,
+      "de": 5362,
+      "tr": 4998
+    },
+    "dis-mekan-led-ekran-fiyatlari-2026": {
+      "en": 5363,
+      "de": 5364,
+      "tr": 4997
+    },
+    "ic-mekan-led-ekran-fiyatlari-2026": {
+      "en": 5365,
+      "de": 5366,
+      "tr": 4996
+    },
+    "colorlight-a60-player": {
+      "en": 5367,
+      "de": 5368,
+      "tr": 4949
+    },
+    "huidu-c08l-controller": {
+      "en": 5369,
+      "de": 5370,
+      "tr": 4891
+    },
+    "colorlight-a40": {
+      "en": 5371,
+      "de": 5372,
+      "tr": 4878
+    },
+    "colorlight-e120": {
+      "en": 5373,
+      "de": 5374,
+      "tr": 4830
+    },
+    "huidu-c16l": {
+      "en": 5375,
+      "de": 5376,
+      "tr": 4574
+    },
+    "colorlight-a35": {
+      "en": 5377,
+      "de": 5378,
+      "tr": 4518
+    },
+    "e80": {
+      "en": 5379,
+      "de": 5380,
+      "tr": 4223
+    },
+    "serit-led": {
+      "en": 5381,
+      "de": 5382,
+      "tr": 687
+    },
+    "kayan-yazi": {
+      "en": 5383,
+      "de": 5384,
+      "tr": 3077
+    },
+    "p10-grafik-ekran-kullanimi": {
+      "en": 5385,
+      "de": 5386,
+      "tr": 683
+    },
+    "p10-panel": {
+      "en": 5387,
+      "de": 5388,
+      "tr": 680
+    },
+    "p10-panel-beyaz": {
+      "en": 5389,
+      "de": 5390,
+      "tr": 664
+    },
+    "led-panel": {
+      "en": 5391,
+      "de": 5392,
+      "tr": 660
+    },
+    "p10-kirmizi-panel": {
+      "en": 5393,
+      "de": 5394,
+      "tr": 646
+    },
+    "ic-mekan-led-ekranlar": {
+      "en": 5395,
+      "de": 5396,
+      "tr": 642
+    },
+    "dis-mekan-led-ekranlar": {
+      "en": 5397,
+      "de": 5398,
+      "tr": 640
+    },
+    "p4-indoor-rgb-panel": {
+      "en": 5399,
+      "de": 5400,
+      "tr": 638
+    },
+    "p5-indoor-rgb-panel": {
+      "en": 5401,
+      "de": 5402,
+      "tr": 636
+    },
+    "p25-indoor-rgb-panel": {
+      "en": 5403,
+      "de": 5404,
+      "tr": 634
+    },
+    "p3-indoor-rgb-panel": {
+      "en": 5405,
+      "de": 5406,
+      "tr": 632
+    },
+    "p4-outdoor-rgb-panel": {
+      "en": 5407,
+      "de": 5408,
+      "tr": 630
+    },
+    "p5-outdoor-rgb-panel": {
+      "en": 5409,
+      "de": 5410,
+      "tr": 628
+    },
+    "p6-outdoor-rgb-panel": {
+      "en": 5411,
+      "de": 5412,
+      "tr": 626
+    },
+    "p8-outdoor-rgb-panel": {
+      "en": 5413,
+      "de": 5414,
+      "tr": 624
+    },
+    "p10-outdoor-rgb-panel": {
+      "en": 5415,
+      "de": 5416,
+      "tr": 622
+    },
+    "p10-panel-kirmizi": {
+      "en": 5417,
+      "de": 5418,
+      "tr": 620
+    },
+    "p10-rgb-kabin": {
+      "en": 5419,
+      "de": 5420,
+      "tr": 618
+    },
+    "pcb-nedir": {
+      "en": 5421,
+      "de": 5422,
+      "tr": 611
+    },
+    "led-nit-mcd": {
+      "en": 5423,
+      "de": 5478,
+      "tr": 609
+    },
+    "dip-led-panel-tamiri": {
+      "en": 5425,
+      "de": 5426,
+      "tr": 601
+    },
+    "hd-d10-kontrol-karti": {
+      "en": 5427,
+      "de": 5428,
+      "tr": 590
+    },
+    "hd-d30-kontrol-karti": {
+      "en": 5429,
+      "de": 5430,
+      "tr": 588
+    },
+    "hd-c10-kontrol-karti": {
+      "en": 5431,
+      "de": 5432,
+      "tr": 586
+    },
+    "hd-c10c-kontrol-karti": {
+      "en": 5433,
+      "de": 5434,
+      "tr": 584
+    },
+    "hd-c30-kontrol-karti": {
+      "en": 5435,
+      "de": 5436,
+      "tr": 582
+    },
+    "hd-a30-kontrol-karti": {
+      "en": 5437,
+      "de": 5438,
+      "tr": 580
+    },
+    "hd-a601-kontrol-karti": {
+      "en": 5439,
+      "de": 5440,
+      "tr": 578
+    },
+    "hd-a602-kontrol-karti": {
+      "en": 5441,
+      "de": 5442,
+      "tr": 576
+    },
+    "hd-a603-kontrol-karti": {
+      "en": 5443,
+      "de": 5444,
+      "tr": 574
+    },
+    "tf-qs2-kontrol-karti": {
+      "en": 5445,
+      "de": 5446,
+      "tr": 572
+    },
+    "tf-qs2n-kontrol-karti": {
+      "en": 5447,
+      "de": 5448,
+      "tr": 570
+    },
+    "tf-qb5-kontrol-karti": {
+      "en": 5449,
+      "de": 5450,
+      "tr": 568
+    },
+    "tf-qc1-kontrol-karti": {
+      "en": 5451,
+      "de": 5452,
+      "tr": 566
+    },
+    "tf-qc3-kontrol-karti": {
+      "en": 5453,
+      "de": 5454,
+      "tr": 564
+    },
+    "ts-802-sender-linsn": {
+      "en": 5455,
+      "de": 5456,
+      "tr": 562
+    },
+    "rv-908-receiver-linsn": {
+      "en": 5457,
+      "de": 5458,
+      "tr": 560
+    },
+    "msd-300-nova-sender": {
+      "en": 5459,
+      "de": 5460,
+      "tr": 558
+    },
+    "nova-mrv-330-receiver": {
+      "en": 5461,
+      "de": 5462,
+      "tr": 556
+    },
+    "mctrl-300": {
+      "en": 5463,
+      "de": 5464,
+      "tr": 554
+    },
+    "psd100": {
+      "en": 5465,
+      "de": 5466,
+      "tr": 552
+    },
+    "led-ekran-omru": {
+      "en": 5467,
+      "de": 5468,
+      "tr": 550
+    },
+    "led-ekran-kullanim-alanlari": {
+      "en": 5469,
+      "de": 5470,
+      "tr": 547
+    },
+    "hd-a3-kontrol-karti": {
+      "en": 5471,
+      "de": 5472,
+      "tr": 541
+    }
+  },
+  "menus": {},
+  "templates": {}
+}

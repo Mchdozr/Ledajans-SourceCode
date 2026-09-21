@@ -17,8 +17,10 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from ledajans_i18n import (  # noqa: E402
     LANGS,
     ORIGIN,
+    PAGE_SLUGS,
     PILOT_PAGES,
     PILOT_POSTS,
+    POST_SLUGS,
     load_state,
     rankmath_for,
     save_state,
@@ -84,8 +86,13 @@ def restore_languages(sess: requests.Session, site: str) -> None:
         body["force_lang"] = 1
         body["browser"] = False
         body["redirect_lang"] = False
+        # Polylang: post/page varsayılan; post_types yalnızca ek CPT.
+        extras = [t for t in (body.get("post_types") or []) if t not in ("post", "page")]
+        if "elementor_library" not in extras:
+            extras.append("elementor_library")
+        body["post_types"] = extras
         p = sess.post(f"{site}/wp-json/pll/v1/settings", json=body, timeout=30)
-        print("pll_settings", p.status_code)
+        print("pll_settings", p.status_code, "post_types", (p.json() or {}).get("post_types") if p.headers.get("content-type","").startswith("application/json") else (p.text or "")[:120])
     _delete_lang_catchall(sess, site)
 
 
@@ -113,8 +120,17 @@ def _delete_lang_catchall(sess: requests.Session, site: str) -> None:
         "/de/led-ekran",
         "/de/led-anzeige",
         "/de/led-bildschirm",
+        "/de/led-ekran/",
+        "/de/led-anzeige/",
+        "/de/led-bildschirm/",
     }
+    for mapping in (PAGE_SLUGS, POST_SLUGS):
+        for slugs in mapping.values():
+            for lang, slug in slugs.items():
+                drop.add(f"/{lang}/{slug}")
+                drop.add(f"/{lang}/{slug}/")
     deleted = 0
+    kill_ids: list[int] = []
     page = 0
     while page <= 30:
         r = sess.get(
@@ -130,14 +146,29 @@ def _delete_lang_catchall(sess: requests.Session, site: str) -> None:
             break
         for it in items:
             url = (it.get("url") or "").strip()
-            if url not in drop:
-                continue
-            rid = it.get("id")
-            d = sess.delete(f"{site}/wp-json/redirection/v1/redirect/{rid}", timeout=30)
-            print("del", rid, url, d.status_code)
-            if d.status_code in (200, 204):
-                deleted += 1
+            regex = bool(it.get("regex"))
+            action = it.get("action_data") or {}
+            dest = ""
+            if isinstance(action, dict):
+                dest = str(action.get("url") or "")
+            kill = url in drop
+            if regex and "en|de" in url and "case" not in url and (
+                dest.rstrip("/") in ("https://ledajans.com", ORIGIN) or url.startswith("^/(en|de)")
+            ):
+                kill = True
+            if kill and it.get("id"):
+                kill_ids.append(int(it["id"]))
+                print("queue_del", it.get("id"), url)
         page += 1
+    if kill_ids:
+        d = sess.post(
+            f"{site}/wp-json/redirection/v1/bulk/redirect/delete",
+            json={"items": kill_ids},
+            timeout=60,
+        )
+        print("bulk_del", len(kill_ids), d.status_code, (d.text or "")[:120])
+        if d.status_code in (200, 204):
+            deleted = len(kill_ids)
     print("deleted_catchall", deleted)
 
 
@@ -276,16 +307,20 @@ def _copy_meta(src: dict) -> dict:
 
 
 def _set_pll(sess: requests.Session, site: str, cpt: str, ids: dict[str, int]) -> None:
-    translations = {k: v for k, v in ids.items() if v}
+    translations = {k: int(v) for k, v in ids.items() if v}
+    r = sess.post(f"{site}/wp-json/ledajans/v1/pll-link", json=translations, timeout=40)
+    print("pll_link", translations, r.status_code, (r.text or "")[:160])
+    if r.status_code in (200, 201):
+        return
     for lang, pid in translations.items():
         payload = {"lang": lang, "translations": translations}
-        r = sess.post(
+        p = sess.post(
             f"{site}/wp-json/wp/v2/{cpt}/{pid}",
             params={"lang": lang},
             json=payload,
             timeout=40,
         )
-        print("pll", cpt, lang, pid, r.status_code)
+        print("pll", cpt, lang, pid, p.status_code)
 
 
 def _set_front(sess: requests.Session, site: str, lang: str, page_id: int) -> None:
@@ -349,18 +384,26 @@ def clone_one(
         payload["categories"] = src.get("categories") or []
         payload["tags"] = src.get("tags") or []
     existing = _find_by_slug(sess, site, cpt, new_slug)
+    if existing and existing.get("id") != src["id"]:
+        link = (existing.get("link") or "").lower()
+        same_lang = f"/{lang}/" in link or link.rstrip("/").endswith("/" + lang)
+        if not same_lang:
+            new_slug = f"{new_slug}-{lang}"
+            payload["slug"] = new_slug
+            existing = _find_by_slug(sess, site, cpt, new_slug)
     if dry:
         print("DRY", lang, tr_slug, "->", new_slug, "el", bool(el), "exist", bool(existing))
         return existing["id"] if existing else None
-    if existing and existing.get("status") == "publish" and existing.get("id") != src["id"]:
+    if existing and existing.get("id") != src["id"]:
         pid = existing["id"]
+        payload["status"] = "publish"
         r = sess.post(
             f"{site}/wp-json/wp/v2/{cpt}/{pid}",
             params={"lang": lang},
             json=payload,
-            timeout=180,
+            timeout=300,
         )
-        print("update", lang, new_slug, pid, r.status_code)
+        print("update", lang, new_slug, pid, r.status_code, (r.text or "")[:120])
         return pid if r.status_code in (200, 201) else None
     r = sess.post(
         f"{site}/wp-json/wp/v2/{cpt}",
@@ -671,13 +714,23 @@ def keep_drafts(sess: requests.Session, site: str) -> None:
             print("page", slug, "none")
             continue
         print("page", slug, "id", p["id"], "status", p.get("status"), "KEEP")
-        if p.get("status") == "publish" and slug in EMPTY_DRAFT_SLUGS:
-            sess.post(
-                f"{site}/wp-json/wp/v2/pages/{p['id']}",
-                json={"status": "draft"},
-                timeout=30,
-            )
-            print("re-draft", slug)
+        if p.get("status") != "publish" or slug not in EMPTY_DRAFT_SLUGS:
+            continue
+        content = p.get("content") or {}
+        raw = content.get("raw") if isinstance(content, dict) else str(content or "")
+        el = (p.get("meta") or {}).get("_elementor_data")
+        if (raw or "")[:80].strip() and el:
+            print("skip re-draft filled", slug)
+            continue
+        if el and isinstance(el, str) and len(el) > 200:
+            print("skip re-draft elementor", slug)
+            continue
+        sess.post(
+            f"{site}/wp-json/wp/v2/pages/{p['id']}",
+            json={"status": "draft"},
+            timeout=30,
+        )
+        print("re-draft", slug)
 
 
 def main() -> int:
