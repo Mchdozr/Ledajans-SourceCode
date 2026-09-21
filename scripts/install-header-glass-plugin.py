@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""LEDAJANS Header Glass eklentisini gunceller (plugin-editor, yoksa zip)."""
+"""LEDAJANS Header Glass eklentisini REST sil + zip + activate ile gunceller."""
 from __future__ import annotations
 
 import io
@@ -11,9 +11,9 @@ import zipfile
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-UA = "LEDAJANS-Install-Header-Glass/1.1"
+UA = "LEDAJANS-Install-Header-Glass/1.2"
 PLUGIN = "ledajans-header-glass/ledajans-header-glass.php"
-SLUG = "ledajans-header-glass"
+REST_PLUGIN = "ledajans-header-glass/ledajans-header-glass"
 
 
 def load_env() -> tuple[str, str, str]:
@@ -68,113 +68,27 @@ def login(site: str, user: str, pw: str) -> requests.Session:
     return s
 
 
-def editor_update(s: requests.Session, site: str) -> bool:
-    url = (
-        f"{site}/wp-admin/plugin-editor.php"
-        f"?file={PLUGIN.replace('/', '%2F')}&plugin={PLUGIN.replace('/', '%2F')}"
-    )
-    page = s.get(url, timeout=30)
-    if page.status_code != 200 or "newcontent" not in page.text:
-        print("editor_skip", page.status_code)
-        return False
-    nonce = re.search(r'name="_wpnonce" value="([^"]+)"', page.text)
-    if not nonce:
-        print("editor_skip nonce yok")
-        return False
-    r = s.post(
-        f"{site}/wp-admin/plugin-editor.php",
-        data={
-            "_wpnonce": nonce.group(1),
-            "_wp_http_referer": f"/wp-admin/plugin-editor.php?file={PLUGIN}&plugin={PLUGIN}",
-            "newcontent": source(),
-            "action": "update",
-            "file": PLUGIN,
-            "plugin": PLUGIN,
-            "submit": "Güncelle",
-        },
+def rest_delete(site: str, auth: tuple[str, str]) -> None:
+    r = requests.delete(
+        f"{site}/wp-json/wp/v2/plugins/{REST_PLUGIN}",
+        auth=auth,
+        headers={"User-Agent": UA},
+        params={"force": "true"},
         timeout=60,
-        allow_redirects=True,
     )
-    ok = r.status_code == 200 and (
-        "File edited successfully" in r.text
-        or "Dosya başarıyla düzenlendi" in r.text
-        or "updated" in r.text.lower()
-        or "1.1.0" in r.text
-    )
-    print("editor", r.status_code, "ok" if ok else "maybe")
-    return ok
+    print("rest_delete", r.status_code)
 
 
-def activate_if_needed(s: requests.Session, site: str) -> None:
-    pl = s.get(f"{site}/wp-admin/plugins.php", timeout=30)
-    deact = re.search(
-        rf'href="(plugins\.php\?action=deactivate[^"]*{SLUG}[^"]*)"',
-        pl.text,
+def rest_activate(site: str, auth: tuple[str, str]) -> bool:
+    r = requests.post(
+        f"{site}/wp-json/wp/v2/plugins/{REST_PLUGIN}",
+        json={"status": "active"},
+        auth=auth,
+        headers={"User-Agent": UA, "Content-Type": "application/json"},
+        timeout=60,
     )
-    if deact:
-        print("already_active")
-        return
-    act = re.search(
-        rf'href="(plugins\.php\?action=activate[^"]*{SLUG}[^"]*)"',
-        pl.text,
-    )
-    if not act:
-        print("HATA: activate link yok")
-        return
-    href = f"{site}/wp-admin/" + act.group(1).replace("&amp;", "&")
-    s.get(href, timeout=60, allow_redirects=True)
-    print("activated")
-
-
-def delete_plugin(s: requests.Session, site: str) -> None:
-    pl = s.get(f"{site}/wp-admin/plugins.php", timeout=30)
-    deact = re.search(
-        rf'href="(plugins\.php\?action=deactivate[^"]*{SLUG}[^"]*)"',
-        pl.text,
-    )
-    if deact:
-        href = f"{site}/wp-admin/" + deact.group(1).replace("&amp;", "&")
-        s.get(href, timeout=60, allow_redirects=True)
-        pl = s.get(f"{site}/wp-admin/plugins.php", timeout=30)
-        print("deactivated")
-    delete = re.search(
-        rf'href="(plugins\.php\?action=delete-selected[^"]*{SLUG}[^"]*)"',
-        pl.text,
-    )
-    if not delete:
-        delete = re.search(
-            rf'href="(plugins\.php\?action=delete-selected[^"]*plugin_status[^"]*)"',
-            pl.text,
-        )
-    nonce_page = s.get(
-        f"{site}/wp-admin/plugins.php?action=delete-selected"
-        f"&checked%5B0%5D={PLUGIN}&plugin_status=all&paged=1&s=",
-        timeout=30,
-        allow_redirects=True,
-    )
-    nonce = re.search(r'name="_wpnonce" value="([^"]+)"', nonce_page.text)
-    verify = re.search(r'name="verify-delete" value="1"', nonce_page.text)
-    if nonce:
-        s.post(
-            f"{site}/wp-admin/plugins.php",
-            data={
-                "_wpnonce": nonce.group(1),
-                "_wp_http_referer": "/wp-admin/plugins.php",
-                "checked[]": PLUGIN,
-                "action": "delete-selected",
-                "verify-delete": "1",
-                "submit": "Evet, bu dosyaları sil",
-            },
-            timeout=60,
-            allow_redirects=True,
-        )
-        print("deleted")
-    elif delete:
-        href = f"{site}/wp-admin/" + delete.group(1).replace("&amp;", "&")
-        s.get(href, timeout=60, allow_redirects=True)
-        print("deleted_link")
-    else:
-        print("delete_skip", bool(verify))
+    print("rest_activate", r.status_code)
+    return r.status_code in (200, 201)
 
 
 def upload_zip(s: requests.Session, site: str) -> bool:
@@ -196,8 +110,8 @@ def upload_zip(s: requests.Session, site: str) -> bool:
         timeout=120,
         allow_redirects=True,
     )
-    print("upload", r.status_code)
     ok = "Eklenti kuruldu" in r.text or "Plugin installed" in r.text
+    print("upload", r.status_code, "ok" if ok else "fail")
     if not ok:
         print(re.sub("<[^>]+>", " ", r.text)[:240])
     return ok
@@ -208,17 +122,20 @@ def main() -> int:
     if not site or not user or not pw:
         print("HATA: WP_SITE_URL / WP_USERNAME / WP_APP_PASSWORD gerekli")
         return 1
-
+    auth = (user, pw)
+    rest_delete(site, auth)
     s = login(site, user, pw)
-    if editor_update(s, site):
-        activate_if_needed(s, site)
-        return 0
-
-    print("editor basarisiz, zip ile yeniden kur")
-    delete_plugin(s, site)
     if not upload_zip(s, site):
         return 1
-    activate_if_needed(s, site)
+    if not rest_activate(site, auth):
+        return 1
+    ver = requests.get(
+        f"{site}/wp-json/wp/v2/plugins/{REST_PLUGIN}",
+        auth=auth,
+        headers={"User-Agent": UA},
+        timeout=30,
+    )
+    print("plugin", ver.status_code, ver.text[:180].replace("\n", " "))
     return 0
 
 
