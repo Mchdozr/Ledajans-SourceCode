@@ -19,17 +19,6 @@ GROUP = 1
 ORIGIN = "https://ledajans.com"
 
 REDIRECTS = [
-    ("/en", "/"),
-    ("/en/", "/"),
-    ("/de", "/"),
-    ("/de/", "/"),
-    ("/en/contact", "/iletisim/"),
-    ("/en/about-us", "/hakkimizda/"),
-    ("/en/our-company-information", "/firma-bilgilerimiz/"),
-    ("/en/outdoor-led-screen", "/dis-mekan-led-ekran/"),
-    ("/de/kommunikation", "/iletisim/"),
-    ("/de/uber-uns", "/hakkimizda/"),
-    ("/de/unsere-firmeninformationen", "/firma-bilgilerimiz/"),
     ("/gallery", "/projeler/"),
     ("/portfolio-01", "/projeler/"),
     ("/portfolio-02", "/projeler/"),
@@ -40,9 +29,6 @@ REDIRECTS = [
     ("/led", "/led-ekran/"),
     ("/led-2", "/led-ekran/"),
     ("/tf-qs2n-kontrol-karti-2", "/tf-qs2n-kontrol-karti/"),
-    ("/de/led-anzeige", "/led-ekran/"),
-    ("/de/led-bildschirm", "/led-ekran/"),
-    ("/de/led-ekran", "/led-ekran/"),
     ("/de/led-ekran-10", "/led-ekran/"),
     ("/de/gefuehrt", "/led-ekran/"),
     ("/de/gefuehrt-2", "/led-ekran/"),
@@ -68,10 +54,12 @@ REDIRECTS = [
     ("/de-case-rgb-panel-fuer-den-aussenbereich", "/dis-mekan-rgb-panel/"),
     ("/feed", "/"),
     ("/comments/feed", "/"),
+    ("/case", "/projeler/"),
+    ("/en/case", "/projeler/"),
+    ("/de/case", "/projeler/"),
 ]
 
 REGEX_REDIRECTS = [
-    (r"^/(en|de)(/.*)?$", "/"),
     (r"^/case(/.*)?$", "/projeler/"),
     (r"^/(en|de)/case(/.*)?$", "/projeler/"),
 ]
@@ -86,11 +74,7 @@ DRAFT_PAGE_SLUGS = {
     "about-me",
     "en",
     "de",
-    "about-us",
-    "contact",
     "our-company-information",
-    "outdoor-led-screen",
-    "uber-uns",
     "kommunikation",
     "unsere-firmeninformationen",
     "de-case-rgb-panel-fuer-den-aussenbereich",
@@ -155,10 +139,8 @@ TITLES = [
 ]
 
 PROBES = [
-    ("https://ledajans.com/en/", 301, "/"),
-    ("https://ledajans.com/de/", 301, "/"),
-    ("https://ledajans.com/en/contact/", 301, "/iletisim"),
-    ("https://ledajans.com/de/kommunikation/", 301, "/iletisim"),
+    ("https://ledajans.com/en/", 200, None),
+    ("https://ledajans.com/de/", 200, None),
     ("https://ledajans.com/gallery/", 301, "/projeler"),
     ("https://ledajans.com/portfolio-01/", 301, "/projeler"),
     ("https://ledajans.com/about-me/", 301, "/hakkimizda"),
@@ -179,17 +161,22 @@ PROBES = [
 
 def load_env():
     data = {}
-    with open(os.path.join(ROOT, ".env"), encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or "=" not in line:
-                continue
-            k, _, v = line.partition("=")
-            data[k.strip()] = v.strip().strip("\"'")
+    env_path = os.path.join(ROOT, ".env")
+    if os.path.isfile(env_path):
+        with open(env_path, encoding="utf-8-sig") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, _, v = line.partition("=")
+                data[k.strip()] = v.strip().strip("\"'")
+    site = (os.environ.get("WP_SITE_URL") or data.get("WP_SITE_URL") or ORIGIN).rstrip("/")
+    if "8880" in site or "ledajans.com" not in site.lower():
+        site = ORIGIN
     return (
-        data.get("WP_SITE_URL", ORIGIN).rstrip("/"),
-        data.get("WP_USERNAME", ""),
-        data.get("WP_APP_PASSWORD", "").replace(" ", ""),
+        site,
+        os.environ.get("WP_USERNAME") or data.get("WP_USERNAME", ""),
+        (os.environ.get("WP_APP_PASSWORD") or data.get("WP_APP_PASSWORD") or "").replace(" ", ""),
     )
 
 
@@ -472,19 +459,19 @@ def main() -> int:
             added += 1
     print("added", added)
 
-    print("=== 3 draft pages/posts ===")
+    print("=== 3 draft junk pages/posts (EN/DE çevirilere dokunma) ===")
     pages = list_all(site, auth, headers, "wp/v2/pages")
     posts = list_all(site, auth, headers, "wp/v2/posts")
     for p in pages:
         slug = p.get("slug") or ""
-        if slug in DRAFT_PAGE_SLUGS or is_lang_path(p.get("link") or ""):
+        if slug in DRAFT_PAGE_SLUGS:
             draft_item(site, auth, headers, "pages", p)
     for p in posts:
         slug = p.get("slug") or ""
         link = p.get("link") or ""
         if slug == "led-ekran" and not is_lang_path(link):
             continue
-        if slug in DRAFT_POST_SLUGS or is_lang_path(link):
+        if slug in DRAFT_POST_SLUGS:
             draft_item(site, auth, headers, "posts", p)
 
     print("=== 4 titles ===")

@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: LEDAJANS GSC Coverage
- * Description: GSC 404/301/410, EN/DE kapanis, demo/kopya URL, video JSON-LD, breadcrumb.
- * Version: 1.2.0
+ * Description: GSC 404/301/410, cop URL (case/feed/gva/led), video JSON-LD, breadcrumb. Gercek /en/ /de/ icerige dokunmaz.
+ * Version: 1.3.0
  * Author: LEDAJANS
  */
 if (!defined('ABSPATH')) { exit; }
@@ -73,12 +73,6 @@ if (!function_exists('ledajans_gsc_redirect_map')) {
             '/case/power-supply-2-2' => '/guc-kaynaklari/',
             '/ease/control-cards' => '/kontrol-kartlari/',
             '/ease/indoor-rgb-panels' => '/ic-mekan-rgb-panel/',
-            '/en' => '/',
-            '/de' => '/',
-            '/en/contact' => '/iletisim/',
-            '/en/about-us' => '/hakkimizda/',
-            '/en/our-company-information' => '/firma-bilgilerimiz/',
-            '/en/outdoor-led-screen' => '/dis-mekan-led-ekran/',
             '/en/case/indoor-led-display' => '/ic-mekan-led-ekran/',
             '/en/case/outdoor-led-screen' => '/dis-mekan-led-ekran/',
             '/en/case/outdoor-rgb-panel' => '/dis-mekan-rgb-panel/',
@@ -86,12 +80,6 @@ if (!function_exists('ledajans_gsc_redirect_map')) {
             '/en/case/power-supply' => '/guc-kaynaklari/',
             '/en/case/indoor-rgb-panels' => '/ic-mekan-rgb-panel/',
             '/en/case/control-cards' => '/kontrol-kartlari/',
-            '/de/kommunikation' => '/iletisim/',
-            '/de/uber-uns' => '/hakkimizda/',
-            '/de/unsere-firmeninformationen' => '/firma-bilgilerimiz/',
-            '/de/led-ekran' => '/led-ekran/',
-            '/de/led-anzeige' => '/led-ekran/',
-            '/de/led-bildschirm' => '/led-ekran/',
             '/de/led-ekran-10' => '/led-ekran/',
             '/de/hd-c10' => '/colorlight/',
             '/de/ticker' => '/blog/',
@@ -188,10 +176,6 @@ add_action('template_redirect', function () {
             ledajans_gsc_go($map[$bare]);
         }
         ledajans_gsc_go('/projeler/');
-    }
-
-    if (preg_match('#^/(en|de)$#', $path) || preg_match('#^/(en|de)/#', $path)) {
-        ledajans_gsc_go('/');
     }
 
     if ($path === '/feed' || $path === '/comments/feed' || preg_match('#/feed$#', $path)) {
