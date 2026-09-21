@@ -1,0 +1,454 @@
+<style>
+    .ledajans-footer {
+      background-color: #111827;
+      color: #e5e7eb;
+      padding: 4rem 1.5rem;
+    }
+  
+    .ledajans-footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+  
+    .ledajans-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  
+    @media (min-width: 768px) {
+      .ledajans-footer {
+        padding: 3rem 2rem;
+      }
+  
+      .ledajans-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      .ledajans-footer-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+    }
+  
+    .ledajans-footer-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+    }
+  
+    .ledajans-footer-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #9ca3af;
+    }
+  
+    .ledajans-footer-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #f9fafb;
+    }
+  
+    .ledajans-footer-links,
+    .ledajans-footer-contact {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .ledajans-footer-links li,
+    .ledajans-footer-contact li {
+      margin-bottom: 0.5rem;
+    }
+  
+    .ledajans-footer-link {
+      font-size: 0.9rem;
+      color: #f46f2c;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+  
+    .ledajans-footer-link:hover,
+    .ledajans-footer-contact-text:hover {
+      color: #f46f2c !important;
+    }
+  
+    .ledajans-footer-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+  
+    .ledajans-footer-gallery img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      display: block;
+    }
+  
+    .ledajans-footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  
+    .ledajans-footer-contact-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 18px;
+      height: 18px;
+    }
+  
+    .ledajans-footer-contact-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .ledajans-footer-contact-text {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+  
+    .ledajans-footer-contact-text:hover {
+      color: #f46f2c;
+    }
+  
+    .ledajans-footer-bottom {
+      border-top: 1px solid #1f2937;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    @media (min-width: 768px) {
+      .ledajans-footer-bottom {
+        flex-direction: row;
+      }
+    }
+  
+    .ledajans-footer-copy {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+  
+    .ledajans-footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .ledajans-footer-socials a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .ledajans-footer-socials a:hover {
+      color: #f46f2c;
+    }
+  
+    .ledajans-footer-socials svg {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .ledajans-footer-socials a:hover svg {
+      color: #f46f2c;
+    }
+  
+    .ledajans-gallery-btn {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: block;
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+  
+    .ledajans-gallery-btn:hover img {
+      opacity: 0.9;
+    }
+  
+  .ledajans-gallery-modal{
+    display: none !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0,0,0,.88) !important;
+    z-index: 2147483647 !important;
+    isolation: isolate !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .ledajans-gallery-modal.is-open{
+    display: flex !important;
+  }
+  
+    .ledajans-gallery-modal-content{
+    position: relative !important;
+    z-index: 2147483647 !important;
+  }
+  
+    .ledajans-gallery-modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+  
+    .ledajans-gallery-modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .ledajans-gallery-modal-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .ledajans-gallery-modal-close span{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+   .ledajans-footer-link.is-active {
+      color: #F46F2C !important;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .ledajans-footer-link.is-active {
+    color: #F46F2C !important;
+    font-weight: 700;
+    text-decoration: none !important;
+  }
+  </style>
+  
+  <footer class="ledajans-footer">
+    <div class="ledajans-footer-inner">
+      <div class="ledajans-footer-grid">
+        <div>
+          <a href="https://ledajans.com/de/">
+            <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp" width="1024" height="218" alt="LEDAJANS" class="ledajans-footer-logo" />
+          </a>
+          <p class="ledajans-footer-desc">
+            LEDAJANS ist die verlässliche Adresse in der Türkei für LED-Module, Netzteile, Steuerkarten und Zubehör für LED-Displays, Laufschriften und Digital Signage. Groß- und Einzelhandel, technischer Support und schneller Versand für Profis.
+          </p>
+        </div>
+  
+        <div>
+          <h3 class="ledajans-footer-title">Schnelllinks</h3>
+          <ul class="ledajans-footer-links">
+            <li><a href="https://ledajans.com/de/" class="ledajans-footer-link">Startseite</a></li>
+            <li><a href="https://ledajans.com/de/uber-uns/" class="ledajans-footer-link">Über uns</a></li>
+            <li><a href="https://ledajans.com/de/firmeninformationen/" class="ledajans-footer-link">Firmeninformationen</a></li>
+            <li><a href="https://ledajans.com/de/blog/" class="ledajans-footer-link">Blog</a></li>
+            <li><a href="https://ledajans.com/de/kontakt/" class="ledajans-footer-link">Kontakt</a></li>
+            <li><a href="https://ledajans.com/de/colorlight/" class="ledajans-footer-link">Colorlight</a></li>
+            <li><a href="https://ledajans.com/de/huidu-hdplayer-download/" class="ledajans-footer-link">Huidu</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing" target="_blank" rel="noopener" class="ledajans-footer-link">Google Drive</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="ledajans-footer-title">Galerie</h3>
+          <div class="ledajans-footer-gallery">
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/PH1.53.jpg" aria-label="Galeriee 1 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/PH1.53.jpg" alt="Galerie 1">
+            </button>
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/P3.jpg" aria-label="Galeriee 2 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/P3.jpg" alt="Galerie 2">
+            </button>
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/ec8726e1-1617-438d-927c-6904cf2506f4.jpg" aria-label="Galeriee 3 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/ec8726e1-1617-438d-927c-6904cf2506f4.jpg" alt="Galerie 3">
+            </button>
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/P2.5.jpg" aria-label="Galeriee 4 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/P2.5.jpg" alt="Galerie 4">
+            </button>
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/P1.25-2-scaled.jpg" aria-label="Galeriee 5 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/P1.25-2-scaled.jpg" alt="Galerie 5">
+            </button>
+            <button type="button" class="ledajans-gallery-btn" data-src="https://ledajans.com/wp-content/uploads/2023/01/fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg" aria-label="Galeriee 6 vergrößern">
+              <img src="https://ledajans.com/wp-content/uploads/2023/01/fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg" alt="Galerie 6">
+            </button>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="ledajans-footer-title">Produkte</h3>
+          <ul class="ledajans-footer-links">
+            <li><a href="https://ledajans.com/de/cob-led-display/" class="ledajans-footer-link">COB - Smart Screen</a></li>
+            <li><a href="https://ledajans.com/de/indoor-led-display/" class="ledajans-footer-link">Indoor-LED-Display</a></li>
+            <li><a href="https://ledajans.com/de/outdoor-led-display/" class="ledajans-footer-link">Outdoor-LED-Display</a></li>
+            <li><a href="https://ledajans.com/de/rental-led-display/" class="ledajans-footer-link">Miet-LED-Display</a></li>
+            <li><a href="https://ledajans.com/de/indoor-rgb-panel/" class="ledajans-footer-link">Indoor-RGB-Panel</a></li>
+            <li><a href="https://ledajans.com/de/outdoor-rgb-panel/" class="ledajans-footer-link">Outdoor-RGB-Panel</a></li>
+            <li><a href="https://ledajans.com/de/steuerkarten/" class="ledajans-footer-link">Steuerkarten</a></li>
+            <li><a href="https://ledajans.com/de/netzteile/" class="ledajans-footer-link">Netzteile</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="ledajans-footer-title">Kontakt</h3>
+          <ul class="ledajans-footer-contact">
+            <li class="ledajans-footer-contact-item">
+              <span class="ledajans-footer-contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Halide+Edip+Adıvar+Mah.+Gül+2+Sk.+No:10,+34382+Şişli/İstanbul" target="_blank" rel="noopener" class="ledajans-footer-contact-text">Halide Edip Adıvar Mah. Gül 2 Sk. No:10, 34382 Sisli/Istanbul</a>
+            </li>
+            <li class="ledajans-footer-contact-item">
+              <span class="ledajans-footer-contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <a href="mailto:info@ledajans.com" class="ledajans-footer-contact-text">info@ledajans.com</a>
+            </li>
+            <li class="ledajans-footer-contact-item">
+              <span class="ledajans-footer-contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span>
+              <a href="tel:+902122204004" class="ledajans-footer-contact-text">+90 212 220 40 04</a>
+            </li>
+            <li class="ledajans-footer-contact-item">
+              <span class="ledajans-footer-contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span>
+              <a href="tel:+905304056768" class="ledajans-footer-contact-text">+90 530 405 67 68</a>
+            </li>
+            <li class="ledajans-footer-contact-item">
+              <span class="ledajans-footer-contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span>
+              <a href="tel:+905438795108" class="ledajans-footer-contact-text">+90 543 879 51 08</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="ledajans-footer-bottom">
+        <p class="ledajans-footer-copy">© <span id="ledajans-footer-year"></span> Ledajans. Alle Rechte vorbehalten.</p>
+        <div class="ledajans-footer-socials">
+          <a href="https://www.facebook.com/LedAjans/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+          </a>
+          <a href="https://www.instagram.com/ledajans/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/led-ajans/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+          <a href="https://twitter.com/ledajans" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCQt5HAPKC0tsJYGvVEL5MoA" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div id="ledajans-gallery-modal" class="ledajans-gallery-modal" aria-hidden="true">
+      <div class="ledajans-gallery-modal-content">
+        <button type="button" class="ledajans-gallery-modal-close" aria-label="Schließen">
+    <span aria-hidden="true">&#10005;</span>
+  </button>
+        <img id="ledajans-gallery-modal-image" src="" alt="Vergrößertes Galerieebild">
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById("ledajans-footer-year").textContent = new Date().getFullYear();
+  
+    (function () {
+      const modal = document.getElementById("ledajans-gallery-modal");
+      const modalImage = document.getElementById("ledajans-gallery-modal-image");
+      const galleryButtons = document.querySelectorAll(".ledajans-gallery-btn");
+      if (!modal || !modalImage || !galleryButtons.length) return;
+  
+      const closeBtn = modal.querySelector(".ledajans-gallery-modal-close");
+  
+      function openModal(src, altText) {
+        modalImage.src = src;
+        modalImage.alt = altText || "Büyütülmüş galeri görseli";
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+  
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImage.src = "";
+        document.body.style.overflow = "";
+      }
+  
+      galleryButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const src = this.getAttribute("data-src");
+          const img = this.querySelector("img");
+          if (src) openModal(src, img ? img.alt : "");
+        });
+      });
+  
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeModal();
+      });
+  
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+      });
+    })();
+    (function () {
+    const modal = document.getElementById("ledajans-gallery-modal");
+    if (!modal) return;
+    if (modal.parentElement !== document.body) document.body.appendChild(modal);
+  })();
+  (function () {
+      const links = document.querySelectorAll(".ledajans-footer-link");
+      const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+      links.forEach((link) => {
+        try {
+          const url = new URL(link.href, window.location.origin);
+          if (url.origin !== window.location.origin) return; // dış linkleri geç
+          const linkPath = url.pathname.replace(/\/+$/, "") || "/";
+          if (linkPath === currentPath) {
+            link.classList.add("is-active");
+            link.setAttribute("aria-current", "page");
+          }
+        } catch (_) {}
+      });
+    })();
+  </script>
