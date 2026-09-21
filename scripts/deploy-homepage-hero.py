@@ -15,7 +15,7 @@ HERO_PATH = os.path.join(ROOT, "Anasayfa", "Hero.html")
 UA = "LEDAJANS-Deploy-Homepage-Hero/1.2"
 MARKER = "ledajans-hero"
 DEFAULT_PAGE_ID = 1248
-DEFAULT_WIDGET_ID = "ee08c77"
+DEFAULT_WIDGET_ID = "122e243"
 
 
 def load_env() -> tuple[str, str, str]:
@@ -104,7 +104,7 @@ def main() -> int:
     if r.status_code in (200, 201):
         return 0
 
-    # 2) Fallback: yalnizca Widget 1 (ee08c77); diger HTML widget'lara dokunma
+    # 2) Fallback: yalnizca canli Widget 1 (122e243); diger HTML widget'lara dokunma
     print("FALLBACK: elementor meta update")
     rp = requests.get(
         f"{site}/wp-json/wp/v2/pages/{DEFAULT_PAGE_ID}",
