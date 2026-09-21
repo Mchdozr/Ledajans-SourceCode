@@ -22,6 +22,7 @@ from ledajans_i18n import (  # noqa: E402
     PILOT_POSTS,
     POST_SLUGS,
     load_state,
+    link_lang,
     rankmath_for,
     save_state,
     skip_page,
@@ -396,6 +397,9 @@ def clone_one(
         return existing["id"] if existing else None
     if existing and existing.get("id") != src["id"]:
         pid = existing["id"]
+        if link_lang(existing.get("link") or "") != lang:
+            print("SKIP_WRONG_LANG", lang, pid, existing.get("link"))
+            return None
         payload["status"] = "publish"
         r = sess.post(
             f"{site}/wp-json/wp/v2/{cpt}/{pid}",

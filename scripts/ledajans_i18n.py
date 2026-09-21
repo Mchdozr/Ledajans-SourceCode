@@ -237,6 +237,55 @@ _PHRASES: list[tuple[str, str, str]] = [
     ("Ücretsiz keşif", "Free site survey", "Kostenlose Besichtigung"),
     ("Fiyatları ve Modelleri", "Prices and Models", "Preise und Modelle"),
     ("Fiyatları ve modelleri", "prices and models", "Preise und Modelle"),
+    ("LED Ekran Projeleri", "LED Screen Projects", "LED-Display-Projekte"),
+    ("LED Ekran Fiyatları 2026", "LED Screen Prices 2026", "LED-Display-Preise 2026"),
+    ("İç Mekan LED Ekran Fiyatları", "Indoor LED Screen Prices", "Indoor-LED-Display-Preise"),
+    ("Dış Mekan LED Ekran Fiyatları", "Outdoor LED Screen Prices", "Outdoor-LED-Display-Preise"),
+    ("LED Ekran Kiralama Fiyatları", "LED Screen Rental Prices", "LED-Display-Mietpreise"),
+    ("COB LED Ekran Nedir?", "What is a COB LED Screen?", "Was ist ein COB-LED-Display?"),
+    ("GOB LED Ekran Ne Zaman Tercih Edilir?", "When to Choose a GOB LED Screen?", "Wann ein GOB-LED-Display wählen?"),
+    ("LED Ekran Nasıl Seçilir?", "How to Choose an LED Screen?", "Wie wählt man ein LED-Display?"),
+    ("LED Ekran Nedir?", "What is an LED Screen?", "Was ist ein LED-Display?"),
+    ("Nits Parlaklık Nedir?", "What is Nits Brightness?", "Was ist Nits-Helligkeit?"),
+    ("LED Ekran vs Projeksiyon", "LED Screen vs Projection", "LED-Display vs. Projektor"),
+    ("LED Ekran vs LCD Karşılaştırma", "LED Screen vs LCD Comparison", "LED-Display vs. LCD-Vergleich"),
+    ("P2 vs P3 LED Ekran Karşılaştırma", "P2 vs P3 LED Screen Comparison", "P2 vs. P3 LED-Display-Vergleich"),
+    ("Cami LED Ekran Rehberi", "Mosque LED Screen Guide", "LED-Display-Leitfaden für Moscheen"),
+    ("Mağaza Vitrin LED Ekran", "Storefront LED Screen", "Schaufenster-LED-Display"),
+    ("Stadyum LED Ekran Rehberi", "Stadium LED Screen Guide", "Stadion-LED-Display-Leitfaden"),
+    ("AVM LED Ekran Rehberi", "Mall LED Screen Guide", "Einkaufszentrum-LED-Leitfaden"),
+    ("LED Ekran Bakım Rehberi", "LED Screen Maintenance Guide", "LED-Display-Wartungsleitfaden"),
+    ("LED Ekran Kurulum Rehberi", "LED Screen Installation Guide", "LED-Display-Installationsleitfaden"),
+    ("LED Ekran Kullanım Alanları", "LED Screen Use Cases", "LED-Display-Einsatzbereiche"),
+    ("Belediye Bilgi Ekranı Rehberi", "Municipal Info Screen Guide", "Leitfaden kommunales Info-Display"),
+    ("Eczane LED Tabela Rehberi", "Pharmacy LED Sign Guide", "Apotheken-LED-Tafel-Leitfaden"),
+    ("LED Tabela Rehberi", "LED Signage Guide", "LED-Beschilderungsleitfaden"),
+    ("Toplantı Odası LED Ekran", "Meeting Room LED Screen", "LED-Display für Besprechungsräume"),
+    ("Billboard LED Ekran", "Billboard LED Screen", "Billboard-LED-Display"),
+    ("Fuar LED Ekran", "Trade Fair LED Screen", "Messe-LED-Display"),
+    ("Otel LED Ekran", "Hotel LED Screen", "Hotel-LED-Display"),
+    ("Havalimanı LED Ekran", "Airport LED Screen", "Flughafen-LED-Display"),
+    ("İzmir LED Ekran", "Izmir LED Screen", "Izmir-LED-Display"),
+    ("Ankara LED Ekran", "Ankara LED Screen", "Ankara-LED-Display"),
+    ("İstanbul LED Ekran", "Istanbul LED Screen", "Istanbul-LED-Display"),
+    ("GOB LED Ekran", "GOB LED Screen", "GOB-LED-Display"),
+    ("IP Koruma Sınıfı", "IP Protection Rating", "IP-Schutzart"),
+    ("Kapsamlı Rehber", "Comprehensive Guide", "Umfassender Leitfaden"),
+    ("Ne Zaman Tercih Edilmeli", "When to Choose", "Wann wählen"),
+    ("Ne Zaman Tercih Edilir", "When to Choose", "Wann wählen"),
+    ("Nasıl Seçilir", "How to Choose", "Wie wählen"),
+    ("Avantajları", "Advantages", "Vorteile"),
+    ("Karşılaştırma", "Comparison", "Vergleich"),
+    ("Kullanım Alanları", "Use Cases", "Einsatzbereiche"),
+    ("Toplantı Odası", "Meeting Room", "Besprechungsraum"),
+    ("Havalimanı", "Airport", "Flughafen"),
+    ("Mayıs Güncel", "May Update", "Mai-Update"),
+    ("Projeleri", "Projects", "Projekte"),
+    ("Fiyatları 2026", "Prices 2026", "Preise 2026"),
+    ("Fiyatları", "Prices", "Preise"),
+    ("Nedir?", "What is it?", "Was ist das?"),
+    ("Rehberi", "Guide", "Leitfaden"),
+    ("Rehber", "Guide", "Leitfaden"),
     ("Satış, Kiralama ve Kurulum", "Sales, Rental and Installation", "Verkauf, Miete und Installation"),
     ("Satış, Kiralama", "Sales, Rental", "Verkauf, Miete"),
     ("Teklif Al", "Get a Quote", "Angebot holen"),
@@ -334,6 +383,15 @@ def _phrase_index() -> list[tuple[str, str, str]]:
 PHRASES = _phrase_index()
 
 ATTR_KEYS = {"alt", "title", "aria-label", "placeholder", "aria-labelledby"}
+
+
+def link_lang(link: str) -> str:
+    low = (link or "").lower()
+    if "/en/" in low or low.rstrip("/").endswith("/en"):
+        return "en"
+    if "/de/" in low or low.rstrip("/").endswith("/de"):
+        return "de"
+    return "tr"
 
 
 def slug_for(tr_slug: str, lang: str, kind: str = "page") -> str:
