@@ -2,6 +2,7 @@
 """Ana sayfa Hero HTML — ledajans/v1/hero-widget (fallback: Elementor meta)."""
 from __future__ import annotations
 
+import base64
 import json
 import os
 import sys
@@ -11,7 +12,7 @@ import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERO_PATH = os.path.join(ROOT, "Anasayfa", "Hero.html")
-UA = "LEDAJANS-Deploy-Homepage-Hero/1.1"
+UA = "LEDAJANS-Deploy-Homepage-Hero/1.2"
 MARKER = "ledajans-hero"
 DEFAULT_PAGE_ID = 1248
 DEFAULT_WIDGET_ID = "ee08c77"
@@ -34,11 +35,11 @@ def load_env() -> tuple[str, str, str]:
     )
 
 
-def walk_replace(nodes: Any, new_html: str) -> int:
+def walk_replace(nodes: Any, new_html: str, widget_id: str | None = None) -> int:
     changed = 0
     if isinstance(nodes, list):
         for n in nodes:
-            changed += walk_replace(n, new_html)
+            changed += walk_replace(n, new_html, widget_id)
         return changed
     if not isinstance(nodes, dict):
         return 0
@@ -46,14 +47,16 @@ def walk_replace(nodes: Any, new_html: str) -> int:
     widget_type = nodes.get("widgetType") or nodes.get("elType")
     settings = nodes.get("settings") or {}
     html_val = settings.get("html")
+    nid = str(nodes.get("id") or "")
     if widget_type == "html" and isinstance(html_val, str) and MARKER in html_val:
-        settings["html"] = new_html
-        nodes["settings"] = settings
-        changed += 1
+        if widget_id is None or nid == widget_id:
+            settings["html"] = new_html
+            nodes["settings"] = settings
+            changed += 1
 
     for key in ("elements", "content"):
         if key in nodes:
-            changed += walk_replace(nodes[key], new_html)
+            changed += walk_replace(nodes[key], new_html, widget_id)
     return changed
 
 
@@ -68,12 +71,18 @@ def main() -> int:
         return 1
 
     new_html = open(HERO_PATH, encoding="utf-8").read()
-    if "<picture>" not in new_html or "ldajsn2-mobile-q60" not in new_html:
-        print("HATA: Hero.html beklenen picture/q60 icermiyor")
+    if "<picture>" not in new_html or "hero-atrium-led" not in new_html:
+        print("HATA: Hero.html beklenen picture/atrium gorseli icermiyor")
         return 1
 
     auth = (user, pw)
-    headers = {"User-Agent": UA, "Content-Type": "application/json"}
+    token = base64.b64encode(f"{user}:{pw}".encode("utf-8")).decode("ascii")
+    headers = {
+        "User-Agent": UA,
+        "Content-Type": "application/json",
+        "Authorization": f"Basic {token}",
+        "X-WP-Authorization": f"Basic {token}",
+    }
 
     if dry:
         print("DRY_RUN: yazilmadi")
@@ -95,13 +104,17 @@ def main() -> int:
     if r.status_code in (200, 201):
         return 0
 
-    # 2) Fallback: Elementor meta tum ledajans-hero HTML widget'lari
+    # 2) Fallback: yalnizca Widget 1 (ee08c77); diger HTML widget'lara dokunma
     print("FALLBACK: elementor meta update")
     rp = requests.get(
         f"{site}/wp-json/wp/v2/pages/{DEFAULT_PAGE_ID}",
         params={"context": "edit"},
         auth=auth,
-        headers={"User-Agent": UA},
+        headers={
+            "User-Agent": UA,
+            "Authorization": f"Basic {token}",
+            "X-WP-Authorization": f"Basic {token}",
+        },
         timeout=60,
     )
     print(f"page_get={rp.status_code}")
@@ -117,7 +130,7 @@ def main() -> int:
         return 2
 
     data = json.loads(raw) if isinstance(raw, str) else raw
-    changed = walk_replace(data, new_html)
+    changed = walk_replace(data, new_html, DEFAULT_WIDGET_ID)
     print(f"widgets_updated={changed}")
     if changed == 0:
         return 2

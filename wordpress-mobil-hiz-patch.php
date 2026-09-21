@@ -156,7 +156,7 @@ add_action('wp_head', function () {
     if (!ledajans_mp_v11_active() || !is_front_page()) {
         return;
     }
-    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" fetchpriority="high">' . "\n";
+    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-atrium-led-mobile.webp" fetchpriority="high">' . "\n";
 }, 1);
 
 add_filter('wp_get_attachment_image_attributes', function ($attr) {
@@ -164,7 +164,7 @@ add_filter('wp_get_attachment_image_attributes', function ($attr) {
         return $attr;
     }
     $src = $attr['src'] ?? '';
-    if (stripos($src, 'ldajsn2-mobile') !== false) {
+    if (stripos($src, 'ldajsn2-mobile') !== false || stripos($src, 'hero-atrium-led-mobile') !== false) {
         $attr['fetchpriority'] = 'high';
         $attr['loading'] = 'eager';
         $attr['decoding'] = 'async';

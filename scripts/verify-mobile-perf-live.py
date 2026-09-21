@@ -35,8 +35,8 @@ def main() -> int:
     d_gtm = "ledajansGtmLoaded" in desktop
     m_idle = "ledajansRunWhenIdle" in mobile
     d_idle = "ledajansRunWhenIdle" in desktop
-    m_q60 = "ldajsn2-mobile-q60.webp" in mobile
-    d_video = "ledajans-hero-video" in desktop or "hero-poster.webp" in desktop
+    m_q60 = "hero-atrium-led-mobile.webp" in mobile
+    d_video = "ledajans-hero-video" in desktop or "hero-atrium-led.webp" in desktop
 
     print(f"mobile_gtm_delay={m_gtm}")
     print(f"desktop_gtm_delay={d_gtm}  (beklenen: False)")
