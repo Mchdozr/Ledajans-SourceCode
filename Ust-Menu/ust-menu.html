@@ -1,7 +1,7 @@
 <!--
   LEDAJANS — Header HTML widget (Elementor): dosyanın TAMAMINI kopyala / yapıştır.
-  Widget: şablondaki HTML bloğu (ör. 8af5606). Genel stil: Ek-CSS-final.css → WP Ek CSS.
-  GÜNCEL: 2026-05-04. “Dil” metni: polylang Code Snippet.
+  Widget: şablondaki HTML bloğu (c7f7f5c; eski ör. 8af5606). Genel stil: Ek-CSS-final.css → WP Ek CSS.
+  GÜNCEL: 2026-09-22. Üst menü logosu: beyaz outline WebP (invert yok).
 -->
 
 <style id="ledajans-header-responsive-css">
@@ -561,7 +561,7 @@
         max-width: min(68vw, 240px) !important;
         object-fit: contain !important;
         flex-shrink: 0 !important;
-        filter: brightness(0) invert(1) !important;
+        filter: none !important;
         display: block !important;
         margin: 0 !important;
         visibility: visible !important;
@@ -733,6 +733,7 @@
       width: auto !important;
       max-width: 200px !important;
       object-fit: contain !important;
+      filter: brightness(0) !important;
     }
     .canvas-mobile .top-canvas .control-close-mm {
       display: flex !important;
@@ -989,7 +990,7 @@
                           <div class="gva-element-gva-logo gva-element">
                             <div class="gsc-logo text-center">
                               <a class="site-branding-logo" href="https://ledajans.com/" title="LEDAJANS" rel="home">
-                                <img src="https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png" alt="LEDAJANS" width="182" height="36" decoding="async" />
+                                <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp" srcset="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp 1024w" sizes="(max-width: 1024px) min(68vw, 240px), 200px" alt="LEDAJANS" width="1024" height="219" decoding="async" />
                               </a>
                             </div>
                           </div>
@@ -1093,7 +1094,7 @@
       <div class="gva-offcanvas-content mobile">
         <div class="top-canvas">
           <a class="logo-mm" href="https://ledajans.com/">
-            <img src="https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg" alt="LEDAJANS" decoding="async" />
+            <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp" srcset="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp 1024w" alt="LEDAJANS" width="1024" height="219" decoding="async" />
           </a>
           <a class="control-close-mm" href="#" aria-label="Menüyü kapat"><i class="far fa-times-circle" aria-hidden="true"></i></a>
         </div>
@@ -1163,6 +1164,28 @@
       </div>
     </div>
     
+    <script id="ledajans-header-logo-src">
+    (function () {
+      var url = "https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp";
+      function apply(img) {
+        if (!img) return;
+        img.src = url;
+        img.setAttribute("srcset", url + " 1024w");
+        img.removeAttribute("data-src");
+        img.removeAttribute("data-lazy-src");
+        img.removeAttribute("data-srcset");
+      }
+      function run() {
+        document.querySelectorAll(".elementor-element-123bc72 .site-branding-logo img, .elementor-element-123bc72 .elementor-widget-gva-logo img").forEach(apply);
+        document.querySelectorAll(".canvas-mobile .top-canvas .logo-mm img").forEach(apply);
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", run);
+      } else {
+        run();
+      }
+    })();
+    </script>
     <script id="ledajans-header-glass-scroll">
     (function () {
       var last = null;

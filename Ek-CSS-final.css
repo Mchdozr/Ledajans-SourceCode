@@ -15,7 +15,7 @@
  *   • Beyaz kuşak devam ederse: Code-Snippets/ledajans-elementor-sticky-spacer-kill.js
  *     → WP Code Snippets ile “Run everywhere” (JS inline height’ı ezer).
  *
- * Son güncelleme: 2026-05-04 (Bölüm 13: SEO makale widget — .ledajans-seo-article)
+ * Son güncelleme: 2026-09-22 (üst menü beyaz logo — invert kapatıldı)
  */
 
 /* =============================================================================
@@ -288,7 +288,7 @@
     width: auto !important;
     max-width: min(68vw, 240px) !important;
     object-fit: contain !important;
-    filter: brightness(0) invert(1) !important;
+    filter: none !important;
     transform: translateY(-2px) !important;
   }
 
@@ -362,6 +362,7 @@
   width: auto !important;
   max-width: 160px !important;
   object-fit: contain !important;
+  filter: brightness(0) !important;
 }
 
 .canvas-mobile .top-canvas .control-close-mm {
