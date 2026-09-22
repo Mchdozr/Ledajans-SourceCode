@@ -20,41 +20,31 @@ DEFAULT_WIDGET_ID = "122e243"
 
 
 def clear_elementor_cache(site: str, user: str, pw: str) -> None:
-    """Elementor Files & Data onbellegi — REST meta yazimi tek basina yetmeyebilir."""
-    sess = requests.Session()
-    sess.headers.update({"User-Agent": UA})
-    sess.get(f"{site}/wp-login.php", timeout=30)
-    sess.post(
-        f"{site}/wp-login.php",
-        data={
-            "log": user,
-            "pwd": pw,
-            "wp-submit": "Log In",
-            "redirect_to": f"{site}/wp-admin/",
-            "testcookie": "1",
+    """Elementor cache — REST DELETE (login nonce çalışmaz)."""
+    token = base64.b64encode(f"{user}:{pw}".encode("utf-8")).decode("ascii")
+    r = requests.delete(
+        f"{site}/wp-json/elementor/v1/cache",
+        auth=(user, pw),
+        headers={
+            "User-Agent": UA,
+            "Authorization": f"Basic {token}",
+            "X-WP-Authorization": f"Basic {token}",
         },
-        timeout=30,
-        allow_redirects=True,
-    )
-    tools = sess.get(f"{site}/wp-admin/admin.php?page=elementor-tools", timeout=30).text
-    nonce = None
-    for pat in (
-        r'id="elementor-clear-cache-button"[^>]*data-nonce="([^"]+)"',
-        r'data-nonce="([^"]+)"[^>]*id="elementor-clear-cache-button"',
-    ):
-        m = re.search(pat, tools)
-        if m:
-            nonce = m.group(1)
-            break
-    if not nonce:
-        print("WARN: elementor clear-cache nonce yok")
-        return
-    r = sess.post(
-        f"{site}/wp-admin/admin-ajax.php",
-        data={"action": "elementor_clear_cache", "_nonce": nonce},
         timeout=60,
     )
-    print("elementor_clear_cache", r.status_code, r.text[:120])
+    print("elementor_cache_delete", r.status_code, r.text[:180])
+
+
+def try_litespeed_purge(site: str) -> None:
+    try:
+        r = requests.get(
+            f"{site}/?LSCWP_CTRL=purge&litespeed_type=purge_all",
+            headers={"User-Agent": UA, "Cache-Control": "no-cache"},
+            timeout=20,
+        )
+        print("lsc_purge_get", r.status_code)
+    except Exception as exc:
+        print("lsc_purge_get ERR", type(exc).__name__)
 
 
 def load_env() -> tuple[str, str, str]:
@@ -110,8 +100,23 @@ def main() -> int:
         return 1
 
     new_html = open(HERO_PATH, encoding="utf-8").read()
-    if "<picture>" not in new_html or "hero-atrium-led" not in new_html:
-        print("HATA: Hero.html beklenen picture/atrium gorseli icermiyor")
+    if "<picture>" not in new_html or "hero-stant-poster" not in new_html:
+        print("HATA: Hero.html beklenen picture/stant posteri icermiyor")
+        return 1
+    if "hero-stant-1920.mp4" not in new_html:
+        print("HATA: Hero.html hero-stant-1920 imzasi yok")
+        return 1
+    if "heroVideo.loop = true" in new_html or re.search(r"webkit-playsinline\s+loop", new_html):
+        print("HATA: Hero.html hâlâ loop içeriyor")
+        return 1
+    if "playedOnce" not in new_html or "playedOnce || heroVideo.ended" not in new_html:
+        print("HATA: Hero.html canplay playedOnce korumasi yok")
+        return 1
+    video_tag = re.search(
+        r"<video[^>]*id=[\"']ledajansHeroVideo[\"'][^>]*>", new_html, re.I | re.S
+    )
+    if not video_tag or re.search(r"\sloop(\s|=|/|>)", video_tag.group(0), re.I):
+        print("HATA: hero video tag loop attribute")
         return 1
 
     auth = (user, pw)
@@ -142,6 +147,7 @@ def main() -> int:
     print("hero-widget", r.status_code, r.text[:500])
     if r.status_code in (200, 201):
         clear_elementor_cache(site, user, pw)
+        try_litespeed_purge(site)
         return 0
 
     # 2) Fallback: yalnizca canli Widget 1 (122e243); diger HTML widget'lara dokunma
@@ -185,6 +191,7 @@ def main() -> int:
     print(f"page_update={ru.status_code} {ru.text[:300]}")
     if ru.status_code in (200, 201):
         clear_elementor_cache(site, user, pw)
+        try_litespeed_purge(site)
         return 0
     return 1
 
