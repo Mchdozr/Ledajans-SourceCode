@@ -24,19 +24,23 @@ add_action('wp_head', function () {
 CSS;
 }, 1000);
 
-add_action('init', function () {
-    if (get_option('ledajans_header_logo_css_patched')) {
-        return;
-    }
+add_action('wp_loaded', function () {
     if (!function_exists('wp_get_custom_css') || !function_exists('wp_update_custom_css_data')) {
         return;
     }
     $css = (string) wp_get_custom_css();
-    $needle = 'filter: brightness(0) invert(1) !important;';
-    if (strpos($css, $needle) === false) {
-        update_option('ledajans_header_logo_css_patched', '1', false);
+    if ($css === '') {
         return;
     }
-    wp_update_custom_css_data(str_replace($needle, 'filter: none !important;', $css));
-    update_option('ledajans_header_logo_css_patched', '1', false);
+    $updated = preg_replace(
+        '/filter:\s*brightness\(0\)\s*invert\(1\)\s*!important;/',
+        'filter: none !important;',
+        $css,
+        -1,
+        $count
+    );
+    if (!$count) {
+        return;
+    }
+    wp_update_custom_css_data($updated);
 }, 20);
