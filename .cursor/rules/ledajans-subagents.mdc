@@ -15,7 +15,8 @@ alwaysApply: true
 | title/meta/H1/CTR/snippet | `onpage-seo` |
 | LCP/TBT/Lighthouse/mobil hız | `performance` |
 | Yeni/refresh içerik, topic cluster | `content-seo` |
-| “blog ajanı”, blog yazısı, WP HTML blog, DOCX→blog, haftalık blog | `blog-ajan` |
+| “blog ajanı”, blog yazısı, WP HTML blog, DOCX→blog | `blog-ajan` |
+| Haftalık 2 blog, Pazartesi yayın | `haftalik-blog-yayin` |
 | İç link / hub-spoke | `internal-link` |
 | JSON-LD / rich results | `schema` |
 | Hero/görsel/kontrast/mikro-kopya | `visual-ux` |
@@ -27,6 +28,6 @@ alwaysApply: true
 
 Kurallar:
 - Varsayılan report-only; canlı deploy için açık onay + dry-run.
-- **İstisna:** Haftalık blog otomasyonu (`blog-ajan` + `scripts/publish-blog-post.py --publish`) kullanıcı tarafından ayakta onaylıdır.
+- **İstisna:** Haftalık 2 blog (`haftalik-blog-yayin` + `publish-blog-post.py --publish`) ayakta onaylıdır.
 - Çalışma dizini `/workspace`. Secret commit yok.
 - Detaylı stack: `AGENT-HUB/CURSOR-STACK-RESEARCH.md`

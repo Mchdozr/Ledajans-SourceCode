@@ -1,27 +1,40 @@
-# Haftalık Blog Otomasyonu (Pazartesi 09:00)
+# Haftalık Blog Otomasyonu (Pazartesi 09:00 — 2 yazı)
 
 ## Amaç
-Her Pazartesi saat **09:00** (Türkiye) bir SEO blog yazısı üret, WordPress’e **publish** et, git’e push et. Odak programı: **led ekran** 1. sırada.
+Her Pazartesi **09:00** (Europe/Istanbul) **2** SEO blog yazısı üret, görsel ekle, WordPress’e **publish** et, git’e push et.
+
+Yapı örneği: https://ledajans.com/huidu-c08l-controller/  
+Ajan: `.cursor/agents/haftalik-blog-yayin.md` (+ `blog-ajan.md`)
 
 ## Kaynaklar
 | Dosya | Rol |
 |-------|-----|
-| `.cursor/agents/blog-ajan.md` | Ajan talimatı |
-| `Blog/keyword-queue.json` | Konu kuyruğu + published_slugs |
-| `Blog/huidu-wf1-wf2-wf4-led-kontrol-karti.html` | CSS/HTML referans |
-| `scripts/publish-blog-post.py` | WP REST publish + Rank Math |
+| `.cursor/agents/haftalik-blog-yayin.md` | 2 yazı / görsel / canlı publish |
+| `Blog/keyword-queue.json` | Konu kuyruğu |
+| `Blog/yayinlanan-basliklar.md` | Başlık/slug/odak tekrarı yok |
+| `Blog/_ornek-huidu-c08l-controller.html` | C08L iskelet |
+| `Blog/huidu-wf1-wf2-wf4-led-kontrol-karti.html` | CSS |
+| `scripts/select-weekly-blog-topics.py` | 2 unique pending |
+| `scripts/publish-blog-post.py` | WP REST + Rank Math |
 
-## Agent talimatı (Cursor Automation prompt özeti)
-1. Repo checkout: `Mchdozr/Ledajans-SourceCode` (master veya tanımlı branch)
-2. `.cursor/agents/blog-ajan.md` + `Blog/keyword-queue.json` oku
-3. Sıradaki `pending` topic’i seç; HTML üret (`Blog/<slug>.html`)
-4. **Görsel:** konu/ürünle uyumlu; yoksa üret veya bul → WP medya yükle → HTML’e koy (alakasız stok yasak)
-5. `python scripts/publish-blog-post.py Blog/<slug>.html --dry-run` sonra `--publish`
-6. Queue güncelle, commit, push
-7. Özet yaz: slug, link, KW, görsel URL
+## Cursor Cloud Automation prompt
 
-## Ortam
-Cloud Agent’ta `.env` veya secret: `WP_USERNAME`, `WP_APP_PASSWORD`, `WP_SITE_URL=https://ledajans.com`
+```
+Repo: Ledajans-SourceCode (master)
+Oku: .cursor/agents/haftalik-blog-yayin.md
+Çalıştır: python scripts/select-weekly-blog-topics.py
+Seçilen 2 topic için C08L yapısında HTML + görsel üret.
+Dry-run sonra python scripts/publish-blog-post.py Blog/<slug>.html --publish
+Queue + yayinlanan-basliklar güncelle, commit, push.
+Onay sorma. Aynı slug/başlık/odak yasak.
+```
 
-## Cron
-`0 9 * * 1` — her Pazartesi 09:00 (kullanıcı yerel saati / editör timezone)
+Cron: `0 9 * * 1` — Europe/Istanbul  
+Secret: `WP_USERNAME`, `WP_APP_PASSWORD`, `WP_SITE_URL=https://ledajans.com`
+
+## Manuel
+```
+python scripts/select-weekly-blog-topics.py
+python scripts/publish-blog-post.py Blog/<slug>.html --dry-run
+python scripts/publish-blog-post.py Blog/<slug>.html --publish
+```
