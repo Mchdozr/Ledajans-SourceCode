@@ -578,10 +578,22 @@ div[class*="sticky__spacer"],
   transform: none !important;
 }
 
+#page-content,
+#wp-main-content,
 .home #page-content,
 .home #wp-main-content,
 .page-id-1248 #page-content {
   margin-top: 0 !important;
+}
+
+/* Tema kopyası offcanvas (eski WP Anamenu) — header widget menüsü kalsın */
+.wrapper-page > #gva-overlay,
+.wrapper-page > .canvas-mobile {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
 /* Son güvence: header margin/height override çakışmalarını sıfırla */

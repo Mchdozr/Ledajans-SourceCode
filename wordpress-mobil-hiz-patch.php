@@ -47,11 +47,23 @@ add_action('template_redirect', function () {
         if (!is_string($html) || $html === '') {
             return $html;
         }
-        return str_replace(
-            'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png',
-            'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp',
+        $png = 'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png';
+        $webp = 'https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp';
+        $old_jpg = 'https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg';
+        $old_jpg_www = 'https://www.ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg';
+        $old_aug = 'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp';
+        $html = str_replace(array($png, $old_jpg, $old_jpg_www, $old_aug), $webp, $html);
+        $html = preg_replace(
+            '/(<img\b[^>]*src=")[^"]+("[^>]*class="[^"]*ledajans-footer-logo)/i',
+            '$1' . $png . '$2',
             $html
         );
+        $html = preg_replace(
+            '/(<img\b[^>]*class="[^"]*ledajans-footer-logo[^"]*"[^>]*src=")[^"]+/i',
+            '$1' . $png,
+            $html
+        );
+        return $html;
     });
 }, 0);
 

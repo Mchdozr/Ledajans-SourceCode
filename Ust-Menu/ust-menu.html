@@ -91,11 +91,18 @@
         flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: center !important;
+        column-gap: 0 !important;
         row-gap: 0.35rem !important;
+      }
+      .elementor-element-123bc72 .gva-main-menu > li {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
       .elementor-element-123bc72 .gva-main-menu > li > a {
         display: inline-flex !important;
         align-items: center !important;
+        padding-left: 0.42rem !important;
+        padding-right: 0.42rem !important;
       }
       /* Elementor Pro sticky: hafif scroll’da beyaz boşluk (transform geçişi) */
       .elementor-element-123bc72.elementor-sticky--active,
@@ -110,8 +117,8 @@
     /* Orta genişlik: menü + telefon sıkışmasın */
     @media only screen and (min-width: 1025px) and (max-width: 1280px) {
       .elementor-element-123bc72 .gva-main-menu > li > a {
-        padding-left: 0.35rem !important;
-        padding-right: 0.35rem !important;
+        padding-left: 0.28rem !important;
+        padding-right: 0.28rem !important;
         font-size: 0.8125rem !important;
       }
     }
@@ -243,10 +250,20 @@
       bottom: auto !important;
       transform: none !important;
     }
+    #page-content,
+    #wp-main-content,
     .home #page-content,
     .home #wp-main-content,
     .page-id-1248 #page-content {
       margin-top: 0 !important;
+    }
+    .wrapper-page > #gva-overlay,
+    .wrapper-page > .canvas-mobile {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      pointer-events: none !important;
     }
     
     /* Tablet/mobil: turuncu bar — safe-area tek yerde; hamburger+logo aynı containing block */
@@ -989,7 +1006,7 @@
                           <div class="gva-element-gva-logo gva-element">
                             <div class="gsc-logo text-center">
                               <a class="site-branding-logo" href="https://ledajans.com/" title="LEDAJANS" rel="home">
-                                <img src="https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png" alt="LEDAJANS" width="182" height="36" decoding="async" />
+                                <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp" alt="LEDAJANS" width="182" height="36" decoding="async" />
                               </a>
                             </div>
                           </div>
@@ -1005,7 +1022,7 @@
                             <div class="mobile-breakpoint-1024 gva-navigation-menu menu-align-center style-default">
                               <div class="nav-one__default nav-screen__default">
                                 <div class="menu-anamenu-container">
-                                  <ul id="menu-anamenu-desktop" class="gva-nav-menu gva-main-menu">
+                                  <ul id="menu-anamenu-desktop" class="gva-nav-menu gva-main-menu" translate="no">
                                     <li class="menu-item menu-item-home"><a href="https://ledajans.com/"><span class="item-content"><span class="menu-title">Anasayfa</span></span></a></li>
                                     <li class="menu-item menu-item-has-children">
                                       <a href="#"><span class="item-content"><span class="menu-title">Kurumsal</span><span class="caret"></span></span></a>
@@ -1093,13 +1110,13 @@
       <div class="gva-offcanvas-content mobile">
         <div class="top-canvas">
           <a class="logo-mm" href="https://ledajans.com/">
-            <img src="https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg" alt="LEDAJANS" decoding="async" />
+            <img src="https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp" alt="LEDAJANS" decoding="async" />
           </a>
           <a class="control-close-mm" href="#" aria-label="Menüyü kapat"><i class="far fa-times-circle" aria-hidden="true"></i></a>
         </div>
         <div class="wp-sidebar sidebar">
           <div id="gva-mobile-menu" class="navbar-collapse">
-            <ul id="menu-anamenu" class="gva-nav-menu gva-mobile-menu">
+            <ul id="menu-anamenu" class="gva-nav-menu gva-mobile-menu" translate="no">
               <li class="menu-item menu-item-home"><a href="https://ledajans.com/"><span class="item-content"><span class="menu-title">Anasayfa</span></span></a></li>
               <li class="menu-item menu-item-has-children">
                 <a href="#"><span class="item-content"><span class="menu-title">Kurumsal</span><span class="caret"></span></span></a>
