@@ -1,6 +1,7 @@
 {
   "primary_keyword": "led ekran",
-  "notes": "Her yazıda Rank Math anahtar listesinde 'led ekran' 1. sırada. Yazı odak kelimesi (focus) topic.focus_keyword. Tekrar yok: status=published olanlar atlanır. Görsel zorunlu: konu/ürün uyumlu; üret veya internetten bulup WP medya yükle; alakasız stok yasak.",
+  "weekly_count": 2,
+  "notes": "Her Pazartesi 2 yazı. Rank Math'te 'led ekran' 1. sırada. Tekrar yok: published_slugs + canlı WP + yayinlanan-basliklar. Yapı: huidu-c08l-controller. Görsel zorunlu.",
   "keyword_priority": [
     "led ekran",
     "led ekran fiyatları",
@@ -25,6 +26,14 @@
   ],
   "published_slugs": [
     "cob-led-ekran-nedir-avantajlari",
+    "colorlight-a35",
+    "colorlight-a40",
+    "colorlight-a60-player",
+    "colorlight-e120",
+    "e80",
+    "gob-led-ekran-ne-zaman-tercih-edilir",
+    "huidu-c08l-controller",
+    "huidu-c16l",
     "dis-mekan-led-ekran-fiyatlari-2026",
     "huidu-wf1-wf2-wf4-led-kontrol-karti",
     "ic-mekan-led-ekran-fiyatlari-2026",

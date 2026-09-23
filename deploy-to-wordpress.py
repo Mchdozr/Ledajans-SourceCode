@@ -7,7 +7,7 @@ Kullanım:
   3) python deploy-to-wordpress.py
 """
 
-import os, re, json, time, sys
+import os, re, json, time, sys, base64
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 if sys.stdout.encoding != "utf-8":
@@ -31,7 +31,11 @@ def load_dotenv(path: str) -> None:
                 continue
             key, _, value = line.partition("=")
             key, value = key.strip(), value.strip().strip('"').strip("'")
-            if key and key not in os.environ:
+            if not key:
+                continue
+            if key in ("WP_SITE_URL", "WP_USERNAME", "WP_APP_PASSWORD"):
+                os.environ[key] = value
+            elif key not in os.environ:
                 os.environ[key] = value
 
 
@@ -112,9 +116,12 @@ SCHEMA_FILES = [
 
 session = requests.Session()
 session.auth = (WP_USERNAME, WP_APP_PASSWORD)
+_wp_basic = base64.b64encode(f"{WP_USERNAME}:{WP_APP_PASSWORD}".encode("utf-8")).decode("ascii")
 session.headers.update({
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) LEDAJANS-Deploy/1.0",
+    "Authorization": f"Basic {_wp_basic}",
+    "X-WP-Authorization": f"Basic {_wp_basic}",
 })
 
 

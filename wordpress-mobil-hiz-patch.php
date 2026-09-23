@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LEDAJANS Mobile Perf
  * Description: Yalnizca mobil UA icin LCP/TBT optimizasyonu. Desktop no-op. Rank Math REST meta kaydi tum cihazlarda acik.
- * Version: 1.2.4
+ * Version: 1.2.5
  * Author: LEDAJANS
  *
  * Alternatif kurulum: wp-content/mu-plugins/ledajans-perf-patch.php
@@ -47,11 +47,23 @@ add_action('template_redirect', function () {
         if (!is_string($html) || $html === '') {
             return $html;
         }
-        return str_replace(
-            'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png',
-            'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp',
+        $png = 'https://ledajans.com/wp-content/uploads/2022/12/LedajansLogo.png';
+        $webp = 'https://ledajans.com/wp-content/uploads/2026/09/ledajans-ust-menu-logo.webp';
+        $old_jpg = 'https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg';
+        $old_jpg_www = 'https://www.ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg';
+        $old_aug = 'https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp';
+        $html = str_replace(array($png, $old_jpg, $old_jpg_www, $old_aug), $webp, $html);
+        $html = preg_replace(
+            '/(<img\b[^>]*src=")[^"]+("[^>]*class="[^"]*ledajans-footer-logo)/i',
+            '$1' . $png . '$2',
             $html
         );
+        $html = preg_replace(
+            '/(<img\b[^>]*class="[^"]*ledajans-footer-logo[^"]*"[^>]*src=")[^"]+/i',
+            '$1' . $png,
+            $html
+        );
+        return $html;
     });
 }, 0);
 
@@ -151,12 +163,12 @@ add_action('wp_print_styles', function () {
     }
 }, 999);
 
-// Mobil LCP: yalnizca q60 preload (desktop hero preload yok)
+// Mobil LCP: stant poster WebP (video preload yok; desktop poster Hero.html media query)
 add_action('wp_head', function () {
     if (!ledajans_mp_v11_active() || !is_front_page()) {
         return;
     }
-    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/04/ldajsn2-mobile-q60.webp" fetchpriority="high">' . "\n";
+    echo '<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-mobile.webp" fetchpriority="high">' . "\n";
 }, 1);
 
 add_filter('wp_get_attachment_image_attributes', function ($attr) {
@@ -164,7 +176,9 @@ add_filter('wp_get_attachment_image_attributes', function ($attr) {
         return $attr;
     }
     $src = $attr['src'] ?? '';
-    if (stripos($src, 'ldajsn2-mobile') !== false) {
+    if (stripos($src, 'ldajsn2-mobile') !== false
+        || stripos($src, 'hero-stant-poster-mobile') !== false
+        || stripos($src, 'hero-atrium-led-mobile') !== false) {
         $attr['fetchpriority'] = 'high';
         $attr['loading'] = 'eager';
         $attr['decoding'] = 'async';
@@ -311,7 +325,17 @@ function ledajans_mp_v11_gtm_buffer($html) {
         $html
     );
 
-    // Mobil: q72 / hero-poster preload ve srcset baskisini azalt
+    // Mobil: video preload yasak (LCP poster WebP); eski q72 / hero-poster baskisini kes
+    $html = preg_replace(
+        '#<link[^>]+rel=["\']preload["\'][^>]+as=["\']video["\'][^>]*>\s*#i',
+        '',
+        $html
+    );
+    $html = preg_replace(
+        '#<link[^>]+rel=["\']preload["\'][^>]+(?:hero-stant-1920|hero-stant-1280|StantVideo|Firefly-548225-1)\.mp4[^>]*>\s*#i',
+        '',
+        $html
+    );
     $html = preg_replace(
         '#<link[^>]+rel=["\']preload["\'][^>]+hero-poster\.webp[^>]*>\s*#i',
         '',

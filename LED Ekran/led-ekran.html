@@ -1,620 +1,557 @@
+<!-- LEDAJANS /led-ekran/ — Elementor HTML widget (Görsel sekme kullanma, TinyMCE CSS'i bozar) -->
 <style>
+  body.page-id-5001 .page-title,
+  body.page-id-5001 .page-title h1,
+  body.page-id-5001 .gva-breadcrumb-content h1,
+  body.page-id-5001 header.entry-header h1,
+  body.page-id-5001 .title-info > h1.title { display: none !important; }
 
-    .la-card { cursor: pointer; }
-    /* LEDAJANS GLOBAL STİLLER */
-    :root {
-      --la-orange: #F46F2C;
-      --la-dark: #111827;
-      --la-gray: #4B5563;
-      --la-light: #F9FAFB;
-    }
-    
-    .la-wrapper {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: #1f2937;
-      line-height: 1.7;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    
-    .la-section {
-      padding: 5rem 0;
-      border-bottom: 1px solid #f3f4f6;
-    }
-    
-    .la-section:last-child {
-      border-bottom: none;
-    }
-    
-    /* GRADYAN BAŞLIK */
-    @keyframes shine {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    .la-gradient-title {
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      background: linear-gradient(90deg, #F46F2C, #ff8f5e, #F46F2C);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 3s linear infinite;
-      text-align: center;
-    }
-    
-    @media (min-width: 768px) {
-      .la-gradient-title {
-        font-size: 3.75rem;
-      }
-    }
-    
-    /* HERO BÖLÜMÜ */
-    .la-hero {
-      background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
-      border-radius: 2rem;
-      padding: 5rem 2rem;
-      color: white;
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-    
-    .la-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(244,111,44,0.1) 0%, rgba(0,0,0,0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    
-    .la-hero-desc {
-      font-size: 1.25rem;
-      color: #9ca3af;
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      font-weight: 300;
-    }
-    
-    /* BUTONLAR */
-    .la-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2.5rem;
-      border-radius: 1rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .la-btn-primary {
-      background-color: var(--la-orange);
-      color: #ffffff !important;
-      box-shadow: 0 10px 15px -3px rgba(244, 111, 44, 0.3);
-      border: 2px solid var(--la-orange);
-    }
-    
-    .la-btn-primary:hover {
-      background-color: #d1561b;
-      border-color: #d1561b;
-      transform: translateY(-3px);
-      box-shadow: 0 20px 25px -5px rgba(244, 111, 44, 0.4);
-      color: #ffffff !important;
-    }
-    
-    .la-btn-outline {
-      background: transparent;
-      color: white !important;
-      margin-left: 1rem;
-      border: 2px solid rgba(255,255,255,0.2);
-    }
-    
-    .la-btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
-    }
-    
-    /* KARTLAR VE GÖRSELLER */
-    .la-grid-3 {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .la-grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    .la-card {
-      background: white;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      transition: all 0.4s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-    
-    .la-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-      border-color: var(--la-orange);
-    }
-    
-    .la-card-img-wrapper {
-      position: relative;
-      padding-top: 62%;
-      overflow: hidden;
-      background-color: #f3f4f6;
-    }
-    
-    .la-card-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .la-card-body {
-      padding: 2rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .la-card-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--la-dark);
-      margin-bottom: 1rem;
-    }
-    
-    .la-card-text {
-      color: var(--la-gray);
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-    
-    .la-link {
-      color: var(--la-orange);
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .la-link:hover {
-      gap: 0.75rem;
-      text-decoration: underline;
-    }
-    
-    .la-link-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.25rem;
-      height: 1.25rem;
-      border-radius: 999px;
-      border: 1px solid rgba(244, 111, 44, 0.4);
-      background: rgba(244, 111, 44, 0.06);
-      font-size: 0.8rem;
-      color: #f46f2c;
-    }
-    
-    /* SEO METİN ALANI */
-    .la-content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    
-    @media (min-width: 1024px) {
-      .la-content-wrapper {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    .la-section-header {
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: var(--la-dark);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    
-    .la-text-block p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      color: #374151;
-    }
-    
-    .la-text-block a {
-      color: var(--la-orange);
-      text-decoration: underline;
-      font-weight: 600;
-    }
-    
-    /* SSS BÖLÜMÜ */
-    .la-faq-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .la-faq-item {
-      background: var(--la-light);
-      border-radius: 1rem;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid #e5e7eb;
-    }
-    
-    .la-faq-q {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--la-dark);
-      margin-bottom: 1rem;
-    }
-    
-    /* ALT CTA */
-    .la-cta-box {
-      background: linear-gradient(135deg, #111827 0%, #000000 100%);
-      border-radius: 2rem;
-      padding: 5rem 2rem;
-      text-align: center;
-      margin-top: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    /* MOBİL */
-    @media (max-width: 640px) {
-      .la-hero {
-        padding: 3rem 1.5rem;
-      }
-    
-      .la-gradient-title {
-        font-size: 2.5rem;
-      }
-    
-      .la-btn {
-        width: 100%;
-        margin: 0.5rem 0 0 0;
-      }
-    
-      .la-btn-outline {
-        margin-left: 0;
-      }
-    
-      .la-content-wrapper {
-        gap: 2rem;
-      }
-    }
-    .la-link::before {
-      content: none !important;
-      display: none !important;
-    }
-    .la-link,
-    .la-link:hover,
-    .la-link:focus,
-    .la-link:active {
-      text-decoration: none !important;
-      border-bottom: none !important;
-    }
-    /* Tüm kartlarda resmi yukarı kaydırmak için */
-    .la-card-img {
-      object-fit: cover;
-      object-position: top top; /* varsayılan center center yerine */
-    }
-    </style>
-    <div class="la-wrapper">
-    
-      <!-- HERO SECTION -->
-      <div class="la-hero">
-        <h1 class="la-gradient-title">LED Ekran Çözümleri ve Fiyatları</h1>
-        <p class="la-hero-desc">
-          <strong>LED ekran fiyatları</strong>, m² hesaplama ve proje danışmanlığı — iç mekan, dış mekan ve rental için
-          25 yıllık üretici tecrübesi. Türkiye geneli kurulum ve 2 yıl garanti ile <strong>LED ekran firmaları</strong> arasında
-          doğrudan üretici desteği sunuyoruz.
-        </p>
-        <div>
-          <a href="https://ledajans.com/iletisim/" class="la-btn la-btn-primary">LED Ekran Fiyat Teklifi Al</a>
-          <a href="https://ledajans.com/blog/led-ekran-fiyatlari-2026/" class="la-btn la-btn-outline">2026 Fiyat Rehberi</a>
-          <a href="https://ledajans.com/projeler/" class="la-btn la-btn-outline">Projeleri İncele</a>
-          <a href="tel:+902122204004" class="la-btn la-btn-outline">Hemen Ara: 0212 220 40 04</a>
-        </div>
-        <p style="margin-top:2rem;font-size:1rem;color:#9ca3af;max-width:720px;margin-left:auto;margin-right:auto;">
-          <a href="https://ledajans.com/ic-mekan-led-ekran/" style="color:#fdba74;text-decoration:none;font-weight:600;">İç mekan LED ekran</a> ·
-          <a href="https://ledajans.com/dis-mekan-led-ekran/" style="color:#fdba74;text-decoration:none;font-weight:600;">Dış mekan LED ekran</a> ·
-          <a href="https://ledajans.com/rental-ekran/" style="color:#fdba74;text-decoration:none;font-weight:600;">Rental LED ekran kiralama</a> ·
-          <a href="https://ledajans.com/cob-ekran/" style="color:#fdba74;text-decoration:none;font-weight:600;">COB ekran</a>
-        </p>
-      </div>
-    
-      <!-- ÜRÜN KATEGORİLERİ (GÖRSELLİ & ZENGİN) -->
-      <div class="la-section">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 class="la-section-header">İhtiyacınıza Uygun LED Ekran Modelleri</h2>
-          <p style="font-size: 1.1rem; color: #6b7280; max-width: 700px; margin: 0 auto;">
-            Projenizin kullanım alanına göre özel olarak tasarlanmış, farklı piksel aralıklarına ve kasa yapılarına sahip geniş ürün yelpazemizi inceleyin.
-          </p>
-        </div>
-    
-        <div class="la-grid-3">
-          <!-- İç Mekan Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/ic-mekan-led-ekran/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png"
-                   alt="İç Mekan Indoor LED Ekran"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">İç Mekan (Indoor) LED Ekran</h3>
-              <p class="la-card-text">
-                Mağaza vitrinleri, toplantı salonları ve TV stüdyoları için
-                <strong>P1.25, P2, P2.5</strong> gibi yüksek çözünürlüklü seçenekler. Sessiz çalışan,
-                ince kasalı ve yüksek tazeleme hızına (3840Hz) sahip ekranlar.
-              </p>
-              <a href="https://ledajans.com/ic-mekan-led-ekran/"
-                 class="la-link"
-                 title="İç Mekan LED Ekran Modelleri">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
-    
-          <!-- Dış Mekan Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/dis-mekan-led-ekran/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5.png"
-                   alt="Dış Mekan Outdoor LED Ekran"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">Dış Mekan (Outdoor) LED Ekran</h3>
-              <p class="la-card-text">
-                Güneş altında net görünen 5000+ nits parlaklık. Yağmur, kar ve toza dayanıklı
-                <strong>IP65 korumalı</strong> paneller. Reklam panoları, totemler ve stadyumlar için
-                <strong>P4, P5, P6, P8, P10</strong> seçenekleri.
-              </p>
-              <a href="https://ledajans.com/dis-mekan-led-ekran/"
-                 class="la-link"
-                 title="Dış Mekan LED Ekran Fiyatları">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
-    
-          <!-- Rental Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/rental-ekran/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2022/12/rentalkabin-600x540.png"
-                   alt="Kiralık Rental LED Ekran"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">Rental (Kiralık) LED Ekran</h3>
-              <p class="la-card-text">
-                Konser, fuar ve etkinlikler için hızlı kurulup sökülebilen, hafif
-                <strong>die-cast alüminyum</strong> kasa yapısı. Mobil kullanım için özel kilit
-                sistemleri ve taşıma çantaları (flight case) ile.
-              </p>
-              <a href="https://ledajans.com/rental-ekran/"
-                 class="la-link"
-                 title="Rental LED Ekran Kiralama">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
+  .la-wrapper {
+    --la-orange: #F46F2C;
+    --la-dark: #111827;
+    --la-gray: #4B5563;
+    --la-light: #F9FAFB;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1f2937;
+    line-height: 1.7;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem;
+  }
+  .la-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .la-section:last-of-type { border-bottom: none; }
 
-          <!-- COB - Smart Screen Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/cob-ekran/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-7.png"
-                   alt="COB - Smart Screen"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">COB – Smart Screen</h3>
-              <p class="la-card-text">
-                Yüksek dayanıklılık ve premium görüntü kalitesi sunan COB teknolojisi,
-                kurumsal alanlar ve uzun ömürlü ekran ihtiyaçları için ideal çözüm sağlar.
-              </p>
-              <a href="https://ledajans.com/cob-ekran/"
-                 class="la-link"
-                 title="COB - Smart Screen Detayları">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
+  @keyframes la-shine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .la-gradient-title {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    margin: 0 0 1.25rem;
+    line-height: 1.15;
+    background: linear-gradient(90deg, #F46F2C, #ff8f5e, #F46F2C);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: la-shine 4s linear infinite;
+    text-align: center;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .la-gradient-title { animation: none; background-position: 50% 50%; }
+  }
 
-          <!-- İç Mekan RGB Panel Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/ic-mekan-rgb-panel/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2026/02/IcMekanRGBPanel.png"
-                   alt="İç Mekan RGB Panel"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">İç Mekan RGB Panel</h3>
-              <p class="la-card-text">
-                Mağaza, showroom ve kurumsal uygulamalar için canlı renk performansı sunan
-                iç mekan RGB panel seçeneklerini inceleyin.
-              </p>
-              <a href="https://ledajans.com/ic-mekan-rgb-panel/"
-                 class="la-link"
-                 title="İç Mekan RGB Panel Modelleri">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
+  .la-hero {
+    background: linear-gradient(160deg, #111827 0%, #0f172a 55%, #1a120c 100%);
+    border-radius: 1.75rem;
+    padding: clamp(2.5rem, 5vw, 4.5rem) 1.5rem 3rem;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.28);
+  }
+  .la-hero::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -18%;
+    width: 640px;
+    height: 640px;
+    background: radial-gradient(circle, rgba(244,111,44,0.16) 0%, transparent 68%);
+    pointer-events: none;
+  }
+  .la-hero-desc {
+    position: relative;
+    font-size: 1.15rem;
+    color: #d1d5db;
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    font-weight: 400;
+  }
+  .la-hero-actions {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .la-hero-chips {
+    position: relative;
+    margin: 1.75rem 0 0;
+    font-size: 0.95rem;
+    color: #9ca3af;
+  }
+  .la-hero-chips a {
+    color: #fdba74;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .la-hero-chips a:hover { color: #fff; text-decoration: underline; }
 
-          <!-- Dış Mekan RGB Panel Kartı -->
-          <article class="la-card"
-             onclick="window.location.href='https://ledajans.com/dis-mekan-rgb-panel/';">
-            <div class="la-card-img-wrapper">
-              <img src="https://ledajans.com/wp-content/uploads/2026/02/DisMekanRGBPanel.png"
-                   alt="Dış Mekan RGB Panel"
-                   class="la-card-img" loading="lazy">
-            </div>
-            <div class="la-card-body">
-              <h3 class="la-card-title">Dış Mekan RGB Panel</h3>
-              <p class="la-card-text">
-                Zorlu hava koşullarına dayanıklı, yüksek parlaklık ve uzun ömür sunan
-                dış mekan RGB panel ürünleriyle projelerinizi güçlendirin.
-              </p>
-              <a href="https://ledajans.com/dis-mekan-rgb-panel/"
-                 class="la-link"
-                 title="Dış Mekan RGB Panel Modelleri">
-                Modelleri İncele
-                <span class="la-link-icon" aria-hidden="true">➜</span>
-              </a>
-            </div>
-          </article>
+  .la-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.85rem 1.6rem;
+    border-radius: 0.9rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .la-btn-primary {
+    background: var(--la-orange);
+    color: #fff !important;
+    border: 2px solid var(--la-orange);
+    box-shadow: 0 10px 18px -6px rgba(244, 111, 44, 0.45);
+  }
+  .la-btn-primary:hover {
+    background: #d1561b;
+    border-color: #d1561b;
+    color: #fff !important;
+    transform: translateY(-2px);
+  }
+  .la-btn-outline {
+    background: transparent;
+    color: #fff !important;
+    border: 2px solid rgba(255,255,255,0.22);
+  }
+  .la-btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+    color: #fff !important;
+  }
 
-        </div>
-      </div>
-    
-      <!-- SEO METİN ALANI (Görsel Destekli) -->
-      <div class="la-section">
-        <div class="la-content-wrapper">
-          <div class="la-text-block">
-            <h2 class="la-section-header">LED Ekran Nedir ve İşletmenize Ne Kazandırır?</h2>
-            <p>
-              <strong>LED ekran</strong>, binlerce küçük LED çipinin bir araya gelerek oluşturduğu, günümüzün en etkili dijital görüntüleme teknolojisidir. Geleneksel tabelaların aksine, <a href="https://ledajans.com/cob-ekran/">hareketli videolar</a> ve dinamik içerikler yayınlayarak müşterilerinizin dikkatini %400 daha fazla çekersiniz.
-            </p>
-            <p>
-              Ledajans olarak sunduğumuz <strong>LED ekran sistemleri</strong>, modüler yapısı sayesinde mekanınıza özel (örneğin 3x2 metre veya 10x5 metre) üretilebilir. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan LED ekran</a> modelleri mağaza, stüdyo ve toplantı odalarında tercih edilirken, <a href="https://ledajans.com/dis-mekan-led-ekran/">dış mekan LED ekran çözümleri</a> reklam panoları ve stadyumlarda markanızın prestijini artırır. Kısa süreli projeler için <a href="https://ledajans.com/rental-ekran/">rental LED ekran kiralama</a> seçeneklerimiz de mevcuttur.
-            </p>
-            <ul style="list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 2rem;">
-              <li style="display: flex; align-items: center; gap: 1rem; font-weight: 600;">
-                <span style="color: var(--la-orange);">✓</span> 100.000 Saate Varan Uzun Ömür
-              </li>
-              <li style="display: flex; align-items: center; gap: 1rem; font-weight: 600;">
-                <span style="color: var(--la-orange);">✓</span> Düşük Enerji Tüketimi (Eco Modül)
-              </li>
-              <li style="display: flex; align-items: center; gap: 1rem; font-weight: 600;">
-                <span style="color: var(--la-orange);">✓</span> Uzaktan Yönetim Yazılımı
-              </li>
-            </ul>
-          </div>
-          <div>
-            <img src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-5-550x622.png"
-                 alt="Kaliteli LED Ekran Teknolojisi"
-                 style="width: 100%; border-radius: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2);">
-          </div>
-        </div>
-      </div>
-    
-      <!-- REHBERLER VE FİYAT (long-tail iç link kümesi) -->
-      <div class="la-section" style="padding: 3rem 1rem;">
-        <h2 class="la-section-header" style="text-align: center; margin-bottom: 2rem;">Rehberler ve fiyat</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; max-width: 1100px; margin: 0 auto;">
-          <a href="https://ledajans.com/blog/led-ekran-fiyatlari-2026/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">LED ekran fiyatları 2026</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">İç/dış mekan ve rental bütçe rehberi</p>
-          </a>
-          <a href="https://ledajans.com/blog/led-ekran-nasil-secilir-rehber/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">LED ekran nasıl seçilir?</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">P değeri, kasa ve kontrol seçimi</p>
-          </a>
-          <a href="https://ledajans.com/blog/ic-mekan-led-ekran-fiyatlari-2026/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">İç mekan fiyat rehberi</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">P0.93–P5 m² bütçe aralıkları</p>
-          </a>
-          <a href="https://ledajans.com/blog/dis-mekan-led-ekran-fiyatlari-2026/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">Dış mekan fiyat rehberi</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">IP65 ve P4–P10 maliyet kalemleri</p>
-          </a>
-          <a href="https://ledajans.com/blog/rental-led-ekran-kiralama-fiyatlari-2026/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">Rental kiralama fiyatları</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Gün + m² + lokasyon formülü</p>
-          </a>
-          <a href="https://ledajans.com/fuar-led-ekran/" style="display:block;padding:1.25rem;border:1px solid #e5e7eb;border-radius:1rem;text-decoration:none;color:#111827;background:#fff;">
-            <strong style="color:#F46F2C;">Fuar LED ekran rehberi</strong>
-            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:#6b7280;">Stand ve etkinlik senaryoları</p>
-          </a>
-        </div>
-      </div>
+  .la-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 920px; margin: 0 auto; }
+  .la-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0; font-size: 0.95rem; min-width: 560px; }
+  .la-table th, .la-table td { border: 1px solid #e5e7eb; padding: 0.75rem 0.85rem; text-align: left; }
+  .la-table thead { background: #111827; color: #fff; }
+  .la-table tbody tr:nth-child(even) { background: #f9fafb; }
+  .la-table a { color: #c2410c; font-weight: 600; text-decoration: none; }
+  .la-table a:hover { text-decoration: underline; }
 
-      <!-- SIK SORULAN SORULAR (SEO Zenginleştirilmiş) -->
-      <div class="la-section" style="background-color: #fcfcfc; border-radius: 2rem; padding: 4rem 2rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2 class="la-section-header">LED Ekran Hakkında Merak Edilenler</h2>
-          <p style="color: #6b7280;">Satın alma kararınızı vermeden önce en çok sorulan soruları yanıtladık.</p>
-        </div>
-    
-        <div class="la-faq-container">
-          <div class="la-faq-item">
-            <h3 class="la-faq-q">LED ekran m² fiyatları neye göre değişir?</h3>
-            <p class="la-faq-a">
-              <strong>LED ekran fiyatları</strong>; seçilen piksel aralığına (P değeri küçüldükçe fiyat artar), ekranın toplam boyutuna, kullanılan LED çip kalitesine (Nationstar, Kinglight vb.) ve kontrol sistemine (Novastar, Huidu) göre belirlenir. En doğru fiyat için <a href="https://ledajans.com/iletisim/">bizimle iletişime geçin</a>.
-            </p>
-          </div>
-    
-          <div class="la-faq-item">
-            <h3 class="la-faq-q">Piksel (P) değeri nedir, hangisini seçmeliyim?</h3>
-            <p class="la-faq-a">
-              P değeri, iki LED arasındaki milimetre cinsinden mesafedir. İzleme mesafesi kısaldıkça P değeri düşmelidir. 
-              <br>• <strong>Yakın izleme (2-5m):</strong> P1.8, P2, P2.5 (Mağaza içi, Vitrin)
-              <br>• <strong>Orta mesafe (5-10m):</strong> P3, P4, P5 (Dış cephe, Totem)
-              <br>• <strong>Uzak mesafe (10m+):</strong> P6, P8, P10 (Bina çatısı, Stadyum)
-            </p>
-          </div>
-    
-          <div class="la-faq-item">
-            <h3 class="la-faq-q">Garanti ve teknik servis süreciniz nasıl?</h3>
-            <p class="la-faq-a">
-              Tüm LED ekran projelerimiz <strong>2 yıl tam parça garantilidir</strong>. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur.
-            </p>
-          </div>
-        </div>
-      </div>
-    
-      <!-- ALT CTA: Gradyan Başlıklı -->
-      <div class="la-cta-box">
-        <h2 class="la-gradient-title" style="margin-bottom: 1rem;">Projenizi Hayata Geçirelim</h2>
-        <p style="font-size: 1.25rem; color: #d1d5db; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-          İşletmenizin görünürlüğünü artırmak için en doğru adımı atın. Uzmanlarımız size özel <strong>LED ekran</strong> projesini ve fiyat teklifini hazırlasın.
-        </p>
-        <a href="https://ledajans.com/iletisim/"
-           class="la-btn la-btn-primary"
-           style="font-size: 1.25rem; padding: 1.25rem 3rem;">
-          Bize Ulaşın
-        </a>
-      </div>
-    
+  .la-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .la-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+  }
+
+  a.la-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    color: inherit;
+    box-shadow: 0 4px 14px rgba(17, 24, 39, 0.05);
+  }
+  a.la-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 40px -16px rgba(17, 24, 39, 0.18);
+    border-color: var(--la-orange);
+  }
+  a.la-card:focus-visible { outline: 3px solid #f46f2c; outline-offset: 3px; }
+  .la-card-img-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111827;
+  }
+  .la-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  a.la-card:hover .la-card-img { transform: scale(1.04); }
+  .la-card-body {
+    padding: 1.35rem 1.4rem 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .la-card-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--la-dark);
+    margin: 0 0 0.6rem;
+    line-height: 1.3;
+  }
+  .la-card-text {
+    color: var(--la-gray);
+    margin: 0 0 1rem;
+    flex-grow: 1;
+    font-size: 0.98rem;
+  }
+  .la-link {
+    color: var(--la-orange);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+  }
+  .la-link-icon {
+    display: inline-flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 111, 44, 0.4);
+    background: rgba(244, 111, 44, 0.08);
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .la-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .la-content-wrapper { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; }
+  }
+  .la-section-header {
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    font-weight: 800;
+    color: var(--la-dark);
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .la-lede {
+    font-size: 1.05rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .la-text-block p { margin: 0 0 1.15rem; font-size: 1.05rem; color: #374151; }
+  .la-text-block a { color: var(--la-orange); font-weight: 600; }
+  .la-checks { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.75rem; }
+  .la-checks li { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
+  .la-checks span { color: var(--la-orange); }
+
+  .la-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.85rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  a.la-guide {
+    display: block;
+    padding: 1.15rem 1.2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    text-decoration: none !important;
+    color: #111827;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  a.la-guide:hover {
+    border-color: #f46f2c;
+    box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+    transform: translateY(-2px);
+  }
+  a.la-guide strong { color: #c2410c; display: block; }
+  a.la-guide span { display: block; margin-top: 0.4rem; font-size: 0.9rem; color: #6b7280; font-weight: 400; }
+
+  .la-faq-wrap {
+    background: #f9fafb;
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 4vw, 3.5rem) 1.25rem;
+  }
+  .la-faq-item {
+    background: #fff;
+    border-radius: 0.9rem;
+    margin: 0 0 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.75rem;
+  }
+  .la-faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.08rem;
+    color: var(--la-dark);
+    padding: 1.1rem 1.25rem;
+    list-style: none;
+  }
+  .la-faq-item summary::-webkit-details-marker { display: none; }
+  .la-faq-item p { margin: 0; padding: 0 1.25rem 1.2rem; color: #374151; }
+  .la-faq-item a { color: #c2410c; font-weight: 600; }
+
+  .la-cta-box {
+    background: linear-gradient(135deg, #111827 0%, #000 100%);
+    border-radius: 1.75rem;
+    padding: clamp(2.5rem, 5vw, 4.5rem) 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .la-cta-box .la-gradient-title { margin-bottom: 1rem; }
+  .la-cta-box p { font-size: 1.15rem; color: #d1d5db; margin: 0 auto 1.75rem; max-width: 680px; }
+
+  .la-seo-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 22px 44px -16px rgba(0,0,0,0.22);
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .la-btn { width: 100%; }
+  }
+</style>
+
+<div class="la-wrapper">
+
+  <div class="la-hero">
+    <h1 class="la-gradient-title">LED Ekran Çözümleri</h1>
+    <p class="la-hero-desc"><strong>LED ekran fiyatları</strong>, m² hesaplama ve proje danışmanlığı — iç mekan, dış mekan ve rental. 25 yıllık üretici tecrübesi, Türkiye geneli kurulum, 2 yıl garanti.</p>
+    <div class="la-hero-actions">
+      <a class="la-btn la-btn-primary" href="https://ledajans.com/iletisim/">Fiyat teklifi al</a>
+      <a class="la-btn la-btn-outline" href="https://ledajans.com/led-ekran-fiyatlari-2026/">2026 fiyat rehberi</a>
+      <a class="la-btn la-btn-outline" href="https://ledajans.com/projeler/">Projeleri incele</a>
+      <a class="la-btn la-btn-outline" href="tel:+902122204004">0212 220 40 04</a>
     </div>
+    <p class="la-hero-chips">
+      <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan</a> ·
+      <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış mekan</a> ·
+      <a href="https://ledajans.com/rental-ekran/">Rental</a> ·
+      <a href="https://ledajans.com/cob-ekran/">COB</a> ·
+      <a href="https://ledajans.com/gob-led-ekran/">GOB</a> ·
+      <a href="https://ledajans.com/led-ekran-nedir/">LED ekran nedir?</a>
+    </p>
+  </div>
+
+  <div class="la-section">
+    <div style="text-align:center;margin-bottom:2.25rem;">
+      <h2 class="la-section-header">İhtiyacınıza uygun LED ekran modelleri</h2>
+      <p class="la-lede">Kullanım alanına göre pitch, kasa ve parlaklık. Karttan ürün sayfasına geçin.</p>
+    </div>
+    <div class="la-grid-3">
+      <a class="la-card" href="https://ledajans.com/ic-mekan-led-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran-1.webp" alt="İç mekan LED ekran" width="1280" height="720" fetchpriority="high" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">İç mekan (indoor) LED ekran</h3>
+          <p class="la-card-text">Mağaza, toplantı ve stüdyo için <strong>P1.25, P2, P2.5</strong>. İnce kasa, sessiz çalışma, 3840 Hz tazeleme.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/dis-mekan-led-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-1.webp" alt="Dış mekan LED ekran" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Dış mekan (outdoor) LED ekran</h3>
+          <p class="la-card-text">5000+ nits, <strong>IP65</strong>. Pano, totem ve stadyum için <strong>P4–P10</strong>.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/rental-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/rental-led-sahne.webp" alt="Rental LED ekran kiralama" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Rental (kiralık) LED ekran</h3>
+          <p class="la-card-text">Konser ve fuar için die-cast alüminyum kasa, hızlı kilit, flight case.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/cob-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/cob-led-ekran-nedir.webp" alt="COB Smart Screen LED ekran" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">COB – Smart Screen</h3>
+          <p class="la-card-text">Premium yüzey, darbe dayanımı. Kontrol odası ve kurumsal iç mekan.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/ic-mekan-rgb-panel/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-rgb-panel-1.webp" alt="İç mekan RGB LED panel" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">İç mekan RGB panel</h3>
+          <p class="la-card-text">Showroom ve mağaza için renk tutarlı indoor RGB modül.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/dis-mekan-rgb-panel/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-rgb-panel-1.webp" alt="Dış mekan RGB LED panel" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Dış mekan RGB panel</h3>
+          <p class="la-card-text">Yüksek parlaklık, hava koşullarına dayanıklı outdoor RGB.</p>
+          <span class="la-link">Modelleri incele <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="la-section">
+    <div style="text-align:center;margin-bottom:2.25rem;">
+      <h2 class="la-section-header">Kullanım senaryoları</h2>
+      <p class="la-lede">Aynı arama, üç niyet: vitrin, cephe, fuar. Doğru sayfadan teklif alın.</p>
+    </div>
+    <div class="la-grid-3">
+      <a class="la-card" href="https://ledajans.com/magaza-vitrin-led-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/magaza-vitrin-led-cadde-1.webp" alt="Mağaza vitrin LED ekran" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Mağaza / vitrin</h3>
+          <p class="la-card-text">Göz hizası, cam yansıması, P1.25–P2.5 indoor.</p>
+          <span class="la-link">Mağaza çözümü <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/cephe-led-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/cephe-led-ekran.webp" alt="Cephe LED ekran" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Cephe / billboard</h3>
+          <p class="la-card-text">IP65, 5000+ nits, P4–P10 açık hava.</p>
+          <span class="la-link">Cephe çözümü <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+      <a class="la-card" href="https://ledajans.com/fuar-led-ekran/">
+        <div class="la-card-img-wrapper">
+          <img class="la-card-img" src="https://ledajans.com/wp-content/uploads/2026/09/fuar-led-ekran-stand.webp" alt="Fuar LED ekran stand" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="la-card-body">
+          <h3 class="la-card-title">Fuar / sahne</h3>
+          <p class="la-card-text">Rental kabin, 2–4 saat kurulum. Kiralama veya satış.</p>
+          <span class="la-link">Fuar çözümü <span class="la-link-icon" aria-hidden="true">➜</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="la-section" style="padding:2.5rem 0;">
+    <h2 class="la-section-header" style="text-align:center;">LED ekran m² fiyatı nasıl okunur?</h2>
+    <p class="la-lede" style="margin-bottom:1rem;">Liste m² tek başına teklif değildir. Pitch + kasa + kontrol + kurulum toplamı fiyatı belirler.</p>
+    <div class="la-table-wrap">
+      <table class="la-table">
+        <thead>
+          <tr><th>Niyet</th><th>Tip</th><th>Pitch</th><th>Fiyat sayfası</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>İç mekan / mağaza</td>
+            <td><a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan LED ekran</a></td>
+            <td>P1.25–P3</td>
+            <td><a href="https://ledajans.com/ic-mekan-led-ekran-fiyatlari-2026/">İç mekan m² rehberi</a></td>
+          </tr>
+          <tr>
+            <td>Cephe / outdoor</td>
+            <td><a href="https://ledajans.com/dis-mekan-led-ekran/">Dış mekan LED ekran</a></td>
+            <td>P4–P10 · IP65</td>
+            <td><a href="https://ledajans.com/dis-mekan-led-ekran-fiyatlari-2026/">Dış mekan m² rehberi</a></td>
+          </tr>
+          <tr>
+            <td>Fuar / kiralama</td>
+            <td><a href="https://ledajans.com/rental-ekran/">Rental LED ekran</a></td>
+            <td>P2.6–P3.9</td>
+            <td><a href="https://ledajans.com/rental-led-ekran-kiralama-fiyatlari-2026/">Kiralama fiyatları</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;margin:1.25rem 0 0;">
+      <a href="https://ledajans.com/led-ekran-fiyatlari-2026/" style="color:#c2410c;font-weight:700;">LED ekran fiyatları 2026</a> ·
+      <a href="https://ledajans.com/pitch-secim-rehberi/" style="color:#c2410c;font-weight:700;">Pitch seçim rehberi</a>
+    </p>
+  </div>
+
+  <div class="la-section">
+    <div class="la-content-wrapper">
+      <div class="la-text-block">
+        <h2 class="la-section-header">LED ekran nedir, işletmeye ne katar?</h2>
+        <p><strong>LED ekran</strong>, LED çiplerinin modül üzerinde birleşmesiyle oluşan dijital görüntü yüzeyidir. Sabit tabelaya göre video ve dinamik içerik yayınlar. Ayrıntılı tanım: <a href="https://ledajans.com/led-ekran-nedir/">LED ekran nedir rehberi</a>.</p>
+        <p><a href="https://ledajans.com/">LEDAJANS</a> sistemleri istenen ölçüde üretilir. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan</a> mağaza ve stüdyoda, <a href="https://ledajans.com/dis-mekan-led-ekran/">dış mekan</a> pano ve stadyumda, kısa işler için <a href="https://ledajans.com/rental-ekran/">rental kiralama</a> kullanılır.</p>
+        <ul class="la-checks">
+          <li><span>✓</span> 100.000 saate varan ömür</li>
+          <li><span>✓</span> Düşük enerji (eco modül)</li>
+          <li><span>✓</span> Uzaktan yönetim yazılımı</li>
+        </ul>
+      </div>
+      <div>
+        <img class="la-seo-img" src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-1.webp" alt="Dış mekan LED ekran kurulumu" width="1280" height="720" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+
+  <div class="la-section" style="padding:2.5rem 0;">
+    <h2 class="la-section-header" style="text-align:center;margin-bottom:1.5rem;">Rehberler ve fiyat</h2>
+    <div class="la-guide-grid">
+      <a class="la-guide" href="https://ledajans.com/led-ekran-nedir/"><strong>LED ekran nedir?</strong><span>Türler, kullanım, seçim</span></a>
+      <a class="la-guide" href="https://ledajans.com/led-ekran-fiyatlari-2026/"><strong>LED ekran fiyatları 2026</strong><span>İç / dış / rental bütçe</span></a>
+      <a class="la-guide" href="https://ledajans.com/led-ekran-nasil-secilir-rehber/"><strong>LED ekran nasıl seçilir?</strong><span>P değeri, kasa, kontrol</span></a>
+      <a class="la-guide" href="https://ledajans.com/ic-mekan-led-ekran-fiyatlari-2026/"><strong>İç mekan fiyat rehberi</strong><span>P0.93–P5 m² aralıkları</span></a>
+      <a class="la-guide" href="https://ledajans.com/dis-mekan-led-ekran-fiyatlari-2026/"><strong>Dış mekan fiyat rehberi</strong><span>IP65, P4–P10</span></a>
+      <a class="la-guide" href="https://ledajans.com/rental-led-ekran-kiralama-fiyatlari-2026/"><strong>Rental kiralama fiyatları</strong><span>Gün + m² + lokasyon</span></a>
+      <a class="la-guide" href="https://ledajans.com/fuar-led-ekran/"><strong>Fuar LED ekran</strong><span>Stand ve etkinlik</span></a>
+      <a class="la-guide" href="https://ledajans.com/magaza-vitrin-led-ekran/"><strong>Mağaza / vitrin</strong><span>Indoor vitrin ve AVM</span></a>
+      <a class="la-guide" href="https://ledajans.com/cephe-led-ekran/"><strong>Cephe LED ekran</strong><span>Dış cephe ve billboard</span></a>
+      <a class="la-guide" href="https://ledajans.com/pitch-secim-rehberi/"><strong>Pitch seçim rehberi</strong><span>P2, P2.5, P3, P4–P10</span></a>
+      <a class="la-guide" href="https://ledajans.com/gob-led-ekran/"><strong>GOB LED ekran</strong><span>Darbe ve nem koruması</span></a>
+      <a class="la-guide" href="https://ledajans.com/istanbul-led-ekran/"><strong>İstanbul LED ekran</strong><span>Şişli üretim + kurulum</span></a>
+    </div>
+  </div>
+
+  <div class="la-section la-faq-wrap">
+    <div style="text-align:center;margin-bottom:1.75rem;">
+      <h2 class="la-section-header">LED ekran hakkında merak edilenler</h2>
+      <p class="la-lede">Satın almadan önce en sık sorulan üç başlık.</p>
+    </div>
+    <details class="la-faq-item" open>
+      <summary>LED ekran m² fiyatları neye göre değişir?</summary>
+      <p><strong>LED ekran fiyatları</strong> pitch (P küçüldükçe artar), ölçü, çip kalitesi ve kontrol kartına (Novastar, Huidu) göre değişir. Net rakam için <a href="https://ledajans.com/iletisim/">teklif alın</a> veya <a href="https://ledajans.com/led-ekran-fiyatlari-2026/">2026 fiyat rehberine</a> bakın.</p>
+    </details>
+    <details class="la-faq-item">
+      <summary>Piksel (P) değeri nedir, hangisini seçmeliyim?</summary>
+      <p>İki LED arası mm. Mesafe kısaldıkça P düşer. Tablo: <a href="https://ledajans.com/pitch-secim-rehberi/">pitch seçim rehberi</a>. Yakın (2–5 m): P1.8–P2.5. Orta (5–10 m): P3–P5. Uzak (10 m+): P6–P10.</p>
+    </details>
+    <details class="la-faq-item">
+      <summary>Garanti ve teknik servis nasıl işler?</summary>
+      <p>Projeler <strong>2 yıl parça garantili</strong>. İstanbul ekibi yerinde veya uzaktan müdahale eder; yedek parça stoğu tutulur.</p>
+    </details>
+  </div>
+
+  <div class="la-cta-box">
+    <h2 class="la-gradient-title">Projenizi hayata geçirelim</h2>
+    <p>Ölçü, pitch ve kullanım alanını yazın; <strong>LED ekran</strong> teklifini hazırlayalım.</p>
+    <a class="la-btn la-btn-primary" href="https://ledajans.com/iletisim/">Bize ulaşın</a>
+  </div>
+</div>
 
 <script type="application/ld+json">
 {
@@ -626,7 +563,7 @@
       "name": "LED ekran m² fiyatları neye göre değişir?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "LED ekran fiyatları; seçilen piksel aralığına (P değeri küçüldükçe fiyat artar), ekranın toplam boyutuna, kullanılan LED çip kalitesine (Nationstar, Kinglight vb.) ve kontrol sistemine (Novastar, Huidu) göre belirlenir. En doğru fiyat için Ledajans ile iletişime geçin."
+        "text": "LED ekran fiyatları piksel aralığı, ekran boyutu, LED çip kalitesi ve kontrol sistemine göre değişir. En doğru fiyat için Ledajans ile iletişime geçin."
       }
     },
     {
@@ -634,7 +571,7 @@
       "name": "Piksel (P) değeri nedir, hangisini seçmeliyim?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "P değeri, iki LED arasındaki milimetre cinsinden mesafedir. Yakın izleme (2-5m) için P1.8, P2, P2.5; orta mesafe (5-10m) için P3, P4, P5; uzak mesafe (10m+) için P6, P8, P10 tercih edilmelidir."
+        "text": "P değeri iki LED arasındaki milimetre mesafedir. Yakın izleme (2-5m) için P1.8–P2.5; orta mesafe (5-10m) için P3–P5; uzak mesafe (10m+) için P6–P10 tercih edilir."
       }
     },
     {
@@ -642,55 +579,24 @@
       "name": "Garanti ve teknik servis süreciniz nasıl?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tüm LED ekran projelerimiz 2 yıl tam parça garantilidir. İstanbul merkezli teknik servis ekibimiz, olası arızalara yerinde veya uzaktan bağlantı ile anında müdahale eder. Yedek parça stoğumuz her zaman mevcuttur."
+        "text": "Tüm LED ekran projelerimiz 2 yıl tam parça garantilidir. İstanbul merkezli teknik servis yerinde veya uzaktan müdahale eder."
       }
     }
   ]
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "LED Ekran Kategorileri",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "İç Mekan (Indoor) LED Ekran",
-      "url": "https://ledajans.com/ic-mekan-led-ekran/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Dış Mekan (Outdoor) LED Ekran",
-      "url": "https://ledajans.com/dis-mekan-led-ekran/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Rental (Kiralık) LED Ekran",
-      "url": "https://ledajans.com/rental-ekran/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "COB – Smart Screen",
-      "url": "https://ledajans.com/cob-ekran/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "İç Mekan RGB Panel",
-      "url": "https://ledajans.com/ic-mekan-rgb-panel/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "name": "Dış Mekan RGB Panel",
-      "url": "https://ledajans.com/dis-mekan-rgb-panel/"
-    }
+    {"@type":"ListItem","position":1,"name":"İç Mekan LED Ekran","url":"https://ledajans.com/ic-mekan-led-ekran/"},
+    {"@type":"ListItem","position":2,"name":"Dış Mekan LED Ekran","url":"https://ledajans.com/dis-mekan-led-ekran/"},
+    {"@type":"ListItem","position":3,"name":"Rental LED Ekran","url":"https://ledajans.com/rental-ekran/"},
+    {"@type":"ListItem","position":4,"name":"COB – Smart Screen","url":"https://ledajans.com/cob-ekran/"},
+    {"@type":"ListItem","position":5,"name":"İç Mekan RGB Panel","url":"https://ledajans.com/ic-mekan-rgb-panel/"},
+    {"@type":"ListItem","position":6,"name":"Dış Mekan RGB Panel","url":"https://ledajans.com/dis-mekan-rgb-panel/"}
   ]
 }
 </script>

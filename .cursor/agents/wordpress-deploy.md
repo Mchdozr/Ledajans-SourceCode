@@ -18,7 +18,7 @@ bash -n set-rankmath-meta.sh
 2. Hardcoded WP kimlik bilgisi sızdırma; sohbete yapıştırma
 3. 403 = Application Password yok/geçersiz → kullanıcıya bildir, zorlama
 4. `PAGES_TO_DEPLOY` slug/path eşlemesini doğrula
-5. Canlı deploy yalnızca açık kullanıcı onayı ile — **istisna:** `blog-ajan` / haftalık blog kuyruğu (`publish-blog-post.py --publish`) izinsiz canlı yayınlar
+5. Canlı deploy yalnızca açık kullanıcı onayı ile — **istisna:** `haftalik-blog-yayin` / `blog-ajan` (`publish-blog-post.py --publish`) izinsiz canlı yayınlar
 6. Rollback: önceki HTML/meta yedeği veya WP revision notu
 
 ## Çıktı
