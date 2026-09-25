@@ -69,28 +69,61 @@
     .ledajans-indoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
     .ledajans-indoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
     .ledajans-indoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-indoor-image-wrapper,
     .ledajans-indoor-image-container {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      background: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ledajans-indoor-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-indoor-image-container {
+      width: 70%;
+      max-width: 380px;
     }
     .ledajans-indoor-image {
       width: 100%;
       height: auto;
-      min-height: 250px;
-      max-height: 350px;
-      object-fit: cover;
+      max-height: 420px;
+      object-fit: contain;
+      background: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      transform-origin: center center;
+      animation: ledajans-indoor-float 4s ease-in-out infinite alternate;
     }
-    @media (min-width: 768px) { .ledajans-indoor-image { max-height: 450px; } }
+    @keyframes ledajans-indoor-float {
+      from { transform: translateY(10px) rotate(-1deg); }
+      to { transform: translateY(-10px) rotate(1deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ledajans-indoor-image { animation: none; }
+    }
+    @media (min-width: 768px) {
+      .ledajans-indoor-image-container { max-width: 440px; }
+      .ledajans-indoor-image { max-height: 480px; }
+    }
     @media (min-width: 1024px) {
-      .ledajans-indoor-container { align-items: stretch; }
-      .ledajans-indoor-image-wrapper { display: flex; }
-      .ledajans-indoor-image-container { flex: 1; display: flex; }
+      .ledajans-indoor-container { align-items: center; }
+      .ledajans-indoor-image-wrapper {
+        align-self: center;
+      }
+      .ledajans-indoor-image-container {
+        width: 72%;
+        max-width: 480px;
+      }
       .ledajans-indoor-image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        max-height: none;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
       }
     }
     </style>
@@ -100,9 +133,11 @@
         <div class="ledajans-indoor-image-wrapper">
           <div class="ledajans-indoor-image-container">
             <img
-              src="https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png"
+              src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran-panel-transparent.webp"
               alt="İç Mekan LED Ekran - Indoor LED Ekran Çözümleri"
               class="ledajans-indoor-image"
+              width="766"
+              height="962"
               loading="lazy"
               decoding="async"
             />
@@ -121,7 +156,7 @@
             </div>
           </div>
           <p class="ledajans-indoor-desc">
-            Daha önceki yıllarda iç mekan görüntülemede kullanılan ürünlerin aydınlık ortamda görüntü netliğinin bozulması belirli açılardan bakıldığında da görülememesi led ekran teknolojisinin gelişmesi ile yerlerini led ekranlara bırakmışlardır. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan/indoor Led ekranlar</a>da 0,9mm'ye varan pikseller, 3840Hz ve daha üstü refresh/yenileme hızına sahip olmaları, indoor led ekranların, TV stüdyoları başta olmak üzere hemen her alanda kullanılmasının önünü açmıştır.
+            Daha önceki yıllarda iç mekan görüntülemede kullanılan ürünlerin aydınlık ortamda görüntü netliğinin bozulması belirli açılardan bakıldığında da görülememesi led ekran teknolojisinin gelişmesi ile yerlerini led ekranlara bırakmışlardır. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan/indoor Led ekranlar</a>da 0,9mm'ye varan pikseller, 3840Hz ve daha üstü refresh/yenileme hızına sahip olmaları, indoor led ekranların, TV stüdyoları başta olmak üzere hemen her alanda kullanılmasının önünü açmıştır. Darbe riski yüksek alanlarda <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a> tercih edilir.
           </p>
           <div class="ledajans-indoor-features">
             <div class="ledajans-indoor-feature">
