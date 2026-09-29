@@ -97,6 +97,9 @@ PAGES_TO_DEPLOY = [
     ("SEO-Icerik-Widgets/kullanim-alanlari/havaalani-led-ekran.html",         "havaalani-led-ekran",         "Havalimanı LED Ekran",          "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/otel-led-ekran.html",              "otel-led-ekran",              "Otel LED Ekran",                "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/fuar-led-ekran.html",              "fuar-led-ekran",              "Fuar LED Ekran",                "page"),
+    ("SEO-Icerik-Widgets/kullanim-alanlari/cephe-led-ekran.html",             "cephe-led-ekran",             "Cephe LED Ekran",               "page"),
+    ("SEO-Icerik-Widgets/kullanim-alanlari/gob-led-ekran.html",               "gob-led-ekran",               "GOB LED Ekran",                 "page"),
+    ("SEO-Icerik-Widgets/temel-rehberler/pitch-secim-rehberi.html",           "pitch-secim-rehberi",         "LED Ekran Pitch Seçim Rehberi", "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/billboard-led-ekran.html",         "billboard-led-ekran",         "Billboard LED Ekran",           "page"),
     ("SEO-Icerik-Widgets/kullanim-alanlari/toplanti-odasi-led-ekran.html",    "toplanti-odasi-led-ekran",    "Toplantı Odası LED Ekran",      "page"),
 

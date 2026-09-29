@@ -1,0 +1,15 @@
+ledajans-seo-article count 25 idxs [54643, 77158, 77388, 77946, 77971, 78004, 78065, 78250]
+ admin bar, spacer kapatma — beyaz kuşak fix).  * Bölüm 13: SEO makale widget (.ledajans-seo-article) — blog ile uyumlu tipografi/kutu.  *  * Diğer yapıştırmalar (aynı repo):  *   • Elementor Header HTML widget: Ust-Menu/ust-menu.html → dosyanın TAMAMI  *   • Anasayfa Hero HTML widget: Anasayfa/Hero
+---
+la-kw count 58 idxs [145420, 145560, 145746, 145860, 145945, 145990, 146022, 146099]
+ader.entry-header h1, body.page .title-info > h1.title{display:none!important} .la-kw{font-family:ui-sans-serif,system-ui,sans-serif;color:#1f2937;max-width:1100px;margin:0 auto;padding:0 1rem 2.75rem;line-height:1.65} .la-kw-hero{background:linear-gradient(135deg,#111827 0%,#0f172a 55%,#1a120c 100%
+---
+la-card count 0 idxs []
+la-hero count 0 idxs []
+H1CTX <h1 class="title">Cephe LED Ekran</h1> 			         						<p><!-- SEO Meta Description: Cephe LED ekran ve dış cephe LED ekran: IP65, 5000+ nits, P4–P10. Billboard ve bina cephesi. LEDAJANS keşif ve teklif. --><br /> <!-- SEO Focus Keyword: cephe led ekran, dış cephe led ekran, 
+H1CTX <h1>Cephe LED ekran</h1> <p><strong>Cephe LED ekran</strong> ve <strong>dış cephe LED ekran</strong> — IP65, 5000+ nits, P4–P10. <a href="https://ledajans.com/">LEDAJANS</a> statik + kurulum + 2 yıl garanti.</p> <div class="la-kw-actions">     <a class="la-kw-btn la-kw-btn-p" hre
+IMG <img src="https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp" alt="LEDAJANS" width="182" height="36" decoding="async" />
+IMG <img loading="lazy" src="https://ledajans.com/wp-content/uploads/2026/09/cephe-led-ekran-bina.webp" alt="Cephe LED ekran IP65 bina uygulaması" width="1280" height="720" loading="lazy" decoding="async" title="Cephe LED Ekran" alt="Cephe LED Ekran">
+IMG <img loading="lazy" src="https://ledajans.com/wp-content/uploads/2026/09/led-billboard-otoyol.webp" alt="LED billboard otoyol panosu" width="1280" height="720" loading="lazy" decoding="async" title="Cephe LED Ekran" alt="Cephe LED Ekran">
+IMG <img loading="lazy" src="https://ledajans.com/wp-content/uploads/2026/09/istanbul-cephe-led-kurulum.webp" alt="İstanbul cephe LED ekran kurulum" width="1280" height="720" loading="lazy" decoding="async" title="Cephe LED Ekran" alt="Cephe LED Ekran">
+IMG <img               src="https://ledajans.com/wp-content/uploads/2026/08/LedajansLogo.webp"               alt="LEDAJANS"               class="ledajans-footer-logo"             />

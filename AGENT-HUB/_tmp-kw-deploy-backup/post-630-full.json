@@ -1,0 +1,167 @@
+{
+ "id": 630,
+ "date": "2024-08-04T18:54:39",
+ "date_gmt": "2024-08-04T18:54:39",
+ "guid": {
+  "rendered": "https://ledajans.com/?p=630",
+  "raw": "https://ledajans.com/?p=630"
+ },
+ "modified": "2024-08-04T18:54:39",
+ "modified_gmt": "2024-08-04T18:54:39",
+ "password": "",
+ "slug": "p4-outdoor-rgb-panel",
+ "status": "publish",
+ "type": "post",
+ "link": "https://ledajans.com/p4-outdoor-rgb-panel/",
+ "title": {
+  "raw": "P4 Outdoor Rgb Panel",
+  "rendered": "P4 Outdoor Rgb Panel"
+ },
+ "content": {
+  "raw": "<div class=\"post-content\">\r\n<h2 class=\"entry-title\">P4 Outdoor Rgb Panel</h2>\r\n<div class=\"entry-content\">\r\n<h1>Screen technical parameters：</h1>\r\n<table width=\"695\">\r\n<tbody>\r\n<tr>\r\n<td rowspan=\"6\" width=\"77\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nModule technical\r\n\r\nparameters</td>\r\n<td width=\"172\">Pixel pitch</td>\r\n<td width=\"137\">4mm</td>\r\n<td width=\"140\">Pixel density</td>\r\n<td width=\"130\">62500Dots/ m<strong>2</strong></td>\r\n</tr>\r\n<tr>\r\n<td width=\"172\">Pixel constitute</td>\r\n<td width=\"137\">1R1G1B</td>\r\n<td width=\"140\">Module resolution</td>\r\n<td width=\"130\">80*40=3200Dots</td>\r\n</tr>\r\n<tr>\r\n<td width=\"172\">size(length*width*height)</td>\r\n<td width=\"137\">320*160*18.42 mm</td>\r\n<td width=\"140\">weight</td>\r\n<td width=\"130\">0.543kg±0.05kg</td>\r\n</tr>\r\n<tr>\r\n<td width=\"172\">Structural features</td>\r\n<td width=\"137\">IC and PCB in one</td>\r\n<td width=\"140\">Kit materials</td>\r\n<td width=\"130\">Polycarbonate PC</td>\r\n</tr>\r\n<tr>\r\n<td width=\"172\">Input&nbsp;\r\n\r\nvoltage(direct-current)</td>\r\n<td width=\"137\">&nbsp;\r\n\r\n4.5V</td>\r\n<td width=\"140\">&nbsp;\r\n\r\nMaximum current</td>\r\n<td width=\"130\">&nbsp;\r\n\r\n≤ 10.34 A±0.1A</td>\r\n</tr>\r\n<tr>\r\n<td width=\"172\">&nbsp;\r\n\r\nModule consumption</td>\r\n<td width=\"137\">&nbsp;\r\n\r\n≤47W</td>\r\n<td width=\"140\">&nbsp;\r\n\r\nDrive mode</td>\r\n<td width=\"130\">1/10 Dynamic&nbsp;\r\n\r\nconstant current\r\n\r\ndrive</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"6\" width=\"77\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nCase technical\r\n\r\nparameters</td>\r\n<td colspan=\"2\" width=\"309\">Standard conventional case frame&nbsp;\r\n\r\nspecifications(length*width*height)</td>\r\n<td colspan=\"2\" width=\"270\">&nbsp;\r\n\r\n640mm*960mm*105mm</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"309\">Case resolution</td>\r\n<td colspan=\"2\" width=\"270\">160*240=38400Dots</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"309\">Housing area</td>\r\n<td colspan=\"2\" width=\"270\">0.6144m<strong>2</strong></td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"309\">Case weight</td>\r\n<td colspan=\"2\" width=\"270\">32.5kg±0.05 kg</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"309\">Maximum consumption（module&nbsp;\r\n\r\nconsumption*module quantity of one case）</td>\r\n<td colspan=\"2\" width=\"270\">&nbsp;\r\n\r\n520W</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"309\">Average consumption（half of maximum&nbsp;\r\n\r\nconsumption）</td>\r\n<td colspan=\"2\" width=\"270\">175W</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n&nbsp;\r\n<table width=\"703\">\r\n<tbody>\r\n<tr>\r\n<td rowspan=\"2\" width=\"77\"></td>\r\n<td colspan=\"4\" width=\"305\"></td>\r\n<td colspan=\"5\" width=\"274\"></td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption(power  supply&nbsp;\r\n\r\nutilization 78%)</td>\r\n<td colspan=\"5\" width=\"274\">&nbsp;\r\n\r\n668 W</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"5\" width=\"77\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nTechnical parameters</td>\r\n<td colspan=\"3\" width=\"162\">&nbsp;\r\n\r\nbrightness</td>\r\n<td width=\"143\">&nbsp;\r\n\r\n≥5200 cd/㎡</td>\r\n<td colspan=\"4\" width=\"120\">Brightness&nbsp;\r\n\r\nuniformity</td>\r\n<td width=\"153\">&nbsp;\r\n\r\n＞0.95</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Screen horizontal&nbsp;\r\n\r\nviewing angle</td>\r\n<td width=\"143\">&nbsp;\r\n\r\n140±10°</td>\r\n<td colspan=\"4\" width=\"120\">Screen   vertical&nbsp;\r\n\r\nviewing angle</td>\r\n<td width=\"153\">&nbsp;\r\n\r\n130±10°</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Best viewing distance</td>\r\n<td width=\"143\">≥4m</td>\r\n<td colspan=\"4\" width=\"120\">Dead lights rate</td>\r\n<td width=\"153\">≤3/10000</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Maximum consumption</td>\r\n<td width=\"143\">≤909W/㎡</td>\r\n<td colspan=\"4\" width=\"120\">Environment</td>\r\n<td width=\"153\">outdoor</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption （ maximum&nbsp;\r\n\r\nconsumption each sqm÷78%÷85%）</td>\r\n<td colspan=\"5\" width=\"274\">&nbsp;\r\n\r\n≤1371W</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" rowspan=\"4\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem control\r\n\r\nparameter</td>\r\n<td width=\"127\">&nbsp;\r\n\r\nGradation</td>\r\n<td colspan=\"3\" width=\"178\">red、green、blue each&nbsp;\r\n\r\n12-16bits</td>\r\n<td width=\"84\">&nbsp;\r\n\r\ncolor</td>\r\n<td colspan=\"3\" width=\"171\">&nbsp;\r\n\r\n43980 hundred million</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Frame   rate</td>\r\n<td colspan=\"3\" width=\"178\">≥60</td>\r\n<td width=\"84\">Fresh rate</td>\r\n<td colspan=\"3\" width=\"171\">≥3840 Hz</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">&nbsp;\r\n\r\nControl mode</td>\r\n<td colspan=\"3\" width=\"178\">Computer control video&nbsp;\r\n\r\nsynchronization</td>\r\n<td width=\"84\">Brightness&nbsp;\r\n\r\nadjust</td>\r\n<td colspan=\"3\" width=\"171\">256 level&nbsp;\r\n\r\nmanually/automatic</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">&nbsp;\r\n\r\nInput signal</td>\r\n<td colspan=\"7\" width=\"433\">DVI/VGA，video&nbsp;\r\n\r\nRGBHV、composite video signals、S-VIDEO\r\n\r\nYpbPr(HDTV)</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" rowspan=\"8\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem\r\n\r\noperating\r\n\r\ncharacteristics</td>\r\n<td width=\"127\">Lifetime</td>\r\n<td colspan=\"2\" width=\"159\">≥100 thousand hours</td>\r\n<td colspan=\"3\" width=\"110\">NO fault time</td>\r\n<td colspan=\"2\" width=\"164\">≥10 thousand hours</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Decay&nbsp;\r\n\r\nrate(3years)</td>\r\n<td colspan=\"2\" width=\"159\">&nbsp;\r\n\r\n≤15％</td>\r\n<td colspan=\"3\" width=\"110\">Constant out of&nbsp;\r\n\r\ncontrol points</td>\r\n<td colspan=\"2\" width=\"164\">&nbsp;\r\n\r\n0</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Discrete control&nbsp;\r\n\r\npoint</td>\r\n<td colspan=\"2\" width=\"159\">&nbsp;\r\n\r\n＜0.0001，</td>\r\n<td colspan=\"3\" width=\"110\">&nbsp;\r\n\r\nDead lamp rate</td>\r\n<td colspan=\"2\" width=\"164\">&nbsp;\r\n\r\n＜0.0001</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Temperature</td>\r\n<td colspan=\"2\" width=\"159\">-20 to 40℃</td>\r\n<td colspan=\"3\" width=\"110\">Humidity</td>\r\n<td colspan=\"2\" width=\"164\">10％ to 90％RH</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Protective&nbsp;\r\n\r\nperformance</td>\r\n<td colspan=\"7\" width=\"433\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;\r\n\r\ncurrent/over Voltage</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Warranty</td>\r\n<td colspan=\"7\" width=\"433\">1 year</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"286\">Screen horizontal flatness</td>\r\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"286\">Screen vertical flatness</td>\r\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td rowspan=\"2\" width=\"77\"></td>\r\n<td colspan=\"4\" width=\"305\">consumption）</td>\r\n<td colspan=\"5\" width=\"274\"></td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption(power  supply&nbsp;\r\n\r\nutilization 78%)</td>\r\n<td colspan=\"5\" width=\"274\">&nbsp;\r\n\r\n668 W</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"5\" width=\"77\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nTechnical parameters</td>\r\n<td colspan=\"3\" width=\"162\">&nbsp;\r\n\r\nbrightness</td>\r\n<td width=\"143\">&nbsp;\r\n\r\n≥5200 cd/㎡</td>\r\n<td colspan=\"4\" width=\"120\">Brightness&nbsp;\r\n\r\nuniformity</td>\r\n<td width=\"153\">&nbsp;\r\n\r\n＞0.95</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Screen horizontal&nbsp;\r\n\r\nviewing angle</td>\r\n<td width=\"143\">&nbsp;\r\n\r\n140±10°</td>\r\n<td colspan=\"4\" width=\"120\">Screen   vertical&nbsp;\r\n\r\nviewing angle</td>\r\n<td width=\"153\">&nbsp;\r\n\r\n130±10°</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Best viewing distance</td>\r\n<td width=\"143\">≥4m</td>\r\n<td colspan=\"4\" width=\"120\">Dead lights rate</td>\r\n<td width=\"153\">≤3/10000</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"162\">Maximum consumption</td>\r\n<td width=\"143\">≤909W/㎡</td>\r\n<td colspan=\"4\" width=\"120\">Environment</td>\r\n<td width=\"153\">outdoor</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption （ maximum&nbsp;\r\n\r\nconsumption each sqm÷78%÷85%）</td>\r\n<td colspan=\"5\" width=\"274\">&nbsp;\r\n\r\n≤1371W</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" rowspan=\"4\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem control\r\n\r\nparameter</td>\r\n<td width=\"127\">&nbsp;\r\n\r\nGradation</td>\r\n<td colspan=\"3\" width=\"178\">red、green、blue each&nbsp;\r\n\r\n12-16bits</td>\r\n<td width=\"84\">&nbsp;\r\n\r\ncolor</td>\r\n<td colspan=\"3\" width=\"171\">&nbsp;\r\n\r\n43980 hundred million</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Frame   rate</td>\r\n<td colspan=\"3\" width=\"178\">≥60</td>\r\n<td width=\"84\">Fresh rate</td>\r\n<td colspan=\"3\" width=\"171\">≥3840 Hz</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">&nbsp;\r\n\r\nControl mode</td>\r\n<td colspan=\"3\" width=\"178\">Computer control video&nbsp;\r\n\r\nsynchronization</td>\r\n<td width=\"84\">Brightness&nbsp;\r\n\r\nadjust</td>\r\n<td colspan=\"3\" width=\"171\">256 level&nbsp;\r\n\r\nmanually/automatic</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">&nbsp;\r\n\r\nInput signal</td>\r\n<td colspan=\"7\" width=\"433\">DVI/VGA，video&nbsp;\r\n\r\nRGBHV、composite video signals、S-VIDEO\r\n\r\nYpbPr(HDTV)</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" rowspan=\"8\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem\r\n\r\noperating\r\n\r\ncharacteristics</td>\r\n<td width=\"127\">Lifetime</td>\r\n<td colspan=\"2\" width=\"159\">≥100 thousand hours</td>\r\n<td colspan=\"3\" width=\"110\">NO fault time</td>\r\n<td colspan=\"2\" width=\"164\">≥10 thousand hours</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Decay&nbsp;\r\n\r\nrate(3years)</td>\r\n<td colspan=\"2\" width=\"159\">&nbsp;\r\n\r\n≤15％</td>\r\n<td colspan=\"3\" width=\"110\">Constant out of&nbsp;\r\n\r\ncontrol points</td>\r\n<td colspan=\"2\" width=\"164\">&nbsp;\r\n\r\n0</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Discrete control&nbsp;\r\n\r\npoint</td>\r\n<td colspan=\"2\" width=\"159\">&nbsp;\r\n\r\n＜0.0001，</td>\r\n<td colspan=\"3\" width=\"110\">&nbsp;\r\n\r\nDead lamp rate</td>\r\n<td colspan=\"2\" width=\"164\">&nbsp;\r\n\r\n＜0.0001</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Temperature</td>\r\n<td colspan=\"2\" width=\"159\">-20 to 40℃</td>\r\n<td colspan=\"3\" width=\"110\">Humidity</td>\r\n<td colspan=\"2\" width=\"164\">10％ to 90％RH</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Protective&nbsp;\r\n\r\nperformance</td>\r\n<td colspan=\"7\" width=\"433\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;\r\n\r\ncurrent/over Voltage</td>\r\n</tr>\r\n<tr>\r\n<td width=\"127\">Warranty</td>\r\n<td colspan=\"7\" width=\"433\">1 year</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"286\">Screen horizontal flatness</td>\r\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"286\">Screen vertical flatness</td>\r\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h1>Signal pin definition</h1>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n<strong>Pin</strong></td>\r\n<td width=\"56\">&nbsp;\r\n\r\n<strong>Sign</strong><strong>al</strong></td>\r\n<td width=\"113\">&nbsp;\r\n\r\n<strong>Fun</strong><strong>ction</strong></td>\r\n<td width=\"43\">&nbsp;\r\n\r\n<strong>Pin</strong></td>\r\n<td width=\"56\">&nbsp;\r\n\r\n<strong>Sign</strong><strong>al</strong></td>\r\n<td width=\"166\">&nbsp;\r\n\r\n<strong>Fun</strong><strong>ction</strong></td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n1</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nRD1</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nRed data signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n2</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGD1</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nGreen data signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n3</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nBD1</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nBlue data signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n4</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGND</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nGND</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n5</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nRD2</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nRed data signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n6</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGD2</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nGreen data signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n7</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nBD2</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nBlue data signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n8</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGND</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nGND</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n9</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nA</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nLine signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n10</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nB</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nLine signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n11</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nC</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nLine signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n12</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nD</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nLine signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n13</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nCLK</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nClock signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n14</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nLAT</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nLatch signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"44\">&nbsp;\r\n\r\n15</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nOE</td>\r\n<td width=\"113\">&nbsp;\r\n\r\nEnable signal</td>\r\n<td width=\"43\">&nbsp;\r\n\r\n16</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nCS</td>\r\n<td width=\"166\">&nbsp;\r\n\r\nBlanking signal</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>\r\n</div>\r\n<div class=\"post-gap-small clearfix\"></div>\r\n<div class=\"post-meta \"></div>",
+  "rendered": "<div class=\"post-content\">\n<h2 class=\"entry-title\">P4 Outdoor Rgb Panel</h2>\n<div class=\"entry-content\">\n<h1>Screen technical parameters：</h1>\n<table width=\"695\">\n<tbody>\n<tr>\n<td rowspan=\"6\" width=\"77\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Module technical</p>\n<p>parameters</td>\n<td width=\"172\">Pixel pitch</td>\n<td width=\"137\">4mm</td>\n<td width=\"140\">Pixel density</td>\n<td width=\"130\">62500Dots/ m<strong>2</strong></td>\n</tr>\n<tr>\n<td width=\"172\">Pixel constitute</td>\n<td width=\"137\">1R1G1B</td>\n<td width=\"140\">Module resolution</td>\n<td width=\"130\">80*40=3200Dots</td>\n</tr>\n<tr>\n<td width=\"172\">size(length*width*height)</td>\n<td width=\"137\">320*160*18.42 mm</td>\n<td width=\"140\">weight</td>\n<td width=\"130\">0.543kg±0.05kg</td>\n</tr>\n<tr>\n<td width=\"172\">Structural features</td>\n<td width=\"137\">IC and PCB in one</td>\n<td width=\"140\">Kit materials</td>\n<td width=\"130\">Polycarbonate PC</td>\n</tr>\n<tr>\n<td width=\"172\">Input&nbsp;</p>\n<p>voltage(direct-current)</td>\n<td width=\"137\">&nbsp;</p>\n<p>4.5V</td>\n<td width=\"140\">&nbsp;</p>\n<p>Maximum current</td>\n<td width=\"130\">&nbsp;</p>\n<p>≤ 10.34 A±0.1A</td>\n</tr>\n<tr>\n<td width=\"172\">&nbsp;</p>\n<p>Module consumption</td>\n<td width=\"137\">&nbsp;</p>\n<p>≤47W</td>\n<td width=\"140\">&nbsp;</p>\n<p>Drive mode</td>\n<td width=\"130\">1/10 Dynamic&nbsp;</p>\n<p>constant current</p>\n<p>drive</td>\n</tr>\n<tr>\n<td rowspan=\"6\" width=\"77\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Case technical</p>\n<p>parameters</td>\n<td colspan=\"2\" width=\"309\">Standard conventional case frame&nbsp;</p>\n<p>specifications(length*width*height)</td>\n<td colspan=\"2\" width=\"270\">&nbsp;</p>\n<p>640mm*960mm*105mm</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"309\">Case resolution</td>\n<td colspan=\"2\" width=\"270\">160*240=38400Dots</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"309\">Housing area</td>\n<td colspan=\"2\" width=\"270\">0.6144m<strong>2</strong></td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"309\">Case weight</td>\n<td colspan=\"2\" width=\"270\">32.5kg±0.05 kg</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"309\">Maximum consumption（module&nbsp;</p>\n<p>consumption*module quantity of one case）</td>\n<td colspan=\"2\" width=\"270\">&nbsp;</p>\n<p>520W</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"309\">Average consumption（half of maximum&nbsp;</p>\n<p>consumption）</td>\n<td colspan=\"2\" width=\"270\">175W</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>\n<table width=\"703\">\n<tbody>\n<tr>\n<td rowspan=\"2\" width=\"77\"></td>\n<td colspan=\"4\" width=\"305\"></td>\n<td colspan=\"5\" width=\"274\"></td>\n</tr>\n<tr>\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption(power  supply&nbsp;</p>\n<p>utilization 78%)</td>\n<td colspan=\"5\" width=\"274\">&nbsp;</p>\n<p>668 W</td>\n</tr>\n<tr>\n<td rowspan=\"5\" width=\"77\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Technical parameters</td>\n<td colspan=\"3\" width=\"162\">&nbsp;</p>\n<p>brightness</td>\n<td width=\"143\">&nbsp;</p>\n<p>≥5200 cd/㎡</td>\n<td colspan=\"4\" width=\"120\">Brightness&nbsp;</p>\n<p>uniformity</td>\n<td width=\"153\">&nbsp;</p>\n<p>＞0.95</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Screen horizontal&nbsp;</p>\n<p>viewing angle</td>\n<td width=\"143\">&nbsp;</p>\n<p>140±10°</td>\n<td colspan=\"4\" width=\"120\">Screen   vertical&nbsp;</p>\n<p>viewing angle</td>\n<td width=\"153\">&nbsp;</p>\n<p>130±10°</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Best viewing distance</td>\n<td width=\"143\">≥4m</td>\n<td colspan=\"4\" width=\"120\">Dead lights rate</td>\n<td width=\"153\">≤3/10000</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Maximum consumption</td>\n<td width=\"143\">≤909W/㎡</td>\n<td colspan=\"4\" width=\"120\">Environment</td>\n<td width=\"153\">outdoor</td>\n</tr>\n<tr>\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption （ maximum&nbsp;</p>\n<p>consumption each sqm÷78%÷85%）</td>\n<td colspan=\"5\" width=\"274\">&nbsp;</p>\n<p>≤1371W</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"4\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System control</p>\n<p>parameter</td>\n<td width=\"127\">&nbsp;</p>\n<p>Gradation</td>\n<td colspan=\"3\" width=\"178\">red、green、blue each&nbsp;</p>\n<p>12-16bits</td>\n<td width=\"84\">&nbsp;</p>\n<p>color</td>\n<td colspan=\"3\" width=\"171\">&nbsp;</p>\n<p>43980 hundred million</td>\n</tr>\n<tr>\n<td width=\"127\">Frame   rate</td>\n<td colspan=\"3\" width=\"178\">≥60</td>\n<td width=\"84\">Fresh rate</td>\n<td colspan=\"3\" width=\"171\">≥3840 Hz</td>\n</tr>\n<tr>\n<td width=\"127\">&nbsp;</p>\n<p>Control mode</td>\n<td colspan=\"3\" width=\"178\">Computer control video&nbsp;</p>\n<p>synchronization</td>\n<td width=\"84\">Brightness&nbsp;</p>\n<p>adjust</td>\n<td colspan=\"3\" width=\"171\">256 level&nbsp;</p>\n<p>manually/automatic</td>\n</tr>\n<tr>\n<td width=\"127\">&nbsp;</p>\n<p>Input signal</td>\n<td colspan=\"7\" width=\"433\">DVI/VGA，video&nbsp;</p>\n<p>RGBHV、composite video signals、S-VIDEO</p>\n<p>YpbPr(HDTV)</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"8\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System</p>\n<p>operating</p>\n<p>characteristics</td>\n<td width=\"127\">Lifetime</td>\n<td colspan=\"2\" width=\"159\">≥100 thousand hours</td>\n<td colspan=\"3\" width=\"110\">NO fault time</td>\n<td colspan=\"2\" width=\"164\">≥10 thousand hours</td>\n</tr>\n<tr>\n<td width=\"127\">Decay&nbsp;</p>\n<p>rate(3years)</td>\n<td colspan=\"2\" width=\"159\">&nbsp;</p>\n<p>≤15％</td>\n<td colspan=\"3\" width=\"110\">Constant out of&nbsp;</p>\n<p>control points</td>\n<td colspan=\"2\" width=\"164\">&nbsp;</p>\n<p>0</td>\n</tr>\n<tr>\n<td width=\"127\">Discrete control&nbsp;</p>\n<p>point</td>\n<td colspan=\"2\" width=\"159\">&nbsp;</p>\n<p>＜0.0001，</td>\n<td colspan=\"3\" width=\"110\">&nbsp;</p>\n<p>Dead lamp rate</td>\n<td colspan=\"2\" width=\"164\">&nbsp;</p>\n<p>＜0.0001</td>\n</tr>\n<tr>\n<td width=\"127\">Temperature</td>\n<td colspan=\"2\" width=\"159\">-20 to 40℃</td>\n<td colspan=\"3\" width=\"110\">Humidity</td>\n<td colspan=\"2\" width=\"164\">10％ to 90％RH</td>\n</tr>\n<tr>\n<td width=\"127\">Protective&nbsp;</p>\n<p>performance</td>\n<td colspan=\"7\" width=\"433\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;</p>\n<p>current/over Voltage</td>\n</tr>\n<tr>\n<td width=\"127\">Warranty</td>\n<td colspan=\"7\" width=\"433\">1 year</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"286\">Screen horizontal flatness</td>\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"286\">Screen vertical flatness</td>\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\n</tr>\n</tbody>\n</table>\n<table>\n<tbody>\n<tr>\n<td rowspan=\"2\" width=\"77\"></td>\n<td colspan=\"4\" width=\"305\">consumption）</td>\n<td colspan=\"5\" width=\"274\"></td>\n</tr>\n<tr>\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption(power  supply&nbsp;</p>\n<p>utilization 78%)</td>\n<td colspan=\"5\" width=\"274\">&nbsp;</p>\n<p>668 W</td>\n</tr>\n<tr>\n<td rowspan=\"5\" width=\"77\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Technical parameters</td>\n<td colspan=\"3\" width=\"162\">&nbsp;</p>\n<p>brightness</td>\n<td width=\"143\">&nbsp;</p>\n<p>≥5200 cd/㎡</td>\n<td colspan=\"4\" width=\"120\">Brightness&nbsp;</p>\n<p>uniformity</td>\n<td width=\"153\">&nbsp;</p>\n<p>＞0.95</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Screen horizontal&nbsp;</p>\n<p>viewing angle</td>\n<td width=\"143\">&nbsp;</p>\n<p>140±10°</td>\n<td colspan=\"4\" width=\"120\">Screen   vertical&nbsp;</p>\n<p>viewing angle</td>\n<td width=\"153\">&nbsp;</p>\n<p>130±10°</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Best viewing distance</td>\n<td width=\"143\">≥4m</td>\n<td colspan=\"4\" width=\"120\">Dead lights rate</td>\n<td width=\"153\">≤3/10000</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"162\">Maximum consumption</td>\n<td width=\"143\">≤909W/㎡</td>\n<td colspan=\"4\" width=\"120\">Environment</td>\n<td width=\"153\">outdoor</td>\n</tr>\n<tr>\n<td colspan=\"4\" width=\"305\">Power  distribution  consumption （ maximum&nbsp;</p>\n<p>consumption each sqm÷78%÷85%）</td>\n<td colspan=\"5\" width=\"274\">&nbsp;</p>\n<p>≤1371W</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"4\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System control</p>\n<p>parameter</td>\n<td width=\"127\">&nbsp;</p>\n<p>Gradation</td>\n<td colspan=\"3\" width=\"178\">red、green、blue each&nbsp;</p>\n<p>12-16bits</td>\n<td width=\"84\">&nbsp;</p>\n<p>color</td>\n<td colspan=\"3\" width=\"171\">&nbsp;</p>\n<p>43980 hundred million</td>\n</tr>\n<tr>\n<td width=\"127\">Frame   rate</td>\n<td colspan=\"3\" width=\"178\">≥60</td>\n<td width=\"84\">Fresh rate</td>\n<td colspan=\"3\" width=\"171\">≥3840 Hz</td>\n</tr>\n<tr>\n<td width=\"127\">&nbsp;</p>\n<p>Control mode</td>\n<td colspan=\"3\" width=\"178\">Computer control video&nbsp;</p>\n<p>synchronization</td>\n<td width=\"84\">Brightness&nbsp;</p>\n<p>adjust</td>\n<td colspan=\"3\" width=\"171\">256 level&nbsp;</p>\n<p>manually/automatic</td>\n</tr>\n<tr>\n<td width=\"127\">&nbsp;</p>\n<p>Input signal</td>\n<td colspan=\"7\" width=\"433\">DVI/VGA，video&nbsp;</p>\n<p>RGBHV、composite video signals、S-VIDEO</p>\n<p>YpbPr(HDTV)</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"8\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System</p>\n<p>operating</p>\n<p>characteristics</td>\n<td width=\"127\">Lifetime</td>\n<td colspan=\"2\" width=\"159\">≥100 thousand hours</td>\n<td colspan=\"3\" width=\"110\">NO fault time</td>\n<td colspan=\"2\" width=\"164\">≥10 thousand hours</td>\n</tr>\n<tr>\n<td width=\"127\">Decay&nbsp;</p>\n<p>rate(3years)</td>\n<td colspan=\"2\" width=\"159\">&nbsp;</p>\n<p>≤15％</td>\n<td colspan=\"3\" width=\"110\">Constant out of&nbsp;</p>\n<p>control points</td>\n<td colspan=\"2\" width=\"164\">&nbsp;</p>\n<p>0</td>\n</tr>\n<tr>\n<td width=\"127\">Discrete control&nbsp;</p>\n<p>point</td>\n<td colspan=\"2\" width=\"159\">&nbsp;</p>\n<p>＜0.0001，</td>\n<td colspan=\"3\" width=\"110\">&nbsp;</p>\n<p>Dead lamp rate</td>\n<td colspan=\"2\" width=\"164\">&nbsp;</p>\n<p>＜0.0001</td>\n</tr>\n<tr>\n<td width=\"127\">Temperature</td>\n<td colspan=\"2\" width=\"159\">-20 to 40℃</td>\n<td colspan=\"3\" width=\"110\">Humidity</td>\n<td colspan=\"2\" width=\"164\">10％ to 90％RH</td>\n</tr>\n<tr>\n<td width=\"127\">Protective&nbsp;</p>\n<p>performance</td>\n<td colspan=\"7\" width=\"433\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;</p>\n<p>current/over Voltage</td>\n</tr>\n<tr>\n<td width=\"127\">Warranty</td>\n<td colspan=\"7\" width=\"433\">1 year</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"286\">Screen horizontal flatness</td>\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"286\">Screen vertical flatness</td>\n<td colspan=\"5\" width=\"274\">＜1mm/㎡</td>\n</tr>\n</tbody>\n</table>\n<h1>Signal pin definition</h1>\n<table>\n<tbody>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p><strong>Pin</strong></td>\n<td width=\"56\">&nbsp;</p>\n<p><strong>Sign</strong><strong>al</strong></td>\n<td width=\"113\">&nbsp;</p>\n<p><strong>Fun</strong><strong>ction</strong></td>\n<td width=\"43\">&nbsp;</p>\n<p><strong>Pin</strong></td>\n<td width=\"56\">&nbsp;</p>\n<p><strong>Sign</strong><strong>al</strong></td>\n<td width=\"166\">&nbsp;</p>\n<p><strong>Fun</strong><strong>ction</strong></td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>1</td>\n<td width=\"56\">&nbsp;</p>\n<p>RD1</td>\n<td width=\"113\">&nbsp;</p>\n<p>Red data signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>2</td>\n<td width=\"56\">&nbsp;</p>\n<p>GD1</td>\n<td width=\"166\">&nbsp;</p>\n<p>Green data signal</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>3</td>\n<td width=\"56\">&nbsp;</p>\n<p>BD1</td>\n<td width=\"113\">&nbsp;</p>\n<p>Blue data signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>4</td>\n<td width=\"56\">&nbsp;</p>\n<p>GND</td>\n<td width=\"166\">&nbsp;</p>\n<p>GND</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>5</td>\n<td width=\"56\">&nbsp;</p>\n<p>RD2</td>\n<td width=\"113\">&nbsp;</p>\n<p>Red data signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>6</td>\n<td width=\"56\">&nbsp;</p>\n<p>GD2</td>\n<td width=\"166\">&nbsp;</p>\n<p>Green data signal</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>7</td>\n<td width=\"56\">&nbsp;</p>\n<p>BD2</td>\n<td width=\"113\">&nbsp;</p>\n<p>Blue data signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>8</td>\n<td width=\"56\">&nbsp;</p>\n<p>GND</td>\n<td width=\"166\">&nbsp;</p>\n<p>GND</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>9</td>\n<td width=\"56\">&nbsp;</p>\n<p>A</td>\n<td width=\"113\">&nbsp;</p>\n<p>Line signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>10</td>\n<td width=\"56\">&nbsp;</p>\n<p>B</td>\n<td width=\"166\">&nbsp;</p>\n<p>Line signal</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>11</td>\n<td width=\"56\">&nbsp;</p>\n<p>C</td>\n<td width=\"113\">&nbsp;</p>\n<p>Line signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>12</td>\n<td width=\"56\">&nbsp;</p>\n<p>D</td>\n<td width=\"166\">&nbsp;</p>\n<p>Line signal</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>13</td>\n<td width=\"56\">&nbsp;</p>\n<p>CLK</td>\n<td width=\"113\">&nbsp;</p>\n<p>Clock signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>14</td>\n<td width=\"56\">&nbsp;</p>\n<p>LAT</td>\n<td width=\"166\">&nbsp;</p>\n<p>Latch signal</td>\n</tr>\n<tr>\n<td width=\"44\">&nbsp;</p>\n<p>15</td>\n<td width=\"56\">&nbsp;</p>\n<p>OE</td>\n<td width=\"113\">&nbsp;</p>\n<p>Enable signal</td>\n<td width=\"43\">&nbsp;</p>\n<p>16</td>\n<td width=\"56\">&nbsp;</p>\n<p>CS</td>\n<td width=\"166\">&nbsp;</p>\n<p>Blanking signal</td>\n</tr>\n</tbody>\n</table>\n</div>\n</div>\n<div class=\"post-gap-small clearfix\"></div>\n<div class=\"post-meta \"></div>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "excerpt": {
+  "raw": "",
+  "rendered": "<p>P4 Outdoor Rgb Panel Screen technical parameters： &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Module technical parameters Pixel pitch 4mm Pixel density 62500Dots/ m2 Pixel constitute 1R1G1B Module resolution 80*40=3200Dots size(length*width*height) 320*160*18.42 mm weight 0.543kg±0.05kg Structural features IC and PCB in one Kit materials Polycarbonate PC Input&nbsp; voltage(direct-current) &nbsp; 4.5V &nbsp; Maximum current &nbsp; ≤ 10.34 A±0.1A [&hellip;]</p>\n",
+  "protected": false
+ },
+ "author": 2,
+ "featured_media": 0,
+ "comment_status": "open",
+ "ping_status": "closed",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "",
+  "footnotes": ""
+ },
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "permalink_template": "https://ledajans.com/%postname%/",
+ "generated_slug": "p4-outdoor-rgb-panel",
+ "class_list": [
+  "post-630",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "hentry",
+  "category-genel"
+ ],
+ "_links": {
+  "self": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630",
+    "targetHints": {
+     "allow": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/users/2"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/comments?post=630"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 0,
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630/revisions"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/media?parent=630"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/categories?post=630"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/tags?post=630"
+   }
+  ],
+  "wp:action-publish": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-unfiltered-html": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-sticky": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-assign-author": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-create-categories": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-assign-categories": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-create-tags": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "wp:action-assign-tags": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/630"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

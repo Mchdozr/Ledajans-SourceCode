@@ -1,0 +1,167 @@
+{
+ "id": 628,
+ "date": "2024-08-04T18:54:10",
+ "date_gmt": "2024-08-04T18:54:10",
+ "guid": {
+  "rendered": "https://ledajans.com/?p=628",
+  "raw": "https://ledajans.com/?p=628"
+ },
+ "modified": "2024-08-04T18:54:10",
+ "modified_gmt": "2024-08-04T18:54:10",
+ "password": "",
+ "slug": "p5-outdoor-rgb-panel",
+ "status": "publish",
+ "type": "post",
+ "link": "https://ledajans.com/p5-outdoor-rgb-panel/",
+ "title": {
+  "raw": "P5 Outdoor Rgb Panel",
+  "rendered": "P5 Outdoor Rgb Panel"
+ },
+ "content": {
+  "raw": "<h2 class=\"entry-title\">P5 Outdoor Rgb Panel</h2>\r\n<div class=\"entry-content\">\r\n<h1>Product explanation</h1>\r\n2.1.   Outdoor full color SMD Q5 8 scan module consists of red LED wafer、 green LED wafer and blue LED wafer packaged as a pixel and form a matrix，and then fixed to the plastic packages；\r\n\r\n2.2   This module contains the driver chip and chip input buffer，connected to a LED display control system to display video、image and text message；\r\n\r\n2.3   Through OE signal to drive red LED、green LED and blue LED driver IC，can form 43980 hundred million color conversion；\r\n\r\n2.4  This module can be spliced horizontally or vertically，thus spliced into the kind；\r\n\r\n2.5   Module features：\r\n<ul>\r\n \t<li>Use highlight LED and high quality plastic parts</li>\r\n \t<li>High contrast display can achieve a good effect</li>\r\n \t<li>Light weight easy to install、disassembly</li>\r\n \t<li>Use constant current drive LED，light uniformity，low power consumption</li>\r\n \t<li>Pixel pitch 5mm，total 64*32 pixel，each pixel consists of 1R1G1B</li>\r\n</ul>\r\n<h1>Screen technical parameters：</h1>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td rowspan=\"6\" width=\"78\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nModule\r\n\r\ntechnical\r\n\r\nparameters</td>\r\n<td colspan=\"2\" width=\"168\">Pixel pitch</td>\r\n<td width=\"136\">5mm</td>\r\n<td width=\"124\">Pixel density</td>\r\n<td width=\"146\">40000Dots/㎡</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"168\">&nbsp;\r\n\r\nPixel constitute</td>\r\n<td width=\"136\">&nbsp;\r\n\r\n1R1G1B</td>\r\n<td width=\"124\">Module&nbsp;\r\n\r\nresolution</td>\r\n<td width=\"146\">&nbsp;\r\n\r\n64*32=2048Dots</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"168\">size(length*width*height&nbsp;\r\n\r\n)</td>\r\n<td width=\"136\">&nbsp;\r\n\r\n320*160*18.5mm</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nweight</td>\r\n<td width=\"146\">&nbsp;\r\n\r\n0.45kg±0.05kg</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"168\">Structural features</td>\r\n<td width=\"136\">IC and PCB in one</td>\r\n<td width=\"124\">Kit materials</td>\r\n<td width=\"146\">Polycarbonate PC</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"168\">Input voltage</td>\r\n<td width=\"136\">4.0-4.5V</td>\r\n<td width=\"124\">Maximum current</td>\r\n<td width=\"146\">≤9.51A</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"168\">consumption</td>\r\n<td width=\"136\">≤38W</td>\r\n<td width=\"124\">Drive mode</td>\r\n<td width=\"146\">1/8 constant current</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"7\" width=\"78\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nCase technical\r\n\r\nparameters</td>\r\n<td colspan=\"3\" width=\"305\">Standard case(length*width*height)</td>\r\n<td colspan=\"2\" width=\"270\">960mm*960mm*108mm</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Case resolution</td>\r\n<td colspan=\"2\" width=\"270\">192*192=36864Dots</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Housing area</td>\r\n<td colspan=\"2\" width=\"270\">0.9216 ㎡</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Case weight</td>\r\n<td colspan=\"2\" width=\"270\">28.5kg±0.05 kg</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Maximum consumption</td>\r\n<td colspan=\"2\" width=\"270\">≤685 W</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Average consumption</td>\r\n<td colspan=\"2\" width=\"270\">≤228 W</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Power distribution consumption</td>\r\n<td colspan=\"2\" width=\"270\">≤878 W</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"5\" width=\"78\">&nbsp;\r\n\r\n&nbsp;\r\n\r\nTechnical parameters</td>\r\n<td width=\"155\">brightness</td>\r\n<td colspan=\"2\" width=\"150\">≥4500-5500cd/㎡</td>\r\n<td width=\"124\">Brightness</td>\r\n<td width=\"146\">＞0.95</td>\r\n</tr>\r\n<tr>\r\n<td width=\"155\">horizontal viewing</td>\r\n<td colspan=\"2\" width=\"150\">140±10°</td>\r\n<td width=\"124\">verticalviewing</td>\r\n<td width=\"146\">130±10°</td>\r\n</tr>\r\n<tr>\r\n<td width=\"155\">Best viewing distance</td>\r\n<td colspan=\"2\" width=\"150\">≥5m</td>\r\n<td width=\"124\">Deadlightsrate</td>\r\n<td width=\"146\">Less than 3/10000</td>\r\n</tr>\r\n<tr>\r\n<td width=\"155\">Maximumconsumption</td>\r\n<td colspan=\"2\" width=\"150\">≤743W/㎡</td>\r\n<td width=\"124\">Environment</td>\r\n<td width=\"146\">outdoor</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"3\" width=\"305\">Power distribution consumption</td>\r\n<td colspan=\"2\" width=\"270\">≤1121W</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td rowspan=\"4\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem\r\n\r\ncontrol\r\n\r\nparameter</td>\r\n<td width=\"125\">&nbsp;\r\n\r\nGradation</td>\r\n<td colspan=\"2\" width=\"181\">red、green、blue each&nbsp;\r\n\r\n12-16bits</td>\r\n<td width=\"82\">&nbsp;\r\n\r\ncolor</td>\r\n<td colspan=\"2\" width=\"169\">&nbsp;\r\n\r\n43980 hundred million</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Frame   rate</td>\r\n<td colspan=\"2\" width=\"181\">≥60</td>\r\n<td width=\"82\">Fresh rate</td>\r\n<td colspan=\"2\" width=\"169\">≥1920 HZ</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">&nbsp;\r\n\r\nControl mode</td>\r\n<td colspan=\"2\" width=\"181\">Computer control video&nbsp;\r\n\r\nsynchronization</td>\r\n<td width=\"82\">Brightness&nbsp;\r\n\r\nadjust</td>\r\n<td colspan=\"2\" width=\"169\">256                          level&nbsp;\r\n\r\nmanually/automatic</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">&nbsp;\r\n\r\nInput signal</td>\r\n<td colspan=\"5\" width=\"432\">DVI/VGA， video&nbsp;\r\n\r\nRGBHV、 composite video signals  、S-VIDEO\r\n\r\nYpbPr(HDTV)</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"8\" width=\"96\">&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n\r\nSystem\r\n\r\noperating\r\n\r\ncharacteristics</td>\r\n<td width=\"125\">Lifetime</td>\r\n<td width=\"162\">≥100,000</td>\r\n<td colspan=\"3\" width=\"109\">NO fault time</td>\r\n<td width=\"161\">≥10 thousand hours</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Decay&nbsp;\r\n\r\nrate(3years)</td>\r\n<td width=\"162\">&nbsp;\r\n\r\n≤15％</td>\r\n<td colspan=\"3\" width=\"109\">Constant out of&nbsp;\r\n\r\ncontrol points</td>\r\n<td width=\"161\">&nbsp;\r\n\r\n0</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Discrete control&nbsp;\r\n\r\npoint</td>\r\n<td width=\"162\">&nbsp;\r\n\r\n＜0.0001，出厂时为 0</td>\r\n<td colspan=\"3\" width=\"109\">&nbsp;\r\n\r\nDead lamp rate</td>\r\n<td width=\"161\">&nbsp;\r\n\r\n＜0.0001</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Temperature</td>\r\n<td width=\"162\">-20 至 50℃</td>\r\n<td colspan=\"3\" width=\"109\">Humidity</td>\r\n<td width=\"161\">10％至 90％RH</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Protective&nbsp;\r\n\r\nperformance</td>\r\n<td colspan=\"5\" width=\"432\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;\r\n\r\ncurrent/over Voltage</td>\r\n</tr>\r\n<tr>\r\n<td width=\"125\">Warranty</td>\r\n<td colspan=\"5\" width=\"432\">1 year</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"287\">Screen horizontal flatness</td>\r\n<td colspan=\"4\" width=\"270\">＜1mm/㎡</td>\r\n</tr>\r\n<tr>\r\n<td colspan=\"2\" width=\"287\">Screen vertical flatness</td>\r\n<td colspan=\"4\" width=\"270\">＜1mm/㎡</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h1>Signal Pin</h1>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n<strong>Pin</strong></td>\r\n<td width=\"56\">&nbsp;\r\n\r\n<strong>Sign</strong><strong>al</strong></td>\r\n<td width=\"123\">&nbsp;\r\n\r\n<strong>Fun</strong><strong>ction</strong></td>\r\n<td width=\"47\">&nbsp;\r\n\r\n<strong>Pin</strong></td>\r\n<td width=\"56\">&nbsp;\r\n\r\n<strong>Sign</strong><strong>al</strong></td>\r\n<td width=\"124\">&nbsp;\r\n\r\n<strong>Fun</strong><strong>ction</strong></td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n1</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nR1</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nRed data signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n2</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nG1</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nGreen          data\r\n\r\n&nbsp;\r\n\r\nsignal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n3</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nB1</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nBlue data signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n4</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGND</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nGND</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n5</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nR2</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nRed data signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n6</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nG2</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nGreen          data\r\n\r\n&nbsp;\r\n\r\nsignal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n7</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nB2</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nBlue data signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n8</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nDND</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nGND</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n9</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nA</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nLine signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n10</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nB</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nLine signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n11</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nC</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nLine signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n12</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nGND</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nLine signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n13</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nS</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nClock signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n14</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nL</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nLatch signal</td>\r\n</tr>\r\n<tr>\r\n<td width=\"47\">&nbsp;\r\n\r\n15</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nOE</td>\r\n<td width=\"123\">&nbsp;\r\n\r\nEnable signal</td>\r\n<td width=\"47\">&nbsp;\r\n\r\n16</td>\r\n<td width=\"56\">&nbsp;\r\n\r\nCS</td>\r\n<td width=\"124\">&nbsp;\r\n\r\nBlanking signal</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</div>",
+  "rendered": "<h2 class=\"entry-title\">P5 Outdoor Rgb Panel</h2>\n<div class=\"entry-content\">\n<h1>Product explanation</h1>\n<p>2.1.   Outdoor full color SMD Q5 8 scan module consists of red LED wafer、 green LED wafer and blue LED wafer packaged as a pixel and form a matrix，and then fixed to the plastic packages；</p>\n<p>2.2   This module contains the driver chip and chip input buffer，connected to a LED display control system to display video、image and text message；</p>\n<p>2.3   Through OE signal to drive red LED、green LED and blue LED driver IC，can form 43980 hundred million color conversion；</p>\n<p>2.4  This module can be spliced horizontally or vertically，thus spliced into the kind；</p>\n<p>2.5   Module features：</p>\n<ul>\n<li>Use highlight LED and high quality plastic parts</li>\n<li>High contrast display can achieve a good effect</li>\n<li>Light weight easy to install、disassembly</li>\n<li>Use constant current drive LED，light uniformity，low power consumption</li>\n<li>Pixel pitch 5mm，total 64*32 pixel，each pixel consists of 1R1G1B</li>\n</ul>\n<h1>Screen technical parameters：</h1>\n<table>\n<tbody>\n<tr>\n<td rowspan=\"6\" width=\"78\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Module</p>\n<p>technical</p>\n<p>parameters</td>\n<td colspan=\"2\" width=\"168\">Pixel pitch</td>\n<td width=\"136\">5mm</td>\n<td width=\"124\">Pixel density</td>\n<td width=\"146\">40000Dots/㎡</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"168\">&nbsp;</p>\n<p>Pixel constitute</td>\n<td width=\"136\">&nbsp;</p>\n<p>1R1G1B</td>\n<td width=\"124\">Module&nbsp;</p>\n<p>resolution</td>\n<td width=\"146\">&nbsp;</p>\n<p>64*32=2048Dots</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"168\">size(length*width*height&nbsp;</p>\n<p>)</td>\n<td width=\"136\">&nbsp;</p>\n<p>320*160*18.5mm</td>\n<td width=\"124\">&nbsp;</p>\n<p>weight</td>\n<td width=\"146\">&nbsp;</p>\n<p>0.45kg±0.05kg</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"168\">Structural features</td>\n<td width=\"136\">IC and PCB in one</td>\n<td width=\"124\">Kit materials</td>\n<td width=\"146\">Polycarbonate PC</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"168\">Input voltage</td>\n<td width=\"136\">4.0-4.5V</td>\n<td width=\"124\">Maximum current</td>\n<td width=\"146\">≤9.51A</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"168\">consumption</td>\n<td width=\"136\">≤38W</td>\n<td width=\"124\">Drive mode</td>\n<td width=\"146\">1/8 constant current</td>\n</tr>\n<tr>\n<td rowspan=\"7\" width=\"78\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>Case technical</p>\n<p>parameters</td>\n<td colspan=\"3\" width=\"305\">Standard case(length*width*height)</td>\n<td colspan=\"2\" width=\"270\">960mm*960mm*108mm</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Case resolution</td>\n<td colspan=\"2\" width=\"270\">192*192=36864Dots</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Housing area</td>\n<td colspan=\"2\" width=\"270\">0.9216 ㎡</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Case weight</td>\n<td colspan=\"2\" width=\"270\">28.5kg±0.05 kg</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Maximum consumption</td>\n<td colspan=\"2\" width=\"270\">≤685 W</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Average consumption</td>\n<td colspan=\"2\" width=\"270\">≤228 W</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Power distribution consumption</td>\n<td colspan=\"2\" width=\"270\">≤878 W</td>\n</tr>\n<tr>\n<td rowspan=\"5\" width=\"78\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>Technical parameters</td>\n<td width=\"155\">brightness</td>\n<td colspan=\"2\" width=\"150\">≥4500-5500cd/㎡</td>\n<td width=\"124\">Brightness</td>\n<td width=\"146\">＞0.95</td>\n</tr>\n<tr>\n<td width=\"155\">horizontal viewing</td>\n<td colspan=\"2\" width=\"150\">140±10°</td>\n<td width=\"124\">verticalviewing</td>\n<td width=\"146\">130±10°</td>\n</tr>\n<tr>\n<td width=\"155\">Best viewing distance</td>\n<td colspan=\"2\" width=\"150\">≥5m</td>\n<td width=\"124\">Deadlightsrate</td>\n<td width=\"146\">Less than 3/10000</td>\n</tr>\n<tr>\n<td width=\"155\">Maximumconsumption</td>\n<td colspan=\"2\" width=\"150\">≤743W/㎡</td>\n<td width=\"124\">Environment</td>\n<td width=\"146\">outdoor</td>\n</tr>\n<tr>\n<td colspan=\"3\" width=\"305\">Power distribution consumption</td>\n<td colspan=\"2\" width=\"270\">≤1121W</td>\n</tr>\n</tbody>\n</table>\n<table>\n<tbody>\n<tr>\n<td rowspan=\"4\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System</p>\n<p>control</p>\n<p>parameter</td>\n<td width=\"125\">&nbsp;</p>\n<p>Gradation</td>\n<td colspan=\"2\" width=\"181\">red、green、blue each&nbsp;</p>\n<p>12-16bits</td>\n<td width=\"82\">&nbsp;</p>\n<p>color</td>\n<td colspan=\"2\" width=\"169\">&nbsp;</p>\n<p>43980 hundred million</td>\n</tr>\n<tr>\n<td width=\"125\">Frame   rate</td>\n<td colspan=\"2\" width=\"181\">≥60</td>\n<td width=\"82\">Fresh rate</td>\n<td colspan=\"2\" width=\"169\">≥1920 HZ</td>\n</tr>\n<tr>\n<td width=\"125\">&nbsp;</p>\n<p>Control mode</td>\n<td colspan=\"2\" width=\"181\">Computer control video&nbsp;</p>\n<p>synchronization</td>\n<td width=\"82\">Brightness&nbsp;</p>\n<p>adjust</td>\n<td colspan=\"2\" width=\"169\">256                          level&nbsp;</p>\n<p>manually/automatic</td>\n</tr>\n<tr>\n<td width=\"125\">&nbsp;</p>\n<p>Input signal</td>\n<td colspan=\"5\" width=\"432\">DVI/VGA， video&nbsp;</p>\n<p>RGBHV、 composite video signals  、S-VIDEO</p>\n<p>YpbPr(HDTV)</td>\n</tr>\n<tr>\n<td rowspan=\"8\" width=\"96\">&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>System</p>\n<p>operating</p>\n<p>characteristics</td>\n<td width=\"125\">Lifetime</td>\n<td width=\"162\">≥100,000</td>\n<td colspan=\"3\" width=\"109\">NO fault time</td>\n<td width=\"161\">≥10 thousand hours</td>\n</tr>\n<tr>\n<td width=\"125\">Decay&nbsp;</p>\n<p>rate(3years)</td>\n<td width=\"162\">&nbsp;</p>\n<p>≤15％</td>\n<td colspan=\"3\" width=\"109\">Constant out of&nbsp;</p>\n<p>control points</td>\n<td width=\"161\">&nbsp;</p>\n<p>0</td>\n</tr>\n<tr>\n<td width=\"125\">Discrete control&nbsp;</p>\n<p>point</td>\n<td width=\"162\">&nbsp;</p>\n<p>＜0.0001，出厂时为 0</td>\n<td colspan=\"3\" width=\"109\">&nbsp;</p>\n<p>Dead lamp rate</td>\n<td width=\"161\">&nbsp;</p>\n<p>＜0.0001</td>\n</tr>\n<tr>\n<td width=\"125\">Temperature</td>\n<td width=\"162\">-20 至 50℃</td>\n<td colspan=\"3\" width=\"109\">Humidity</td>\n<td width=\"161\">10％至 90％RH</td>\n</tr>\n<tr>\n<td width=\"125\">Protective&nbsp;</p>\n<p>performance</td>\n<td colspan=\"5\" width=\"432\">Over      temperature/overloaded/image       compensation/correction/over&nbsp;</p>\n<p>current/over Voltage</td>\n</tr>\n<tr>\n<td width=\"125\">Warranty</td>\n<td colspan=\"5\" width=\"432\">1 year</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"287\">Screen horizontal flatness</td>\n<td colspan=\"4\" width=\"270\">＜1mm/㎡</td>\n</tr>\n<tr>\n<td colspan=\"2\" width=\"287\">Screen vertical flatness</td>\n<td colspan=\"4\" width=\"270\">＜1mm/㎡</td>\n</tr>\n</tbody>\n</table>\n<h1>Signal Pin</h1>\n<table>\n<tbody>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p><strong>Pin</strong></td>\n<td width=\"56\">&nbsp;</p>\n<p><strong>Sign</strong><strong>al</strong></td>\n<td width=\"123\">&nbsp;</p>\n<p><strong>Fun</strong><strong>ction</strong></td>\n<td width=\"47\">&nbsp;</p>\n<p><strong>Pin</strong></td>\n<td width=\"56\">&nbsp;</p>\n<p><strong>Sign</strong><strong>al</strong></td>\n<td width=\"124\">&nbsp;</p>\n<p><strong>Fun</strong><strong>ction</strong></td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>1</td>\n<td width=\"56\">&nbsp;</p>\n<p>R1</td>\n<td width=\"123\">&nbsp;</p>\n<p>Red data signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>2</td>\n<td width=\"56\">&nbsp;</p>\n<p>G1</td>\n<td width=\"124\">&nbsp;</p>\n<p>Green          data</p>\n<p>&nbsp;</p>\n<p>signal</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>3</td>\n<td width=\"56\">&nbsp;</p>\n<p>B1</td>\n<td width=\"123\">&nbsp;</p>\n<p>Blue data signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>4</td>\n<td width=\"56\">&nbsp;</p>\n<p>GND</td>\n<td width=\"124\">&nbsp;</p>\n<p>GND</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>5</td>\n<td width=\"56\">&nbsp;</p>\n<p>R2</td>\n<td width=\"123\">&nbsp;</p>\n<p>Red data signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>6</td>\n<td width=\"56\">&nbsp;</p>\n<p>G2</td>\n<td width=\"124\">&nbsp;</p>\n<p>Green          data</p>\n<p>&nbsp;</p>\n<p>signal</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>7</td>\n<td width=\"56\">&nbsp;</p>\n<p>B2</td>\n<td width=\"123\">&nbsp;</p>\n<p>Blue data signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>8</td>\n<td width=\"56\">&nbsp;</p>\n<p>DND</td>\n<td width=\"124\">&nbsp;</p>\n<p>GND</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>9</td>\n<td width=\"56\">&nbsp;</p>\n<p>A</td>\n<td width=\"123\">&nbsp;</p>\n<p>Line signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>10</td>\n<td width=\"56\">&nbsp;</p>\n<p>B</td>\n<td width=\"124\">&nbsp;</p>\n<p>Line signal</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>11</td>\n<td width=\"56\">&nbsp;</p>\n<p>C</td>\n<td width=\"123\">&nbsp;</p>\n<p>Line signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>12</td>\n<td width=\"56\">&nbsp;</p>\n<p>GND</td>\n<td width=\"124\">&nbsp;</p>\n<p>Line signal</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>13</td>\n<td width=\"56\">&nbsp;</p>\n<p>S</td>\n<td width=\"123\">&nbsp;</p>\n<p>Clock signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>14</td>\n<td width=\"56\">&nbsp;</p>\n<p>L</td>\n<td width=\"124\">&nbsp;</p>\n<p>Latch signal</td>\n</tr>\n<tr>\n<td width=\"47\">&nbsp;</p>\n<p>15</td>\n<td width=\"56\">&nbsp;</p>\n<p>OE</td>\n<td width=\"123\">&nbsp;</p>\n<p>Enable signal</td>\n<td width=\"47\">&nbsp;</p>\n<p>16</td>\n<td width=\"56\">&nbsp;</p>\n<p>CS</td>\n<td width=\"124\">&nbsp;</p>\n<p>Blanking signal</td>\n</tr>\n</tbody>\n</table>\n</div>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "excerpt": {
+  "raw": "",
+  "rendered": "<p>P5 Outdoor Rgb Panel Product explanation 2.1.   Outdoor full color SMD Q5 8 scan module consists of red LED wafer、 green LED wafer and blue LED wafer packaged as a pixel and form a matrix，and then fixed to the plastic packages； 2.2   This module contains the driver chip and chip input buffer，connected to a LED [&hellip;]</p>\n",
+  "protected": false
+ },
+ "author": 2,
+ "featured_media": 0,
+ "comment_status": "open",
+ "ping_status": "closed",
+ "sticky": false,
+ "template": "",
+ "format": "standard",
+ "meta": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "",
+  "footnotes": ""
+ },
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "permalink_template": "https://ledajans.com/%postname%/",
+ "generated_slug": "p5-outdoor-rgb-panel",
+ "class_list": [
+  "post-628",
+  "post",
+  "type-post",
+  "status-publish",
+  "format-standard",
+  "hentry",
+  "category-genel"
+ ],
+ "_links": {
+  "self": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628",
+    "targetHints": {
+     "allow": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+     ]
+    }
+   }
+  ],
+  "collection": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts"
+   }
+  ],
+  "about": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/types/post"
+   }
+  ],
+  "author": [
+   {
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/users/2"
+   }
+  ],
+  "replies": [
+   {
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/comments?post=628"
+   }
+  ],
+  "version-history": [
+   {
+    "count": 0,
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628/revisions"
+   }
+  ],
+  "wp:attachment": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/media?parent=628"
+   }
+  ],
+  "wp:term": [
+   {
+    "taxonomy": "category",
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/categories?post=628"
+   },
+   {
+    "taxonomy": "post_tag",
+    "embeddable": true,
+    "href": "https://ledajans.com/wp-json/wp/v2/tags?post=628"
+   }
+  ],
+  "wp:action-publish": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-unfiltered-html": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-sticky": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-assign-author": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-create-categories": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-assign-categories": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-create-tags": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "wp:action-assign-tags": [
+   {
+    "href": "https://ledajans.com/wp-json/wp/v2/posts/628"
+   }
+  ],
+  "curies": [
+   {
+    "name": "wp",
+    "href": "https://api.w.org/{rel}",
+    "templated": true
+   }
+  ]
+ }
+}

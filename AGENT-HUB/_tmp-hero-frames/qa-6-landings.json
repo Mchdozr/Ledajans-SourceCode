@@ -1,0 +1,482 @@
+[
+  {
+    "url": "https://ledajans.com/cephe-led-ekran/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "Cephe LED Ekran",
+      "Cephe LED ekran"
+    ],
+    "widget_h1s": [
+      "Cephe LED ekran"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: Cephe LED ekran",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (49)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "cephe-led-ekran-bina.webp",
+      "led-billboard-otoyol.webp",
+      "istanbul-cephe-led-kurulum.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  },
+  {
+    "url": "https://ledajans.com/pitch-secim-rehberi/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "LED Ekran Pitch Seçim Rehberi",
+      "LED ekran pitch seçim rehberi"
+    ],
+    "widget_h1s": [
+      "LED ekran pitch seçim rehberi"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: LED ekran pitch seçim rehberi",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (46)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "cob-led-lobi.webp",
+      "pitch-dis-mekan-p10.webp",
+      "rental-led-sahne.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  },
+  {
+    "url": "https://ledajans.com/gob-led-ekran/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "GOB LED Ekran",
+      "GOB LED ekran"
+    ],
+    "widget_h1s": [
+      "GOB LED ekran"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: GOB LED ekran",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (44)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "gob-led-yuzey.webp",
+      "cob-led-lobi.webp",
+      "gob-led-ekran.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  },
+  {
+    "url": "https://ledajans.com/fuar-led-ekran/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "Fuar LED Ekran",
+      "Fuar LED ekran"
+    ],
+    "widget_h1s": [
+      "Fuar LED ekran"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: Fuar LED ekran",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (44)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "fuar-led-stand.webp",
+      "rental-led-ekran-kiralama.webp",
+      "fuar-fuaye-led.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  },
+  {
+    "url": "https://ledajans.com/magaza-vitrin-led-ekran/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "Mağaza Vitrin LED Ekran",
+      "Mağaza ve vitrin LED ekran"
+    ],
+    "widget_h1s": [
+      "Mağaza ve vitrin LED ekran"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: Mağaza ve vitrin LED ekran",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (48)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "magaza-vitrin-led.webp",
+      "avm-led-ekran.webp",
+      "gob-led-yuzey.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  },
+  {
+    "url": "https://ledajans.com/istanbul-led-ekran/",
+    "verdict": "FAIL",
+    "http": 200,
+    "h1s": [
+      "İstanbul LED Ekran",
+      "İstanbul LED ekran"
+    ],
+    "widget_h1s": [
+      "İstanbul LED ekran"
+    ],
+    "faq": true,
+    "faq_q": 4,
+    "ld_types": [
+      [
+        "Person",
+        "Organization"
+      ],
+      "WebSite",
+      "ImageObject",
+      "WebPage",
+      "Person",
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "FAQPage"
+    ],
+    "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "banned": [
+      "Basliksiz"
+    ],
+    "issues": [
+      "banned: Basliksiz"
+    ],
+    "warn": [
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "img not webp (jpg): PH1.53-550x632.jpg",
+      "img not webp (jpg): P3-550x632.jpg",
+      "img not webp (jpg): P1.25-2-550x632.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "img not webp (jpg): P2.5-550x632.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg",
+      "img not webp (jpg): ledajans-logo-web.jpg",
+      "img not webp (jpg): PH1.53.jpg",
+      "img not webp (jpg): P3.jpg",
+      "img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4.jpg",
+      "img not webp (jpg): P2.5.jpg",
+      "img not webp (jpg): P1.25-2-scaled.jpg",
+      "img not webp (jpg): fb8143a3-9d69-45a3-859c-2e2db66c334a.jpg"
+    ],
+    "ok": [
+      "noindex yok",
+      "widget H1 1: İstanbul LED ekran",
+      "FAQ JSON-LD (4 S)",
+      "wp img 200 (19)",
+      "ic link OK (45)"
+    ],
+    "img_exts": [
+      "",
+      "jpg",
+      "png",
+      "webp"
+    ],
+    "img_files": [
+      "LedajansLogo.webp",
+      "ledajans-logo-web.jpg",
+      "magaza-vitrin-led.webp",
+      "cephe-led-ekran-bina.webp",
+      "rental-led-sahne.webp",
+      "leadajans-logo2-19-11-2025-16-39-05-scaled.png",
+      "PH1.53-550x632.jpg",
+      "P3-550x632.jpg",
+      "P1.25-2-550x632.jpg",
+      "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg",
+      "P2.5-550x632.jpg",
+      "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg"
+    ],
+    "notes": "banned: Basliksiz ; WARN: img not webp (jpg): ledajans-logo-web.jpg; img not webp (png): leadajans-logo2-19-11-2025-16-39-05-scaled.png; img not webp (jpg): PH1.53-550x632.jpg; img not webp (jpg): P3-550x632.jpg; img not webp (jpg): P1.25-2-550x632.jpg; img not webp (jpg): ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg"
+  }
+]

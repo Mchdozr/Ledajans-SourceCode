@@ -1,0 +1,129 @@
+{
+  "p0-93-ic-mekan-led-ekran": [
+    "LED tipi",
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "h1-25-ic-mekan-rgb-panel": [
+    "Yenileme hızı",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "h1-53-ic-mekan-rgb-led-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "h1-86-ic-mekan-rgb-led-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p2-5-ic-mekan-rgb-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p2-5-3840hz-ic-mekan-rgb-panel": [
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "h2-5-6000-hz-ic-mekan-rgb-panel": [
+    "LED tipi",
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p3-07-ic-mekan-rgb-panel": [
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p4-ic-mekan-rgb-panel": [
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p0-93-3840hz-gob-ic-mekan-rgb-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p1-25-6000hz-gob-ic-mekan-rgb-led-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p1-53-6000hz-gob-ic-mekan-rgb-led-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p1-86-6000hz-gob-ic-mekan-rgb-led-panel": [
+    "Tarama",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "p2-5-gob-ic-mekan-rgb-led-panel": [
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "q1-25-ic-mekan-flexible-led-panel": [
+    "Tarama",
+    "Yenileme hızı",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "q1-53-ic-mekan-flexible-led-panel": [
+    "Tarama",
+    "Yenileme hızı",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "q1-86-ic-mekan-flexible-led-panel": [
+    "Tarama",
+    "Yenileme hızı",
+    "Parlaklık",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ],
+  "q2-5-ic-mekan-flexible-led-panel": [
+    "Tarama",
+    "Yenileme hızı",
+    "Modül ölçüsü",
+    "Modül çözünürlüğü",
+    "Maksimum güç"
+  ]
+}

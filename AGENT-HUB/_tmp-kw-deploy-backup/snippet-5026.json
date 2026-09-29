@@ -1,0 +1,68 @@
+{
+  "id": 5026,
+  "date": "2026-09-11T12:36:10",
+  "date_gmt": "2026-09-11T12:36:10",
+  "guid": {
+    "rendered": "https://ledajans.com/?elementor_snippet=ledajans-header-2026"
+  },
+  "modified": "2026-09-22T13:55:25",
+  "modified_gmt": "2026-09-22T13:55:25",
+  "slug": "ledajans-header-2026",
+  "status": "publish",
+  "type": "elementor_snippet",
+  "link": "https://ledajans.com/?elementor_snippet=ledajans-header-2026",
+  "title": {
+    "rendered": "LEDAJANS Header Orange + Logo"
+  },
+  "author": 2,
+  "template": "",
+  "meta": {
+    "_elementor_location": "elementor_head",
+    "_elementor_priority": 1,
+    "_elementor_code": "<style id=\"ledajans-hide-old-footer-early\">#wp-footer{display:none!important}</style>\n<style id=\"ledajans-header-orange-css\">\nheader.wp-site-header,\n.wp-site-header,\n.header-builder-frontend,\n.elementor-element-a231664,\n.elementor-element-123bc72,\n.elementor-element-123bc72.gv-sticky-menu,\n.gv-sticky-menu {\n  background: #F46F2C !important;\n  background-color: #F46F2C !important;\n}\n.elementor-element-123bc72 .gva-main-menu > li > a,\n.elementor-element-123bc72 .gva-main-menu > li > a .menu-title,\n.elementor-element-123bc72 .gva-main-menu > li > a .caret {\n  color: #fff !important;\n}\n.elementor-element-123bc72 .site-branding-logo img,\n.elementor-element-123bc72 .elementor-widget-gva-logo img,\n.canvas-mobile .top-canvas .logo-mm img,\nimg.ledajans-footer-logo {\n  filter: none !important;\n  opacity: 1 !important;\n  visibility: visible !important;\n  display: inline-block !important;\n}\n@media (min-width: 1025px) {\n  html body .elementor-element-123bc72.gv-sticky-menu,\n  html body section.elementor-element-123bc72.gv-sticky-menu {\n    min-height: 76px !important;\n    max-height: 80px !important;\n    height: 76px !important;\n    padding: 0 !important;\n    overflow: visible !important;\n    box-sizing: border-box !important;\n  }\n  html body .elementor-element-123bc72.gv-sticky-menu > .elementor-container,\n  html body .elementor-element-123bc72 > .elementor-container {\n    display: flex !important;\n    flex-direction: row !important;\n    align-items: center !important;\n    justify-content: space-between !important;\n    flex-wrap: nowrap !important;\n    gap: 8px !important;\n    min-height: 76px !important;\n    max-height: 80px !important;\n    height: 76px !important;\n    padding: 0 16px 0 8px !important;\n    position: relative !important;\n    overflow: visible !important;\n    box-sizing: border-box !important;\n  }\n  html body .elementor-element-123bc72 > .elementor-container > .elementor-row {\n    display: flex !important;\n    flex-wrap: nowrap !important;\n    align-items: center !important;\n    width: 100% !important;\n    min-height: 76px !important;\n    max-height: 80px !important;\n  }\n  html body .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-element-aa903d8,\n  html body .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-col-50.elementor-element-aa903d8 {\n    flex: 0 0 auto !important;\n    width: auto !important;\n    max-width: 168px !important;\n    position: relative !important;\n  }\n  html body .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-element-0b7eb5f,\n  html body .elementor-element-123bc72 > .elementor-container > .elementor-column.elementor-col-50.elementor-element-0b7eb5f {\n    flex: 1 1 auto !important;\n    width: auto !important;\n    max-width: none !important;\n    min-width: 0 !important;\n    position: relative !important;\n  }\n  html body .elementor-element-123bc72 .elementor-element-aa903d8,\n  html body .elementor-element-123bc72 .elementor-element-0b7eb5f {\n    position: relative !important;\n  }\n  html body .elementor-element-123bc72 .elementor-element-aa903d8 > .elementor-widget-wrap,\n  html body .elementor-element-123bc72 .elementor-element-0b7eb5f > .elementor-widget-wrap {\n    position: relative !important;\n    overflow: visible !important;\n    min-height: 76px !important;\n    max-height: 80px !important;\n    padding: 0 !important;\n    margin: 0 !important;\n  }\n  html body .elementor-element-aa903d8 > .elementor-widget-wrap {\n    display: flex !important;\n    flex-wrap: nowrap !important;\n    align-items: center !important;\n    align-content: center !important;\n    justify-content: center !important;\n    min-height: 76px !important;\n    height: 76px !important;\n  }\n  html body .elementor-element-aa903d8 .elementor-widget-gva-logo,\n  html body .elementor-element-aa903d8 .elementor-widget-container,\n  html body .elementor-element-aa903d8 .gva-element-gva-logo,\n  html body .elementor-element-aa903d8 .gsc-logo,\n  html body .elementor-element-123bc72 .site-branding-logo {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    margin: 0 !important;\n    width: 100% !important;\n    height: 76px !important;\n  }\n  html body .elementor-element-0b7eb5f > .elementor-widget-wrap {\n    display: flex !important;\n    flex-direction: row !important;\n    flex-wrap: nowrap !important;\n    align-items: center !important;\n    justify-content: space-between !important;\n    gap: 12px !important;\n    width: 100% !important;\n  }\n  html body .elementor-element-123bc72 .elementor-element-548f702,\n  html body .elementor-element-123bc72 .elementor-element-548f702.elementor-widget {\n    position: relative !important;\n    left: auto !important;\n    right: auto !important;\n    top: auto !important;\n    bottom: auto !important;\n    transform: none !important;\n    -webkit-transform: none !important;\n    flex: 1 1 auto !important;\n    width: auto !important;\n    max-width: none !important;\n    min-width: 0 !important;\n    margin: 0 !important;\n    padding: 0 !important;\n  }\n  html body .elementor-element-123bc72 .elementor-element-548f702 .elementor-widget-container {\n    padding: 0 !important;\n    overflow: visible !important;\n  }\n  html body .elementor-element-0b7eb5f .elementor-element-b34583d {\n    flex: 0 0 auto !important;\n    flex-shrink: 0 !important;\n    width: auto !important;\n    margin-left: 0 !important;\n    padding: 0 !important;\n    position: relative !important;\n    z-index: 6 !important;\n  }\n  html body .elementor-element-123bc72 .elementor-element-b34583d .elementor-widget-container,\n  html body .elementor-element-123bc72 .elementor-element-fe10ed3 .elementor-widget-container {\n    padding: 0 !important;\n    margin: 0 !important;\n  }\n  html body .elementor-element-123bc72 .site-branding-logo {\n    margin: 0 !important;\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n  }\n  html body .elementor-element-123bc72 .site-branding-logo img,\n  html body .elementor-element-123bc72 .elementor-widget-gva-logo img {\n    height: 42px !important;\n    width: auto !important;\n    max-width: 240px !important;\n    object-fit: contain !important;\n    flex-shrink: 0 !important;\n  }\n  html body #menu-anamenu-desktop,\n  html body .elementor-element-548f702 .gva-main-menu,\n  html body .elementor-element-123bc72 .gva-navigation-menu .gva-main-menu {\n    display: flex !important;\n    flex-wrap: nowrap !important;\n    justify-content: center !important;\n    align-items: center !important;\n    width: 100% !important;\n    height: 76px !important;\n    row-gap: 0 !important;\n    margin: 0 !important;\n  }\n  html body .elementor-element-123bc72 .gva-main-menu > li {\n    display: flex !important;\n    align-items: center !important;\n    height: 76px !important;\n    max-height: 76px !important;\n    padding: 0 4px !important;\n    margin: 0 !important;\n  }\n  html body .elementor-element-123bc72 .gva-main-menu > li > a,\n  html body .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {\n    display: inline-flex !important;\n    align-items: center !important;\n    white-space: nowrap !important;\n    padding: 0 0.45rem !important;\n    line-height: 1.2 !important;\n    font-size: 1rem !important;\n    font-weight: 600 !important;\n  }\n  html body .elementor-element-123bc72 .ledajans-header-phones,\n  html body .ledajans-header-phones {\n    flex-shrink: 0 !important;\n    padding-right: 4px !important;\n    gap: 0.2rem !important;\n  }\n  html body .elementor-element-123bc72 .ledajans-header-phone-row {\n    font-size: 0.875rem !important;\n    line-height: 1.2 !important;\n    white-space: nowrap !important;\n    display: flex !important;\n    align-items: center !important;\n  }\n}\n@media (min-width: 1025px) and (max-width: 1440px) {\n  html body .elementor-element-123bc72 .gva-main-menu > li {\n    padding: 0 2px !important;\n  }\n  html body .elementor-element-123bc72 .gva-main-menu > li > a,\n  html body .elementor-element-123bc72 .gva-main-menu > li > a .menu-title {\n    padding: 0 0.28rem !important;\n    font-size: 0.9rem !important;\n    font-weight: 600 !important;\n  }\n  html body .elementor-element-123bc72 .ledajans-header-phone-row {\n    font-size: 0.75rem !important;\n  }\n}\n@media (max-width: 1024px) {\n  .elementor-element-123bc72 .site-branding-logo img,\n  .elementor-element-123bc72 .elementor-widget-gva-logo img {\n    height: 32px !important;\n    max-width: min(68vw, 240px) !important;\n  }\n}\n</style>\n<script id=\"ledajans-logo-swap\">\n(function () {\n  var NEW = 'https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.webp';\n  var re = /LedajansLogo|ledajans-logo|leadajans-logo/i;\n  function swap(root) {\n    (root || document).querySelectorAll(\"img\").forEach(function (img) {\n      var s = img.getAttribute(\"src\") || \"\";\n      if (img.classList.contains(\"ledajans-footer-logo\") || img.closest(\".ledajans-footer\")) return;\n      if (img.closest(\".elementor-element-123bc72 .site-branding-logo, .logo-mm\")) return;\n      var hit = re.test(s) || img.closest(\".gsc-logo\");\n      if (hit && s !== NEW) { img.setAttribute(\"src\", NEW); img.setAttribute(\"data-src\", NEW); }\n    });\n  }\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () { swap(document); });\n  } else {\n    swap(document);\n  }\n})();\n</script>\n\n<script id=\"ledajans-logo-places\">\n(function () {\n  var PNG = \"https://ledajans.com/wp-content/uploads/2022/12/\" + \"LedajansLogo.png\";\n  var WEB = \"https://ledajans.com/wp-content/uploads/2022/12/ledajans-logo-web.jpg\";\n  function place() {\n    document.querySelectorAll(\"img.ledajans-footer-logo\").forEach(function (img) {\n      img.setAttribute(\"src\", PNG);\n      img.setAttribute(\"data-src\", PNG);\n    });\n    document.querySelectorAll(\".elementor-element-123bc72 .site-branding-logo img, .logo-mm img\").forEach(function (img) {\n      img.setAttribute(\"src\", WEB);\n      img.setAttribute(\"data-src\", WEB);\n    });\n  }\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () { setTimeout(place, 0); });\n  } else {\n    setTimeout(place, 0);\n  }\n})();\n</script>\n"
+  },
+  "_links": {
+    "self": [
+      {
+        "href": "https://ledajans.com/wp-json/wp/v2/elementor_snippet/5026",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://ledajans.com/wp-json/wp/v2/elementor_snippet"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://ledajans.com/wp-json/wp/v2/types/elementor_snippet"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://ledajans.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://ledajans.com/wp-json/wp/v2/media?parent=5026"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

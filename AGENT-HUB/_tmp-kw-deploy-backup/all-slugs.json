@@ -1,0 +1,3162 @@
+[
+ {
+  "type": "posts",
+  "id": 5887,
+  "slug": "fuar-etkinlik-led-stant-kurulum-kontrol-listesi",
+  "status": "publish",
+  "modified": "2026-09-25T11:46:04",
+  "title": "Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi"
+ },
+ {
+  "type": "posts",
+  "id": 5478,
+  "slug": "led-nits-mcd-de__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:38:08",
+  "title": "LED / NIT / MCD"
+ },
+ {
+  "type": "posts",
+  "id": 5472,
+  "slug": "hd-a3-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:38:05",
+  "title": "HD-A3 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5471,
+  "slug": "hd-a3-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:38:03",
+  "title": "HD-A3 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5470,
+  "slug": "led-display-anwendungsbereiche__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:38:00",
+  "title": "LED Screen Einsatzbereiche"
+ },
+ {
+  "type": "posts",
+  "id": 5469,
+  "slug": "led-screen-applications__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:57",
+  "title": "LED Screen Use Cases"
+ },
+ {
+  "type": "posts",
+  "id": 5468,
+  "slug": "led-display-lebensdauer__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:55",
+  "title": "Led Ekran Ömrü"
+ },
+ {
+  "type": "posts",
+  "id": 5467,
+  "slug": "led-screen-lifespan__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:52",
+  "title": "Led Ekran Ömrü"
+ },
+ {
+  "type": "posts",
+  "id": 5466,
+  "slug": "psd100-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:50",
+  "title": "PSD100"
+ },
+ {
+  "type": "posts",
+  "id": 5465,
+  "slug": "psd100-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:47",
+  "title": "PSD100"
+ },
+ {
+  "type": "posts",
+  "id": 5464,
+  "slug": "mctrl-300-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:44",
+  "title": "MCTRL 300"
+ },
+ {
+  "type": "posts",
+  "id": 5463,
+  "slug": "mctrl-300-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:41",
+  "title": "MCTRL 300"
+ },
+ {
+  "type": "posts",
+  "id": 5462,
+  "slug": "nova-mrv-330-receiver-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:39",
+  "title": "Nova MRV 330 Receiver"
+ },
+ {
+  "type": "posts",
+  "id": 5461,
+  "slug": "nova-mrv-330-receiver-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:36",
+  "title": "Nova MRV 330 Receiver"
+ },
+ {
+  "type": "posts",
+  "id": 5460,
+  "slug": "msd-300-nova-sender-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:34",
+  "title": "MSD 300 Nova Sender"
+ },
+ {
+  "type": "posts",
+  "id": 5459,
+  "slug": "msd-300-nova-sender-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:31",
+  "title": "MSD 300 Nova Sender"
+ },
+ {
+  "type": "posts",
+  "id": 5458,
+  "slug": "rv-908-receiver-linsn-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:28",
+  "title": "RV 908 Receiver Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 5457,
+  "slug": "rv-908-receiver-linsn-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:25",
+  "title": "RV 908 Receiver Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 5456,
+  "slug": "ts-802-sender-linsn-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:22",
+  "title": "TS 802 Sender Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 5455,
+  "slug": "ts-802-sender-linsn-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:20",
+  "title": "TS 802 Sender Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 5454,
+  "slug": "tf-qc3-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:17",
+  "title": "TF-QC3 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5453,
+  "slug": "tf-qc3-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:15",
+  "title": "TF-QC3 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5452,
+  "slug": "tf-qc1-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:13",
+  "title": "TF-QC1 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5451,
+  "slug": "tf-qc1-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:10",
+  "title": "TF-QC1 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5450,
+  "slug": "tf-qb5-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:08",
+  "title": "TF-QB5 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5449,
+  "slug": "tf-qb5-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:05",
+  "title": "TF-QB5 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5448,
+  "slug": "tf-qs2n-kontrol-karti-4__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:03",
+  "title": "TF-QS2N Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5447,
+  "slug": "tf-qs2n-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:37:00",
+  "title": "TF-QS2N Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5446,
+  "slug": "tf-qs2-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:57",
+  "title": "TF-QS2 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5445,
+  "slug": "tf-qs2-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:54",
+  "title": "TF-QS2 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5444,
+  "slug": "hd-a603-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:52",
+  "title": "HD-A603 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5443,
+  "slug": "hd-a603-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:49",
+  "title": "HD-A603 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5442,
+  "slug": "hd-a602-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:47",
+  "title": "HD-A602 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5441,
+  "slug": "hd-a602-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:44",
+  "title": "HD-A602 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5440,
+  "slug": "hd-a601-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:42",
+  "title": "HD-A601 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5439,
+  "slug": "hd-a601-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:39",
+  "title": "HD-A601 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5438,
+  "slug": "hd-a30-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:36",
+  "title": "HD-A30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5437,
+  "slug": "hd-a30-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:33",
+  "title": "HD-A30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5436,
+  "slug": "hd-c30-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:30",
+  "title": "HD-C30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5435,
+  "slug": "hd-c30-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:27",
+  "title": "HD-C30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5434,
+  "slug": "hd-c10c-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:24",
+  "title": "HD-C10C Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5433,
+  "slug": "hd-c10c-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:21",
+  "title": "HD-C10C Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5432,
+  "slug": "hd-c10-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:18",
+  "title": "HD-C10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5431,
+  "slug": "hd-c10-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:15",
+  "title": "HD-C10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5430,
+  "slug": "hd-d30-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:12",
+  "title": "HD-D30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5429,
+  "slug": "hd-d30-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:09",
+  "title": "HD-D30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5428,
+  "slug": "hd-d10-kontrol-karti-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:06",
+  "title": "HD -D10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5427,
+  "slug": "hd-d10-kontrol-karti-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:36:03",
+  "title": "HD -D10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5426,
+  "slug": "dip-led-panel-reparatur__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:59",
+  "title": "Dip Led Panel Tamiri"
+ },
+ {
+  "type": "posts",
+  "id": 5425,
+  "slug": "dip-led-panel-repair__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:56",
+  "title": "Dip Led Panel Tamiri"
+ },
+ {
+  "type": "posts",
+  "id": 5423,
+  "slug": "led-nits-mcd__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:53",
+  "title": "LED / NIT / MCD"
+ },
+ {
+  "type": "posts",
+  "id": 5422,
+  "slug": "was-ist-pcb__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:51",
+  "title": "PCB Nedir"
+ },
+ {
+  "type": "posts",
+  "id": 5421,
+  "slug": "what-is-pcb__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:48",
+  "title": "PCB Nedir"
+ },
+ {
+  "type": "posts",
+  "id": 5420,
+  "slug": "p10-rgb-kabin-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:45",
+  "title": "P10 Rgb Kabin"
+ },
+ {
+  "type": "posts",
+  "id": 5419,
+  "slug": "p10-rgb-kabin-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:41",
+  "title": "P10 Rgb Kabin"
+ },
+ {
+  "type": "posts",
+  "id": 5418,
+  "slug": "p10-panel-kirmizi-6__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:38",
+  "title": "P10 Panel Kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 5417,
+  "slug": "p10-panel-kirmizi-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:35",
+  "title": "P10 Panel Kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 5416,
+  "slug": "p10-outdoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:31",
+  "title": "P10 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5415,
+  "slug": "p10-outdoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:28",
+  "title": "P10 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5414,
+  "slug": "p8-outdoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:26",
+  "title": "P8 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5413,
+  "slug": "p8-outdoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:22",
+  "title": "P8 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5412,
+  "slug": "p6-outdoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:20",
+  "title": "P6 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5411,
+  "slug": "p6-outdoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:17",
+  "title": "P6 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5410,
+  "slug": "p5-outdoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:14",
+  "title": "P5 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5409,
+  "slug": "p5-outdoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:11",
+  "title": "P5 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5408,
+  "slug": "p4-outdoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:08",
+  "title": "P4 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5407,
+  "slug": "p4-outdoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:05",
+  "title": "P4 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5406,
+  "slug": "p3-indoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:35:01",
+  "title": "P3 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5405,
+  "slug": "p3-indoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:58",
+  "title": "P3 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5404,
+  "slug": "p25-indoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:55",
+  "title": "P2,5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5403,
+  "slug": "p25-indoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:52",
+  "title": "P2,5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5402,
+  "slug": "p5-indoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:49",
+  "title": "P5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5401,
+  "slug": "p5-indoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:45",
+  "title": "P5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5400,
+  "slug": "p4-indoor-rgb-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:42",
+  "title": "P4 Indoor RGB Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5399,
+  "slug": "p4-indoor-rgb-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:39",
+  "title": "P4 Indoor RGB Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5398,
+  "slug": "outdoor-led-displays__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:36",
+  "title": "Dış Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 5397,
+  "slug": "outdoor-led-screens__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:33",
+  "title": "Dış Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 5396,
+  "slug": "indoor-led-displays__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:30",
+  "title": "İç Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 5395,
+  "slug": "indoor-led-screens__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:27",
+  "title": "İç Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 5394,
+  "slug": "p10-kirmizi-panel-4__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:23",
+  "title": "P10 Kırmızı Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5393,
+  "slug": "p10-kirmizi-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:20",
+  "title": "P10 Kırmızı Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5392,
+  "slug": "led-panel-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:17",
+  "title": "Led panel"
+ },
+ {
+  "type": "posts",
+  "id": 5391,
+  "slug": "led-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:15",
+  "title": "Led panel"
+ },
+ {
+  "type": "posts",
+  "id": 5390,
+  "slug": "p10-panel-beyaz-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:11",
+  "title": "P10 panel beyaz"
+ },
+ {
+  "type": "posts",
+  "id": 5389,
+  "slug": "p10-panel-beyaz-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:09",
+  "title": "P10 panel beyaz"
+ },
+ {
+  "type": "posts",
+  "id": 5388,
+  "slug": "p10-panel-4__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:06",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5387,
+  "slug": "p10-panel-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:03",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 5386,
+  "slug": "p10-grafikdisplay-nutzung__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:34:00",
+  "title": "P10 Grafik Ekran Kullanımı"
+ },
+ {
+  "type": "posts",
+  "id": 5385,
+  "slug": "p10-graphic-display-usage__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:57",
+  "title": "P10 Grafik Ekran Kullanımı"
+ },
+ {
+  "type": "posts",
+  "id": 5384,
+  "slug": "led-laufschrift__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:54",
+  "title": "LED-Laufschrift"
+ },
+ {
+  "type": "posts",
+  "id": 5383,
+  "slug": "led-ticker__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:51",
+  "title": "LED Ticker"
+ },
+ {
+  "type": "posts",
+  "id": 5382,
+  "slug": "led-streifen__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:48",
+  "title": "Şerit Led"
+ },
+ {
+  "type": "posts",
+  "id": 5381,
+  "slug": "led-strip__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:45",
+  "title": "Şerit Led"
+ },
+ {
+  "type": "posts",
+  "id": 5380,
+  "slug": "e80-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:42",
+  "title": "Colorlight E80"
+ },
+ {
+  "type": "posts",
+  "id": 5379,
+  "slug": "e80-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:39",
+  "title": "Colorlight E80"
+ },
+ {
+  "type": "posts",
+  "id": 5378,
+  "slug": "colorlight-a35-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:36",
+  "title": "Colorlight A35"
+ },
+ {
+  "type": "posts",
+  "id": 5377,
+  "slug": "colorlight-a35-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:33",
+  "title": "Colorlight A35"
+ },
+ {
+  "type": "posts",
+  "id": 5376,
+  "slug": "huidu-c16l-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:30",
+  "title": "HUIDU C16L"
+ },
+ {
+  "type": "posts",
+  "id": 5375,
+  "slug": "huidu-c16l-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:27",
+  "title": "HUIDU C16L"
+ },
+ {
+  "type": "posts",
+  "id": 5374,
+  "slug": "colorlight-e120-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:24",
+  "title": "Colorlight E120"
+ },
+ {
+  "type": "posts",
+  "id": 5373,
+  "slug": "colorlight-e120-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:21",
+  "title": "Colorlight E120"
+ },
+ {
+  "type": "posts",
+  "id": 5372,
+  "slug": "colorlight-a40-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:18",
+  "title": "Colorlight A40"
+ },
+ {
+  "type": "posts",
+  "id": 5371,
+  "slug": "colorlight-a40-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:15",
+  "title": "Colorlight A40"
+ },
+ {
+  "type": "posts",
+  "id": 5370,
+  "slug": "huidu-c08l-controller-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:12",
+  "title": "Huidu C08L Controller Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5369,
+  "slug": "huidu-c08l-controller-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:09",
+  "title": "Huidu C08L Controller Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 5368,
+  "slug": "colorlight-a60-player-3__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:07",
+  "title": "Colorlight A60 Player"
+ },
+ {
+  "type": "posts",
+  "id": 5367,
+  "slug": "colorlight-a60-player-2__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:04",
+  "title": "Colorlight A60 Player"
+ },
+ {
+  "type": "posts",
+  "id": 5366,
+  "slug": "indoor-led-display-preise-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:33:01",
+  "title": "Indoor-LED-Display-Preise 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5365,
+  "slug": "indoor-led-screen-prices-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:58",
+  "title": "Indoor LED Screen Prices 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5364,
+  "slug": "outdoor-led-display-preise-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:55",
+  "title": "Outdoor-LED-Display-Preise 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5363,
+  "slug": "outdoor-led-screen-prices-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:52",
+  "title": "Outdoor LED Screen Prices 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5362,
+  "slug": "led-display-mietpreise-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:49",
+  "title": "Rental LED-Display-Mietpreise 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5361,
+  "slug": "rental-led-screen-hire-prices-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:46",
+  "title": "Rental LED Screen Rental Prices 2026"
+ },
+ {
+  "type": "posts",
+  "id": 5360,
+  "slug": "led-display-richtig-auswaehlen__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:43",
+  "title": "Wie wählt man ein LED-Display? 2026 Leitfaden"
+ },
+ {
+  "type": "posts",
+  "id": 5359,
+  "slug": "how-to-choose-led-screen__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:41",
+  "title": "How to Choose an LED Screen? 2026 Guide"
+ },
+ {
+  "type": "posts",
+  "id": 5358,
+  "slug": "wann-gob-led-waehlen__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:38",
+  "title": "Wann ein GOB-LED-Display wählen?"
+ },
+ {
+  "type": "posts",
+  "id": 5357,
+  "slug": "when-to-choose-gob-led__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:35",
+  "title": "When to Choose a GOB LED Screen?"
+ },
+ {
+  "type": "posts",
+  "id": 5356,
+  "slug": "was-ist-cob-led-display__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:32",
+  "title": "Was ist ein COB-LED-Display? Vorteile ve Wann wählen"
+ },
+ {
+  "type": "posts",
+  "id": 5355,
+  "slug": "what-is-cob-led-screen__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:29",
+  "title": "What is a COB LED Screen? Advantages ve When to Choose"
+ },
+ {
+  "type": "posts",
+  "id": 5354,
+  "slug": "huidu-wf1-wf2-wf4-led-steuerung__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:26",
+  "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Vergleich Leitfaden"
+ },
+ {
+  "type": "posts",
+  "id": 5353,
+  "slug": "huidu-wf1-wf2-wf4-led-controller__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:23",
+  "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Comparison Guide"
+ },
+ {
+  "type": "posts",
+  "id": 5232,
+  "slug": "led-display-preise-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:19",
+  "title": "LED-Display-Preise 2026 (Mai-Update)"
+ },
+ {
+  "type": "posts",
+  "id": 5231,
+  "slug": "led-screen-prices-2026__trashed",
+  "status": "trash",
+  "modified": "2026-09-22T09:32:16",
+  "title": "LED Screen Prices 2026 (May Update)"
+ },
+ {
+  "type": "posts",
+  "id": 5022,
+  "slug": "huidu-wf1-wf2-wf4-led-kontrol-karti",
+  "status": "publish",
+  "modified": "2026-09-17T09:09:37",
+  "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi"
+ },
+ {
+  "type": "posts",
+  "id": 5021,
+  "slug": "cob-led-ekran-nedir-avantajlari",
+  "status": "publish",
+  "modified": "2026-09-23T10:33:22",
+  "title": "COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli"
+ },
+ {
+  "type": "posts",
+  "id": 5000,
+  "slug": "gob-led-ekran-ne-zaman-tercih-edilir",
+  "status": "publish",
+  "modified": "2026-09-21T16:23:46",
+  "title": "GOB LED Ekran Ne Zaman Tercih Edilir?"
+ },
+ {
+  "type": "posts",
+  "id": 4999,
+  "slug": "led-ekran-nasil-secilir-rehber",
+  "status": "publish",
+  "modified": "2026-09-23T10:33:15",
+  "title": "LED Ekran Nasıl Seçilir? 2026 Rehber"
+ },
+ {
+  "type": "posts",
+  "id": 4998,
+  "slug": "rental-led-ekran-kiralama-fiyatlari-2026",
+  "status": "publish",
+  "modified": "2026-09-23T10:34:36",
+  "title": "Rental LED Ekran Kiralama Fiyatları 2026"
+ },
+ {
+  "type": "posts",
+  "id": 4997,
+  "slug": "dis-mekan-led-ekran-fiyatlari-2026",
+  "status": "publish",
+  "modified": "2026-09-23T10:34:28",
+  "title": "Dış Mekan LED Ekran Fiyatları 2026"
+ },
+ {
+  "type": "posts",
+  "id": 4996,
+  "slug": "ic-mekan-led-ekran-fiyatlari-2026",
+  "status": "publish",
+  "modified": "2026-09-23T10:34:21",
+  "title": "İç Mekan LED Ekran Fiyatları 2026"
+ },
+ {
+  "type": "posts",
+  "id": 4995,
+  "slug": "led-ekran-fiyatlari-2026",
+  "status": "publish",
+  "modified": "2026-09-23T10:34:15",
+  "title": "LED Ekran Fiyatları 2026 (Mayıs Güncel)"
+ },
+ {
+  "type": "posts",
+  "id": 4949,
+  "slug": "colorlight-a60-player",
+  "status": "publish",
+  "modified": "2026-09-17T09:10:32",
+  "title": "Colorlight A60 Player"
+ },
+ {
+  "type": "posts",
+  "id": 4891,
+  "slug": "huidu-c08l-controller",
+  "status": "publish",
+  "modified": "2026-09-17T09:10:39",
+  "title": "Huidu C08L Controller Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 4878,
+  "slug": "colorlight-a40",
+  "status": "publish",
+  "modified": "2025-12-25T08:18:02",
+  "title": "Colorlight A40"
+ },
+ {
+  "type": "posts",
+  "id": 4830,
+  "slug": "colorlight-e120",
+  "status": "publish",
+  "modified": "2025-12-18T10:54:42",
+  "title": "Colorlight E120"
+ },
+ {
+  "type": "posts",
+  "id": 4574,
+  "slug": "huidu-c16l",
+  "status": "publish",
+  "modified": "2025-12-05T06:27:40",
+  "title": "HUIDU C16L"
+ },
+ {
+  "type": "posts",
+  "id": 4518,
+  "slug": "colorlight-a35",
+  "status": "publish",
+  "modified": "2025-12-02T11:07:00",
+  "title": "Colorlight A35"
+ },
+ {
+  "type": "posts",
+  "id": 4223,
+  "slug": "e80",
+  "status": "publish",
+  "modified": "2025-12-19T09:55:42",
+  "title": "Colorlight E80"
+ },
+ {
+  "type": "posts",
+  "id": 687,
+  "slug": "serit-led",
+  "status": "publish",
+  "modified": "2025-12-02T12:47:11",
+  "title": "Şerit Led"
+ },
+ {
+  "type": "posts",
+  "id": 3074,
+  "slug": "was-ist-ein-led-streifen",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:00",
+  "title": "Was ist ein LED-Streifen?"
+ },
+ {
+  "type": "posts",
+  "id": 3077,
+  "slug": "kayan-yazi",
+  "status": "publish",
+  "modified": "2026-09-21T16:24:38",
+  "title": "Kayan Yazı"
+ },
+ {
+  "type": "posts",
+  "id": 685,
+  "slug": "ticker",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:03",
+  "title": "Ticker"
+ },
+ {
+  "type": "posts",
+  "id": 683,
+  "slug": "p10-grafik-ekran-kullanimi",
+  "status": "publish",
+  "modified": "2025-12-02T13:23:53",
+  "title": "P10 Grafik Ekran Kullanımı"
+ },
+ {
+  "type": "posts",
+  "id": 3081,
+  "slug": "verwendung-des-p10-grafikdisplays",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:06",
+  "title": "Verwendung des P10-Grafikdisplays"
+ },
+ {
+  "type": "posts",
+  "id": 680,
+  "slug": "p10-panel",
+  "status": "publish",
+  "modified": "2025-12-02T13:27:12",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 3085,
+  "slug": "p10-panel-4-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:08",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 678,
+  "slug": "led-ekran-10",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:13",
+  "title": "Led ekran"
+ },
+ {
+  "type": "posts",
+  "id": 594,
+  "slug": "led-ekran",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:10",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 3093,
+  "slug": "led-anzeige",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:15",
+  "title": "LED-Anzeige"
+ },
+ {
+  "type": "posts",
+  "id": 3101,
+  "slug": "p10-panel-2-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:17",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 3096,
+  "slug": "p10-panel-5",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:19",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 676,
+  "slug": "p10-panel-3",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:21",
+  "title": "P10 Panel"
+ },
+ {
+  "type": "posts",
+  "id": 674,
+  "slug": "hd-c10",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:24",
+  "title": "Hd-C10"
+ },
+ {
+  "type": "posts",
+  "id": 3107,
+  "slug": "gefuehrt-3",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:34",
+  "title": "geführt"
+ },
+ {
+  "type": "posts",
+  "id": 3103,
+  "slug": "gefuehrt",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:30",
+  "title": "geführt"
+ },
+ {
+  "type": "posts",
+  "id": 3105,
+  "slug": "gefuehrt-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:32",
+  "title": "geführt"
+ },
+ {
+  "type": "posts",
+  "id": 672,
+  "slug": "led-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:28",
+  "title": "Led"
+ },
+ {
+  "type": "posts",
+  "id": 614,
+  "slug": "led",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:26",
+  "title": "Led"
+ },
+ {
+  "type": "posts",
+  "id": 670,
+  "slug": "led-ekran-9",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:30",
+  "title": "Led ekran"
+ },
+ {
+  "type": "posts",
+  "id": 666,
+  "slug": "p10-panel-kirmizi-5",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:34",
+  "title": "P10 panel kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 664,
+  "slug": "p10-panel-beyaz",
+  "status": "publish",
+  "modified": "2024-08-04T19:04:26",
+  "title": "P10 panel beyaz"
+ },
+ {
+  "type": "posts",
+  "id": 662,
+  "slug": "p10-panel-kirmizi-4",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:34",
+  "title": "P10 Panel Kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 660,
+  "slug": "led-panel",
+  "status": "publish",
+  "modified": "2024-08-04T19:03:54",
+  "title": "Led panel"
+ },
+ {
+  "type": "posts",
+  "id": 658,
+  "slug": "led-ekran-7",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:29",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 656,
+  "slug": "p10-panel-kirmizi-3",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:33",
+  "title": "P10 Panel Kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 654,
+  "slug": "led-ekran-6",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:29",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 652,
+  "slug": "p10-kirmizi-panel-2",
+  "status": "publish",
+  "modified": "2024-08-04T19:02:46",
+  "title": "P10 Kırmızı Panel"
+ },
+ {
+  "type": "posts",
+  "id": 650,
+  "slug": "led-ekran-5",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:28",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 648,
+  "slug": "led-ekran-4",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:27",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 3291,
+  "slug": "led-bildschirm",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:36",
+  "title": "LED-Bildschirm"
+ },
+ {
+  "type": "posts",
+  "id": 596,
+  "slug": "led-ekran-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:39",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 3285,
+  "slug": "p10-rotes-panel",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:41",
+  "title": "P10 Rotes Panel"
+ },
+ {
+  "type": "posts",
+  "id": 646,
+  "slug": "p10-kirmizi-panel",
+  "status": "publish",
+  "modified": "2025-01-14T08:18:25",
+  "title": "P10 Kırmızı Panel"
+ },
+ {
+  "type": "posts",
+  "id": 642,
+  "slug": "ic-mekan-led-ekranlar",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:31",
+  "title": "İç Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 640,
+  "slug": "dis-mekan-led-ekranlar",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:32",
+  "title": "Dış Mekan Led Ekranlar"
+ },
+ {
+  "type": "posts",
+  "id": 638,
+  "slug": "p4-indoor-rgb-panel",
+  "status": "publish",
+  "modified": "2025-12-30T10:55:20",
+  "title": "P4 Indoor RGB Panel"
+ },
+ {
+  "type": "posts",
+  "id": 636,
+  "slug": "p5-indoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:59:40",
+  "title": "P5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 634,
+  "slug": "p25-indoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:58:44",
+  "title": "P2,5 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 632,
+  "slug": "p3-indoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:57:02",
+  "title": "P3 Indoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 630,
+  "slug": "p4-outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:54:39",
+  "title": "P4 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 628,
+  "slug": "p5-outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:54:10",
+  "title": "P5 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 626,
+  "slug": "p6-outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:52:39",
+  "title": "P6 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 624,
+  "slug": "p8-outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:52:14",
+  "title": "P8 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 622,
+  "slug": "p10-outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2024-08-04T18:51:54",
+  "title": "P10 Outdoor Rgb Panel"
+ },
+ {
+  "type": "posts",
+  "id": 620,
+  "slug": "p10-panel-kirmizi",
+  "status": "publish",
+  "modified": "2024-08-04T18:51:30",
+  "title": "P10 Panel Kırmızı"
+ },
+ {
+  "type": "posts",
+  "id": 618,
+  "slug": "p10-rgb-kabin",
+  "status": "publish",
+  "modified": "2024-08-04T18:51:11",
+  "title": "P10 Rgb Kabin"
+ },
+ {
+  "type": "posts",
+  "id": 616,
+  "slug": "tf-qs2n-kontrol-karti-2",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:43",
+  "title": "TF-QS2N Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 611,
+  "slug": "pcb-nedir",
+  "status": "publish",
+  "modified": "2024-08-04T18:48:27",
+  "title": "PCB Nedir"
+ },
+ {
+  "type": "posts",
+  "id": 609,
+  "slug": "led-nit-mcd",
+  "status": "publish",
+  "modified": "2024-08-04T18:47:35",
+  "title": "LED / NIT / MCD"
+ },
+ {
+  "type": "posts",
+  "id": 606,
+  "slug": "led-led-ekran",
+  "status": "publish",
+  "modified": "2024-08-04T18:47:10",
+  "title": "Led / Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 603,
+  "slug": "led-ekran-3",
+  "status": "draft",
+  "modified": "2026-09-21T11:26:45",
+  "title": "Led Ekran"
+ },
+ {
+  "type": "posts",
+  "id": 601,
+  "slug": "dip-led-panel-tamiri",
+  "status": "publish",
+  "modified": "2024-08-04T18:45:28",
+  "title": "Dip Led Panel Tamiri"
+ },
+ {
+  "type": "posts",
+  "id": 590,
+  "slug": "hd-d10-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:43:44",
+  "title": "HD -D10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 588,
+  "slug": "hd-d30-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:43:12",
+  "title": "HD-D30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 586,
+  "slug": "hd-c10-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:42:52",
+  "title": "HD-C10 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 584,
+  "slug": "hd-c10c-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:42:29",
+  "title": "HD-C10C Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 582,
+  "slug": "hd-c30-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:41:48",
+  "title": "HD-C30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 580,
+  "slug": "hd-a30-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:41:31",
+  "title": "HD-A30 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 578,
+  "slug": "hd-a601-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:41:13",
+  "title": "HD-A601 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 576,
+  "slug": "hd-a602-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:40:50",
+  "title": "HD-A602 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 574,
+  "slug": "hd-a603-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:40:32",
+  "title": "HD-A603 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 572,
+  "slug": "tf-qs2-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:40:15",
+  "title": "TF-QS2 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 570,
+  "slug": "tf-qs2n-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:39:51",
+  "title": "TF-QS2N Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 568,
+  "slug": "tf-qb5-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:39:35",
+  "title": "TF-QB5 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 566,
+  "slug": "tf-qc1-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:39:18",
+  "title": "TF-QC1 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 564,
+  "slug": "tf-qc3-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:38:55",
+  "title": "TF-QC3 Kontrol Kartı"
+ },
+ {
+  "type": "posts",
+  "id": 562,
+  "slug": "ts-802-sender-linsn",
+  "status": "publish",
+  "modified": "2024-08-04T18:38:10",
+  "title": "TS 802 Sender Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 560,
+  "slug": "rv-908-receiver-linsn",
+  "status": "publish",
+  "modified": "2024-08-04T18:37:47",
+  "title": "RV 908 Receiver Linsn"
+ },
+ {
+  "type": "posts",
+  "id": 558,
+  "slug": "msd-300-nova-sender",
+  "status": "publish",
+  "modified": "2024-08-04T18:37:31",
+  "title": "MSD 300 Nova Sender"
+ },
+ {
+  "type": "posts",
+  "id": 556,
+  "slug": "nova-mrv-330-receiver",
+  "status": "publish",
+  "modified": "2024-08-04T18:37:08",
+  "title": "Nova MRV 330 Receiver"
+ },
+ {
+  "type": "posts",
+  "id": 554,
+  "slug": "mctrl-300",
+  "status": "publish",
+  "modified": "2024-08-04T18:36:52",
+  "title": "MCTRL 300"
+ },
+ {
+  "type": "posts",
+  "id": 552,
+  "slug": "psd100",
+  "status": "publish",
+  "modified": "2024-08-04T18:36:22",
+  "title": "PSD100"
+ },
+ {
+  "type": "posts",
+  "id": 550,
+  "slug": "led-ekran-omru",
+  "status": "publish",
+  "modified": "2024-08-04T18:35:59",
+  "title": "Led Ekran Ömrü"
+ },
+ {
+  "type": "posts",
+  "id": 547,
+  "slug": "led-ekran-kullanim-alanlari",
+  "status": "publish",
+  "modified": "2026-09-23T10:33:08",
+  "title": "LED Screen Kullanım Alanları"
+ },
+ {
+  "type": "posts",
+  "id": 541,
+  "slug": "hd-a3-kontrol-karti",
+  "status": "publish",
+  "modified": "2024-08-04T18:34:39",
+  "title": "HD-A3 Kontrol Kartı"
+ },
+ {
+  "type": "pages",
+  "id": 5891,
+  "slug": "__trashed",
+  "status": "trash",
+  "modified": "2026-09-29T07:29:11",
+  "title": "test"
+ },
+ {
+  "type": "pages",
+  "id": 5805,
+  "slug": "pitch-secim-rehberi",
+  "status": "publish",
+  "modified": "2026-09-23T10:30:05",
+  "title": "LED Ekran Pitch Seçim Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 5804,
+  "slug": "cephe-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:25:19",
+  "title": "Cephe LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 5477,
+  "slug": "software-download-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:20",
+  "title": "Software herunterladen"
+ },
+ {
+  "type": "pages",
+  "id": 5476,
+  "slug": "outdoor-rgb-panel-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:06",
+  "title": "Outdoor-RGB-Panel"
+ },
+ {
+  "type": "pages",
+  "id": 5475,
+  "slug": "indoor-vs-outdoor-led-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:24",
+  "title": "İç Mekan vs Dış Mekan LED Farkı"
+ },
+ {
+  "type": "pages",
+  "id": 5474,
+  "slug": "indoor-rgb-panel-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:25",
+  "title": "Indoor-RGB-Panel"
+ },
+ {
+  "type": "pages",
+  "id": 5473,
+  "slug": "huidu-hdplayer-download-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:04",
+  "title": "Huidu Processor HDPlayer İndir"
+ },
+ {
+  "type": "pages",
+  "id": 5352,
+  "slug": "blog-3",
+  "status": "publish",
+  "modified": "2026-09-21T16:40:05",
+  "title": "Blog"
+ },
+ {
+  "type": "pages",
+  "id": 5351,
+  "slug": "blog-2",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:59",
+  "title": "Blog"
+ },
+ {
+  "type": "pages",
+  "id": 5350,
+  "slug": "technische-support-videos",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:51",
+  "title": "Technische Support-Videos"
+ },
+ {
+  "type": "pages",
+  "id": 5349,
+  "slug": "technical-support-videos",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:45",
+  "title": "Technical Support Videos"
+ },
+ {
+  "type": "pages",
+  "id": 5348,
+  "slug": "firmeninformationen",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:36",
+  "title": "Firmeninformationen"
+ },
+ {
+  "type": "pages",
+  "id": 5347,
+  "slug": "company-information",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:30",
+  "title": "Company Information"
+ },
+ {
+  "type": "pages",
+  "id": 5345,
+  "slug": "software-download",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:15",
+  "title": "Download Software"
+ },
+ {
+  "type": "pages",
+  "id": 5343,
+  "slug": "outdoor-rgb-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:39:00",
+  "title": "Outdoor RGB Panel"
+ },
+ {
+  "type": "pages",
+  "id": 5342,
+  "slug": "colorlight-5",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:52",
+  "title": "Colorlight"
+ },
+ {
+  "type": "pages",
+  "id": 5341,
+  "slug": "colorlight-4",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:45",
+  "title": "Colorlight"
+ },
+ {
+  "type": "pages",
+  "id": 5340,
+  "slug": "huidu-3",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:36",
+  "title": "HUIDU"
+ },
+ {
+  "type": "pages",
+  "id": 5339,
+  "slug": "huidu-2",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:30",
+  "title": "HUIDU"
+ },
+ {
+  "type": "pages",
+  "id": 5338,
+  "slug": "projekte",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:21",
+  "title": "LED-Display-Projekte"
+ },
+ {
+  "type": "pages",
+  "id": 5337,
+  "slug": "projects",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:14",
+  "title": "LED Screen Projects"
+ },
+ {
+  "type": "pages",
+  "id": 5336,
+  "slug": "was-ist-ein-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:38:05",
+  "title": "Was ist ein LED-Display? Umfassender Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5335,
+  "slug": "what-is-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:59",
+  "title": "What is an LED Screen? Comprehensive Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5334,
+  "slug": "led-beschilderung",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:50",
+  "title": "LED-Beschilderungsleitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5333,
+  "slug": "led-signage",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:44",
+  "title": "LED Signage Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5332,
+  "slug": "led-display-installation",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:35",
+  "title": "LED Screen Installation Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5331,
+  "slug": "led-screen-installation",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:29",
+  "title": "LED Screen Installation Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5330,
+  "slug": "led-display-wartung",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:20",
+  "title": "LED-Display-Wartungsleitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5329,
+  "slug": "led-screen-maintenance",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:14",
+  "title": "LED Screen Maintenance Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5328,
+  "slug": "einkaufszentrum-led-leitfaden",
+  "status": "publish",
+  "modified": "2026-09-21T16:37:06",
+  "title": "AVM LED Screen Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5327,
+  "slug": "mall-led-screen-guide",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:59",
+  "title": "AVM LED Screen Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5326,
+  "slug": "stadion-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:51",
+  "title": "Stadyum LED Screen Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5325,
+  "slug": "stadium-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:45",
+  "title": "Stadyum LED Screen Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5324,
+  "slug": "schaufenster-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:36",
+  "title": "Mağaza Vitrin LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5323,
+  "slug": "storefront-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:30",
+  "title": "Mağaza Vitrin LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5322,
+  "slug": "kommunales-info-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:22",
+  "title": "Leitfaden kommunales Info-Display"
+ },
+ {
+  "type": "pages",
+  "id": 5321,
+  "slug": "municipality-info-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:16",
+  "title": "Municipal Info Screen Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5320,
+  "slug": "apotheke-led-tafel",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:08",
+  "title": "Apotheken-LED-Tafel-Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5319,
+  "slug": "pharmacy-led-sign",
+  "status": "publish",
+  "modified": "2026-09-21T16:36:02",
+  "title": "Pharmacy LED Sign Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5318,
+  "slug": "moschee-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:53",
+  "title": "Cami LED Screen Leitfaden"
+ },
+ {
+  "type": "pages",
+  "id": 5317,
+  "slug": "mosque-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:47",
+  "title": "Cami LED Screen Guide"
+ },
+ {
+  "type": "pages",
+  "id": 5316,
+  "slug": "p2-vs-p3-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:38",
+  "title": "P2 vs P3 LED Screen Vergleich"
+ },
+ {
+  "type": "pages",
+  "id": 5315,
+  "slug": "p2-vs-p3-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:32",
+  "title": "P2 vs P3 LED Screen Comparison"
+ },
+ {
+  "type": "pages",
+  "id": 5313,
+  "slug": "indoor-vs-outdoor-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:18",
+  "title": "İç Mekan vs Dış Mekan LED Farkı"
+ },
+ {
+  "type": "pages",
+  "id": 5312,
+  "slug": "wann-cob-led-waehlen",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:10",
+  "title": "COB LED Wann wählen?"
+ },
+ {
+  "type": "pages",
+  "id": 5311,
+  "slug": "when-to-choose-cob-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:35:05",
+  "title": "COB LED When to Choose?"
+ },
+ {
+  "type": "pages",
+  "id": 5310,
+  "slug": "gob-vs-cob-smd-3",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:58",
+  "title": "GOB vs COB vs SMD LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5309,
+  "slug": "gob-vs-cob-smd-2",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:52",
+  "title": "GOB vs COB vs SMD LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5308,
+  "slug": "led-display-vs-lcd",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:44",
+  "title": "LED Screen vs LCD Vergleich"
+ },
+ {
+  "type": "pages",
+  "id": 5307,
+  "slug": "led-screen-vs-lcd",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:38",
+  "title": "LED Screen vs LCD Comparison"
+ },
+ {
+  "type": "pages",
+  "id": 5306,
+  "slug": "led-display-vs-projektor",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:30",
+  "title": "LED Screen vs Projeksiyon"
+ },
+ {
+  "type": "pages",
+  "id": 5305,
+  "slug": "led-screen-vs-projection",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:24",
+  "title": "LED Screen vs Projeksiyon"
+ },
+ {
+  "type": "pages",
+  "id": 5304,
+  "slug": "was-ist-pixel-pitch",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:16",
+  "title": "Piksel Pitch Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5303,
+  "slug": "what-is-pixel-pitch",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:09",
+  "title": "Piksel Pitch What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5302,
+  "slug": "was-ist-bildwiederholrate",
+  "status": "publish",
+  "modified": "2026-09-21T16:34:01",
+  "title": "Refresh Rate (Hz) Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5301,
+  "slug": "what-is-refresh-rate",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:55",
+  "title": "Refresh Rate (Hz) What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5300,
+  "slug": "was-ist-nits-helligkeit",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:47",
+  "title": "Nits Brightness Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5299,
+  "slug": "what-is-nits-brightness",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:41",
+  "title": "Nits Brightness What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5298,
+  "slug": "led-display-ip-schutzart",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:33",
+  "title": "IP-Schutzart ve LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5297,
+  "slug": "led-screen-ip-rating",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:26",
+  "title": "IP Protection Rating ve LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5296,
+  "slug": "was-ist-ein-led-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:18",
+  "title": "LED Panel Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5295,
+  "slug": "what-is-led-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:12",
+  "title": "LED Panel What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5294,
+  "slug": "was-ist-smd-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:33:04",
+  "title": "SMD LED Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5293,
+  "slug": "what-is-smd-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:58",
+  "title": "SMD LED What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5292,
+  "slug": "was-ist-gob-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:49",
+  "title": "GOB LED Was ist das?"
+ },
+ {
+  "type": "pages",
+  "id": 5291,
+  "slug": "what-is-gob-led",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:43",
+  "title": "GOB LED What is it?"
+ },
+ {
+  "type": "pages",
+  "id": 5290,
+  "slug": "gob-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:35",
+  "title": "GOB LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5289,
+  "slug": "gob-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:29",
+  "title": "GOB LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5288,
+  "slug": "istanbul-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:20",
+  "title": "Istanbul LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5287,
+  "slug": "istanbul-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:14",
+  "title": "Istanbul LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5286,
+  "slug": "ankara-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:32:05",
+  "title": "Ankara LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5285,
+  "slug": "ankara-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:59",
+  "title": "Ankara LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5284,
+  "slug": "izmir-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:51",
+  "title": "İzmir LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5283,
+  "slug": "izmir-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:46",
+  "title": "İzmir LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5282,
+  "slug": "flughafen-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:37",
+  "title": "Flughafen LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5281,
+  "slug": "airport-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:31",
+  "title": "Airport LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5280,
+  "slug": "hotel-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:22",
+  "title": "Otel LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5279,
+  "slug": "hotel-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:17",
+  "title": "Otel LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5278,
+  "slug": "messe-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:09",
+  "title": "Fuar LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5277,
+  "slug": "exhibition-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:31:04",
+  "title": "Fuar LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5272,
+  "slug": "billboard-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:56",
+  "title": "Billboard-LED-Display"
+ },
+ {
+  "type": "pages",
+  "id": 5271,
+  "slug": "billboard-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:49",
+  "title": "Billboard LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5270,
+  "slug": "konferenzraum-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:40",
+  "title": "LED-Display für Besprechungsräume"
+ },
+ {
+  "type": "pages",
+  "id": 5269,
+  "slug": "meeting-room-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:34",
+  "title": "Meeting Room LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5267,
+  "slug": "indoor-rgb-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:18",
+  "title": "Indoor RGB Panel"
+ },
+ {
+  "type": "pages",
+  "id": 5266,
+  "slug": "steuerkarten",
+  "status": "publish",
+  "modified": "2026-09-21T16:30:07",
+  "title": "Steuerkarten"
+ },
+ {
+  "type": "pages",
+  "id": 5265,
+  "slug": "control-cards",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:59",
+  "title": "Control Cards"
+ },
+ {
+  "type": "pages",
+  "id": 5264,
+  "slug": "netzteile",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:49",
+  "title": "Netzteile"
+ },
+ {
+  "type": "pages",
+  "id": 5263,
+  "slug": "power-supplies",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:43",
+  "title": "Power Supplies"
+ },
+ {
+  "type": "pages",
+  "id": 5262,
+  "slug": "zertifikate",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:33",
+  "title": "Zertifikate"
+ },
+ {
+  "type": "pages",
+  "id": 5261,
+  "slug": "certificates",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:26",
+  "title": "Certificates"
+ },
+ {
+  "type": "pages",
+  "id": 5260,
+  "slug": "marken",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:17",
+  "title": "Our Brands"
+ },
+ {
+  "type": "pages",
+  "id": 5259,
+  "slug": "brands",
+  "status": "publish",
+  "modified": "2026-09-21T16:29:12",
+  "title": "Our Brands"
+ },
+ {
+  "type": "pages",
+  "id": 5257,
+  "slug": "huidu-hdplayer-download",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:58",
+  "title": "Huidu Processor HDPlayer İndir"
+ },
+ {
+  "type": "pages",
+  "id": 5228,
+  "slug": "home-de",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:49",
+  "title": "LED-Display"
+ },
+ {
+  "type": "pages",
+  "id": 5227,
+  "slug": "home-en",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:41",
+  "title": "LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5225,
+  "slug": "kontakt",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:32",
+  "title": "Kontakt"
+ },
+ {
+  "type": "pages",
+  "id": 5222,
+  "slug": "cob-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:19",
+  "title": "COB – Smart Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5221,
+  "slug": "cob-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:13",
+  "title": "COB – Smart Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5218,
+  "slug": "led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:05",
+  "title": "LED-Display Preise und Modelle"
+ },
+ {
+  "type": "pages",
+  "id": 5217,
+  "slug": "led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:58",
+  "title": "LED Screen Prices and Models"
+ },
+ {
+  "type": "pages",
+  "id": 5214,
+  "slug": "indoor-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:49",
+  "title": "Indoor-LED-Display"
+ },
+ {
+  "type": "pages",
+  "id": 5213,
+  "slug": "indoor-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:42",
+  "title": "Indoor LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 5211,
+  "slug": "outdoor-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:33",
+  "title": "Outdoor-LED-Display"
+ },
+ {
+  "type": "pages",
+  "id": 5207,
+  "slug": "rental-led-display",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:17",
+  "title": "LED-Display Miete"
+ },
+ {
+  "type": "pages",
+  "id": 5206,
+  "slug": "rental-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:10",
+  "title": "LED Screen Rental"
+ },
+ {
+  "type": "pages",
+  "id": 5017,
+  "slug": "huidu-processor-hdplayer-indir",
+  "status": "publish",
+  "modified": "2026-09-17T10:47:48",
+  "title": "Huidu Processor HDPlayer İndir"
+ },
+ {
+  "type": "pages",
+  "id": 5011,
+  "slug": "markalarimiz",
+  "status": "publish",
+  "modified": "2026-09-23T09:13:50",
+  "title": "Our Brands"
+ },
+ {
+  "type": "pages",
+  "id": 5010,
+  "slug": "sertifikalarimiz",
+  "status": "publish",
+  "modified": "2026-09-21T16:18:10",
+  "title": "Sertifikalarımız"
+ },
+ {
+  "type": "pages",
+  "id": 5009,
+  "slug": "guc-kaynaklari",
+  "status": "publish",
+  "modified": "2026-09-21T16:18:18",
+  "title": "Güç Kaynakları"
+ },
+ {
+  "type": "pages",
+  "id": 5008,
+  "slug": "kontrol-kartlari",
+  "status": "publish",
+  "modified": "2026-09-21T16:18:27",
+  "title": "Kontrol Kartları"
+ },
+ {
+  "type": "pages",
+  "id": 5006,
+  "slug": "ic-mekan-rgb-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:18:42",
+  "title": "İç Mekan RGB Panel"
+ },
+ {
+  "type": "pages",
+  "id": 5004,
+  "slug": "rental-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:19:10",
+  "title": "LED Ekran Kiralama"
+ },
+ {
+  "type": "pages",
+  "id": 5003,
+  "slug": "dis-mekan-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:14:32",
+  "title": "Dış Mekan LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 5002,
+  "slug": "ic-mekan-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T08:20:47",
+  "title": "İç Mekan LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 5001,
+  "slug": "led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:10:56",
+  "title": "LED Ekran Fiyatları ve Modelleri"
+ },
+ {
+  "type": "pages",
+  "id": 4994,
+  "slug": "toplanti-odasi-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:28:08",
+  "title": "Toplantı Odası LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4993,
+  "slug": "billboard-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:25:51",
+  "title": "Billboard LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4992,
+  "slug": "fuar-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:25:42",
+  "title": "Fuar LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4991,
+  "slug": "otel-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:27:38",
+  "title": "Otel LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4990,
+  "slug": "havaalani-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-21T16:08:45",
+  "title": "Havalimanı LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4989,
+  "slug": "izmir-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:28:31",
+  "title": "İzmir LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4988,
+  "slug": "ankara-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:28:23",
+  "title": "Ankara LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4987,
+  "slug": "istanbul-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:28:15",
+  "title": "İstanbul LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4986,
+  "slug": "gob-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:21:49",
+  "title": "GOB LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4985,
+  "slug": "gob-led-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:36:02",
+  "title": "GOB LED Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4984,
+  "slug": "smd-led-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:29:43",
+  "title": "SMD LED Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4983,
+  "slug": "led-panel-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:29:32",
+  "title": "LED Panel Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4982,
+  "slug": "ip-koruma-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:24",
+  "title": "IP Koruma Sınıfı ve LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4981,
+  "slug": "nits-parlaklik-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:10",
+  "title": "Nits Brightness Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4980,
+  "slug": "refresh-hz-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:17",
+  "title": "Refresh Rate (Hz) Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4979,
+  "slug": "pitch-led-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:29:49",
+  "title": "Piksel Pitch Nedir?"
+ },
+ {
+  "type": "pages",
+  "id": 4978,
+  "slug": "led-ekran-projeksiyon",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:49",
+  "title": "LED Screen vs Projeksiyon"
+ },
+ {
+  "type": "pages",
+  "id": 4977,
+  "slug": "led-ekran-lcd-farki",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:41",
+  "title": "LED Screen vs LCD Karşılaştırma"
+ },
+ {
+  "type": "pages",
+  "id": 4976,
+  "slug": "gob-vs-cob-smd",
+  "status": "publish",
+  "modified": "2026-09-23T10:32:38",
+  "title": "GOB vs COB vs SMD LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 4975,
+  "slug": "cob-led-ne-zaman",
+  "status": "publish",
+  "modified": "2026-09-23T10:32:45",
+  "title": "COB LED Ne Zaman Tercih Edilmeli?"
+ },
+ {
+  "type": "pages",
+  "id": 4974,
+  "slug": "ic-mekan-dis-mekan-led-farki",
+  "status": "publish",
+  "modified": "2026-09-23T10:31:30",
+  "title": "İç Mekan vs Dış Mekan LED Farkı"
+ },
+ {
+  "type": "pages",
+  "id": 4973,
+  "slug": "p2-vs-p3-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:29:56",
+  "title": "P2 vs P3 LED Screen Karşılaştırma"
+ },
+ {
+  "type": "pages",
+  "id": 4972,
+  "slug": "cami-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:26:59",
+  "title": "Cami LED Screen Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4971,
+  "slug": "eczane-led-tabela",
+  "status": "publish",
+  "modified": "2026-09-23T10:27:08",
+  "title": "Eczane LED Tabela Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4970,
+  "slug": "belediye-bilgi-ekrani",
+  "status": "publish",
+  "modified": "2026-09-11T11:43:28",
+  "title": "Belediye Bilgi Ekranı Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4969,
+  "slug": "magaza-vitrin-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:25:06",
+  "title": "Mağaza Vitrin LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 4968,
+  "slug": "stadyum-led-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T10:27:46",
+  "title": "Stadyum LED Screen Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4967,
+  "slug": "avm-led-ekran-rehberi",
+  "status": "publish",
+  "modified": "2026-09-23T10:26:16",
+  "title": "AVM LED Screen Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4966,
+  "slug": "led-ekran-bakim",
+  "status": "publish",
+  "modified": "2026-09-23T10:32:59",
+  "title": "LED Ekran Bakım Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4965,
+  "slug": "led-ekran-kurulum",
+  "status": "publish",
+  "modified": "2026-09-23T10:32:52",
+  "title": "LED Screen Installation Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4964,
+  "slug": "led-tabela",
+  "status": "publish",
+  "modified": "2026-09-23T10:26:28",
+  "title": "LED Tabela Rehberi"
+ },
+ {
+  "type": "pages",
+  "id": 4963,
+  "slug": "led-ekran-nedir",
+  "status": "publish",
+  "modified": "2026-09-23T10:00:53",
+  "title": "LED Ekran Nedir? Kapsamlı Rehber"
+ },
+ {
+  "type": "pages",
+  "id": 4956,
+  "slug": "projeler",
+  "status": "publish",
+  "modified": "2026-09-23T08:21:48",
+  "title": "LED Ekran Projeleri"
+ },
+ {
+  "type": "pages",
+  "id": 4859,
+  "slug": "",
+  "status": "draft",
+  "modified": "2025-12-22T07:58:02",
+  "title": "Power Supply"
+ },
+ {
+  "type": "pages",
+  "id": 4214,
+  "slug": "huidu",
+  "status": "publish",
+  "modified": "2026-09-11T12:03:02",
+  "title": "HUIDU"
+ },
+ {
+  "type": "pages",
+  "id": 4081,
+  "slug": "colorlight",
+  "status": "publish",
+  "modified": "2026-09-21T08:13:41",
+  "title": "Colorlight"
+ },
+ {
+  "type": "pages",
+  "id": 3958,
+  "slug": "cob-ekran",
+  "status": "publish",
+  "modified": "2026-09-23T07:16:04",
+  "title": "COB – Smart Screen"
+ },
+ {
+  "type": "pages",
+  "id": 3795,
+  "slug": "dis-mekan-rgb-panel",
+  "status": "publish",
+  "modified": "2026-09-21T16:21:47",
+  "title": "Dış Mekan RGB Panel"
+ },
+ {
+  "type": "pages",
+  "id": 1140,
+  "slug": "outdoor-led-screen",
+  "status": "publish",
+  "modified": "2026-09-21T16:27:26",
+  "title": "Outdoor LED Screen"
+ },
+ {
+  "type": "pages",
+  "id": 3067,
+  "slug": "de-case-rgb-panel-fuer-den-aussenbereich",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:24",
+  "title": "LED-Außenanzeige – LED-Außenanzeige"
+ },
+ {
+  "type": "pages",
+  "id": 856,
+  "slug": "outdoor-led-screen-dis-mekan-led-ekran",
+  "status": "draft",
+  "modified": "2025-09-30T14:13:22",
+  "title": "Outdoor Led Screen / Dış Mekan Led Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 848,
+  "slug": "teknik-destek-videolari-2",
+  "status": "draft",
+  "modified": "2026-09-23T09:26:36",
+  "title": "Teknik Destek Videoları"
+ },
+ {
+  "type": "pages",
+  "id": 786,
+  "slug": "program-indir",
+  "status": "publish",
+  "modified": "2026-09-21T16:22:19",
+  "title": "Program İndir"
+ },
+ {
+  "type": "pages",
+  "id": 3050,
+  "slug": "unsere-firmeninformationen",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:27",
+  "title": "Unsere Firmeninformationen"
+ },
+ {
+  "type": "pages",
+  "id": 770,
+  "slug": "our-company-information",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:30",
+  "title": "Our Company Information"
+ },
+ {
+  "type": "pages",
+  "id": 1238,
+  "slug": "firma-bilgilerimiz",
+  "status": "publish",
+  "modified": "2026-09-21T08:13:30",
+  "title": "Firma Bilgilerimiz"
+ },
+ {
+  "type": "pages",
+  "id": 195,
+  "slug": "teknik-destek-videolari",
+  "status": "publish",
+  "modified": "2026-09-21T16:22:30",
+  "title": "Teknik Destek Videoları"
+ },
+ {
+  "type": "pages",
+  "id": 3069,
+  "slug": "",
+  "status": "draft",
+  "modified": "2025-02-24T14:21:43",
+  "title": "Portfolio 02"
+ },
+ {
+  "type": "pages",
+  "id": 74,
+  "slug": "portfolio-02",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:32",
+  "title": "Portfolio 02"
+ },
+ {
+  "type": "pages",
+  "id": 42,
+  "slug": "portfolio-03",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:35",
+  "title": "Portfolio 03"
+ },
+ {
+  "type": "pages",
+  "id": 33,
+  "slug": "portfolio-01",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:38",
+  "title": "Portfolio 01"
+ },
+ {
+  "type": "pages",
+  "id": 32,
+  "slug": "gallery",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:41",
+  "title": "Gallery"
+ },
+ {
+  "type": "pages",
+  "id": 3061,
+  "slug": "kommunikation",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:46",
+  "title": "Kommunikation"
+ },
+ {
+  "type": "pages",
+  "id": 30,
+  "slug": "contact",
+  "status": "publish",
+  "modified": "2026-09-21T16:28:27",
+  "title": "Contact"
+ },
+ {
+  "type": "pages",
+  "id": 1262,
+  "slug": "iletisim",
+  "status": "publish",
+  "modified": "2026-09-21T16:22:40",
+  "title": "İletişim"
+ },
+ {
+  "type": "pages",
+  "id": 27,
+  "slug": "blog",
+  "status": "publish",
+  "modified": "2026-09-21T11:26:59",
+  "title": "Blog"
+ },
+ {
+  "type": "pages",
+  "id": 25,
+  "slug": "about-me",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:48",
+  "title": "About Me"
+ },
+ {
+  "type": "pages",
+  "id": 23,
+  "slug": "about-us",
+  "status": "publish",
+  "modified": "2026-09-21T16:40:14",
+  "title": "About Us"
+ },
+ {
+  "type": "pages",
+  "id": 1242,
+  "slug": "hakkimizda",
+  "status": "publish",
+  "modified": "2026-09-21T16:22:54",
+  "title": "Hakkımızda"
+ },
+ {
+  "type": "pages",
+  "id": 3042,
+  "slug": "uber-uns",
+  "status": "publish",
+  "modified": "2026-09-21T16:40:20",
+  "title": "Über uns"
+ },
+ {
+  "type": "pages",
+  "id": 1248,
+  "slug": "tr-2",
+  "status": "publish",
+  "modified": "2026-09-29T11:14:30",
+  "title": "LED Ekran"
+ },
+ {
+  "type": "pages",
+  "id": 3028,
+  "slug": "de",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:55",
+  "title": "Anasayfa DE"
+ },
+ {
+  "type": "pages",
+  "id": 291,
+  "slug": "en",
+  "status": "draft",
+  "modified": "2026-09-21T11:25:57",
+  "title": "Homepage"
+ }
+]

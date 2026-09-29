@@ -1,0 +1,21 @@
+301 https://ledajans.com/led-ekran-4/ -> https://ledajans.com |  | 
+301 https://ledajans.com/led-ekran-9/ -> https://ledajans.com |  | 
+301 https://ledajans.com/teknik-destek-videolari-2/ -> https://ledajans.com |  | 
+301 https://ledajans.com/ic-mekan-led-ekranlar/ -> https://ledajans.com |  | 
+301 https://ledajans.com/dis-mekan-led-ekranlar/ -> https://ledajans.com |  | 
+301 https://ledajans.com/p10-panel-kirmizi-3/ -> https://ledajans.com |  | 
+200 https://ledajans.com/en/colorlight-4/ ->  | Colorlight | LEDAJANS | follow, noindex
+200 https://ledajans.com/ankara-led-ekran/ ->  | Ankara LED Screen | LEDAJANS | follow, noindex
+200 https://ledajans.com/led-ekran-fiyatlari-2026/ ->  | LED Ekran Fiyatları 2026 | LEDAJANS | index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large
+200 https://ledajans.com/istanbul-led-ekran/ ->  | İstanbul LED Ekran | Satış ve Kurulum | LEDAJANS | index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large
+200 https://ledajans.com/fuar-led-ekran/ ->  | Fuar LED Ekran | Kiralama ve Stand | LEDAJANS | index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large
+200 https://ledajans.com/magaza-vitrin-led-ekran/ ->  | Mağaza Vitrin LED Ekran | LEDAJANS | index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large
+301 https://ledajans.com/blog/led-ekran-fiyatlari-2026/ -> https://ledajans.com/led-ekran-fiyatlari-2026/ |  | 
+POST_LOCS 92 PAGE_LOCS 165
+sitemap led-ekran-4 True
+sitemap led-ekran-9 True
+sitemap ankara-led-ekran True
+sitemap colorlight-4 True
+sitemap teknik-destek-videolari-2 True
+sitemap p10-panel-kirmizi-3 True
+sitemap ic-mekan-led-ekranlar True

@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HUB = {
     "file": "LED Ekran/led-ekran.html",
     "slug": "led-ekran",
-    "page_id": 5557,
+    "page_id": 5001,
 }
 
 
