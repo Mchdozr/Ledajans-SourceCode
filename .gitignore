@@ -18,3 +18,5 @@ AGENT-HUB/psi-mobile-*.json
 AGENT-HUB/_snippet-full.txt
 AGENT-HUB/git-pull-log.txt
 *.local.md
+
+AGENT-HUB/_updraft-restore/
