@@ -1,0 +1,58 @@
+{
+ "id": 5929,
+ "type": "page",
+ "title": "P1.25 GOB İç Mekan RGB Panel",
+ "slug": "p1-25-6000hz-gob-ic-mekan-rgb-led-panel",
+ "link": "https://ledajans.com/p1-25-6000hz-gob-ic-mekan-rgb-led-panel/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-29T12:06:26",
+ "modified": "2026-09-29T12:37:02",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "P1.25 GOB İç Mekan RGB Panel | LEDAJANS",
+  "rank_math_description": "P1.25 GOB İç Mekan RGB Panel: 640.000 piksel/m², SMD1010, ≥6000 Hz. Teknik özellikler, döküman ve fiyat teklifi için LEDAJANS ile iletişime geçin.",
+  "rank_math_focus_keyword": "p1.25 gob iç mekan rgb panel"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "P1.25 GOB İç Mekan RGB Panel | LEDAJANS",
+  "description": "P1.25 GOB İç Mekan RGB Panel: 640.000 piksel/m², SMD1010, ≥6000 Hz. Teknik özellikler, döküman ve fiyat teklifi için LEDAJANS ile iletişime geçin.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p1-25-6000hz-gob-ic-mekan-rgb-led-panel/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2024/09/p1-25-gob-ic-mekan-rgb-led-panel.webp",
+  "h1": [
+   "P1.25 GOB İç Mekan RGB Panel"
+  ],
+  "h2": [
+   "P1.25 GOB LED Panel (İç Mekan RGB)",
+   "P1.25 GOB LED Panel Teknik Özellikler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5929:page",
+   "75:gva__template"
+  ]
+ }
+}

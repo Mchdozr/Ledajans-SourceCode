@@ -1,0 +1,64 @@
+[
+ {
+  "id": "wb1s0",
+  "elType": "section",
+  "settings": {
+   "layout": "full_width",
+   "gap": "no"
+  },
+  "isInner": false,
+  "elements": [
+   {
+    "id": "wb1s0c",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100
+    },
+    "isInner": false,
+    "elements": [
+     {
+      "id": "wb1s0w0",
+      "elType": "widget",
+      "widgetType": "html",
+      "settings": {
+       "html": "<!-- LEDAJANS SEO - Sayfa Üstü Hero/Banner - P1.25 COB LED Ekran -->\n<style>\n.ledajans-blog-hero{\n  position:relative;height:220px;\n  background-image:url('https://ledajans.com/wp-content/uploads/2026/04/Firefly_Gemini-Flash_LEDAJANS-sirketi-led-tabelalar-uretip-satip-montajini-yapiyor-harika-calisiyorlar-ve-535525-scaled.png');\n  background-size:cover;background-position:center;background-repeat:no-repeat;\n}\n@media (min-width:640px){.ledajans-blog-hero{height:260px;}}\n@media (min-width:768px){.ledajans-blog-hero{height:320px;}}\n.ledajans-blog-hero-overlay{\n  position:absolute;inset:0;\n  background:linear-gradient(135deg,rgba(26,26,46,.88),rgba(22,33,62,.82));\n}\n.ledajans-blog-hero-inner{\n  position:relative;height:100%;max-width:80rem;margin:0 auto;padding:0 1rem;\n  display:flex;align-items:center;\n}\n@media (min-width:640px){.ledajans-blog-hero-inner{padding:0 1.5rem;}}\n@media (min-width:1024px){.ledajans-blog-hero-inner{padding:0 2rem;}}\n.ledajans-blog-hero-title{\n  margin:0;color:#fff;font-weight:700;letter-spacing:-.02em;line-height:1.2;\n  font-size:2rem;\n}\n@media (min-width:640px){.ledajans-blog-hero-title{font-size:2.5rem;}}\n@media (min-width:768px){.ledajans-blog-hero-title{font-size:3rem;}}\n.ledajans-blog-hero-subtitle{\n  display:block;margin-top:.5rem;color:#f46f2c;line-height:1.5;\n  font-size:.9rem;\n}\n@media (min-width:640px){.ledajans-blog-hero-subtitle{font-size:1rem;}}\n@media (min-width:768px){.ledajans-blog-hero-subtitle{font-size:1.1rem;}}\n</style>\n<div class=\"ledajans-blog-hero\">\n<div class=\"ledajans-blog-hero-overlay\"></div>\n<div class=\"ledajans-blog-hero-inner\">\n<div>\n<h1 class=\"ledajans-blog-hero-title\">P1.25 COB LED Ekran</h1>\n<span class=\"ledajans-blog-hero-subtitle\">1.25mm piksel aralığı, CFA125 model yapısı ve ≥3840Hz yenileme hızı ile kurumsal iç mekan projelerinde net ve dengeli görüntü.</span>\n</div>\n</div>\n</div>"
+      },
+      "elements": [],
+      "isInner": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "wb1s1",
+  "elType": "section",
+  "settings": {
+   "layout": "full_width",
+   "gap": "no"
+  },
+  "isInner": false,
+  "elements": [
+   {
+    "id": "wb1s1c",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100
+    },
+    "isInner": false,
+    "elements": [
+     {
+      "id": "wb1s1w0",
+      "elType": "widget",
+      "widgetType": "html",
+      "settings": {
+       "html": "<!-- LEDAJANS SEO - P1.25 COB LED Ekran - Ürün Detay İçerik -->\n<style>\n.la-product-detail{\n  font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;\n  max-width:80rem;margin:0 auto;padding:2rem 1rem;color:#1f2937;line-height:1.7;\n}\n@media (min-width:640px){.la-product-detail{padding:2.5rem 1.5rem;}}\n@media (min-width:1024px){.la-product-detail{padding:3rem 2rem;}}\n.la-product-detail h2{\n  font-size:1.75rem;font-weight:700;color:#1a1a2e;margin:0 0 1rem 0;\n  padding-bottom:.7rem;border-bottom:3px solid #f46f2c;display:inline-block;\n}\n@media (min-width:768px){.la-product-detail h2{font-size:2rem;}}\n.la-product-detail h3{font-size:1.2rem;font-weight:600;color:#16213e;margin:1.8rem 0 .7rem;}\n.la-product-intro{\n  background:linear-gradient(135deg,#f8f9fa 0%,#eef1f4 100%);\n  border-left:4px solid #f46f2c;border-radius:12px;padding:1.4rem;margin-bottom:1.8rem;\n}\n.la-product-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem;}\n.la-product-badge{\n  background:#1a1a2e;color:#fff;border-radius:20px;padding:.4rem .85rem;\n  font-size:.8rem;font-weight:500;\n}\n.la-product-badge--orange{background:#f46f2c;}\n.la-features-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin:1rem 0 2rem;}\n@media (min-width:640px){.la-features-grid{grid-template-columns:1fr 1fr;}}\n@media (min-width:1024px){.la-features-grid{grid-template-columns:1fr 1fr 1fr;}}\n.la-feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:1.1rem;}\n.la-feature-card strong{display:block;color:#1a1a2e;font-size:.95rem;margin-bottom:.3rem;}\n.la-feature-card span{font-size:.85rem;color:#6b7280;line-height:1.5;}\n.la-spec-table-wrapper{margin:1.2rem 0;border-radius:10px;overflow:auto;box-shadow:0 1px 3px rgba(0,0,0,.1);}\n.la-spec-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px;}\n.la-spec-table thead th{\n  background:#1a1a2e;color:#fff;text-align:left;padding:.85rem 1rem;font-size:.83rem;text-transform:uppercase;\n}\n.la-spec-table tbody td{padding:.72rem 1rem;border-bottom:1px solid #e5e7eb;vertical-align:top;}\n.la-spec-table tbody tr:nth-child(even){background:#f9fafb;}\n.la-spec-table tbody td:first-child{font-weight:600;color:#1a1a2e;min-width:210px;}\n.la-highlight-row td{background:rgba(244,111,44,.08)!important;font-weight:700!important;}\n.la-highlight-row td:last-child{color:#f46f2c!important;}\n.la-doc-download{\n  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:#fff;\n  background:linear-gradient(135deg,#f46f2c,#e05a1e);padding:.75rem 1.4rem;border-radius:8px;\n  font-size:.9rem;font-weight:600;margin:.2rem .5rem .8rem 0;\n}\n.la-breadcrumb{font-size:.85rem;color:#6b7280;margin-bottom:1.4rem;}\n.la-breadcrumb a{color:#f46f2c;text-decoration:none;}\n.la-breadcrumb span{margin:0 .35rem;color:#9ca3af;}\n.la-seo-text{margin-top:1.8rem;padding:1.4rem;background:#f8f9fa;border-radius:10px;}\n.la-cta-section{\n  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);\n  border-radius:12px;padding:1.8rem 1.2rem;margin-top:2.2rem;text-align:center;\n}\n.la-cta-section h3{color:#fff;margin:0 0 .5rem 0;font-size:1.3rem;}\n.la-cta-section p{color:#d1d5db;margin:0 0 1rem 0;}\n.la-cta-section a{\n  display:inline-flex;text-decoration:none;background:#f46f2c;color:#fff;border-radius:8px;\n  padding:.65rem 1.3rem;font-size:.9rem;font-weight:600;margin:.2rem;\n}\n</style>\n<div class=\"la-product-detail\">\n<nav class=\"la-breadcrumb\">\n<a href=\"https://ledajans.com\">Ana Sayfa</a><span>›</span>\n<a href=\"https://ledajans.com/led-ekran/\">Ürünlerimiz</a><span>›</span>\n<a href=\"https://ledajans.com/cob-smart-screen/\">COB - Smart Screen</a><span>›</span>\n    P1.25 COB LED Ekran\n  </nav>\n<div class=\"la-product-intro\">\n<h2>P1.25 COB LED Ekran</h2>\n<p><strong>P1.25 COB LED ekran (CFA125)</strong>, 1.25mm piksel aralığıyla toplantı salonu, showroom ve kurumsal iç mekan uygulamalarında yüksek netlik ve homojen görüntü sunar.</p>\n</div>\n<div class=\"la-product-badges\">\n<span class=\"la-product-badge la-product-badge--orange\">1.25 mm Piksel Aralığı</span>\n<span class=\"la-product-badge\">CFA125</span>\n<span class=\"la-product-badge la-product-badge--orange\">≥3840Hz</span>\n<span class=\"la-product-badge\">480×270 Kabin Çözünürlüğü</span>\n<span class=\"la-product-badge la-product-badge--orange\">Ön Bakım</span>\n</div>\n<div class=\"la-features-grid\">\n<div class=\"la-feature-card\"><strong>Dengeli Piksel Yapısı</strong><span>1.25mm pitch ile kalite/maliyet dengesini iyi kurar.</span></div>\n<div class=\"la-feature-card\"><strong>Yüksek Yenileme</strong><span>≥3840Hz ile canlı yayın ve kamera kullanımına uygundur.</span></div>\n<div class=\"la-feature-card\"><strong>Yüksek Kontrast</strong><span>10000:1 statik kontrast ile güçlü görsel derinlik sağlar.</span></div>\n<div class=\"la-feature-card\"><strong>Geniş Görüş Açısı</strong><span>H≥160° / V≥160° ile farklı noktalardan net izleme.</span></div>\n<div class=\"la-feature-card\"><strong>Verimli Güç Tüketimi</strong><span>200W/m² ortalama, 380W/m² maksimum tüketim.</span></div>\n<div class=\"la-feature-card\"><strong>Ön Bakım Avantajı</strong><span>Servis süreçlerinde hızlı müdahale ve kolay bakım.</span></div>\n</div>\n<a class=\"la-doc-download\" href=\"https://drive.google.com/uc?export=download&amp;id=1tXLXPLytdEALGX0ZTU6NzWDHKCBTMLjf\" rel=\"noopener noreferrer\" target=\"_blank\">P1.25 COB Dökümanını İndir</a>\n<div class=\"la-spec-table-wrapper\">\n<table class=\"la-spec-table\">\n<thead><tr><th>Parametre</th><th>Değer</th></tr></thead>\n<tbody>\n<tr class=\"la-highlight-row\"><td>Piksel Pitch</td><td>1.25 mm</td></tr>\n<tr><td>Ürün Modeli</td><td>CFA125</td></tr>\n<tr><td>Kabin Boyutu (Boş)</td><td>600 × 337.5 × 36 mm</td></tr>\n<tr><td>Kabin Boyutu (Lamba Plakalı)</td><td>600 × 337.5 × 38 mm</td></tr>\n<tr class=\"la-highlight-row\"><td>Kabin Çözünürlüğü</td><td>480 × 270</td></tr>\n<tr><td>Piksel Bileşimi</td><td>1R1G1B</td></tr>\n<tr><td>Parlaklık</td><td>0-1000 cd/m² (ayarlanabilir)</td></tr>\n<tr><td>Statik Kontrast</td><td>10000:1</td></tr>\n<tr><td>Dinamik Kontrast</td><td>350000:1</td></tr>\n<tr><td>Görüş Açısı</td><td>H ≥160°, V ≥160°</td></tr>\n<tr><td>Parlaklık Düzgünlüğü</td><td>≥97%</td></tr>\n<tr><td>Renk Sıcaklığı</td><td>3000-21000 K</td></tr>\n<tr><td>Ortalama Güç Tüketimi</td><td>200 W/m²</td></tr>\n<tr><td>Maksimum Güç Tüketimi</td><td>380 W/m²</td></tr>\n<tr class=\"la-highlight-row\"><td>Yenileme Hızı</td><td>≥3840 Hz</td></tr>\n<tr><td>Taramalı Sürme</td><td>1/60S</td></tr>\n<tr><td>Gri Seviye</td><td>14 bit</td></tr>\n<tr><td>Güç Kaynağı</td><td>AC 100-240V, 50/60Hz</td></tr>\n<tr><td>Bakım</td><td>Ön Bakım</td></tr>\n<tr><td>MTBF</td><td>≥5000 saat</td></tr>\n</tbody>\n</table>\n</div>\n<div class=\"la-seo-text\">\n<h3>P1.25 COB LED Ekran Nerede Kullanılır?</h3>\n<p>Toplantı alanları, kurumsal lobi ekranları, showroomlar ve kaliteli iç mekan dijital sunum uygulamalarında kullanılır.</p>\n<h3>Neden P1.25 COB?</h3>\n<p>Yüksek yenileme hızı, dengeli piksel aralığı ve ön bakım desteğiyle profesyonel iç mekan LED ekran projeleri için güçlü bir tercihtir.</p>\n</div>\n<div class=\"la-cta-section\">\n<h3>P1.25 COB LED Ekran Fiyat Teklifi Alın</h3>\n<p>Projenize uygun teknik danışmanlık ve fiyatlandırma için iletişime geçin.</p>\n<a href=\"tel:+902122204004\">+90 212 220 40 04</a>\n<a href=\"tel:+905438795108\">+90 543 879 51 08</a>\n<a href=\"mailto:info@ledajans.com\">info@ledajans.com</a>\n</div>\n</div>"
+      },
+      "elements": [],
+      "isInner": false
+     }
+    ]
+   }
+  ]
+ }
+]

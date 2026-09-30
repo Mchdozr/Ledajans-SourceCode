@@ -1,0 +1,62 @@
+{
+ "id": 4980,
+ "type": "page",
+ "title": "Refresh Rate (Hz) Nedir?",
+ "slug": "refresh-hz-nedir",
+ "link": "https://ledajans.com/refresh-hz-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:01",
+ "modified": "2026-09-23T10:31:17",
+ "excerpt": "LED ekran refresh (yenileme) Hz nedir: kamera flicker, motion blur ve içerik seçimi; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Refresh Rate (Hz) Nedir?",
+  "rank_math_description": "LED ekran refresh (yenileme) Hz nedir: kamera flicker, motion blur ve içerik seçimi; LEDAJANS teknik sözlük.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Refresh Rate (Hz) Nedir?",
+  "description": "LED ekran refresh (yenileme) Hz nedir: kamera flicker, motion blur ve içerik seçimi; LEDAJANS teknik sözlük.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/refresh-hz-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/03/A5-A4.jpg",
+  "h1": [],
+  "h2": [
+   "📌 Refresh (Yenileme) Hz Nedir? LED Ekranda Önemi",
+   "📑 İçindekiler",
+   "🎛 Flicker ve kamera shutter",
+   "⚙️ Hareket netliği",
+   "🚀 Pratik öneriler",
+   "🔧 Sık sorulan teknik nokta",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

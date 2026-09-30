@@ -1,0 +1,66 @@
+{
+ "id": 4994,
+ "type": "page",
+ "title": "Toplantı Odası LED Ekran",
+ "slug": "toplanti-odasi-led-ekran",
+ "link": "https://ledajans.com/toplanti-odasi-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:49",
+ "modified": "2026-09-23T10:28:08",
+ "excerpt": "Toplantı odası LED ekran çözümleri; kurumsal sunum ekranı, video wall, video konferans LED ekran ve akıllı toplantı odası uygulamaları. LEDAJANS ile kurumsal LED ekran projelerinizi planlayın.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Toplantı Odası LED Ekran | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Toplantı Odası LED Ekran | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/toplanti-odasi-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 Toplantı Odası LED Ekran: Kurumsal Sunum, Video Wall ve Konferans Çözümleri",
+   "📑 İçindekiler",
+   "🚀 Toplantı Odasında Neden LED Ekran?",
+   "⚖️ LED Ekran vs Projeksiyon Karşılaştırması",
+   "🖥️ Video Wall Çözümleri",
+   "🎥 Video Konferans Entegrasyonu",
+   "📍 Kullanım Senaryoları",
+   "⚙️ Teknik Gereksinimler",
+   "🤖 Akıllı Toplantı Odası",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

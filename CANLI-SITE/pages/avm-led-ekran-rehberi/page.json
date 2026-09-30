@@ -1,0 +1,63 @@
+{
+ "id": 4967,
+ "type": "page",
+ "title": "AVM LED Screen Rehberi",
+ "slug": "avm-led-ekran-rehberi",
+ "link": "https://ledajans.com/avm-led-ekran-rehberi/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:19",
+ "modified": "2026-09-23T10:26:16",
+ "excerpt": "AVM LED ekran seçimi, izleme mesafesi, parlaklık (nits), çözünürlük ve kurulum; İstanbul ve Türkiye projeleri için LEDAJANS teknik rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "AVM LED Screen Rehberi | LEDAJANS",
+  "rank_math_description": "AVM LED Screen Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "AVM LED Screen Rehberi | LEDAJANS",
+  "description": "AVM LED Screen Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/avm-led-ekran-rehberi/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 AVM LED Ekran: Mesafe, Parlaklık ve Kurulum Rehberi",
+   "📑 İçindekiler",
+   "📍 İzleme mesafesi ve çözünürlük",
+   "⚙️ Parlaklık (nits) ve ortam ışığı",
+   "🏗 Kurulum, güç ve erişim",
+   "🔧 Bakım ve içerik yönetimi",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

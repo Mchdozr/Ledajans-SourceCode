@@ -1,0 +1,58 @@
+{
+ "id": 6024,
+ "type": "page",
+ "title": "OFC P10 Dış Mekan LED Ekran",
+ "slug": "ofc-p10-dis-mekan-led-ekran",
+ "link": "https://ledajans.com/ofc-p10-dis-mekan-led-ekran/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-29T12:55:25",
+ "modified": "2026-09-29T12:55:25",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "OFC P10 Dış Mekan LED Ekran | LEDAJANS",
+  "rank_math_description": "OFC P10 dış mekan LED ekran teknik özellikleri: 10mm piksel aralığı, 10.000 nokta/m², ≥1920Hz yenileme, ≥3500 cd/m² parlaklık. PDF ve DWG indir.",
+  "rank_math_focus_keyword": "ofc p10 dış mekan led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "OFC P10 Dış Mekan LED Ekran | LEDAJANS",
+  "description": "OFC P10 dış mekan LED ekran teknik özellikleri: 10mm piksel aralığı, 10.000 nokta/m², ≥1920Hz yenileme, ≥3500 cd/m² parlaklık. PDF ve DWG indir.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ofc-p10-dis-mekan-led-ekran/",
+  "og_image": "",
+  "h1": [
+   "OFC P10 Dış Mekan LED Ekran"
+  ],
+  "h2": [
+   "OFC P10 Dış Mekan LED Ekran",
+   "OFC P10 Teknik Özellikler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "6024:page",
+   "75:gva__template"
+  ]
+ }
+}

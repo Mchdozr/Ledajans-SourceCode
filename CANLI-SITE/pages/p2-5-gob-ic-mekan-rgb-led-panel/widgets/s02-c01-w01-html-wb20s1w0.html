@@ -1,0 +1,144 @@
+<!-- LEDAJANS SEO - P2.5 GOB İç Mekan RGB Panel - Ürün Detay İçerik -->
+<style>
+.la-product-detail { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 80rem; margin: 0 auto; padding: 2rem 1rem; color: #1f2937; line-height: 1.7; }
+@media (min-width: 640px) { .la-product-detail { padding: 2.5rem 1.5rem; } }
+@media (min-width: 1024px) { .la-product-detail { padding: 3rem 2rem; } }
+.la-product-detail h2 { font-size: 1.75rem; font-weight: 700; color: #1a1a2e; margin: 0; padding-bottom: 0.75rem; border-bottom: 3px solid #f46f2c; display: inline-block; }
+.la-spec-header { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+.la-product-detail h3 { font-size: 1.25rem; font-weight: 600; color: #16213e; margin: 2rem 0 0.75rem 0; }
+.la-product-detail p { margin: 0 0 1rem 0; color: #374151; font-size: 0.95rem; }
+.la-product-intro { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border-left: 4px solid #f46f2c; }
+.la-product-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.la-product-badge { display: inline-flex; align-items: center; background: #1a1a2e; color: #fff; font-size: 0.8rem; font-weight: 500; padding: 0.4rem 0.85rem; border-radius: 20px; }
+.la-product-badge--orange { background: #f46f2c; }
+.la-spec-table-wrapper { margin: 1.5rem 0; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+@media (max-width: 767px) {
+  .la-spec-table-wrapper { overflow-x: visible; margin-left: -0.25rem; margin-right: -0.25rem; border-radius: 12px; }
+  .la-spec-table thead { display: none; }
+  .la-spec-table tbody tr { display: block; margin-bottom: 0.5rem; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; background: #fff; }
+  .la-spec-table tbody td { display: block; padding: 0.65rem 1rem; border-bottom: none; }
+  .la-spec-table tbody td:first-child { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #4b5563; }
+  .la-highlight-row { border-color: rgba(244, 111, 44, 0.35) !important; background: rgba(244, 111, 44, 0.06) !important; }
+  .la-highlight-row td:last-child { color: #f46f2c !important; font-weight: 700; }
+}
+@media (min-width: 768px) { .la-spec-table { min-width: 480px; } }
+.la-spec-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.la-spec-table thead th { background: #1a1a2e; color: #fff; font-weight: 600; text-align: left; padding: 0.85rem 1rem; font-size: 0.85rem; text-transform: uppercase; }
+.la-spec-table tbody td { padding: 0.7rem 1rem; border-bottom: 1px solid #e5e7eb; }
+.la-spec-table tbody tr:nth-child(even) { background: #f9fafb; }
+.la-spec-table tbody tr:hover { background: #fef3eb; }
+.la-spec-table tbody td:first-child { font-weight: 600; color: #1a1a2e; min-width: 200px; }
+.la-spec-table tbody td:last-child { color: #374151; }
+.la-highlight-row td { background: rgba(244, 111, 44, 0.08) !important; }
+.la-highlight-row td:last-child { color: #f46f2c !important; font-weight: 700; }
+.la-doc-download { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #f46f2c, #e05a1e); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin: 0.5rem 0.5rem 0.5rem 0; }
+.la-doc-download:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(244, 111, 44, 0.35); color: #fff; }
+.la-doc-download--secondary { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.la-features-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0 2rem; }
+@media (min-width: 640px) { .la-features-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .la-features-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.la-feature-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; }
+.la-feature-card:hover { border-color: #f46f2c; box-shadow: 0 4px 12px rgba(244, 111, 44, 0.12); }
+.la-feature-card strong { display: block; color: #1a1a2e; font-size: 0.95rem; margin-bottom: 0.35rem; }
+.la-feature-card span { color: #6b7280; font-size: 0.85rem; line-height: 1.5; }
+.la-breadcrumb { font-size: 0.85rem; color: #6b7280; margin-bottom: 1.5rem; }
+.la-breadcrumb a { color: #f46f2c; text-decoration: none; }
+.la-breadcrumb span { margin: 0 0.35rem; color: #9ca3af; }
+.la-cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 2rem 1.5rem; margin-top: 2.5rem; text-align: center; }
+.la-cta-section h3 { color: #fff; font-size: 1.35rem; margin: 0 0 0.5rem 0; }
+.la-cta-section p { color: #d1d5db; margin: 0 0 1.25rem 0; }
+.la-cta-section a { display: inline-flex; align-items: center; gap: 0.4rem; background: #f46f2c; color: #fff; text-decoration: none; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin: 0.25rem; }
+.la-cta-section a:hover { background: #e05a1e; }
+.la-seo-text { margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 10px; }
+.la-seo-text h3 { margin-top: 0; }
+</style>
+<div class="la-product-detail">
+<nav class="la-breadcrumb">
+<a href="https://ledajans.com">Ana Sayfa</a><span>›</span>
+<a href="https://ledajans.com/led-ekran/">Ürünlerimiz</a><span>›</span>
+<a href="https://ledajans.com/ic-mekan-rgb-panel/">İç Mekan RGB Panel</a><span>›</span>
+    P2.5 GOB İç Mekan RGB Panel
+  </nav>
+<div class="la-product-intro">
+<h2>P2.5 GOB İç Mekan RGB Panel</h2>
+<p><strong>P2.5 GOB LED panel</strong>, GOB kapsüllemeli <strong>2.5mm piksel aralığına</strong> sahip iç mekan RGB paneldir. SMD1515/2020 konfigürasyonu ile <strong>160.000 piksel/m²</strong> yoğunluk sunar. Yüksek (≥3840Hz) veya Süper (≥6000Hz) yenileme hızı seçenekleri, 1/32 tarama ve IP65 (lamba yüzeyi) koruma ile geniş iç mekan uygulamaları için uygundur.</p>
+</div>
+<div class="la-product-badges">
+<span class="la-product-badge la-product-badge--orange">GOB</span>
+<span class="la-product-badge">2.5 mm</span>
+<span class="la-product-badge la-product-badge--orange">≥3840Hz / ≥6000Hz</span>
+<span class="la-product-badge">160.000 piksel/m²</span>
+<span class="la-product-badge la-product-badge--orange">14bit</span>
+<span class="la-product-badge">IP65</span>
+</div>
+<div class="la-features-grid">
+<div class="la-feature-card"><strong>GOB Kapsülleme</strong><span>Epoksi + VMD vakum kapsülleme ile dayanıklılık.</span></div>
+<div class="la-feature-card"><strong>Yenileme Seçenekleri</strong><span>Yüksek (≥3840Hz) veya Süper (≥6000Hz) – projeye göre seçim.</span></div>
+<div class="la-feature-card"><strong>1/32 Tarama</strong><span>Düşük tarama oranı ile uygun maliyet ve iyi görüntü kalitesi.</span></div>
+<div class="la-feature-card"><strong>SMD1515/2020</strong><span>RGB konfigürasyonu, 128×64 modül çözünürlüğü.</span></div>
+<div class="la-feature-card"><strong>Kompakt Modül</strong><span>320×160×17mm, 422±10g – kolay taşıma ve montaj.</span></div>
+<div class="la-feature-card"><strong>IP65 Lamba Yüzeyi</strong><span>Lamba yüzeyi koruma sınıfı ile toz ve sıçrama koruması.</span></div>
+</div>
+<div class="la-spec-header">
+<h2>P2.5 GOB Teknik Özellikler</h2>
+<a class="la-doc-download" href="https://drive.google.com/uc?export=download&amp;id=1rshP8KN4j0RjVafflbxPJSrlSz7Mf1wL" rel="noopener" target="_blank">P2.5 GOB Dokümantasyonu İndir (PDF)</a>
+<a class="la-doc-download la-doc-download--secondary" href="https://ledajans.com/wp-content/uploads/2024/09/Indoor-modules.zip">DWG İndir</a>
+</div>
+<div class="la-spec-table-wrapper">
+<table class="la-spec-table">
+<thead><tr><th>Parametre</th><th>Özellik</th></tr></thead>
+<tbody>
+<tr class="la-highlight-row"><td>Pikselleme aralığı</td><td>2.5mm</td></tr>
+<tr class="la-highlight-row"><td>Pixel Yoğunluğu</td><td>160000 piksel/m²</td></tr>
+<tr><td>Pikselleme konfigürasyonu</td><td>SMD1515/2020 RGB</td></tr>
+<tr><td>LED türü</td><td>SMD1515/2020</td></tr>
+<tr><td>Modül boyutu</td><td>G320 × Y160 × D17mm</td></tr>
+<tr><td>Modül ağırlığı</td><td>422±10g</td></tr>
+<tr><td>Modül çözünürlüğü</td><td>128×64</td></tr>
+<tr><td>Güç besleme voltajı</td><td>AC100-240V, 50/60Hz</td></tr>
+<tr><td>Parlaklık</td><td>≥500cd/m²</td></tr>
+<tr><td>Kontrast Oranı</td><td>5000:1</td></tr>
+<tr><td>Renk Sıcaklığı</td><td>3000~21000K</td></tr>
+<tr><td>Görüntü Açısı</td><td>H≥160° V≥140°</td></tr>
+<tr><td>Parlaklık Uniformitesi</td><td>≥97%</td></tr>
+<tr><td>Renk Uniformitesi</td><td>≤±0.003 Cx, Cy</td></tr>
+<tr><td>Giriş Voltajı</td><td>4.5~5V</td></tr>
+<tr><td>Maks. Akım</td><td>4.5A</td></tr>
+<tr><td>Ortalama Güç Tüketimi</td><td>11.3W Parça başına / 240W/m²</td></tr>
+<tr><td>Maks. Güç Tüketimi</td><td>22.5W Parça başına / 480W/m²</td></tr>
+<tr class="la-highlight-row"><td>Yenileme Hızı</td><td>≥3840Hz (Yüksek) / ≥6000Hz (Süper)</td></tr>
+<tr><td>Kare Hızı</td><td>50~60Hz</td></tr>
+<tr><td>Sürüş Modu</td><td>1/32 tarama</td></tr>
+<tr><td>Sinyal İşleme Derinliği</td><td>14bit (16384 gri tonlama)</td></tr>
+<tr><td>Sinyal Arayüzü</td><td>HUB75×1pcs</td></tr>
+<tr><td>Güç Arayüzü</td><td>VH4P×1pcs</td></tr>
+<tr><td>Çalışma Sıcaklığı</td><td>-20°C~+40°C</td></tr>
+<tr><td>Çalışma Nem Oranı</td><td>10%~60% RH (Yoğuşmasız)</td></tr>
+<tr><td>Depolama Sıcaklığı</td><td>-20°C~+60°C</td></tr>
+<tr><td>Depolama Nem Oranı</td><td>10%~60% RH (Yoğuşmasız)</td></tr>
+<tr><td>Koruma Sınıfı</td><td>IP65 (Lamba yüzeyi)</td></tr>
+<tr><td>PCB Alev Dayanıklılık</td><td>UL94 V-0</td></tr>
+<tr><td>MTBF</td><td>≥5000 saat</td></tr>
+<tr><td>Piksel Kontrol Dışı Oranı</td><td>≤1/10000</td></tr>
+<tr><td>Yere Kaçak Akım</td><td>≤3.5mA/m²</td></tr>
+<tr><td>Bakım Modu</td><td>Ön Bakım</td></tr>
+<tr><td>GOB Kapsülleme</td><td>Epoksi Reçine + VMD Vakum Kapsülleme</td></tr>
+</tbody>
+</table>
+</div>
+<div class="la-seo-text">
+<h3>P2.5 GOB LED Panel Nedir?</h3>
+<p><strong>P2.5 GOB LED panel</strong>, 2.5mm piksel aralığına sahip GOB kapsüllemeli iç mekan RGB modüldür. 160.000 piksel/m² yoğunluk ve Yüksek/Süper yenileme hızı seçenekleri ile esnek proje imkanı sunar.</p>
+<h3>P2.5 GOB Kullanım Alanları</h3>
+<p>Büyük iç mekan LED ekranları, lobi ekranları, mağaza reklam ekranları, toplantı salonları ve kurumsal uygulamalar için uygundur. 1/32 tarama ile maliyet/performans dengesi sağlar.</p>
+<h3>P2.5 GOB Avantajları</h3>
+<p>İki farklı yenileme hızı seçeneği (≥3840Hz / ≥6000Hz), 14bit gri tonlama ve IP65 lamba yüzeyi koruması ile çok yönlü kullanım.</p>
+</div>
+<div class="la-cta-section">
+<h3>P2.5 GOB LED Panel Fiyat Teklifi</h3>
+<p>Projeniz için P2.5 GOB iç mekan RGB panel teklifi alın.</p>
+<a href="tel:+902122204004">+90 212 220 40 04</a>
+<a href="tel:+905438795108">+90 543 879 51 08</a>
+<a href="mailto:info@ledajans.com">info@ledajans.com</a>
+</div>
+</div>

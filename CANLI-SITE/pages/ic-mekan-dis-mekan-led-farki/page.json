@@ -1,0 +1,65 @@
+{
+ "id": 4974,
+ "type": "page",
+ "title": "İç Mekan vs Dış Mekan LED Farkı",
+ "slug": "ic-mekan-dis-mekan-led-farki",
+ "link": "https://ledajans.com/ic-mekan-dis-mekan-led-farki/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:41",
+ "modified": "2026-09-23T10:31:30",
+ "excerpt": "İç mekan ve dış mekan LED ekran farkı: IP, parlaklık, montaj, içerik ve bakım; HowTo ve SSS ile LEDAJANS karşılaştırma rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "İç Mekan vs Dış Mekan LED Farkı",
+  "rank_math_description": "İç mekan ve dış mekan LED ekran farkı: IP, parlaklık, montaj, içerik ve bakım; HowTo ve SSS ile LEDAJANS karşılaştırma rehberi.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "İç Mekan vs Dış Mekan LED Farkı",
+  "description": "İç mekan ve dış mekan LED ekran farkı: IP, parlaklık, montaj, içerik ve bakım; HowTo ve SSS ile LEDAJANS karşılaştırma rehberi.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ic-mekan-dis-mekan-led-farki/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 İç Mekan ve Dış Mekan LED Ekran: Hangisi Sizin Senaryonuz?",
+   "📑 İçindekiler",
+   "🏗 Ortam ve koruma (IP)",
+   "⚙️ Parlaklık ve kontrast",
+   "🔧 Montaj ve bakım erişimi",
+   "🌐 İçerik ve çalışma süresi",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "id": 4985,
+ "type": "page",
+ "title": "GOB LED Nedir?",
+ "slug": "gob-led-nedir",
+ "link": "https://ledajans.com/gob-led-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:17",
+ "modified": "2026-09-23T10:36:02",
+ "excerpt": "GOB LED nedir: Glue on Board, SMD üzerine epoksi koruma, darbe ve nem. LEDAJANS teknik sözlük; GOB LED ekran hub’ına geçiş.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "GOB LED Nedir?",
+  "rank_math_description": "GOB LED nedir: Glue on Board, SMD üzerine epoksi koruma, darbe ve nem. LEDAJANS teknik sözlük; GOB LED ekran hub’ına geçiş.",
+  "rank_math_focus_keyword": "gob led nedir, gob led, glue on board"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "GOB LED Nedir?",
+  "description": "GOB LED nedir: Glue on Board, SMD üzerine epoksi koruma, darbe ve nem. LEDAJANS teknik sözlük; GOB LED ekran hub’ına geçiş.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/gob-led-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png",
+  "h1": [
+   "GOB LED Nedir?"
+  ],
+  "h2": [
+   "📌 GOB LED Nedir? Glue on Board Teknolojisi",
+   "📑 İçindekiler",
+   "🔧 GOB LED teknik tanımı",
+   "⚙️ Üretim süreci",
+   "🏗 Panel ile ekran",
+   "🚀 Dayanıklılık avantajları",
+   "🎛 SMD ve COB farkı",
+   "📍 Kullanım alanları",
+   "🔧 Ne zaman tercih edilir?",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "4985:page",
+   "75:gva__template"
+  ]
+ }
+}

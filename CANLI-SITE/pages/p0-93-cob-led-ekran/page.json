@@ -1,0 +1,57 @@
+{
+ "id": 6025,
+ "type": "page",
+ "title": "P0.93 COB LED Ekran",
+ "slug": "p0-93-cob-led-ekran",
+ "link": "https://ledajans.com/p0-93-cob-led-ekran/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-30T05:57:12",
+ "modified": "2026-09-30T05:57:12",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "P0.93 COB LED Ekran | LEDAJANS",
+  "rank_math_description": "P0.93 COB LED ekran (CFC093) teknik özellikleri: 0.93mm piksel aralığı, 640x360 kabin çözünürlüğü, ≥3840Hz yenileme, ön bakım. Döküman indir.",
+  "rank_math_focus_keyword": "p0.93 cob led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "P0.93 COB LED Ekran | LEDAJANS",
+  "description": "P0.93 COB LED ekran (CFC093) teknik özellikleri: 0.93mm piksel aralığı, 640x360 kabin çözünürlüğü, ≥3840Hz yenileme, ön bakım. Döküman indir.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p0-93-cob-led-ekran/",
+  "og_image": "",
+  "h1": [
+   "P0.93 COB LED Ekran"
+  ],
+  "h2": [
+   "P0.93 COB LED Ekran",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "6025:page",
+   "75:gva__template"
+  ]
+ }
+}

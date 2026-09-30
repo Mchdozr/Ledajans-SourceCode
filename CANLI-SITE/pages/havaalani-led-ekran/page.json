@@ -1,0 +1,69 @@
+{
+ "id": 4990,
+ "type": "page",
+ "title": "Havalimanı LED Screen",
+ "slug": "havaalani-led-ekran",
+ "link": "https://ledajans.com/havaalani-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:34",
+ "modified": "2026-09-21T16:08:45",
+ "excerpt": "Havalimanı LED ekran çözümleri; uçuş bilgi ekranı (FIDS), reklam panosu, yönlendirme ve bagaj bilgi ekranları. LEDAJANS ile havaalanı dijital ekran projelerinizi planlayın.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Havalimanı LED Screen | LEDAJANS",
+  "rank_math_description": "Havalimanı LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Havalimanı LED Screen | LEDAJANS",
+  "description": "Havalimanı LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/havaalani-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [
+   "Havalimanı LED Screen"
+  ],
+  "h2": [
+   "Havalimanı LED Screen",
+   "📌 Havalimanı LED Ekran: Uçuş Bilgi, Reklam ve Yönlendirme Çözümleri",
+   "📑 İçindekiler",
+   "✈️ Uçuş Bilgi Ekranları (FIDS)",
+   "📺 Reklam ve Tanıtım Ekranları",
+   "🧭 Yönlendirme ve Wayfinding Panoları",
+   "🧳 Bagaj Teslim Bilgi Ekranları",
+   "⚙️ Teknik Gereksinimler ve Altyapı",
+   "🌐 İçerik Yönetimi ve Entegrasyon",
+   "🚀 LED Ekranın Havalimanlarına Sağladığı Avantajlar",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

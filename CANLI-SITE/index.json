@@ -1,0 +1,1747 @@
+{
+ "exported_at": "2026-09-30T15:21:16",
+ "site": "https://ledajans.com",
+ "collections": {
+  "pages": [
+   {
+    "folder": "pages/anasayfa",
+    "id": 1248,
+    "type": "page",
+    "title": "LED Ekran",
+    "link": "https://ledajans.com/",
+    "widget_count": 10,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/ankara-led-ekran",
+    "id": 4988,
+    "type": "page",
+    "title": "Ankara LED Screen",
+    "link": "https://ledajans.com/ankara-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/avm-led-ekran-rehberi",
+    "id": 4967,
+    "type": "page",
+    "title": "AVM LED Screen Rehberi",
+    "link": "https://ledajans.com/avm-led-ekran-rehberi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/belediye-bilgi-ekrani",
+    "id": 4970,
+    "type": "page",
+    "title": "Belediye Bilgi Ekranı Rehberi",
+    "link": "https://ledajans.com/belediye-bilgi-ekrani/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/billboard-led-ekran",
+    "id": 4993,
+    "type": "page",
+    "title": "Billboard LED Ekran",
+    "link": "https://ledajans.com/billboard-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/blog",
+    "id": 27,
+    "type": "page",
+    "title": "Blog",
+    "link": "https://ledajans.com/blog/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "led ekran blog,led ekran rehberi,led ekran fiyatları"
+   },
+   {
+    "folder": "pages/cami-led-ekran",
+    "id": 4972,
+    "type": "page",
+    "title": "Cami LED Screen Rehberi",
+    "link": "https://ledajans.com/cami-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/cephe-led-ekran",
+    "id": 5804,
+    "type": "page",
+    "title": "Cephe LED Ekran",
+    "link": "https://ledajans.com/cephe-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "cephe led ekran, dış cephe led ekran, led billboard"
+   },
+   {
+    "folder": "pages/cob-ekran",
+    "id": 3958,
+    "type": "page",
+    "title": "COB – Smart Screen",
+    "link": "https://ledajans.com/cob-ekran/",
+    "widget_count": 8,
+    "live_status": 200,
+    "focus": "cob led ekran,cob ekran,smart screen led,fine pitch led"
+   },
+   {
+    "folder": "pages/cob-led-ne-zaman",
+    "id": 4975,
+    "type": "page",
+    "title": "COB LED Ne Zaman Tercih Edilmeli?",
+    "link": "https://ledajans.com/cob-led-ne-zaman/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/colorlight",
+    "id": 4081,
+    "type": "page",
+    "title": "Colorlight",
+    "link": "https://ledajans.com/colorlight/",
+    "widget_count": 3,
+    "live_status": 200,
+    "focus": "Colorlight,colorlight destek"
+   },
+   {
+    "folder": "pages/dis-mekan-led-ekran",
+    "id": 5003,
+    "type": "page",
+    "title": "Dış Mekan LED Ekran",
+    "link": "https://ledajans.com/dis-mekan-led-ekran/",
+    "widget_count": 8,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/dis-mekan-rgb-panel",
+    "id": 3795,
+    "type": "page",
+    "title": "Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/dis-mekan-rgb-panel/",
+    "widget_count": 7,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/eczane-led-tabela",
+    "id": 4971,
+    "type": "page",
+    "title": "Eczane LED Tabela Rehberi",
+    "link": "https://ledajans.com/eczane-led-tabela/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/firma-bilgilerimiz",
+    "id": 1238,
+    "type": "page",
+    "title": "Firma Bilgilerimiz",
+    "link": "https://ledajans.com/firma-bilgilerimiz/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "Firma Bilgileri"
+   },
+   {
+    "folder": "pages/fuar-led-ekran",
+    "id": 4992,
+    "type": "page",
+    "title": "Fuar LED Ekran",
+    "link": "https://ledajans.com/fuar-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "fuar led ekran, sahne led ekran, fuar ekran kiralama"
+   },
+   {
+    "folder": "pages/gob-led-ekran",
+    "id": 4986,
+    "type": "page",
+    "title": "GOB LED Ekran",
+    "link": "https://ledajans.com/gob-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "GOB LED Ekran,gob led screen"
+   },
+   {
+    "folder": "pages/gob-led-nedir",
+    "id": 4985,
+    "type": "page",
+    "title": "GOB LED Nedir?",
+    "link": "https://ledajans.com/gob-led-nedir/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "gob led nedir, gob led, glue on board"
+   },
+   {
+    "folder": "pages/gob-vs-cob-smd",
+    "id": 4976,
+    "type": "page",
+    "title": "GOB vs COB vs SMD LED Screen",
+    "link": "https://ledajans.com/gob-vs-cob-smd/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/guc-kaynaklari",
+    "id": 5009,
+    "type": "page",
+    "title": "Güç Kaynakları",
+    "link": "https://ledajans.com/guc-kaynaklari/",
+    "widget_count": 6,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/h1-25-ic-mekan-rgb-panel",
+    "id": 5920,
+    "type": "page",
+    "title": "H1.25 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/h1-25-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "h1.25 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/h1-53-ic-mekan-rgb-led-panel",
+    "id": 5921,
+    "type": "page",
+    "title": "H1.53 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/h1-53-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "h1.53 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/h1-86-ic-mekan-rgb-led-panel",
+    "id": 5922,
+    "type": "page",
+    "title": "H1.86 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/h1-86-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "h1.86 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/h2-5-6000-hz-ic-mekan-rgb-panel",
+    "id": 5925,
+    "type": "page",
+    "title": "H2.5 6000Hz İç Mekan RGB Panel",
+    "link": "https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "h2.5 6000hz iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/h2-5-dis-mekan-rgb-panel",
+    "id": 5981,
+    "type": "page",
+    "title": "H2.5 Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/h2-5-dis-mekan-rgb-panel/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "h2.5 dış mekan rgb led panel,dış mekan rgb led panel"
+   },
+   {
+    "folder": "pages/h3-076-dis-mekan-rgb-panel",
+    "id": 5983,
+    "type": "page",
+    "title": "H3.076 Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/h3-076-dis-mekan-rgb-panel/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "h3.076 dış mekan rgb led panel,dış mekan rgb led panel"
+   },
+   {
+    "folder": "pages/h4-dis-mekan-rgb-panel",
+    "id": 5985,
+    "type": "page",
+    "title": "H4 Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/h4-dis-mekan-rgb-panel/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "h4 dış mekan rgb led panel,dış mekan rgb led panel"
+   },
+   {
+    "folder": "pages/h5-dis-mekan-rgb-panel",
+    "id": 5987,
+    "type": "page",
+    "title": "H5 Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/h5-dis-mekan-rgb-panel/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "h5 dış mekan rgb led panel,dış mekan rgb led panel"
+   },
+   {
+    "folder": "pages/hakkimizda",
+    "id": 1242,
+    "type": "page",
+    "title": "Hakkımızda",
+    "link": "https://ledajans.com/hakkimizda/",
+    "widget_count": 3,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/havaalani-led-ekran",
+    "id": 4990,
+    "type": "page",
+    "title": "Havalimanı LED Screen",
+    "link": "https://ledajans.com/havaalani-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/huidu-processor-hdplayer-indir",
+    "id": 5017,
+    "type": "page",
+    "title": "Huidu Processor HDPlayer İndir",
+    "link": "https://ledajans.com/huidu-processor-hdplayer-indir/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "huidu processor,hd player"
+   },
+   {
+    "folder": "pages/huidu",
+    "id": 4214,
+    "type": "page",
+    "title": "HUIDU",
+    "link": "https://ledajans.com/huidu/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/ic-mekan-dis-mekan-led-farki",
+    "id": 4974,
+    "type": "page",
+    "title": "İç Mekan vs Dış Mekan LED Farkı",
+    "link": "https://ledajans.com/ic-mekan-dis-mekan-led-farki/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/ic-mekan-led-ekran",
+    "id": 5002,
+    "type": "page",
+    "title": "İç Mekan LED Ekran",
+    "link": "https://ledajans.com/ic-mekan-led-ekran/",
+    "widget_count": 6,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/ic-mekan-rgb-panel",
+    "id": 5006,
+    "type": "page",
+    "title": "İç Mekan RGB Panel",
+    "link": "https://ledajans.com/ic-mekan-rgb-panel/",
+    "widget_count": 9,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/iletisim",
+    "id": 1262,
+    "type": "page",
+    "title": "İletişim",
+    "link": "https://ledajans.com/iletisim/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/ip-koruma-led-ekran",
+    "id": 4982,
+    "type": "page",
+    "title": "IP Koruma Sınıfı ve LED Screen",
+    "link": "https://ledajans.com/ip-koruma-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/istanbul-led-ekran",
+    "id": 4987,
+    "type": "page",
+    "title": "İstanbul LED Ekran",
+    "link": "https://ledajans.com/istanbul-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "istanbul led ekran, led ekran istanbul, istanbul led ekran kiralama"
+   },
+   {
+    "folder": "pages/izmir-led-ekran",
+    "id": 4989,
+    "type": "page",
+    "title": "İzmir LED Screen",
+    "link": "https://ledajans.com/izmir-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/kontrol-kartlari",
+    "id": 5008,
+    "type": "page",
+    "title": "Kontrol Kartları",
+    "link": "https://ledajans.com/kontrol-kartlari/",
+    "widget_count": 9,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/led-ekran-bakim",
+    "id": 4966,
+    "type": "page",
+    "title": "LED Ekran Bakım Rehberi",
+    "link": "https://ledajans.com/led-ekran-bakim/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/led-ekran-kurulum",
+    "id": 4965,
+    "type": "page",
+    "title": "LED Screen Installation Rehberi",
+    "link": "https://ledajans.com/led-ekran-kurulum/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/led-ekran-lcd-farki",
+    "id": 4977,
+    "type": "page",
+    "title": "LED Screen vs LCD Karşılaştırma",
+    "link": "https://ledajans.com/led-ekran-lcd-farki/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/led-ekran-nedir",
+    "id": 4963,
+    "type": "page",
+    "title": "LED Ekran Nedir? Kapsamlı Rehber",
+    "link": "https://ledajans.com/led-ekran-nedir/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/led-ekran-projeksiyon",
+    "id": 4978,
+    "type": "page",
+    "title": "LED Screen vs Projeksiyon",
+    "link": "https://ledajans.com/led-ekran-projeksiyon/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/led-ekran",
+    "id": 5001,
+    "type": "page",
+    "title": "LED Ekran Fiyatları ve Modelleri",
+    "link": "https://ledajans.com/led-ekran/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "led ekran,iç mekan led ekran,dış mekan led ekran"
+   },
+   {
+    "folder": "pages/led-panel-nedir",
+    "id": 4983,
+    "type": "page",
+    "title": "LED Panel Nedir?",
+    "link": "https://ledajans.com/led-panel-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/led-tabela",
+    "id": 4964,
+    "type": "page",
+    "title": "LED Tabela Rehberi",
+    "link": "https://ledajans.com/led-tabela/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/magaza-vitrin-led-ekran",
+    "id": 4969,
+    "type": "page",
+    "title": "Mağaza Vitrin LED Ekran",
+    "link": "https://ledajans.com/magaza-vitrin-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "mağaza led ekran, vitrin led ekran, avm led ekran"
+   },
+   {
+    "folder": "pages/markalarimiz",
+    "id": 5011,
+    "type": "page",
+    "title": "Our Brands",
+    "link": "https://ledajans.com/markalarimiz/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "led ekran markaları,ledajans markalar"
+   },
+   {
+    "folder": "pages/nits-parlaklik-nedir",
+    "id": 4981,
+    "type": "page",
+    "title": "Nits Brightness Nedir?",
+    "link": "https://ledajans.com/nits-parlaklik-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/ofc-p10-dis-mekan-led-ekran",
+    "id": 6024,
+    "type": "page",
+    "title": "OFC P10 Dış Mekan LED Ekran",
+    "link": "https://ledajans.com/ofc-p10-dis-mekan-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "ofc p10 dış mekan led ekran"
+   },
+   {
+    "folder": "pages/ofc-p2-5-dis-mekan-led-ekran",
+    "id": 6021,
+    "type": "page",
+    "title": "OFC P2.5 Dış Mekan LED Ekran",
+    "link": "https://ledajans.com/ofc-p2-5-dis-mekan-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "ofc p2.5 dış mekan led ekran"
+   },
+   {
+    "folder": "pages/ofc-p6-67-dis-mekan-led-ekran",
+    "id": 6022,
+    "type": "page",
+    "title": "OFC P6.67 Dış Mekan LED Ekran",
+    "link": "https://ledajans.com/ofc-p6-67-dis-mekan-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "ofc p6.67 dış mekan led ekran"
+   },
+   {
+    "folder": "pages/ofc-p8-dis-mekan-led-ekran",
+    "id": 6023,
+    "type": "page",
+    "title": "OFC P8 Dış Mekan LED Ekran",
+    "link": "https://ledajans.com/ofc-p8-dis-mekan-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "ofc p8 dış mekan led ekran"
+   },
+   {
+    "folder": "pages/otel-led-ekran",
+    "id": 4991,
+    "type": "page",
+    "title": "Otel LED Screen",
+    "link": "https://ledajans.com/otel-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/p0-93-3840hz-gob-ic-mekan-rgb-panel",
+    "id": 5928,
+    "type": "page",
+    "title": "P0.93 3840Hz GOB İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p0-93-3840hz-gob-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p0.93 3840hz gob iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p0-93-cob-led-ekran",
+    "id": 6025,
+    "type": "page",
+    "title": "P0.93 COB LED Ekran",
+    "link": "https://ledajans.com/p0-93-cob-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p0.93 cob led ekran"
+   },
+   {
+    "folder": "pages/p0-93-ic-mekan-led-ekran",
+    "id": 5919,
+    "type": "page",
+    "title": "P0.93 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p0-93-ic-mekan-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p0.93 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p1-25-6000hz-gob-ic-mekan-rgb-led-panel",
+    "id": 5929,
+    "type": "page",
+    "title": "P1.25 GOB İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p1-25-6000hz-gob-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.25 gob iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p1-25-cob-led-ekran",
+    "id": 6026,
+    "type": "page",
+    "title": "P1.25 COB LED Ekran",
+    "link": "https://ledajans.com/p1-25-cob-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.25 cob led ekran"
+   },
+   {
+    "folder": "pages/p1-53-6000hz-gob-ic-mekan-rgb-led-panel",
+    "id": 5930,
+    "type": "page",
+    "title": "P1.53 GOB İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p1-53-6000hz-gob-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.53 gob iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p1-56-cob-led-ekran",
+    "id": 6027,
+    "type": "page",
+    "title": "P1.56 COB LED Ekran",
+    "link": "https://ledajans.com/p1-56-cob-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.56 cob led ekran"
+   },
+   {
+    "folder": "pages/p1-86-6000hz-gob-ic-mekan-rgb-led-panel",
+    "id": 5931,
+    "type": "page",
+    "title": "P1.86 GOB İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p1-86-6000hz-gob-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.86 gob iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p1-87-cob-led-ekran",
+    "id": 6028,
+    "type": "page",
+    "title": "P1.87 COB LED Ekran",
+    "link": "https://ledajans.com/p1-87-cob-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.87 cob led ekran"
+   },
+   {
+    "folder": "pages/p1-9-ic-mekan-rental-led-ekran",
+    "id": 5898,
+    "type": "page",
+    "title": "P1.9 İç Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p1-9-ic-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p1.9 iç mekan rental led ekran,p1.9 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p10-4s-dis-mekan-rgb-panel",
+    "id": 5989,
+    "type": "page",
+    "title": "P10 4S Dış Mekan RGB Panel",
+    "link": "https://ledajans.com/p10-4s-dis-mekan-rgb-panel/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "p10 4s dış mekan rgb led panel,dış mekan rgb led panel"
+   },
+   {
+    "folder": "pages/p2-5-3840hz-ic-mekan-rgb-panel",
+    "id": 5924,
+    "type": "page",
+    "title": "P2.5 3840Hz İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p2-5-3840hz-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.5 3840hz iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p2-5-gob-ic-mekan-rgb-led-panel",
+    "id": 5932,
+    "type": "page",
+    "title": "P2.5 GOB İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p2-5-gob-ic-mekan-rgb-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.5 gob iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p2-5-ic-mekan-rgb-panel",
+    "id": 5923,
+    "type": "page",
+    "title": "P2.5 1920Hz İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p2-5-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.5 1920hz iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p2-6-dis-mekan-rental-led-ekran",
+    "id": 5903,
+    "type": "page",
+    "title": "P2.6 Dış Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p2-6-dis-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.6 dış mekan rental led ekran,p2.6 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p2-6-ic-mekan-rental-led-ekran",
+    "id": 5899,
+    "type": "page",
+    "title": "P2.6 İç Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p2-6-ic-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.6 iç mekan rental led ekran,p2.6 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p2-9-dis-mekan-rental-led-ekran",
+    "id": 5904,
+    "type": "page",
+    "title": "P2.9 Dış Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p2-9-dis-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.9 dış mekan rental led ekran,p2.9 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p2-9-ic-mekan-rental-led-ekran",
+    "id": 5901,
+    "type": "page",
+    "title": "P2.9 İç Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p2-9-ic-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p2.9 iç mekan rental led ekran,p2.9 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p2-vs-p3-led-ekran",
+    "id": 4973,
+    "type": "page",
+    "title": "P2 vs P3 LED Screen Karşılaştırma",
+    "link": "https://ledajans.com/p2-vs-p3-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/p3-07-ic-mekan-rgb-panel",
+    "id": 5926,
+    "type": "page",
+    "title": "P3.07 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p3-07-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p3.07 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/p3-9-dis-mekan-rental-led-ekran",
+    "id": 5905,
+    "type": "page",
+    "title": "P3.9 Dış Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p3-9-dis-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p3.9 dış mekan rental led ekran,p3.9 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p3-9-ic-mekan-rental-led-ekran",
+    "id": 5902,
+    "type": "page",
+    "title": "P3.9 İç Mekan Rental LED Ekran",
+    "link": "https://ledajans.com/p3-9-ic-mekan-rental-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p3.9 iç mekan rental led ekran,p3.9 rental led ekran,rental led ekran"
+   },
+   {
+    "folder": "pages/p4-ic-mekan-rgb-panel",
+    "id": 5927,
+    "type": "page",
+    "title": "P4 İç Mekan RGB Panel",
+    "link": "https://ledajans.com/p4-ic-mekan-rgb-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "p4 iç mekan rgb panel"
+   },
+   {
+    "folder": "pages/pitch-led-nedir",
+    "id": 4979,
+    "type": "page",
+    "title": "Piksel Pitch Nedir?",
+    "link": "https://ledajans.com/pitch-led-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/pitch-secim-rehberi",
+    "id": 5805,
+    "type": "page",
+    "title": "LED Ekran Pitch Seçim Rehberi",
+    "link": "https://ledajans.com/pitch-secim-rehberi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "p2 led ekran, p3 led ekran, piksel aralığı, pitch seçim"
+   },
+   {
+    "folder": "pages/program-indir",
+    "id": 786,
+    "type": "page",
+    "title": "Program İndir",
+    "link": "https://ledajans.com/program-indir/",
+    "widget_count": 4,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/projeler",
+    "id": 4956,
+    "type": "page",
+    "title": "LED Ekran Projeleri",
+    "link": "https://ledajans.com/projeler/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "led ekran projeleri,led ekran proje"
+   },
+   {
+    "folder": "pages/q1-25-ic-mekan-flexible-led-panel",
+    "id": 5933,
+    "type": "page",
+    "title": "Q1.25 Flexible İç Mekan LED Panel",
+    "link": "https://ledajans.com/q1-25-ic-mekan-flexible-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "q1.25 flexible iç mekan led panel"
+   },
+   {
+    "folder": "pages/q1-53-ic-mekan-flexible-led-panel",
+    "id": 5934,
+    "type": "page",
+    "title": "Q1.53 Flexible İç Mekan LED Panel",
+    "link": "https://ledajans.com/q1-53-ic-mekan-flexible-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "q1.53 flexible iç mekan led panel"
+   },
+   {
+    "folder": "pages/q1-86-ic-mekan-flexible-led-panel",
+    "id": 5935,
+    "type": "page",
+    "title": "Q1.86 Flexible İç Mekan LED Panel",
+    "link": "https://ledajans.com/q1-86-ic-mekan-flexible-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "q1.86 flexible iç mekan led panel"
+   },
+   {
+    "folder": "pages/q2-5-ic-mekan-flexible-led-panel",
+    "id": 5936,
+    "type": "page",
+    "title": "Q2.5 Flexible İç Mekan LED Panel",
+    "link": "https://ledajans.com/q2-5-ic-mekan-flexible-led-panel/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "q2.5 flexible iç mekan led panel"
+   },
+   {
+    "folder": "pages/refresh-hz-nedir",
+    "id": 4980,
+    "type": "page",
+    "title": "Refresh Rate (Hz) Nedir?",
+    "link": "https://ledajans.com/refresh-hz-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/rental-ekran",
+    "id": 5004,
+    "type": "page",
+    "title": "LED Ekran Kiralama",
+    "link": "https://ledajans.com/rental-ekran/",
+    "widget_count": 10,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/sertifikalarimiz",
+    "id": 5010,
+    "type": "page",
+    "title": "Sertifikalarımız",
+    "link": "https://ledajans.com/sertifikalarimiz/",
+    "widget_count": 1,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/smart-screen-led-ekran",
+    "id": 6029,
+    "type": "page",
+    "title": "Smart Screen LED Ekran",
+    "link": "https://ledajans.com/smart-screen-led-ekran/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "smart screen led ekran"
+   },
+   {
+    "folder": "pages/smd-led-nedir",
+    "id": 4984,
+    "type": "page",
+    "title": "SMD LED Nedir?",
+    "link": "https://ledajans.com/smd-led-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "pages/stadyum-led-ekran",
+    "id": 4968,
+    "type": "page",
+    "title": "Stadyum LED Screen Rehberi",
+    "link": "https://ledajans.com/stadyum-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "pages/teknik-destek-videolari",
+    "id": 195,
+    "type": "page",
+    "title": "Teknik Destek Videoları",
+    "link": "https://ledajans.com/teknik-destek-videolari/",
+    "widget_count": 2,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "pages/toplanti-odasi-led-ekran",
+    "id": 4994,
+    "type": "page",
+    "title": "Toplantı Odası LED Ekran",
+    "link": "https://ledajans.com/toplanti-odasi-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   }
+  ],
+  "posts": [
+   {
+    "folder": "posts/cob-led-ekran-nedir-avantajlari",
+    "id": 5021,
+    "type": "post",
+    "title": "COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli",
+    "link": "https://ledajans.com/cob-led-ekran-nedir-avantajlari/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/colorlight-a35",
+    "id": 4518,
+    "type": "post",
+    "title": "Colorlight A35",
+    "link": "https://ledajans.com/colorlight-a35/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Colorlight A35"
+   },
+   {
+    "folder": "posts/colorlight-a40",
+    "id": 4878,
+    "type": "post",
+    "title": "Colorlight A40",
+    "link": "https://ledajans.com/colorlight-a40/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Colorlight A40"
+   },
+   {
+    "folder": "posts/colorlight-a60-player",
+    "id": 4949,
+    "type": "post",
+    "title": "Colorlight A60 Player",
+    "link": "https://ledajans.com/colorlight-a60-player/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Colorlight A60 Player"
+   },
+   {
+    "folder": "posts/colorlight-e120",
+    "id": 4830,
+    "type": "post",
+    "title": "Colorlight E120",
+    "link": "https://ledajans.com/colorlight-e120/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Colorlight E120,E120,Colorlight"
+   },
+   {
+    "folder": "posts/dip-led-panel-tamiri",
+    "id": 601,
+    "type": "post",
+    "title": "Dip Led Panel Tamiri",
+    "link": "https://ledajans.com/dip-led-panel-tamiri/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/dis-mekan-led-ekran-fiyatlari-2026",
+    "id": 4997,
+    "type": "post",
+    "title": "Dış Mekan LED Ekran Fiyatları 2026",
+    "link": "https://ledajans.com/dis-mekan-led-ekran-fiyatlari-2026/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/e80",
+    "id": 4223,
+    "type": "post",
+    "title": "Colorlight E80",
+    "link": "https://ledajans.com/e80/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "e80"
+   },
+   {
+    "folder": "posts/fuar-etkinlik-led-stant-kurulum-kontrol-listesi",
+    "id": 5887,
+    "type": "post",
+    "title": "Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi",
+    "link": "https://ledajans.com/fuar-etkinlik-led-stant-kurulum-kontrol-listesi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Fuar ve Etkinlikte LED Stant Ekranı,led ekran"
+   },
+   {
+    "folder": "posts/gob-led-ekran-ne-zaman-tercih-edilir",
+    "id": 5000,
+    "type": "post",
+    "title": "GOB LED Ekran Ne Zaman Tercih Edilir?",
+    "link": "https://ledajans.com/gob-led-ekran-ne-zaman-tercih-edilir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/hd-a3-kontrol-karti",
+    "id": 541,
+    "type": "post",
+    "title": "HD-A3 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-a3-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-a30-kontrol-karti",
+    "id": 580,
+    "type": "post",
+    "title": "HD-A30 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-a30-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-a601-kontrol-karti",
+    "id": 578,
+    "type": "post",
+    "title": "HD-A601 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-a601-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-a602-kontrol-karti",
+    "id": 576,
+    "type": "post",
+    "title": "HD-A602 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-a602-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-a603-kontrol-karti",
+    "id": 574,
+    "type": "post",
+    "title": "HD-A603 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-a603-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-c10-kontrol-karti",
+    "id": 586,
+    "type": "post",
+    "title": "HD-C10 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-c10-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-c10c-kontrol-karti",
+    "id": 584,
+    "type": "post",
+    "title": "HD-C10C Kontrol Kartı",
+    "link": "https://ledajans.com/hd-c10c-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-c30-kontrol-karti",
+    "id": 582,
+    "type": "post",
+    "title": "HD-C30 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-c30-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-d10-kontrol-karti",
+    "id": 590,
+    "type": "post",
+    "title": "HD -D10 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-d10-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/hd-d30-kontrol-karti",
+    "id": 588,
+    "type": "post",
+    "title": "HD-D30 Kontrol Kartı",
+    "link": "https://ledajans.com/hd-d30-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/huidu-c08l-controller",
+    "id": 4891,
+    "type": "post",
+    "title": "Huidu C08L Controller Kartı",
+    "link": "https://ledajans.com/huidu-c08l-controller/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Huidu C08L Controller"
+   },
+   {
+    "folder": "posts/huidu-c16l",
+    "id": 4574,
+    "type": "post",
+    "title": "HUIDU C16L",
+    "link": "https://ledajans.com/huidu-c16l/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "C16L"
+   },
+   {
+    "folder": "posts/huidu-wf1-wf2-wf4-led-kontrol-karti",
+    "id": 5022,
+    "type": "post",
+    "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi",
+    "link": "https://ledajans.com/huidu-wf1-wf2-wf4-led-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran, Huidu LED kontrol kartı, WF1 WF2 WF4"
+   },
+   {
+    "folder": "posts/ic-mekan-led-ekran-fiyatlari-2026",
+    "id": 4996,
+    "type": "post",
+    "title": "İç Mekan LED Ekran Fiyatları 2026",
+    "link": "https://ledajans.com/ic-mekan-led-ekran-fiyatlari-2026/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/kayan-yazi",
+    "id": 3077,
+    "type": "post",
+    "title": "Kayan Yazı",
+    "link": "https://ledajans.com/kayan-yazi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/led-ekran-fiyatlari-2026",
+    "id": 4995,
+    "type": "post",
+    "title": "LED Ekran Fiyatları 2026 (Mayıs Güncel)",
+    "link": "https://ledajans.com/led-ekran-fiyatlari-2026/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran fiyatları,led ekran m2 fiyatı,led ekran fiyat listesi"
+   },
+   {
+    "folder": "posts/led-ekran-kullanim-alanlari",
+    "id": 547,
+    "type": "post",
+    "title": "LED Screen Kullanım Alanları",
+    "link": "https://ledajans.com/led-ekran-kullanim-alanlari/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led screen,led display,indoor led,outdoor led"
+   },
+   {
+    "folder": "posts/led-ekran-nasil-secilir-rehber",
+    "id": 4999,
+    "type": "post",
+    "title": "LED Ekran Nasıl Seçilir? 2026 Rehber",
+    "link": "https://ledajans.com/led-ekran-nasil-secilir-rehber/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/led-ekran-omru",
+    "id": 550,
+    "type": "post",
+    "title": "Led Ekran Ömrü",
+    "link": "https://ledajans.com/led-ekran-omru/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/led-led-ekran",
+    "id": 606,
+    "type": "post",
+    "title": "Led / Led Ekran",
+    "link": "https://ledajans.com/led-led-ekran/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/led-nit-mcd",
+    "id": 609,
+    "type": "post",
+    "title": "LED / NIT / MCD",
+    "link": "https://ledajans.com/led-nit-mcd/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/led-panel",
+    "id": 660,
+    "type": "post",
+    "title": "Led panel",
+    "link": "https://ledajans.com/led-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/mctrl-300",
+    "id": 554,
+    "type": "post",
+    "title": "MCTRL 300",
+    "link": "https://ledajans.com/mctrl-300/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/msd-300-nova-sender",
+    "id": 558,
+    "type": "post",
+    "title": "MSD 300 Nova Sender",
+    "link": "https://ledajans.com/msd-300-nova-sender/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/nova-mrv-330-receiver",
+    "id": 556,
+    "type": "post",
+    "title": "Nova MRV 330 Receiver",
+    "link": "https://ledajans.com/nova-mrv-330-receiver/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-grafik-ekran-kullanimi",
+    "id": 683,
+    "type": "post",
+    "title": "P10 Grafik Ekran Kullanımı",
+    "link": "https://ledajans.com/p10-grafik-ekran-kullanimi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "P10"
+   },
+   {
+    "folder": "posts/p10-kirmizi-panel-2",
+    "id": 652,
+    "type": "post",
+    "title": "P10 Kırmızı Panel",
+    "link": "https://ledajans.com/p10-kirmizi-panel-2/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-kirmizi-panel",
+    "id": 646,
+    "type": "post",
+    "title": "P10 Kırmızı Panel",
+    "link": "https://ledajans.com/p10-kirmizi-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-outdoor-rgb-panel",
+    "id": 622,
+    "type": "post",
+    "title": "P10 Outdoor Rgb Panel",
+    "link": "https://ledajans.com/p10-outdoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-panel-beyaz",
+    "id": 664,
+    "type": "post",
+    "title": "P10 panel beyaz",
+    "link": "https://ledajans.com/p10-panel-beyaz/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-panel-kirmizi",
+    "id": 620,
+    "type": "post",
+    "title": "P10 Panel Kırmızı",
+    "link": "https://ledajans.com/p10-panel-kirmizi/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p10-panel",
+    "id": 680,
+    "type": "post",
+    "title": "P10 Panel",
+    "link": "https://ledajans.com/p10-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "P10 PANEL"
+   },
+   {
+    "folder": "posts/p10-rgb-kabin",
+    "id": 618,
+    "type": "post",
+    "title": "P10 Rgb Kabin",
+    "link": "https://ledajans.com/p10-rgb-kabin/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p25-indoor-rgb-panel",
+    "id": 634,
+    "type": "post",
+    "title": "P2,5 Indoor Rgb Panel",
+    "link": "https://ledajans.com/p25-indoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p3-indoor-rgb-panel",
+    "id": 632,
+    "type": "post",
+    "title": "P3 Indoor Rgb Panel",
+    "link": "https://ledajans.com/p3-indoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p4-indoor-rgb-panel",
+    "id": 638,
+    "type": "post",
+    "title": "P4 Indoor RGB Panel",
+    "link": "https://ledajans.com/p4-indoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "P4 Indoor RGB Panel,p4,rgb panel"
+   },
+   {
+    "folder": "posts/p4-outdoor-rgb-panel",
+    "id": 630,
+    "type": "post",
+    "title": "P4 Outdoor Rgb Panel",
+    "link": "https://ledajans.com/p4-outdoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p5-indoor-rgb-panel",
+    "id": 636,
+    "type": "post",
+    "title": "P5 Indoor Rgb Panel",
+    "link": "https://ledajans.com/p5-indoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p5-outdoor-rgb-panel",
+    "id": 628,
+    "type": "post",
+    "title": "P5 Outdoor Rgb Panel",
+    "link": "https://ledajans.com/p5-outdoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p6-outdoor-rgb-panel",
+    "id": 626,
+    "type": "post",
+    "title": "P6 Outdoor Rgb Panel",
+    "link": "https://ledajans.com/p6-outdoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/p8-outdoor-rgb-panel",
+    "id": 624,
+    "type": "post",
+    "title": "P8 Outdoor Rgb Panel",
+    "link": "https://ledajans.com/p8-outdoor-rgb-panel/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/pcb-nedir",
+    "id": 611,
+    "type": "post",
+    "title": "PCB Nedir",
+    "link": "https://ledajans.com/pcb-nedir/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/psd100",
+    "id": 552,
+    "type": "post",
+    "title": "PSD100",
+    "link": "https://ledajans.com/psd100/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/rental-led-ekran-kiralama-fiyatlari-2026",
+    "id": 4998,
+    "type": "post",
+    "title": "Rental LED Ekran Kiralama Fiyatları 2026",
+    "link": "https://ledajans.com/rental-led-ekran-kiralama-fiyatlari-2026/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "led ekran,led ekran kiralama,iç mekan led"
+   },
+   {
+    "folder": "posts/rv-908-receiver-linsn",
+    "id": 560,
+    "type": "post",
+    "title": "RV 908 Receiver Linsn",
+    "link": "https://ledajans.com/rv-908-receiver-linsn/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/serit-led",
+    "id": 687,
+    "type": "post",
+    "title": "Şerit Led",
+    "link": "https://ledajans.com/serit-led/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": "Şerit Led"
+   },
+   {
+    "folder": "posts/tf-qb5-kontrol-karti",
+    "id": 568,
+    "type": "post",
+    "title": "TF-QB5 Kontrol Kartı",
+    "link": "https://ledajans.com/tf-qb5-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/tf-qc1-kontrol-karti",
+    "id": 566,
+    "type": "post",
+    "title": "TF-QC1 Kontrol Kartı",
+    "link": "https://ledajans.com/tf-qc1-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/tf-qc3-kontrol-karti",
+    "id": 564,
+    "type": "post",
+    "title": "TF-QC3 Kontrol Kartı",
+    "link": "https://ledajans.com/tf-qc3-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/tf-qs2-kontrol-karti",
+    "id": 572,
+    "type": "post",
+    "title": "TF-QS2 Kontrol Kartı",
+    "link": "https://ledajans.com/tf-qs2-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/tf-qs2n-kontrol-karti",
+    "id": 570,
+    "type": "post",
+    "title": "TF-QS2N Kontrol Kartı",
+    "link": "https://ledajans.com/tf-qs2n-kontrol-karti/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   },
+   {
+    "folder": "posts/ts-802-sender-linsn",
+    "id": 562,
+    "type": "post",
+    "title": "TS 802 Sender Linsn",
+    "link": "https://ledajans.com/ts-802-sender-linsn/",
+    "widget_count": 0,
+    "live_status": 200,
+    "focus": ""
+   }
+  ],
+  "templates/elementor": [
+   {
+    "folder": "templates/elementor/blog",
+    "id": 3870,
+    "type": "elementor_library",
+    "title": "blog",
+    "link": "https://ledajans.com/?elementor_library=blog",
+    "widget_count": 2,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/blog-2",
+    "id": 3872,
+    "type": "elementor_library",
+    "title": "blog",
+    "link": "https://ledajans.com/?elementor_library=blog-2",
+    "widget_count": 1,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/blog-3",
+    "id": 3875,
+    "type": "elementor_library",
+    "title": "blog",
+    "link": "https://ledajans.com/?elementor_library=blog-3",
+    "widget_count": 1,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/blog-sablon",
+    "id": 3866,
+    "type": "elementor_library",
+    "title": "blog şablon",
+    "link": "https://ledajans.com/?elementor_library=blog-sablon",
+    "widget_count": 1,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/default-kit",
+    "id": 9,
+    "type": "elementor_library",
+    "title": "Default Kit",
+    "link": "https://ledajans.com/?elementor_library=default-kit",
+    "widget_count": 0,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/default-kit-2",
+    "id": 6,
+    "type": "elementor_library",
+    "title": "Default Kit",
+    "link": "https://ledajans.com/?elementor_library=default-kit-2",
+    "widget_count": 0,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/elementor-loop-item",
+    "id": 4292,
+    "type": "elementor_library",
+    "title": "Elementor Loop Item #4292",
+    "link": "https://ledajans.com/?elementor_library=elementor-loop-item",
+    "widget_count": 1,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/elementor/the-events-calendar-starter",
+    "id": 371,
+    "type": "elementor_library",
+    "title": "The Events Calendar - Starter",
+    "link": "https://ledajans.com/?elementor_library=the-events-calendar-starter",
+    "widget_count": 13,
+    "live_status": "",
+    "focus": ""
+   }
+  ],
+  "templates/snippets": [
+   {
+    "folder": "templates/snippets/ledajans-footer-2026",
+    "id": 5024,
+    "type": "elementor_snippet",
+    "title": "LEDAJANS Footer",
+    "link": "https://ledajans.com/?elementor_snippet=ledajans-footer-2026",
+    "widget_count": 0,
+    "live_status": "",
+    "focus": ""
+   },
+   {
+    "folder": "templates/snippets/ledajans-header-2026",
+    "id": 5026,
+    "type": "elementor_snippet",
+    "title": "LEDAJANS Header Orange + Logo",
+    "link": "https://ledajans.com/?elementor_snippet=ledajans-header-2026",
+    "widget_count": 0,
+    "live_status": "",
+    "focus": ""
+   }
+  ],
+  "templates/popups": [
+   {
+    "folder": "templates/popups/example-auto-opening-announcement-popup",
+    "id": 4672,
+    "type": "popup",
+    "title": "Example: Auto-opening announcement popup",
+    "link": "https://ledajans.com/?post_type=popup&p=4672",
+    "widget_count": 0,
+    "live_status": "",
+    "focus": ""
+   }
+  ]
+ },
+ "menus": [
+  {
+   "id": 120,
+   "name": "almanda sidebar",
+   "items": 8
+  },
+  {
+   "id": 42,
+   "name": "Anamenu",
+   "items": 23
+  },
+  {
+   "id": 119,
+   "name": "Anamenü DE",
+   "items": 21
+  },
+  {
+   "id": 99,
+   "name": "Anamenü en",
+   "items": 21
+  },
+  {
+   "id": 98,
+   "name": "Dil",
+   "items": 1
+  },
+  {
+   "id": 44,
+   "name": "Hizmetler",
+   "items": 7
+  },
+  {
+   "id": 40,
+   "name": "Main Menu",
+   "items": 18
+  },
+  {
+   "id": 41,
+   "name": "Services",
+   "items": 6
+  },
+  {
+   "id": 122,
+   "name": "turkce side bar",
+   "items": 8
+  }
+ ],
+ "theme_parts": [
+  "wp-post-43.html",
+  "wp-post-176.html"
+ ]
+}

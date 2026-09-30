@@ -1,0 +1,17 @@
+[
+ {
+  "id": "767ddb27",
+  "elType": "widget",
+  "settings": {
+   "grid_items_xs": "2",
+   "pagination": "yes",
+   "layout": "grid",
+   "image_size": "post-thumbnail",
+   "ca_speed": 600,
+   "ca_autoplay_delay": 4500,
+   "excerpt_words": 0
+  },
+  "elements": [],
+  "widgetType": "gva-posts"
+ }
+]

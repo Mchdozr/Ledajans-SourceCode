@@ -1,0 +1,68 @@
+{
+ "id": 5001,
+ "type": "page",
+ "title": "LED Ekran Fiyatları ve Modelleri",
+ "slug": "led-ekran",
+ "link": "https://ledajans.com/led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:45:12",
+ "modified": "2026-09-23T10:10:56",
+ "excerpt": "",
+ "featured_media": 5823,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran Modelleri | İç-Dış Mekan ve Kiralama | LEDAJANS",
+  "rank_math_description": "İç mekan, dış mekan ve rental LED ekran modelleri. Kurulum, keşif ve B2B teklif. LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,iç mekan led ekran,dış mekan led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 1,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Modelleri | İç-Dış Mekan ve Kiralama | LEDAJANS",
+  "description": "İç mekan, dış mekan ve rental LED ekran modelleri. Kurulum, keşif ve B2B teklif. LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/cob-led-lobi.webp",
+  "h1": [
+   "LED Ekran Çözümleri"
+  ],
+  "h2": [
+   "İhtiyacınıza uygun LED ekran modelleri",
+   "Kullanım senaryoları",
+   "LED ekran m² fiyatı nasıl okunur?",
+   "LED ekran nedir, işletmeye ne katar?",
+   "Rehberler ve fiyat",
+   "LED ekran hakkında merak edilenler",
+   "Projenizi hayata geçirelim",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5001:page",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "id": 4830,
+ "type": "post",
+ "title": "Colorlight E120",
+ "slug": "colorlight-e120",
+ "link": "https://ledajans.com/colorlight-e120/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-12-18T10:53:56",
+ "modified": "2025-12-18T10:54:42",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "Colorlight E120,E120,Colorlight"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Colorlight E120 - LEDAJANS",
+  "description": "LED ekran sistemlerinin başarısı yalnızca kontrol cihazlarına değil, aynı zamanda kullanılan alıcı kartların kalitesine de doğrudan bağlıdır. Ledajans olarak",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/colorlight-e120/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/12/Colorlight-E120-600x540.webp",
+  "h1": [
+   "Colorlight E120",
+   "Colorlight E120: LED Ekran Sistemlerinde Yüksek Performanslı Alıcı Kart Çözümü",
+   "🎯 Ledajans Projelerinde Colorlight E120 Kullanımının Avantajları",
+   "Sonuç"
+  ],
+  "h2": [
+   "Ledajans Perspektifinden Colorlight E120",
+   "Colorlight E120 Teknik Yapısı ve Çalışma Prensibi",
+   "Görüntü Kalitesi ve Renk Yönetimi",
+   "Yenileme Hızı ve Akıcı Görüntü Performansı",
+   "Kalibrasyon ve Sistem Kararlılığı",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

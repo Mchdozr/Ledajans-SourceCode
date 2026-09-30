@@ -1,0 +1,67 @@
+{
+ "id": 4993,
+ "type": "page",
+ "title": "Billboard LED Ekran",
+ "slug": "billboard-led-ekran",
+ "link": "https://ledajans.com/billboard-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:46",
+ "modified": "2026-09-23T10:25:51",
+ "excerpt": "Billboard LED ekran ve dijital reklam panosu rehberi; açık hava LED billboard, otoyol reklam ekranı, totem LED ekran çözümleri. LEDAJANS ile dijital billboard projelerinizi planlayın.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Billboard LED Ekran | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Billboard LED Ekran | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/billboard-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 Billboard LED Ekran: Dijital Reklam Panosu, Açık Hava ve Totem Çözümleri",
+   "📑 İçindekiler",
+   "🔧 Dijital Billboard Nedir?",
+   "📺 Billboard LED Ekran Türleri",
+   "⚙️ Teknik Gereksinimler",
+   "🗼 Totem LED Ekran",
+   "📋 Mevzuat ve İzinler",
+   "💰 Gelir Modeli ve ROI",
+   "🚀 Dijital Billboard Avantajları",
+   "💡 Başarılı Proje İçin İpuçları",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

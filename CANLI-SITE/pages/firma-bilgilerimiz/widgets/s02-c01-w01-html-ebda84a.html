@@ -1,0 +1,212 @@
+<!-- LEDAJANS Firma Bilgileri - WordPress HTML Widget -->
+<style>
+    .ledajans-company { max-width: 1280px; margin: 0 auto; padding: 1.5rem 0.75rem; }
+    @media (min-width: 480px) { .ledajans-company { padding: 2rem 1rem; } }
+    @media (min-width: 640px) { .ledajans-company { padding: 4rem 1.5rem; } }
+    @media (min-width: 1024px) { .ledajans-company { padding: 5rem 2rem; } }
+    .ledajans-company h2 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; text-align: center; }
+    @media (min-width: 640px) { .ledajans-company h2 { font-size: 2.25rem; margin-bottom: 2.5rem; } }
+    @media (min-width: 768px) { .ledajans-company h2 { font-size: 3rem; margin-bottom: 2.5rem; } }
+    .ledajans-info-card { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem; background: linear-gradient(135deg,#f9fafb,#f3f4f6); border-radius: 0.5rem; margin-bottom: 1rem; transition: all .3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,.05); }
+    @media (min-width: 640px) { .ledajans-info-card { gap: 1.25rem; padding: 1.5rem; border-radius: 1rem; } }
+    @media (min-width: 1024px) { .ledajans-info-card { padding: 2rem; border-radius: 1rem; } }
+    .ledajans-info-card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .ledajans-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .ledajans-grid { grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; } }
+    .ledajans-logo-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
+    @media (min-width: 768px) { .ledajans-logo-wrap { justify-content: flex-start; margin-bottom: 0; } }
+    .ledajans-logo { max-width: 200px; height: auto; }
+    @media (min-width: 640px) { .ledajans-logo { max-width: 250px; } }
+    .ledajans-table { width: 100%; min-width: 260px; }
+    .ledajans-table tr { border-bottom: 1px solid #f3f4f6; }
+    .ledajans-table tr:last-child { border-bottom: none; }
+    .ledajans-table td { padding: 0.5rem 0.5rem; font-size: 0.8125rem; }
+    @media (min-width: 640px) { .ledajans-table td { padding: 1rem 1.5rem; font-size: 1rem; } }
+    .ledajans-table th { width: 33.333%; font-weight: 600; color: #111827; }
+    .ledajans-table .ledajans-val { color: #374151; word-break: break-word; }
+    .ledajans-bank-title { font-size: 1.25rem; font-weight: 600; color: #111827; margin-bottom: 1.5rem; }
+    @media (min-width: 640px) { .ledajans-bank-title { font-size: 1.5rem; margin-bottom: 2rem; } }
+    .ledajans-bank-block { margin-bottom: 1rem; background: linear-gradient(135deg,#f9fafb,#f3f4f6); border-radius: 0.5rem; padding: 0.875rem; transition: all .3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,.05); }
+    @media (min-width: 640px) { .ledajans-bank-block { padding: 1.5rem; border-radius: 1rem; } }
+    .ledajans-bank-block:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .ledajans-bank-block:last-child { margin-bottom: 0; }
+    .ledajans-bank-grid { display: grid; gap: 1rem; align-items: center; }
+    @media (min-width: 768px) { .ledajans-bank-grid { grid-template-columns: 200px 1fr; gap: 1.5rem; } }
+    .ledajans-bank-logo { max-width: 150px; height: 84px; object-fit: contain; }
+    @media (min-width: 640px) { .ledajans-bank-logo { max-width: 200px; } }
+    .ledajans-table .ledajans-iban { font-family: ui-monospace, monospace; font-size: 0.75rem; word-break: break-all; }
+    @media (min-width: 640px) { .ledajans-table .ledajans-iban { font-size: 1rem; } }
+    .ledajans-main-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+    @media (min-width: 1024px) { .ledajans-main-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+    .ledajans-section-title { font-size: 1.375rem; font-weight: 700; color: #111827; margin-bottom: 1.25rem; }
+    @media (min-width: 640px) { .ledajans-section-title { font-size: 2.25rem; margin-bottom: 2.5rem; } }
+    @media (min-width: 1024px) { .ledajans-section-title { font-size: 2.25rem; margin-bottom: 2.5rem; } }
+    .ledajans-contact-card { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.875rem; background: linear-gradient(135deg,#f9fafb,#f3f4f6); border-radius: 0.5rem; margin-bottom: 0.875rem; transition: all .3s; }
+    @media (min-width: 640px) { .ledajans-contact-card { gap: 1.25rem; padding: 1.5rem; border-radius: 1rem; } }
+    @media (min-width: 1024px) { .ledajans-contact-card { padding: 2rem; border-radius: 1rem; } }
+    .ledajans-contact-card:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .ledajans-icon-box { width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-icon-box { width: 3.5rem; height: 3.5rem; } }
+    .ledajans-icon-box svg { width: 1.25rem; height: 1.25rem; color: white; }
+    @media (min-width: 640px) { .ledajans-icon-box svg { width: 1.75rem; height: 1.75rem; } }
+    .ledajans-contact-card h3 { font-weight: 600; color: #111827; margin-bottom: 0.5rem; font-size: 1rem; }
+    @media (min-width: 640px) { .ledajans-contact-card h3 { font-size: 1.125rem; } }
+    .ledajans-contact-card p, .ledajans-contact-card a { color: #4b5563; font-size: 0.8125rem; }
+    @media (min-width: 640px) { .ledajans-contact-card p, .ledajans-contact-card a { font-size: 1rem; } }
+    @media (min-width: 1024px) { .ledajans-contact-card p, .ledajans-contact-card a { font-size: 1.125rem; } }
+    .ledajans-contact-card a:hover { color: #F46F2C; }
+    .ledajans-contact-card .ledajans-phones { margin-top: 0.5rem; }
+    .ledajans-contact-card .ledajans-phones a { display: block; margin-bottom: 0.25rem; padding: 0.25rem 0; min-height: 36px; line-height: 1.4; -webkit-tap-highlight-color: transparent; }
+    .ledajans-map-box { background: linear-gradient(135deg,#f9fafb,#f3f4f6); border-radius: 0.5rem; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,.1); min-height: 220px; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+    .ledajans-map-box:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,.12); }
+    @media (min-width: 640px) { .ledajans-map-box { border-radius: 1rem; margin-bottom: 2.5rem; min-height: 280px; } }
+    @media (min-width: 768px) { .ledajans-map-box { min-height: 300px; } }
+    .ledajans-map-inner { text-align: center; padding: 1rem; }
+    .ledajans-map-inner svg { width: 3rem; height: 3rem; margin: 0 auto 0.75rem; }
+    @media (min-width: 640px) { .ledajans-map-inner { padding: 1.5rem; } .ledajans-map-inner svg { width: 4rem; height: 4rem; margin: 0 auto 1rem; } }
+    .ledajans-map-inner p { color: #6b7280; margin-bottom: 0.5rem; }
+    .ledajans-map-btn { display: inline-block; margin-top: 0.5rem; padding: 0.75rem 1.5rem; min-height: 44px; line-height: 1.4; border-radius: 0.5rem; background: #F46F2C; color: white !important; font-weight: 600; text-decoration: none; transition: all .3s; -webkit-tap-highlight-color: transparent; }
+    .ledajans-map-btn:hover { transform: scale(1.05); color: white !important; }
+    .ledajans-cta-box { background: linear-gradient(135deg,#111827,#1f2937,#111827); border-radius: 0.5rem; padding: 1.25rem; color: white; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+    @media (min-width: 640px) { .ledajans-cta-box { padding: 2rem; border-radius: 1rem; } }
+    @media (min-width: 1024px) { .ledajans-cta-box { padding: 2.5rem; border-radius: 1rem; } }
+    .ledajans-cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-cta-box h3 { font-size: 1.875rem; margin-bottom: 1.5rem; } }
+    .ledajans-cta-box p { color: #d1d5db; margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.875rem; }
+    @media (min-width: 640px) { .ledajans-cta-box p { margin-bottom: 2rem; font-size: 1rem; } }
+    @media (min-width: 1024px) { .ledajans-cta-box p { font-size: 1.125rem; } }
+    .ledajans-cta-box .ledajans-cta-btns { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ledajans-cta-box a { display: block; text-align: center; padding: 1rem 1.25rem; min-height: 44px; line-height: 1.4; font-weight: 600; border-radius: 0.5rem; text-decoration: none; transition: all .3s; -webkit-tap-highlight-color: transparent; }
+    @media (min-width: 640px) { .ledajans-cta-box a { padding: 1.25rem 2rem; } }
+    .ledajans-cta-call {
+      background: #F46F2C;
+      color: white;
+    }
+    .ledajans-cta-call:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      color: #fff !important;
+    }
+    .ledajans-cta-email { background: white; color: #111827; }
+    .ledajans-cta-email:hover { transform: scale(1.05); box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+    </style>
+    
+    <div class="ledajans-company">
+      <h2>Firma Bilgilerimiz</h2>
+      <div class="ledajans-info-card" style="margin-bottom: 2rem;">
+        <div style="flex:1;min-width:0">
+          <div class="ledajans-grid">
+            <div class="ledajans-logo-wrap">
+              <picture>
+                <source media="(max-width: 767px)" srcset="https://ledajans.com/wp-content/uploads/2026/02/ledajans-logo.png">
+                <img src="https://ledajans.com/wp-content/uploads/2024/08/ledajans-logo-favicon-1.jpg" alt="Ledajans Logo" class="ledajans-logo" loading="lazy">
+              </picture>
+            </div>
+            <div style="overflow-x: auto;-webkit-overflow-scrolling:touch;-ms-overflow-style:-ms-autohiding-scrollbar;">
+              <table class="ledajans-table">
+                <tbody>
+                  <tr><td style="font-weight:600;color:#111827;width:33%">FİRMA ÜNVANI</td><td class="ledajans-val">TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ</td></tr>
+                  <tr><td style="font-weight:600;color:#111827;width:33%">FİRMA ADRESİ</td><td class="ledajans-val">Halide Edip Adıvar, Gül 2 Sokak No: 10a, 34382 Şişli/İstanbul</td></tr>
+                  <tr><td style="font-weight:600;color:#111827;width:33%">VERGİ DAİRESİ</td><td class="ledajans-val">Şişli</td></tr>
+                  <tr><td style="font-weight:600;color:#111827;width:33%">VERGİ NUMARASI</td><td class="ledajans-val">816 060 6453</td></tr>
+                  <tr><td style="font-weight:600;color:#111827;width:33%">TİCARET SİCİL NUMARASI</td><td class="ledajans-val">79014-5</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="ledajans-bank-title" style="margin-bottom: 1.5rem;">BANKA HESAPLARI</h3>
+          <div class="ledajans-bank-block">
+            <div class="ledajans-bank-grid">
+              <div class="ledajans-logo-wrap"><img src="https://ledajans.com/wp-content/uploads/2024/08/VakifBank-Logo.png" alt="Vakıfbank" class="ledajans-bank-logo" loading="lazy"></div>
+              <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+                <table class="ledajans-table">
+                  <tbody>
+                    <tr><td style="font-weight:600;color:#374151;width:25%">TL</td><td class="ledajans-iban ledajans-val">TR91 0001 5001 5800 7305 9096 82</td></tr>
+                    <tr><td style="font-weight:600;color:#374151;width:25%">USD</td><td class="ledajans-iban ledajans-val">TR17 0001 5001 5804 8016 5352 43</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="ledajans-bank-block">
+            <div class="ledajans-bank-grid">
+              <div class="ledajans-logo-wrap"><img src="https://ledajans.com/wp-content/uploads/2024/09/kt_yesil_logo_slogan.png" alt="Kuveyt Türk" class="ledajans-bank-logo" loading="lazy"></div>
+              <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+                <table class="ledajans-table">
+                  <tbody>
+                    <tr><td style="font-weight:600;color:#374151;width:25%">TL</td><td class="ledajans-iban ledajans-val">TR65 0020 5000 0952 5917 8000 02</td></tr>
+                    <tr><td style="font-weight:600;color:#374151;width:25%">USD</td><td class="ledajans-iban ledajans-val">TR27 0020 5000 0952 5917 8001 04</td></tr>
+                    <tr><td style="font-weight:600;color:#374151;width:25%">EURO</td><td class="ledajans-iban ledajans-val">TR97 0020 5000 0952 5917 8001 05</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      <div class="ledajans-main-grid" style="margin-top: 2rem;">
+        <div>
+          <h2 class="ledajans-section-title">İletişim Bilgileri</h2>
+          <div class="ledajans-contact-card">
+            <div class="ledajans-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 21h18M9 8h1m-1 4h1m-1 4h1m4-8h1m-1 4h1m-1 4h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <h3>Firma Ünvanı</h3>
+              <p>TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ</p>
+            </div>
+          </div>
+          <div class="ledajans-contact-card">
+            <div class="ledajans-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <h3>Adres</h3>
+              <p>İstanbul<br>Halide Edip Adıvar, Gül 2 Sokak No: 10a, 34382 Şişli/İstanbul</p>
+            </div>
+          </div>
+          <div class="ledajans-contact-card">
+            <div class="ledajans-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <h3>Telefon</h3>
+              <div class="ledajans-phones">
+                <a href="tel:+902122204004">+90 212 220 40 04 (Sabit Hat)</a>
+                <a href="tel:+905438795108">+90 543 879 51 08 (Mobil)</a>
+                <a href="tel:+905304056768">+90 530 405 67 68 (Mobil)</a>
+              </div>
+            </div>
+          </div>
+          <div class="ledajans-contact-card">
+            <div class="ledajans-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div style="flex:1;min-width:0">
+              <h3>E-posta</h3>
+              <a href="mailto:info@ledajans.com">info@ledajans.com</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="ledajans-section-title">Bizi Ziyaret Edin</h2>
+          <div class="ledajans-map-box">
+            <div class="ledajans-map-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p style="font-weight:600">Harita Konumu</p>
+              <p>İstanbul, Türkiye</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Halide+Edip+Adıvar+Mah.+Gül+2+Sk.+No:10,+34382+Şişli/İstanbul" target="_blank" rel="noopener noreferrer" class="ledajans-map-btn">Google Maps'te Aç</a>
+            </div>
+          </div>
+          <div class="ledajans-cta-box">
+            <h3>Bizimle İletişime Geçin</h3>
+            <p>LED ekran projeniz için ücretsiz danışmanlık almak ve detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
+            <div class="ledajans-cta-btns">
+              <a href="tel:+902122204004" class="ledajans-cta-call">Hemen Arayın</a>
+              <a href="mailto:info@ledajans.com" class="ledajans-cta-email">E-posta Gönderin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    

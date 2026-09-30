@@ -1,0 +1,65 @@
+{
+ "id": 680,
+ "type": "post",
+ "title": "P10 Panel",
+ "slug": "p10-panel",
+ "link": "https://ledajans.com/p10-panel/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T19:08:15",
+ "modified": "2025-12-02T13:27:12",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "%title% %sep% %sitename% 4",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "P10 PANEL"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "P10 Panel - LEDAJANS 4",
+  "description": "P10 Panel ile Akıllı LED Tabela Sistemlerinde Maksimum Görünürlük P10 panel, akıllı LED tabela çözümleri içinde hem fiyat/performans hem de dayanıklılık",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p10-panel/",
+  "og_image": "",
+  "h1": [
+   "P10 Panel",
+   "P10 Panel ile Akıllı LED Tabela Sistemlerinde Maksimum Görünürlük"
+  ],
+  "h2": [
+   "",
+   "",
+   "P10 Panel Nedir?",
+   "LED Tabela ve Kayan Yazı Sistemlerinde P10 Panel Avantajları",
+   "P10 Panel İçin Yazılım ve Uzaktan Yönetim",
+   "P10 Panel Bakım ve Servis Rutinleri",
+   "LEDAJANS ile P10 Panel Tabanlı Proje Süreci",
+   "Bakım, Yedek Parça ve Uzun Ömür İçin İpuçları",
+   "Neden LEDAJANS?",
+   "Özet: P10 Panel ile Dijital Reklamda Güçlü ve Ekonomik Çözüm",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

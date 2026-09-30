@@ -1,0 +1,25 @@
+{
+ "id": 4292,
+ "type": "elementor_library",
+ "title": "Elementor Loop Item #4292",
+ "slug": "elementor-loop-item",
+ "link": "https://ledajans.com/?elementor_library=elementor-loop-item",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-11-25T09:00:22",
+ "modified": "2025-11-25T09:01:22",
+ "excerpt": null,
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "loop-item",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 1,
+ "live": {}
+}

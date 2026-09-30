@@ -1,0 +1,336 @@
+<!-- WIDGET 1 — Elementor HTML widget'a TAMAMINI yapıştır. Push yok. 2026-09-22 -->
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-mobile-1.webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp" media="(min-width: 769px)" fetchpriority="high">
+<style>
+.la1.ledajans-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 7.25rem clamp(1.25rem, 5vw, 4.5rem) 3.5rem;
+  min-height: max(640px, 100vh);
+  min-height: max(640px, 100dvh);
+  overflow: hidden;
+  background: #0c0f14;
+  color: #f6f3ee;
+  font-family: inherit;
+  text-align: center;
+  box-sizing: border-box;
+}
+.la1 *, .la1 *::before, .la1 *::after { box-sizing: border-box; }
+.la1-video, .la1-poster, .la1-mobile {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.la1-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 46%;
+  opacity: 0;
+  transition: opacity .7s ease;
+  pointer-events: none;
+}
+.la1-video.is-on { opacity: 1; }
+.la1-poster {
+  background: #0c0f14 url("https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp") center 46% / cover no-repeat;
+  background-position: 72% 46%;
+}
+.la1-mobile { display: none; }
+.la1-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 38%;
+  display: block;
+}
+.la1-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 62% 58% at 50% 52%, rgba(8,10,14,.72) 0%, rgba(8,10,14,.5) 55%, rgba(8,10,14,.3) 100%),
+    linear-gradient(180deg, rgba(8,10,14,.45) 0%, rgba(8,10,14,.2) 40%, rgba(8,10,14,.55) 100%);
+}
+.la1-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto !important;
+}
+.la1-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.la1-copy::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  background: #f46f2c;
+}
+.la1 h1 {
+  margin: 0 auto 1.1rem;
+  max-width: 20ch;
+  font-size: clamp(2.3rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.45), 0 8px 32px rgba(0,0,0,.6);
+}
+.la1-lead {
+  margin: 0 auto 2rem;
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.35vw, 1.13rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 4px 18px rgba(0,0,0,.55);
+}
+.la1-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+}
+.la1-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  min-width: 176px;
+  padding: 0 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.la1-btn-primary { background: #f46f2c; color: #fff; border-color: #f46f2c; }
+.la1-btn-primary:hover { background: #d95a1a; border-color: #d95a1a; color: #fff; }
+.la1-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,.7);
+}
+.la1-btn-ghost:hover { background: #fff; border-color: #fff; color: #141414; }
+.la1-play {
+  width: 52px;
+  height: 52px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,.7);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background .2s ease, border-color .2s ease;
+}
+.la1-play:hover { background: #f46f2c; border-color: #f46f2c; }
+.la1-play span {
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 3px;
+}
+.la1-proof {
+  margin: 1.75rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+}
+.la1-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,.88);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.la1-modal.is-open { display: flex; }
+.la1-modal-box { position: relative; width: min(920px, 100%); }
+.la1-modal-x {
+  position: absolute;
+  top: -42px; right: 0;
+  background: none; border: 0;
+  color: #fff; font-size: 32px;
+  cursor: pointer; line-height: 1;
+}
+.la1-frame { position: relative; padding-bottom: 56.25%; height: 0; }
+.la1-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 900px) {
+  .la1.ledajans-hero {
+    min-height: max(560px, 100svh) !important;
+    height: auto;
+    padding: max(5.75rem, calc(env(safe-area-inset-top) + 5.25rem)) 1rem max(1.5rem, env(safe-area-inset-bottom)) !important;
+  }
+  .la1-video, .la1-poster { display: none !important; }
+  .la1-mobile { display: block; }
+  .la1-shade {
+    background: linear-gradient(180deg, rgba(8,10,14,.5) 0%, rgba(8,10,14,.62) 50%, rgba(8,10,14,.8) 100%);
+  }
+  .la1-copy::before { margin-bottom: 1.1rem; }
+  .la1 h1 { max-width: none; font-size: clamp(1.9rem, 8.4vw, 2.4rem); margin-bottom: .8rem; }
+  .la1-lead { font-size: .98rem; margin-bottom: 1.4rem; }
+  .la1-btn { min-width: 0; }
+  .la1-actions {
+    display: grid;
+    grid-template-columns: 1fr 52px;
+    gap: .55rem;
+    width: 100%;
+  }
+  .la1-btn-primary { grid-column: 1 / -1; width: 100%; }
+  .la1-btn-ghost { width: 100%; }
+  .la1-proof { font-size: .68rem; letter-spacing: .08em; margin-top: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .la1-video { display: none !important; }
+}
+</style>
+
+<section class="ledajans-hero la1" aria-label="LEDAJANS LED ekran">
+  <div class="la1-poster"></div>
+  <video class="la1-video" id="la1Video" muted playsinline webkit-playsinline preload="none"
+    data-poster="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp"
+    data-src="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-1920.mp4"></video>
+  <div class="la1-mobile">
+    <img src="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-mobile-1.webp" width="768" height="1024" alt="LEDAJANS fuar standı LED ekran" fetchpriority="high" decoding="async">
+  </div>
+  <div class="la1-shade"></div>
+  <div class="la1-stage">
+  <div class="la1-copy">
+    <h1>LED Ekran Satış, Kiralama ve Kurulum</h1>
+    <p class="la1-lead">LED ekran üreticisi LEDAJANS — iç mekan, dış mekan ve rental modeller. 25 yıl tecrübe, 2 yıl garanti, Türkiye geneli keşif ve fiyat teklifi.</p>
+    <div class="la1-actions">
+      <a class="la1-btn la1-btn-primary" href="tel:+902122204004">Hemen Arayın</a>
+      <a class="la1-btn la1-btn-ghost" href="https://ledajans.com/iletisim/">Ücretsiz keşif</a>
+      <button type="button" class="la1-play" id="la1Play" aria-label="Tanıtım videosunu izle"><span></span></button>
+    </div>
+    <p class="la1-proof">25 yıl tecrübe · 2 yıl garanti · İç mekan, dış mekan, rental</p>
+  </div>
+  </div>
+</section>
+
+<div class="la1-modal" id="la1Modal" hidden>
+  <div class="la1-modal-box">
+    <button type="button" class="la1-modal-x" id="la1Close" aria-label="Kapat">&times;</button>
+    <div class="la1-frame">
+      <iframe id="la1Frame" title="LEDAJANS tanıtım videosu" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var play = document.getElementById("la1Play");
+  var modal = document.getElementById("la1Modal");
+  var frame = document.getElementById("la1Frame");
+  var closeBtn = document.getElementById("la1Close");
+  var yt = "https://www.youtube.com/embed/riOY6kz7cv4?autoplay=1";
+  function openModal() {
+    if (!modal) return;
+    modal.hidden = false;
+    modal.classList.add("is-open");
+    if (frame) frame.src = yt;
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.hidden = true;
+    if (frame) frame.src = "";
+    document.body.style.overflow = "";
+  }
+  if (play) play.addEventListener("click", function (e) { e.preventDefault(); openModal(); });
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+
+  var video = document.getElementById("la1Video");
+  if (!video || window.innerWidth <= 768) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (navigator.connection && navigator.connection.saveData) return;
+  video.muted = true;
+  video.loop = false;
+  video.removeAttribute("loop");
+  var poster = video.getAttribute("data-poster");
+  if (poster) video.setAttribute("poster", poster);
+  var src = video.getAttribute("data-src");
+  var loaded = false;
+  var playedOnce = false;
+  function freeze() {
+    video.pause();
+    try {
+      if (video.duration && isFinite(video.duration) && video.duration > 0.08) {
+        video.currentTime = Math.max(0, video.duration - 0.05);
+      }
+    } catch (ex) {}
+    video.classList.add("is-on");
+  }
+  function loadAndPlay() {
+    if (loaded || !src || playedOnce) return;
+    loaded = true;
+    var source = document.createElement("source");
+    source.src = src;
+    source.type = "video/mp4";
+    video.appendChild(source);
+    video.load();
+  }
+  video.addEventListener("canplay", function () {
+    video.classList.add("is-on");
+    if (playedOnce || video.ended) return;
+    try { video.play(); } catch (ex) {}
+  });
+  video.addEventListener("ended", function () { playedOnce = true; freeze(); });
+  video.addEventListener("play", function () { if (playedOnce) freeze(); });
+  if ("requestIdleCallback" in window) requestIdleCallback(loadAndPlay, { timeout: 4000 });
+  else setTimeout(loadAndPlay, 2500);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://ledajans.com/#localbusiness",
+  "name": "LEDAJANS - LED Ekran Çözümleri",
+  "url": "https://ledajans.com",
+  "telephone": "+90-212-220-40-04",
+  "email": "info@ledajans.com",
+  "image": "https://ledajans.com/wp-content/uploads/2026/09/ledajans-logo.jpg",
+  "description": "LED ekran satış, kiralama ve kurulum. İç mekan, dış mekan, rental. 25 yıl tecrübe, 2 yıl garanti.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Halide Edip Adıvar Mah. Gül 2 Sk. No:10",
+    "addressLocality": "Şişli",
+    "addressRegion": "İstanbul",
+    "postalCode": "34382",
+    "addressCountry": "TR"
+  }
+}
+</script>

@@ -1,0 +1,66 @@
+{
+ "id": 4964,
+ "type": "page",
+ "title": "LED Tabela Rehberi",
+ "slug": "led-tabela",
+ "link": "https://ledajans.com/led-tabela/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:09",
+ "modified": "2026-09-23T10:26:28",
+ "excerpt": "LED tabela nedir, dijital tabela türleri, kullanım alanları, fiyatları etkileyen faktörler ve seçim rehberi; LEDAJANS ile profesyonel LED tabela çözümleri.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Tabela Rehberi",
+  "rank_math_description": "LED tabela nedir, dijital tabela türleri, kullanım alanları, fiyatları etkileyen faktörler ve seçim rehberi; LEDAJANS ile profesyonel LED tabela çözümleri.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Tabela Rehberi",
+  "description": "LED tabela nedir, dijital tabela türleri, kullanım alanları, fiyatları etkileyen faktörler ve seçim rehberi; LEDAJANS ile profesyonel LED tabela çözümleri.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-tabela/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 LED Tabela: Dijital Tabela Rehberi — Türleri, Kullanım Alanları ve Fiyatlar",
+   "📑 İçindekiler",
+   "🔧 LED Tabela Nedir?",
+   "⚙️ LED Tabela Türleri",
+   "📍 LED Tabela Kullanım Alanları",
+   "🚀 LED Tabela vs Geleneksel Tabela: Avantajlar",
+   "💰 LED Tabela Fiyatlarını Etkileyen Faktörler",
+   "🎛 LED Tabela Seçim Rehberi",
+   "🌐 Neden LEDAJANS?",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

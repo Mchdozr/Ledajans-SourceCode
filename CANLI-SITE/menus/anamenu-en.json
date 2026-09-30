@@ -1,0 +1,1955 @@
+{
+ "menu": {
+  "id": 99,
+  "description": "",
+  "name": "Anamenü en",
+  "slug": "anamenu-en",
+  "meta": [],
+  "locations": [],
+  "auto_add": false,
+  "_links": {
+   "self": [
+    {
+     "href": "https://ledajans.com/wp-json/wp/v2/menus/99",
+     "targetHints": {
+      "allow": [
+       "GET",
+       "POST",
+       "PUT",
+       "PATCH",
+       "DELETE"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://ledajans.com/wp-json/wp/v2/menus"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://ledajans.com/wp-json/wp/v2/taxonomies/nav_menu"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://ledajans.com/wp-json/wp/v2/menu-items?menus=99"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": 5242,
+   "title": {
+    "raw": "Products",
+    "rendered": "Products"
+   },
+   "status": "publish",
+   "url": "#",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5242,
+   "parent": 0,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5242",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5242"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5242"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5242"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5242"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5242"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5244,
+   "title": {
+    "raw": "Language",
+    "rendered": "Language"
+   },
+   "status": "publish",
+   "url": "#pll_switcher",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Dil Değiştirici",
+   "object": "custom",
+   "object_id": 5244,
+   "parent": 0,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5244",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5244"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5244"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5244"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5244"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5244"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1293,
+   "title": {
+    "raw": "Home",
+    "rendered": "Home"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/?page_id=291",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Taslak",
+   "object": "page",
+   "object_id": 291,
+   "parent": 0,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1293",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1293"
+     }
+    ],
+    "wp:menu-item-object": [
+     {
+      "post_type": "page",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/pages/291"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1293"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1293"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1293"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1293"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5241,
+   "title": {
+    "raw": "Company",
+    "rendered": "Company"
+   },
+   "status": "publish",
+   "url": "#",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5241,
+   "parent": 0,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5241",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5241"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5241"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5241"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5241"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5241"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5246,
+   "title": {
+    "raw": "Power Supplies",
+    "rendered": "Power Supplies"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/en/power-supply-2/",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5246,
+   "parent": 5242,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5246",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5246"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5246"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5246"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5246"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5246"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5248,
+   "title": {
+    "raw": "Google Drive",
+    "rendered": "Google Drive"
+   },
+   "status": "publish",
+   "url": "https://drive.google.com/drive/folders/1zDVV7am98E-Q6AuEx3s6N66kjVlTVhQj?usp=sharing",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5248,
+   "parent": 5243,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5248",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5248"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5248"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5248"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5248"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5248"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5245,
+   "title": {
+    "raw": "Outdoor RGB Panel",
+    "rendered": "Outdoor RGB Panel"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/en/outdoor-rgb-panel/",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5245,
+   "parent": 5242,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5245",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5245"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5245"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5245"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5245"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5245"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 5243,
+   "title": {
+    "raw": "Technical Support & Info",
+    "rendered": "Technical Support &#038; Info"
+   },
+   "status": "publish",
+   "url": "#",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 5243,
+   "parent": 0,
+   "menu_order": 1,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5243",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=5243"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5243"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5243"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5243"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/5243"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1292,
+   "title": {
+    "raw": "Institutional",
+    "rendered": "Institutional"
+   },
+   "status": "publish",
+   "url": "#",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 1292,
+   "parent": 0,
+   "menu_order": 2,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1292",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1292"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1292"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1292"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1292"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1292"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1284,
+   "title": {
+    "raw": "About Us",
+    "rendered": "About Us"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/en/about-us/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Sayfa",
+   "object": "page",
+   "object_id": 23,
+   "parent": 1292,
+   "menu_order": 3,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1284",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1284"
+     }
+    ],
+    "wp:menu-item-object": [
+     {
+      "post_type": "page",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/pages/23"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1284"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1284"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1284"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1284"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1788,
+   "title": {
+    "raw": "Get a Quote",
+    "rendered": "Get a Quote"
+   },
+   "status": "publish",
+   "url": "https://hesapla.ledajans.com/",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 1788,
+   "parent": 1292,
+   "menu_order": 4,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1788",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1788"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1788"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1788"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1788"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1788"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1282,
+   "title": {
+    "raw": "Our Company Information",
+    "rendered": "Our Company Information"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/?page_id=770",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Taslak",
+   "object": "page",
+   "object_id": 770,
+   "parent": 1292,
+   "menu_order": 5,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1282",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1282"
+     }
+    ],
+    "wp:menu-item-object": [
+     {
+      "post_type": "page",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/pages/770"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1282"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1282"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1282"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1282"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1291,
+   "title": {
+    "raw": "OurProducts",
+    "rendered": "OurProducts"
+   },
+   "status": "publish",
+   "url": "#",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Özel bağlantı",
+   "object": "custom",
+   "object_id": 1291,
+   "parent": 0,
+   "menu_order": 6,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1291",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1291"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1291"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1291"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1291"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1291"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1286,
+   "title": {
+    "raw": "Indoor LED Screen",
+    "rendered": "Indoor LED Screen"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/indoor-led-display/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 100,
+   "parent": 1291,
+   "menu_order": 7,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1286",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1286"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1286"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1286"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1286"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1286"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1288,
+   "title": {
+    "raw": "Outdoor LED Screen",
+    "rendered": "Outdoor LED Screen"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/outdoor-led-screen/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 1143,
+   "parent": 1291,
+   "menu_order": 8,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1288",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1288"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1288"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1288"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1288"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1288"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1290,
+   "title": {
+    "raw": "Rental LED Screen",
+    "rendered": "Rental LED Screen"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/rental-cabin/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 102,
+   "parent": 1291,
+   "menu_order": 9,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1290",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1290"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1290"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1290"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1290"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1290"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1287,
+   "title": {
+    "raw": "Indoor RGB Panels",
+    "rendered": "Indoor RGB Panels"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/indoor-rgb-panels/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 101,
+   "parent": 1291,
+   "menu_order": 10,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1287",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1287"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1287"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1287"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1287"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1287"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1289,
+   "title": {
+    "raw": "Outdoor Rgb Panel",
+    "rendered": "Outdoor Rgb Panel"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/outdoor-rgb-panel/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 103,
+   "parent": 1291,
+   "menu_order": 11,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1289",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1289"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1289"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1289"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1289"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1289"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1285,
+   "title": {
+    "raw": "Control Cards",
+    "rendered": "Control Cards"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/case/control-cards/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Portfolio",
+   "object": "portfolio",
+   "object_id": 104,
+   "parent": 1291,
+   "menu_order": 12,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1285",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1285"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1285"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1285"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1285"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1285"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1283,
+   "title": {
+    "raw": "Contact",
+    "rendered": "Contact"
+   },
+   "status": "publish",
+   "url": "https://ledajans.com/en/contact/",
+   "attr_title": "",
+   "description": "",
+   "type": "post_type",
+   "type_label": "Sayfa",
+   "object": "page",
+   "object_id": 30,
+   "parent": 0,
+   "menu_order": 13,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": []
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1283",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1283"
+     }
+    ],
+    "wp:menu-item-object": [
+     {
+      "post_type": "page",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/pages/30"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1283"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1283"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1283"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1283"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  },
+  {
+   "id": 1294,
+   "title": {
+    "raw": "Dil",
+    "rendered": "Dil"
+   },
+   "status": "publish",
+   "url": "#pll_switcher",
+   "attr_title": "",
+   "description": "",
+   "type": "custom",
+   "type_label": "Dil Değiştirici",
+   "object": "custom",
+   "object_id": 1294,
+   "parent": 0,
+   "menu_order": 14,
+   "target": "",
+   "classes": [
+    ""
+   ],
+   "xfn": [
+    ""
+   ],
+   "invalid": false,
+   "meta": {
+    "_pll_menu_item": {
+     "hide_if_no_translation": false,
+     "hide_current": false,
+     "force_home": false,
+     "show_flags": true,
+     "show_names": true,
+     "dropdown": true
+    }
+   },
+   "menus": 99,
+   "_links": {
+    "self": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1294",
+      "targetHints": {
+       "allow": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+       ]
+      }
+     }
+    ],
+    "collection": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items"
+     }
+    ],
+    "about": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/types/nav_menu_item"
+     }
+    ],
+    "wp:term": [
+     {
+      "taxonomy": "nav_menu",
+      "embeddable": true,
+      "href": "https://ledajans.com/wp-json/wp/v2/menus?post=1294"
+     }
+    ],
+    "wp:action-publish": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1294"
+     }
+    ],
+    "wp:action-unfiltered-html": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1294"
+     }
+    ],
+    "wp:action-create-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1294"
+     }
+    ],
+    "wp:action-assign-menus": [
+     {
+      "href": "https://ledajans.com/wp-json/wp/v2/menu-items/1294"
+     }
+    ],
+    "curies": [
+     {
+      "name": "wp",
+      "href": "https://api.w.org/{rel}",
+      "templated": true
+     }
+    ]
+   }
+  }
+ ]
+}

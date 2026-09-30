@@ -1,0 +1,62 @@
+{
+ "id": 683,
+ "type": "post",
+ "title": "P10 Grafik Ekran Kullanımı",
+ "slug": "p10-grafik-ekran-kullanimi",
+ "link": "https://ledajans.com/p10-grafik-ekran-kullanimi/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T19:08:39",
+ "modified": "2025-12-02T13:23:53",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "P10"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "P10 Grafik Ekran Kullanımı - LEDAJANS",
+  "description": "Ledajans’ın sahada en sık uyguladığı P10 Grafik Ekran kullanımı senaryoları şunlardır:",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p10-grafik-ekran-kullanimi/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2024/08/P10-beyaz-panel-led.jpg",
+  "h1": [
+   "P10 Grafik Ekran Kullanımı",
+   "P10 Grafik Ekran Kullanımı ile LED Tabela ve Bilgi Panolarında Yüksek Görünürlük"
+  ],
+  "h2": [
+   "P10 Grafik Ekran Nedir?",
+   "P10 Grafik Ekran Kullanım Alanları",
+   "P10 Grafik Ekran Donanım Yapısı",
+   "P10 Grafik Ekran Yazılımı ve İçerik Yönetimi",
+   "P10 Grafik Ekran Kullanırken Dikkat Edilmesi Gerekenler",
+   "Neden P10 Grafik Ekran Projelerinde Ledajans?",
+   "Sonuç: P10 Grafik Ekran Kullanımı ile Esnek ve Güçlü Dijital İletişim",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

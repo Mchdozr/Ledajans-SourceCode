@@ -1,0 +1,1532 @@
+<!-- LEDAJANS Blog - Sayfa Üstü Hero/Banner - HUIDU -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1920&fm=webp&q=75" type="image/webp">
+<style>
+    .ledajans-huidu-hero {
+      position: relative;
+      height: 200px;
+      background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1920&fm=webp&q=75');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero { height: 250px; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero { height: 300px; } }
+    
+    .ledajans-huidu-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+    }
+    
+    .ledajans-huidu-hero-inner {
+      position: relative;
+      height: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-inner { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .ledajans-huidu-hero-inner { padding: 0 2rem; } }
+    
+    .ledajans-huidu-hero-content {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    .ledajans-huidu-hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-title { font-size: 2.5rem; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero-title { font-size: 3rem; } }
+    
+    .ledajans-huidu-hero-subtitle {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #f46f2c;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) { .ledajans-huidu-hero-subtitle { font-size: 1rem; } }
+    @media (min-width: 768px) { .ledajans-huidu-hero-subtitle { font-size: 1.125rem; } }
+    </style>
+    
+    <div class="ledajans-huidu-hero" role="img" aria-label="Huidu LED kontrol yazılımı">
+      <div class="ledajans-huidu-hero-overlay"></div>
+      <div class="ledajans-huidu-hero-inner">
+        <div class="ledajans-huidu-hero-content">
+          <h1 class="ledajans-huidu-hero-title">HUIDU</h1>
+          <span class="ledajans-huidu-hero-subtitle">
+            Huidu işlemci ve kontrol kartı ürünleri ile LED ekran projeleriniz için satış ve yazılım desteği.
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- LEDAJANS - HUIDU Görsel Slider -->
+    <style>
+    .ledajans-huidu-slider{
+      padding: 2.2rem 0;
+      background: #f9fafb;
+      overflow: hidden;
+      position: relative;
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-slider{ padding: 3rem 0; }
+    }
+    
+    .ledajans-huidu-slider::before,
+    .ledajans-huidu-slider::after{
+      content:"";
+      position:absolute;
+      top:0; bottom:0;
+      width:64px;
+      z-index:2;
+      pointer-events:none;
+    }
+    .ledajans-huidu-slider::before{
+      left:0;
+      background: linear-gradient(90deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    .ledajans-huidu-slider::after{
+      right:0;
+      background: linear-gradient(270deg,#f9fafb 0%,rgba(249,250,251,0) 100%);
+    }
+    
+    .ledajans-huidu-track{
+      display:flex;
+      width:max-content;
+      will-change: transform;
+      animation: ledajans-huidu-scroll 30s linear infinite;
+    }
+    
+    .ledajans-huidu-item{
+      position: relative;
+      flex:0 0 auto;
+      width:220px;
+      height:130px;
+      margin:0 .75rem;
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      box-shadow:0 6px 14px rgba(15,23,42,.06);
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-item{
+        width:300px;
+        height:170px;
+        margin:0 1rem;
+      }
+    }
+    
+    .ledajans-huidu-item a{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .ledajans-huidu-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s ease;
+    }
+    .ledajans-huidu-item:hover img{ transform:scale(1.03); }
+    
+    .ledajans-huidu-item-label{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:3;
+      background:rgba(15,23,42,.78);
+      color:#fff;
+      font-size:.72rem;
+      font-weight:700;
+      padding:.3rem .55rem;
+      border-radius:999px;
+      letter-spacing:.02em;
+      pointer-events:none;
+    }
+    @media (min-width:768px){
+      .ledajans-huidu-item-label{ font-size:.78rem; }
+    }
+    
+    @keyframes ledajans-huidu-scroll{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-33.333%); }
+    }
+    </style>
+    
+    <section class="ledajans-huidu-slider" aria-label="Huidu görsel slider">
+      <div class="ledajans-huidu-track">
+    
+        <!-- SET 1 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+        <!-- SET 2 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+        <!-- SET 3 -->
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP1240</span><a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP820</span><a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP620</span><a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP410</span><a href="https://www.ledarabul.com/urun/vp410-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/HD-VP1640A.png" alt="Huidu VP410 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">VP210</span><a href="https://www.ledarabul.com/urun/vp210-processor/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu VP210 Processor"></a></div>
+        <div class="ledajans-huidu-item"><span class="ledajans-huidu-item-label">HDP601</span><a href="https://www.ledarabul.com/urun/hdp601/" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/210.png" alt="Huidu HDP601 Processor"></a></div>
+    
+      </div>
+    </section>
+    
+    <!-- LEDAJANS - HUIDU SAYFA BLOĞU -->
+    <style>
+    .la-huidu-page{
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+      color: #1f2937;
+    }
+    @media (min-width:1024px){ .la-huidu-page{ padding: 2.5rem 2rem 3.5rem; } }
+    
+    .la-huidu-breadcrumb{
+      margin:1rem 0 1.5rem;
+      font-size:.85rem;
+      color:#6b7280;
+    }
+    .la-huidu-breadcrumb a{ color:#f46f2c; text-decoration:none; }
+    .la-huidu-breadcrumb span{ margin:0 .35rem; color:#9ca3af; }
+    
+    .la-huidu-badge{
+      display:inline-flex; align-items:center;
+      background: rgba(244,111,44,.14);
+      color:#ffd7c3;
+      border:1px solid rgba(244,111,44,.45);
+      padding:.35rem .7rem;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+    
+    .la-huidu-hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media (min-width:992px){ .la-huidu-hero-grid{ grid-template-columns:1fr 1fr; } }
+    
+    .la-huidu-hero-card{
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 300px;
+      background: #0f172a;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .20);
+    }
+    .la-huidu-hero-card-bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+    }
+    .la-huidu-hero-card-bg--software{
+      background-image:
+        linear-gradient(120deg, rgba(15,23,42,.82), rgba(15,23,42,.55)),
+        url("https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png");
+    }
+    .la-huidu-hero-card-bg--manual{
+      background-image:
+        linear-gradient(120deg, rgba(15,23,42,.84), rgba(15,23,42,.58)),
+        url("https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png");
+    }
+    .la-huidu-hero-card-content{
+      position: relative;
+      z-index: 1;
+      padding: 2rem 1.2rem;
+    }
+    @media (min-width:768px){ .la-huidu-hero-card-content{ padding: 2.4rem 1.6rem; } }
+    
+    .la-huidu-title{
+      margin:.8rem 0 .6rem;
+      color:#fff;
+      font-size: clamp(1.45rem, 3.6vw, 2.45rem);
+      font-weight:800;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .la-huidu-subtitle{
+      margin:0;
+      color:#dbe4f0;
+      font-size: clamp(.9rem, 1.8vw, 1.04rem);
+      line-height:1.68;
+      max-width: 56rem;
+    }
+    .la-huidu-actions{
+      margin-top:1.1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.65rem;
+    }
+    .la-huidu-btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.45rem;
+      padding:.72rem 1rem;
+      border-radius:10px;
+      font-size:.88rem;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .la-huidu-btn--primary{
+      background:#f46f2c;
+      color:#fff !important;
+    }
+    .la-huidu-btn--primary:hover{ background:#e35f1d; color:#fff; transform: translateY(-1px); }
+    .la-huidu-btn--secondary{
+      background:rgba(255,255,255,.12);
+      color:#fff !important;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .la-huidu-btn--secondary:hover{ background:rgba(255,255,255,.2); color:#fff; }
+    
+    .la-huidu-section-title{
+      margin: 2rem 0 .8rem;
+      font-size: clamp(1.3rem,2.3vw,1.75rem);
+      font-weight:800;
+      color:#1a1a2e;
+      line-height:1.2;
+    }
+    .la-huidu-section-title::after{
+      content:"";
+      display:block;
+      width:46px; height:4px;
+      margin-top:.5rem;
+      background:#f46f2c;
+      border-radius:999px;
+    }
+    
+    .la-huidu-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media (min-width:768px){ .la-huidu-grid{ grid-template-columns:repeat(3,1fr); } }
+    
+    .la-huidu-card{
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      background:#fff;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(15,23,42,.05);
+    }
+    .la-huidu-card img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+    }
+    .la-huidu-card-body{ padding:.95rem 1rem 1rem; }
+    .la-huidu-card h3{
+      margin:.05rem 0 .35rem;
+      font-size:1.02rem;
+      line-height:1.35;
+      color:#1a1a2e;
+    }
+    .la-huidu-card p{
+      margin:0;
+      color:#4b5563;
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    
+    .la-huidu-downloads{
+      margin-top:1rem;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:.8rem;
+    }
+    @media (min-width:768px){ .la-huidu-downloads{ grid-template-columns:1fr 1fr; } }
+    
+    .la-huidu-dl{
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffffff,#fafafa);
+      padding:1rem;
+    }
+    .la-huidu-dl-title{
+      margin:0 0 .4rem;
+      font-size:1rem;
+      color:#1a1a2e;
+      font-weight:700;
+    }
+    .la-huidu-dl-desc{
+      margin:0 0 .75rem;
+      font-size:.9rem;
+      color:#6b7280;
+      line-height:1.55;
+    }
+    .la-huidu-dl a{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:.45rem;
+      background:#f46f2c;
+      color:#fff;
+      padding:.62rem .95rem;
+      border-radius:9px;
+      font-size:.85rem;
+      font-weight:700;
+    }
+    .la-huidu-dl a:hover{ background:#e35f1d; color:#fff; }
+    
+    .la-huidu-seo{
+      margin-top:1.2rem;
+      border:1px solid #e5e7eb;
+      border-radius:12px;
+      padding:1rem;
+      background:#f9fafb;
+    }
+    .la-huidu-seo p{
+      margin:.2rem 0;
+      color:#374151;
+      font-size:.93rem;
+      line-height:1.7;
+    }
+    </style>
+    
+    <div class="la-huidu-page">
+      <nav class="la-huidu-breadcrumb">
+        <a href="https://ledajans.com">Ana Sayfa</a><span>›</span>
+        <a href="https://ledajans.com/teknik-destek-bilgi/">Teknik Destek & Bilgi</a><span>›</span>
+        Huidu Program ve Ürünler
+      </nav>
+    
+      <div class="la-huidu-hero-grid">
+        <section class="la-huidu-hero-card">
+          <div class="la-huidu-hero-card-bg la-huidu-hero-card-bg--software"></div>
+          <div class="la-huidu-hero-card-content">
+            <span class="la-huidu-badge">HUIDU YAZILIM DESTEĞİ</span>
+            <h2 class="la-huidu-title">HD Serisi Program İndir</h2>
+            <p class="la-huidu-subtitle">
+              Huidu HD serisi kontrol kartları için güncel program dosyasını indirerek kurulum ve yayın yönetimini hızlıca başlatabilirsiniz.
+            </p>
+            <div class="la-huidu-actions">
+              <a class="la-huidu-btn la-huidu-btn--primary" href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" target="_blank" rel="noopener noreferrer">HD Serisi Programı İndir</a>
+            </div>
+          </div>
+        </section>
+    
+        <section class="la-huidu-hero-card">
+          <div class="la-huidu-hero-card-bg la-huidu-hero-card-bg--manual"></div>
+          <div class="la-huidu-hero-card-content">
+            <span class="la-huidu-badge">SATIŞTA OLAN MODELLER</span>
+            <h2 class="la-huidu-title">Huidu Processor Serisi</h2>
+            <p class="la-huidu-subtitle">
+              VP1240, VP820, VP620, VP410, VP210 ve HDP601 modellerini ürün sayfalarından inceleyebilir, uygun olan modeli doğrudan satın alabilirsiniz.
+            </p>
+            <div class="la-huidu-actions">
+              <a class="la-huidu-btn la-huidu-btn--secondary" href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer">Ürünleri İncele</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      <h2 class="la-huidu-section-title">Öne Çıkan Ürünler</h2>
+      <div class="la-huidu-grid">
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp1240-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/a.png" alt="Huidu VP1240 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP1240 Processor</h3>
+            <p>Geniş proje kapasitesi ve profesyonel görüntü işleme ile yüksek ölçekli LED ekran projeleri için güçlü çözüm.</p>
+          </div>
+        </article>
+    
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp820-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/hd-vp820a-620a-1.png" alt="Huidu VP820 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP820 Processor</h3>
+            <p>Orta-üst segment LED ekran uygulamalarında stabil yayın kontrolü ve kolay yönetim sunar.</p>
+          </div>
+        </article>
+    
+        <article class="la-huidu-card">
+          <a href="https://www.ledarabul.com/urun/vp620-processor/" target="_blank" rel="noopener noreferrer">
+            <img src="https://ledajans.com/wp-content/uploads/2025/11/620-scaled.png" alt="Huidu VP620 Processor">
+          </a>
+          <div class="la-huidu-card-body">
+            <h3>Huidu VP620 Processor</h3>
+            <p>Kompakt projelerde performans ve fiyat dengesi sağlayan, sahada yaygın tercih edilen model.</p>
+          </div>
+        </article>
+      </div>
+    
+      <h2 class="la-huidu-section-title">İndirme ve Satın Alma</h2>
+      <div class="la-huidu-downloads">
+        <div class="la-huidu-dl">
+          <h3 class="la-huidu-dl-title">HD Serisi Kontrol Kartı Programı</h3>
+          <p class="la-huidu-dl-desc">Huidu HD kontrol kartı yazılımını doğrudan indirerek kurulum işlemlerine başlayabilirsiniz.</p>
+          <a href="https://drive.google.com/uc?export=download&id=1LdOMy0ENd3RiUvghE1coe0gx7OTGS-K5" target="_blank" rel="noopener noreferrer">HDPlayer V7.11.8.0 İndir</a>
+        </div>
+        <div class="la-huidu-seo">
+        <h3 class="la-huidu-dl-title">Huidu Processor ve HD Serisi yazılımlar</h3>
+        <p class="la-huidu-dl-desc">LED ekran projelerinde yayın yönetimi, görüntü işleme ve merkezi kontrol süreçlerini kolaylaştırır.</p>
+        <p>Ledajans teknik destek sayfasından güncel yazılımlara ulaşabilir, ürün sayfalarından ihtiyaç duyduğunuz modeli doğrudan satın alabilirsiniz.</p>
+      </div>
+      </div>
+    </div>
+<style>
+    .cob-tables-wrapper {
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-tables-wrapper {
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-tables-wrapper {
+        margin-bottom: 3rem;
+      }
+    }
+    
+    .cob-tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .cob-tables-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    /* Model Seçim Menüsü */
+    .cob-models-menu {
+      width: 100%;
+    }
+    
+    @media (min-width: 1024px) {
+      .cob-models-menu {
+        width: auto;
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+      }
+    }
+    
+    .cob-models-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-models-card {
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-models-card {
+        padding: 2rem;
+      }
+    }
+    
+    .cob-models-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-models-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-models-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .cob-models-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-models-nav {
+        gap: 0.75rem;
+      }
+    }
+    
+    .cob-model-button {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.75rem;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-model-button {
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-model-button {
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-model-button.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .cob-model-button:not(.active) {
+      color: #374151;
+    }
+    
+    .cob-model-button:not(.active):hover {
+      background: #f9fafb;
+      color: #F46F2C;
+    }
+    
+    /* Tablo Bölümü */
+    .cob-table-section {
+      width: 100%;
+      min-width: 0;
+    }
+    
+    .cob-table-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table-card {
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table-card {
+        padding: 2rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .cob-table-card {
+        padding: 3rem;
+      }
+    }
+    
+    .cob-download-button {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-download-button {
+        margin-bottom: 2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-download-button {
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .cob-download-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #F46F2C;
+      color: white;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-download-link {
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        width: auto;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-download-link {
+        padding: 1.25rem 2.5rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-download-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      color: white; /* Bu satırı ekle */
+    }
+    
+    .cob-download-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+      flex-shrink: 0;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-download-icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-download-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+    
+    .cob-table-container {
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: 600px;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table-container {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+    }
+    
+    .cob-table-wrapper {
+      width: 100%;
+      display: block;
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table-wrapper {
+        display: block;
+      }
+    }
+    
+    .cob-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      table-layout: auto;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table {
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table {
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f9fafb;
+    }
+    
+    .cob-table thead tr {
+      background: #f9fafb;
+    }
+    
+    .cob-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .cob-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table th {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table th {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-table td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      color: #374151;
+      font-size: 0.75rem;
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table td {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table td {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-table ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .cob-table li {
+      margin-bottom: 0.25rem;
+    }
+    
+    .cob-table-hidden {
+      display: none;
+    }
+    .cob-table-container {
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: 600px;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table-container {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+    }
+    
+    .cob-table-wrapper {
+      width: 100%;
+      display: block;
+    }
+    
+    .cob-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      table-layout: auto;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table {
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table {
+        font-size: 1rem;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    
+    .cob-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f9fafb;
+    }
+    
+    .cob-table thead tr {
+      background: #f9fafb;
+    }
+    
+    .cob-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      max-width: 0;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table th {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table th {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .cob-table td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      color: #374151;
+      font-size: 0.75rem;
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      max-width: 0;
+    }
+    
+    @media (min-width: 640px) {
+      .cob-table td {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .cob-table td {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+    </style>
+    
+    <!-- ÖNEMLİ: Burada örnek verdiğin CSS'in aynısını kullan (cob-* classları) -->
+    
+    <div class="cob-tables-wrapper">
+      <div class="cob-tables-container">
+    
+        <!-- Sol Model Seçim Menüsü -->
+        <div class="cob-models-menu">
+          <div class="cob-models-card">
+            <h3 class="cob-models-title">Modeller</h3>
+            <nav class="cob-models-nav">
+              <button class="cob-model-button active" data-model="hd-r708" onclick="showTable('hd-r708')">HD-R708</button>
+              <button class="cob-model-button" data-model="hd-r712" onclick="showTable('hd-r712')">HD-R712</button>
+              <button class="cob-model-button" data-model="hd-r716" onclick="showTable('hd-r716')">HD-R716</button>
+              <button class="cob-model-button" data-model="hd-a3l" onclick="showTable('hd-a3l')">HD-A3L</button>
+              <button class="cob-model-button" data-model="hd-a4l" onclick="showTable('hd-a4l')">HD-A4L</button>
+              <button class="cob-model-button" data-model="hd-a6l" onclick="showTable('hd-a6l')">HD-A6L</button>
+              <button class="cob-model-button" data-model="vp210" onclick="showTable('vp210')">VP210</button>
+              <button class="cob-model-button" data-model="vp410" onclick="showTable('vp410')">VP410</button>
+              <button class="cob-model-button" data-model="vp820" onclick="showTable('vp820')">VP820</button>
+              <button class="cob-model-button" data-model="vp1240" onclick="showTable('vp1240')">VP1240</button>
+              <button class="cob-model-button" data-model="vp1640" onclick="showTable('vp1640')">VP1640</button>
+              <button class="cob-model-button" data-model="hd-a7" onclick="showTable('hd-a7')">HD-A7</button>
+              <button class="cob-model-button" data-model="hd-a8" onclick="showTable('hd-a8')">HD-A8</button>
+            </nav>
+          </div>
+        </div>
+    
+        <!-- Sağ Tablo Bölümü -->
+        <div class="cob-table-section">
+    
+          <!-- HD-R708 -->
+          <div id="table-hd-r708" class="cob-table-card">
+            <div class="cob-download-button">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-R708-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+                <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>HD-R708 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+    
+            <div class="cob-table-container">
+              <div class="cob-table-wrapper">
+                <table class="cob-table">
+                  <thead>
+                    <tr>
+                      <th>Özellikler</th>
+                      <th>Parametreler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Konvansiyonel çip: 128×512 piksel, PWM çip: 256×512 piksel</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Akıllı ayarları tamamlamak için birkaç basit adım</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Entegre ekran test fonksiyonu, görüntü parlaklık birliği, modül düzlüğü</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç×2, 1Gbps Ethernet port×2, HUB75E×8</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.2V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık</td><td>≈77g</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-R712 -->
+          <div id="table-hd-r712" class="cob-table-card cob-table-hidden">
+            <div class="cob-download-button">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-R712SpecificationV2.1.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+                <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>HD-R712 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+    
+            <div class="cob-table-container">
+              <div class="cob-table-wrapper">
+                <table class="cob-table">
+                  <thead>
+                    <tr>
+                      <th>Özellikler</th>
+                      <th>Parametreler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Maks. 262,144 piksel (512×512), önerilen: konvansiyonel 128×1024, PWM 256×1024</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Birkaç adımda akıllı ayar, ekran yerleşimine göre yapılandırma</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Entegre test, parlaklık birliği ve modül düzlüğü testi</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç×2, 1Gbps Ethernet port×2, HUB75E×8</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.2V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık</td><td>≈91g</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-R716 -->
+          <div id="table-hd-r716" class="cob-table-card cob-table-hidden">
+            <div class="cob-download-button">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-R716-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+                <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                <span>HD-R716 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+    
+            <div class="cob-table-container">
+              <div class="cob-table-wrapper">
+                <table class="cob-table">
+                  <thead>
+                    <tr>
+                      <th>Özellikler</th>
+                      <th>Parametreler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi video işlemcisi</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Maks. 327,680 piksel (512×640), gerçek kapasite HUB/modül çözünürlüğüne bağlıdır</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Birkaç adımda akıllı ayar, ekran yerleşimine göre yapılandırma</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Entegre test, parlaklık birliği ve modül düzlüğü testi</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç×2, 1Gbps Ethernet port×2, HUB75E×16</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.0V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık</td><td>≈91g</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- KALAN MODELLER (HD-A3L / HD-A4L / HD-A6L / VP210 / VP410 / VP820 / VP1240 / VP1640 / HD-A7 / HD-A8)
+               aynı yapıda eklenecek -->
+          <!-- HD-A3L -->
+    <div id="table-hd-a3l" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-A3L-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>HD-A3L DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>Sıra No.</th><th>İsim</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Çalışma ışığı</td><td>PWR, RUN, Wi‑Fi, 4G göstergeleri (orijinal metindeki açıklamalar)</td></tr>
+              <tr><td>2</td><td>Fonksiyon butonu</td><td>Program oynatma değişimi, TEST modu geçişi</td></tr>
+              <tr><td>3</td><td>USB</td><td>USB 3.0, program güncelleme / ekleme / kapasite</td></tr>
+              <tr><td>4</td><td>Giriş ağ portu</td><td>100Mbps ağ portu</td></tr>
+              <tr><td>5</td><td>SIM kart yuvası</td><td>Micro SIM (opsiyonel 4G)</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Kategori</th><th>Öğe</th><th>Spesifikasyon</th></tr></thead>
+            <tbody>
+              <tr><td>Elektrik</td><td>Giriş gücü</td><td>DC 5V-12V</td></tr>
+              <tr><td></td><td>Maks güç</td><td>18W</td></tr>
+              <tr><td>Depolama</td><td>RAM / Dahili</td><td>1GB / 16GB</td></tr>
+              <tr><td>Çalışma</td><td>Sıcaklık / Nem</td><td>-40~70℃ / 0-80%RH</td></tr>
+              <tr><td>Boyut</td><td>Fiziksel</td><td>175×101.1×32.1mm</td></tr>
+              <tr><td>Ağırlık</td><td>Net</td><td>Std 240g / 4G 260g</td></tr>
+              <tr><td>Koruma</td><td>IP</td><td>IP20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- HD-A4L -->
+    <div id="table-hd-a4l" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-A4L-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>HD-A4L DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Çalışma Işığı</td><td>PWR/RUN/DISP/Wi‑Fi/4G-5G açıklamaları</td></tr>
+              <tr><td>2</td><td>SIM Kart</td><td>Micro SIM, opsiyonel 4G/5G</td></tr>
+              <tr><td>3</td><td>Fonksiyon Düğmesi</td><td>HDMI IN, ASYNC, NEXT</td></tr>
+              <tr><td>4</td><td>Anahtar</td><td>ON/OFF</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellik</th></tr></thead>
+            <tbody>
+              <tr><td>Elektrik</td><td>Giriş / Maks</td><td>DC 5V-12V / 18W</td></tr>
+              <tr><td>Depolama</td><td>RAM / Dahili</td><td>2GB / 16GB</td></tr>
+              <tr><td>Çalışma</td><td>Sıcaklık / Nem</td><td>-40~70℃ / 0-80%RH</td></tr>
+              <tr><td>Boyut</td><td>Fiziksel</td><td>287×140.3×42.3mm</td></tr>
+              <tr><td>Ağırlık</td><td>Net</td><td>≈1140g</td></tr>
+              <tr><td>Koruma</td><td>IP</td><td>IP20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- HD-A6L -->
+    <div id="table-hd-a6l" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-A6L-Specification-V1.3.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>HD-A6L DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Çalışma ışığı</td><td>PWR/RUN/DISP/Wi‑Fi/4G-5G göstergeleri</td></tr>
+              <tr><td>2</td><td>SIM kart yuvası</td><td>4G/5G uzaktan kontrol</td></tr>
+              <tr><td>3</td><td>Fonksiyon düğmesi</td><td>HDMI LOOP / HDMI IN / ASYNC / NEXT</td></tr>
+              <tr><td>4</td><td>Anahtar</td><td>ON/OFF</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Kategori</th><th>Madde</th><th>Özellik</th></tr></thead>
+            <tbody>
+              <tr><td>Elektrik</td><td>Giriş / Maks</td><td>DC 5V-12V / 18W</td></tr>
+              <tr><td>Depolama</td><td>RAM / Dahili</td><td>2GB / 16GB</td></tr>
+              <tr><td>Çalışma</td><td>Sıcaklık / Nem</td><td>-40~70℃ / 0-80%RH</td></tr>
+              <tr><td>Boyut</td><td>Fiziksel</td><td>287×140.3×42.3mm</td></tr>
+              <tr><td>Ağırlık</td><td>Net</td><td>1004g</td></tr>
+              <tr><td>Koruma</td><td>IP</td><td>IP20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- VP210 -->
+    <div id="table-vp210" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX10_VP210-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>VP210 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Düğme</th><th>Fonksiyon</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Güç</td><td>Aç/Kapat</td></tr>
+              <tr><td>2</td><td>LCD</td><td>Menü bilgisi</td></tr>
+              <tr><td>3</td><td>Rotary</td><td>Menü seç/Onay</td></tr>
+              <tr><td>4</td><td>Geri</td><td>Çıkış</td></tr>
+              <tr><td>5</td><td>Ölçek</td><td>Tam ekran zoom</td></tr>
+              <tr><td>6</td><td>Giriş Kaynağı</td><td>U-disk modunda önceki/sonraki/duraklat/durdur</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+            <tbody>
+              <tr><td>USB Type-A</td><td>1</td><td>USB video/resim oynatma</td></tr>
+              <tr><td>HDMI</td><td>1</td><td>≤1920×1080@60Hz</td></tr>
+              <tr><td>CVBS</td><td>1</td><td>PAL/NTSC</td></tr>
+              <tr><td>VGA</td><td>1</td><td>≤1920×1080@60Hz</td></tr>
+              <tr><td>DVI</td><td>1</td><td>DVI1.0/HDMI1.3 uyumlu</td></tr>
+              <tr><td>LAN</td><td>2</td><td>Alıcı kart çıkışı</td></tr>
+              <tr><td>USB Type-B</td><td>1</td><td>PC parametre ayarı</td></tr>
+              <tr><td>Güç</td><td>1</td><td>110-240VAC 50/60Hz</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- VP410 -->
+    <div id="table-vp410" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX10_VP410-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>VP410 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Düğme</th><th>Fonksiyon</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Güç</td><td>Aç/Kapat</td></tr>
+              <tr><td>2</td><td>LCD</td><td>Menü bilgisi</td></tr>
+              <tr><td>3</td><td>Rotary</td><td>Menü seç/Onay</td></tr>
+              <tr><td>4</td><td>Geri</td><td>Çıkış</td></tr>
+              <tr><td>5</td><td>Ölçek</td><td>Zoom</td></tr>
+              <tr><td>6</td><td>Giriş Kaynağı</td><td>U-disk oynatma kısayolları</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+            <tbody>
+              <tr><td>USB Type-A</td><td>1</td><td>USB video/resim</td></tr>
+              <tr><td>HDMI/CVBS/VGA/DVI</td><td>1’er</td><td>Giriş portları</td></tr>
+              <tr><td>LAN</td><td>2</td><td>Alıcı kart çıkışı</td></tr>
+              <tr><td>USB Type-B</td><td>1</td><td>PC parametre ayarı</td></tr>
+              <tr><td>Güç</td><td>1</td><td>110-240VAC</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- VP820 -->
+    <div id="table-vp820" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-VP820-Specification-v2.1.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>VP820 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Anahtar</td><td>AC güç anahtarı</td></tr>
+              <tr><td>2</td><td>LCD</td><td>Menü/parametre</td></tr>
+              <tr><td>3</td><td>KAYNAK</td><td>Giriş seçimi + BLACK</td></tr>
+              <tr><td>4</td><td>FONKSİYON</td><td>BRIGHT/MODE/PXP/FREEZE/LOCK/REV</td></tr>
+              <tr><td>5</td><td>PENCERE</td><td>WIN1-WIN2</td></tr>
+              <tr><td>6</td><td>MENÜ</td><td>OK/GUIDE/ESC + rotary</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Arayüz</th><th>Miktar</th><th>Detay</th></tr></thead>
+            <tbody>
+              <tr><td>Giriş</td><td>HDMI, DVI, DP, VGA, EXT, AUDIO IN</td><td>4K dahil girişler</td></tr>
+              <tr><td>Çıkış</td><td>LAN×8, AUDIO OUT×1</td><td>Toplam yüksek piksel yükü</td></tr>
+              <tr><td>Kontrol</td><td>USB-B×1, Wi-Fi×1</td><td>PC debug + kablosuz</td></tr>
+              <tr><td>Temel</td><td>-</td><td>AC 100-240V, -20~55℃, 20~90%RH</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- VP1240 -->
+    <div id="table-vp1240" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX40_VP1240-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>VP1240 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Anahtar</td><td>AC güç</td></tr>
+              <tr><td>2</td><td>LCD</td><td>Menü/parametre</td></tr>
+              <tr><td>3</td><td>KAYNAK</td><td>Kaynak seçim + BLACK</td></tr>
+              <tr><td>4</td><td>FONKSİYON</td><td>BRIGHT/MODE/PXP/FREEZE/LOCK/BLACK</td></tr>
+              <tr><td>5</td><td>PENCERE</td><td>WIN1-WIN4</td></tr>
+              <tr><td>6</td><td>MENÜ</td><td>OK/GUIDE/ESC</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Arayüz</th><th>Miktar</th><th>Detay</th></tr></thead>
+            <tbody>
+              <tr><td>Giriş</td><td>HDMI, DP, DVI, EXT, AUDIO IN</td><td>1080p/4K uyumlu</td></tr>
+              <tr><td>Çıkış</td><td>LAN×12, AUDIO OUT×1</td><td>1Gbps portlar</td></tr>
+              <tr><td>Kontrol</td><td>USB-B, RS232, Wi‑Fi</td><td>Merkezi kontrol + mobil</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- VP1640 -->
+    <div id="table-vp1640" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX40_VP1640-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>VP1640 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Anahtar</td><td>AC güç</td></tr>
+              <tr><td>2</td><td>LCD</td><td>Menü/parametre</td></tr>
+              <tr><td>3</td><td>KAYNAK</td><td>Kaynak seçim + BLACK</td></tr>
+              <tr><td>4</td><td>FONKSİYON</td><td>BRIGHT/MODE/PXP/FREEZE/LOCK/BLACK</td></tr>
+              <tr><td>5</td><td>PENCERE</td><td>WIN1-WIN4</td></tr>
+              <tr><td>6</td><td>MENÜ</td><td>OK/GUIDE/ESC</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Arayüz</th><th>Miktar</th><th>Detay</th></tr></thead>
+            <tbody>
+              <tr><td>Giriş</td><td>HDMI, DP, DVI, EXT, AUDIO IN</td><td>1080p/4K uyumlu</td></tr>
+              <tr><td>Çıkış</td><td>LAN×16, AUDIO OUT×1</td><td>1Gbps portlar</td></tr>
+              <tr><td>Kontrol</td><td>USB-B, RS232, Wi‑Fi</td><td>Merkezi kontrol + mobil</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- HD-A7 -->
+    <div id="table-hd-a7" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-A7-Specification-V2.3.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>HD-A7 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Güç Anahtarı</td><td>AC aç/kapa</td></tr>
+              <tr><td>2</td><td>MIC</td><td>-</td></tr>
+              <tr><td>3</td><td>USB/OTG</td><td>Program güncelleme / debug</td></tr>
+              <tr><td>4</td><td>LCD</td><td>Menü ve parametre</td></tr>
+              <tr><td>5</td><td>KAYNAK</td><td>Giriş sinyal seçimi</td></tr>
+              <tr><td>6</td><td>FONKSİYON</td><td>BLACK/FREEZE/LOCK/BRIGHT/MODE/PLAYER</td></tr>
+              <tr><td>7</td><td>PENCERE</td><td>Pencere seçimi</td></tr>
+              <tr><td>8</td><td>MENÜ</td><td>Guide/ESC/Onay</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Kategori</th><th>Öğeler</th><th>Spesifikasyon</th></tr></thead>
+            <tbody>
+              <tr><td>Elektrik</td><td>Giriş / Maks</td><td>AC100-240V / 72W</td></tr>
+              <tr><td>Depolama</td><td>RAM / Dahili</td><td>4GB / 32GB</td></tr>
+              <tr><td>Depolama Ortamı</td><td>Sıcaklık / Nem</td><td>-40~80℃ / 0~95%RH</td></tr>
+              <tr><td>Çalışma Ortamı</td><td>Sıcaklık / Nem</td><td>-10~45℃ / 0~95%RH</td></tr>
+              <tr><td>Boyut</td><td>Fiziksel</td><td>432×270×64.2mm</td></tr>
+              <tr><td>Ağırlık</td><td>Paketli</td><td>4.8kg</td></tr>
+              <tr><td>Koruma</td><td>IP</td><td>IP20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- HD-A8 -->
+    <div id="table-hd-a8" class="cob-table-card cob-table-hidden">
+      <div class="cob-download-button">
+        <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-A8-Specification-V2.3.pdf" target="_blank" rel="noopener noreferrer" class="cob-download-link">
+          <svg class="cob-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>HD-A8 DÖKÜMANTASYONUNU İNDİR</span>
+        </a>
+      </div>
+      <div class="cob-table-container">
+        <div class="cob-table-wrapper">
+          <table class="cob-table">
+            <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Güç Anahtarı</td><td>AC aç/kapa</td></tr>
+              <tr><td>2</td><td>MIC</td><td>-</td></tr>
+              <tr><td>3</td><td>USB/OTG</td><td>Güncelleme / debug</td></tr>
+              <tr><td>4</td><td>LCD</td><td>Menü-parametre</td></tr>
+              <tr><td>5</td><td>KAYNAK</td><td>Kaynak seçimi</td></tr>
+              <tr><td>6</td><td>FONKSİYON</td><td>BLACK/FREEZE/LOCK/BRIGHT/MODE/PLAYER</td></tr>
+              <tr><td>7</td><td>PENCERE</td><td>Pencere seçimi</td></tr>
+              <tr><td>8</td><td>MENÜ</td><td>Guide/ESC/Onay</td></tr>
+            </tbody>
+          </table>
+          <table class="cob-table">
+            <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellikler</th></tr></thead>
+            <tbody>
+              <tr><td>Elektrik</td><td>Giriş / Maks</td><td>AC100-240V 50/60Hz / 72W</td></tr>
+              <tr><td>Depolama</td><td>RAM / Dahili</td><td>4G / 32GB</td></tr>
+              <tr><td>Çalışma</td><td>Sıcaklık / Nem</td><td>-10~45℃ / 0~95%RH</td></tr>
+              <tr><td>Boyut</td><td>Fiziksel</td><td>432×270×64.2mm</td></tr>
+              <tr><td>Ağırlık</td><td>Paketli</td><td>4.8kg</td></tr>
+              <tr><td>Koruma</td><td>IP</td><td>IP20</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+        </div>
+      </div>
+    </div>
+    
+    
+    <script>
+    function showTable(model) {
+      document.querySelectorAll('.cob-table-card').forEach(card => {
+        card.classList.add('cob-table-hidden');
+      });
+    
+      document.querySelectorAll('.cob-model-button').forEach(button => {
+        button.classList.remove('active');
+      });
+    
+      const selectedTable = document.getElementById('table-' + model);
+      if (selectedTable) {
+        selectedTable.classList.remove('cob-table-hidden');
+      }
+    
+      const selectedButton = document.querySelector('[data-model="' + model + '"]');
+      if (selectedButton) {
+        selectedButton.classList.add('active');
+      }
+    }
+    </script>

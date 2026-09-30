@@ -1,0 +1,59 @@
+{
+ "id": 4518,
+ "type": "post",
+ "title": "Colorlight A35",
+ "slug": "colorlight-a35",
+ "link": "https://ledajans.com/colorlight-a35/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-12-02T10:58:34",
+ "modified": "2025-12-02T11:07:00",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "Colorlight A35"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Colorlight A35 - LEDAJANS",
+  "description": "Her türlü kurulum senaryosu için uygun bağlantı seçenekleri sunar. Dış mekân LED ekranlarında bile istikrarlı iletişim sağlanabilir.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/colorlight-a35/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/12/ColorLight-A35-LED-Media-Player-1.webp",
+  "h1": [
+   "Colorlight A35",
+   "Colorlight A35: LED Ekran Projelerinde Yeni Nesil Kontrolün Anahtarı"
+  ],
+  "h2": [
+   "Ledajans’tan: LED Ekranlarda Akıllı Kontrolün Yeni Dönemi",
+   "Colorlight A35’in LED Ekran Kullanımındaki Öne Çıkan Özellikleri",
+   "Ledajans Neden A35 Kullanıyor?",
+   "Sonuç: LED Ekran Yönetiminde Güvenilir Bir Çözüm",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

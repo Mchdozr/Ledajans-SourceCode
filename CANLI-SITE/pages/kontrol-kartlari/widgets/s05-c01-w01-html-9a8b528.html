@@ -1,0 +1,619 @@
+<style>
+    .control-cards-tables-wrapper {
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .control-cards-models-menu { order: 1; }
+    .control-cards-table-section { order: 2; }
+    
+    @media (min-width: 640px) {
+      .control-cards-tables-wrapper { margin-bottom: 2.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-tables-wrapper { margin-bottom: 3rem; }
+    }
+    
+    .control-cards-tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .control-cards-tables-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .control-cards-models-menu { width: 100%; }
+    @media (min-width: 1024px) {
+      .control-cards-models-menu {
+        width: auto;
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+      }
+    }
+    
+    .control-cards-models-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-card { padding: 2rem; }
+    }
+    
+    .control-cards-models-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-title { font-size: 1.25rem; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    }
+    
+    .control-cards-models-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) { .control-cards-models-nav { gap: 0.75rem; } }
+    
+    .control-cards-model-button {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.75rem;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    @media (min-width: 640px) {
+      .control-cards-model-button { padding: 1rem 1.5rem; border-radius: 1rem; font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-model-button { font-size: 1rem; }
+    }
+    
+    .control-cards-model-button.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .control-cards-model-button:not(.active) { color: #374151; }
+    .control-cards-model-button:not(.active):hover {
+      background: #f9fafb;
+      color: #F46F2C;
+    }
+    
+    .control-cards-table-section { width: 100%; min-width: 0; }
+    
+    .control-cards-table-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-card { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-table-card { padding: 3rem; }
+    }
+    
+    .control-cards-downloads {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-downloads { margin-bottom: 2rem; } }
+    @media (min-width: 768px) { .control-cards-downloads { margin-bottom: 2.5rem; } }
+    
+    .control-cards-download-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #F46F2C;
+      color: white;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-download-link { gap: 0.75rem; padding: 1rem 2rem; border-radius: 1rem; font-size: 0.875rem; width: auto; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-download-link { padding: 1.25rem 2.5rem; font-size: 1rem; }
+    }
+    .control-cards-download-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      color: white;
+    }
+    
+    .control-cards-download-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) { .control-cards-download-icon { width: 1rem; height: 1rem; } }
+    @media (min-width: 768px) { .control-cards-download-icon { width: 1.25rem; height: 1.25rem; } }
+    
+    .control-cards-table-container {
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 600px;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-container {
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+    }
+    
+    .control-cards-table-wrapper { min-width: 100%; display: inline-block; }
+    @media (min-width: 768px) { .control-cards-table-wrapper { display: block; } }
+    
+    .control-cards-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      min-width: 600px;
+    }
+    @media (min-width: 640px) { .control-cards-table { font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table { font-size: 1rem; min-width: 0; } }
+    
+    .control-cards-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f9fafb;
+    }
+    .control-cards-table thead tr { background: #f9fafb; }
+    .control-cards-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    @media (min-width: 640px) { .control-cards-table th { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table th { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      color: #374151;
+      font-size: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-table td { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table td { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table-hidden { display: none; }
+    
+    .control-cards-section-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 2rem 0;
+    }
+    @media (min-width: 768px) {
+      .control-cards-section-title {
+        font-size: 2.25rem;
+        padding-left: 23rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-section-title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .control-cards-table h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 2rem 0 1rem 0;
+      padding-top: 1rem;
+      border-top: 2px solid #e5e7eb;
+    }
+    .control-cards-table h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table h3 { font-size: 1.5rem; }
+    }
+    
+    .control-cards-table h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #374151;
+      margin: 1.5rem 0 0.75rem 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table h4 { font-size: 1.25rem; }
+    }
+    </style>
+    
+    <div class="control-cards-tables-wrapper" id="nova-control-cards-wrapper">
+      <h2 class="control-cards-section-title">NOVA Serisi Kontrol Kartları</h2>
+      <div class="control-cards-tables-container">
+        <div class="control-cards-models-menu">
+          <div class="control-cards-models-card">
+            <h3 class="control-cards-models-title">Modeller</h3>
+            <nav class="control-cards-models-nav">
+              <button class="control-cards-model-button active" data-model="vx600" onclick="showNovaTable('vx600')">VX600</button>
+              <button class="control-cards-model-button" data-model="vx1000" onclick="showNovaTable('vx1000')">VX1000</button>
+              <button class="control-cards-model-button" data-model="tb40" onclick="showNovaTable('tb40')">TB40</button>
+              <button class="control-cards-model-button" data-model="tb60" onclick="showNovaTable('tb60')">TB60</button>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="control-cards-table-section">
+          <!-- VX600 -->
+          <div id="control-cards-table-vx600" class="control-cards-table-card">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=18JmeIoGR1LmMoG6kDD3skFXORFn_j5lM" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VX600 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Alan</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>LCD ekran</td><td>Cihaz durumunu, menüleri, alt menüleri ve mesajları görüntüler.</td></tr>
+                    <tr><td>2</td><td>Kadran</td><td>- Menü öğesini seçmek veya parametre değerini ayarlamak için kadranı döndürün.<br>- Ayarı veya işlemi onaylamak için kadranı basın.</td></tr>
+                    <tr><td>3</td><td>ESC butonu</td><td>Mevcut menüden çıkmak veya bir işlemi iptal etmek için.</td></tr>
+                    <tr><td>4</td><td>Kontrol alanı</td><td>Bir katmanı açma veya kapama (ana katman ve PIP katmanları) ve katman durumunu gösterir.<br>SCALE: Tam ekran işlevi için kısayol tuşu.</td></tr>
+                    <tr><td>5</td><td>Giriş kaynağı butonları</td><td>Giriş kaynağı durumunu gösterir ve katman giriş kaynağını değiştirir.</td></tr>
+                    <tr><td>6</td><td>Kısayol işlev butonları</td><td>PRESET: Ön ayar ayarları menüsüne erişim.<br>TEST: Test deseni menüsüne erişim.<br>Freeze: Çıktı görüntüsünü dondurur.<br>FN: Özelleştirilebilir bir düğme.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Giriş Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>3G-SDI</td><td>1</td><td>- ST-424 (3G), ST-292 (HD) ve ST-259 (SD) standart video girişlerini destekler.<br>- Maksimum giriş çözünürlüğü: 1920×1080@60Hz.<br>- Alan ayrıştırma işlemi desteklenir.<br>- 3G-SDI döngü çıkışı desteklenir.<br>- Giriş çözünürlüğü ve bit derinliği ayarlarını desteklemez.</td></tr>
+                    <tr><td>HDMI 1.3</td><td>2</td><td>- Maksimum giriş çözünürlüğü: 1920×1200@60Hz.<br>- HDCP 1.4 uyumlu.<br>- Özel çözünürlükleri destekler.<br>- HDMI 1.3-1'de döngü çıkışı desteklenir.<br>- Dikey tarama sinyali girişlerini desteklemez.</td></tr>
+                    <tr><td>DVI</td><td>1</td><td>- Maksimum giriş çözünürlüğü: 1920×1200@60Hz.<br>- HDCP 1.4 uyumlu.<br>- Özel çözünürlükleri destekler.<br>- DVI'de döngü çıkışı desteklenir.<br>- Dikey tarama sinyali girişlerini desteklemez.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Çıkış Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>Ethernet portları</td><td>6</td><td>Gigabit Ethernet portları.<br>- Maksimum yükleme kapasitesi: 3.9 milyon piksel.<br>- Maksimum genişlik: 10,240 piksel.<br>- Maksimum yükseklik: 8192 piksel.<br>Ethernet portları 1 ve 2 ses çıkışını destekler.</td></tr>
+                    <tr><td>HDMI 1.3</td><td>1</td><td>- Monitör ve video çıkış modlarını destekler.<br>- Çıkış çözünürlüğü ayarlanabilir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Optik Fiber Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>OPT</td><td>2</td><td>OPT 1: Video girişi veya çıkışı için kendi kendine uyum sağlayan.<br>OPT 2: Sadece çıkış için, kopyalama ve yedekleme modlarıyla.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kontrol Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>ETHERNET</td><td>1</td><td>Kontrol PC'sine veya yönlendiriciye bağlanır.</td></tr>
+                    <tr><td>USB</td><td>2</td><td>USB 2.0 (Tip-B): Kontrol PC'sine veya cihaz kaskad bağlantısı için giriş bağlantısı.<br>USB 2.0 (Tip-A): Cihaz kaskadı için çıkış bağlantısı.</td></tr>
+                    <tr><td>GENLOCK IN-LOOP</td><td>1</td><td>Harici senkronizasyon sinyaline bağlanır.<br>IN: Senkronizasyon sinyalini kabul eder.<br>LOOP: Senkronizasyon sinyalini döngüye alır.</td></tr>
+                    <tr><td>IŞIK SENSÖRÜ</td><td>1</td><td>Ortam parlaklığını toplamak için bir ışık sensörüne bağlanır ve otomatik ekran parlaklığı ayarlamasını sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Teknik Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Güç bağlantısı</td><td>100–240V~, 1.5A, 50/60Hz</td></tr>
+                    <tr><td></td><td>Rated güç tüketimi</td><td>35 W</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>–10°C to 45°C</td></tr>
+                    <tr><td></td><td>Nem</td><td>20% RH to 90% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>–20°C to +70°C</td></tr>
+                    <tr><td></td><td>Nem</td><td>10% RH to 95% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyutlar</td><td>483.6 mm × 351.2 mm × 50.1 mm</td></tr>
+                    <tr><td></td><td>Net Ağırlık</td><td>4 kg</td></tr>
+                    <tr><td>Gürültü Seviyesi</td><td>(25°C/77°F'de tipik)</td><td>45 dB (A)</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Kaynağı Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Giriş Bağlantıları</th><th>Bit Derinliği</th><th>Maks. Giriş Çözünürlüğü</th></tr></thead>
+                  <tbody>
+                    <tr><td>HDMI 1.3</td><td>8-bit RGB 4:4:4</td><td>1920×1200@60Hz (Standart)<br>3840×648@60Hz (Özel)<br>600×3840@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>DVI</td><td>8-bit RGB 4:4:4</td><td>1920×1200@60Hz (Standart)<br>3840×648@60Hz (Özel)<br>600×3840@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>OPT 1</td><td>8-bit RGB 4:4:4</td><td>1920×1200@60Hz (Standart)<br>3840×648@60Hz (Özel)<br>600×3840@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>3G-SDI</td><td>-</td><td>Maksimum giriş çözünürlüğü: 1920×1080@60Hz.<br>- Giriş çözünürlüğü ve bit derinliği ayarlarını desteklemez.<br>- ST-424 (3G), ST-292 (HD) ve ST-259 (SD) standart video girişlerini destekler.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VX1000 -->
+          <div id="control-cards-table-vx1000" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1qzbMwk6ZjoyFZlKkgWfqL6o4v6pKZ3jQ" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VX1000 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Alan</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>LCD ekran</td><td>Cihaz durumunu, menüleri, alt menüleri ve mesajları görüntüler.</td></tr>
+                    <tr><td>2</td><td>Kadran</td><td>- Menü öğesini seçmek veya parametre değerini ayarlamak için kadranı döndürün.<br>- Ayarı veya işlemi onaylamak için kadranı basın.</td></tr>
+                    <tr><td>3</td><td>ESC butonu</td><td>Mevcut menüden çıkmak veya bir işlemi iptal etmek için.</td></tr>
+                    <tr><td>4</td><td>Kontrol alanı</td><td>Bir katmanı açma veya kapama (ana katman ve PIP katmanları) ve katman durumunu gösterir.<br>SCALE: Tam ekran işlevi için kısayol tuşu.</td></tr>
+                    <tr><td>5</td><td>Giriş kaynağı butonları</td><td>Giriş kaynağı durumunu gösterir ve katman giriş kaynağını değiştirir.</td></tr>
+                    <tr><td>6</td><td>Kısayol işlev butonları</td><td>PRESET: Ön ayar ayarları menüsüne erişim.<br>TEST: Test deseni menüsüne erişim.<br>Freeze: Çıktı görüntüsünü dondurur.<br>FN: Özelleştirilebilir bir düğme.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Giriş Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>3G-SDI</td><td>1</td><td>- ST-424 (3G), ST-292 (HD) ve ST-259 (SD) standart video girişlerini destekler.<br>- Maksimum giriş çözünürlüğü: 1920×1080@60Hz.<br>- Alan ayrıştırma işlemi desteklenir.<br>- 3G-SDI döngü çıkışı desteklenir.<br>- Giriş çözünürlüğü ve bit derinliği ayarlarını desteklemez.</td></tr>
+                    <tr><td>HDMI 1.4</td><td>2</td><td>- Maksimum giriş çözünürlüğü: 3840×1080@60Hz veya 3840×2160@30Hz.<br>- HDCP 1.4 uyumlu.<br>- İki HDMI 1.4 girişinin mozaiklenmesi desteklenir.<br>- Özel çözünürlükler desteklenir.<br>- HDMI 1.4 1'de döngü çıkışı desteklenir.<br>- Dikey tarama sinyali girişlerini desteklemez.</td></tr>
+                    <tr><td>DVI (HDMI 1.4)</td><td>2</td><td>- Maksimum giriş çözünürlüğü: 3840×1080@60Hz veya 3840×2160@30Hz.<br>- HDCP 1.4 uyumlu.<br>- Özel çözünürlükler desteklenir.<br>- İki DVI girişinin mozaiklenmesi desteklenir.<br>- DVI 1'de döngü çıkışı desteklenir.<br>- Dikey tarama sinyali girişlerini desteklemez.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Çıkış Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>Ethernet portları</td><td>10</td><td>Gigabit Ethernet portları.<br>- Maksimum yükleme kapasitesi: 6.5 milyon piksel.<br>- Maksimum genişlik: 10,240 piksel.<br>- Maksimum yükseklik: 8192 piksel.<br>Ethernet portları 1 ve 2 ses çıkışını destekler.</td></tr>
+                    <tr><td>HDMI 1.3</td><td>1</td><td>- Monitör ve video çıkış modlarını destekler.<br>- Çıkış çözünürlüğü ayarlanabilir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Optik Fiber Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>OPT</td><td>2</td><td>10G optik fiber portları.<br>OPT 1: Video girişi veya çıkışı için kendi kendine uyum sağlayan.<br>OPT 2: Sadece çıkış için, kopyalama ve yedekleme modlarıyla.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kontrol Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Bağlantı</th><th>Adet</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>ETHERNET</td><td>1</td><td>Kontrol PC'sine veya yönlendiriciye bağlanır.</td></tr>
+                    <tr><td>USB</td><td>2</td><td>USB 2.0 (Tip-B): Kontrol PC'sine veya cihaz kaskad bağlantısı için giriş bağlantısı.<br>USB 2.0 (Tip-A): Cihaz kaskadı için çıkış bağlantısı.</td></tr>
+                    <tr><td>GENLOCK IN-LOOP</td><td>1</td><td>Harici senkronizasyon sinyaline bağlanır.<br>Bi-level ve tri-level sinyalleri kabul eder.<br>IN: Senkronizasyon sinyalini kabul eder.<br>LOOP: Senkronizasyon sinyalini döngüye alır.</td></tr>
+                    <tr><td>IŞIK SENSÖRÜ</td><td>1</td><td>Ortam parlaklığını toplamak için bir ışık sensörüne bağlanır ve otomatik ekran parlaklığı ayarlamasını sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Teknik Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Güç bağlantısı</td><td>100–240V~, 1.5A, 50/60Hz</td></tr>
+                    <tr><td></td><td>Rated güç tüketimi</td><td>35 W</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>0°C to 45°C</td></tr>
+                    <tr><td></td><td>Nem</td><td>20% RH to 90% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>–20°C to +70°C</td></tr>
+                    <tr><td></td><td>Nem</td><td>10% RH to 95% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyutlar</td><td>483.6 mm × 351.2 mm × 50.1 mm</td></tr>
+                    <tr><td></td><td>Net Ağırlık</td><td>4 kg</td></tr>
+                    <tr><td>Gürültü Seviyesi</td><td>(25°C/77°F'de tipik)</td><td>45 dB (A)</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Kaynağı Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Giriş Bağlantıları</th><th>Bit Derinliği</th><th>Maks. Giriş Çözünürlüğü</th></tr></thead>
+                  <tbody>
+                    <tr><td>HDMI 1.4</td><td>8-bit RGB 4:4:4</td><td>3840×1080@60Hz (Standart)<br>4092×1136@60Hz (Özel)<br>4096×1080@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>DVI (HDMI 1.4)</td><td>8-bit RGB 4:4:4</td><td>3840×1080@60Hz (Standart)<br>4092×1136@60Hz (Özel)<br>4096×1080@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>OPT 1</td><td>8-bit RGB 4:4:4</td><td>3840×1080@60Hz (Standart)<br>4092×1136@60Hz (Özel)<br>4096×1080@60Hz (Zorunlu)<br>YCbCr 4:4:4<br>YCbCr 4:2:2<br>YCbCr 4:2:0 desteklenmiyor.</td></tr>
+                    <tr><td>3G-SDI</td><td>-</td><td>Maksimum giriş çözünürlüğü: 1920×1080@60Hz.<br>- Giriş çözünürlüğü ve bit derinliği ayarlarını desteklemez.<br>- ST-424 (3G), ST-292 (HD) ve ST-259 (SD) standart video girişlerini destekler.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- TB40 -->
+          <div id="control-cards-table-tb40" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/Taurus-Series-Multimedia-Player-TB40-Specifications-V1.0.12.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>TB40 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>TB40 Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th></tr></thead>
+                  <tbody>
+                    <tr><td>1) Uzaktan yayımlama oynatma programı</td></tr>
+                    <tr><td>2) Mevcut oynatma bilgilerini uzaktan İzleme</td></tr>
+                    <tr><td>3) Uzaktan kumanda güç kaynağı</td></tr>
+                    <tr><td>4) Zaman bölümüne göre veya tarih, hafta ve saate göre oynatma</td></tr>
+                    <tr><td>5) Kendinden uyarlanabilir pencere ekranı</td></tr>
+                    <tr><td>6) Çok işlemcili senkron ekran</td></tr>
+                    <tr><td>7) Destek video, resim, metin, hava, saat, geri sayım, flash (sürüm 7 ve üzeri geçici olarak desteklenmez), word, excel, txt vb. gibi medya formatlarını destekler</td></tr>
+                    <tr><td>8) Destek acil insert oynatmak, anında tebliğ</td></tr>
+                    <tr><td>9) Kayıttan çalma günlüğünü uzaktan yönetme</td></tr>
+                    <tr><td>10) U disk dışa aktarma ve ekle-oynat</td></tr>
+                    <tr><td>11) Uygulama yazılımının ve donanım programlarının uzaktan yükseltilmesini destekler</td></tr>
+                    <tr><td>12) Esnek yükleme kapasitesi: 512×1024, 960×600, 800×700, 1024×576,1520×384,2048×256,704×800, 1120×500, 904×640</td></tr>
+                    <tr><td>13) Tam ölçekli çip desteği: Çeşitli çipleri destekleyebilir</td></tr>
+                    <tr><td>14) Tam renkli statik 32 tarama, gerçek piksel / sanal piksel desteği</td></tr>
+                    <tr><td>15) Alan frekansı 60 Hz</td></tr>
+                    <tr><td>16) Gri seviyesi ayarlanabilir ve maksimum 16 bit 65536 seviyesini destekler</td></tr>
+                    <tr><td>17) Yenileme frekansı: Tarama ekranı 3840 Hz elde edebilir ve statik ekran 6000 Hz elde edebilir</td></tr>
+                    <tr><td>18) Destek parlaklık düzeltme ve renk düzeltmesi</td></tr>
+                    <tr><td>19) MBI5036, MBI5034, MBI5039, DM13H'nin açık-kısa testini destekler</td></tr>
+                    <tr><td>20) MON 300'ün tüm izleme durumlarını destekler (çalışma durumu, sıcaklık, nem, duman, anahtarlama güç kaynağı voltajı, fan hızı ve her dolabın açık açık tek lamba izlenmesi)</td></tr>
+                    <tr><td>21) Yerleşik sıcaklık ve voltaj testi</td></tr>
+                    <tr><td>22) Destek (optik prob NS048C ile) otomatik parlaklık ayarı</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- TB60 -->
+          <div id="control-cards-table-tb60" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/Taurus-Series-Multimedia-Player-TB60-Specifications-V1.0.2.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>TB60 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>SWITCH</td><td>Senkron ve asenkron modlar arasında geçiş yapar. Açık durumda: Senkron mod, kapalı durumda: Asenkron mod.</td></tr>
+                    <tr><td>SIM KART</td><td>SIM kart yuvası, kullanıcıların SIM kartı yanlış yönlendirmeden takmasını önleyebilir.</td></tr>
+                    <tr><td>RESET</td><td>Fabrika ayarlarını sıfırlama düğmesi. Bu düğmeye 5 saniye basılı tutarak ürünü fabrika ayarlarına sıfırlayın.</td></tr>
+                    <tr><td>USB</td><td>USB (Tip B) bağlantı noktası. İçerik yayını ve ekran kontrolü için kontrol bilgisayarıyla bağlantı sağlar.</td></tr>
+                    <tr><td>LED OUT</td><td>Gigabit Ethernet çıkışları.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>SENSÖR</td><td>Parlaklık sensörleri veya sıcaklık ve nem sensörleri bağlamak için. RF anten bağlantısı (gelecek güncellemelerde mevcut olacak).</td></tr>
+                    <tr><td>HDMI</td><td>1x HDMI 1.3 ÇIKışı - HDMI döngü desteği - Maksimum çıkış çözünürlüğü: Piksel saati 153 MHz'i geçemez. - Maksimum çıkış: 1920×1200@60Hz - HDCP 1.4 uyumlu - Dikey tarama sinyali çıkışını desteklemez - Asenkron modda, çıkış çözünürlükleri 400×4096@60Hz ve 480×4096@60Hz destekler. - Özel çözünürlükleri destekler.<br>1x HDMI 1.3 GİRİŞİ - Maksimum giriş çözünürlüğü: Piksel saati 153 MHz'i geçemez. - Maksimum giriş: 1920×1200@60Hz - HDCP 1.4 uyumlu - Dikey tarama sinyali girişini desteklemez - Özel çözünürlükleri destekler.</td></tr>
+                    <tr><td>WiFi</td><td>Wi-Fi anten bağlantısı (2.4 GHz Wi-Fi desteklenir). Wi-Fi AP ve Wi-Fi Sta arasında geçiş desteği sağlar.</td></tr>
+                    <tr><td>ETHERNET</td><td>Gigabit Ethernet portu. İçerik yayını ve ekran kontrolü için kontrol bilgisayarı, yerel alan ağı veya genel ağa bağlanır.</td></tr>
+                    <tr><td>COM 2</td><td>GPS anten bağlantısı.</td></tr>
+                    <tr><td>USB 3.0</td><td>USB 3.0 (Tip A) bağlantı noktası. USB oynatma, yazılım güncellemesi ve depolama genişletme için olanak tanır.</td></tr>
+                    <tr><td>COM 1</td><td>4G anten bağlantısı.</td></tr>
+                    <tr><td>AUDIO OUT</td><td>Ses çıkış bağlantısı. OMTP kulaklıkları bağlayabilirsiniz.</td></tr>
+                    <tr><td>100-240V~, 50/60Hz, 0.6A</td><td>Güç girişi bağlantısı.</td></tr>
+                    <tr><td>ON/OFF</td><td>Güç anahtarı.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Teknik Özellikler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Giriş Gücü</td><td>100-240V~, 50/60Hz, 0.6A</td></tr>
+                    <tr><td></td><td>Maksimum Güç Tüketimi</td><td>18 W</td></tr>
+                    <tr><td>Depolama Kapasitesi</td><td>RAM</td><td>1 GB</td></tr>
+                    <tr><td></td><td>Dahili Depolama</td><td>32 GB</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>–20ºC to +60ºC</td></tr>
+                    <tr><td></td><td>Nem</td><td>0% RH to 80% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>–40°C to +80°C</td></tr>
+                    <tr><td></td><td>Nem</td><td>0% RH to 80% RH, yoğunlaşmayan</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyutlar</td><td>274.3 mm × 139.0 mm × 40.0 mm</td></tr>
+                    <tr><td></td><td>Net Ağırlık</td><td>1230.4 g</td></tr>
+                    <tr><td></td><td>Brüt Ağırlık</td><td>1650.0 g</td></tr>
+                    <tr><td>IP Sınıfı</td><td>IP20</td><td></td></tr>
+                  </tbody>
+                </table>
+                <h3>Medya Kodlama Özellikleri - Görüntü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Codec</th><th>Çözünürlük</th><th>Format</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>JFIF dosya formatı 1.02</td><td>96×32 piksel ile 817×8176 piksel</td><td>JPG, JPEG</td><td>Dikey tarama desteği yok, SRGB JPEG desteği var, Adobe RGB JPEG desteği var</td></tr>
+                    <tr><td>BMP</td><td>Kısıtlama yok</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>Kısıtlama yok</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>Kısıtlama yok</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>Kısıtlama yok</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Medya Kodlama Özellikleri - Video</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Codec</th><th>Çözünürlük</th><th>Maksimum Kare Hızı</th><th>Maksimum Bit Hızı (İdeal Durum)</th><th>Format</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>80Mbps</td><td>DAT, MPG, VOB, TS</td><td>Alan kodlamayı destekler</td></tr>
+                    <tr><td>MPEG4</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>38.4Mbps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS MPEG4 v1/v2/v3, GMC'yi desteklemiyor</td></tr>
+                    <tr><td>H.264</td><td>48×48 piksel ile 4096×2304 piksel</td><td>2304p@60fps</td><td>80Mbps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan kodlamayı ve MBAFF desteğini destekler</td></tr>
+                    <tr><td>H.264 MVC</td><td>48×48 piksel ile 4096×2304 piksel</td><td>2304p@60fps</td><td>100Mbps</td><td>MKV, TS</td><td>Sadece Stereo Yüksek Profil desteklenir</td></tr>
+                    <tr><td>H.265/HEVC</td><td>64×64 piksel ile 4096×2304 piksel</td><td>2304p@60fps</td><td>100Mbps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil, Karo ve Dilim desteği</td></tr>
+                    <tr><td>VP8</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>38.4Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>VP9</td><td>64×64 piksel ile 4096×2304 piksel</td><td>60fps</td><td>80Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>SQCIF (128×96), QCIF (176×144), CIF (352×288), 4CIF (704×576)</td><td>30fps</td><td>38.4Mbps</td><td>3GP, MOV, MP4</td><td>H.263+'yi desteklemiyor</td></tr>
+                    <tr><td>MJPEG</td><td>48×48 piksel ile 1920×1088 piksel</td><td>60fps</td><td>60Mbps</td><td>AVI</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    function showNovaTable(model) {
+      const wrapper = document.getElementById('nova-control-cards-wrapper');
+      if (!wrapper) return;
+      
+      wrapper.querySelectorAll('.control-cards-table-card').forEach(card => {
+        card.classList.add('control-cards-table-hidden');
+      });
+      
+      wrapper.querySelectorAll('.control-cards-model-button').forEach(button => {
+        button.classList.remove('active');
+      });
+      
+      const targetCard = wrapper.querySelector(`#control-cards-table-${model}`);
+      const targetButton = wrapper.querySelector(`[data-model="${model}"]`);
+      
+      if (targetCard) {
+        targetCard.classList.remove('control-cards-table-hidden');
+      }
+      
+      if (targetButton) {
+        targetButton.classList.add('active');
+      }
+    }
+    </script>
+    

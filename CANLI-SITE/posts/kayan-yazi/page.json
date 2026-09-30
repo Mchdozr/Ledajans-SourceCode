@@ -1,0 +1,62 @@
+{
+ "id": 3077,
+ "type": "post",
+ "title": "Kayan Yazı",
+ "slug": "kayan-yazi",
+ "link": "https://ledajans.com/kayan-yazi/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T19:08:58",
+ "modified": "2026-09-21T16:24:38",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "Kayan Yazı | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Kayan Yazı | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/kayan-yazi/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2024/08/p10-full-out-gkgd.jpg",
+  "h1": [
+   "Kayan Yazı",
+   "Kayan Yazı LED Tabela ile İşletmenizi Öne Çıkarın"
+  ],
+  "h2": [
+   "Kayan Yazı Nedir?",
+   "Kayan Yazı Sistemlerinde Kullanılan Panel ve Donanımlar",
+   "Kayan Yazı Yazılımı ve Uzaktan Yönetim",
+   "Kayan Yazı LED Tabela Kullanım Alanları",
+   "Kayan Yazı Sistemlerinde Bakım ve Servis İpuçları",
+   "Neden Kayan Yazı Projelerinde Ledajans ile Çalışmalısınız?",
+   "Sonuç: Kayan Yazı ile Dinamik, Güncellenebilir ve Dikkat Çekici İletişim",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

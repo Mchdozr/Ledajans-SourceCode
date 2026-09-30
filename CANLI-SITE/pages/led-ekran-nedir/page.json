@@ -1,0 +1,74 @@
+{
+ "id": 4963,
+ "type": "page",
+ "title": "LED Ekran Nedir? Kapsamlı Rehber",
+ "slug": "led-ekran-nedir",
+ "link": "https://ledajans.com/led-ekran-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:06",
+ "modified": "2026-09-23T10:00:53",
+ "excerpt": "LED ekran nedir? LED ekran türleri (SMD, COB, GOB, DIP), iç mekan ve dış mekan farkları, kullanım alanları, seçim kriterleri, avantajları ve fiyat rehberi. LEDAJANS 2026 kapsamlı LED ekran rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran Nedir? Kapsamlı Rehber | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Nedir? Kapsamlı Rehber | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-ekran-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/05/led-ekran-nedir-kapak.webp",
+  "h1": [
+   "LED Ekran Nedir?"
+  ],
+  "h2": [
+   "📌 LED Ekran Nedir? Türleri, Kullanım Alanları ve Seçim Rehberi (2026)",
+   "📑 İçindekiler",
+   "🔧 LED Ekran Nedir? Tanım ve Tarihçe",
+   "⚙️ LED Ekran Nasıl Çalışır?",
+   "🏗 LED Ekran Türleri (SMD, COB, GOB, DIP)",
+   "🎛 İç Mekan vs Dış Mekan LED Ekran Farkları",
+   "📍 LED Ekran Kullanım Alanları",
+   "⚙️ LED Ekran Seçerken Dikkat Edilecekler",
+   "🚀 LED Ekran Avantajları",
+   "🎛 LED Ekran vs LCD / Projeksiyon Karşılaştırma",
+   "🏗 Neden LEDAJANS?",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Organization",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "4963:page",
+   "75:gva__template"
+  ]
+ }
+}

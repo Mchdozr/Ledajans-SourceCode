@@ -1,0 +1,65 @@
+{
+ "id": 4984,
+ "type": "page",
+ "title": "SMD LED Nedir?",
+ "slug": "smd-led-nedir",
+ "link": "https://ledajans.com/smd-led-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:14",
+ "modified": "2026-09-23T10:29:43",
+ "excerpt": "SMD LED nedir: Surface Mount Device teknolojisi, avantajları, COB ile farkı ve LED ekranlardaki kullanımı; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "SMD LED Nedir?",
+  "rank_math_description": "SMD LED nedir: Surface Mount Device teknolojisi, avantajları, COB ile farkı ve LED ekranlardaki kullanımı; LEDAJANS teknik sözlük.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "SMD LED Nedir?",
+  "description": "SMD LED nedir: Surface Mount Device teknolojisi, avantajları, COB ile farkı ve LED ekranlardaki kullanımı; LEDAJANS teknik sözlük.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/smd-led-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 SMD LED Nedir? Teknoloji, Avantajlar ve Karşılaştırma",
+   "📑 İçindekiler",
+   "🔧 SMD LED teknik tanımı",
+   "⚙️ Çalışma prensibi",
+   "📍 SMD paket boyutları",
+   "🚀 Avantajları",
+   "🎛 SMD ile COB farkı",
+   "📍 Kullanım alanları",
+   "🔧 Seçim rehberi",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

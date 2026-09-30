@@ -1,0 +1,477 @@
+<!-- LEDAJANS Blog - Sayfa Üstü Hero/Banner - COLORLIGHT -->
+
+<style>
+    .ledajans-blog-hero {<br />
+      position: relative;<br />
+      height: 200px;<br />
+      background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1920&fm=webp&q=75'); /* aynı görsel */<br />
+      background-size: cover;<br />
+      background-position: center;<br />
+      background-repeat: no-repeat;<br />
+    }<br />
+    @media (min-width: 640px) { .ledajans-blog-hero { height: 250px; } }<br />
+    @media (min-width: 768px) { .ledajans-blog-hero { height: 300px; } }</p>
+<p>    .ledajans-blog-hero-overlay {<br />
+      position: absolute;<br />
+      inset: 0;<br />
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));<br />
+    }</p>
+<p>    .ledajans-blog-hero-inner {<br />
+      position: relative;<br />
+      height: 100%;<br />
+      max-width: 80rem;<br />
+      margin: 0 auto;<br />
+      padding: 0 1rem;<br />
+      display: flex;<br />
+      align-items: center;<br />
+    }<br />
+    @media (min-width: 640px) { .ledajans-blog-hero-inner { padding: 0 1.5rem; } }<br />
+    @media (min-width: 1024px) { .ledajans-blog-hero-inner { padding: 0 2rem; } }</p>
+<p>    .ledajans-blog-hero-content {<br />
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;<br />
+    }</p>
+<p>    .ledajans-blog-hero-title {<br />
+      font-size: 2rem;<br />
+      font-weight: 700;<br />
+      color: #ffffff;<br />
+      margin: 0;<br />
+      letter-spacing: -0.025em;<br />
+      line-height: 1.2;<br />
+    }<br />
+    @media (min-width: 640px) { .ledajans-blog-hero-title { font-size: 2.5rem; } }<br />
+    @media (min-width: 768px) { .ledajans-blog-hero-title { font-size: 3rem; } }</p>
+<p>    .ledajans-blog-hero-subtitle {<br />
+      display: block;<br />
+      margin-top: 0.5rem;<br />
+      font-size: 0.875rem;<br />
+      font-weight: 400;<br />
+      color: #d1d5db;<br />
+      letter-spacing: -0.01em;<br />
+      line-height: 1.5;<br />
+    }<br />
+    @media (min-width: 640px) { .ledajans-blog-hero-subtitle { font-size: 1rem; } }<br />
+    @media (min-width: 768px) { .ledajans-blog-hero-subtitle { font-size: 1.125rem; } }<br />
+    </style>
+<div class="ledajans-blog-hero" role="img" aria-label="Colorlight LED kontrol yazılımı">
+<div class="ledajans-blog-hero-overlay"></div>
+<div class="ledajans-blog-hero-inner">
+<div class="ledajans-blog-hero-content">
+<h1 class="ledajans-blog-hero-title">COLORLIGHT</h1>
+<span class="ledajans-blog-hero-subtitle" style="color: #f46f2c;">
+Colorlight PlayMaster TR yazılımı , User Manual V1.4 TR kılavuzu ve Colorlight LedSettings V2.2 ile LED ekran kurulum, tarama ve yayın yönetimini hızlı ve güvenli şekilde yönetin.
+</span>
+
+</div>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://ledajans.com/"},
+    {"@type":"ListItem","position":2,"name":"Teknik Destek","item":"https://ledajans.com/teknik-destek-videolari/"},
+    {"@type":"ListItem","position":3,"name":"Colorlight","item":"https://ledajans.com/colorlight/"}
+  ]
+}
+</script>
+<!-- LEDAJANS - Colorlight Görsel Slider (Kesintisiz Sonsuz) -->
+
+<style>
+    .ledajans-colorlight-slider{<br />
+      padding: 2.2rem 0;<br />
+      background: #f9fafb;<br />
+      overflow: hidden;<br />
+      position: relative;<br />
+    }<br />
+    @media (min-width:768px){<br />
+      .ledajans-colorlight-slider{ padding: 3rem 0; }<br />
+    }</p>
+<p>    .ledajans-colorlight-slider::before,<br />
+    .ledajans-colorlight-slider::after{<br />
+      content:"";<br />
+      position:absolute;<br />
+      top:0; bottom:0;<br />
+      width:64px;<br />
+      z-index:2;<br />
+      pointer-events:none;<br />
+    }<br />
+    .ledajans-colorlight-slider::before{<br />
+      left:0;<br />
+      background: linear-gradient(90deg,#f9fafb 0%,rgba(249,250,251,0) 100%);<br />
+    }<br />
+    .ledajans-colorlight-slider::after{<br />
+      right:0;<br />
+      background: linear-gradient(270deg,#f9fafb 0%,rgba(249,250,251,0) 100%);<br />
+    }</p>
+<p>    .ledajans-colorlight-track{<br />
+      display:flex;<br />
+      width:max-content;<br />
+      will-change: transform;<br />
+      animation: ledajans-colorlight-scroll 28s linear infinite;<br />
+    }</p>
+<p>    .ledajans-colorlight-item{<br />
+      flex:0 0 auto;<br />
+      width:220px;<br />
+      height:130px;<br />
+      margin:0 .75rem;<br />
+      border-radius:14px;<br />
+      overflow:hidden;<br />
+      background:#fff;<br />
+      border:1px solid #e5e7eb;<br />
+      box-shadow:0 6px 14px rgba(15,23,42,.06);<br />
+    }<br />
+    @media (min-width:768px){<br />
+      .ledajans-colorlight-item{<br />
+        width:300px;<br />
+        height:170px;<br />
+        margin:0 1rem;<br />
+      }<br />
+    }</p>
+<p>    .ledajans-colorlight-item a{<br />
+      display:block;<br />
+      width:100%;<br />
+      height:100%;<br />
+    }<br />
+    .ledajans-colorlight-item img{<br />
+      width:100%;<br />
+      height:100%;<br />
+      object-fit:cover;<br />
+      display:block;<br />
+      transition:transform .25s ease;<br />
+    }<br />
+    .ledajans-colorlight-item:hover img{ transform:scale(1.03); }</p>
+<p>    /* 3 set olduğu için 1 set kadar kaydırıp başa sarar */<br />
+    @keyframes ledajans-colorlight-scroll{<br />
+      from{ transform:translateX(0); }<br />
+      to{ transform:translateX(-33.333%); }<br />
+    }<br />
+    </style>
+
+<section class="ledajans-colorlight-slider" aria-label="Colorlight görsel slider">
+<div class="ledajans-colorlight-track">
+
+<!-- SET 1 -->
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi" /></a></div>
+<!-- SET 2 -->
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi" /></a></div>
+<!-- SET 3 -->
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png" alt="Colorlight içerik yönetimi görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight önizleme ekranı" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Colorlight web kontrol görseli" /></a></div>
+<div class="ledajans-colorlight-item"><a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi" /></a></div>
+</div>
+</section><!-- LEDAJANS - COLORLIGHT PLAYMASTER TR SAYFASI (3'lü hero: PlayMaster + Manual + Ledsettings) — DOCTYPE/html/body YOK -->
+
+<style>
+    .la-pmtr-page{<br />
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;<br />
+      max-width: 80rem;<br />
+      margin: 0 auto;<br />
+      padding: 2rem 1rem 3rem;<br />
+      color: #1f2937;<br />
+    }<br />
+    @media (min-width:1024px){ .la-pmtr-page{ padding: 2.5rem 2rem 3.5rem; } }</p>
+<p>    .la-pmtr-breadcrumb{<br />
+      margin:1rem 0 1.5rem;<br />
+      font-size:.85rem;<br />
+      color:#6b7280;<br />
+    }<br />
+    .la-pmtr-breadcrumb a{ color:#f46f2c; text-decoration:none; }<br />
+    .la-pmtr-breadcrumb span{ margin:0 .35rem; color:#9ca3af; }</p>
+<p>    .la-pmtr-badge{<br />
+      display:inline-flex; align-items:center;<br />
+      background: rgba(244,111,44,.14);<br />
+      color:#ffd7c3;<br />
+      border:1px solid rgba(244,111,44,.45);<br />
+      padding:.35rem .7rem;<br />
+      border-radius:999px;<br />
+      font-size:.78rem;<br />
+      font-weight:700;<br />
+      letter-spacing:.02em;<br />
+    }</p>
+<p>    /* 3'lü hero grid */<br />
+    .la-pmtr-hero-grid{<br />
+      display:grid;<br />
+      grid-template-columns:1fr;<br />
+      gap:1rem;<br />
+    }<br />
+    @media (min-width:992px){ .la-pmtr-hero-grid{ grid-template-columns:1fr 1fr 1fr; } }</p>
+<p>    .la-pmtr-hero-card{<br />
+      position: relative;<br />
+      border-radius: 18px;<br />
+      overflow: hidden;<br />
+      min-height: 300px;<br />
+      background: #0f172a;<br />
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .20);<br />
+    }<br />
+    .la-pmtr-hero-card-bg{<br />
+      position:absolute; inset:0;<br />
+      background-size: cover;<br />
+      background-position: center;<br />
+    }<br />
+    .la-pmtr-hero-card-bg--playmaster{<br />
+      background-image:<br />
+        linear-gradient(120deg, rgba(15,23,42,.82), rgba(15,23,42,.55)),<br />
+        url("https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png");<br />
+    }<br />
+    .la-pmtr-hero-card-bg--manual{<br />
+      background-image:<br />
+        linear-gradient(120deg, rgba(15,23,42,.84), rgba(15,23,42,.58)),<br />
+        url("https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png");<br />
+    }<br />
+    .la-pmtr-hero-card-bg--ledsettings{<br />
+      background-image:<br />
+        linear-gradient(120deg, rgba(15,23,42,.84), rgba(15,23,42,.58)),<br />
+        url("https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png");<br />
+    }<br />
+    .la-pmtr-hero-card-content{<br />
+      position: relative;<br />
+      z-index: 1;<br />
+      padding: 2rem 1.2rem;<br />
+    }<br />
+    @media (min-width:768px){ .la-pmtr-hero-card-content{ padding: 2.4rem 1.6rem; } }</p>
+<p>    .la-pmtr-title{<br />
+      margin:.8rem 0 .6rem;<br />
+      color:#fff;<br />
+      font-size: clamp(1.25rem, 2.8vw, 2rem);<br />
+      font-weight:800;<br />
+      line-height:1.15;<br />
+      letter-spacing:-.02em;<br />
+    }<br />
+  .la-pmtr-subtitle{<br />
+    margin:0;<br />
+    color:#dbe4f0;<br />
+    font-size: clamp(.85rem, 1.6vw, 1rem);<br />
+    line-height:1.68;<br />
+    max-width: 56rem;<br />
+    }<br />
+    /* Hero içi metin linki: turuncu → hover beyaz */<br />
+    a.la-pmtr-hero-textlink {<br />
+      color: #f46f2c !important;<br />
+      text-decoration: none;<br />
+      font-weight: 600;<br />
+      transition: color 0.2s ease;<br />
+    }<br />
+    a.la-pmtr-hero-textlink:hover {<br />
+      color: #ffffff !important;<br />
+    }<br />
+    .la-pmtr-actions{<br />
+      margin-top:1.1rem;<br />
+      display:flex;<br />
+      flex-wrap:wrap;<br />
+      gap:.65rem;<br />
+    }<br />
+    .la-pmtr-btn{<br />
+      text-decoration:none;<br />
+      display:inline-flex; align-items:center; gap:.45rem;<br />
+      padding:.72rem 1rem;<br />
+      border-radius:10px;<br />
+      font-size:.88rem;<br />
+      font-weight:700;<br />
+      transition:.2s ease;<br />
+    }<br />
+    .la-pmtr-btn--primary{<br />
+      background:#f46f2c;<br />
+      color:#fff !important;<br />
+    }<br />
+    .la-pmtr-btn--primary:hover{ background:#e35f1d; color:#fff; transform: translateY(-1px); }<br />
+    .la-pmtr-btn--secondary{<br />
+      background:rgba(255,255,255,.12);<br />
+      color:#fff !important;<br />
+      border:1px solid rgba(255,255,255,.25);<br />
+    }<br />
+    .la-pmtr-btn--secondary:hover{ background:rgba(255,255,255,.2); color:#fff; }</p>
+<p>    .la-pmtr-section-title{<br />
+      margin: 2rem 0 .8rem;<br />
+      font-size: clamp(1.3rem,2.3vw,1.75rem);<br />
+      font-weight:800;<br />
+      color:#1a1a2e;<br />
+      line-height:1.2;<br />
+    }<br />
+    .la-pmtr-section-title::after{<br />
+      content:"";<br />
+      display:block;<br />
+      width:46px; height:4px;<br />
+      margin-top:.5rem;<br />
+      background:#f46f2c;<br />
+      border-radius:999px;<br />
+    }</p>
+<p>    .la-pmtr-grid{<br />
+      display:grid;<br />
+      grid-template-columns:1fr;<br />
+      gap:1rem;<br />
+    }<br />
+    @media (min-width:768px){ .la-pmtr-grid{ grid-template-columns:repeat(3,1fr); } }</p>
+<p>    .la-pmtr-card{<br />
+      border:1px solid #e5e7eb;<br />
+      border-radius:14px;<br />
+      background:#fff;<br />
+      overflow:hidden;<br />
+      box-shadow:0 6px 18px rgba(15,23,42,.05);<br />
+    }<br />
+    .la-pmtr-card img{<br />
+      width:100%;<br />
+      aspect-ratio:16/9;<br />
+      object-fit:cover;<br />
+      display:block;<br />
+    }<br />
+    .la-pmtr-card-body{ padding:.95rem 1rem 1rem; }<br />
+    .la-pmtr-card h3{<br />
+      margin:.05rem 0 .35rem;<br />
+      font-size:1.02rem;<br />
+      line-height:1.35;<br />
+      color:#1a1a2e;<br />
+    }<br />
+    .la-pmtr-card p{<br />
+      margin:0;<br />
+      color:#4b5563;<br />
+      font-size:.9rem;<br />
+      line-height:1.6;<br />
+    }</p>
+<p>    .la-pmtr-downloads{<br />
+      margin-top:1rem;<br />
+      display:grid;<br />
+      grid-template-columns:1fr;<br />
+      gap:.8rem;<br />
+    }<br />
+    @media (min-width:768px){ .la-pmtr-downloads{ grid-template-columns:repeat(3,1fr); } }</p>
+<p>    .la-pmtr-dl{<br />
+      border:1px solid #e5e7eb;<br />
+      border-radius:12px;<br />
+      background:linear-gradient(180deg,#ffffff,#fafafa);<br />
+      padding:1rem;<br />
+    }<br />
+    .la-pmtr-dl-title{<br />
+      margin:0 0 .4rem;<br />
+      font-size:1rem;<br />
+      color:#1a1a2e;<br />
+      font-weight:700;<br />
+    }<br />
+    .la-pmtr-dl-desc{<br />
+      margin:0 0 .75rem;<br />
+      font-size:.9rem;<br />
+      color:#6b7280;<br />
+      line-height:1.55;<br />
+    }<br />
+    .la-pmtr-dl a{<br />
+      text-decoration:none;<br />
+      display:inline-flex; align-items:center; gap:.45rem;<br />
+      background:#f46f2c;<br />
+      color:#fff;<br />
+      padding:.62rem .95rem;<br />
+      border-radius:9px;<br />
+      font-size:.85rem;<br />
+      font-weight:700;<br />
+    }<br />
+    .la-pmtr-dl a:hover{ background:#e35f1d; color:#fff; }</p>
+<p>    .la-pmtr-seo{<br />
+      margin-top:1.2rem;<br />
+      border:1px solid #e5e7eb;<br />
+      border-radius:12px;<br />
+      padding:1rem;<br />
+      background:#f9fafb;<br />
+    }<br />
+    .la-pmtr-seo p{<br />
+      margin:.2rem 0;<br />
+      color:#374151;<br />
+      font-size:.93rem;<br />
+      line-height:1.7;<br />
+    }<br />
+    </style>
+<div class="la-pmtr-page"><nav class="la-pmtr-breadcrumb" aria-label="Sayfa konumu"><a href="https://ledajans.com">Ana Sayfa</a>›
+<a href="https://ledajans.com/teknik-destek-bilgi/">Teknik Destek &amp; Bilgi</a>›
+Colorlight PlayMaster TR</nav><!-- 3'lü hero -->
+<div class="la-pmtr-hero-grid"><section class="la-pmtr-hero-card">
+<div class="la-pmtr-hero-card-bg la-pmtr-hero-card-bg--playmaster" role="img" aria-label="PlayMaster arka plan"></div>
+<div class="la-pmtr-hero-card-content"><span class="la-pmtr-badge">COLORLIGHT YAZILIM DESTEĞİ</span>
+<h2 class="la-pmtr-title">Colorlight PlayMaster TR İndir</h2>
+<p class="la-pmtr-subtitle">LED ekran kurulum, tarama ve yayın yönetimi için güncel <strong>Colorlight PlayMaster TR</strong> dosyaları.
+İçerikte kurulum yazılımı ve Türkçe kullanıcı kılavuzu birlikte sunulmuştur.</p>
+
+<div class="la-pmtr-actions"><a class="la-pmtr-btn la-pmtr-btn--primary" href="https://drive.google.com/uc?export=download&amp;id=1sDr9PZhZX1BdOgp78c5tPs32phQoetUe" target="_blank" rel="noopener noreferrer">
+PlayMaster TR İndir
+</a></div>
+</div>
+</section><section class="la-pmtr-hero-card">
+<div class="la-pmtr-hero-card-bg la-pmtr-hero-card-bg--manual" role="img" aria-label="Kullanım kılavuzu arka plan"></div>
+<div class="la-pmtr-hero-card-content"><span class="la-pmtr-badge">KULLANIM KILAVUZU</span>
+<h2 class="la-pmtr-title">PLAYMASTER User Manual V1.4 TR</h2>
+<p class="la-pmtr-subtitle">Kurulum adımları, tarama ayarları ve kullanım detayları için güncel Türkçe kullanıcı kılavuzunu doğrudan indirebilirsiniz. Ledajans olarak ihtiyacınız olan her şeye sahibiz.</p>
+
+<div class="la-pmtr-actions"><a class="la-pmtr-btn la-pmtr-btn--secondary" href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" download="PlayerMaster-User-Manual-V1.4-TR.pdf">
+User Manual V1.4 TR İndir
+</a></div>
+</div>
+</section><section class="la-pmtr-hero-card">
+<div class="la-pmtr-hero-card-bg la-pmtr-hero-card-bg--ledsettings" role="img" aria-label="Ledsettings arka plan"></div>
+<div class="la-pmtr-hero-card-content"><span class="la-pmtr-badge">COLORLIGHT YAZILIM DESTEĞİ</span>
+<h2 class="la-pmtr-title">Colorlight - Ledsettings İndir</h2>
+<p class="la-pmtr-subtitle">LED ekran yapılandırma ve ayar yönetimi için güncel <strong>Ledsettings</strong> paketini tek tıkla indirebilirsiniz. Sizin için güncel indirme bağlantı ve dosyaları <a class="la-pmtr-hero-textlink" href="https://ledajans.com/program-indir/">Teknik Destek sayfamızda</a> mevcut.</p>
+
+<div class="la-pmtr-actions"><a class="la-pmtr-btn la-pmtr-btn--primary" href="https://drive.google.com/uc?export=download&amp;id=1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD" target="_blank" rel="noopener noreferrer">
+Ledsettings V2.2 İndir
+</a></div>
+</div>
+</section></div>
+<h2 class="la-pmtr-section-title">Öne Çıkan Özellikler</h2>
+<div class="la-pmtr-grid"><article class="la-pmtr-card"><img src="https://ledajans.com/wp-content/uploads/2025/11/11-预监回显形式丰富2_1742955187-e1763458137562.png" alt="Colorlight PlayMaster önizleme ve izleme ekranı" />
+<div class="la-pmtr-card-body">
+<h3>Zengin Önizleme ve İzleme</h3>
+Yayın öncesi ekran içeriğini hızlı doğrulayarak sahada daha güvenli kurulum ve kontrol sağlar.
+
+</div>
+</article><article class="la-pmtr-card"><img src="https://ledajans.com/wp-content/uploads/2025/11/13-Web控制简易配屏2_1742955230-e1763454690539.png" alt="Web kontrol ile kolay LED ekran yapılandırma" />
+<div class="la-pmtr-card-body">
+<h3>Web Kontrol ile Kolay Yapılandırma</h3>
+LED ekran ayarlarını sade bir akışla yapılandırır, sahada zaman kazandırır ve hata oranını düşürür.
+
+</div>
+</article><article class="la-pmtr-card"><img src="https://ledajans.com/wp-content/uploads/2025/11/05-超高画质极致享受2_1742954006.png" alt="Colorlight yüksek görüntü kalitesi" />
+<div class="la-pmtr-card-body">
+<h3>Yüksek Görüntü Kalitesi</h3>
+Doğru tarama ve kontrol parametreleri ile daha stabil, net ve profesyonel LED ekran performansı elde edilir.
+
+</div>
+</article></div>
+<h2 class="la-pmtr-section-title">İndirme Dosyaları</h2>
+<div class="la-pmtr-downloads">
+<div class="la-pmtr-dl">
+<h3 class="la-pmtr-dl-title">COLORLIGHT - PLAYMASTER TR</h3>
+<p class="la-pmtr-dl-desc">LED ekran yapılandırma ve yayın yönetimi için PlayMaster Türkçe indirme paketi.</p>
+<a href="https://drive.google.com/uc?export=download&amp;id=1sDr9PZhZX1BdOgp78c5tPs32phQoetUe" target="_blank" rel="noopener noreferrer">
+Dosyayı İndir
+</a>
+
+</div>
+<div class="la-pmtr-dl">
+<h3 class="la-pmtr-dl-title">PLAYERMASTER User Manual V1.4 TR</h3>
+<p class="la-pmtr-dl-desc">Kurulum adımları, tarama ayarları ve kullanım detayları için Türkçe kullanıcı kılavuzu.</p>
+<a href="https://ledajans.com/wp-content/uploads/2025/03/PlayerMaster-User-Manual-V1.4-TR.pdf" download="PlayerMaster-User-Manual-V1.4-TR.pdf">Kılavuzu İndir</a>
+
+</div>
+<div class="la-pmtr-dl">
+<h3 class="la-pmtr-dl-title">LEDSETTINGS</h3>
+<p class="la-pmtr-dl-desc">LED ekran yapılandırma ve ayar yönetimi için Ledsettings indirme paketi (Google Drive).</p>
+<a href="https://drive.google.com/uc?export=download&amp;id=1tfHaa5BL_iddhBFzyMCsYUXf04nPgJPD" target="_blank" rel="noopener noreferrer">
+Dosyayı İndir
+</a>
+
+</div>
+</div>
+<div class="la-pmtr-seo">
+
+<strong>Colorlight PlayMaster TR</strong>, LED ekran sistemlerinde tarama, ekran eşleme ve yayın kontrol süreçlerini hızlandırmak için kullanılan profesyonel bir yönetim yazılımıdır.
+
+<strong>Ledsettings</strong> ile yapılandırma ve ayar süreçlerini destekleyebilirsiniz. Güncel dosyalar için bu sayfadaki indirme bağlantılarını kullanın.
+
+<a href="https://ledajans.com/colorlight/">Colorlight</a> teknik destek içeriklerine <a href="https://ledajans.com">Ledajans</a> üzerinden ulaşabilir, kurulum sonrası destek için ekibimizle iletişime geçebilirsiniz.
+
+</div>
+</div>

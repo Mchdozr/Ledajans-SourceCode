@@ -1,0 +1,63 @@
+{
+ "id": 195,
+ "type": "page",
+ "title": "Teknik Destek Videoları",
+ "slug": "teknik-destek-videolari",
+ "link": "https://ledajans.com/teknik-destek-videolari/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2023-01-06T03:56:45",
+ "modified": "2026-09-21T16:22:30",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Teknik Destek Videoları | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "Teknik Destek Videoları | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/teknik-destek-videolari/",
+  "og_image": "",
+  "h1": [
+   "Teknik Destek Videoları"
+  ],
+  "h2": [
+   "🔧 LED Ekran Kurulum & Ayarlama",
+   "⚙️ Kontrol Kartı Ayarlama",
+   "🛠️ Arıza Çözüm & Bakım",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "BreadcrumbList",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Person",
+   "VideoObject",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "195:page",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "id": 4965,
+ "type": "page",
+ "title": "LED Screen Installation Rehberi",
+ "slug": "led-ekran-kurulum",
+ "link": "https://ledajans.com/led-ekran-kurulum/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:12",
+ "modified": "2026-09-23T10:32:52",
+ "excerpt": "LED ekran kurulum rehberi: adım adım montaj, kablolama, kontrol sistemi, kalibrasyon ve güvenlik standartları; LEDAJANS profesyonel kurulum kılavuzu.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Screen Installation Rehberi | LEDAJANS",
+  "rank_math_description": "LED Screen Installation Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Screen Installation Rehberi | LEDAJANS",
+  "description": "LED Screen Installation Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-ekran-kurulum/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 LED Ekran Kurulumu: Adım Adım Profesyonel Rehber",
+   "📑 İçindekiler",
+   "🏗 Kurulum Öncesi Planlama",
+   "🔧 Duvar/Cephe Montaj Yöntemleri",
+   "⚙️ Kablolama ve Elektrik Bağlantısı",
+   "🎛 Kontrol Sistemi Kurulumu",
+   "🚀 Kalibrasyon ve Test",
+   "🛡️ Güvenlik ve Standartlar",
+   "📋 Kurulum Sonrası Süreç",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Organization",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

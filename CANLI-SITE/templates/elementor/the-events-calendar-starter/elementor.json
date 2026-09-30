@@ -1,0 +1,254 @@
+[
+ {
+  "id": "4d8f4efa",
+  "elType": "section",
+  "settings": [],
+  "elements": [
+   {
+    "id": "5ebacd06",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100,
+     "_inline_size": null
+    },
+    "elements": [
+     {
+      "id": "63ab6d4a",
+      "elType": "widget",
+      "settings": [],
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_calendar_link"
+     },
+     {
+      "id": "5c4ca066",
+      "elType": "widget",
+      "settings": [],
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_status"
+     },
+     {
+      "id": "75c65b7c",
+      "elType": "widget",
+      "settings": [],
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_title"
+     },
+     {
+      "id": "7b679070",
+      "elType": "widget",
+      "settings": {
+       "show_datetime_year": true,
+       "show_datetime_date": true,
+       "show_datetime_time": true
+      },
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_datetime"
+     },
+     {
+      "id": "680ed4f4",
+      "elType": "widget",
+      "settings": [],
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_cost"
+     },
+     {
+      "id": "7d8adfbe",
+      "elType": "widget",
+      "settings": {
+       "width": {
+        "unit": "%",
+        "size": 100,
+        "sizes": []
+       },
+       "height": {
+        "unit": "px",
+        "size": 650,
+        "sizes": []
+       }
+      },
+      "elements": [],
+      "widgetType": "tec_events_elementor_widget_event_image"
+     },
+     {
+      "id": "191e47b3",
+      "elType": "section",
+      "settings": {
+       "layout": "full_width",
+       "structure": "20",
+       "padding": {
+        "unit": "px",
+        "top": "30",
+        "right": "0",
+        "bottom": "30",
+        "left": "0",
+        "isLinked": false
+       }
+      },
+      "elements": [
+       {
+        "id": "3cd1f412",
+        "elType": "column",
+        "settings": {
+         "_column_size": 50,
+         "_inline_size": null
+        },
+        "elements": [
+         {
+          "id": "52f5067d",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_categories"
+         },
+         {
+          "id": "45f7d26d",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_tags"
+         },
+         {
+          "id": "5681e36c",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_website"
+         }
+        ],
+        "isInner": true
+       },
+       {
+        "id": "550a4396",
+        "elType": "column",
+        "settings": {
+         "_column_size": 50,
+         "_inline_size": null
+        },
+        "elements": [
+         {
+          "id": "6b046395",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_organizer"
+         }
+        ],
+        "isInner": true
+       }
+      ],
+      "isInner": true
+     },
+     {
+      "id": "40077d93",
+      "elType": "section",
+      "settings": {
+       "layout": "full_width",
+       "padding": {
+        "unit": "px",
+        "top": "30",
+        "right": "0",
+        "bottom": "30",
+        "left": "0",
+        "isLinked": false
+       }
+      },
+      "elements": [
+       {
+        "id": "538afad8",
+        "elType": "column",
+        "settings": {
+         "_column_size": 100,
+         "_inline_size": null
+        },
+        "elements": [
+         {
+          "id": "eb9eabf",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_venue"
+         }
+        ],
+        "isInner": true
+       }
+      ],
+      "isInner": true
+     },
+     {
+      "id": "2271a229",
+      "elType": "section",
+      "settings": {
+       "layout": "full_width",
+       "padding": {
+        "unit": "px",
+        "top": "30",
+        "right": "0",
+        "bottom": "30",
+        "left": "0",
+        "isLinked": false
+       }
+      },
+      "elements": [
+       {
+        "id": "7b76859d",
+        "elType": "column",
+        "settings": {
+         "_column_size": 100,
+         "_inline_size": null
+        },
+        "elements": [
+         {
+          "id": "2ae34f26",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_export"
+         }
+        ],
+        "isInner": true
+       }
+      ],
+      "isInner": true
+     },
+     {
+      "id": "5ec37806",
+      "elType": "section",
+      "settings": {
+       "margin": {
+        "unit": "px",
+        "top": "0",
+        "right": 0,
+        "bottom": "50",
+        "left": 0,
+        "isLinked": false
+       }
+      },
+      "elements": [
+       {
+        "id": "594e2572",
+        "elType": "column",
+        "settings": {
+         "_column_size": 100,
+         "_inline_size": null
+        },
+        "elements": [
+         {
+          "id": "359b1fca",
+          "elType": "widget",
+          "settings": [],
+          "elements": [],
+          "widgetType": "tec_events_elementor_widget_event_navigation"
+         }
+        ],
+        "isInner": true
+       }
+      ],
+      "isInner": true
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "isInner": false
+ }
+]

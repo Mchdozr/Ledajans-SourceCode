@@ -1,0 +1,66 @@
+{
+ "id": 4976,
+ "type": "page",
+ "title": "GOB vs COB vs SMD LED Screen",
+ "slug": "gob-vs-cob-smd",
+ "link": "https://ledajans.com/gob-vs-cob-smd/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:48",
+ "modified": "2026-09-23T10:32:38",
+ "excerpt": "GOB vs COB vs SMD: Glue on Board, Chip on Board ve standart SMD farkı. GOB LED ekran ne zaman, COB ne zaman; LEDAJANS karşılaştırma.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "GOB vs COB vs SMD LED Screen | LEDAJANS",
+  "rank_math_description": "GOB vs COB vs SMD LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "GOB vs COB vs SMD LED Screen | LEDAJANS",
+  "description": "GOB vs COB vs SMD LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/gob-vs-cob-smd/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/12/Basliksiz-1-6.png",
+  "h1": [],
+  "h2": [
+   "📌 GOB vs COB vs SMD LED Ekran",
+   "📑 İçindekiler",
+   "🔧 Üç teknolojinin tanımı",
+   "🎛 Karşılaştırma tablosu",
+   "📍 Ne zaman hangisi",
+   "⚙️ Bakım ve maliyet",
+   "🌐 Dış mekan notu",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

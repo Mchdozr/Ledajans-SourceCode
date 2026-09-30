@@ -1,0 +1,67 @@
+{
+ "id": 5008,
+ "type": "page",
+ "title": "Kontrol Kartları",
+ "slug": "kontrol-kartlari",
+ "link": "https://ledajans.com/kontrol-kartlari/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:53:56",
+ "modified": "2026-09-21T16:18:27",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Kontrol Kartları | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 9,
+ "live": {
+  "status": 200,
+  "title": "Kontrol Kartları | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/kontrol-kartlari/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/图4.jpg",
+  "h1": [
+   "Kontrol Kartları"
+  ],
+  "h2": [
+   "Kontrol Kartları",
+   "Kontrol Kartları Özellikleri",
+   "NOVA Serisi Kontrol Kartları",
+   "HD- HUIDU Serisi Kontrol Kartları",
+   "Colorlight Serisi Kontrol Kartları",
+   "LED Ekran Kontrol Kartları Hakkında Sık Sorulan Sorular",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5008:page",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "id": 1262,
+ "type": "page",
+ "title": "İletişim",
+ "slug": "iletisim",
+ "link": "https://ledajans.com/iletisim/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2022-12-19T02:30:45",
+ "modified": "2026-09-21T16:22:40",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "İletişim | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "İletişim | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/iletisim/",
+  "og_image": "",
+  "h1": [
+   "İletişim"
+  ],
+  "h2": [
+   "Bize Ulaşın",
+   "İletişim Bilgileri",
+   "Global Hizmet Noktalarımız",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "BreadcrumbList",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "1262:page",
+   "75:gva__template"
+  ]
+ }
+}

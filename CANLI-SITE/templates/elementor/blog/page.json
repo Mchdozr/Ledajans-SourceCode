@@ -1,0 +1,25 @@
+{
+ "id": 3870,
+ "type": "elementor_library",
+ "title": "blog",
+ "slug": "blog",
+ "link": "https://ledajans.com/?elementor_library=blog",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-10-07T13:41:57",
+ "modified": "2025-10-07T13:41:57",
+ "excerpt": null,
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {}
+}

@@ -1,0 +1,64 @@
+{
+ "id": 4983,
+ "type": "page",
+ "title": "LED Panel Nedir?",
+ "slug": "led-panel-nedir",
+ "link": "https://ledajans.com/led-panel-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:11",
+ "modified": "2026-09-23T10:29:32",
+ "excerpt": "LED panel nedir: tanımı, LED ekran ile farkı, kullanım alanları ve seçim kriterleri; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Panel Nedir?",
+  "rank_math_description": "LED panel nedir: tanımı, LED ekran ile farkı, kullanım alanları ve seçim kriterleri; LEDAJANS teknik sözlük.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Panel Nedir?",
+  "description": "LED panel nedir: tanımı, LED ekran ile farkı, kullanım alanları ve seçim kriterleri; LEDAJANS teknik sözlük.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-panel-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 LED Panel Nedir? Tanımı, Türleri ve Kullanım Alanları",
+   "📑 İçindekiler",
+   "🔧 LED panel teknik tanımı",
+   "⚙️ LED panel türleri",
+   "🎛 LED panel ile LED ekran farkı",
+   "🚀 Avantajları",
+   "📍 Kullanım alanları",
+   "🔧 Seçim kriterleri",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

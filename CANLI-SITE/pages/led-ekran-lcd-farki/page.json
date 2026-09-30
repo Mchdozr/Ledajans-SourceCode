@@ -1,0 +1,69 @@
+{
+ "id": 4977,
+ "type": "page",
+ "title": "LED Screen vs LCD Karşılaştırma",
+ "slug": "led-ekran-lcd-farki",
+ "link": "https://ledajans.com/led-ekran-lcd-farki/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:52",
+ "modified": "2026-09-23T10:31:41",
+ "excerpt": "LED ekran mı LCD mi? Parlaklık, ömür, enerji, maliyet ve kullanım senaryolarına göre detaylı karşılaştırma; LEDAJANS rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Screen vs LCD Karşılaştırma | LEDAJANS",
+  "rank_math_description": "LED Screen vs LCD Karşılaştırma. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Screen vs LCD Karşılaştırma | LEDAJANS",
+  "description": "LED Screen vs LCD Karşılaştırma. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-ekran-lcd-farki/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 LED Ekran mı LCD mi? Kapsamlı Karşılaştırma Rehberi",
+   "📑 İçindekiler",
+   "🔧 Temel teknoloji farkı",
+   "⚙️ Parlaklık ve kontrast",
+   "📍 Boyut ve esneklik",
+   "🔧 Ömür ve bakım",
+   "⚙️ Enerji tüketimi",
+   "💰 Maliyet ve TCO",
+   "🎛 Karşılaştırma tablosu",
+   "📍 Hangi senaryoda hangisi?",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

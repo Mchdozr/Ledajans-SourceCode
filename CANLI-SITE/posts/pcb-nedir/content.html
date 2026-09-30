@@ -1,0 +1,48 @@
+<h2 class="entry-title">PCB Nedir ?</h2>
+<div class="entry-content">
+
+&nbsp;
+
+Baskılı devre kartı en yaygın isimdir, aynı zamanda “baskılı kablolama kartları” veya “baskılı kablolama kartları” olarak da adlandırılabilir. PCB devrelerinin ortaya çıkmasından önce, noktadan noktaya kablolamanın yorucu bir işlemiyle inşa edildi. Bu, tel yalıtımı yaşlanmaya ve çatlamaya başladığında tel bağlantılarında ve kısa devrelerde sık sık arızalara neden oldu.
+
+Önemli bir ilerleme, küçük bir teli telin her bağlantı noktasındaki bir direğin etrafına sarıldığı ve yüksek derecede dayanıklı ve kolayca değiştirilebilen bir gaz sızdırmaz bağlantı oluşturduğu tel sargısının geliştirilmesiydi.
+
+Elektronikler vakum tüplerinden ve rölelerden silikon ve entegre devrelere geçtikçe elektronik bileşenlerin boyutu ve maliyeti azalmaya başladı. Elektronik, tüketim mallarında daha yaygın hale geldi ve elektronik ürünlerin boyutlarını ve üretim maliyetlerini azaltma baskısı, üreticileri daha iyi çözümler aramaya yönlendirdi. Böylece PCB doğdu.
+
+PCB baskılı devre kartı için bir kısaltmadır. Çeşitli noktaları birbirine bağlayan çizgiler ve pedlere sahip bir levhadır. Yukarıdaki resimde, çeşitli konektörleri ve bileşenleri birbirine elektriksel olarak bağlayan izler vardır. Bir PCB, fiziksel cihazlar arasında yönlendirilecek sinyal ve güce izin verir. Lehim, PCB yüzeyi ve elektronik bileşenler arasındaki elektrik bağlantılarını yapan metaldir. Metal olmak, lehim ayrıca güçlü bir mekanik yapıştırıcı görevi görür.
+
+Bir PCB, bir katman keki ya da lazanya gibi bir çeşittir – sonuçta tek bir nesne olacak şekilde ısı ve yapıştırıcı ile birlikte lamine edilmiş farklı malzemelerin değişen tabakaları vardır.
+
+&nbsp;
+
+FR4
+
+Baz malzeme veya substrat genellikle fiberglastır. Tarihsel olarak, bu cam elyafı için en yaygın tasarımcı “FR4” dür. Bu katı çekirdek PCB’ye sertliğini ve kalınlığını verir. Esnek yüksek sıcaklıkta plastik (Kapton veya eşdeğeri) üzerine inşa edilmiş esnek PCB’ler de bulunmaktadır.
+
+Çok farklı kalınlıkta PCB’ler bulacaksınız; SparkFun ürünleri için en yaygın kalınlık 1,6 mm’dir
+
+Daha ucuz PCB’ler ve perf boardlar (yukarıda gösterilen) FR4’ün dayanıklılığından yoksun ama daha az pahalı olan epoksiler veya fenolikler gibi diğer malzemelerle yapılacaktır. Lehim yaparken bu tür PCB ile çalıştığınızı bileceksiniz – çok kötü bir kokuları var. Bu tür alt tabakalar tipik olarak düşük kaliteli tüketici elektroniğinde bulunur. Fenoliklerin, lehim demirinin tahtada çok uzun tutulduğu zaman, tabakaların ayrışmasına, dumanına ve kömürlerine neden olan düşük bir termal ayrışma sıcaklığı vardır.
+
+Bakır
+
+Bir sonraki tabaka, ısı ve yapıştırıcı ile levhaya lamine edilen ince bir bakır folyodur. Yaygın olarak, çift taraflı PCB’ler, alt tabakanın her iki tarafına bakır uygulanır. Düşük maliyetli elektronik cihazlarda PCB sadece bir tarafta bakır olabilir. Çift taraflı veya 2 katlı bir levhaya başvurduğumuzda, lazanyamızdaki bakır katmanların sayısına (2) atıfta bulunuyoruz. Bu, 1 katman kadar az veya 16 kat veya daha fazla olabilir.
+
+Bakır kaplı PCB, lehim maskesi veya serigrafi içermez.
+
+Bakır kalınlığı, metrekare başına ons olarak değişebilir ve ağırlıkla belirlenebilir. PCB’lerin büyük çoğunluğunun kare başına 1 ons bakır var, ancak çok yüksek güç kullanan bazı PCB’ler 2 veya 3 ons bakır kullanabilir. Kare başına her ons, yaklaşık 35 mikrometre veya 1.4 binde bir bakır kalınlığına çevirir.
+
+Lehim maskesi – Soldermask
+
+Bakır folyonun üstündeki tabakaya soldermask tabakası denir. Bu katman PCB’ye yeşil (veya SparkFun, kırmızı) rengini verir. Bakır izleri, diğer metal, lehim veya iletken bitlerle kazara temastan izole etmek için bakır tabakanın üzerine yerleştirilir. Bu katman kullanıcının doğru yerlere lehim yapmasına ve lehim atlatıcılarını önlemesine yardımcı olur.
+
+Aşağıdaki örnekte, yeşil lehim maskesi PCB’nin çoğuna uygulanır, küçük izleri kaplar, ancak lehimlenecek gümüş halkaları ve SMD pedlerini açıkta bırakır.
+
+Soldermask çoğunlukla yeşil renktedir fakat hemen hemen her renk mümkündür. Hemen hemen tüm SparkFun panoları için kırmızı, IOIO panosu için beyaz ve LilyPad panoları için mor kullanıyoruz.
+
+Serigrafi
+
+Beyaz serigrafi tabakası, lehim tabakasının üstüne uygulanır. Serigrafi PCB’ye harfleri, sayıları ve sembolleri ekler, bu da insanların daha kolay anlamasını ve daha kolay anlaşılabilmesini sağlar. Her bir pimin veya LED’in işlevini göstermek için genellikle serigrafi etiketleri kullanırız.
+
+Serigrafi en yaygın olarak beyazdır, ancak herhangi bir mürekkep rengi kullanılabilir. Siyah, gri, kırmızı ve hatta sarı serigrafi renkleri yaygın olarak mevcuttur; Bununla birlikte, tek bir levhada birden fazla renk görmek nadirdir.
+
+</div>

@@ -1,0 +1,25 @@
+{
+ "id": 371,
+ "type": "elementor_library",
+ "title": "The Events Calendar - Starter",
+ "slug": "the-events-calendar-starter",
+ "link": "https://ledajans.com/?elementor_library=the-events-calendar-starter",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-02T10:19:09",
+ "modified": "2024-08-02T10:19:09",
+ "excerpt": null,
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": null,
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 13,
+ "live": {}
+}

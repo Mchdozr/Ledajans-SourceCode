@@ -1,0 +1,124 @@
+{
+ "id": 9,
+ "type": "elementor_library",
+ "title": "Default Kit",
+ "slug": "default-kit",
+ "link": "https://ledajans.com/?elementor_library=default-kit",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-02T08:33:21",
+ "modified": "2026-09-21T11:44:52",
+ "excerpt": null,
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "kit",
+  "_elementor_page_settings": {
+   "system_colors": [
+    {
+     "_id": "primary",
+     "title": "Primary",
+     "color": "#F46F2C"
+    },
+    {
+     "_id": "secondary",
+     "title": "Secondary",
+     "color": "#F15202"
+    },
+    {
+     "_id": "text",
+     "title": "Text",
+     "color": "#82828A"
+    },
+    {
+     "_id": "accent",
+     "title": "Heading",
+     "color": "#2B2B5E"
+    }
+   ],
+   "custom_colors": [
+    {
+     "_id": "9e78dc2",
+     "title": "Gray Color",
+     "color": "#F0EFF4"
+    },
+    {
+     "_id": "23e11f5",
+     "title": "Border Color",
+     "color": "#E2DFEB"
+    },
+    {
+     "_id": "d78bc54",
+     "title": "Black",
+     "color": "#2B2B5E"
+    },
+    {
+     "_id": "1af0335",
+     "title": "Yeni Öğe #4",
+     "color": "#020101"
+    },
+    {
+     "_id": "ab6716d",
+     "title": "Yeni Öğe #5",
+     "color": "#020101"
+    },
+    {
+     "_id": "9a7582e",
+     "title": "Yeni Öğe #6",
+     "color": "#008080"
+    }
+   ],
+   "system_typography": [
+    {
+     "_id": "primary",
+     "title": "Primary",
+     "typography_typography": "custom",
+     "typography_font_family": "Roboto",
+     "typography_font_weight": "600"
+    },
+    {
+     "_id": "secondary",
+     "title": "Secondary",
+     "typography_typography": "custom",
+     "typography_font_family": "Roboto Slab",
+     "typography_font_weight": "400"
+    },
+    {
+     "_id": "text",
+     "title": "Text",
+     "typography_typography": "custom",
+     "typography_font_family": "Roboto",
+     "typography_font_weight": "400"
+    },
+    {
+     "_id": "accent",
+     "title": "Accent",
+     "typography_typography": "custom",
+     "typography_font_family": "Roboto",
+     "typography_font_weight": "500"
+    }
+   ],
+   "custom_typography": [],
+   "default_generic_fonts": "Sans-serif",
+   "site_name": "LEDAJANS",
+   "site_description": "LED Ekran Satış, Kiralama ve Kurulum",
+   "container_width": {
+    "unit": "px",
+    "size": 1200,
+    "sizes": []
+   },
+   "page_title_selector": "h1.entry-title",
+   "activeItemIndex": 1,
+   "viewport_md": 768,
+   "viewport_lg": 1025,
+   "colors_enable_styleguide_preview": "yes"
+  },
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {}
+}

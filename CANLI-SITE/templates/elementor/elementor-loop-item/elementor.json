@@ -1,0 +1,36 @@
+[
+ {
+  "id": "8ef2d25",
+  "elType": "section",
+  "settings": [],
+  "elements": [
+   {
+    "id": "b7eee98",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100,
+     "_inline_size": null
+    },
+    "elements": [
+     {
+      "id": "7c9317c",
+      "elType": "widget",
+      "settings": {
+       "image": {
+        "url": "https://ledajans.com/wp-content/uploads/2025/03/COLORGLIGHT.jpg",
+        "id": 3325,
+        "size": "",
+        "alt": "",
+        "source": "library"
+       }
+      },
+      "elements": [],
+      "widgetType": "image"
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "isInner": false
+ }
+]

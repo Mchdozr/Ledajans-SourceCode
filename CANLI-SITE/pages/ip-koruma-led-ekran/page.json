@@ -1,0 +1,62 @@
+{
+ "id": 4982,
+ "type": "page",
+ "title": "IP Koruma Sınıfı ve LED Screen",
+ "slug": "ip-koruma-led-ekran",
+ "link": "https://ledajans.com/ip-koruma-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:07",
+ "modified": "2026-09-23T10:31:24",
+ "excerpt": "LED ekran IP koruma sınıfı nedir: IP54 IP65 farkı, dış mekan ve yıkama senaryoları; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "IP Koruma Sınıfı ve LED Screen | LEDAJANS",
+  "rank_math_description": "IP Koruma Sınıfı ve LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "IP Koruma Sınıfı ve LED Screen | LEDAJANS",
+  "description": "IP Koruma Sınıfı ve LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ip-koruma-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 IP Koruma Nedir? LED Ekranda IP54, IP65…",
+   "📑 İçindekiler",
+   "🏗 Kodların okunuşu",
+   "📍 Tipik senaryolar",
+   "🔧 Bakım ve contalar",
+   "⚙️ İç mekanda IP gereksinimi",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

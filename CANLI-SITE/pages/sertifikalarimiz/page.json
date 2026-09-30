@@ -1,0 +1,65 @@
+{
+ "id": 5010,
+ "type": "page",
+ "title": "Sertifikalarımız",
+ "slug": "sertifikalarimiz",
+ "link": "https://ledajans.com/sertifikalarimiz/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T12:02:39",
+ "modified": "2026-09-21T16:18:10",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Sertifikalarımız | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 1,
+ "live": {
+  "status": 200,
+  "title": "Sertifikalarımız | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/sertifikalarimiz/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/iso-9001-2015-1-744x1024.webp",
+  "h1": [
+   "Sertifikalarımız"
+  ],
+  "h2": [
+   "Sertifika ve Uygunluk Belgeleri",
+   "Sertifika kapsamı",
+   "Sık sorulan sorular",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Organization",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5010:page",
+   "75:gva__template"
+  ]
+ }
+}

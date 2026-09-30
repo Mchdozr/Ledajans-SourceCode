@@ -1,0 +1,66 @@
+{
+ "id": 4970,
+ "type": "page",
+ "title": "Belediye Bilgi Ekranı Rehberi",
+ "slug": "belediye-bilgi-ekrani",
+ "link": "https://ledajans.com/belediye-bilgi-ekrani/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:28",
+ "modified": "2026-09-11T11:43:28",
+ "excerpt": "Belediye bilgi ekranı: durak ve meydan mesafesi, güneş altında okunurluk, kesintisiz çalışma, uzaktan içerik ve bakım; LEDAJANS kamusal alan rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Belediye Bilgi Ekranı Rehberi",
+  "rank_math_description": "Belediye bilgi ekranı: durak ve meydan mesafesi, güneş altında okunurluk, kesintisiz çalışma, uzaktan içerik ve bakım; LEDAJANS kamusal alan rehberi.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Belediye Bilgi Ekranı Rehberi",
+  "description": "Belediye bilgi ekranı: durak ve meydan mesafesi, güneş altında okunurluk, kesintisiz çalışma, uzaktan içerik ve bakım; LEDAJANS kamusal alan rehberi.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/belediye-bilgi-ekrani/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/yuvarlak-sag-1-e1766393254389.png",
+  "h1": [
+   "Belediye Bilgi Ekranı Rehberi"
+  ],
+  "h2": [
+   "Belediye Bilgi Ekranı Rehberi",
+   "📌 Belediye Bilgi Ekranı: Durak, Meydan ve Kamusal Okunurluk",
+   "📑 İçindekiler",
+   "📍 Durak ve yaya mesafesi",
+   "⚙️ Açık alan parlaklığı",
+   "🏗 Kesintisiz çalışma ve servis",
+   "🌐 Duyuru hiyerarşisi ve erişilebilirlik",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

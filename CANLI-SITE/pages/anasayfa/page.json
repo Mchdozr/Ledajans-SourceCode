@@ -1,0 +1,83 @@
+{
+ "id": 1248,
+ "type": "page",
+ "title": "LED Ekran",
+ "slug": "tr-2",
+ "link": "https://ledajans.com/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2022-12-19T02:27:31",
+ "modified": "2026-09-29T11:14:30",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran | Satış, Kiralama, Kurulum | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": {
+   "hide_title": "yes"
+  },
+  "_elementor_conditions": []
+ },
+ "widget_count": 10,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran | Satış, Kiralama, Kurulum | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/",
+  "og_image": "",
+  "h1": [
+   "LED Ekran Satış, Kiralama ve Kurulum"
+  ],
+  "h2": [
+   "Sertifikalarımız",
+   "Markalarımız",
+   "Ledajans olarak hemen her sektördeyiz",
+   "İÇ MEKAN - INDOOR LED",
+   "DIŞ MEKAN - OUTDOOR LED",
+   "Ürünler imiz",
+   "LED Ekran Projeler imiz",
+   "LED ekran projesi seçerken referans neden önemlidir?",
+   "Benzer bir LED ekran projesi mi planlıyorsunuz?",
+   "LED ekran projeleri hakkında sık sorulan sorular",
+   "Müşteri Yorumları",
+   "Blog",
+   "İletişim",
+   "Galeri",
+   "Bülten",
+   "Satış Kanallarımız"
+  ],
+  "schema_types": [
+   "CollectionPage",
+   "ContactPoint",
+   "Country",
+   "GeoCoordinates",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "LocalBusiness",
+   "Offer",
+   "OfferCatalog",
+   "OpeningHoursSpecification",
+   "Organization",
+   "PostalAddress",
+   "QuantitativeValue",
+   "SearchAction",
+   "Service",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "1248:page",
+   "176:gva__template"
+  ]
+ }
+}

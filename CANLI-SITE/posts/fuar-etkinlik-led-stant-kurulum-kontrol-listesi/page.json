@@ -1,0 +1,65 @@
+{
+ "id": 5887,
+ "type": "post",
+ "title": "Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi",
+ "slug": "fuar-etkinlik-led-stant-kurulum-kontrol-listesi",
+ "link": "https://ledajans.com/fuar-etkinlik-led-stant-kurulum-kontrol-listesi/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2026-09-25T11:43:59",
+ "modified": "2026-09-25T11:46:04",
+ "excerpt": "Fuar ve etkinlikte LED stant ekranı kurmadan önce piksel, güç, içerik ve lojistik kontrol listesi. LEDAJANS pratik rehberi.",
+ "featured_media": 5884,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "Fuar ve Etkinlikte LED Stant Ekranı,led ekran"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi - LEDAJANS",
+  "description": "Fuar ve etkinlikte LED stant ekranı kurmadan önce piksel, güç, içerik ve lojistik kontrol listesi. LEDAJANS pratik rehberi.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/fuar-etkinlik-led-stant-kurulum-kontrol-listesi/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/hero-fuar-led-stant.jpg",
+  "h1": [
+   "Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi"
+  ],
+  "h2": [
+   "📌 Fuar ve Etkinlikte LED Stant Ekranı: Kurulum Öncesi Kontrol Listesi",
+   "📑 İçindekiler",
+   "🎯 Neden Kurulum Öncesi Liste Şart?",
+   "📐 Ölçüm: Mesafe, Yükseklik, Derinlik",
+   "⚙️ Teknik Seçimler: Piksel, Parlaklık, Tip",
+   "🚚 Lojistik, Güç ve Yedek",
+   "🎬 İçerik ve Test Günü",
+   "✅ Tek Sayfalık Kontrol Listesi",
+   "🏆 Sonuç",
+   "📚 İlgili İçerikler",
+   "💡 Sık Sorulan Sorular",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

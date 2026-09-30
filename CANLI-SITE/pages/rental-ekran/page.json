@@ -1,0 +1,74 @@
+{
+ "id": 5004,
+ "type": "page",
+ "title": "LED Ekran Kiralama",
+ "slug": "rental-ekran",
+ "link": "https://ledajans.com/rental-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:53:35",
+ "modified": "2026-09-23T10:19:10",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran Kiralama | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 10,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Kiralama | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/rental-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/Arka-plani-kaldir-projesi-2-2.png",
+  "h1": [
+   "LED Ekran Kiralama"
+  ],
+  "h2": [
+   "Rental Ekran",
+   "Ürün Özellikleri",
+   "Grand Air Serisi - Indoor Rental Full Color Cabinet",
+   "Grand Air Serisi - Outdoor Rental Full Color Cabinet",
+   "İç Mekan Rental LED Ekranlar",
+   "Dış Mekan Rental LED Ekranlar",
+   "💡 Sık Sorulan Sorular",
+   "📚 Teknik rehberler ve fiyat",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "AggregateOffer",
+   "Answer",
+   "Article",
+   "Brand",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Organization",
+   "Person",
+   "Product",
+   "PropertyValue",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5004:page",
+   "75:gva__template"
+  ]
+ }
+}

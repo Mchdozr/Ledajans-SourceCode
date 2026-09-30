@@ -1,0 +1,66 @@
+{
+ "id": 3958,
+ "type": "page",
+ "title": "COB – Smart Screen",
+ "slug": "cob-ekran",
+ "link": "https://ledajans.com/cob-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2025-11-14T12:29:17",
+ "modified": "2026-09-23T07:16:04",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "COB LED Ekran | Fine Pitch Smart Screen | LEDAJANS",
+  "rank_math_description": "COB LED ekran ve smart screen. İnce pitch, yüksek kontrast, iç mekan vitrin ve stüdyo. Ücretsiz keşif ve fiyat teklifi — LEDAJANS.",
+  "rank_math_focus_keyword": "cob led ekran,cob ekran,smart screen led,fine pitch led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 8,
+ "live": {
+  "status": 200,
+  "title": "COB LED Ekran | Fine Pitch Smart Screen | LEDAJANS",
+  "description": "COB LED ekran ve smart screen. İnce pitch, yüksek kontrast, iç mekan vitrin ve stüdyo. Ücretsiz keşif ve fiyat teklifi — LEDAJANS.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/cob-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-4.png",
+  "h1": [
+   "COB - Smart Screen"
+  ],
+  "h2": [
+   "COB ve Smart Screen LED Ekran Modelleri",
+   "SMART SCREEN",
+   "P1.56 COB LED Ekran",
+   "COB & Smart Screen LED Ekran Hakkında Sık Sorulan Sorular",
+   "📚 Teknik rehberler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "3958:page",
+   "75:gva__template"
+  ]
+ }
+}

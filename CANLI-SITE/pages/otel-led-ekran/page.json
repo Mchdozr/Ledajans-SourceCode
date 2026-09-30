@@ -1,0 +1,66 @@
+{
+ "id": 4991,
+ "type": "page",
+ "title": "Otel LED Screen",
+ "slug": "otel-led-ekran",
+ "link": "https://ledajans.com/otel-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:39",
+ "modified": "2026-09-23T10:27:38",
+ "excerpt": "Otel LED ekran çözümleri; lobi, kongre salonu, balo salonu ve restoran LED ekran uygulamaları. LEDAJANS ile otel dijital ekran projelerinizi planlayın.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Otel LED Screen | LEDAJANS",
+  "rank_math_description": "Otel LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Otel LED Screen | LEDAJANS",
+  "description": "Otel LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "follow, noindex",
+  "canonical": "",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 Otel LED Ekran: Lobi, Kongre Salonu, Balo Salonu ve Restoran Çözümleri",
+   "📑 İçindekiler",
+   "🏨 Otel Lobisi LED Ekran",
+   "🎤 Kongre Salonu LED Ekran",
+   "💃 Balo Salonu LED Ekran",
+   "🍽️ Restoran ve Bar LED Ekran",
+   "📍 Diğer Kullanım Alanları",
+   "⚙️ Teknik Gereksinimler",
+   "🎨 Mimari ve Tasarım Uyumu",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

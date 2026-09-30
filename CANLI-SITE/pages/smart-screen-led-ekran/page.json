@@ -1,0 +1,57 @@
+{
+ "id": 6029,
+ "type": "page",
+ "title": "Smart Screen LED Ekran",
+ "slug": "smart-screen-led-ekran",
+ "link": "https://ledajans.com/smart-screen-led-ekran/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-30T05:57:21",
+ "modified": "2026-09-30T05:57:21",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Smart Screen LED Ekran | LEDAJANS",
+  "rank_math_description": "Smart Screen LED Ekran teknik özellikleri: 108/136/163 inç, 2K çözünürlük, ≥3840Hz yenileme, Android 11, ön bakım. Teknik döküman indir.",
+  "rank_math_focus_keyword": "smart screen led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "Smart Screen LED Ekran | LEDAJANS",
+  "description": "Smart Screen LED Ekran teknik özellikleri: 108/136/163 inç, 2K çözünürlük, ≥3840Hz yenileme, Android 11, ön bakım. Teknik döküman indir.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/smart-screen-led-ekran/",
+  "og_image": "",
+  "h1": [
+   "Smart Screen LED Ekran"
+  ],
+  "h2": [
+   "Smart Screen LED Ekran",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "6029:page",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "id": 4988,
+ "type": "page",
+ "title": "Ankara LED Screen",
+ "slug": "ankara-led-ekran",
+ "link": "https://ledajans.com/ankara-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:28",
+ "modified": "2026-09-23T10:28:23",
+ "excerpt": "Ankara LED ekran çözümleri, fiyatları ve kurulum hizmetleri. Kızılay, Ulus, bakanlıklar, üniversiteler ve stadyum projeleri için LEDAJANS ile iletişime geçin.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Ankara LED Screen | LEDAJANS",
+  "rank_math_description": "Ankara LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Ankara LED Screen | LEDAJANS",
+  "description": "Ankara LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "follow, noindex",
+  "canonical": "",
+  "og_image": "",
+  "h1": [],
+  "h2": [
+   "📌 Ankara’da LED Ekran Çözümleri: Başkentin Dijital Yüzü",
+   "📑 İçindekiler",
+   "📍 Ankara’da LED Ekran Kullanım Alanları",
+   "🌐 Öne Çıkan Lokasyonlar ve Bölgeler",
+   "🏛 Kamu ve Kurumsal Projeler",
+   "🔧 Ankara İklim Koşulları ve Teknik Gereksinimler",
+   "🚀 Ankara’da LED Ekran Yatırımının Avantajları",
+   "🏗 Neden Ankara’da LEDAJANS?",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "City",
+   "FAQPage",
+   "ImageObject",
+   "LocalBusiness",
+   "Person",
+   "PostalAddress",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

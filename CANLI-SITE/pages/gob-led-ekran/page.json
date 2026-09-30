@@ -1,0 +1,61 @@
+{
+ "id": 4986,
+ "type": "page",
+ "title": "GOB LED Ekran",
+ "slug": "gob-led-ekran",
+ "link": "https://ledajans.com/gob-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:20",
+ "modified": "2026-09-23T10:21:49",
+ "excerpt": "GOB LED ekran (Glue on Board): darbe ve neme dayanıklı indoor. GOB vs COB vs SMD. P1.25–P2.5. LEDAJANS teklif.",
+ "featured_media": 5822,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "GOB LED Screen | LEDAJANS",
+  "rank_math_description": "GOB LED ekran (Glue on Board): darbe ve neme dayanıklı indoor. GOB vs COB vs SMD. P1.25–P2.5. LEDAJANS teklif.",
+  "rank_math_focus_keyword": "GOB LED Ekran,gob led screen"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "GOB LED Screen | LEDAJANS",
+  "description": "GOB LED ekran (Glue on Board): darbe ve neme dayanıklı indoor. GOB vs COB vs SMD. P1.25–P2.5. LEDAJANS teklif.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/gob-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/gob-led-yuzey.webp",
+  "h1": [
+   "GOB LED ekran"
+  ],
+  "h2": [
+   "GOB seçenekleri",
+   "GOB vs SMD vs COB",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "id": 687,
+ "type": "post",
+ "title": "Şerit Led",
+ "slug": "serit-led",
+ "link": "https://ledajans.com/serit-led/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T19:10:14",
+ "modified": "2025-12-02T12:47:11",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "Şerit Led"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Şerit Led - LEDAJANS",
+  "description": "Başlıca kullanım alanları:",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/serit-led/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2024/08/toptan-serit-led-fiyatlari-ledajans-1.jpg",
+  "h1": [
+   "Şerit Led",
+   "Şerit LED ile Dekoratif ve Fonksiyonel Aydınlatmada Esnek Çözümler"
+  ],
+  "h2": [
+   "Şerit LED Nedir ve Nerelerde Kullanılır?",
+   "Tek Çipli ve 3 Çipli Şerit LED Arasındaki Farklar",
+   "Şerit LED Montajı ve Besleme Yapısı",
+   "Şerit LED Seçerken Dikkat Edilmesi Gerekenler",
+   "SEO Açısından Şerit LED Kullanımının Avantajları",
+   "Sonuç: Şerit LED ile Esnek, Ekonomik ve Estetik Aydınlatma",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

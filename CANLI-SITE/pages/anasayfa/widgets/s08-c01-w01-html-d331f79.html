@@ -1,0 +1,499 @@
+<style>
+    .ledajans-reviews {
+      padding: 4rem 1rem;
+      background-color: #f9fafb;
+    }
+  
+    .ledajans-reviews-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+  
+    @media (min-width: 640px) {
+      .ledajans-reviews-inner { padding: 0 1.2rem; }
+    }
+  
+    @media (min-width: 1024px) {
+      .ledajans-reviews-inner { padding: 0 2rem; }
+    }
+  
+    .ledajans-reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  
+    .ledajans-reviews-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.025em;
+    }
+  
+    @media (min-width: 768px) {
+      .ledajans-reviews-title { font-size: 2.25rem; }
+    }
+  
+    .ledajans-reviews-subtitle {
+      font-size: 1.125rem;
+      color: #4b5563;
+      max-width: 42rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  
+    .ledajans-reviews-slider-wrap {
+      position: relative;
+      overflow: visible;
+      min-height: 420px;
+    }
+  
+    .ledajans-reviews-slider-wrap:hover .ledajans-reviews-prev,
+    .ledajans-reviews-slider-wrap:hover .ledajans-reviews-next {
+      opacity: 1;
+    }
+  
+    .ledajans-reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      min-height: 380px;
+      padding: 0 3rem;
+    }
+  
+    @media (min-width: 768px) {
+      .ledajans-reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 380px;
+        padding: 0 3.5rem;
+      }
+    }
+  
+    .ledajans-review-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+  
+    .ledajans-review-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
+      border-color: #F46F2C;
+    }
+  
+    .ledajans-review-stars {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+  
+    .ledajans-review-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #F46F2C;
+      color: #F46F2C;
+      filter: drop-shadow(0 1px 2px rgba(244, 111, 44, 0.2));
+    }
+  
+    .ledajans-review-quote {
+      width: 24px;
+      height: 24px;
+      color: #F46F2C;
+      opacity: 0.3;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+  
+    .ledajans-review-text-wrap {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      margin-bottom: 1.25rem;
+      min-height: 0;
+    }
+  
+    .ledajans-review-text-wrap::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+    .ledajans-review-text-wrap::-webkit-scrollbar-track {
+      background: #f3f4f6;
+      border-radius: 3px;
+    }
+  
+    .ledajans-review-text-wrap::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 3px;
+    }
+  
+    .ledajans-review-text-wrap::-webkit-scrollbar-thumb:hover {
+      background: #F46F2C;
+    }
+  
+    .ledajans-review-text {
+      font-size: 0.9375rem;
+      color: #374151;
+      line-height: 1.7;
+      margin: 0;
+    }
+  
+    .ledajans-review-footer {
+      display: flex;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+  
+    .ledajans-review-avatar {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F46F2C 0%, #ea580c 100%);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.875rem;
+      box-shadow: 0 4px 6px -1px rgba(244, 111, 44, 0.3);
+    }
+  
+    .ledajans-review-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0 0 0.25rem 0;
+    }
+  
+    .ledajans-review-position {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      margin: 0;
+    }
+  
+    .ledajans-reviews-prev,
+    .ledajans-reviews-next {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: none;
+      background: #F46F2C;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+  
+    .ledajans-reviews-prev:hover,
+    .ledajans-reviews-next:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.05);
+    }
+  
+    .ledajans-reviews-prev:active,
+    .ledajans-reviews-next:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+  
+    .ledajans-reviews-prev {
+      left: 0.5rem;
+    }
+  
+    .ledajans-reviews-next {
+      right: 0.5rem;
+    }
+  
+    .ledajans-reviews-prev span,
+    .ledajans-reviews-next span {
+      display: block;
+    }
+  
+    .ledajans-reviews-prev span {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: white;
+      margin-right: 12px;
+    }
+  
+    .ledajans-reviews-next span {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: white;
+      margin-left: 12px;
+    }
+  
+    .ledajans-reviews-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+  
+    .ledajans-reviews-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+  
+    .ledajans-reviews-dot:hover {
+      background: #9ca3af;
+      transform: scale(1.2);
+    }
+  
+    .ledajans-reviews-dot.active {
+      background: #F46F2C;
+      width: 32px;
+      border-radius: 6px;
+      transform: scale(1);
+    }
+  
+    .ledajans-review-card.hidden {
+      display: none !important;
+    }
+  
+    @media (max-width: 640px) {
+      .ledajans-reviews-prev {
+        left: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-reviews-next {
+        right: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-reviews-prev span {
+        border-width: 8px;
+        margin-right: 8px;
+      }
+      .ledajans-reviews-next span {
+        border-width: 8px;
+        margin-left: 8px;
+      }
+    }
+  </style>
+  
+  <section class="ledajans-reviews" aria-label="Müşteri yorumları" style="background-color:#f9fafb">
+    <div class="ledajans-reviews-inner">
+      <div class="ledajans-reviews-header">
+        <h2 class="ledajans-reviews-title">Müşteri Yorumları</h2>
+        <p class="ledajans-reviews-subtitle">Müşterilerimizin LEDAJANS deneyimleri</p>
+      </div>
+  
+      <div class="ledajans-reviews-slider-wrap">
+        <button type="button" class="ledajans-reviews-prev" aria-label="Önceki yorumlar">
+          <span></span>
+        </button>
+        
+        <button type="button" class="ledajans-reviews-next" aria-label="Sonraki yorumlar">
+          <span></span>
+        </button>
+  
+        <div id="ledajans-reviews-grid" class="ledajans-reviews-grid">
+          <!-- Kartlar JS ile doldurulacak -->
+        </div>
+  
+        <div id="ledajans-reviews-dots" class="ledajans-reviews-dots"></div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  (function() {
+    var reviews = [
+      { name: '33 MY TECH', position: '33 MY TECH', initials: 'YM', text: "Başta Kezban Hanım ve Bekir abimiz'den çok memnundum şimdi Oğuzhan Bey ve Halil Bey var onlardan da çok memnunum Kezban Hanım'dan Allah razı olsun hiçbir zaman desteklerini esirgemediler. LED ajan ailesini 33 MY TECH ailesi olarak tebrik ediyoruz işlerimizin huzurumuzun daimi olmasını niyaz ediyorum Yasin Bey size de ayrıca teşekkür ediyorum çok başarılı çalışanlarınız var iş hayatınızda başarılarınızın devamını ve daha güzel işlerde beraber yol yürümeyi diliyorum hayırlı günler." },
+      { name: 'Atlas Konferans', position: 'Atlas Konferans', initials: 'AK', text: "Atlas Konferans ailesi olarak başarılar dileriz." },
+      { name: 'Polatlı LED Tabela', position: 'Polatlı LED Tabela', initials: 'PL', text: "Polatlı LED Tabela olarak sizlerle çalışmaktan çok memnunum." },
+      { name: 'Anonim', position: 'Müşteri', initials: 'A', text: "Memnun olduğumuz için sizi diğer rakiplerimize önermek istemeyiz :)" },
+      { name: 'Fethiye Reklam', position: 'Fethiye Reklam', initials: 'FR', text: "Uzun süredir kendileri ile çalışıyorum. kaliteli ürün ve kaliteli hizmet veriyorlar.. Sattıkları ürünün arkasında duruyorlar ve çözüm odaklı çalışıyorlar.. Led panel konusunda sorunsuz çalışılabilecek firma.. teknik servis konusunda her zaman yardımcı oluyorlar.. Ledajans ailesine teşekkür ederiz." },
+      { name: 'Kuzey Reklam', position: 'Kuzey Reklam', initials: 'KR', text: "Kuzey Reklam olarak yaklaşık 7-8 yıldır LED Ajans firması ile kesintisiz şekilde iş birliği yürütmekteyiz. Bu süre zarfında ürün kalitesi, teknik destek ve satış sonrası hizmetler konusunda hiçbir olumsuz deneyim yaşamamış olmamız, firmanın iş disiplinini ve güvenilirliğini açıkça ortaya koymaktadır." },
+      { name: 'Turk Pazarlama', position: 'Turk Pazarlama', initials: 'TP', text: "6. yılım oldu Ledajansla çalışalı çözüm odaklı hiçbir sıkıntı yaşamadım tebrik eder başarılar dilerim" },
+      { name: 'Gökhan Soytürk', position: 'Müşteri', initials: 'GS', text: "Kalite ve güler yüzlü personelleri ile kalitede öncü teşekkürler Ledajans." }
+    ];
+  
+    var starSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+    var quoteSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F46F2C" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2z"/></svg>';
+  
+    function renderCard(r) {
+      return '<div class="ledajans-review-card" data-index="">' +
+        '<div class="ledajans-review-stars">' + starSvg.repeat(5) + '</div>' +
+        '<div class="ledajans-review-quote">' + quoteSvg + '</div>' +
+        '<div class="ledajans-review-text-wrap"><p class="ledajans-review-text">' + r.text + '</p></div>' +
+        '<div class="ledajans-review-footer">' +
+          '<div class="ledajans-review-avatar">' + r.initials + '</div>' +
+          '<div><h4 class="ledajans-review-name">' + r.name + '</h4><p class="ledajans-review-position">' + r.position + '</p></div>' +
+        '</div></div>';
+    }
+  
+    function init() {
+      var grid = document.getElementById('ledajans-reviews-grid');
+      var dotsEl = document.getElementById('ledajans-reviews-dots');
+      if (!grid) return;
+  
+      grid.innerHTML = reviews.map(function(r, i) {
+        var card = renderCard(r);
+        return card.replace('data-index=""', 'data-index="' + i + '"');
+      }).join('');
+  
+      var cards = grid.querySelectorAll('.ledajans-review-card');
+      var mq = window.matchMedia('(min-width: 768px)');
+      var perPage = function() { return mq.matches ? 3 : 1; };
+      var current = 0;
+      var total = reviews.length;
+  
+      function updateVisible() {
+        var n = perPage();
+        var maxStart = Math.max(0, total - n);
+        if (current > maxStart) current = maxStart;
+        cards.forEach(function(card, i) {
+          var idx = parseInt(card.getAttribute('data-index'), 10);
+          if (n === 1) {
+            card.classList.toggle('hidden', idx !== current);
+          } else {
+            card.classList.toggle('hidden', idx < current || idx >= current + n);
+          }
+        });
+        updateDots();
+      }
+  
+      function updateDots() {
+        dotsEl.innerHTML = '';
+        var n = perPage();
+        var dotCount = n === 1 ? total : Math.ceil(total / n);
+        for (var d = 0; d < dotCount; d++) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          var isActive = n === 1 ? (d === current) : (Math.floor(current / n) === d);
+          btn.className = 'ledajans-reviews-dot' + (isActive ? ' active' : '');
+          btn.setAttribute('aria-label', 'Yorum ' + (d + 1));
+          btn.addEventListener('click', function(idx, num) {
+            return function() {
+              current = num === 1 ? idx : idx * num;
+              var maxStart = Math.max(0, total - num);
+              if (current > maxStart) current = maxStart;
+              updateVisible();
+            };
+          }(d, n));
+          dotsEl.appendChild(btn);
+        }
+      }
+  
+      document.querySelector('.ledajans-reviews-prev').addEventListener('click', function() {
+        var n = perPage();
+        current = (current - n + total) % total;
+        if (current < 0) current = 0;
+        updateVisible();
+      });
+      document.querySelector('.ledajans-reviews-next').addEventListener('click', function() {
+        var n = perPage();
+        current = (current + n) % total;
+        if (current + n > total) current = Math.max(0, total - n);
+        updateVisible();
+      });
+  
+      if (mq.addEventListener) {
+        mq.addEventListener('change', updateVisible);
+      } else if (mq.addListener) {
+        mq.addListener(updateVisible);
+      }
+      updateVisible();
+  
+      var autoPlayTimer = null;
+  
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(function() {
+          var n = perPage();
+          current = (current + n) % total;
+          if (current + n > total) current = 0;
+          updateVisible();
+        }, 5000);
+      }
+  
+      function stopAutoPlay() {
+        if (autoPlayTimer) {
+          clearInterval(autoPlayTimer);
+          autoPlayTimer = null;
+        }
+      }
+  
+      var isMobileAutoplayOff = window.matchMedia('(max-width: 767px)').matches;
+      if (!isMobileAutoplayOff) {
+        startAutoPlay();
+      }
+  
+      var wrap = document.querySelector('.ledajans-reviews-slider-wrap');
+      if (wrap) {
+        wrap.addEventListener('mouseenter', stopAutoPlay);
+        wrap.addEventListener('mouseleave', function() {
+          if (!window.matchMedia('(max-width: 767px)').matches) {
+            startAutoPlay();
+          }
+        });
+      }
+    }
+  
+    function scheduleInit() {
+      var section = document.querySelector('.ledajans-reviews');
+      if (!section || !('IntersectionObserver' in window)) {
+        init();
+        return;
+      }
+
+      var started = false;
+      var start = function() {
+        if (started) return;
+        started = true;
+        init();
+      };
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            start();
+          }
+        });
+      }, { rootMargin: '400px 0px' });
+
+      observer.observe(section);
+      setTimeout(start, 4000);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', scheduleInit);
+    } else {
+      scheduleInit();
+    }
+  })();
+  </script>
+  

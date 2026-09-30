@@ -1,0 +1,272 @@
+<!-- LEDAJANS Kimdir - WordPress HTML Widget -->
+<style>
+    .ledajans-about-who {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 0.75rem;
+      margin-bottom: 8rem;
+    }
+    @media (min-width: 480px) {
+      .ledajans-about-who {
+        padding: 2rem 1rem;
+      }
+    }
+    @media (min-width: 640px) {
+      .ledajans-about-who {
+        padding: 4rem 1.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-about-who {
+        padding: 5rem 2rem;
+      }
+    }
+    
+    .ledajans-about-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+    
+    .ledajans-about-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2rem;
+      letter-spacing: -0.025em;
+    }
+    @media (min-width: 640px) {
+      .ledajans-about-title {
+        font-size: 2.5rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .ledajans-about-title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+    
+    .ledajans-about-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #4b5563;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-about-text {
+        font-size: 1.125rem;
+      }
+    }
+    
+    .ledajans-about-divider {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .ledajans-call-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-call-title {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .ledajans-phone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .ledajans-phone-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    @media (min-width: 640px) {
+      .ledajans-phone-link {
+        font-size: 1.125rem;
+      }
+    }
+    .ledajans-phone-link:hover {
+      color: #F46F2C;
+    }
+    
+    .ledajans-phone-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: #F46F2C;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) {
+      .ledajans-phone-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+    .ledajans-about-image-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .ledajans-about-image-container {
+      overflow: hidden;
+      border-radius: 0 50% 50% 50%;
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: 768px) {
+      .ledajans-about-image-container {
+        border-radius: 0 60% 60% 60%;
+      }
+    }
+    
+    .ledajans-about-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      min-height: 250px;
+    }
+    @media (min-width: 768px) {
+      .ledajans-about-image {
+        min-height: 500px;
+        max-height: none;
+      }
+    }
+    
+    .ledajans-experience-badge {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: white;
+      padding: 0.75rem 1rem;
+      border: 2px solid #F46F2C;
+      border-radius: 0px 50px 0px 50px;
+      min-width: 180px;
+      max-width: 227px;
+      z-index: 10;
+    }
+    @media (min-width: 640px) {
+      .ledajans-experience-badge {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: 1rem 1.5rem;
+      }
+    }
+    
+    .ledajans-badge-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-badge-content {
+        gap: 0.75rem;
+      }
+    }
+    
+    .ledajans-badge-number {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #2C3E50;
+    }
+    @media (min-width: 640px) {
+      .ledajans-badge-number {
+        font-size: 3rem;
+      }
+    }
+    
+    .ledajans-badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .ledajans-badge-text span {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: #2C3E50;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    @media (min-width: 640px) {
+      .ledajans-badge-text span {
+        font-size: 0.75rem;
+      }
+    }
+    </style>
+    
+    <div class="ledajans-about-who">
+      <div class="ledajans-about-grid">
+        <div>
+          <h2 class="ledajans-about-title">Ledajans Kimdir?</h2>
+          <div class="ledajans-about-text">
+            <p>
+              Ledajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modül, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir. Bulunduğu sektörde sürekli büyüyen şirketimiz kaliteli ürün ve hizmetini sizlere düşük maliyette, hızlı, devamlı ve tutarlı bir şekilde sunmayı amaç edinmiş lider bir kuruluştur. Hızla değişen ve gelişen teknolojinin tüm imkanlarından faydalanarak değerli müşterimize her zaman en iyisi ile hizmet etmekteyiz. İhtiyaçlarınıza yönelik özel yazılımlarla sizi elektroniğin karmaşasından kurtaracak arge çalışmalarımız özel projelerinizde her zaman destekçiniz olmaya devam edecektir. Farklı, kaliteli ve hesaplı ürünler sunmak daima amacımız olacaktır.
+            </p>
+          </div>
+          <div class="ledajans-about-divider">
+            <h3 class="ledajans-call-title">Hemen Arayın</h3>
+            <div class="ledajans-phone-list">
+              <a href="tel:+902122204004" class="ledajans-phone-link">
+                <svg class="ledajans-phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+90 212 220 40 04</span>
+              </a>
+              <a href="tel:+905304056768" class="ledajans-phone-link">
+                <svg class="ledajans-phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+90 530 405 67 68</span>
+              </a>
+              <a href="tel:+905438795108" class="ledajans-phone-link">
+                <svg class="ledajans-phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+90 543 879 51 08</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ledajans-about-image-wrapper">
+          <div class="ledajans-about-image-container">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-4-2.png"
+              alt="Ledajans Sektörler"
+              class="ledajans-about-image"
+              loading="lazy"
+              onerror="this.style.display='none';"
+            />
+          </div>
+          <div class="ledajans-experience-badge">
+            <div class="ledajans-badge-content">
+              <span class="ledajans-badge-number">25</span>
+              <div class="ledajans-badge-text">
+                <span>Yıllık</span>
+                <span>Tecrübe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

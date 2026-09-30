@@ -1,0 +1,58 @@
+{
+ "id": 632,
+ "type": "post",
+ "title": "P3 Indoor Rgb Panel",
+ "slug": "p3-indoor-rgb-panel",
+ "link": "https://ledajans.com/p3-indoor-rgb-panel/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T18:57:02",
+ "modified": "2024-08-04T18:57:02",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "P3 Indoor Rgb Panel - LEDAJANS",
+  "description": "Assembled in horizontal and vertical directions to make different shape screen ;",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p3-indoor-rgb-panel/",
+  "og_image": "",
+  "h1": [
+   "P3 Indoor Rgb Panel",
+   "Module Characteristics：",
+   "Display Specification",
+   "Signal Pin"
+  ],
+  "h2": [
+   "P3 Indoor Rgb Panel",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

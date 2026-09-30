@@ -1,0 +1,65 @@
+{
+ "id": 4973,
+ "type": "page",
+ "title": "P2 vs P3 LED Screen Karşılaştırma",
+ "slug": "p2-vs-p3-led-ekran",
+ "link": "https://ledajans.com/p2-vs-p3-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:38",
+ "modified": "2026-09-23T10:29:56",
+ "excerpt": "P2 ve P3 LED ekran farkı: izleme mesafesi, çözünürlük, maliyet ve kullanım senaryoları; SSS ve yapılandırılmış veri ile LEDAJANS karşılaştırması.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "P2 vs P3 LED Screen Karşılaştırma | LEDAJANS",
+  "rank_math_description": "P2 vs P3 LED Screen Karşılaştırma. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "P2 vs P3 LED Screen Karşılaştırma | LEDAJANS",
+  "description": "P2 vs P3 LED Screen Karşılaştırma. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p2-vs-p3-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/Colorlight-X4e-LED-Controller.webp",
+  "h1": [],
+  "h2": [
+   "📌 P2 mi P3 mü? LED Ekran Pitch Karşılaştırması",
+   "📑 İçindekiler",
+   "🔧 Pitch (P2 / P3) pratik anlamı",
+   "📍 Mesafe ve okunurluk",
+   "⚙️ Maliyet ve sürdürülebilirlik",
+   "🎛 Senaryo tablosu",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

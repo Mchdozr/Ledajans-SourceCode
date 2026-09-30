@@ -1,0 +1,20 @@
+{
+ "id": 4672,
+ "type": "popup",
+ "title": "Example: Auto-opening announcement popup",
+ "slug": "example-auto-opening-announcement-popup",
+ "link": "https://ledajans.com/?post_type=popup&p=4672",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-12-05T08:39:52",
+ "modified": "2025-12-05T08:39:52",
+ "excerpt": "",
+ "featured_media": null,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {},
+ "widget_count": 0,
+ "live": {}
+}

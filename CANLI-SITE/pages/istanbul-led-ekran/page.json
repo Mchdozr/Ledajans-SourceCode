@@ -1,0 +1,61 @@
+{
+ "id": 4987,
+ "type": "page",
+ "title": "İstanbul LED Ekran",
+ "slug": "istanbul-led-ekran",
+ "link": "https://ledajans.com/istanbul-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:25",
+ "modified": "2026-09-23T10:28:15",
+ "excerpt": "İstanbul LED ekran satış, kurulum ve kiralama. Şişli üretim, İBB izin, cephe ve fuar. LEDAJANS keşif.",
+ "featured_media": 5819,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "İstanbul LED Ekran | Satış ve Kurulum | LEDAJANS",
+  "rank_math_description": "İstanbul LED ekran satış, kurulum ve kiralama. Şişli üretim, İBB izin, cephe ve fuar. LEDAJANS keşif.",
+  "rank_math_focus_keyword": "istanbul led ekran, led ekran istanbul, istanbul led ekran kiralama"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "İstanbul LED Ekran | Satış ve Kurulum | LEDAJANS",
+  "description": "İstanbul LED ekran satış, kurulum ve kiralama. Şişli üretim, İBB izin, cephe ve fuar. LEDAJANS keşif.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/istanbul-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/istanbul-cephe-led-kurulum.webp",
+  "h1": [
+   "İstanbul LED ekran"
+  ],
+  "h2": [
+   "İstanbul senaryoları",
+   "Neden İstanbul’da LEDAJANS?",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

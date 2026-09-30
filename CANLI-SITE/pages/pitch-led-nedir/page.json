@@ -1,0 +1,62 @@
+{
+ "id": 4979,
+ "type": "page",
+ "title": "Piksel Pitch Nedir?",
+ "slug": "pitch-led-nedir",
+ "link": "https://ledajans.com/pitch-led-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:58",
+ "modified": "2026-09-23T10:29:49",
+ "excerpt": "LED pitch nedir: P2 P3 P4 ne anlama gelir, izleme mesafesi ile ilişkisi ve seçim ipuçları; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Piksel Pitch Nedir?",
+  "rank_math_description": "LED pitch nedir: P2 P3 P4 ne anlama gelir, izleme mesafesi ile ilişkisi ve seçim ipuçları; LEDAJANS teknik sözlük.",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Piksel Pitch Nedir?",
+  "description": "LED pitch nedir: P2 P3 P4 ne anlama gelir, izleme mesafesi ile ilişkisi ve seçim ipuçları; LEDAJANS teknik sözlük.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/pitch-led-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/Colorlight-X4e-LED-Controller.webp",
+  "h1": [],
+  "h2": [
+   "📌 LED Pitch Nedir? (P2, P3, P4…)",
+   "📑 İçindekiler",
+   "🔧 Terimin teknik anlamı",
+   "📍 Mesafe ile bağlantısı",
+   "⚙️ Yaygın yanlış anlamalar",
+   "🚀 Kısa seçim rehberi",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

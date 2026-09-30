@@ -1,0 +1,60 @@
+{
+ "id": 786,
+ "type": "page",
+ "title": "Program İndir",
+ "slug": "program-indir",
+ "link": "https://ledajans.com/program-indir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2024-08-04T22:38:16",
+ "modified": "2026-09-21T16:22:19",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Program İndir | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 4,
+ "live": {
+  "status": 200,
+  "title": "Program İndir | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/program-indir/",
+  "og_image": "",
+  "h1": [
+   "Program İndir"
+  ],
+  "h2": [
+   "Hangi programı istiyorsunuz?",
+   "Satış Kanallarımız",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "BreadcrumbList",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "786:page",
+   "75:gva__template"
+  ]
+ }
+}

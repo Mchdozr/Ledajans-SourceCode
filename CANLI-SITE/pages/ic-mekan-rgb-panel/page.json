@@ -1,0 +1,67 @@
+{
+ "id": 5006,
+ "type": "page",
+ "title": "İç Mekan RGB Panel",
+ "slug": "ic-mekan-rgb-panel",
+ "link": "https://ledajans.com/ic-mekan-rgb-panel/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:53:45",
+ "modified": "2026-09-29T12:07:07",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "İç Mekan RGB Panel | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 9,
+ "live": {
+  "status": 200,
+  "title": "İç Mekan RGB Panel | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ic-mekan-rgb-panel/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/P1.86-I-1.jpg",
+  "h1": [
+   "İç Mekan RGB Panel"
+  ],
+  "h2": [
+   "İç Mekan için RGB Panel",
+   "Ürün Özellikleri",
+   "İç Mekan RGB LED Paneller",
+   "İç Mekan RGB GOB LED Paneller",
+   "İç Mekan Flexible LED Paneller",
+   "LED Panel Hakkında Sık Sorulan Sorular",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5006:page",
+   "75:gva__template"
+  ]
+ }
+}

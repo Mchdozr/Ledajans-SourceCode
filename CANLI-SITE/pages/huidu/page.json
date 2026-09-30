@@ -1,0 +1,61 @@
+{
+ "id": 4214,
+ "type": "page",
+ "title": "HUIDU",
+ "slug": "huidu",
+ "link": "https://ledajans.com/huidu/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2025-11-21T06:39:17",
+ "modified": "2026-09-11T12:03:02",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "HUIDU - LEDAJANS",
+  "description": "Geniş proje kapasitesi ve profesyonel görüntü işleme ile yüksek ölçekli LED ekran projeleri için güçlü çözüm.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/huidu/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/11/a.png",
+  "h1": [
+   "HUIDU"
+  ],
+  "h2": [
+   "HUIDU",
+   "HD Serisi Program İndir",
+   "Huidu Processor Serisi",
+   "Öne Çıkan Ürünler",
+   "İndirme ve Satın Alma",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "4214:page",
+   "75:gva__template"
+  ]
+ }
+}

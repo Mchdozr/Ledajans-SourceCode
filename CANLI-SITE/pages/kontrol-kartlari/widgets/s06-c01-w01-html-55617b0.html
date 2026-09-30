@@ -1,0 +1,1450 @@
+<style>
+    .control-cards-tables-wrapper {
+      margin-bottom: 2rem;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .control-cards-models-menu { order: 1; }
+    .control-cards-table-section { order: 2; }
+    
+    @media (min-width: 640px) {
+      .control-cards-tables-wrapper { margin-bottom: 2.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-tables-wrapper { margin-bottom: 3rem; }
+    }
+    
+    .control-cards-tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    @media (min-width: 1024px) {
+      .control-cards-tables-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .control-cards-models-menu { width: 100%; }
+    @media (min-width: 1024px) {
+      .control-cards-models-menu {
+        width: auto;
+        position: sticky;
+        top: 6rem;
+        height: fit-content;
+      }
+    }
+    
+    .control-cards-models-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-card { padding: 2rem; }
+    }
+    
+    .control-cards-models-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    @media (min-width: 640px) {
+      .control-cards-models-title { font-size: 1.25rem; margin-bottom: 1.25rem; padding-bottom: 1rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-models-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    }
+    
+    .control-cards-models-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) { .control-cards-models-nav { gap: 0.75rem; } }
+    
+    .control-cards-model-button {
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: all 0.3s;
+      font-size: 0.75rem;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    @media (min-width: 640px) {
+      .control-cards-model-button { padding: 1rem 1.5rem; border-radius: 1rem; font-size: 0.875rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-model-button { font-size: 1rem; }
+    }
+    
+    .control-cards-model-button.active {
+      background: #F46F2C;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .control-cards-model-button:not(.active) { color: #374151; }
+    .control-cards-model-button:not(.active):hover {
+      background: #f9fafb;
+      color: #F46F2C;
+    }
+    
+    .control-cards-table-section { width: 100%; min-width: 0; }
+    
+    .control-cards-table-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table-card { border-radius: 1.5rem; padding: 1.5rem; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-card { padding: 2rem; }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-table-card { padding: 3rem; }
+    }
+    
+    .control-cards-downloads {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-downloads { margin-bottom: 2rem; } }
+    @media (min-width: 768px) { .control-cards-downloads { margin-bottom: 2.5rem; } }
+    
+    .control-cards-download-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #F46F2C;
+      color: white;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 0.75rem;
+      width: 100%;
+    }
+    @media (min-width: 640px) {
+      .control-cards-download-link { gap: 0.75rem; padding: 1rem 2rem; border-radius: 1rem; font-size: 0.875rem; width: auto; }
+    }
+    @media (min-width: 768px) {
+      .control-cards-download-link { padding: 1.25rem 2.5rem; font-size: 1rem; }
+    }
+    .control-cards-download-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      color: white;
+    }
+    
+    .control-cards-download-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) { .control-cards-download-icon { width: 1rem; height: 1rem; } }
+    @media (min-width: 768px) { .control-cards-download-icon { width: 1.25rem; height: 1.25rem; } }
+    
+    .control-cards-table-container {
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 600px;
+      margin: 0 -1rem;
+      padding: 0 1rem;
+    }
+    @media (min-width: 768px) {
+      .control-cards-table-container {
+        margin: 0;
+        padding: 0;
+        overflow-x: visible;
+        overflow-y: auto;
+        max-height: 800px;
+      }
+    }
+    
+    .control-cards-table-wrapper { min-width: 100%; display: inline-block; }
+    @media (min-width: 768px) { .control-cards-table-wrapper { display: block; } }
+    
+    .control-cards-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      min-width: 600px;
+    }
+    @media (min-width: 640px) { .control-cards-table { font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table { font-size: 1rem; min-width: 0; } }
+    
+    .control-cards-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f9fafb;
+    }
+    .control-cards-table thead tr { background: #f9fafb; }
+    .control-cards-table th {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.75rem;
+      background: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    @media (min-width: 640px) { .control-cards-table th { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table th { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      color: #374151;
+      font-size: 0.75rem;
+    }
+    @media (min-width: 640px) { .control-cards-table td { padding: 1rem 1.5rem; font-size: 0.875rem; } }
+    @media (min-width: 768px) { .control-cards-table td { padding: 1rem 2rem; font-size: 1rem; } }
+    
+    .control-cards-table-hidden { display: none; }
+    
+    .control-cards-section-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 2rem 0;
+    }
+    @media (min-width: 768px) {
+      .control-cards-section-title {
+        font-size: 2.25rem;
+        padding-left: 23rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .control-cards-section-title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    .control-cards-table h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #F46F2C;
+      margin: 2rem 0 1rem 0;
+      padding-top: 1rem;
+      border-top: 2px solid #e5e7eb;
+    }
+    .control-cards-table h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table h3 { font-size: 1.5rem; }
+    }
+    
+    .control-cards-table h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #374151;
+      margin: 1.5rem 0 0.75rem 0;
+    }
+    @media (min-width: 640px) {
+      .control-cards-table h4 { font-size: 1.25rem; }
+    }
+    </style>
+    
+    <div class="control-cards-tables-wrapper" id="huidu-control-cards-wrapper">
+      <h2 class="control-cards-section-title">HD- HUIDU Serisi Kontrol Kartları</h2>
+      <div class="control-cards-tables-container">
+        <div class="control-cards-models-menu">
+          <div class="control-cards-models-card">
+            <h3 class="control-cards-models-title">Modeller</h3>
+            <nav class="control-cards-models-nav">
+              <button class="control-cards-model-button active" data-model="hd-r708" onclick="showHuiduTable('hd-r708')">HD-R708</button>
+              <button class="control-cards-model-button" data-model="hd-r712" onclick="showHuiduTable('hd-r712')">HD-R712</button>
+              <button class="control-cards-model-button" data-model="hd-r716" onclick="showHuiduTable('hd-r716')">HD-R716</button>
+              <button class="control-cards-model-button" data-model="hd-c08l" onclick="showHuiduTable('hd-c08l')">HD-C08L</button>
+              <button class="control-cards-model-button" data-model="hd-c16l" onclick="showHuiduTable('hd-c16l')">HD-C16L</button>
+              <button class="control-cards-model-button" data-model="c36c" onclick="showHuiduTable('c36c')">C36C</button>
+              <button class="control-cards-model-button" data-model="hd-a3l" onclick="showHuiduTable('hd-a3l')">HD-A3L</button>
+              <button class="control-cards-model-button" data-model="hd-a4l" onclick="showHuiduTable('hd-a4l')">HD-A4L</button>
+              <button class="control-cards-model-button" data-model="hd-a5l" onclick="showHuiduTable('hd-a5l')">HD-A5L</button>
+              <button class="control-cards-model-button" data-model="hd-a6l" onclick="showHuiduTable('hd-a6l')">HD-A6L</button>
+              <button class="control-cards-model-button" data-model="vp210" onclick="showHuiduTable('vp210')">VP210</button>
+              <button class="control-cards-model-button" data-model="vp410" onclick="showHuiduTable('vp410')">VP410</button>
+              <button class="control-cards-model-button" data-model="hd-vp620" onclick="showHuiduTable('hd-vp620')">HD-VP620</button>
+              <button class="control-cards-model-button" data-model="vp820" onclick="showHuiduTable('vp820')">VP820</button>
+              <button class="control-cards-model-button" data-model="vp1240" onclick="showHuiduTable('vp1240')">VP1240</button>
+              <button class="control-cards-model-button" data-model="vp1640" onclick="showHuiduTable('vp1640')">VP1640</button>
+              <button class="control-cards-model-button" data-model="hd-a7" onclick="showHuiduTable('hd-a7')">HD-A7</button>
+              <button class="control-cards-model-button" data-model="hd-a8" onclick="showHuiduTable('hd-a8')">HD-A8</button>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="control-cards-table-section">
+          <!-- HD-R708 -->
+          <div id="control-cards-table-hd-r708" class="control-cards-table-card">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-R708-Specification-V1.0.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-R708 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellikler</th><th>Parametreler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Konvansiyonel çip: 128,512 piksel, PWM çip: 256,512 piksel</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Akıllı ayarları tamamlamak için birkaç basit adım</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Entegre ekran test fonksiyonu, görüntü parlaklık birliği, modül düzlüğü</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç2, 1Gbps Ethernet port2, HUB75E*8</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Diğer Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Öğe</th><th>Parametre Değeri</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.2V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>-40~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık (kg)</td><td>77</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-R712 -->
+          <div id="control-cards-table-hd-r712" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1NzJOuIIs7nOYSODrTNIKAjsWeiiwOm7a" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-R712 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellikler</th><th>Parametreler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Maksimum yükleme kapasitesi: 262,144 piksel (512512) Önerilen yükleme kapasitesi: konvansiyonel çip 1281024 piksel, PWM çip 256*1024 piksel Not: Gerçek yükleme kapasitesi HUB portlarının sayısına/modül çözünürlüğüne bağlıdır.</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Akıllı ayarları tamamlamak için birkaç basit adım, ekran yerleşimine göre ayarlanabilir.</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Alıcı kart entegre ekran test fonksiyonu, görüntü parlaklık birliği ve modül düzlüğünü test etme.</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç2, 1Gbps Ethernet port2, HUB75E*8</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Diğer Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Öğe</th><th>Parametre Değeri</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.2V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık (kg)</td><td>≈91g</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-R716 -->
+          <div id="control-cards-table-hd-r716" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1XqIEgvpcDUs5pF-ifmWhHa0DhHBI0Pgk" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-R716 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellikler</th><th>Parametreler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Gönderim kartı</td><td>İkili mod gönderim kutusu, Asenkron gönderim kartı, Senkron gönderim kartı, VP serisi video işlemcisi.</td></tr>
+                    <tr><td>Modül tipi</td><td>Tüm yaygın IC modülleri ile uyumlu, çoğu PWM IC modülünü destekler</td></tr>
+                    <tr><td>Tarama modu</td><td>Statik moddan 1/128 taramaya kadar her türlü tarama yöntemini destekler</td></tr>
+                    <tr><td>İletişim yöntemi</td><td>Gigabit Ethernet</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>Maksimum yükleme kapasitesi: 327,680 piksel (512640) <br> Konvansiyonel çip: 1601024, 256640 <br> PWM çip: 3201024, 2561280, 512640<br>Not: Gerçek yükleme kapasitesi HUB portlarının sayısına/modül çözünürlüğüne bağlıdır.</td></tr>
+                    <tr><td>Çoklu kart bağlantısı</td><td>Alıcı kart herhangi bir sırayla yerleştirilebilir</td></tr>
+                    <tr><td>Gri tonlama</td><td>256~65,536</td></tr>
+                    <tr><td>Akıllı ayar</td><td>Akıllı ayarları tamamlamak için birkaç basit adım, ekran yerleşimine göre ayarlanabilir.</td></tr>
+                    <tr><td>Test fonksiyonları</td><td>Alıcı kart entegre ekran test fonksiyonu, görüntü parlaklık birliği ve modül düzlüğünü test etme.</td></tr>
+                    <tr><td>İletişim mesafesi</td><td>Süper Cat5, Cat6 ağ kablosu ile 80 metre içinde</td></tr>
+                    <tr><td>Port</td><td>5V DC Güç2, 1Gbps Ethernet port2, HUB75E*16</td></tr>
+                    <tr><td>Giriş voltajı</td><td>4.0V-5.5V</td></tr>
+                    <tr><td>Güç</td><td>5W</td></tr>
+                  </tbody>
+                </table>
+                <h3>Diğer Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Öğe</th><th>Parametre Değeri</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominal Voltaj (V)</td><td>DC 4.0V-5.5V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-40℃~80℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem Oranı</td><td>0~90% RH</td></tr>
+                    <tr><td>Neto Ağırlık (g)</td><td>≈91g</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arayüz Tanımı</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Arayüz</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>Test butonu</td><td>Görüntü parlaklık birliği ve modül düzlüğünü test etmek için kullanılır.</td></tr>
+                    <tr><td>Gigabit ağ göstergesi</td><td>D3, D4, 2 Gigabit Ethernet portu için; bağlantı yoksa—her zaman kapalı, bağlantı var ama etkin değilse—her zaman açık, bağlantı var ve etkinse—yanıp sönüyor.</td></tr>
+                    <tr><td>Gigabit Ethernet portu</td><td>Gönderim kartı veya alıcı kartı bağlamak için kullanılır, aynı iki ağ portu birbirinin yerine geçebilir.</td></tr>
+                    <tr><td>Güç arayüzü</td><td>4.0V ~ 5.5V DC voltajı ile bağlanabilir.</td></tr>
+                    <tr><td>Güç arayüzü</td><td>4.0V ~ 5.5V DC voltajı ile bağlanabilir; (4,5'ten birine bağlanması yeterlidir.)</td></tr>
+                    <tr><td>Düz kablo arayüzü</td><td>16 HUB75E arayüzü, LED modüllerine düz kablo ile bağlanır.</td></tr>
+                    <tr><td>Çalışma göstergesi</td><td>PWR (D5) her zaman yeşil, güç kaynağı normal. PWR (D5) yeşil, 1 saniye açık 1 saniye kapalı, ağ bağlantısı anormal veya video sinyali yok; 1 saniyede 4 kez yanıp sönme, alıcı kart normal çalışıyor, video sinyali normal; 2.5 saniyede 5 kez yanıp sönme, 1.5 saniye kapalı, alıcı kart parametreleri kilitlenmiştir.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-C08L -->
+          <div id="control-cards-table-hd-c08l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1QnarTgtTuUo3AzB0AEi1wTWhrep4Bsdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-C08L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td>Kontrol programı</td><td>HDPlayer</td></tr>
+                    <tr><td>Kullanım alanı</td><td>Full renk paneller</td></tr>
+                    <tr><td>Metin</td><td>Metin ve resim doğrudan düzenlenmektedir</td></tr>
+                    <tr><td>Çıkış</td><td>1000M RJ45 x1, çift stereo AUDIO x1, 10x HUB75</td></tr>
+                    <tr><td>Zaman</td><td>Klasik analog saat, dijital saat ve görüntü arka planı olan çeşitli saatler</td></tr>
+                    <tr><td>Hafıza</td><td>4GB</td></tr>
+                    <tr><td>Resim formatı</td><td>BMP, GIF, JPG, JPEG, PNG, GIF, PBM, PGM, PPM, XPM, XBM vb.</td></tr>
+                    <tr><td>Video formatı</td><td>AVI, WMV, MP4, 3GP, ASF, MPG, FLV, F4V, MKV, MOV, DAT, VOB, TRP, TS, WEBM vb.</td></tr>
+                    <tr><td>Test</td><td>Kart üzerinde buton ile</td></tr>
+                    <tr><td>Tarama</td><td>1-32 rasgele ve statik tarama desteği</td></tr>
+                    <tr><td>Reset</td><td>Kart üzerinde buton ile</td></tr>
+                    <tr><td>Piksel sayısı</td><td>384 x 320</td></tr>
+                    <tr><td>İletişim</td><td>USB, Ethernet, Wifi, 3G, 4G</td></tr>
+                    <tr><td>Çalışma voltajı</td><td>DC 5V</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-C16L -->
+          <div id="control-cards-table-hd-c16l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1b0ZWXC6gIJXl3Z8sADEXz_skcqL2ljsU" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-C16L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td>Kontrol programı</td><td>HDPLAYER</td></tr>
+                    <tr><td>Kullanım alanı</td><td>Full renk paneller</td></tr>
+                    <tr><td>Metin</td><td>Metin ve resim doğrudan düzenlenmektedir</td></tr>
+                    <tr><td>Çıkış</td><td>1000M RJ45 x1, çift stereo AUDIO x1, 50 pinden 2</td></tr>
+                    <tr><td>Zaman</td><td>Klasik analog saat, dijital saat ve görüntü arka planı olan çeşitli saatler</td></tr>
+                    <tr><td>Hafıza</td><td>4GB</td></tr>
+                    <tr><td>Resim formatı</td><td>BMP, GIF, JPG, JPEG, PNG, GIF, PBM, PGM, PPM, XPM, XBM vb.</td></tr>
+                    <tr><td>Video formatı</td><td>AVI, WMV, MP4, 3GP, ASF, MPG, FLV, F4V, MKV, MOV, DAT, VOB, TRP, TS, WEBM vb.</td></tr>
+                    <tr><td>Test</td><td>Kart üzerinde buton ile</td></tr>
+                    <tr><td>Tarama</td><td>1-32 rasgele ve statik tarama desteği</td></tr>
+                    <tr><td>Reset</td><td>Kart üzerinde buton ile</td></tr>
+                    <tr><td>Piksel sayısı</td><td>640 x 480 , 1024 x 300 , 600 x 512</td></tr>
+                    <tr><td>İletişim</td><td>Ethernet, USB</td></tr>
+                    <tr><td>Çalışma voltajı</td><td>DC 5V</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- C36C -->
+          <div id="control-cards-table-c36c" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1bQn52gajiCvxNoFFWK621u-mW2mAcpo2" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>C36C DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <table class="control-cards-table">
+                  <thead><tr><th>Özellik</th><th>Değer</th></tr></thead>
+                  <tbody>
+                    <tr><td>Tip</td><td>Full renk paneller</td></tr>
+                    <tr><td>Tarama modu</td><td>1-32 rasgele ve statik tarama desteği</td></tr>
+                    <tr><td>Kontrol aralığı</td><td>1024 x 512</td></tr>
+                    <tr><td>Gri ölçek</td><td>0-65536</td></tr>
+                    <tr><td>Video formatı</td><td>AVI , WMV , MP4 , 3GP , ASF , MPG , FLV , F4V , MKV , MOV , DAT , VOB , TRP , TS , WEBM vb.</td></tr>
+                    <tr><td>Resim formatı</td><td>BMP , GIF , JPG , JPEG , PNG , GIF , PBM , PGM , PPM , XPM , XBM vb.</td></tr>
+                    <tr><td>Metin</td><td>Metin ve resim doğrudan düzenlenmektedir.</td></tr>
+                    <tr><td>Zaman</td><td>Klasik analog saat, dijital saat ve görüntü arka planı bulunan çeşitli saatler</td></tr>
+                    <tr><td>Hafıza</td><td>4G Flash bellek</td></tr>
+                    <tr><td>İletişim</td><td>10 / 100M / 1000M RJ45 Ethernet, 3G, İnternet, LAN</td></tr>
+                    <tr><td>Ses çıkışı</td><td>Çiftli stereo ses çıkışı</td></tr>
+                    <tr><td>Çıkış</td><td>1000M RJ45 X1, Ses x1, 50PIN Bağlantı Noktası x 2</td></tr>
+                    <tr><td>Çalışma voltajı</td><td>5 V</td></tr>
+                    <tr><td>Çalışma sıcaklığı</td><td>-20&gt;℃-80&gt;℃</td></tr>
+                    <tr><td>Port</td><td>5V Güç x1, 10 / 100M / 1000M RJ45 x1, USB 2.0 x1, Test düğmesi x1</td></tr>
+                    <tr><td>Kontrol programı</td><td>HDPlayer</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A3L -->
+          <div id="control-cards-table-hd-a3l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1DyjqR6Kjhmh2pcPipKUIaMEAZpiV3vEH" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A3L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Sıra No.</th><th>İsim</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Çalışma ışığı</td><td><strong>PWR:</strong> Güç gösterge ışığı, yeşil ışık her zaman yanar, güç girişi normaldir.<br><strong>RUN:</strong> Sistem çalışma ışığı, yeşil ışık yanıp sönüyor, işletim sistemi normal çalışıyor; yeşil ışık her zaman açık veya kapalı, sistem anormal çalışıyor.<br><strong>Wi-Fi:</strong> Kablosuz gösterge ışığı, AP modunda yeşil ışık yanıp sönüyor; STA modunda yeşil ışık her zaman yanıyor. Kırmızı ışık yanıp sönüyorsa, Wi-Fi anormal; ışık kapalıysa, Wi-Fi köprüsü sunucuya bağlanamıyor, sarı ışık her zaman yanıyor.<br><strong>4G:</strong> İletişim ağı göstergesi, yeşil ışık her zaman yanıyor, bulut sunucusuna bağlantı başarılı; sarı ışık her zaman yanıyor, bulut hizmetine bağlanılamıyor; kırmızı ışık her zaman yanıyor, sinyal yok veya SIM süresi dolmuş ya da arama yapılamıyor; kırmızı ışık yanıp sönüyorsa, SIM algılanamıyor; ışık yok, modül algılanmıyor (sadece 4G versiyonunda 4G gösterge ışığı var).</td></tr>
+                    <tr><td>2</td><td>Fonksiyon butonu</td><td>Program oynatma değişimini sağlar, TEST moduna geçişi destekler.</td></tr>
+                    <tr><td>3</td><td>USB</td><td>Program güncellemeleri, program ekleme veya kapasite genişletmek için USB 3.0.</td></tr>
+                    <tr><td>4</td><td>Giriş ağ portu</td><td>100Mbps ağ portu girişi, bilgisayara bağlanarak programları debug etmek ve yayımlamak için kullanılabilir, LAN veya İnternete erişim sağlar.</td></tr>
+                    <tr><td>5</td><td>SIM kart yuvası</td><td>Micro SIM kart yuvası, uzaktan kontrol için 4G/5G ağ bağlantısı sağlar (isteğe bağlı 4G modülü).</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Sıra No.</th><th>İsim</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç kaynağı</td><td>5V 3A, 12V 1.5A.</td></tr>
+                    <tr><td>2</td><td>Reset</td><td>Reset pin deliği.</td></tr>
+                    <tr><td>3</td><td>USB 2.0</td><td>Program güncellemeleri, program ekleme veya kapasite genişletmek için kullanılır (OTG işlevine geçiş desteği).</td></tr>
+                    <tr><td>4</td><td>Çıkış ağ portu</td><td>HD-R serisi alıcı kartlarla birlikte kaskadlanmış gigabit çıkış ağ portu.</td></tr>
+                    <tr><td>5</td><td>Ses çıkışı</td><td>TRS 3.5mm standart iki kanallı ses çıkış portu.</td></tr>
+                    <tr><td>6</td><td>Wi-Fi anteni</td><td>Kablosuz sinyali artırmak için Wi-Fi antenini bağlayın.</td></tr>
+                    <tr><td>7</td><td>Sensör</td><td>Dış ortam sıcaklığı, nem, parlaklık, rüzgar hızı, rüzgar yönü, gürültü, PM2.5, PM10, CO₂ ve diğer sensörleri içerir.</td></tr>
+                    <tr><td>8</td><td>4G anteni</td><td>4G anteni bağlayın (sadece 4G versiyonunda mevcuttur).</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ürün Spesifikasyonları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğe</th><th>Spesifikasyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik parametreleri</td><td>Giriş gücü</td><td>DC 5V-12V</td></tr>
+                    <tr><td></td><td>Maksimum güç tüketimi</td><td>18W</td></tr>
+                    <tr><td>Depolama alanı</td><td>Rastgele erişim hafızası</td><td>1GB</td></tr>
+                    <tr><td></td><td>Dahili depolama</td><td>16GB</td></tr>
+                    <tr><td>Depolama ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon olmadan)</td></tr>
+                    <tr><td>Çalışma ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 70℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon olmadan)</td></tr>
+                    <tr><td>Fiziksel özellikler</td><td>Boyut</td><td>175mm×101.1mm×32.1mm</td></tr>
+                    <tr><td></td><td>Net ağırlık</td><td>Standart versiyon: 240g<br>4G versiyon: 260g</td></tr>
+                    <tr><td></td><td>Koruma derecesi</td><td>IP20</td></tr>
+                    <tr><td>Sistem yazılımı</td><td>Android 11.0 işletim sistemi yazılımı<br>Android terminal uygulama yazılımı</td><td></td></tr>
+                  </tbody>
+                </table>
+                <h3>Resim Kodlama Spesifikasyonları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Kodlama</th><th>Boyut</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JFIF dosya formatı 1.02</td><td>48x48 piksel ile 8176x8176 piksel</td><td>JPG, JPEG</td><td>Kırışık tarama desteklenmez; SRGB JPEG ve Adobe RGB JPEG desteklenir.</td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>Sınırsız</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>Sınırsız</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>Sınırsız</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>Sınırsız</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Kodlama Spesifikasyonları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Kodlama</th><th>Çözünürlük</th><th>Maks. kare hızı</th><th>Maks. bit hızı</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>80Mbps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlamayı destekler.</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>38.4Mbps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3 ve GMC desteklenmez.</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>48×48 piksel ile 4096×2304 piksel</td><td>2304P@30fps</td><td>100Mbps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Yüksek ve Yüksek 10 Profil Kodlamayı destekler, MBAFF.</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>48×48 piksel ile 4096×2304 piksel</td><td>2304P@30fps</td><td>100Mbps</td><td>MKV, TS</td><td>Sadece Stereo Yüksek Profil desteklenir.</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>64×64 piksel ile 4096×2304 piksel</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil ve Ana10 Profil, Karo ve Dilim desteklenir.</td></tr>
+                    <tr><td>GOOGLE VP8</td><td>VP8</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>38.4Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>GOOGLE VP9</td><td>VP9</td><td>64×64 piksel ile 4096×2304 piksel</td><td>30fps</td><td>80Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>SQCIF(128×96), QCIF(176×144), CIF(352×288), 4CIF(704×576)</td><td>30fps</td><td>38.4Mbps</td><td>3GP, MOV, MP4</td><td>H.263+ desteklenmez.</td></tr>
+                    <tr><td>VC-1</td><td>VC-1</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>45Mbps</td><td>WMV, ASF, TS, MKV, AVI</td><td>NA</td></tr>
+                    <tr><td>MOTION JPEG</td><td>MJPEG</td><td>48×48 piksel ile 1920×1088 piksel</td><td>30fps</td><td>38.4Mbps</td><td>AVI</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A4L -->
+          <div id="control-cards-table-hd-a4l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1SyU1ZZMJxA_5A9mqrkmWxKgkggImcExP" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A4L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Çalışma Işığı</td><td>PWR: Güç gösterge ışığı, yeşil ışık sürekli yanar, güç girişi normal.<br>RUN: Sistem çalışma ışığı, yeşil ışık yanıp sönüyorsa işletim sistemi normal çalışıyor; yeşil ışık sürekli yanıyorsa veya sönüyorsa, sistem anormal çalışıyor.<br>DISP: Gösterge ışığı, yeşil ışık yanıp sönüyorsa FPGA sistemi normal çalışıyor; yeşil ışık sürekli yanıyorsa veya sönüyorsa sistem anormal çalışıyor.<br>Wi-Fi: Kablosuz gösterge ışığı, AP modunda yeşil ışık yanıp sönüyor; STA modunda yeşil ışık sürekli yanıyor. Kırmızı ışık yanıp sönüyorsa Wi-Fi anormal, ışık sönmüşse Wi-Fi köprüsü sunucuya bağlanamıyor, sarı ışık sürekli yanıyorsa.<br>4G/5G: İletişim ağ göstergesi, yeşil ışık sürekli yanıyorsa bulut sunucusuna bağlanma başarılı; sarı ışık sürekli yanıyorsa bulut servisine bağlanılamıyor; kırmızı ışık sürekli yanıyorsa sinyal yok veya SIM kart borçlu veya arama yapamıyor; kırmızı ışık yanıp sönüyorsa SIM kart tespit edilemiyor; ışık yoksa modül tespit edilemiyor.</td></tr>
+                    <tr><td>2</td><td>SIM Kart Yuvası</td><td>Mikro SIM kart yuvası, uzaktan kontrol için 4G/5G bağlantı sağlıyor (opsiyonel 4G/5G modülü).</td></tr>
+                    <tr><td>3</td><td>Fonksiyon Düğmesi</td><td>HDMI IN: HDMI sinyal girişi, eşzamanlı oynatma.<br>ASYNC: Asenkron mod geçişi.<br>NEXT: Program geçişi.</td></tr>
+                    <tr><td>4</td><td>Anahtar</td><td>Oynatıcı kutusunun gücünü kontrol eder, ON açma ve OFF kapama anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Wi-Fi Anteni</td><td>Kablosuz sinyalin artırılması için Wi-Fi antenini bağlayın.</td></tr>
+                    <tr><td>2</td><td>Sensör</td><td>Harici sıcaklık, nem, parlaklık, rüzgar hızı, rüzgar yönü, gürültü, PM2.5, PM10, CO₂ ve diğer sensörler.</td></tr>
+                    <tr><td>3</td><td>4G/5G Anteni</td><td>4G/5G antenini bağlayın (4G için 1 anten, 5G için 4 anten, opsiyonel).</td></tr>
+                    <tr><td>4</td><td>Güç Kaynağı</td><td>5V 3A, 12V 1.5A.</td></tr>
+                    <tr><td>5</td><td>Giriş Ağı Portu</td><td>Gigabit giriş ağı portu, bilgisayara bağlayarak programları hata ayıklamak ve yayınlamak için kullanılabilir, LAN veya İnternete erişim sağlar.</td></tr>
+                    <tr><td>6</td><td>Reset</td><td>Sıfırlama pin deliği.</td></tr>
+                    <tr><td>7</td><td>Ses Çıkışı</td><td>TRS 3.5mm standart iki kanallı ses çıkış portu.</td></tr>
+                    <tr><td>8</td><td>HDMI</td><td>HDMI IN: HDMI1.4 eşzamanlı sinyal girişi arayüzü, adaptif ölçekleme desteği ile.</td></tr>
+                    <tr><td>9</td><td>USB</td><td>USB: Program güncellemeleri, program ekleme veya kapasite genişletme için USB3.0.<br>OTG: Hata ayıklama veya yazılım güncelleme için kullanılır (varsayılan USB 2.0 işlevi, fabrika ayarlanabilir).</td></tr>
+                    <tr><td>10</td><td>Çıkış Ağı Portu</td><td>Gigabit çıkış ağı portu, HD-R serisi alıcı kart ile birleştirilir.</td></tr>
+                    <tr><td>11</td><td>Toprak Teli</td><td>Toprak bağlantı portu.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ürün Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellik</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Giriş Gücü</td><td>DC 5V-12V</td></tr>
+                    <tr><td></td><td>Maksimum Güç Tüketimi</td><td>18W</td></tr>
+                    <tr><td>Depolama Alanı</td><td>Rastgele Erişim Belleği</td><td>2GB</td></tr>
+                    <tr><td></td><td>Dahili Depolama</td><td>16GB</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon Yok)</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 70℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon Yok)</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyut</td><td>287mm×140.3mm×42.3mm</td></tr>
+                    <tr><td></td><td>Net Ağırlık</td><td>≈1140g</td></tr>
+                    <tr><td>Koruma Derecesi</td><td>Koruma Sınıfı</td><td>IP20</td></tr>
+                    <tr><td>Sistem Yazılımları</td><td>Android 11.0 işletim sistemi yazılımı<br>Android terminal uygulama yazılımı<br>FPGA yazılımı</td><td></td></tr>
+                  </tbody>
+                </table>
+                <h3>Resim Çözümleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözümleme</th><th>Boyut</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JFIF dosya formatı 1.02</td><td>96x32 piksellere kadar 817×8176 piksel</td><td>JPG, JPEG</td><td>Yalnızca düz tarama desteklenmez; sRGB JPEG ve Adobe RGB JPEG desteklenir.</td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>Sınırsız</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>Sınırsız</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>Sınırsız</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>Sınırsız</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Çözümleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözümleme</th><th>Çözünürlük</th><th>Maksimum Kare Hızı</th><th>Maksimum Bit Hızı</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>80Mbps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlaması desteklenir</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>38.4Mbps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3 ve GMC desteklenmez</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>48×48 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>80Mbps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan Kodlaması ve MBAFF desteklenir</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>48×48 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV, TS</td><td>Yalnızca Stereo Yüksek Profil desteklenir</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>64×64 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil, Karo & Dilim desteklenir</td></tr>
+                    <tr><td>GOOGLE VP8</td><td>VP8</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>38.4Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>GOOGLE VP9</td><td>VP9</td><td>64×64 pikselden 4096×2304 piksele kadar</td><td>60fps</td><td>80Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>SQCIF(128×96</td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A5L -->
+          <div id="control-cards-table-hd-a5l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1ncJ9Ac-XElrbwCxR_0Yv91ZVovalf3xB" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A5L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Çalışma Işığı</td><td>PWR: Güç göstergesi ışığı, yeşil ışık sürekli yanar, güç girişi normaldir.<br>RUN: Sistem çalışma ışığı, yeşil ışık yanıp sönüyorsa işletim sistemi normal çalışıyor; yeşil ışık sürekli yanıyorsa veya sönüyorsa, sistem anormal çalışıyor.<br>DISP: Gösterge ışığı, yeşil ışık yanıp sönüyorsa FPGA sistemi normal çalışıyor; yeşil ışık sürekli yanıyorsa veya sönüyorsa, sistem anormal çalışıyor.<br>Wi-Fi: Kablosuz gösterge ışığı, AP modunda yeşil ışık yanıp sönüyor; STA modunda yeşil ışık sürekli yanıyor. Kırmızı ışık yanıp sönüyorsa Wi-Fi anormal, ışık sönmüşse Wi-Fi köprüsü sunucuya bağlanamıyor; sarı ışık sürekli yanıyorsa.<br>4G/5G: İletişim ağı göstergesi, yeşil ışık sürekli yanıyorsa bulut sunucusuna bağlanma başarılı; sarı ışık sürekli yanıyorsa bulut servisine bağlanılamıyor; kırmızı ışık sürekli yanıyorsa sinyal yok veya SIM kart borçlu veya arama yapamıyor; kırmızı ışık yanıp sönüyorsa SIM kart tespit edilemiyor; ışık yoksa modül tespit edilemiyor.</td></tr>
+                    <tr><td>2</td><td>SIM Kart Yuvası</td><td>Mikro SIM kart yuvası, uzaktan kontrol için 4G/5G bağlantısı sağlıyor (opsiyonel 4G/5G modülü).</td></tr>
+                    <tr><td>3</td><td>Fonksiyon Düğmesi</td><td>HDMI IN: HDMI sinyal girişi, eşzamanlı oynatma.<br>ASYNC: Asenkron mod geçişi.<br>NEXT: Program geçişi.</td></tr>
+                    <tr><td>4</td><td>Anahtar</td><td>Oynatıcı kutusunun gücünü kontrol eder, ON açma ve OFF kapama anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Wi-Fi Anteni</td><td>Kablosuz sinyalin artırılması için Wi-Fi antenini bağlayın.</td></tr>
+                    <tr><td>2</td><td>Sensör</td><td>Harici sıcaklık, nem, parlaklık, rüzgar hızı, rüzgar yönü, gürültü, PM2.5, PM10, CO₂ ve diğer sensörler.</td></tr>
+                    <tr><td>3</td><td>4G/5G Anteni</td><td>4G/5G antenini bağlayın (4G için 1 anten, 5G için 4 anten, opsiyonel).</td></tr>
+                    <tr><td>4</td><td>Güç Kaynağı</td><td>5V 3A, 12V 1.5A.</td></tr>
+                    <tr><td>5</td><td>Giriş Ağı Portu</td><td>Gigabit giriş ağı portu, bilgisayara bağlayarak programları hata ayıklamak ve yayınlamak için kullanılabilir; LAN veya İnternete erişim sağlar.</td></tr>
+                    <tr><td>6</td><td>Reset</td><td>Sıfırlama pin deliği.</td></tr>
+                    <tr><td>7</td><td>Ses Çıkışı</td><td>TRS 3.5mm standart iki kanallı ses çıkış portu.</td></tr>
+                    <tr><td>8</td><td>HDMI</td><td>HDMI IN: HDMI1.4 eşzamanlı sinyal girişi arayüzü, adaptif ölçekleme desteği ile.</td></tr>
+                    <tr><td>9</td><td>USB</td><td>USB: Program güncellemeleri, program ekleme veya kapasite genişletme için USB3.0.<br>OTG: Hata ayıklama veya yazılım güncelleme için kullanılır (varsayılan USB 2.0 işlevi, fabrika ayarlanabilir).</td></tr>
+                    <tr><td>10</td><td>Çıkış Ağı Portu</td><td>Gigabit çıkış ağı portu, HD-R serisi alıcı kart ile birleştirilir.</td></tr>
+                    <tr><td>11</td><td>Toprak Teli</td><td>Toprak bağlantı portu.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ürün Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellik</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Giriş Gücü</td><td>DC 5V-12V</td></tr>
+                    <tr><td></td><td>Maksimum Güç Tüketimi</td><td>18W</td></tr>
+                    <tr><td>Depolama Alanı</td><td>Rastgele Erişim Belleği</td><td>2GB</td></tr>
+                    <tr><td></td><td>Dahili Depolama</td><td>16GB</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon Yok)</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 70℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon Yok)</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyut</td><td>287mm×140.3mm×42.3mm</td></tr>
+                    <tr><td></td><td>Net Ağırlık</td><td>≈1140g</td></tr>
+                    <tr><td>Koruma Derecesi</td><td>Koruma Sınıfı</td><td>IP20</td></tr>
+                    <tr><td>Sistem Yazılımları</td><td>Android 11.0 işletim sistemi yazılımı<br>Android terminal uygulama yazılımı<br>FPGA yazılımı</td><td></td></tr>
+                  </tbody>
+                </table>
+                <h3>Resim Çözümleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözümleme</th><th>Boyut</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JFIF dosya formatı 1.02</td><td>96x32 pikselden 817×8176 piksele kadar</td><td>JPG, JPEG</td><td>Düz tarama desteklenmez; sRGB JPEG ve Adobe RGB JPEG desteklenir.</td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>Sınırsız</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>Sınırsız</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>Sınırsız</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>Sınırsız</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Çözümleme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözümleme</th><th>Çözünürlük</th><th>Maksimum Kare Hızı</th><th>Maksimum Bit Hızı</th><th>Format</th><th>Notlar</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>80Mbps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlaması desteklenir</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>38.4Mbps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3 ve GMC desteklenmez</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>48×48 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>80Mbps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan Kodlaması ve MBAFF desteklenir</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>48×48 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV, TS</td><td>Yalnızca Stereo Yüksek Profil desteklenir</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>64×64 pikselden 4096×2304 piksele kadar</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil, Karo & Dilim desteklenir</td></tr>
+                    <tr><td>GOOGLE VP8</td><td>VP8</td><td>48×48 pikselden 1920×1088 piksele kadar</td><td>30fps</td><td>38.4Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>GOOGLE VP9</td><td>VP9</td><td>64×64 pikselden 4096×2304 piksele kadar</td><td>60fps</td><td>80Mbps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>SQCIF(128×96), QCIF</td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A6L -->
+          <div id="control-cards-table-hd-a6l" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=128o8lYztmdnwi9s_ywF-H9k8CbjPCqSS" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A6L DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Çalışma ışığı</td><td><strong>PWR:</strong> Güç göstergesi ışığı, yeşil ışık sürekli yanıyorsa normal güç girişi var demektir.<br><strong>RUN:</strong> Sistem çalışma ışığı, yeşil ışık yanıp sönüyorsa normal çalışma; sürekli yanıyorsa veya sönüyorsa anormal çalışma demektir.<br><strong>DISP:</strong> Ekran göstergesi, yeşil ışık yanıp sönüyorsa FPGA sistemi normal çalışıyor demektir; sürekli yanıyorsa veya sönüyorsa anormal çalışma demektir.<br><strong>Wi-Fi:</strong> Kablosuz gösterge ışığı; AP modunda yeşil ışık yanıp sönüyor, STA modunda sürekli yanıyor; kırmızı ışık yanıp sönüyorsa Wi-Fi anormal; ışık sönmüşse bağlantı yok; sarı ışık sürekli yanıyorsa bağlantı sorunları var demektir.<br><strong>4G/5G:</strong> İletişim ağı göstergesi; yeşil ışık yanıyorsa bulut sunucusuna bağlantı başarılı; sarı ışık yanıyorsa bağlantı sorunları var; kırmızı ışık yanıyorsa sinyal yok veya SIM sorunları var; kırmızı ışık yanıp sönüyorsa SIM algılanamıyor; ışık yoksa modül algılanmıyor.</td></tr>
+                    <tr><td>2</td><td>SIM kart yuvası</td><td>Uzaktan kontrol için 4G/5G bağlantısı sağlayan Mikro SIM kart yuvası (isteğe bağlı 4G/5G modülü).</td></tr>
+                    <tr><td>3</td><td>Fonksiyon düğmesi</td><td><strong>HDMI LOOP:</strong> HDMI dikiş modu.<br><strong>HDMI IN:</strong> HDMI sinyal girişi, eşzamanlı oynatma.<br><strong>ASYNC:</strong> Asenkron mod geçişi.<br><strong>NEXT:</strong> Program oynatma geçişi.</td></tr>
+                    <tr><td>4</td><td>Anahtar</td><td>Oynatıcı kutusunun gücünü kontrol eder; ON açık, OFF kapalı anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Seri No</th><th>Ad</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Wi-Fi anteni</td><td>Kablosuz sinyali artırmak için Wi-Fi antenini bağlayın.</td></tr>
+                    <tr><td>2</td><td>Sensör</td><td>Dış ortam sıcaklığı, nem, parlaklık, rüzgar hızı, rüzgar yönü, gürültü, PM2.5, PM10, CO₂ ve diğer sensörler.</td></tr>
+                    <tr><td>3</td><td>4G/5G anteni</td><td>4G için 1, 5G için 4 anten bağlayın (isteğe bağlı).</td></tr>
+                    <tr><td>4</td><td>Güç kaynağı</td><td>5V 3A, 12V 1.5A girişi.</td></tr>
+                    <tr><td>5</td><td>Giriş ağ portu</td><td>Bilgisayara bağlanarak programları hata ayıklamak ve yayınlamak için kullanılabilen Gigabit giriş ağ portu.</td></tr>
+                    <tr><td>6</td><td>Sıfırlama</td><td>Sıfırlama delik açma.</td></tr>
+                    <tr><td>7</td><td>Ses çıkışı</td><td>TRS 3.5mm standart iki kanallı ses çıkış portu.</td></tr>
+                    <tr><td>8</td><td>HDMI</td><td><strong>HDMI IN:</strong> HDMI1.4 eşzamanlı sinyal girişi; uyumlu ölçeklendirmeyi destekler.<br><strong>HDMI LOOP:</strong> HDMI1.4 eşzamanlı giriş veya dikişli giriş.<br><strong>HDMI OUT:</strong> HDMI1.4 çıkış arayüzü.</td></tr>
+                    <tr><td>9</td><td>USB</td><td><strong>USB:</strong> Program güncellemeleri, program eklemek veya kapasite artırmak için USB3.0.<br><strong>OTG:</strong> Hata ayıklama veya firmware yükseltmeleri için kullanılır.</td></tr>
+                    <tr><td>10</td><td>Çıkış ağ portu</td><td>HD-R serisi alıcı kartı ile kaskadlı bağlantı yapan Gigabit çıkış ağ portu.</td></tr>
+                    <tr><td>11</td><td>Toprak kablosu</td><td>Toprak kablosu bağlantı portu.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ürün Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Madde</th><th>Özellik</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik parametreleri</td><td>Giriş gücü</td><td>DC 5V-12V</td></tr>
+                    <tr><td></td><td>Maksimum güç tüketimi</td><td>18W</td></tr>
+                    <tr><td>Depolama Alanı</td><td>Rastgele erişim belleği</td><td>2GB</td></tr>
+                    <tr><td></td><td>Dahili depolama</td><td>16GB</td></tr>
+                    <tr><td>Depolama ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon yok)</td></tr>
+                    <tr><td>Çalışma ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 70℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 80%RH (Kondensasyon yok)</td></tr>
+                    <tr><td>Fiziksel özellikler</td><td>Boyut</td><td>287mm × 140.3mm × 42.3mm</td></tr>
+                    <tr><td></td><td>Net ağırlık</td><td>1004g</td></tr>
+                    <tr><td></td><td>Koruma derecesi</td><td>IP20</td></tr>
+                    <tr><td>Sistem yazılımı</td><td></td><td>Android 11.0 işletim sistemi yazılımı</td></tr>
+                    <tr><td></td><td></td><td>Android terminal uygulama yazılımı</td></tr>
+                    <tr><td></td><td></td><td>FPGA yazılımı</td></tr>
+                  </tbody>
+                </table>
+                <h3>Resim Çözme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözme</th><th>Boyut</th><th>Format</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JFIF dosya formatı 1.02</td><td>96x32 pikselden 817×8176 piksele</td><td>JPG, JPEG</td><td>Düzensiz tarama desteklenmez; SRGB ve Adobe RGB desteklenir.</td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>Sınırsız</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>Sınırsız</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>Sınırsız</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>Sınırsız</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Çözme Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Çözme</th><th>Çözünürlük</th><th>Maksimum kare hızı</th><th>Maksimum bit hızı</th><th>Format</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>48×48 pikselden 1920×1088 piksele</td><td>30fps</td><td>80Mbps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlamayı destekler</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>48×48 pikselden 1920×1088 piksele</td><td>30fps</td><td>38.4Mbps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3 ve GMC desteklenmez</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>48×48 pikselden 4096×2304 piksele</td><td>2304P@60fps</td><td>80Mbps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan Kodlamayı ve MBAFF'yi destekler</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>48×48 pikselden 4096×2304 piksele</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV , TS</td><td>Yalnızca Stereo Yüksek Profil desteklenir</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>64×64 pikselden 4096×2304 piksele</td><td>2304P@60fps</td><td>100Mbps</td><td>MKV , MP4, MOV , TS</td><td>Ana Profil, Karo ve Dilim desteklenir</td></tr>
+                    <tr><td>GOOGLE VP8</td><td>VP8</td><td>48×48 pikselden 1920×1088 piksele</td><td>30fps</td><td>38.4Mbps</td><td>WEBM , MKV</td><td>NA</td></tr>
+                    <tr><td>GOOGLE VP9</td><td>VP9</td><td>64×64 pikselden 4096×2304 piksele</td><td>60fps</td><td>80Mbps</td><td>WEBM , MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>SQCIF(128×96), QCIF(176×144), CIF(352×288), 4CIF(704×576)</td><td>30fps</td><td>38.4Mbps</td><td>3GP, MOV, MP4</td><td>H.263+ desteklenmez</td></tr>
+                    <tr><td>VC-1</td><td>VC</td><td></td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VP210 -->
+          <div id="control-cards-table-vp210" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1wrpB7gvzsKYYKIoUrHc8yLdVHI3Mvmdu" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VP210 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Düğmeleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Düğme</th><th>Fonksiyon Açıklaması</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç düğmesi</td><td>Cihazın güç açma/kapama düğmesi.</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Cihaz menü bilgilerini gösterir.</td></tr>
+                    <tr><td>3</td><td>Rotary Düğme</td><td>Kolu çevirerek menüyü seçin ve onaylamak için basın.</td></tr>
+                    <tr><td>4</td><td>Geri Tuşu</td><td>Mevcut menüden veya işlemden çıkış yapar.</td></tr>
+                    <tr><td>5</td><td>Ölçek</td><td>Tam ekran yakınlaştırma kısayol düğmesi.</td></tr>
+                    <tr><td>6</td><td>Giriş Kaynağı</td><td>U disk giriş oynatma modunda, DVI düğmesi ⏮ olarak tanımlanır, önceki dosyayı oynatır. U disk giriş oynatma modunda, VGA düğmesi ⏭ olarak tanımlanır, sonraki dosyayı oynatır. U disk giriş oynatma modunda, CVBS ve HDMI düğmeleri ⏯ olarak tanımlanır, dosyayı duraklatır veya oynatır. U disk giriş oynatma modunda, USB düğmesi ■ olarak tanımlanır, oynatmayı durdurur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>USB (Tip A)</td><td>1</td><td>USB'den doğrudan video ve resim oynatma.<br>Resim dosyası formatları: jpg, jpeg, png ve bmp;<br>Video dosyası formatları: mp4, avi, mpg, mkv, mov, vob ve rmvb;<br>Video kodlama: MPEG4 (MP4), MPEG_SD/HD, H.264 (AVI, MKV), FLV.</td></tr>
+                    <tr><td>HDMI</td><td>1</td><td>Sinyal standardı: HDMI1.3, geriye dönük uyumlu.<br>Çözünürlük: VESA Standardı, ≤1920×1080p@60Hz.</td></tr>
+                    <tr><td>CVBS</td><td>1</td><td>Sinyal standardı: PAL/NTSC 1Vpp±3dB (0.7V Video+0.3V Senkron) 75 ohm.<br>Çözünürlük: 480i, 576i.</td></tr>
+                    <tr><td>VGA</td><td>1</td><td>Sinyal standardı: R, G, B, Hsync, Vsync: 0 to 1Vpp±3dB (0.7V Video+0.3V Senkron) 75 ohm, siyah seviye: 300mV Senkron uç: 0V.<br>Çözünürlük: VESA Standardı, ≤1920×1080p@60Hz.</td></tr>
+                    <tr><td>DVI</td><td>1</td><td>Sinyal standardı: DVI1.0, HDMI1.3, geriye dönük uyumlu.<br>Çözünürlük: VESA Standardı, PC'den 1920x1080, HD için 1080p.</td></tr>
+                    <tr><td>AUDIO</td><td>2</td><td>Ses girişi ve çıkışı.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çıkış Portları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>LAN</td><td>2</td><td>2 yönlü ağ portu çıkış arayüzü, kabul kartına bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Kare USB (Tip B)</td><td>1</td><td>Bilgisayara bağlanarak ekran parametrelerini ayarlamak için kullanılır.</td></tr>
+                    <tr><td>Güç arayüzü</td><td>1</td><td>110-240VAC, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VP410 -->
+          <div id="control-cards-table-vp410" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX10_VP410-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VP410 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Düğmeleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Düğme</th><th>Fonksiyon Açıklaması</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç düğmesi</td><td>Cihazın güç açma/kapama düğmesi.</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Cihaz menü bilgilerini gösterir.</td></tr>
+                    <tr><td>3</td><td>Rotary Düğme</td><td>Kolu çevirerek menüyü seçin ve onaylamak için basın.</td></tr>
+                    <tr><td>4</td><td>Geri Tuşu</td><td>Mevcut menüden veya işlemden çıkış yapar.</td></tr>
+                    <tr><td>5</td><td>Ölçek</td><td>Tam ekran yakınlaştırma kısayol düğmesi.</td></tr>
+                    <tr><td>6</td><td>Giriş Kaynağı</td><td>U disk giriş oynatma modunda, DVI düğmesi ⏮ olarak tanımlanır, önceki dosyayı oynatır. U disk giriş oynatma modunda, VGA düğmesi ⏭ olarak tanımlanır, sonraki dosyayı oynatır. U disk giriş oynatma modunda, CVBS ve HDMI düğmeleri ⏯ olarak tanımlanır, dosyayı duraklatır veya oynatır. U disk giriş oynatma modunda, USB düğmesi ■ olarak tanımlanır, oynatmayı durdurur.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Bağlantıları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>USB (Tip A)</td><td>1</td><td>USB'den doğrudan video ve resim oynatma.<br>Resim dosyası formatları: jpg, jpeg, png ve bmp;<br>Video dosyası formatları: mp4, avi, mpg, mkv, mov, vob ve rmvb;<br>Video kodlama: MPEG4 (MP4), MPEG_SD/HD, H.264 (AVI, MKV), FLV.</td></tr>
+                    <tr><td>HDMI</td><td>1</td><td>Sinyal standardı: HDMI1.3, geriye dönük uyumlu.<br>Çözünürlük: VESA Standardı, ≤1920×1080p@60Hz.</td></tr>
+                    <tr><td>CVBS</td><td>1</td><td>Sinyal standardı: PAL/NTSC 1Vpp±3dB (0.7V Video+0.3V Senkron) 75 ohm.<br>Çözünürlük: 480i, 576i.</td></tr>
+                    <tr><td>VGA</td><td>1</td><td>Sinyal standardı: R, G, B, Hsync, Vsync: 0 to 1Vpp±3dB (0.7V Video+0.3V Senkron) 75 ohm, siyah seviye: 300mV Senkron uç: 0V.<br>Çözünürlük: VESA Standardı, ≤1920×1080p@60Hz.</td></tr>
+                    <tr><td>DVI</td><td>1</td><td>Sinyal standardı: DVI1.0, HDMI1.3, geriye dönük uyumlu.<br>Çözünürlük: VESA Standardı, PC'den 1920x1080, HD için 1080p.</td></tr>
+                    <tr><td>AUDIO</td><td>2</td><td>Ses girişi ve çıkışı.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çıkış Portları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>LAN</td><td>2</td><td>2 yönlü ağ portu çıkış arayüzü, kabul kartına bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Kare USB (Tip B)</td><td>1</td><td>Bilgisayara bağlanarak ekran parametrelerini ayarlamak için kullanılır.</td></tr>
+                    <tr><td>Güç arayüzü</td><td>1</td><td>110-240VAC, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-VP620 -->
+          <div id="control-cards-table-hd-vp620" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1OgRZ0DFHgZlHPMrJebaxjAwGdSTDx8qx" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-VP620 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Düğmeleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Düğme</th><th>Fonksiyon Açıklaması</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç Düğmesi</td><td>Cihazın güç açma/kapama düğmesi.</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Cihaz menü bilgilerini gösterir.</td></tr>
+                    <tr><td>3</td><td>Giriş Kaynağı Seçim Tuşu</td><td>6 düğme [DVI] ~ [DP], 5 giriş kaynağı portu seçme düğmesi, arka paneldeki giriş arayüzü tanımlamalarına karşılık gelir. Aralarında: BLACK tuşuna basıldığında ve BLACK LED göstergesi yandığında, çıkış siyah ekran durumundadır.</td></tr>
+                    <tr><td>4</td><td>Fonksiyon Ayar Tuşu</td><td>[BRIGHT]: Parlaklık ayar menüsünün kısayol tuşlarını hızlıca değiştirir.<br>[FREEZE]: Ekranı dondurma kısayol tuşu.<br>[MODE]: Önceden ayarlanmış mod çağrı menüsünü hızlıca açar.<br>[LOCK]: Tuşları hızlıca kilitleyerek yanlış işlemleri önler.<br>[PXP]: Çift resim düzeni menüsüne hızlıca girer.<br>[REV]: Ayrılmış fonksiyon tuşları.</td></tr>
+                    <tr><td>5</td><td>Pencere Seçim Düğmesi</td><td>[WIN1]- [WIN2] Düğmesi: Açık olan ekran 1~2 penceresini seçebilirsiniz, LED ışığı şu anda seçilen pencereyi gösterir.</td></tr>
+                    <tr><td>6</td><td>Menü Alanı</td><td>Düğmeye kısa basarak [OK] tuşu: Ana menüye girmek veya girişi onaylamak anlamına gelir.<br>Düğmeyi saat yönünde çevirerek artırın veya bir sonraki seçeneği seçin, saat yönünün tersine çevirerek azaltın veya bir önceki seçeneği seçin.<br>[GUIDE] tuşu: "akıllı navigasyon" ayar arayüzünü hızlıca açar.<br>Geri tuşu [ESC]: Mevcut işlemden veya seçenekte çıkmak anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Çıkış Portları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Çıkış Portu</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>MONITOR</td><td>1</td><td>HDMI çıkış arayüzünün senkronize izlenmesi, harici LCD ekran.</td></tr>
+                    <tr><td>LED Ağ Portu</td><td>6</td><td>LED1-LED6: 6 yönlü ağ portu çıkış arayüzü, LED ekran alma kartına bağlanır, toplam piksel 5.2 milyon, en geniş 8000 nokta, en yüksek 3840 nokta.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Giriş Portları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Giriş Portu</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>EXT</td><td>1</td><td>Genişleme giriş portu, varsayılan DVI, HDMI veya SDI seçilebilir.</td></tr>
+                    <tr><td>DVI</td><td>1</td><td>Arayüz şekli: DVI-I soketi<br>Sinyal standardı: DVI1.0<br>Çözünürlük: VESA standardı, PC'den 1920x1080, HD için 1080p.</td></tr>
+                    <tr><td>HDMI</td><td>1</td><td>Arayüz şekli: HDMI-A<br>Sinyal standardı: HDMI2.0 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840×2160@60Hz.</td></tr>
+                    <tr><td>DP</td><td>1</td><td>Arayüz şekli: DP<br>Sinyal standardı: DP1.2 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840×2160@60Hz.</td></tr>
+                    <tr><td>VGA</td><td>1</td><td>Arayüz şekli: DB15 soketi<br>Sinyal standardı: R, G, B, Hsync, Vsync: 0'dan 1Vpp ± 3dB (0.7V Video + 0.3V Senkron) 75 ohm, siyah seviye: 300mV Senkron uç: 0V<br>Çözünürlük: VESA standardı, ≤1920×1080p@60Hz.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Ses Portları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>SES Portu</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>IN</td><td>1</td><td>Giriş x1, 3.5mm ses portu</td></tr>
+                    <tr><td>OUT</td><td>1</td><td>Çıkış x1, 3.5mm ses portu</td></tr>
+                  </tbody>
+                </table>
+                <h3>Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Port</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Kare USB (Tip B)</td><td>1</td><td>PC'ye bağlanarak gönderim kartı ve alma kartının parametrelerini debug eder ve HDSet yazılımı aracılığıyla program güncellemeleri yapar.</td></tr>
+                    <tr><td>WIFI</td><td>1</td><td>WIFI Kablosuz kontrol.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Güç Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Güç Arayüzü</th><th>Miktar</th><th>Fonksiyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Güç arayüzü</td><td>1</td><td>110-240VAC, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VP820 -->
+          <div id="control-cards-table-vp820" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/HD-VP820-Specification-v2.1.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VP820 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Tuşları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Anahtar</td><td>AC güç girişi anahtarı</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Menü, ekran parametreleri ve diğer bilgileri görüntüler, cihazın hata ayıklaması için kullanılır.</td></tr>
+                    <tr><td>3</td><td>KAYNAK</td><td>Giriş Kaynağı Seçim Tuşu, 5 giriş kaynağı portu seçme düğmesi, arka paneldeki giriş arayüzü tanımlamalarına karşılık gelir.<br>BLACK: BLACK tuşuna bastığınızda ve göstergesi yandığında, çıkış ekranı siyah durumda olacaktır.</td></tr>
+                    <tr><td>4</td><td>FONKSİYON</td><td>Fonksiyon tuşları, tuşların çoklu işlevi dijital seçimdir, genellikle çözünürlüğü ayarlarken kullanılır.<br>BRIGHT: Parlaklık ayarlama menüsünün kısayol tuşlarını hızlıca değiştirir.<br>MODE: Önceden ayarlanmış mod çağrı menüsünü hızlıca açar.<br>PXP: Çift resim düzeni menüsüne hızlıca girer.<br>FREEZE: Ekranı dondurma kısayol tuşu.<br>LOCK: Tuşları hızlıca kilitleyerek yanlış işlemleri önler.<br>REV: Ayrılmış fonksiyon tuşları.</td></tr>
+                    <tr><td>5</td><td>PENCERE</td><td>[WIN1]- [WIN2] Düğmesi: 1~2 pencere görüntüsünü eklemek için basabilirsiniz ve göstergesi şu anda seçilen pencereyi gösterir.</td></tr>
+                    <tr><td>6</td><td>MENÜ</td><td>Düğmeye kısa basarak [OK] tuşu: Ana menüye girmek veya girişi onaylamak anlamına gelir.<br>Düğmeyi saat yönünde çevirerek artırın veya bir sonraki seçeneği seçin, saat yönünün tersine çevirerek azaltın veya bir önceki seçeneği seçin.<br>GUIDE: "akıllı navigasyon" ayar arayüzünü hızlıca açar.<br>Geri tuşu ESC: Mevcut işlemden veya seçenekte çıkmak anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Giriş Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>HDMI</td><td>1</td><td>HDMI giriş arayüzü<br>Arayüz şekli: HDMI-A<br>Sinyal standardı: HDMI 2.0 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840x2160@60Hz.</td></tr>
+                    <tr><td>2</td><td>DVI</td><td>1</td><td>Arayüz şekli: DVI-I soketi<br>Sinyal standardı: DVI1.0<br>Çözünürlük: VESA standardı, PC'den 1920x1200, HD için 1080p.</td></tr>
+                    <tr><td>3</td><td>DP</td><td>1</td><td>Arayüz şekli: DP<br>Sinyal standardı: DP1.2 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840×2160@60Hz.</td></tr>
+                    <tr><td>4</td><td>VGA</td><td>1</td><td>Arayüz şekli: DB15 soketi<br>Sinyal standardı: R, G, B, Hsync, Vsync: 0'dan 1Vpp ± 3dB (0.7V Video + 0.3V Senkron) 75 ohm, siyah seviye: 300mV Senkron uç: 0V<br>Çözünürlük: VESA standardı, ≤1920×1080p@60Hz.</td></tr>
+                    <tr><td>5</td><td>EXT</td><td>1</td><td>DVI veya SDI, Varsayılan standart DVI<br>Arayüz şekli: BNC<br>Sinyal standardı: SD-SDI, HD-SDI, 3G-SDI<br>Çözünürlük: VESA standardı, ≤1920x1080@60Hz.</td></tr>
+                    <tr><td>6</td><td>AUDIO IN</td><td>1</td><td>TRS 3.5mm ses girişi.</td></tr>
+                    <tr><td>7</td><td>Güç</td><td>1</td><td>AC güç arayüzü 100-240V, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Çıkış Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>LAN çıkışı</td><td>8</td><td>Gigabit Ethernet portu<br>İletim hızı 1Gbps, alma kartlarını birbirine bağlamak için kullanılır, RGB veri akışını iletir.<br>Bir Gigabit Ethernet portu 655,360 piksel yükleme kapasitesini destekler.</td></tr>
+                    <tr><td>2</td><td>AUDIO OUT</td><td>1</td><td>TRS 3.5mm çift kanal ses çıkış portu<br>Yüksek güçlü ses dış amplifikatör için ses güç amplifikatörüne bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>USB-B</td><td>1</td><td>PC'ye bağlanarak LED kontrolörünü hata ayıklamak için kullanılır.</td></tr>
+                    <tr><td>2</td><td>Wi-Fi</td><td>1</td><td>Kablosuz sinyali artırmak için Wi-Fi antenine bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Temel Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Ürün</th><th>Parametre Değeri</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominal Voltaj (V)</td><td>AC 100-240V</td></tr>
+                    <tr><td>Çalışma Sıcaklığı (℃)</td><td>-20℃~55℃</td></tr>
+                    <tr><td>Çalışma Ortamı Nem (%RH)</td><td>20%RH~90%RH</td></tr>
+                    <tr><td>Depolama Ortamı Nem (%RH)</td><td>10%RH~95%RH</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VP1240 -->
+          <div id="control-cards-table-vp1240" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX40_VP1240-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VP1240 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Tuşları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Anahtar</td><td>AC güç girişi anahtarı</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Menü, ekran parametreleri ve diğer bilgileri görüntüler, cihazın hata ayıklaması için kullanılır.</td></tr>
+                    <tr><td>3</td><td>KAYNAK</td><td>Giriş Kaynağı Seçim Tuşu, 5 giriş kaynağı portu seçme düğmesi, arka paneldeki giriş arayüzü tanımlamalarına karşılık gelir.<br>BLACK: BLACK tuşuna bastığınızda ve göstergesi yandığında, çıkış ekranı siyah durumda olacaktır.</td></tr>
+                    <tr><td>4</td><td>FONKSİYON</td><td>Fonksiyon tuşları, tuşların çoklu işlevi dijital seçimdir, genellikle çözünürlüğü ayarlarken kullanılır.<br>BRIGHT: Parlaklık ayarlama menüsünün kısayol tuşlarını hızlıca değiştirir.<br>MODE: Önceden ayarlanmış mod çağrı menüsünü hızlıca açar.<br>PXP: Çift resim düzeni menüsüne hızlıca girer.<br>FREEZE: Ekranı dondurma kısayol tuşu.<br>LOCK: Tuşları hızlıca kilitleyerek yanlış işlemleri önler.<br>BLACK: Tek dokunuşla siyah ekran düğmesi.</td></tr>
+                    <tr><td>5</td><td>PENCERE</td><td>[WIN1]- [WIN4] Düğmesi: 1~2 pencere görüntüsünü eklemek için basabilirsiniz ve göstergesi şu anda seçilen pencereyi gösterir.</td></tr>
+                    <tr><td>6</td><td>MENÜ</td><td>Düğmeye kısa basarak [OK] tuşu: Ana menüye girmek veya girişi onaylamak anlamına gelir.<br>Düğmeyi saat yönünde çevirerek artırın veya bir sonraki seçeneği seçin, saat yönünün tersine çevirerek azaltın veya bir önceki seçeneği seçin.<br>GUIDE: "Akıllı navigasyon" ayar arayüzünü hızlıca açar.<br>Geri tuşu ESC: Mevcut işlemden veya seçenekte çıkmak anlamına gelir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Giriş Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>HDMI</td><td>1</td><td>HDMI giriş arayüzü<br>Arayüz şekli: HDMI-A<br>Sinyal standardı: HDMI 2.0 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤1920x1080@60Hz.</td></tr>
+                    <tr><td>2</td><td>DP</td><td>1</td><td>Arayüz şekli: DP<br>Sinyal standardı: DP1.2 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840×2160@60Hz.</td></tr>
+                    <tr><td>3</td><td>DVI</td><td>1</td><td>Arayüz şekli: DVI-I soketi<br>Sinyal standardı: DVI1.0<br>Çözünürlük: VESA standardı, PC'den 1920x1200, HD için 1080p.</td></tr>
+                    <tr><td>4</td><td>EXT</td><td>1</td><td>DVI veya SDI, Varsayılan standart DVI<br>Arayüz şekli: BNC<br>Sinyal standardı: SD-SDI, HD-SDI, 3G-SDI<br>Çözünürlük: VESA standardı, ≤1920x1080@60Hz.</td></tr>
+                    <tr><td>5</td><td>AUDIO IN</td><td>1</td><td>TRS 3.5mm ses girişi.</td></tr>
+                    <tr><td>6</td><td>Güç</td><td>1</td><td>AC güç arayüzü 100-240V, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Çıkış Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>LAN çıkışı</td><td>12</td><td>Gigabit Ethernet portu<br>İletim hızı 1Gbps, alma kartlarını birbirine bağlamak için kullanılır, RGB veri akışını iletir.<br>Bir Gigabit Ethernet portu 655,360 piksel yükleme kapasitesini destekler.</td></tr>
+                    <tr><td>2</td><td>AUDIO OUT</td><td>1</td><td>TRS 3.5mm çift kanal ses çıkış portu<br>Yüksek güçlü ses dış amplifikatör için ses güç amplifikatörüne bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>USB-B</td><td>1</td><td>PC'ye bağlanarak LED kontrolörünü hata ayıklamak için kullanılır.</td></tr>
+                    <tr><td>2</td><td>RS232</td><td>1</td><td>Entegre kontrol merkezi (yani merkezi kontrol) RS232 üzerinden bağlanabilir.</td></tr>
+                    <tr><td>3</td><td>Wi-Fi</td><td>1</td><td>Kablosuz sinyali artırmak için Wi-Fi antenine bağlanır, mobil uygulama kablosuz işlemi sağlar.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- VP1640 -->
+          <div id="control-cards-table-vp1640" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://ledajans.com/wp-content/uploads/2024/09/Manual-v_VPX40_VP1640-User-Manual.pdf" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>VP1640 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Tuşları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Tuş</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Anahtar</td><td>AC güç girişi anahtarı</td></tr>
+                    <tr><td>2</td><td>LCD Ekran</td><td>Menü, ekran parametreleri ve diğer bilgileri görüntüler, cihazın hata ayıklaması için kullanılır.</td></tr>
+                    <tr><td>3</td><td>KAYNAK</td><td>Giriş Kaynağı Seçim Tuşu, 5 giriş kaynağı portu seçme düğmesi, arka paneldeki giriş arayüzü tanımlamalarına karşılık gelir.<br><strong>BLACK</strong>: BLACK tuşuna bastığınızda ve göstergesi yandığında, çıkış ekranı siyah durumda olacaktır.</td></tr>
+                    <tr><td>4</td><td>FONKSİYON</td><td>Fonksiyon tuşları, dijital seçim için çoklu işlev.<br><strong>BRIGHT</strong>: Parlaklık ayarlama menüsünün kısayol tuşlarını hızlıca değiştirir.<br><strong>MODE</strong>: Önceden ayarlanmış mod çağrı menüsünü açar.<br><strong>PXP</strong>: Çift resim düzeni menüsüne hızlıca girer.<br><strong>FREEZE</strong>: Ekranı dondurma kısayol tuşu.<br><strong>LOCK</strong>: Tuşları kilitleyerek yanlış işlemleri önler.<br><strong>BLACK</strong>: Tek dokunuşla siyah ekran düğmesi.</td></tr>
+                    <tr><td>5</td><td>PENCERE</td><td>[WIN1]-[WIN4] Düğmesi: 1-2 pencere görüntüsü eklemek için basabilirsiniz; göstergesi mevcut seçili pencereyi gösterir.</td></tr>
+                    <tr><td>6</td><td>MENÜ</td><td>[OK] tuşuna kısa basarak ana menüye girer veya girişi onaylar.<br>Düğmeyi saat yönünde çevirerek artırın veya bir sonraki seçeneği seçin; saat yönünün tersine çevirerek azaltın veya bir önceki seçeneği seçin.<br><strong>GUIDE</strong>: "Akıllı navigasyon" ayar arayüzünü hızlıca açar.<br><strong>ESC</strong>: Mevcut işlemden veya seçenekte çıkmayı sağlar.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Giriş Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>HDMI</td><td>1</td><td>HDMI giriş arayüzü<br>Arayüz şekli: HDMI-A<br>Sinyal standardı: HDMI 2.0 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤1920x1080@60Hz.</td></tr>
+                    <tr><td>2</td><td>DP</td><td>1</td><td>Arayüz şekli: DP<br>Sinyal standardı: DP1.2 geriye dönük uyumlu<br>Çözünürlük: VESA standardı, ≤3840×2160@60Hz.</td></tr>
+                    <tr><td>3</td><td>DVI</td><td>1</td><td>Arayüz şekli: DVI-I soketi<br>Sinyal standardı: DVI1.0<br>Çözünürlük: VESA standardı, PC'den 1920x1200, HD için 1080p.</td></tr>
+                    <tr><td>4</td><td>EXT</td><td>1</td><td>DVI veya SDI, Varsayılan standart DVI<br>Arayüz şekli: BNC<br>Sinyal standardı: SD-SDI, HD-SDI, 3G-SDI<br>Çözünürlük: VESA standardı, ≤1920x1080@60Hz.</td></tr>
+                    <tr><td>5</td><td>AUDIO IN</td><td>1</td><td>TRS 3.5mm ses girişi.</td></tr>
+                    <tr><td>6</td><td>Güç</td><td>1</td><td>AC güç arayüzü 100-240V, 50/60Hz.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Çıkış Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>LAN çıkışı</td><td>16</td><td>Gigabit Ethernet portu<br>İletim hızı 1Gbps, alma kartlarını birbirine bağlamak için kullanılır, RGB veri akışını iletir.<br>Bir Gigabit Ethernet portu 655,360 piksel yükleme kapasitesini destekler.</td></tr>
+                    <tr><td>2</td><td>AUDIO OUT</td><td>1</td><td>TRS 3.5mm çift kanal ses çıkış portu<br>Yüksek güçlü ses dış amplifikatör için ses güç amplifikatörüne bağlanır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Kontrol Arayüzü</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Miktar</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>USB-B</td><td>1</td><td>PC'ye bağlanarak LED kontrolörünü hata ayıklamak için kullanılır.</td></tr>
+                    <tr><td>2</td><td>RS232</td><td>1</td><td>Entegre kontrol merkezi (yani merkezi kontrol) RS232 üzerinden bağlanabilir.</td></tr>
+                    <tr><td>3</td><td>Wi-Fi</td><td>1</td><td>Kablosuz sinyali artırmak için Wi-Fi antenine bağlanır; mobil uygulama kablosuz işlemi sağlar.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A7 -->
+          <div id="control-cards-table-hd-a7" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1yBQDp37f9LspDbuJjzEyQcwhE7i53F0i" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A7 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç Anahtarı</td><td>Oynatıcı kutusunun AC güç kaynağını açıp kapatır.</td></tr>
+                    <tr><td>2</td><td>MIC Arayüzü</td><td>-</td></tr>
+                    <tr><td>3</td><td>USB Arayüzü</td><td>USB3.0: Programları güncellemek veya bellek genişletmek için kullanılır;<br>OTG: Hata ayıklama veya firmware güncelleme için kullanılır (varsayılan OTG işlevi, fabrika yapılandırılabilir).</td></tr>
+                    <tr><td>4</td><td>LCD Ekran</td><td>Hata ayıklama menüleri, ekran parametreleri ve diğer bilgileri görüntüler.</td></tr>
+                    <tr><td>5</td><td>KAYNAK</td><td>Giriş sinyal seçim alanı;<br>Dijital seçim için çoklu işlev tuşu, genellikle çözünürlük ayarlarken kullanılır.<br><strong>ANDROID</strong>: Asenkron anahtarlama tuşları ile birlikte.</td></tr>
+                    <tr><td>6</td><td>FONKSİYON</td><td>Fonksiyon tuşları, dijital seçim için çoklu işlev, genellikle çözünürlük ayarlarken kullanılır.<br><strong>BLACK</strong>: Siyah ekran tuşu.<br><strong>FREEZE</strong>: Ekranı dondurma tuşu.<br><strong>LOCK</strong>: Yanlış kullanımı önlemek için tuş kilidi.<br><strong>BRIGHT</strong>: Parlaklık ayarını hızlıca çağırır.<br><strong>MODE</strong>: Önceden ayarlanmış mod menüsünü hızlıca çağırır.<br><strong>PLAYER</strong>: Oynatma düğmesi.</td></tr>
+                    <tr><td>7</td><td>PENCERE</td><td>Açık ekran pencerelerinin seçim alanı.</td></tr>
+                    <tr><td>8</td><td>MENÜ</td><td>Seçim tuşları: seçim için döndürülür, onaylamak için basılır.<br><strong>GUIDE</strong>: "Akıllı Navigasyon" ayar arayüzünü hızlıca açar.<br><strong>ESC</strong>: Çıkış/Geri tuşu.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Sensör Arayüzü</td><td>Çeşitli sensörleri, çevresel izleme ekipmanları, çok fonksiyonlu sensörler vb. bağlamak için arayüz.</td></tr>
+                    <tr><td>2</td><td>RJ45 Çıkışı</td><td>Alma kartını bağlamak için kullanılır.</td></tr>
+                    <tr><td>3</td><td>HDMI Girişi</td><td>Senkron sinyal girişi, bilgisayarlar, set-top kutuları ve diğer cihazlarla bağlanabilir, zamanlama senkronizasyonu ile oynatma.</td></tr>
+                    <tr><td>4</td><td>DP Girişi</td><td>Senkron sinyal girişi arayüzü.</td></tr>
+                    <tr><td>5</td><td>SIM Kart Yuvası</td><td>4G/5G kartını takarak ağ bağlantısı sağlamak için kullanılır.</td></tr>
+                    <tr><td>6</td><td>Ses Arayüzü</td><td>TRS 3.5mm standart iki kanallı ses çıkış arayüzü.</td></tr>
+                    <tr><td>7</td><td>Seri Port</td><td>RS232 seri port iletişimi ve kontrolü.</td></tr>
+                    <tr><td>8</td><td>Güç Anahtarı</td><td>Alternatif akım erişimi için, AC 100-240V 50/60Hz.</td></tr>
+                    <tr><td>9</td><td>Anten Arayüzü</td><td>Harici 4G veya 5G anteni bağlamak için bir arayüz (standart değil).</td></tr>
+                    <tr><td>10</td><td>LAN</td><td>Hata ayıklama arayüzü, internete ve yerel ağa bağlanabilir.</td></tr>
+                    <tr><td>11</td><td>USB 2.0</td><td>Doğrudan program oynatmak veya depolama kapasitesini genişletmek için kullanılır.</td></tr>
+                    <tr><td>12</td><td>HDMI IN</td><td>Senkron mod sinyal girişi arayüzü, asenkron mod ile karıştırılabilir.</td></tr>
+                    <tr><td>13</td><td>Wi-Fi Anten Arayüzü</td><td>Wi-Fi anteni bağlamak için kullanılır.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Temel Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Spesifikasyon</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik parametreleri</td><td>Giriş Gücü</td><td>AC 100-240V 50/60Hz</td></tr>
+                    <tr><td></td><td>Maksimum güç tüketimi</td><td>72W</td></tr>
+                    <tr><td>Depolama alanı</td><td>Çalışma belleği</td><td>4G</td></tr>
+                    <tr><td></td><td>Dahili depolama</td><td>32GB</td></tr>
+                    <tr><td>Depolama ortamı</td><td>Sıcaklık</td><td>-40℃ ～ 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 95%RH (yoğuşmasız)</td></tr>
+                    <tr><td>Çalışma ortamı</td><td>Sıcaklık</td><td>-10℃ ～ 45℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH ～ 95%RH (yoğuşmasız)</td></tr>
+                    <tr><td>Fiziksel özellikler</td><td>Boyutlar</td><td>432mm×270mm×64.2mm</td></tr>
+                    <tr><td></td><td>Ağırlık</td><td>4.8kg (ambalaj dahil)</td></tr>
+                    <tr><td></td><td>Koruma sınıfı</td><td>IP20</td></tr>
+                    <tr><td>Sistem yazılımı</td><td>Android 10.0 OS Yazılım</td><td>Android Terminal Uygulama Yazılımı<br>FPGA Yazılımı<br>Mikrodenetleyici Yazılımı</td></tr>
+                  </tbody>
+                </table>
+                <h3>Görüntü Kodlama Spesifikasyonları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Form</th><th>Dekoder</th><th>Boyutlar</th><th>Spesifikasyon</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JPEG</td><td>48×48 to 8176×8176</td><td>JPG, JPEG</td><td>Tarama desteği yok</td></tr>
+                    <tr><td></td><td></td><td></td><td>SRGB JPEG desteği</td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td>Adobe RGB JPEG desteği</td><td></td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>NA</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>NA</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>NA</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>NA</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Kodlama Spesifikasyonları</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Form</th><th>Dekoder</th><th>Çözünürlük</th><th>Maksimum kare hızı</th><th>Spesifikasyon</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>1920×1080</td><td>1080P@60fps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlamayı destekler</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>1920×1080</td><td>1080P@60fps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3, GMC'yi desteklemez</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>1920×1080/3840×2160</td><td>4k×2k@30fps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan Kodlamayı, MBAFF'yi destekler</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>96×96 to 1920×1080</td><td>1080P@30fps</td><td>MKV, TS</td><td>Stereo High Profile'i yalnızca destekler</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>3840×2160/1920×1080</td><td>4K×2K@60fps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil, Tile & Slice'yi destekler</td></tr>
+                    <tr><td>VP8</td><td>VP8</td><td>96×96 to 1920×1080</td><td>1080P@30fps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>VP9</td><td>VP9</td><td>3840×2160/1920×1080</td><td>4K×2K@60fps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>1920×1080</td><td>1080P@60fps</td><td>3GP, MOV, MP4</td><td>H.263+'yi desteklemez</td></tr>
+                    <tr><td>VC-1</td><td>VC-1</td><td>1920×1080</td><td>1080P@60fps</td><td>WMV, ASF, TS, MKV, AVI</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+    
+          <!-- HD-A8 -->
+          <div id="control-cards-table-hd-a8" class="control-cards-table-card control-cards-table-hidden">
+            <div class="control-cards-downloads">
+              <a href="https://drive.google.com/uc?export=download&id=1QmSfP48z6p3rvL02C-UyUdTmtV0o68Ht" target="_blank" rel="noopener noreferrer" class="control-cards-download-link">
+                <svg class="control-cards-download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <span>HD-A8 DÖKÜMANTASYONUNU İNDİR</span>
+              </a>
+            </div>
+            <div class="control-cards-table-container">
+              <div class="control-cards-table-wrapper">
+                <h3>Ön Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Güç Anahtarı</td><td>Oynatıcı kutusunun AC güç kaynağını açıp kapatmayı kontrol eder.</td></tr>
+                    <tr><td>2</td><td>MIC Arayüzü</td><td>-</td></tr>
+                    <tr><td>3</td><td>USB Arayüzü</td><td>USB 3.0: Programları güncellemek veya belleği genişletmek için; OTG: Hata ayıklama veya yazılımı güncellemek için (varsayılan OTG işlevi, fabrika tarafından yapılandırılabilir).</td></tr>
+                    <tr><td>4</td><td>LCD Ekran</td><td>Hata ayıklama menüleri, ekran parametreleri ve diğer bilgileri gösterir.</td></tr>
+                    <tr><td>5</td><td>KAYNAK</td><td>Giriş sinyali seçim alanı; dijital seçim için anahtar çoklama işlevi, genellikle çözünürlük ayarlarında kullanılır.</td></tr>
+                    <tr><td>6</td><td>FONKSİYON</td><td>Çeşitli işlemler için işlev tuşları; (siyah ekran, dondurma, kilitleme, parlaklık, mod, oynatma).</td></tr>
+                    <tr><td>7</td><td>PENCERE</td><td>Açık ekran pencerelerinin seçimi.</td></tr>
+                    <tr><td>8</td><td>MENÜ</td><td>Menüleri gezmek ve seçimleri onaylamak için seçim tuşları; ESC ve REHBER işlevlerini içerir.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Arka Panel Açıklaması</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>No.</th><th>Adı</th><th>Açıklama</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>Sensör Arayüzü</td><td>Çeşitli sensörleri (örn. çevresel izleme ekipmanları) bağlamak için.</td></tr>
+                    <tr><td>2</td><td>RJ45 Çıkışı</td><td>Alıcı kartı bağlamak için.</td></tr>
+                    <tr><td>3</td><td>HDMI Girişi</td><td>Bilgisayarlar, set üstü kutular vb. için senkronize sinyal girişi.</td></tr>
+                    <tr><td>4</td><td>DP Girişi</td><td>Senkronize sinyal girişi arayüzü.</td></tr>
+                    <tr><td>5</td><td>SIM Kart Yuvası</td><td>Ağ bağlantısı için 4G/5G kartı takın.</td></tr>
+                    <tr><td>6</td><td>Ses Arayüzü</td><td>TRS 3.5mm standart iki kanallı ses çıkış arayüzü.</td></tr>
+                    <tr><td>7</td><td>Seri Port</td><td>RS232 seri port ile iletişim ve kontrol.</td></tr>
+                    <tr><td>8</td><td>Güç Anahtarı</td><td>AC 100-240V 50/60Hz erişimi için.</td></tr>
+                    <tr><td>9</td><td>Anten Arayüzü</td><td>Dış bir 4G veya 5G anteni bağlamak için (standart değil).</td></tr>
+                    <tr><td>10</td><td>LAN</td><td>İnternet ve yerel alan ağı bağlantısı için hata ayıklama arayüzü.</td></tr>
+                    <tr><td>11</td><td>USB 2.0</td><td>Doğrudan program oynatımı veya depolama kapasitesini genişletmek için.</td></tr>
+                    <tr><td>12</td><td>HDMI IN</td><td>Senkronize mod sinyal girişi, asenkron mod ile karıştırılabilir.</td></tr>
+                    <tr><td>13</td><td>Wi-Fi Anten Arayüzü</td><td>Wi-Fi anteni bağlamak için.</td></tr>
+                  </tbody>
+                </table>
+                <h3>Temel Parametreler</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Kategori</th><th>Öğeler</th><th>Özellikler</th></tr></thead>
+                  <tbody>
+                    <tr><td>Elektrik Parametreleri</td><td>Giriş Gücü</td><td>AC 100-240V, 50/60Hz</td></tr>
+                    <tr><td></td><td>Maksimum Güç Tüketimi</td><td>72W</td></tr>
+                    <tr><td>Depolama Alanı</td><td>Çalışma Belleği</td><td>4G</td></tr>
+                    <tr><td></td><td>Dahili Depolama</td><td>32GB</td></tr>
+                    <tr><td>Depolama Ortamı</td><td>Sıcaklık</td><td>-40℃ to 80℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH to 95%RH (yoğunlaşmayan)</td></tr>
+                    <tr><td>Çalışma Ortamı</td><td>Sıcaklık</td><td>-10℃ to 45℃</td></tr>
+                    <tr><td></td><td>Nem</td><td>0%RH to 95%RH (yoğunlaşmayan)</td></tr>
+                    <tr><td>Fiziksel Özellikler</td><td>Boyutlar</td><td>432mm×270mm×64.2mm</td></tr>
+                    <tr><td></td><td>Ağırlık</td><td>4.8kg (paket dahil)</td></tr>
+                    <tr><td>Koruma Sınıfı</td><td>IP20</td><td></td></tr>
+                  </tbody>
+                </table>
+                <h3>Görüntü Kodlama Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Biçim</th><th>Kodlayıcı</th><th>Boyutlar</th><th>Özellikler</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>JPEG</td><td>JPEG</td><td>48×48 to 8176×8176</td><td>JPG, JPEG</td><td>Dikey taramayı desteklemiyor</td></tr>
+                    <tr><td></td><td></td><td></td><td>SRGB JPEG desteği var</td><td>Adobe RGB JPEG desteği var</td></tr>
+                    <tr><td>BMP</td><td>BMP</td><td>NA</td><td>BMP</td><td>NA</td></tr>
+                    <tr><td>GIF</td><td>GIF</td><td>NA</td><td>GIF</td><td>NA</td></tr>
+                    <tr><td>PNG</td><td>PNG</td><td>NA</td><td>PNG</td><td>NA</td></tr>
+                    <tr><td>WEBP</td><td>WEBP</td><td>NA</td><td>WEBP</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+                <h3>Video Kodlama Özellikleri</h3>
+                <table class="control-cards-table">
+                  <thead><tr><th>Biçim</th><th>Kodlayıcı</th><th>Çözünürlük</th><th>Maksimum Kare Hızı</th><th>Özellikler</th><th>Not</th></tr></thead>
+                  <tbody>
+                    <tr><td>MPEG-1/2</td><td>MPEG-1/2</td><td>1920×1080</td><td>1080P@60fps</td><td>DAT, MPG, VOB, TS</td><td>Alan Kodlamayı destekler</td></tr>
+                    <tr><td>MPEG-4</td><td>MPEG-4</td><td>1920×1080</td><td>1080P@60fps</td><td>AVI, MKV, MP4, MOV, 3GP</td><td>MS, MPEG4 v1/v2/v3, GMC'yi desteklemiyor</td></tr>
+                    <tr><td>H.264/AVC</td><td>H.264</td><td>1920×1080/3840×2160</td><td>4k×2k@30fps</td><td>AVI, MKV, MP4, MOV, 3GP, TS, FLV</td><td>Alan Kodlamayı destekler, MBAFF</td></tr>
+                    <tr><td>MVC</td><td>H.264 MVC</td><td>96×96 to 1920×1080</td><td>1080P@30fps</td><td>MKV, TS</td><td>Sadece Stereo Yüksek Profil desteklenir</td></tr>
+                    <tr><td>H.265/HEVC</td><td>H.265/HEVC</td><td>3840×2160/1920×1080</td><td>4K×2K@60fps</td><td>MKV, MP4, MOV, TS</td><td>Ana Profil, Karo ve Dilim desteği</td></tr>
+                    <tr><td>VP8</td><td>VP8</td><td>96×96 to 1920×1080</td><td>1080P@30fps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>VP9</td><td>VP9</td><td>3840×2160/1920×1080</td><td>4K×2K@60fps</td><td>WEBM, MKV</td><td>NA</td></tr>
+                    <tr><td>H.263</td><td>H.263</td><td>1920×1080</td><td>1080P@60fps</td><td>3GP, MOV, MP4</td><td>H.263+'yi desteklemiyor</td></tr>
+                    <tr><td>VC-1</td><td>VC-1</td><td>1920×1080</td><td>1080P@60fps</td><td>WMV, ASF, TS, MKV, AVI</td><td>NA</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    function showHuiduTable(model) {
+      const wrapper = document.getElementById('huidu-control-cards-wrapper');
+      if (!wrapper) return;
+      
+      wrapper.querySelectorAll('.control-cards-table-card').forEach(card => {
+        card.classList.add('control-cards-table-hidden');
+      });
+      
+      wrapper.querySelectorAll('.control-cards-model-button').forEach(button => {
+        button.classList.remove('active');
+      });
+      
+      const targetCard = wrapper.querySelector(`#control-cards-table-${model}`);
+      const targetButton = wrapper.querySelector(`[data-model="${model}"]`);
+      
+      if (targetCard) {
+        targetCard.classList.remove('control-cards-table-hidden');
+      }
+      
+      if (targetButton) {
+        targetButton.classList.add('active');
+      }
+    }
+    </script>

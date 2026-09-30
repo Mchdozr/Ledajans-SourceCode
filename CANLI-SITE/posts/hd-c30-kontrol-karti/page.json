@@ -1,0 +1,55 @@
+{
+ "id": 582,
+ "type": "post",
+ "title": "HD-C30 Kontrol Kartı",
+ "slug": "hd-c30-kontrol-karti",
+ "link": "https://ledajans.com/hd-c30-kontrol-karti/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T18:41:48",
+ "modified": "2024-08-04T18:41:48",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "HD-C30 Kontrol Kartı - LEDAJANS",
+  "description": "HD – C30 özellikleri",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/hd-c30-kontrol-karti/",
+  "og_image": "",
+  "h1": [
+   "HD-C30 Kontrol Kartı"
+  ],
+  "h2": [
+   "HD-C30 Kontrol Kartı",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

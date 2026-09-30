@@ -1,0 +1,58 @@
+{
+ "id": 5925,
+ "type": "page",
+ "title": "H2.5 6000Hz İç Mekan RGB Panel",
+ "slug": "h2-5-6000-hz-ic-mekan-rgb-panel",
+ "link": "https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-29T12:06:13",
+ "modified": "2026-09-29T12:36:51",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "H2.5 6000Hz İç Mekan RGB Panel | LEDAJANS",
+  "rank_math_description": "H2.5 6000Hz İç Mekan RGB Panel: 160.000 nokta/m², ≥6000 Hz. Teknik özellikler, döküman ve fiyat teklifi için LEDAJANS ile iletişime geçin.",
+  "rank_math_focus_keyword": "h2.5 6000hz iç mekan rgb panel"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "H2.5 6000Hz İç Mekan RGB Panel | LEDAJANS",
+  "description": "H2.5 6000Hz İç Mekan RGB Panel: 160.000 nokta/m², ≥6000 Hz. Teknik özellikler, döküman ve fiyat teklifi için LEDAJANS ile iletişime geçin.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/h2-5-6000-hz-ic-mekan-rgb-panel/",
+  "og_image": "",
+  "h1": [
+   "H2.5 6000Hz İç Mekan RGB Panel"
+  ],
+  "h2": [
+   "H2.5 6000Hz İç Mekan RGB Panel",
+   "H2.5 6000Hz Teknik Özellikler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5925:page",
+   "75:gva__template"
+  ]
+ }
+}

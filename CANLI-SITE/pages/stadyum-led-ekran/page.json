@@ -1,0 +1,63 @@
+{
+ "id": 4968,
+ "type": "page",
+ "title": "Stadyum LED Screen Rehberi",
+ "slug": "stadyum-led-ekran",
+ "link": "https://ledajans.com/stadyum-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:22",
+ "modified": "2026-09-23T10:27:46",
+ "excerpt": "Stadyum LED ekran: uzak izleme mesafesi, yüksek parlaklık, hava koşulları, kurulum ve spor yayını senaryoları için LEDAJANS rehberi.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Stadyum LED Screen Rehberi | LEDAJANS",
+  "rank_math_description": "Stadyum LED Screen Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Stadyum LED Screen Rehberi | LEDAJANS",
+  "description": "Stadyum LED Screen Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "follow, noindex",
+  "canonical": "",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/yy.webp",
+  "h1": [],
+  "h2": [
+   "📌 Stadyum LED Ekran: Uzak Mesafe, Parlaklık ve Dış Mekan Dayanımı",
+   "📑 İçindekiler",
+   "📍 Tribün mesafesi ve ölçü",
+   "⚙️ Gündüz parlaklığı ve kamera uyumu",
+   "🏗 Taşıyıcı, rüzgâr ve güvenlik",
+   "🌐 Sinyal, gecikme ve yayın",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

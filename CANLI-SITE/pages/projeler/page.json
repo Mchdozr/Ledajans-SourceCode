@@ -1,0 +1,64 @@
+{
+ "id": 4956,
+ "type": "page",
+ "title": "LED Ekran Projeleri",
+ "slug": "projeler",
+ "link": "https://ledajans.com/projeler/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:12:06",
+ "modified": "2026-09-23T08:21:48",
+ "excerpt": "",
+ "featured_media": 5837,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran Projeleri | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran projeleri,led ekran proje"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Projeleri | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/projeler/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/magaza-vitrin-led-cadde-1.webp",
+  "h1": [
+   "LED ekran projelerinde sahadan gelen gerçek referanslar"
+  ],
+  "h2": [
+   "LED Ekran Projeler imiz",
+   "LED ekran projesi seçerken referans neden önemlidir?",
+   "Benzer bir LED ekran projesi mi planlıyorsunuz?",
+   "LED ekran projeleri hakkında sık sorulan sorular",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "CollectionPage",
+   "ImageObject",
+   "ItemList",
+   "ListItem",
+   "Organization",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "4956:page",
+   "75:gva__template"
+  ]
+ }
+}

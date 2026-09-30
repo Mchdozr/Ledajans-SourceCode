@@ -1,0 +1,61 @@
+{
+ "id": 4992,
+ "type": "page",
+ "title": "Fuar LED Ekran",
+ "slug": "fuar-led-ekran",
+ "link": "https://ledajans.com/fuar-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:43",
+ "modified": "2026-09-23T10:25:42",
+ "excerpt": "Fuar LED ekran kiralama ve stand: P2–P3 rental, 2–4 saat kurulum. Konser ve sahne. LEDAJANS teklif.",
+ "featured_media": 5844,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Fuar LED Ekran | Kiralama ve Stand | LEDAJANS",
+  "rank_math_description": "Fuar LED ekran kiralama ve stand: P2–P3 rental, 2–4 saat kurulum. Konser ve sahne. LEDAJANS teklif.",
+  "rank_math_focus_keyword": "fuar led ekran, sahne led ekran, fuar ekran kiralama"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Fuar LED Ekran | Kiralama ve Stand | LEDAJANS",
+  "description": "Fuar LED ekran kiralama ve stand: P2–P3 rental, 2–4 saat kurulum. Konser ve sahne. LEDAJANS teklif.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/fuar-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/fuar-led-ekran-stand.webp",
+  "h1": [
+   "Fuar LED ekran"
+  ],
+  "h2": [
+   "Fuar senaryoları",
+   "Kiralama mı satın alma mı?",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,2537 @@
+<!-- WIDGET 1 — Elementor HTML widget'a TAMAMINI yapıştır. Push yok. 2026-09-22 -->
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-mobile-1.webp" media="(max-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp" media="(min-width: 769px)" fetchpriority="high">
+<style>
+.la1.ledajans-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 7.25rem clamp(1.25rem, 5vw, 4.5rem) 3.5rem;
+  min-height: max(640px, 100vh);
+  min-height: max(640px, 100dvh);
+  overflow: hidden;
+  background: #0c0f14;
+  color: #f6f3ee;
+  font-family: inherit;
+  text-align: center;
+  box-sizing: border-box;
+}
+.la1 *, .la1 *::before, .la1 *::after { box-sizing: border-box; }
+.la1-video, .la1-poster, .la1-mobile {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.la1-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 46%;
+  opacity: 0;
+  transition: opacity .7s ease;
+  pointer-events: none;
+}
+.la1-video.is-on { opacity: 1; }
+.la1-poster {
+  background: #0c0f14 url("https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp") center 46% / cover no-repeat;
+  background-position: 72% 46%;
+}
+.la1-mobile { display: none; }
+.la1-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 38%;
+  display: block;
+}
+.la1-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 62% 58% at 50% 52%, rgba(8,10,14,.72) 0%, rgba(8,10,14,.5) 55%, rgba(8,10,14,.3) 100%),
+    linear-gradient(180deg, rgba(8,10,14,.45) 0%, rgba(8,10,14,.2) 40%, rgba(8,10,14,.55) 100%);
+}
+.la1-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto !important;
+}
+.la1-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.la1-copy::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  background: #f46f2c;
+}
+.la1 h1 {
+  margin: 0 auto 1.1rem;
+  max-width: 20ch;
+  font-size: clamp(2.3rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.45), 0 8px 32px rgba(0,0,0,.6);
+}
+.la1-lead {
+  margin: 0 auto 2rem;
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.35vw, 1.13rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255,255,255,.9);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 4px 18px rgba(0,0,0,.55);
+}
+.la1-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+}
+.la1-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  min-width: 176px;
+  padding: 0 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.la1-btn-primary { background: #f46f2c; color: #fff; border-color: #f46f2c; }
+.la1-btn-primary:hover { background: #d95a1a; border-color: #d95a1a; color: #fff; }
+.la1-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,.7);
+}
+.la1-btn-ghost:hover { background: #fff; border-color: #fff; color: #141414; }
+.la1-play {
+  width: 52px;
+  height: 52px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,.7);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background .2s ease, border-color .2s ease;
+}
+.la1-play:hover { background: #f46f2c; border-color: #f46f2c; }
+.la1-play span {
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 3px;
+}
+.la1-proof {
+  margin: 1.75rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255,255,255,.18);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+}
+.la1-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,.88);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.la1-modal.is-open { display: flex; }
+.la1-modal-box { position: relative; width: min(920px, 100%); }
+.la1-modal-x {
+  position: absolute;
+  top: -42px; right: 0;
+  background: none; border: 0;
+  color: #fff; font-size: 32px;
+  cursor: pointer; line-height: 1;
+}
+.la1-frame { position: relative; padding-bottom: 56.25%; height: 0; }
+.la1-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 900px) {
+  .la1.ledajans-hero {
+    min-height: max(560px, 100svh) !important;
+    height: auto;
+    padding: max(5.75rem, calc(env(safe-area-inset-top) + 5.25rem)) 1rem max(1.5rem, env(safe-area-inset-bottom)) !important;
+  }
+  .la1-video, .la1-poster { display: none !important; }
+  .la1-mobile { display: block; }
+  .la1-shade {
+    background: linear-gradient(180deg, rgba(8,10,14,.5) 0%, rgba(8,10,14,.62) 50%, rgba(8,10,14,.8) 100%);
+  }
+  .la1-copy::before { margin-bottom: 1.1rem; }
+  .la1 h1 { max-width: none; font-size: clamp(1.9rem, 8.4vw, 2.4rem); margin-bottom: .8rem; }
+  .la1-lead { font-size: .98rem; margin-bottom: 1.4rem; }
+  .la1-btn { min-width: 0; }
+  .la1-actions {
+    display: grid;
+    grid-template-columns: 1fr 52px;
+    gap: .55rem;
+    width: 100%;
+  }
+  .la1-btn-primary { grid-column: 1 / -1; width: 100%; }
+  .la1-btn-ghost { width: 100%; }
+  .la1-proof { font-size: .68rem; letter-spacing: .08em; margin-top: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .la1-video { display: none !important; }
+}
+</style>
+<section aria-label="LEDAJANS LED ekran">
+  <video id="la1Video" muted playsinline webkit-playsinline preload="none"
+    data-poster="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-1.webp"
+    data-src="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-1920.mp4"></video>
+    <img src="https://ledajans.com/wp-content/uploads/2026/09/hero-stant-poster-mobile-1.webp" width="768" height="1024" alt="LEDAJANS fuar standı LED ekran" fetchpriority="high" decoding="async">
+    <h1>LED Ekran Satış, Kiralama ve Kurulum</h1>
+    <p>LED ekran üreticisi LEDAJANS — iç mekan, dış mekan ve rental modeller. 25 yıl tecrübe, 2 yıl garanti, Türkiye geneli keşif ve fiyat teklifi.</p>
+      <a href="tel:+902122204004">Hemen Arayın</a>
+      <a href="https://ledajans.com/iletisim/">Ücretsiz keşif</a>
+      <button type="button" id="la1Play" aria-label="Tanıtım videosunu izle"></button>
+    <p>25 yıl tecrübe · 2 yıl garanti · İç mekan, dış mekan, rental</p>
+</section>
+    <button type="button" id="la1Close" aria-label="Kapat">&times;</button>
+      <iframe id="la1Frame" title="LEDAJANS tanıtım videosu" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<!-- Sertifikalar — Marka strip ile aynı modern dil; ters marquee -->
+<style>
+    .ledajans-home-certs {
+      --cert-orange: #f46f2c;
+      position: relative;
+      padding: 1.15rem 0 2.75rem;
+      background:
+        radial-gradient(ellipse 92% 55% at 50% -35%, rgba(244, 111, 44, 0.06), transparent 58%),
+        linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+      overflow: hidden;
+    }
+    .ledajans-home-certs::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .ledajans-home-certs > * {
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 768px) {
+      .ledajans-home-certs { padding: 1.85rem 0 3.75rem; }
+    }
+    .ledajans-home-certs__head {
+      max-width: 40rem;
+      margin: 0 auto 1.1rem;
+      padding: 0 1.25rem;
+      text-align: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .ledajans-home-certs .ledajans-home-marquee-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0 0 0.4rem;
+      padding: 0.28rem 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #c2410c;
+      background: rgba(244, 111, 44, 0.1);
+      border: 1px solid rgba(244, 111, 44, 0.22);
+      border-radius: 999px;
+    }
+    .ledajans-home-certs h2.ledajans-home-marquee-title {
+      margin: 0 0 0.45rem;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+    .ledajans-home-certs p.ledajans-home-marquee-sub {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: #64748b;
+      max-width: 32rem;
+      margin-inline: auto;
+    }
+    .ledajans-home-certs__slider {
+      position: relative;
+      width: 100%;
+      padding: 0.35rem 0 1rem;
+      box-sizing: border-box;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+    }
+    .ledajans-home-certs__slider::after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      bottom: 0.35rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.08) 30%, rgba(15, 23, 42, 0.08) 70%, transparent);
+      pointer-events: none;
+    }
+    @media (min-width: 768px) {
+      .ledajans-home-certs__slider { padding: 0.5rem 0 1.25rem; }
+    }
+    .ledajans-home-certs__track {
+      display: flex;
+      width: max-content;
+      animation: ledajans-cert-marquee 42s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ledajans-home-certs__track {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 72rem;
+        margin: 0 auto;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    @keyframes ledajans-cert-marquee {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .ledajans-home-cert-item {
+      flex-shrink: 0;
+      padding: 0.5rem 0.65rem;
+    }
+    @media (min-width: 768px) {
+      .ledajans-home-cert-item { padding: 0.625rem 0.85rem; }
+    }
+    .ledajans-home-cert-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.4s cubic-bezier(0.34, 1.45, 0.64, 1);
+    }
+    .ledajans-home-cert-item a:hover {
+      transform: translateY(-6px);
+    }
+    .ledajans-home-cert-item a:focus-visible {
+      outline: 2px solid var(--cert-orange);
+      outline-offset: 4px;
+      border-radius: 22px;
+    }
+    .ledajans-home-cert-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 148px;
+      height: 104px;
+      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      border-radius: 18px;
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.04),
+        0 10px 28px -6px rgba(15, 23, 42, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.35s ease;
+    }
+    .ledajans-home-cert-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.65), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ledajans-home-cert-item a:hover .ledajans-home-cert-card {
+      border-color: rgba(244, 111, 44, 0.28);
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.05),
+        0 14px 36px -8px rgba(244, 111, 44, 0.2),
+        0 8px 24px -10px rgba(15, 23, 42, 0.12);
+    }
+    .ledajans-home-cert-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      z-index: 2;
+      background: linear-gradient(90deg, var(--cert-orange), #fb923c, rgba(244, 111, 44, 0.5));
+      opacity: 1;
+    }
+    @media (min-width: 768px) {
+      .ledajans-home-cert-card {
+        width: 200px;
+        height: 132px;
+        padding: 0.65rem 0.9rem;
+        border-radius: 20px;
+      }
+    }
+    .ledajans-home-cert-card img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: saturate(1.02);
+      transition: filter 0.3s ease, transform 0.35s ease;
+    }
+    .ledajans-home-cert-item a:hover .ledajans-home-cert-card img {
+      filter: saturate(1.1);
+      transform: scale(1.03);
+    }
+    </style>
+    <section aria-labelledby="ledajans-home-certs-title">
+        <p>Kalite &amp; uyumluluk</p>
+        <h2 id="ledajans-home-certs-title">Sertifikalarımız</h2>
+        <p>ISO ve uygunluk belgeleri için detaylara tıklayın.</p>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-9001-2015-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 9001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-9001-2015-1.webp" width="1469" height="2021" alt="ISO 9001:2015 kalite yönetim sistemi sertifikası önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-45001-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 45001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-45001-2018-1.webp" width="1469" height="2021" alt="ISO 45001:2018 iş sağlığı ve güvenliği sertifikası önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/taha-led-14064-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 14064 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/taha-led-14064-1.webp" width="1429" height="2021" alt="ISO 14064-1 sera gazı raporlama uygunluk belgesi önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-10002-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 10002 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-10002-2018-1.webp" width="1469" height="2021" alt="ISO 10002:2018 müşteri memnuniyeti belgesi önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-14001-2015-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 14001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-14001-2015-1.webp" width="1469" height="2021" alt="ISO 14001:2015 çevre yönetimi sertifikası önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-27001-2022-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-27001-2022-1.webp" width="1469" height="2021" alt="ISO/IEC 27001:2022 bilgi güvenliği sertifikası önizlemesi" loading="eager" decoding="async" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-31000-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 31000 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-31000-2018-1.webp" width="1469" height="2021" alt="ISO 31000:2018 kurumsal risk yönetimi belgesi önizlemesi" loading="eager" decoding="async" />
+            </a>
+          <!-- döngü için tekrar -->
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-9001-2015-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 9001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-9001-2015-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-45001-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 45001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-45001-2018-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/taha-led-14064-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 14064 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/taha-led-14064-1.webp" width="1429" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-10002-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 10002 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-10002-2018-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-14001-2015-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 14001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-14001-2015-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-27001-2022-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-27001-2022-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+            <a href="https://ledajans.com/wp-content/uploads/2026/09/iso-31000-2018-1.pdf" target="_blank" rel="noopener noreferrer" aria-label="ISO 31000 sertifikası PDF">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/iso-31000-2018-1.webp" width="1469" height="2021" alt="" loading="eager" decoding="async" aria-hidden="true" />
+            </a>
+    </section>
+<!-- WIDGET 2 — Marka logoları (modern strip: gradient, eyebrow, kart gölgeleri) -->
+<style>
+    .ledajans-brands {
+      --brand-accent: #f46f2c;
+      position: relative;
+      padding: 1.15rem 0 2.75rem;
+      /* widget-3 (#fff) ve diğer beyaz bloklarla ton farkını azaltır */
+      background:
+        radial-gradient(ellipse 92% 55% at 50% -35%, rgba(244, 111, 44, 0.055), transparent 58%),
+        linear-gradient(180deg, #ffffff 0%, #fafafa 48%, #ffffff 100%);
+      overflow: hidden;
+      min-height: 140px;
+    }
+    .ledajans-brands::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .ledajans-brands > * {
+      position: relative;
+      z-index: 1;
+    }
+    .ledajans-brands {
+      display: block !important;
+      visibility: visible !important;
+    }
+    @media (min-width: 768px) {
+      .ledajans-brands { padding: 1.85rem 0 4rem; }
+    }
+    .ledajans-brands__head {
+      max-width: 40rem;
+      margin: 0 auto 1.1rem;
+      padding: 0 1.25rem;
+      text-align: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .ledajans-brands .ledajans-home-marquee-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0 0 0.4rem;
+      padding: 0.28rem 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #c2410c;
+      background: rgba(244, 111, 44, 0.1);
+      border: 1px solid rgba(244, 111, 44, 0.22);
+      border-radius: 999px;
+    }
+    .ledajans-brands h2.ledajans-home-marquee-title {
+      margin: 0 0 0.45rem;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+    .ledajans-brands p.ledajans-home-marquee-sub {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: #64748b;
+      max-width: 32rem;
+      margin-inline: auto;
+    }
+    .ledajans-brands-slider {
+      position: relative;
+      width: 100%;
+      padding: 0.35rem 0 1rem;
+      box-sizing: border-box;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%);
+    }
+    .ledajans-brands-slider::after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      bottom: 0.35rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.08) 30%, rgba(15, 23, 42, 0.08) 70%, transparent);
+      pointer-events: none;
+    }
+    @media (min-width: 768px) {
+      .ledajans-brands-slider { padding: 0.5rem 0 1.25rem; }
+    }
+    .ledajans-brands-track {
+      display: flex;
+      width: max-content;
+      animation: ledajans-scroll 42s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ledajans-brands-track {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 72rem;
+        margin: 0 auto;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    @keyframes ledajans-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ledajans-brand-item {
+      flex-shrink: 0;
+      padding: 0.5rem 0.65rem;
+    }
+    @media (min-width: 768px) {
+      .ledajans-brand-item { padding: 0.625rem 0.85rem; }
+    }
+    .ledajans-brand-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.4s cubic-bezier(0.34, 1.45, 0.64, 1);
+    }
+    .ledajans-brand-item a:hover {
+      transform: translateY(-6px);
+    }
+    .ledajans-brand-item a:focus-visible {
+      outline: 2px solid var(--brand-accent);
+      outline-offset: 4px;
+      border-radius: 22px;
+    }
+    .ledajans-brand-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 148px;
+      height: 104px;
+      padding: 0.55rem 0.7rem;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      border-radius: 18px;
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.04),
+        0 10px 28px -6px rgba(15, 23, 42, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.35s ease;
+    }
+    .ledajans-brand-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.65), transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ledajans-brand-item a:hover .ledajans-brand-card {
+      border-color: rgba(244, 111, 44, 0.28);
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.05),
+        0 14px 36px -8px rgba(244, 111, 44, 0.2),
+        0 8px 24px -10px rgba(15, 23, 42, 0.12);
+    }
+    .ledajans-brand-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      z-index: 2;
+      background: linear-gradient(90deg, var(--brand-accent), #fb923c, rgba(244, 111, 44, 0.5));
+      opacity: 1;
+    }
+    @media (min-width: 768px) {
+      .ledajans-brand-card {
+        width: 200px;
+        height: 132px;
+        padding: 0.65rem 0.9rem;
+        border-radius: 20px;
+      }
+    }
+    .ledajans-brand-card img {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: saturate(1.02);
+      transition: filter 0.3s ease, transform 0.35s ease;
+    }
+    .ledajans-brand-item a:hover .ledajans-brand-card img {
+      filter: saturate(1.1);
+      transform: scale(1.03);
+    }
+    </style>
+    <section aria-labelledby="ledajans-brands-title">
+        <p>Tedarik ortakları</p>
+        <h2 id="ledajans-brands-title">Markalarımız</h2>
+        <p>LED çözümlerimizde kullandığımız tedarikçi markalar.</p>
+            <a href="https://www.gkgd.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/gkgd.png" alt="GKGD" loading="lazy" decoding="async">
+            </a>
+            <a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/cl.png" alt="Colorlight" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.chuanglian.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/10/创联logo5.png" alt="Chuanglian" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.youyi.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/youyi.png" alt="Youyi" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.u-motion.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/u-motion.png" alt="U-Motion" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.gkgd.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/gkgd.png" alt="GKGD" loading="lazy" decoding="async">
+            </a>
+            <a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/cl.png" alt="Colorlight" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.chuanglian.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/10/创联logo5.png" alt="Chuanglian" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.youyi.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/youyi.png" alt="Youyi" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.u-motion.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/u-motion.png" alt="U-Motion" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.gkgd.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/gkgd.png" alt="GKGD" loading="lazy" decoding="async">
+            </a>
+            <a href="https://en.colorlightinside.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/cl.png" alt="Colorlight" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.chuanglian.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/10/创联logo5.png" alt="Chuanglian" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.youyi.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/youyi.png" alt="Youyi" loading="lazy" decoding="async">
+            </a>
+            <a href="https://www.u-motion.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://ledajans.com/wp-content/uploads/2025/12/u-motion.png" alt="U-Motion" loading="lazy" decoding="async">
+            </a>
+    </section>
+					<!-- WIDGET 3 — Hakkımızda (LED Ekran satırı hub sayfaya yönlendirildi: /led-ekran/) -->
+<style>
+    .ledajans-about {
+      padding: 6rem 1rem;
+      background-color: #ffffff;
+    }
+    .ledajans-about-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-about-container { grid-template-columns: 1fr 1fr; }
+    }
+    .ledajans-about-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) { .ledajans-about-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .ledajans-about-title { font-size: 3.75rem; } }
+    .ledajans-about-title .highlight { color: #F46F2C; }
+    .ledajans-about-desc {
+      font-size: 1rem;
+      color: #4B5563;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .ledajans-about-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+      align-items: start;
+    }
+    .ledajans-about-link {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .ledajans-about-link:hover { color: #F46F2C; }
+    .ledajans-about-link .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #F46F2C;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 639px) {
+      .ledajans-about-links { grid-template-columns: 1fr; }
+    }
+    .ledajans-about-image-wrapper { position: relative; }
+    .ledajans-about-image-container {
+      overflow: hidden;
+      border-radius: 0 9999px 9999px 9999px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .ledajans-about-image {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    @media (min-width: 768px) {
+      .ledajans-about-image { min-height: 500px; max-height: none; }
+    }
+    .ledajans-about-badge {
+      position: absolute;
+      bottom: -15px;
+      right: -10px;
+      background: #ffffff;
+      padding: 12px 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 2px solid #F46F2C;
+      border-radius: 0 50px 0 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+      animation: slow-heartbeat 2s ease-in-out infinite;
+    }
+    @media (min-width: 768px) {
+      .ledajans-about-badge {
+        bottom: -20px;
+        right: -15px;
+        padding: 16px 24px;
+        gap: 12px;
+      }
+    }
+    .ledajans-about-badge-number {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #2C3E50;
+    }
+    @media (min-width: 768px) { .ledajans-about-badge-number { font-size: 3rem; } }
+    .ledajans-about-badge-text { display: flex; flex-direction: column; }
+    .ledajans-about-badge-text span {
+      font-size: 10px;
+      font-weight: 600;
+      color: #2C3E50;
+      line-height: 1.2;
+    }
+    @media (min-width: 768px) { .ledajans-about-badge-text span { font-size: 18px; } }
+    @keyframes slow-heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    </style>
+    <section style="background-color: #f9fafb">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-4-2.png"
+              alt="Ledajans LED Ekran Çözümleri"
+              loading="lazy"
+              decoding="async"
+            />
+            25
+              Yıllık
+              Tecrübe
+          <h2>
+            Ledajans olarak hemen her sektördeyiz
+          </h2>
+          <p>
+            Ledajans, hemen her sektörde kullanılan ve daha etkin reklam imkanı veren bilgilendirme panoları, led ekranlar ve kayan yazılarda kullanılan, led modul, güç kaynakları ve kontrol kartları ile değerli müşterilerine hizmet vermektedir. Bulunduğu sektörde sürekli büyüyen şirketimiz kaliteli ürün ve hizmetini sizlere düşük maliyette, hızlı, devamlı ve tutarlı bir şekilde sunmayı amaç edinmiş lider bir kuruluştur.
+          </p>
+            <a href="https://ledajans.com/cob-ekran/">COB - Smart Screen</a>
+            <a href="https://ledajans.com/ic-mekan-led-ekran/">İç Mekan LED Ekran</a>
+            <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan LED Ekran</a>
+            <a href="https://ledajans.com/gob-led-ekran/">GOB LED Ekran</a>
+            <a href="https://ledajans.com/rental-ekran/">Rental Ekran</a>
+            <a href="https://ledajans.com/ic-mekan-rgb-panel/">İç Mekan RGB Panel</a>
+            <a href="https://ledajans.com/dis-mekan-rgb-panel/">Dış Mekan RGB Panel</a>
+            <a href="https://ledajans.com/kontrol-kartlari/">Kontrol Kartları</a>
+            <a href="https://ledajans.com/guc-kaynaklari/">Güç Kaynakları ( Power Supply )</a>
+            <a href="https://ledajans.com/led-ekran/">LED Ekran</a>
+    </section>
+					<!-- WIDGET 4 — İç mekan LED bölümü -->
+<style>
+    .ledajans-indoor { padding: 6rem 1rem; background-color: #ffffff; }
+    .ledajans-indoor-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-indoor-container { grid-template-columns: 1fr 1fr; }
+    }
+    .ledajans-indoor-image-wrapper { order: 1; }
+    @media (min-width: 1024px) { .ledajans-indoor-image-wrapper { order: 2; } }
+    .ledajans-indoor-content { order: 2; }
+    @media (min-width: 1024px) { .ledajans-indoor-content { order: 1; } }
+    .ledajans-indoor-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) { .ledajans-indoor-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .ledajans-indoor-title { font-size: 3.75rem; } }
+    .ledajans-indoor-tags { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .ledajans-indoor-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid #F46F2C;
+      background-color: rgba(244, 111, 44, 0.06);
+      border-radius: 12px;
+      transition: box-shadow 0.3s ease;
+    }
+    .ledajans-indoor-tag:hover { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 640px) { .ledajans-indoor-tag { padding: 0.75rem 1.5rem; } }
+    .ledajans-indoor-tag svg { width: 16px; height: 16px; color: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-indoor-tag svg { width: 20px; height: 20px; } }
+    .ledajans-indoor-tag span { font-weight: 600; color: #111827; font-size: 0.875rem; }
+    @media (min-width: 640px) { .ledajans-indoor-tag span { font-size: 1rem; } }
+    .ledajans-indoor-desc { font-size: 1rem; color: #4B5563; margin-bottom: 2rem; line-height: 1.7; }
+    .ledajans-indoor-desc a { color: #F46F2C; text-decoration: none; font-weight: 500; }
+    .ledajans-indoor-desc a:hover { text-decoration: underline; }
+    .ledajans-indoor-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    @media (min-width: 640px) { .ledajans-indoor-features { flex-direction: row; } }
+    .ledajans-indoor-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+      border-radius: 16px;
+      flex: 1;
+    }
+    .ledajans-indoor-feature-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background-color: #F46F2C;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-indoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
+    .ledajans-indoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
+    .ledajans-indoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-indoor-image-wrapper,
+    .ledajans-indoor-image-container {
+      background: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+    .ledajans-indoor-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-indoor-image-container {
+      width: 70%;
+      max-width: 380px;
+    }
+    .ledajans-indoor-image {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+      background: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      border: 0;
+      transform-origin: center center;
+      animation: ledajans-indoor-float 4s ease-in-out infinite alternate;
+    }
+    @keyframes ledajans-indoor-float {
+      from { transform: translateY(10px) rotate(-1deg); }
+      to { transform: translateY(-10px) rotate(1deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ledajans-indoor-image { animation: none; }
+    }
+    @media (min-width: 768px) {
+      .ledajans-indoor-image-container { max-width: 440px; }
+      .ledajans-indoor-image { max-height: 480px; }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-indoor-container { align-items: center; }
+      .ledajans-indoor-image-wrapper {
+        align-self: center;
+      }
+      .ledajans-indoor-image-container {
+        width: 72%;
+        max-width: 480px;
+      }
+      .ledajans-indoor-image {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+      }
+    }
+    </style>
+    <section style="background-color: #f9fafb">
+            <img
+              src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran-panel-transparent.webp"
+              alt="İç Mekan LED Ekran - Indoor LED Ekran Çözümleri"
+              width="766"
+              height="962"
+              loading="lazy"
+              decoding="async"
+            />
+          <h2>İÇ MEKAN - INDOOR LED</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Kaliteli
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Güvenli
+          <p>
+            Daha önceki yıllarda iç mekan görüntülemede kullanılan ürünlerin aydınlık ortamda görüntü netliğinin bozulması belirli açılardan bakıldığında da görülememesi led ekran teknolojisinin gelişmesi ile yerlerini led ekranlara bırakmışlardır. <a href="https://ledajans.com/ic-mekan-led-ekran/">İç mekan/indoor Led ekranlar</a>da 0,9mm'ye varan pikseller, 3840Hz ve daha üstü refresh/yenileme hızına sahip olmaları, indoor led ekranların, TV stüdyoları başta olmak üzere hemen her alanda kullanılmasının önünü açmıştır. Darbe riski yüksek alanlarda <a href="https://ledajans.com/gob-led-ekran/">GOB LED ekran</a> tercih edilir.
+          </p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                <h3>Sertifika</h3>
+                <p>Uluslararası sertifikalara sahibiz.</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h3>2 Yıl Garanti</h3>
+                <p>2 yıl boyunca teknik hizmet garanti kapsamında ücretsiz.</p>
+    </section>
+					<!-- WIDGET 5 — Dış mekan LED bölümü -->
+<style>
+    .ledajans-outdoor { padding: 6rem 1rem; background-color: #ffffff; }
+    .ledajans-outdoor-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-outdoor-container { grid-template-columns: 1fr 1fr; }
+    }
+    .ledajans-outdoor-content { order: 2; }
+    .ledajans-outdoor-image-wrapper { order: 1; }
+    .ledajans-outdoor-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    @media (min-width: 768px) { .ledajans-outdoor-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .ledajans-outdoor-title { font-size: 3.75rem; } }
+    .ledajans-outdoor-tags { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .ledajans-outdoor-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid #F46F2C;
+      background-color: rgba(244, 111, 44, 0.06);
+      border-radius: 12px;
+      transition: box-shadow 0.3s ease;
+    }
+    .ledajans-outdoor-tag:hover { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    @media (min-width: 640px) { .ledajans-outdoor-tag { padding: 0.75rem 1.5rem; } }
+    .ledajans-outdoor-tag svg { width: 16px; height: 16px; color: #F46F2C; }
+    @media (min-width: 640px) { .ledajans-outdoor-tag svg { width: 20px; height: 20px; } }
+    .ledajans-outdoor-tag span { font-weight: 600; color: #111827; font-size: 0.875rem; }
+    @media (min-width: 640px) { .ledajans-outdoor-tag span { font-size: 1rem; } }
+    .ledajans-outdoor-desc { font-size: 1rem; color: #4B5563; margin-bottom: 2rem; line-height: 1.7; }
+    .ledajans-outdoor-desc a { color: #F46F2C; text-decoration: none; font-weight: 500; }
+    .ledajans-outdoor-desc a:hover { text-decoration: underline; }
+    .ledajans-outdoor-features { display: flex; flex-direction: column; gap: 1.5rem; }
+    @media (min-width: 640px) { .ledajans-outdoor-features { flex-direction: row; } }
+    .ledajans-outdoor-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+      border-radius: 16px;
+      flex: 1;
+    }
+    .ledajans-outdoor-feature-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background-color: #F46F2C;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ledajans-outdoor-feature-icon svg { width: 24px; height: 24px; color: #ffffff; }
+    .ledajans-outdoor-feature-title { font-weight: 700; color: #374151; margin-bottom: 0.5rem; font-size: 1.125rem; }
+    .ledajans-outdoor-feature-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.5; }
+    .ledajans-outdoor-image-container {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      height: 100%;
+    }
+    .ledajans-outdoor-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 42%;
+      display: block;
+    }
+    @media (min-width: 1024px) {
+      .ledajans-outdoor-container { align-items: stretch; }
+      .ledajans-outdoor-image-wrapper { display: flex; height: 100%; }
+      .ledajans-outdoor-image-container { flex: 1; display: flex; min-height: 0; }
+      .ledajans-outdoor-image {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+        object-position: 50% 42%;
+      }
+    }
+    </style>
+    <section style="background-color:#f9fafb">
+          <h2>DIŞ MEKAN - OUTDOOR LED</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Kaliteli
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Güvenli
+          <p>
+            <a href="https://ledajans.com/dis-mekan-led-ekran/">Dış Mekan / Outdoor Led Ekranlar</a>, açık hava reklamcılığı alanında şirketlerin kendi reklamlarını yapabileceği gibi uzaktan kontrol edilebilir özellikleri sayesinde reklam ajanslarının da reklam alma ve yayınlama aracı haline gelmiştir. Yüksek çözünürlük, yüksek refresh/yenileme hızına sahip olmaları led ekranların sahne ve organizasyon alanlarında vazgeçilmeyecek ilk ürün olmalarını sağlamıştır. <a href="https://rentalekran.com">Rental Led Ekranlar</a> ise kiralama alanında önemli bir yer edinmişlerdir.
+          </p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                <h3>Sertifikalı</h3>
+                <p>Uluslararası sertifikalara sahibiz.</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h3>2 Yıl Garantili</h3>
+                <p>2 yıl boyunca teknik hizmet garanti kapsamında ücretsiz.</p>
+            <img
+              src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-outdoor-led-v2.webp"
+              alt="Dış Mekan LED Ekran - Outdoor LED cephe ekranı"
+              width="1024"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+    </section>
+<!-- WIDGET 6 — Yatay ürün slider (DisMekanRGBPanel görsel URL sonundaki boşluk düzeltildi) -->
+<section style="padding: 4rem 0; background: #f9fafb; overflow: hidden;">
+      <h2>Ürünlerimiz</h2>
+      <button type="button" aria-label="Önceki ürünler" style="position: absolute; left: 0.5rem; top: 50%; transform: translateY(-50%); z-index: 10; width: 2.5rem; height: 2.5rem; border-radius: 9999px; border: none; background: #F46F2C; color: white; cursor: pointer; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); display: flex; align-items: center; justify-content: center;">
+      </button>
+      <button type="button" aria-label="Sonraki ürünler" style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); z-index: 10; width: 2.5rem; height: 2.5rem; border-radius: 9999px; border: none; background: #F46F2C; color: white; cursor: pointer; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); display: flex; align-items: center; justify-content: center;">
+      </button>
+          <a href="https://ledajans.com/cob-ekran/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/cob-smart-screen.webp" alt="COB - Smart Screen" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">COB – Smart Screen</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/dis-mekan-rgb-panel/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-rgb-panel.webp" alt="Dış Mekan RGB Panel" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">Dış Mekan RGB Panel</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/ic-mekan-rgb-panel/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-rgb-panel.webp" alt="İç Mekan RGB Panel" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">İç Mekan RGB Panel</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/kontrol-kartlari/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2022/12/COLORGLIGHT.jpg" alt="Kontrol Kartları" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">Kontrol Kartları</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/dis-mekan-led-ekran/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran.webp" alt="Dış Mekan Led Ekran" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">Dış Mekan Led Ekran</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/rental-ekran/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2022/12/untitled.232-min-1.png" alt="Rental Ekran" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">Rental Ekran</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/guc-kaynaklari/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2022/12/powersupply-1-2.png" alt="Power Supply" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">Power Supply</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+          <a href="https://ledajans.com/ic-mekan-led-ekran/" style="flex: 0 0 auto; width: 280px; max-width: 85vw; text-decoration: none; color: inherit;">
+                <img src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran.webp" alt="İç Mekan LED Ekran" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #374151; margin: 0 0 0.5rem;">İç Mekan LED Ekran</h3>
+                  Detaylı İncele
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+      <a href="https://ledajans.com/led-ekran/" style="display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 2.5rem; background-color: #F46F2C; color: white; font-weight: 600; font-size: 1rem; text-decoration: none; border-radius: 0.75rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+        Tüm Ürünleri Görüntüle
+      </a>
+  </section>
+  <style>
+    .products-slider-section .ledajans-projects-title { font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 1rem; line-height: 1.1; }
+    .products-slider-section .ledajans-projects-title .highlight { color: #F46F2C; }
+    @media (min-width: 768px) { .products-slider-section .ledajans-projects-title { font-size: 3rem; } }
+    @media (min-width: 1024px) { .products-slider-section .ledajans-projects-title { font-size: 3.75rem; } }
+    .products-slider-section { box-sizing: border-box; }
+    .products-slider-section * { box-sizing: border-box; }
+    .products-slider-container::-webkit-scrollbar { display: none; }
+    .products-slider-wrap:hover .products-slider-prev,
+    .products-slider-wrap:hover .products-slider-next { opacity: 1; }
+    .products-slider-prev,
+    .products-slider-next { opacity: 0.9; }
+    @media (max-width: 640px) {
+      .products-slider-prev { left: 0.25rem; width: 2.25rem; height: 2.25rem; }
+      .products-slider-next { right: 0.25rem; width: 2.25rem; height: 2.25rem; }
+      .products-slider-track { gap: 1rem; padding-left: 1rem; padding-right: 1rem; }
+      .products-card { width: 260px !important; }
+      .products-card-inner div[style*="height: 256px"] { height: 200px !important; }
+    }
+    .products-card-inner:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); border-color: #F46F2C !important; }
+    .products-card-inner:hover img { transform: scale(1.08); }
+  </style>
+					<!-- SEO Meta Description: LEDAJANS LED ekran projeleri; iç mekan, dış mekan, mağaza, fuar ve rental LED ekran kurulum referanslarını inceleyin, projeniz için teklif alın. -->
+<!-- SEO Focus Keyword: LED ekran projeleri -->
+<!-- WIDGET 7 — Projeler (DOCTYPE/html/body YOK; kart basliklari h3) -->
+<style>
+  .ledajans-projects-page {
+        font-family: inherit;
+        color: #0f172a;
+        background: #ffffff;
+        position: relative;
+        isolation: isolate;
+      }
+      .ledajans-projects-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.65rem;
+      }
+      .ledajans-projects-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.85rem;
+        padding: 0.72rem 1.15rem;
+        border-radius: 999px;
+        font-size: 0.94rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+      .ledajans-projects-btn-primary {
+        color: #ffffff !important;
+        background: #F46F2C;
+        box-shadow: 0 18px 36px rgba(244, 111, 44, 0.32);
+      }
+      .ledajans-projects-btn-outline {
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .ledajans-projects-btn:hover {
+        transform: translateY(-2px);
+      }
+      .ledajans-projects-seo-block {
+        position: relative;
+        z-index: 20 !important;
+        padding: clamp(2rem, 4vw, 3rem) 1rem;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 52%, #ffffff 100%);
+      }
+      .ledajans-projects-seo-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+        gap: clamp(1rem, 2.5vw, 1.75rem);
+        align-items: stretch;
+      }
+      .ledajans-projects-copy {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.15rem, 2.5vw, 1.65rem);
+        border-radius: 1.75rem;
+        background:
+          radial-gradient(circle at 90% 10%, rgba(244, 111, 44, 0.28), transparent 34%),
+          linear-gradient(135deg, #111827 0%, #1e293b 100%);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+      }
+      .ledajans-projects-copy::after {
+        content: "";
+        position: absolute;
+        right: -3rem;
+        bottom: -3rem;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 999px;
+        background: rgba(244, 111, 44, 0.18);
+      }
+      .ledajans-projects-copy h2,
+      .ledajans-projects-faq h2 {
+        margin: 0 0 1rem;
+        color: #0f172a;
+        font-size: clamp(1.9rem, 4vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+      .ledajans-projects-copy h2 {
+        position: relative;
+        z-index: 1;
+        color: #ffffff !important;
+        font-size: clamp(1.65rem, 3vw, 2.45rem);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.32);
+      }
+      .ledajans-projects-copy p,
+      .ledajans-projects-faq p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.85;
+        margin: 0 0 1rem;
+      }
+      .ledajans-projects-copy p {
+        position: relative;
+        z-index: 1;
+        color: #dbeafe;
+        font-size: 0.96rem;
+        line-height: 1.62;
+        margin-bottom: 0.7rem;
+      }
+      .ledajans-projects-copy-badge {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.7rem;
+        padding: 0.42rem 0.72rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fed7aa;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .ledajans-projects-copy-stats {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.95rem;
+      }
+      .ledajans-projects-copy-stat {
+        padding: 0.65rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .ledajans-projects-copy-stat strong {
+        display: block;
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+      .ledajans-projects-copy-stat span {
+        display: block;
+        margin-top: 0.18rem;
+        color: #bfdbfe;
+        font-size: 0.76rem;
+        line-height: 1.35;
+      }
+      .ledajans-projects-sector-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+      .ledajans-projects-sector {
+        position: relative;
+        overflow: hidden;
+        padding: 0.95rem;
+        border: 1px solid rgba(244, 111, 44, 0.16);
+        border-radius: 1.35rem;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
+        transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+      }
+      .ledajans-projects-sector:hover {
+        transform: translateY(-5px);
+        border-color: rgba(244, 111, 44, 0.38);
+        box-shadow: 0 26px 52px rgba(15, 23, 42, 0.12);
+      }
+      .ledajans-projects-sector-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-bottom: 0.65rem;
+        border-radius: 1rem;
+        color: #ffffff;
+        background: linear-gradient(135deg, #F46F2C, #fb923c);
+        box-shadow: 0 14px 28px rgba(244, 111, 44, 0.24);
+        font-size: 0.95rem;
+      }
+      .ledajans-projects-sector strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #0f172a;
+      }
+      .ledajans-projects-sector span {
+        color: #64748b;
+        font-size: 0.86rem;
+        line-height: 1.42;
+      }
+      .ledajans-projects-cta {
+        position: relative;
+        z-index: 20 !important;
+        padding: clamp(3.5rem, 7vw, 5rem) 1rem;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(244, 111, 44, 0.22), transparent 28%),
+          linear-gradient(135deg, #111827, #0f172a);
+        color: #ffffff;
+        text-align: center;
+      }
+      .ledajans-projects-cta-inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .ledajans-projects-cta h2 {
+        margin: 0 0 1rem;
+        color: #ffffff !important;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.42);
+      }
+      .ledajans-projects-cta p {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 0 auto 1.75rem;
+        max-width: 720px;
+      }
+      .ledajans-projects-faq {
+        position: relative;
+        z-index: 20 !important;
+        background: #ffffff;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: clamp(3.5rem, 7vw, 5rem) 1rem;
+      }
+      .ledajans-projects-faq details {
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        padding: 1rem 1.15rem;
+        margin-bottom: 0.875rem;
+        background: #ffffff;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+      }
+      .ledajans-projects-faq summary {
+        cursor: pointer;
+        color: #0f172a;
+        font-weight: 800;
+      }
+      @media (max-width: 768px) {
+        .ledajans-projects-copy-stats,
+        .ledajans-projects-sector-grid,
+        .ledajans-projects-seo-inner {
+          grid-template-columns: 1fr;
+        }
+        .ledajans-projects {
+          margin-top: 0;
+          border-radius: 1.5rem 1.5rem 0 0;
+        }
+      }
+  .ledajans-projects {
+        position: relative;
+        z-index: 20 !important;
+        padding: clamp(3.5rem, 8vw, 6rem) 1rem;
+        background: linear-gradient(180deg, #f0f7ff 0%, #f8fafc 45%, #ffffff 100%);
+        border-radius: 2.25rem 2.25rem 0 0;
+        margin-top: 0;
+        min-height: auto;
+        box-shadow: none;
+      }
+      .ledajans-projects-container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .ledajans-projects-header {
+        text-align: center;
+        margin-bottom: clamp(2rem, 5vw, 3rem);
+      }
+      .ledajans-projects-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 1.25rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      .ledajans-projects-title .highlight {
+        color: #F46F2C;
+      }
+      .ledajans-projects-desc {
+        font-size: 1.0625rem;
+        color: #334155;
+        max-width: 42rem;
+        margin: 0 auto;
+        line-height: 1.75;
+      }
+      @media (min-width: 768px) {
+        .ledajans-projects-title { font-size: 3rem; }
+      }
+      @media (min-width: 1024px) {
+        .ledajans-projects-title { font-size: 3.75rem; }
+      }
+      .ledajans-projects-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem 0.625rem;
+        margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
+        padding: 0.25rem 0;
+      }
+      .ledajans-projects-filter-btn {
+        padding: 0.5rem 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #1e293b;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      }
+      .ledajans-projects-filter-btn:hover {
+        border-color: #fdba74;
+        color: #c2410c;
+      }
+      .ledajans-projects-filter-btn.active {
+        background: #F46F2C;
+        color: #ffffff;
+        border-color: #F46F2C;
+        box-shadow: 0 4px 14px rgba(244, 111, 44, 0.35);
+      }
+      .ledajans-projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      @media (min-width: 640px) {
+        .ledajans-projects-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (min-width: 1024px) {
+        .ledajans-projects-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2.5rem;
+        }
+      }
+      .ledajans-project-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+        transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+      }
+      .ledajans-project-card:hover {
+        box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.15), 0 8px 16px -8px rgba(244, 111, 44, 0.12);
+        transform: translateY(-6px);
+        border-color: #cbd5e1;
+      }
+      .ledajans-project-card.is-hidden {
+        display: none;
+      }
+      .ledajans-project-card.ledajans-project-card--behind-fold {
+        display: none !important;
+      }
+      .ledajans-projects-load-more-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 2.5rem;
+      }
+      .ledajans-projects-load-more {
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        background: #F46F2C;
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        font-family: inherit;
+      }
+      .ledajans-projects-load-more:hover {
+        background: #e55a1f;
+        transform: translateY(-2px);
+      }
+      .ledajans-projects-load-more[hidden],
+      .ledajans-projects-show-less[hidden] {
+        display: none !important;
+      }
+      .ledajans-projects-show-less {
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #F46F2C;
+        background: #fff;
+        border: 2px solid #F46F2C;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        font-family: inherit;
+      }
+      .ledajans-projects-show-less:hover,
+      .ledajans-projects-show-less:focus-visible {
+        color: #F46F2C;
+        background: #fff5f0;
+        border-color: #F46F2C;
+        transform: translateY(-2px);
+      }
+      .ledajans-project-image-wrap {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        background: #0f0f0f;
+      }
+      .ledajans-project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transition: transform 0.4s ease;
+      }
+      /* Görseli yukarı kaydırıp alttaki kısmı (örn. bayrak) daha çok göstermek için */
+      .ledajans-project-image-wrap--align-bottom .ledajans-project-image {
+        object-position: center bottom;
+      }
+      .ledajans-project-image-wrap--align-top .ledajans-project-image {
+        object-position: center top;
+      }
+      .ledajans-project-image-wrap--cover .ledajans-project-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        display: block;
+      }
+      /* Dış CSS override etse bile önizlemeyi yukarı al */
+      .ledajans-project-image-wrap--shift-up .ledajans-project-image {
+        object-position: center top !important;
+        transform: translateY(-32px) scale(1.06);
+        transform-origin: top center;
+      }
+      .ledajans-project-card:hover .ledajans-project-image-wrap--shift-up .ledajans-project-image {
+        transform: translateY(-32px) scale(1.1);
+      }
+      .ledajans-project-card:hover .ledajans-project-image {
+        transform: scale(1.05);
+      }
+      /* Kartlarda dikey videolar tam görünsün, ekranı kaplamasın */
+      .ledajans-project-image-wrap .ledajans-project-video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        background: #111;
+      }
+      .ledajans-project-category {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: #F46F2C;
+        border-radius: 0 24px 0 24px;
+        z-index: 5;
+      }
+      .ledajans-project-body {
+        padding: 1.375rem 1.5rem 1.5rem;
+      }
+      .ledajans-project-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 0.5rem;
+        line-height: 1.35;
+      }
+      .ledajans-project-excerpt {
+        font-size: 0.9375rem;
+        color: #475569;
+        line-height: 1.65;
+        margin: 0;
+      }
+      .ledajans-project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #F46F2C;
+        text-decoration: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        transition: gap 0.3s ease;
+      }
+      .ledajans-project-link:hover {
+        gap: 12px;
+        color: #c55a20;
+      }
+      .ledajans-project-link:hover .dot {
+        background-color: #c55a20;
+      }
+      .ledajans-project-link .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #F46F2C;
+      }
+      /* Modal */
+      .ledajans-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .ledajans-modal-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .ledajans-modal {
+        position: relative;
+        background: #fff;
+        border-radius: 16px;
+        max-width: 560px;
+        width: 100%;
+        max-height: 90vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+      }
+      .ledajans-modal-overlay.is-open .ledajans-modal {
+        transform: scale(1);
+      }
+      .ledajans-modal__media-wrap {
+        position: relative;
+        min-height: 200px;
+        max-height: 50vh;
+        background: #111;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ledajans-modal__media-wrap img,
+      .ledajans-modal__media-wrap video {
+        max-width: 100%;
+        max-height: 50vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+      .ledajans-modal__close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 100;
+        transition: background 0.2s ease;
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ledajans-modal__close:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+      .ledajans-modal__body {
+        padding: 1.5rem;
+        overflow-y: auto;
+      }
+      .ledajans-modal__category {
+        display: inline-block;
+        padding: 4px 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #fff;
+        background: #F46F2C;
+        border-radius: 0 20px 0 20px;
+        margin-bottom: 0.75rem;
+      }
+      .ledajans-modal__title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+      .ledajans-modal__excerpt {
+        font-size: 0.95rem;
+        color: #4B5563;
+        line-height: 1.6;
+      }
+  </style>
+  <section id="ledajans-proje-listesi">
+        <header>
+          <h2>LED Ekran Projelerimiz</h2>
+          <p>
+            Dış mekan, iç mekan ve rental LED ekran projelerinden örnekleri filtreleyin; detaylara tıklayarak uygulama türü, kullanılan ürün grubu ve teslim sürecini inceleyin.
+          </p> 
+        </header>
+          <button type="button" data-filter="all">Tümü</button>
+          <button type="button" data-filter="Dış Mekan LED Ekran">Dış Mekan LED Ekran</button>
+          <button type="button" data-filter="İç Mekan LED Ekran">İç Mekan LED Ekran</button>
+          <button type="button" data-filter="Rental">Rental Ekran</button>
+          <article data-category="Dış Mekan LED Ekran" data-title="Dış Mekan Küre LED Ekran" data-excerpt="Outdoor küre LED ekran; 360° görünürlük, açık hava kurulum, hazır teslim." data-description="Dış mekan küre LED ekran projesi tamamlandı. Küresel LED yüzey 360 derece görünür reklam ve içerik yayını sağlar; yüksek parlaklık, açık hava dayanımı ve LEDAJANS kurulum ekibi ile sistem yerinde, çalışır halde hazır teslim edildi. Site girişi, meydan ve marka deneyim noktaları için uygundur." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/outdoor-kure-led-ekran.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/outdoor-kure-led-ekran.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/outdoor-kure-led-ekran.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/outdoor-kure-led-ekran.mp4" type="video/mp4" />
+              </video>
+              Dış Mekan Küre LED
+              <h3>Dış Mekan Küre LED Ekran</h3>
+              <p>Outdoor küre LED ekran; 360° görünürlük, açık hava kurulum, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="Dış Mekan LED Ekran" data-title="Dış Mekan LED Ekran" data-excerpt="Açık hava reklam ve bilgilendirme için dış mekan LED Ekran; dayanıklı, uzaktan kontrol, hazır teslim." data-description="Dış mekan LED Ekran projesi müşterimizle birlikte tamamlandı. Açık hava koşullarına uygun, yüksek parlaklık ve uzaktan kontrol özellikli LED ekranlar LEDAJANS ürün yelpazesinden en uygun fiyatlarla tedarik edildi. Kurulum ve devreye alma yapıldı; proje reklam ve bilgilendirme ekranı olarak hazır teslim edildi." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.08-AM-1.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.08-AM-1.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.08-AM-1.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.08-AM-1.mp4" type="video/mp4" />
+              </video>
+              Dış Mekan LED Ekran
+              <h3>Dış Mekan LED Ekran</h3>
+              <p>Açık hava reklam ve bilgilendirme için dış mekan LED Ekran; dayanıklı, uzaktan kontrol, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="Dış Mekan LED Ekran" data-title="Dış Mekan LED Kurulum" data-excerpt="Açık hava LED ekran kurulumu; saha montajı, uzaktan yönetim, hazır teslim." data-description="Dış mekan LED ekran kurulum projesi müşterimizle birlikte tamamlandı. Açık hava koşullarına uygun modül ve kabin, uzaktan kontrol ve içerik yönetimi ile LEDAJANS ürünleri en uygun fiyatlarla tedarik edildi. Montaj ve devreye alma sonrası proje kullanıma hazır teslim edildi." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.50.57-AM.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.50.57-AM.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.50.57-AM.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.50.57-AM.mp4" type="video/mp4" />
+              </video>
+              Dış Mekan LED Ekran
+              <h3>Dış Mekan LED Kurulum</h3>
+              <p>Açık hava LED ekran kurulumu; saha montajı, uzaktan yönetim, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="İç Mekan LED Ekran" data-excerpt="Showroom, mağaza ve kapalı mekanlar için iç mekan LED Ekran; yüksek çözünürlük, hazır teslim." data-description="İç mekan LED Ekran projesi müşterimizle birlikte hayata geçirildi. Kapalı mekanlarda yüksek görüntü kalitesi ve geniş görüş açısı sunan LED Ekranler LEDAJANS'tan en uygun fiyatlarla tedarik edildi. Kurulum ve içerik yönetimi tamamlandı; proje showroom veya mağaza bilgilendirme ekranı olarak hazır teslim edildi." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM.mp4" type="video/mp4" />
+              </video>
+              İç Mekan LED Ekran
+              <h3>İç Mekan LED Ekran</h3>
+              <p>Showroom, mağaza ve kapalı mekanlar için iç mekan LED Ekran; yüksek çözünürlük, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="Dış Mekan LED Ekran" data-title="Dış Mekan LED Ekran (Colorlight kullanıldı)" data-excerpt="Dış mekan LED ekran projesi; Colorlight kontrol kartları ile kurulum, uygun fiyat, hazır teslim." data-description="Dış mekan LED ekran projesinde Colorlight kontrol kartları kullanıldı. Müşterimizle birlikte açık hava reklam ekranı kurulumu tamamlandı; Colorlight A500 / A200 serisi ve LEDAJANS dış mekan modülleri en uygun fiyatlarla tedarik edildi. Yüksek çözünürlük ve uzaktan kontrol ile proje hazır teslim edildi." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-2.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-2.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-2.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-2.mp4" type="video/mp4" />
+              </video>
+              Dış Mekan LED Ekran
+              <h3>Dış Mekan LED Ekran (Colorlight kullanıldı)</h3>
+              <p>Dış mekan LED ekran projesi; Colorlight kontrol kartları ile kurulum, uygun fiyat, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="Rental" data-title="Rental LED Ekran (Colorlight kullanıldı)" data-excerpt="Etkinlik ve sahne için rental LED ekran; Colorlight ile kabin kurulumu, hazır teslim." data-description="Rental LED ekran projesinde Colorlight kontrol kartları kullanıldı. Etkinlik, sahne ve organizasyonlar için rental kabin ve LED ekranlar müşterimizle birlikte tedarik edildi; Colorlight ekipmanları ve LEDAJANS rental ürünleri en uygun fiyatlarla sağlandı. Sahada kurulum tamamlandı, proje kullanıma hazır teslim edildi." data-media-type="video" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-1.mp4">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-1.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-1.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/WhatsApp-Video-2026-03-12-at-11.51.07-AM-1.mp4" type="video/mp4" />
+              </video>
+              Rental Ekran
+              <h3>Rental LED Ekran (Colorlight kullanıldı)</h3>
+              <p>Etkinlik ve sahne için rental LED ekran; Colorlight ile kabin kurulumu, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="COB-Smart Screen projesi" data-excerpt="COB-Smart Screen projesi; yüksek kalite iç mekan ekran, uygun fiyat, hazır teslim." data-description="COB-Smart Screen projesi müşterimizle birlikte tamamlandı. LEDAJANS COB (Chip on Board) Smart Screen ürünleri ile iç mekanda yüksek görüntü kalitesi ve dayanıklılık sağlandı; en uygun fiyatlarla tedarik ve kurulum yapıldı. Proje çalışır halde hazır teslim edildi. 2 yıl garanti ve teknik destek kapsamımızda." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-12-at-11.51.08-AM.jpeg">
+             <video src="https://ledajans.com/wp-content/uploads/2026/09/v1.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/v1.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/v1.mp4" type="video/mp4" />
+              </video>
+              İç Mekan LED Ekran
+              <h3>COB-Smart Screen Projesi</h3>
+              <p>COB-Smart Screen projesi; yüksek kalite iç mekan ekran, uygun fiyat, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="Mağaza LED Bilgilendirme Ekranı" data-excerpt="Mağaza LED bilgilendirme ekranı; kasa, reklam ve bilgi panosu, hazır teslim." data-description="Mağaza LED bilgilendirme ekranı projesi müşterimizle birlikte tamamlandı. Mağaza içi kasa bölümü, reklam veya bilgi panosu olarak kullanılmak üzere LEDAJANS iç mekan LED ekran ürünleri en uygun fiyatlarla tedarik edildi; kurulum ve içerik yönetimi devreye alındı. Proje hazır teslim edildi. 2 yıl garanti kapsamındadır." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-12-at-11.50.55-AM.jpeg">
+              <video src="https://ledajans.com/wp-content/uploads/2026/09/v2-Trim.mp4" muted autoplay loop playsinline preload="metadata">
+                <source src="https://ledajans.com/wp-content/uploads/2026/09/v2-Trim.mp4" data-src="https://ledajans.com/wp-content/uploads/2026/09/v2-Trim.mp4" type="video/mp4" />
+              </video>
+              İç Mekan - Indoor P2.5
+              <h3>Mağaza LED Bilgilendirme Ekranı</h3>
+              <p>Huidu kontrol kartları ile iç mekan P2.5 LED ekran projesi; Kurulum, uygun fiyat, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="İç Mekan LED Referans" data-excerpt="Kapalı mekan LED ekran uygulaması; net görüntü, kurulum ve hazır teslim." data-description="İç mekan LED ekran referans uygulaması müşterimizle birlikte tamamlandı. LEDAJANS iç mekan modülleri ile yüksek çözünürlük ve düşük enerji tüketimi; kurulum ve içerik yönetimi devreye alındı. Proje kullanıma hazır teslim edildi." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/04/la.png">
+              <img src="https://ledajans.com/wp-content/uploads/2026/04/la.png" alt="İç mekan LED ekran referans görseli" loading="lazy" />
+              İç Mekan LED Ekran
+              <h3>İç Mekan LED Referans</h3>
+              <p>Kapalı mekan LED ekran uygulaması; net görüntü, kurulum ve hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="İç Mekan Indoor P4 LED Proje" data-excerpt="Indoor P4 modüller ile iç mekan LED ekran; net görüntü, kurulum ve hazır teslim." data-description="Proje iç mekan uygulamasında LEDAJANS Indoor P4 modüller kullanılarak tamamlandı. P4 pitch ile okunabilir mesafe ve görüntü kalitesi optimize edildi; kontrol kartı ve kabin kurulumu yapıldı. Proje müşteriye hazır teslim edildi." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/04/yesil-proje.png">
+              <img src="https://ledajans.com/wp-content/uploads/2026/04/yesil-proje.png" alt="İç mekan Indoor P4 LED ekran proje görseli" loading="lazy" />
+              İç Mekan - Indoor P4
+              <h3>İç Mekan Indoor P4 LED Proje</h3>
+              <p>Indoor P4 modüller ile iç mekan LED ekran; net görüntü, kurulum ve hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="İç Mekan LED Ekran" data-title="Mağaza İç Mekan LED Projesi" data-excerpt="Mağazalarda iç mekan LED ekran uygulaması; net görüntü, düzenli içerik yayını, hazır teslim." data-description="Mağaza iç mekan LED projesinde Indoor modüller ile ekran kurulumu tamamlandı. Ürün tanıtımı, kampanya ve bilgilendirme içerikleri için yüksek görünürlük sağlandı; sistem müşteriye hazır teslim edildi." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/04/lb.png">
+              <img src="https://ledajans.com/wp-content/uploads/2026/04/lb-1.png" alt="Mağaza iç mekan LED proje görseli" loading="lazy" />
+              İç Mekan LED Ekran
+              <h3>Mağaza İç Mekan LED Projesi</h3>
+              <p>Mağazalarda iç mekan LED ekran uygulaması; net görüntü, düzenli içerik yayını, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <article data-category="Dış Mekan LED Ekran" data-title="Dış Mekan LED Ekran Referans" data-excerpt="Açık hava LED ekran projesi; yüksek parlaklık, dayanıklı yapı, hazır teslim." data-description="Dış mekan LED ekran referans projesi tamamlandı. Açık hava koşullarına uygun LEDAJANS dış mekan ürünleri ile yüksek parlaklık ve uzun ömür; montaj ve uzaktan kontrol devreye alındı. Proje hazır teslim edildi." data-media-type="image" data-media-src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-referans.webp">
+              <img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-referans.webp" alt="Dış mekan LED ekran referans — EspressoLab cephe LED tabela" loading="lazy" decoding="async" />
+              Dış Mekan LED Ekran
+              <h3>Dış Mekan LED Ekran Referans</h3>
+              <p>Açık hava LED ekran projesi; yüksek parlaklık, dayanıklı yapı, hazır teslim.</p>
+              <button type="button">Detay</button>
+          </article>
+          <button type="button" id="ledajans-projects-load-more" hidden>Daha Fazla Göster</button>
+          <button type="button" id="ledajans-projects-show-less" hidden>Daha Az Göster</button>
+    </section>
+    <section aria-label="LED ekran proje açıklaması">
+          Sahada test edilmiş çözümler
+          <h2>LED ekran projesi seçerken referans neden önemlidir?</h2>
+          <p>
+            LED ekran yatırımı yalnızca panel seçimi değildir; doğru piksel aralığı, parlaklık seviyesi, kontrol kartı, kabin yapısı, montaj ve satış sonrası servis birlikte düşünülmelidir. LEDAJANS projelerinde iç mekan, dış mekan ve rental kullanım senaryolarına göre ürün ve altyapı önerisi yapılır.
+          </p>
+          <p>
+            Bu sayfadaki referanslar; mağaza LED ekran, dış cephe LED ekran, showroom ekranı, etkinlik ekranı ve Colorlight ya da Huidu kontrollü uygulamalar için fikir verir. Projenizin ölçüsü, izleme mesafesi ve kullanım amacı netleştiğinde size özel LED ekran fiyat teklifi hazırlanabilir.
+          </p>
+              <strong>Keşif</strong>
+              Alan ve izleme mesafesi analizi
+              <strong>Kurulum</strong>
+              Kabin, kontrol ve devreye alma
+              <strong>Destek</strong>
+              Garanti ve teknik servis süreci
+          <a href="https://ledajans.com/ic-mekan-led-ekran/" style="text-decoration:none;color:inherit;">
+            01
+            <strong>Mağaza ve showroom</strong>
+            Ürün tanıtımı, kampanya duyurusu ve marka görünürlüğü için iç mekan LED ekran çözümleri.
+          </a>
+          <a href="https://ledajans.com/dis-mekan-led-ekran/" style="text-decoration:none;color:inherit;">
+            02
+            <strong>Dış cephe ve açık alan</strong>
+            Yüksek parlaklık, dayanıklı kabin ve uzaktan yönetim odaklı dış mekan LED ekran projeleri.
+          </a>
+          <a href="https://ledajans.com/rental-ekran/" style="text-decoration:none;color:inherit;">
+            03
+            <strong>Fuar ve etkinlik</strong>
+            Kurulumu hızlı, taşınabilir ve sahneye uygun rental LED ekran uygulamaları.
+          </a>
+          <a href="https://ledajans.com/ic-mekan-led-ekran/" style="text-decoration:none;color:inherit;">
+            04
+            <strong>Kurumsal alanlar</strong>
+            Toplantı odası, lobi, karşılama ve bilgilendirme ekranları için net görüntü çözümleri.
+          </a>
+    </section>
+    <section>
+        <h2>Benzer bir LED ekran projesi mi planlıyorsunuz?</h2>
+        <p>
+          Kullanım alanınızı, yaklaşık ölçünüzü ve izleme mesafenizi paylaşın; iç mekan, dış mekan veya rental LED ekran için doğru ürün grubunu birlikte netleştirelim.
+        </p>
+          <a href="https://ledajans.com/iletisim/">Ücretsiz Teklif Al</a>
+          <a href="tel:+902122204004">0212 220 40 04 Ara</a>
+    </section>
+    <section aria-label="LED ekran projeleri sık sorulan sorular">
+      <h2>LED ekran projeleri hakkında sık sorulan sorular</h2>
+      <details>
+        <summary>LED ekran projesi için önce hangi bilgiler gerekir?</summary>
+        <p>Kurulum yeri, yaklaşık ekran ölçüsü, izleme mesafesi, iç mekan veya dış mekan kullanımı ve içerik türü yeterli başlangıç bilgisidir.</p>
+      </details>
+      <details>
+        <summary>İç mekan ve dış mekan LED ekran projeleri nasıl ayrılır?</summary>
+        <p>İç mekan projelerinde çözünürlük ve yakın izleme mesafesi öne çıkar; dış mekan projelerinde parlaklık, IP koruma, kabin dayanımı ve uzaktan kontrol daha kritiktir.</p>
+      </details>
+      <details>
+        <summary>Rental LED ekran hangi projeler için uygundur?</summary>
+        <p>Fuar, konser, lansman, sahne ve kısa süreli organizasyonlarda hızlı kurulum ve söküm avantajı nedeniyle rental LED ekran tercih edilir.</p>
+      </details>
+      <details>
+        <summary>LEDAJANS projelerinde garanti ve destek var mı?</summary>
+        <p>Projelerde ürün grubuna göre garanti, yedek parça ve teknik destek süreci teklif aşamasında netleştirilir.</p>
+      </details>
+    </section>
+    <!-- Modal popup -->
+          <h3 id="ledajansModalTitle"></h3>
+          <p id="ledajansModalExcerpt"></p>
+        <button type="button" id="ledajansModalClose" aria-label="Kapat">&times;</button>
+					<style>
+    .ledajans-reviews {
+      padding: 4rem 1rem;
+      background-color: #f9fafb;
+    }
+    .ledajans-reviews-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-reviews-inner { padding: 0 1.2rem; }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-reviews-inner { padding: 0 2rem; }
+    }
+    .ledajans-reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .ledajans-reviews-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.025em;
+    }
+    @media (min-width: 768px) {
+      .ledajans-reviews-title { font-size: 2.25rem; }
+    }
+    .ledajans-reviews-subtitle {
+      font-size: 1.125rem;
+      color: #4b5563;
+      max-width: 42rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .ledajans-reviews-slider-wrap {
+      position: relative;
+      overflow: visible;
+      min-height: 420px;
+    }
+    .ledajans-reviews-slider-wrap:hover .ledajans-reviews-prev,
+    .ledajans-reviews-slider-wrap:hover .ledajans-reviews-next {
+      opacity: 1;
+    }
+    .ledajans-reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      min-height: 380px;
+      padding: 0 3rem;
+    }
+    @media (min-width: 768px) {
+      .ledajans-reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 380px;
+        padding: 0 3.5rem;
+      }
+    }
+    .ledajans-review-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .ledajans-review-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
+      border-color: #F46F2C;
+    }
+    .ledajans-review-stars {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .ledajans-review-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #F46F2C;
+      color: #F46F2C;
+      filter: drop-shadow(0 1px 2px rgba(244, 111, 44, 0.2));
+    }
+    .ledajans-review-quote {
+      width: 24px;
+      height: 24px;
+      color: #F46F2C;
+      opacity: 0.3;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .ledajans-review-text-wrap {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      margin-bottom: 1.25rem;
+      min-height: 0;
+    }
+    .ledajans-review-text-wrap::-webkit-scrollbar {
+      width: 6px;
+    }
+    .ledajans-review-text-wrap::-webkit-scrollbar-track {
+      background: #f3f4f6;
+      border-radius: 3px;
+    }
+    .ledajans-review-text-wrap::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 3px;
+    }
+    .ledajans-review-text-wrap::-webkit-scrollbar-thumb:hover {
+      background: #F46F2C;
+    }
+    .ledajans-review-text {
+      font-size: 0.9375rem;
+      color: #374151;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .ledajans-review-footer {
+      display: flex;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+    .ledajans-review-avatar {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F46F2C 0%, #ea580c 100%);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.875rem;
+      box-shadow: 0 4px 6px -1px rgba(244, 111, 44, 0.3);
+    }
+    .ledajans-review-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0 0 0.25rem 0;
+    }
+    .ledajans-review-position {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    .ledajans-reviews-prev,
+    .ledajans-reviews-next {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: none;
+      background: #F46F2C;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+    .ledajans-reviews-prev:hover,
+    .ledajans-reviews-next:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .ledajans-reviews-prev:active,
+    .ledajans-reviews-next:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+    .ledajans-reviews-prev {
+      left: 0.5rem;
+    }
+    .ledajans-reviews-next {
+      right: 0.5rem;
+    }
+    .ledajans-reviews-prev span,
+    .ledajans-reviews-next span {
+      display: block;
+    }
+    .ledajans-reviews-prev span {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-right-color: white;
+      margin-right: 12px;
+    }
+    .ledajans-reviews-next span {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: white;
+      margin-left: 12px;
+    }
+    .ledajans-reviews-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .ledajans-reviews-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+    }
+    .ledajans-reviews-dot:hover {
+      background: #9ca3af;
+      transform: scale(1.2);
+    }
+    .ledajans-reviews-dot.active {
+      background: #F46F2C;
+      width: 32px;
+      border-radius: 6px;
+      transform: scale(1);
+    }
+    .ledajans-review-card.hidden {
+      display: none !important;
+    }
+    @media (max-width: 640px) {
+      .ledajans-reviews-prev {
+        left: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-reviews-next {
+        right: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-reviews-prev span {
+        border-width: 8px;
+        margin-right: 8px;
+      }
+      .ledajans-reviews-next span {
+        border-width: 8px;
+        margin-left: 8px;
+      }
+    }
+  </style>
+  <section aria-label="Müşteri yorumları" style="background-color:#f9fafb">
+        <h2>Müşteri Yorumları</h2>
+        <p>Müşterilerimizin LEDAJANS deneyimleri</p>
+        <button type="button" aria-label="Önceki yorumlar">
+        </button>
+        <button type="button" aria-label="Sonraki yorumlar">
+        </button>
+          <!-- Kartlar JS ile doldurulacak -->
+  </section>
+					<!--
+  ANASAYFA — AYRI HTML WIDGET (WordPress / Elementor’a bunu yapıştır)
+  _ledajans-home-raw.html sadece tam sayfa yedeği; canlı anasayfadaki blog bloğu bu dosyayla senkron tutulmalı.
+  DOCTYPE / html / body yok.
+  İsteğe bağlı (tema üstü veya bu bloktan önce): window.LEDajansBlogLang='tr' (Polylang)
+  veya window.LEDajansWpJsonBase='https://ledajans.com' (REST kökü sabitleme)
+-->
+<style>
+    .ledajans-blog {
+      padding: 6rem 1rem;
+      background-color: #f9fafb;
+    }
+    .ledajans-blog-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    @media (min-width: 640px) {
+      .ledajans-blog-inner { padding: 0 1.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-blog-inner { padding: 0 2rem; }
+    }
+    .ledajans-blog-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .ledajans-blog-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.025em;
+    }
+    @media (min-width: 768px) {
+      .ledajans-blog-title { font-size: 3rem; }
+    }
+    @media (min-width: 1024px) {
+      .ledajans-blog-title { font-size: 3.75rem; }
+    }
+    .ledajans-blog-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      max-width: 42rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .ledajans-blog-slider-wrap {
+      position: relative;
+      overflow: visible;
+      padding: 0 4rem;
+    }
+    @media (max-width: 640px) {
+      .ledajans-blog-slider-wrap {
+        padding: 0 3rem;
+      }
+    }
+    .ledajans-blog-track {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      padding: 1rem 0;
+      gap: 2rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .ledajans-blog-track::-webkit-scrollbar {
+      display: none;
+    }
+    .ledajans-blog-card-wrap {
+      flex-shrink: 0;
+      width: 320px;
+    }
+    @media (max-width: 640px) {
+      .ledajans-blog-card-wrap {
+        width: 280px;
+      }
+    }
+    .ledajans-blog-card {
+      display: block;
+      background: #fff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+      border: 2px solid transparent;
+      transition: box-shadow 0.5s ease, transform 0.5s ease, border-color 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+    }
+    .ledajans-blog-card:hover {
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      transform: translateY(-0.5rem);
+      border-color: #F46F2C;
+    }
+    .ledajans-blog-card-image {
+      height: 192px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .ledajans-blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .ledajans-blog-card:hover .ledajans-blog-card-image img {
+      transform: scale(1.1);
+    }
+    .ledajans-blog-card-body {
+      padding: 1.5rem;
+    }
+    .ledajans-blog-card-date {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin: 0 0 0.5rem 0;
+    }
+    .ledajans-blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .ledajans-blog-card-excerpt {
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .ledajans-blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      color: #F46F2C;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .ledajans-blog-card:hover .ledajans-blog-card-link {
+      transform: translateX(0.5rem);
+    }
+    .ledajans-blog-card-link span.arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left-color: #F46F2C;
+      margin-left: 0.5rem;
+    }
+    .ledajans-blog-prev,
+    .ledajans-blog-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: none;
+      background: #F46F2C;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+    .ledajans-blog-slider-wrap:hover .ledajans-blog-prev,
+    .ledajans-blog-slider-wrap:hover .ledajans-blog-next {
+      opacity: 1;
+    }
+    .ledajans-blog-prev:hover,
+    .ledajans-blog-next:hover {
+      background: #e55a1f;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .ledajans-blog-prev:active,
+    .ledajans-blog-next:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+    .ledajans-blog-prev {
+      left: 0.5rem;
+    }
+    .ledajans-blog-next {
+      right: 0.5rem;
+    }
+    .ledajans-blog-loading {
+      text-align: center;
+      padding: 3rem;
+      color: #6b7280;
+    }
+    .ledajans-blog-error {
+      text-align: center;
+      padding: 3rem;
+      color: #dc2626;
+    }
+    @media (max-width: 640px) {
+      .ledajans-blog-prev {
+        left: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+      .ledajans-blog-next {
+        right: 0.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+    }
+  </style>
+  <section aria-label="Blog">
+        <h2>Blog</h2>
+        <p>LED Ekran Teknolojileri ve Haberleri</p>
+        <button type="button" aria-label="Önceki blog yazıları" style="display: none;">
+        </button>
+        <button type="button" aria-label="Sonraki blog yazıları" style="display: none;">
+        </button>
+          <a href="https://ledajans.com/huidu-wf1-wf2-wf4-led-kontrol-karti/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/huidu-wf1-wf2-wf4.webp" alt="Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi</h3><p>Huidu LED kontrol kartı WF1, WF2 ve WF4 farkları: piksel kapasitesi, HUB çıkışı, bellek, Wi-Fi/USB ve sensör. LEDAJANS seçim rehberi.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/cob-led-ekran-nedir-avantajlari/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/cob-led-ekran-nedir.webp" alt="COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>COB LED Ekran Nedir? Avantajları ve Ne Zaman Tercih Edilmeli</h3><p>COB LED ekran nedir, SMD farkı, yakın izleme avantajları ve ne zaman tercih edilmeli. LEDAJANS led ekran seçim rehberi.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/gob-led-ekran-ne-zaman-tercih-edilir/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/gob-led-ekran.webp" alt="GOB LED Ekran Ne Zaman Tercih Edilir?" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>GOB LED Ekran Ne Zaman Tercih Edilir?</h3><p>GOB LED ekran ne zaman tercih edilir: okul, spor salonu, darbe ve nem. Glue on Board vs SMD/COB; LEDAJANS keşif ve teklif.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/led-ekran-nasil-secilir-rehber/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/led-ekran-nasil-secilir.webp" alt="LED Ekran Nasıl Seçilir? 2026 Rehber" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>LED Ekran Nasıl Seçilir? 2026 Rehber</h3><p>LED ekran alırken dikkat edilmesi gerekenler. Piksel aralığı, parlaklık, iç mekan-dış mekan farkı, kontrol kartı seçimi ve bütçe planlaması. Ledajans...</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/rental-led-ekran-kiralama-fiyatlari-2026/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/rental-led-ekran-kiralama.webp" alt="Rental LED Ekran Kiralama Fiyatları 2026" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>Rental LED Ekran Kiralama Fiyatları 2026</h3><p>2026 rental LED ekran kiralama fiyatları. Gün + m² + lokasyon formülü, fuar ve konser bütçesi. LEDAJANS rental çözümleri.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/dis-mekan-led-ekran-fiyatlari-2026/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-fiyatlari.webp" alt="Dış Mekan LED Ekran Fiyatları 2026" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>Dış Mekan LED Ekran Fiyatları 2026</h3><p>2026 dış mekan LED ekran fiyatları. IP65, P4–P10 m² bantları, kurulum ve teklif. LEDAJANS dış mekan çözümleri.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/ic-mekan-led-ekran-fiyatlari-2026/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/ic-mekan-led-ekran-fiyatlari.webp" alt="İç Mekan LED Ekran Fiyatları 2026" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>İç Mekan LED Ekran Fiyatları 2026</h3><p>2026 iç mekan LED ekran fiyatları rehberi. P0.93–P5 m² maliyet bandları, fiyatı etkileyen faktörler ve teklif alma. LEDAJANS İstanbul.</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/led-ekran-fiyatlari-2026/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/led-ekran-fiyatlari-2026.webp" alt="LED Ekran Fiyatları 2026 (Mayıs Güncel)" width="640" height="400" loading="lazy" decoding="async"><p>11 Eylül 2026</p><h3>LED Ekran Fiyatları 2026 (Mayıs Güncel)</h3><p>2026 Mayıs güncel LED ekran fiyatları rehberi. İç mekan, dış mekan, rental LED ekran metrekare fiyatları. Fiyatı etkileyen faktörler ve bütçe planlama...</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/colorlight-a60-player/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/colorlight-a60-player.webp" alt="Colorlight A60 Player" width="640" height="400" loading="lazy" decoding="async"><p>19 Ocak 2026</p><h3>Colorlight A60 Player</h3><p>📌 Colorlight A60 Player – LEDAJANS ile LED Ekran Teknolojisinde Akıllı Çözümler Colorlight A60 Player, profesyonel LED ekran projelerinde içerik yönet...</p>Devamını Oku </article></a>
+          <a href="https://ledajans.com/huidu-c08l-controller/"><article><img src="https://ledajans.com/wp-content/uploads/2026/09/huidu-c08l-controller.webp" alt="Huidu C08L Controller Kartı" width="640" height="400" loading="lazy" decoding="async"><p>31 Aralık 2025</p><h3>Huidu C08L Controller Kartı</h3><p>📌 Huidu C08L Controller Kartı – LEDAJANS ile LED Ekran Teknolojisinin Kalbi Modern LED ekran projelerinde kontrol kartı, ekranın güvenilir ve verimli...</p>Devamını Oku </article></a>
+  </section>
+					<!-- LEDAJANS Ana Sayfa JSON-LD Schema (@graph) — Hero.html'den ayrıştırıldı, performans için bağımsız widget olarak yüklenir -->

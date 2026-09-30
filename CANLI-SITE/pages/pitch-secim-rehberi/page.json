@@ -1,0 +1,61 @@
+{
+ "id": 5805,
+ "type": "page",
+ "title": "LED Ekran Pitch Seçim Rehberi",
+ "slug": "pitch-secim-rehberi",
+ "link": "https://ledajans.com/pitch-secim-rehberi/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-23T07:06:56",
+ "modified": "2026-09-23T10:30:05",
+ "excerpt": "LED ekran pitch seçim rehberi: P2, P2.5, P3, P4–P10 izleme mesafesi tablosu. P2 vs P3. LEDAJANS.",
+ "featured_media": 5843,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "LED ekran pitch seçim rehberi: P2, P2.5, P3, P4–P10 izleme mesafesi tablosu. P2 vs P3. LEDAJANS.",
+  "rank_math_focus_keyword": "p2 led ekran, p3 led ekran, piksel aralığı, pitch seçim"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Pitch Seçim Rehberi - LEDAJANS",
+  "description": "LED ekran pitch seçim rehberi: P2, P2.5, P3, P4–P10 izleme mesafesi tablosu. P2 vs P3. LEDAJANS.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/pitch-secim-rehberi/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-1.webp",
+  "h1": [
+   "LED ekran pitch seçim rehberi"
+  ],
+  "h2": [
+   "Pitch ailesi",
+   "Pitch nedir, hangisini seçmeliyim?",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

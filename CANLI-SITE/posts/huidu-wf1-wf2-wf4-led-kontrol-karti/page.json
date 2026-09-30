@@ -1,0 +1,62 @@
+{
+ "id": 5022,
+ "type": "post",
+ "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi",
+ "slug": "huidu-wf1-wf2-wf4-led-kontrol-karti",
+ "link": "https://ledajans.com/huidu-wf1-wf2-wf4-led-kontrol-karti/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2026-09-11T12:03:23",
+ "modified": "2026-09-17T09:09:37",
+ "excerpt": "Huidu LED kontrol kartı WF1, WF2 ve WF4 farkları: piksel kapasitesi, HUB çıkışı, bellek, Wi-Fi/USB ve sensör. LEDAJANS seçim rehberi.",
+ "featured_media": 5127,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi",
+  "rank_math_description": "Huidu LED kontrol kartı WF1, WF2 ve WF4 farkları: piksel kapasitesi, HUB çıkışı, bellek, Wi-Fi/USB ve sensör. LEDAJANS seçim rehberi.",
+  "rank_math_focus_keyword": "led ekran, Huidu LED kontrol kartı, WF1 WF2 WF4"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi",
+  "description": "Huidu LED kontrol kartı WF1, WF2 ve WF4 farkları: piksel kapasitesi, HUB çıkışı, bellek, Wi-Fi/USB ve sensör. LEDAJANS seçim rehberi.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/huidu-wf1-wf2-wf4-led-kontrol-karti/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/huidu-wf1-wf2-wf4.webp",
+  "h1": [
+   "Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi"
+  ],
+  "h2": [
+   "📌 Huidu LED Kontrol Kartı: WF1, WF2 ve WF4 Karşılaştırma Rehberi",
+   "📑 İçindekiler",
+   "🔧 WF Serisine Genel Bakış",
+   "⚙️ HD-WF1 Kontrol Kartı",
+   "🏗 HD-WF2 Kontrol Kartı",
+   "🎛 HD-WF4 Kontrol Kartı",
+   "🚀 Modeller Arası Farklar ve Kurulum",
+   "🏆 Sonuç",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "id": 4981,
+ "type": "page",
+ "title": "Nits Brightness Nedir?",
+ "slug": "nits-parlaklik-nedir",
+ "link": "https://ledajans.com/nits-parlaklik-nedir/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:44:04",
+ "modified": "2026-09-23T10:31:10",
+ "excerpt": "LED ekran nits (cd/m²) nedir: iç ve dış mekan parlaklık aralıkları, güneş okunurluğu ve göz konforu; LEDAJANS teknik sözlük.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Nits Brightness Nedir? | LEDAJANS",
+  "rank_math_description": "Nits Brightness Nedir?. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "rank_math_focus_keyword": "led screen,led display,indoor led,outdoor led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Nits Brightness Nedir? | LEDAJANS",
+  "description": "Nits Brightness Nedir?. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/nits-parlaklik-nedir/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/yy.webp",
+  "h1": [],
+  "h2": [
+   "📌 Nits Nedir? LED Ekran Parlaklığı (cd/m²)",
+   "📑 İçindekiler",
+   "🔧 Birim ve algı",
+   "📍 İç mekan ve dış mekan",
+   "⚙️ Dimming ve ömür",
+   "🌐 Ölçüm ve saha doğrulaması",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "DefinedTerm",
+   "DefinedTermSet",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

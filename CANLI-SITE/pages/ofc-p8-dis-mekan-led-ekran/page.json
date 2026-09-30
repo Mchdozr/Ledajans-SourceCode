@@ -1,0 +1,58 @@
+{
+ "id": 6023,
+ "type": "page",
+ "title": "OFC P8 Dış Mekan LED Ekran",
+ "slug": "ofc-p8-dis-mekan-led-ekran",
+ "link": "https://ledajans.com/ofc-p8-dis-mekan-led-ekran/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-29T12:55:23",
+ "modified": "2026-09-29T12:55:23",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "OFC P8 Dış Mekan LED Ekran | LEDAJANS",
+  "rank_math_description": "OFC P8 dış mekan LED ekran teknik özellikleri: 8mm piksel aralığı, 15.625 nokta/m², ≥3840Hz yenileme, ≥4500 cd/m² parlaklık. PDF ve DWG indir.",
+  "rank_math_focus_keyword": "ofc p8 dış mekan led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 2,
+ "live": {
+  "status": 200,
+  "title": "OFC P8 Dış Mekan LED Ekran | LEDAJANS",
+  "description": "OFC P8 dış mekan LED ekran teknik özellikleri: 8mm piksel aralığı, 15.625 nokta/m², ≥3840Hz yenileme, ≥4500 cd/m² parlaklık. PDF ve DWG indir.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ofc-p8-dis-mekan-led-ekran/",
+  "og_image": "",
+  "h1": [
+   "OFC P8 Dış Mekan LED Ekran"
+  ],
+  "h2": [
+   "OFC P8 Dış Mekan LED Ekran",
+   "OFC P8 Teknik Özellikler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "6023:page",
+   "75:gva__template"
+  ]
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "id": 4081,
+ "type": "page",
+ "title": "Colorlight",
+ "slug": "colorlight",
+ "link": "https://ledajans.com/colorlight/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2025-11-18T09:02:49",
+ "modified": "2026-09-21T08:13:41",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "%sitedesc%",
+  "rank_math_focus_keyword": "Colorlight,colorlight destek"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 3,
+ "live": {
+  "status": 200,
+  "title": "Colorlight - LEDAJANS",
+  "description": "LED Ekran Satış, Kiralama ve Kurulum",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/colorlight/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/11/5-内容_1672390674.png",
+  "h1": [
+   "COLORLIGHT"
+  ],
+  "h2": [
+   "Colorlight PlayMaster TR İndir",
+   "PLAYMASTER User Manual V1.4 TR",
+   "Colorlight - Ledsettings İndir",
+   "Öne Çıkan Özellikler",
+   "İndirme Dosyaları",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "BreadcrumbList",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "4081:page",
+   "75:gva__template"
+  ]
+ }
+}

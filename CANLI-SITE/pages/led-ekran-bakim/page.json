@@ -1,0 +1,69 @@
+{
+ "id": 4966,
+ "type": "page",
+ "title": "LED Ekran Bakım Rehberi",
+ "slug": "led-ekran-bakim",
+ "link": "https://ledajans.com/led-ekran-bakim/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:15",
+ "modified": "2026-09-23T10:32:59",
+ "excerpt": "LED ekran bakım rehberi: günlük, haftalık, aylık bakım takvimi, temizlik prosedürleri, arıza tespiti ve hava koşullarına göre bakım; LEDAJANS profesyonel kılavuz.",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "LED Ekran Bakım Rehberi | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "LED Ekran Bakım Rehberi | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-ekran-bakim/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/04/teknik-destek-scaled.png",
+  "h1": [],
+  "h2": [
+   "📌 LED Ekran Bakım Rehberi: Uzun Ömür İçin Profesyonel İpuçları",
+   "📑 İçindekiler",
+   "📅 Günlük / Haftalık / Aylık Bakım Takvimi",
+   "🧹 Temizlik Prosedürleri",
+   "⚡ Güç Kaynağı ve Fan Bakımı",
+   "💻 Yazılım Güncellemeleri ve Sistem Bakımı",
+   "🔍 Arıza Tespiti ve Müdahale",
+   "🌦️ Hava Koşullarına Göre Bakım",
+   "🛡️ Garanti ve Servis Süreçleri",
+   "🏆 Sonuç",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "HowTo",
+   "HowToStep",
+   "ImageObject",
+   "Organization",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

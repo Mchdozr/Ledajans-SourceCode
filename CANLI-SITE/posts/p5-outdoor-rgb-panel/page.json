@@ -1,0 +1,58 @@
+{
+ "id": 628,
+ "type": "post",
+ "title": "P5 Outdoor Rgb Panel",
+ "slug": "p5-outdoor-rgb-panel",
+ "link": "https://ledajans.com/p5-outdoor-rgb-panel/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T18:54:10",
+ "modified": "2024-08-04T18:54:10",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "P5 Outdoor Rgb Panel - LEDAJANS",
+  "description": "2.1.   Outdoor full color SMD Q5 8 scan module consists of red LED wafer、 green LED wafer and blue LED wafer packaged as a pixel and form a matrix，and then",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p5-outdoor-rgb-panel/",
+  "og_image": "",
+  "h1": [
+   "P5 Outdoor Rgb Panel",
+   "Product explanation",
+   "Screen technical parameters：",
+   "Signal Pin"
+  ],
+  "h2": [
+   "P5 Outdoor Rgb Panel",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

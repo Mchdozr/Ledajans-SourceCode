@@ -1,0 +1,70 @@
+{
+ "id": 5002,
+ "type": "page",
+ "title": "İç Mekan LED Ekran",
+ "slug": "ic-mekan-led-ekran",
+ "link": "https://ledajans.com/ic-mekan-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:53:15",
+ "modified": "2026-09-23T08:20:47",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "İç Mekan LED Ekran | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 6,
+ "live": {
+  "status": 200,
+  "title": "İç Mekan LED Ekran | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/ic-mekan-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/6ba71365-5d3f-4975-9104-a2219747265f.jpg",
+  "h1": [
+   "İç Mekan LED Ekran"
+  ],
+  "h2": [
+   "İç Mekan LED Ekran – Indoor LED Ekran",
+   "Ürün Özellikleri",
+   "İç Mekan LED Ekran Hakkında Sık Sorulan Sorular",
+   "📚 Teknik rehberler ve fiyat",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "AggregateOffer",
+   "Answer",
+   "Article",
+   "Brand",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Organization",
+   "Person",
+   "Product",
+   "PropertyValue",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5002:page",
+   "75:gva__template"
+  ]
+ }
+}

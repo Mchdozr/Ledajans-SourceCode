@@ -1,0 +1,62 @@
+{
+ "id": 4969,
+ "type": "page",
+ "title": "Mağaza Vitrin LED Ekran",
+ "slug": "magaza-vitrin-led-ekran",
+ "link": "https://ledajans.com/magaza-vitrin-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-11T11:43:25",
+ "modified": "2026-09-23T10:25:06",
+ "excerpt": "Mağaza LED ekran ve vitrin LED ekran: P1.25–P2.5 indoor, cam yansıması, AVM. LEDAJANS keşif ve fiyat teklifi.",
+ "featured_media": 5837,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Mağaza Vitrin LED Ekran | LEDAJANS",
+  "rank_math_description": "Mağaza LED ekran ve vitrin LED ekran: P1.25–P2.5 indoor, cam yansıması, AVM. LEDAJANS keşif ve fiyat teklifi.",
+  "rank_math_focus_keyword": "mağaza led ekran, vitrin led ekran, avm led ekran"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Mağaza Vitrin LED Ekran | LEDAJANS",
+  "description": "Mağaza LED ekran ve vitrin LED ekran: P1.25–P2.5 indoor, cam yansıması, AVM. LEDAJANS keşif ve fiyat teklifi.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/magaza-vitrin-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/magaza-vitrin-led-cadde-1.webp",
+  "h1": [
+   "Mağaza ve vitrin LED ekran"
+  ],
+  "h2": [
+   "Mağaza senaryoları",
+   "Neden vitrin ayrı planlanır?",
+   "Kurulum",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

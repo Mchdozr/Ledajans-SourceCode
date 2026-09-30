@@ -1,0 +1,62 @@
+{
+ "id": 4223,
+ "type": "post",
+ "title": "Colorlight E80",
+ "slug": "e80",
+ "link": "https://ledajans.com/e80/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-11-24T11:09:53",
+ "modified": "2025-12-19T09:55:42",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": "e80"
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Colorlight E80 - LEDAJANS",
+  "description": "E80, 120 Hz – 240 Hz arası yüksek yenileme hızı sunabilir. Bu oranlar özellikle şu alanlarda fark yaratır:",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/e80/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2025/11/Colorlight-E80-LED-Receiving-Card-e1766138127240-600x540.webp",
+  "h1": [
+   "Colorlight E80",
+   "Colorlight E80: LED Ekranlarda Ekonomik Segmentte Profesyonel Receiving Card Çözümü"
+  ],
+  "h2": [
+   "Colorlight E80 Nedir ve Hangi Segmentte Konumlanır?",
+   "Teknik Özelliklerin Derinlemesine Analizi",
+   "Fonksiyonel Özelliklerin Detaylı İncelemesi",
+   "Kullanım Alanları – Gerçek Projelerden Senaryolar",
+   "Kurulum ve Uygulamada Dikkat Edilmesi Gereken Noktalar",
+   "Avantajlar ve Dezavantajlar",
+   "Sonuç – E80 Kimler İçin Doğru Seçimdir?",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

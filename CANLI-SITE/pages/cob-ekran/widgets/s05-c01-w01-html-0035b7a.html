@@ -1,0 +1,178 @@
+<style>
+    /* ===== LEDAJANS COB - 2'li Grid / Son Kart Tam Genişlik ===== */
+    .lz4-cob {
+      --lz4-accent: #F46F2C;
+      --lz4-text: #ffffff;
+      --lz4-muted: #e5e7eb;
+      --lz4-radius: 18px;
+      --lz4-shadow: 0 14px 34px rgba(2, 6, 23, 0.14);
+      margin: 1.5rem 0;
+    }
+    
+    .lz4-cob-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 .25rem;
+    }
+    
+    .lz4-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .lz4-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.1rem;
+      }
+    
+      /* Tek kalan son kartı yatay tam genişlik yap */
+      .lz4-card.lz4-full {
+        grid-column: 1 / -1;
+        min-height: 360px;
+      }
+    }
+    
+    .lz4-card {
+      position: relative;
+      border-radius: var(--lz4-radius);
+      overflow: hidden;
+      min-height: 300px;
+      background: #0f172a;
+      box-shadow: var(--lz4-shadow);
+    }
+    
+    @media (min-width: 768px) {
+      .lz4-card { min-height: 330px; }
+    }
+    
+    .lz4-media {
+      position: absolute;
+      inset: 0;
+    }
+    
+    .lz4-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s ease;
+    }
+    
+    .lz4-card:hover .lz4-media img {
+      transform: scale(1.06);
+    }
+    
+    .lz4-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.06) 10%, rgba(17,24,39,.6) 58%, rgba(17,24,39,.9) 100%),
+        linear-gradient(110deg, rgba(244,111,44,.16) 0%, rgba(244,111,44,0) 45%);
+    }
+    
+    .lz4-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 1rem 1rem 1.05rem;
+    }
+    
+    .lz4-chip {
+      display: inline-block;
+      margin-bottom: .45rem;
+      padding: .28rem .62rem;
+      border-radius: 999px;
+      background: rgba(244,111,44,.22);
+      border: 1px solid rgba(244,111,44,.45);
+      color: #ffe3d1;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+    
+    .lz4-title {
+      margin: 0 0 .4rem;
+      color: var(--lz4-text) !important;
+      font-size: clamp(1.08rem, 2.3vw, 1.38rem);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    
+    .lz4-text {
+      margin: 0;
+      color: var(--lz4-muted) !important;
+      font-size: clamp(.9rem, 1.8vw, .98rem);
+      line-height: 1.58;
+    }
+    </style>
+    
+    <section class="lz4-cob" aria-label="COB LED ekran ürünleri">
+      <div class="lz4-cob-shell">
+        <div class="lz4-grid">
+    
+          <article class="lz4-card">
+            <div class="lz4-media">
+              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-2.png" alt="COB Smart Screen LED Ekran" loading="lazy" />
+            </div>
+            <div class="lz4-overlay"></div>
+            <div class="lz4-content">
+              <span class="lz4-chip">COB LED Ekran</span>
+              <h3 class="lz4-title">COB – Smart Screen LED Ekran</h3>
+              <p class="lz4-text">COB teknolojisi ile yüksek görüntü kalitesi ve dayanıklı yapı sunan profesyonel LED ekran çözümü.</p>
+            </div>
+          </article>
+    
+          <article class="lz4-card">
+            <div class="lz4-media">
+              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-7.png" alt="COB Ultra Yüksek Çözünürlüklü LED Ekran" loading="lazy" />
+            </div>
+            <div class="lz4-overlay"></div>
+            <div class="lz4-content">
+              <span class="lz4-chip">COB LED Ekran</span>
+              <h3 class="lz4-title">Ultra Yüksek Çözünürlüklü COB LED Ekran</h3>
+              <p class="lz4-text">Kristal netlik, geniş görüş açısı ve güçlü renk doğruluğu ile iç mekan LED ekran performansı.</p>
+            </div>
+          </article>
+    
+          <article class="lz4-card">
+            <div class="lz4-media">
+              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-4.png" alt="Düşük Enerji Tüketimli COB LED Ekran" loading="lazy" />
+            </div>
+            <div class="lz4-overlay"></div>
+            <div class="lz4-content">
+              <span class="lz4-chip">COB LED Ekran</span>
+              <h3 class="lz4-title">Düşük Enerji Tüketimli COB LED Ekran</h3>
+              <p class="lz4-text">Verimli çalışma ve uzun ömürlü yapı ile enerji maliyetlerini azaltan LED ekran teknolojisi.</p>
+            </div>
+          </article>
+    
+          <article class="lz4-card">
+            <div class="lz4-media">
+              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-6.png" alt="Profesyonel Kalitede COB LED Ekran" loading="lazy" />
+            </div>
+            <div class="lz4-overlay"></div>
+            <div class="lz4-content">
+              <span class="lz4-chip">COB LED Ekran</span>
+              <h3 class="lz4-title">Profesyonel Kalitede COB LED Ekran</h3>
+              <p class="lz4-text">Kurumsal projeler için güvenilir, stabil ve yüksek performanslı iç mekan LED ekran çözümü.</p>
+            </div>
+          </article>
+    
+          <!-- Son kart: masaüstünde tam genişlik -->
+          <article class="lz4-card lz4-full">
+            <div class="lz4-media">
+              <img src="https://ledajans.com/wp-content/uploads/2025/11/Basliksiz-6-3.png" alt="Yeni Nesil COB LED Ekran Teknolojisi" loading="lazy" />
+            </div>
+            <div class="lz4-overlay"></div>
+            <div class="lz4-content">
+              <span class="lz4-chip">COB LED Ekran</span>
+              <h3 class="lz4-title">Yeni Nesil COB LED Ekran Teknolojisi</h3>
+              <p class="lz4-text">Modern tasarım ve yüksek performansı bir araya getiren yeni nesil COB LED ekran çözümleri.</p>
+            </div>
+          </article>
+    
+        </div>
+      </div>
+    </section>

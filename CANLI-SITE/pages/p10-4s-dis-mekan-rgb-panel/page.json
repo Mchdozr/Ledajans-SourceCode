@@ -1,0 +1,58 @@
+{
+ "id": 5989,
+ "type": "page",
+ "title": "P10 4S Dış Mekan RGB Panel",
+ "slug": "p10-4s-dis-mekan-rgb-panel",
+ "link": "https://ledajans.com/p10-4s-dis-mekan-rgb-panel/",
+ "status": "publish",
+ "template": "elementor_header_footer",
+ "parent": 0,
+ "date": "2026-09-29T12:27:04",
+ "modified": "2026-09-29T12:37:34",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "P10 4S Dış Mekan RGB LED Panel | 10 mm IP65 | LEDAJANS",
+  "rank_math_description": "P10 4S Dış Mekan RGB LED Panel: 10 mm piksel aralığı, 10.000 nokta/m², ≥3500 cd/m² parlaklık, IP65. LEDAJANS'tan teknik föy ve fiyat teklifi alın.",
+  "rank_math_focus_keyword": "p10 4s dış mekan rgb led panel,dış mekan rgb led panel"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 1,
+ "live": {
+  "status": 200,
+  "title": "P10 4S Dış Mekan RGB LED Panel | 10 mm IP65 | LEDAJANS",
+  "description": "P10 4S Dış Mekan RGB LED Panel: 10 mm piksel aralığı, 10.000 nokta/m², ≥3500 cd/m² parlaklık, IP65. LEDAJANS'tan teknik föy ve fiyat teklifi alın.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/p10-4s-dis-mekan-rgb-panel/",
+  "og_image": "",
+  "h1": [
+   "P10 4S Dış Mekan RGB Panel"
+  ],
+  "h2": [
+   "P10 4S Dış Mekan RGB LED Modül",
+   "P10 4S Teknik Özellikler",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Article",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "5989:page",
+   "75:gva__template"
+  ]
+ }
+}

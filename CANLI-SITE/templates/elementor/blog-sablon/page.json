@@ -1,0 +1,25 @@
+{
+ "id": 3866,
+ "type": "elementor_library",
+ "title": "blog şablon",
+ "slug": "blog-sablon",
+ "link": "https://ledajans.com/?elementor_library=blog-sablon",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2025-10-07T13:38:32",
+ "modified": "2025-10-07T13:38:32",
+ "excerpt": null,
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {},
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "widget",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 1,
+ "live": {}
+}

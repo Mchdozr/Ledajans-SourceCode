@@ -1,0 +1,55 @@
+{
+ "id": 606,
+ "type": "post",
+ "title": "Led / Led Ekran",
+ "slug": "led-led-ekran",
+ "link": "https://ledajans.com/led-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": null,
+ "date": "2024-08-04T18:47:10",
+ "modified": "2024-08-04T18:47:10",
+ "excerpt": "",
+ "featured_media": 607,
+ "categories": [
+  1
+ ],
+ "tags": [],
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "",
+  "rank_math_focus_keyword": ""
+ },
+ "elementor": {},
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Led / Led Ekran - LEDAJANS",
+  "description": "Işık yayan diyotlar (LED’ler)dır. Yansıtmak yerine ışık yayarlar ve bu nedenle diğer aydınlatma kaynaklarından çok daha parlaktırlar. Diyotlar, hızlı bir",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/led-led-ekran/",
+  "og_image": "",
+  "h1": [
+   "Led / Led Ekran"
+  ],
+  "h2": [
+   "Led / Led Ekran",
+   "Son Yazılar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "BlogPosting",
+   "ImageObject",
+   "Person",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "186:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

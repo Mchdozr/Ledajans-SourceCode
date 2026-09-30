@@ -1,0 +1,62 @@
+{
+ "id": 5804,
+ "type": "page",
+ "title": "Cephe LED Ekran",
+ "slug": "cephe-led-ekran",
+ "link": "https://ledajans.com/cephe-led-ekran/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2026-09-23T07:06:52",
+ "modified": "2026-09-23T10:25:19",
+ "excerpt": "Cephe LED ekran ve dış cephe LED ekran: IP65, 5000+ nits, P4–P10. Billboard ve bina cephesi. LEDAJANS keşif ve teklif.",
+ "featured_media": 5838,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "",
+  "rank_math_description": "Cephe LED ekran ve dış cephe LED ekran: IP65, 5000+ nits, P4–P10. Billboard ve bina cephesi. LEDAJANS keşif ve teklif.",
+  "rank_math_focus_keyword": "cephe led ekran, dış cephe led ekran, led billboard"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "",
+  "_elementor_template_type": "",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 0,
+ "live": {
+  "status": 200,
+  "title": "Cephe LED Ekran - LEDAJANS",
+  "description": "Cephe LED ekran ve dış cephe LED ekran: IP65, 5000+ nits, P4–P10. Billboard ve bina cephesi. LEDAJANS keşif ve teklif.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/cephe-led-ekran/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2026/09/cephe-led-ekran.webp",
+  "h1": [
+   "Cephe LED ekran"
+  ],
+  "h2": [
+   "Cephe senaryoları",
+   "Cephe mi billboard mı?",
+   "Kurulum kalemleri",
+   "Sık sorulanlar",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "FAQPage",
+   "ImageObject",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "75:gva__template"
+  ]
+ }
+}

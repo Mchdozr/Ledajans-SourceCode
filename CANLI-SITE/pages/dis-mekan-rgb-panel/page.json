@@ -1,0 +1,65 @@
+{
+ "id": 3795,
+ "type": "page",
+ "title": "Dış Mekan RGB Panel",
+ "slug": "dis-mekan-rgb-panel",
+ "link": "https://ledajans.com/dis-mekan-rgb-panel/",
+ "status": "publish",
+ "template": "",
+ "parent": 0,
+ "date": "2025-10-01T08:22:46",
+ "modified": "2026-09-29T12:04:59",
+ "excerpt": "",
+ "featured_media": 0,
+ "categories": null,
+ "tags": null,
+ "rank_math": {
+  "rank_math_title": "Dış Mekan RGB Panel | LEDAJANS",
+  "rank_math_description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "rank_math_focus_keyword": "led ekran,led ekran kiralama,iç mekan led"
+ },
+ "elementor": {
+  "_elementor_edit_mode": "builder",
+  "_elementor_template_type": "wp-page",
+  "_elementor_page_settings": null,
+  "_elementor_conditions": []
+ },
+ "widget_count": 7,
+ "live": {
+  "status": 200,
+  "title": "Dış Mekan RGB Panel | LEDAJANS",
+  "description": "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+  "robots": "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "canonical": "https://ledajans.com/dis-mekan-rgb-panel/",
+  "og_image": "https://ledajans.com/wp-content/uploads/2022/12/P2.5-O.jpg",
+  "h1": [
+   "Dış Mekan RGB Panel"
+  ],
+  "h2": [
+   "Dış Mekan - Outdoor RGB Paneller",
+   "Ürün Özellikleri",
+   "Dış Mekan RGB LED Paneller",
+   "Dış Mekan RGB Panel Hakkında Sık Sorulan Sorular",
+   "İletişim",
+   "Galeri",
+   "Bülten"
+  ],
+  "schema_types": [
+   "Answer",
+   "Article",
+   "BreadcrumbList",
+   "FAQPage",
+   "ImageObject",
+   "ListItem",
+   "Person",
+   "Question",
+   "WebPage",
+   "WebSite"
+  ],
+  "elementor_docs": [
+   "43:gva__template",
+   "3795:page",
+   "75:gva__template"
+  ]
+ }
+}

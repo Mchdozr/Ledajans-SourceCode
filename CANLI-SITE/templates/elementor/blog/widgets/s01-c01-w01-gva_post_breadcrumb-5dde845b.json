@@ -1,0 +1,13 @@
+{
+ "background_background": "classic",
+ "background_image": {
+  "url": "https://gaviaspreview.com/wp/modins/wp-content/uploads/2023/01/breadcrumb-01.jpg",
+  "id": 177,
+  "alt": "",
+  "source": "library"
+ },
+ "background_position": "center left",
+ "background_repeat": "no-repeat",
+ "background_size": "cover",
+ "breadcrumb_link_bg": ""
+}

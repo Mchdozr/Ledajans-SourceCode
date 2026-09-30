@@ -1,0 +1,115 @@
+[
+ {
+  "id": "18bd2dc2",
+  "elType": "section",
+  "settings": {
+   "layout": "full_width"
+  },
+  "elements": [
+   {
+    "id": "6d2afff6",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100,
+     "_inline_size": null,
+     "padding": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": false
+     },
+     "gva_column_inner_width": "",
+     "gva_column_inner_width_tablet": "",
+     "gva_column_inner_width_mobile": ""
+    },
+    "elements": [
+     {
+      "id": "5dde845b",
+      "elType": "widget",
+      "settings": {
+       "background_background": "classic",
+       "background_image": {
+        "url": "https://gaviaspreview.com/wp/modins/wp-content/uploads/2023/01/breadcrumb-01.jpg",
+        "id": 177,
+        "alt": "",
+        "source": "library"
+       },
+       "background_position": "center left",
+       "background_repeat": "no-repeat",
+       "background_size": "cover",
+       "breadcrumb_link_bg": ""
+      },
+      "elements": [],
+      "widgetType": "gva_post_breadcrumb"
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "isInner": false
+ },
+ {
+  "id": "240d9349",
+  "elType": "section",
+  "settings": {
+   "padding": {
+    "unit": "px",
+    "top": "120",
+    "right": "0",
+    "bottom": "90",
+    "left": "0",
+    "isLinked": false
+   },
+   "padding_tablet": {
+    "unit": "px",
+    "top": "80",
+    "right": "0",
+    "bottom": "50",
+    "left": "0",
+    "isLinked": false
+   }
+  },
+  "elements": [
+   {
+    "id": "3a6ef317",
+    "elType": "column",
+    "settings": {
+     "_column_size": 100,
+     "_inline_size": null,
+     "padding": {
+      "unit": "px",
+      "top": "0",
+      "right": "15",
+      "bottom": "0",
+      "left": "15",
+      "isLinked": false
+     },
+     "gva_column_inner_width": "",
+     "gva_column_inner_width_tablet": "",
+     "gva_column_inner_width_mobile": ""
+    },
+    "elements": [
+     {
+      "id": "76731d14",
+      "elType": "widget",
+      "settings": {
+       "grid_items_xs": "2",
+       "pagination": "yes",
+       "layout": "grid",
+       "image_size": "post-thumbnail",
+       "ca_speed": 600,
+       "ca_autoplay_delay": 4500,
+       "excerpt_words": 0
+      },
+      "elements": [],
+      "widgetType": "gva-posts"
+     }
+    ],
+    "isInner": false
+   }
+  ],
+  "isInner": false
+ }
+]

@@ -1,0 +1,297 @@
+<!-- LEDAJANS SEO - Sayfa Üstü Hero/Banner - H2.5 Dış Mekan RGB Panel -->
+<style>
+.ledajans-blog-hero {
+  position: relative;
+  height: 220px;
+  background-image: url('https://ledajans.com/wp-content/uploads/2026/04/dis-mekan-rgb-scaled.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 640px) { .ledajans-blog-hero { height: 270px; } }
+@media (min-width: 768px) { .ledajans-blog-hero { height: 320px; } }
+
+.ledajans-blog-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.8));
+}
+.ledajans-blog-hero-inner {
+  position: relative;
+  height: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 640px) { .ledajans-blog-hero-inner { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .ledajans-blog-hero-inner { padding: 0 2rem; } }
+
+.ledajans-blog-hero-title {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+@media (min-width: 640px) { .ledajans-blog-hero-title { font-size: 2.5rem; } }
+@media (min-width: 768px) { .ledajans-blog-hero-title { font-size: 3rem; } }
+
+.ledajans-blog-hero-subtitle {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #f46f2c;
+  line-height: 1.5;
+}
+@media (min-width: 640px) { .ledajans-blog-hero-subtitle { font-size: 1rem; } }
+
+.la-product-detail {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #1f2937;
+  line-height: 1.7;
+}
+@media (min-width: 640px) { .la-product-detail { padding: 2.5rem 1.5rem; } }
+@media (min-width: 1024px) { .la-product-detail { padding: 3rem 2rem; } }
+
+.la-breadcrumb {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+.la-breadcrumb a { color: #f46f2c; text-decoration: none; }
+.la-breadcrumb a:hover { text-decoration: underline; }
+.la-breadcrumb span { margin: 0 0.35rem; color: #9ca3af; }
+
+.la-product-intro {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #f46f2c;
+}
+.la-product-intro h2 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 0.75rem 0;
+}
+@media (min-width: 768px) { .la-product-intro h2 { font-size: 2rem; } }
+
+.la-product-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.la-product-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+}
+.la-product-badge--orange { background: #f46f2c; }
+
+.la-spec-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.la-spec-header h2 {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+}
+.la-doc-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f46f2c;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+.la-doc-download:hover { color: #fff; }
+.la-doc-download--secondary { background: #1a1a2e; }
+
+.la-spec-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  margin-bottom: 1.5rem;
+}
+.la-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.la-spec-table thead th {
+  background: #1a1a2e;
+  color: #fff;
+  text-align: left;
+  padding: 0.8rem 0.95rem;
+}
+.la-spec-table tbody td {
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.la-spec-table tbody tr:nth-child(even) { background: #f9fafb; }
+.la-spec-table tbody tr:hover { background: #fef3eb; }
+.la-highlight-row td {
+  background: rgba(244, 111, 44, 0.08);
+  font-weight: 700;
+}
+
+.la-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+@media (min-width: 640px) { .la-features-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .la-features-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+.la-feature-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+.la-feature-card strong {
+  display: block;
+  color: #1a1a2e;
+  margin-bottom: 0.35rem;
+}
+.la-feature-card span {
+  color: #6b7280;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.la-seo-text {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+.la-seo-text h3 { margin-top: 0; color: #16213e; }
+
+.la-cta-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-top: 2.3rem;
+  text-align: center;
+}
+.la-cta-section h3 {
+  color: #fff;
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem 0;
+}
+.la-cta-section p {
+  color: #d1d5db;
+  margin: 0 0 1.2rem 0;
+}
+.la-cta-section a {
+  display: inline-flex;
+  align-items: center;
+  background: #f46f2c;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.2rem;
+}
+.la-cta-section a:hover { background: #e05a1e; color: #fff; }
+</style>
+<div class="ledajans-blog-hero">
+<div class="ledajans-blog-hero-overlay"></div>
+<div class="ledajans-blog-hero-inner">
+<div>
+<h1 class="ledajans-blog-hero-title">H2.5 Dış Mekan RGB Panel</h1>
+<span class="ledajans-blog-hero-subtitle">2.5mm piksel aralığı, ≥7680Hz yenileme hızı, ≥4500 cd/m² parlaklık ve IP65 koruma ile profesyonel dış mekan LED panel.</span>
+</div>
+</div>
+</div>
+<div class="la-product-detail">
+<nav class="la-breadcrumb">
+<a href="https://ledajans.com">Ana Sayfa</a><span>›</span>
+<a href="https://ledajans.com/led-ekran/">Ürünlerimiz</a><span>›</span>
+<a href="https://ledajans.com/dis-mekan-rgb-panel/">Dış Mekan RGB Panel</a><span>›</span>
+    H2.5 Dış Mekan RGB Panel
+  </nav>
+<div class="la-product-intro">
+<h2>H2.5 Dış Mekan RGB LED Modül</h2>
+<p>H2.5 dış mekan RGB panel; yüksek çözünürlük, yüksek yenileme hızı ve IP65 koruma seviyesi ile reklam ekranları, bina cephe LED ekranları ve dijital signage projelerinde güvenilir performans sunar.</p>
+</div>
+<div class="la-product-badges">
+<span class="la-product-badge la-product-badge--orange">2.5mm Piksel Aralığı</span>
+<span class="la-product-badge">160.000 nokta/m²</span>
+<span class="la-product-badge la-product-badge--orange">≥7680Hz</span>
+<span class="la-product-badge">≥4500 cd/m²</span>
+<span class="la-product-badge la-product-badge--orange">IP65 Koruma</span>
+</div>
+<div class="la-features-grid">
+<div class="la-feature-card"><strong>Yüksek Çözünürlük</strong><span>160.000 nokta/m² yoğunluk ile net görüntü performansı.</span></div>
+<div class="la-feature-card"><strong>Yüksek Yenileme Hızı</strong><span>≥7680Hz ile kamera çekimlerinde titreşimsiz görüntü.</span></div>
+<div class="la-feature-card"><strong>Dış Mekan Dayanımı</strong><span>IP65 koruma ile yağmur, toz ve çevresel etkilere karşı güvenli kullanım.</span></div>
+<div class="la-feature-card"><strong>Yüksek Parlaklık</strong><span>≥4500 cd/m² ile gün ışığında görünür ve canlı ekran.</span></div>
+<div class="la-feature-card"><strong>Geniş Görüş Açısı</strong><span>Yatay/dikey geniş açı değerleriyle farklı noktalardan okunabilirlik.</span></div>
+<div class="la-feature-card"><strong>Profesyonel Uygulama</strong><span>Cephe, totem, açık alan reklam ve kurumsal dış mekan projeleri için ideal.</span></div>
+</div>
+<div class="la-spec-header">
+<h2>H2.5 Teknik Özellikler</h2>
+<a class="la-doc-download" href="https://drive.google.com/uc?export=download&amp;id=1WVIWhmIRIFyDIZBevA0pEdPAsWVT0WNi" rel="noopener noreferrer" target="_blank">H2.5 Dökümantasyonunu İndir</a>
+<a class="la-doc-download la-doc-download--secondary" href="https://ledajans.com/wp-content/uploads/2024/09/Outdoor-P2.5（10孔位）模组孔位图.zip " rel="noopener noreferrer" target="_blank">DWG İndir</a>
+</div>
+<div class="la-spec-table-wrapper">
+<table class="la-spec-table">
+<thead><tr><th>Parametre</th><th>Değer</th></tr></thead>
+<tbody>
+<tr class="la-highlight-row"><td>Piksel Pitch</td><td>2.5mm</td></tr>
+<tr><td>Ürün Modeli</td><td>H2.5-O</td></tr>
+<tr><td>Modül Çözünürlüğü</td><td>128×64</td></tr>
+<tr class="la-highlight-row"><td>Piksel Yoğunluğu</td><td>160000 nokta/m²</td></tr>
+<tr><td>Piksel Bileşimi</td><td>SMD1415 RGB</td></tr>
+<tr><td>Parlaklık</td><td>≥4500cd/m²</td></tr>
+<tr><td>Kontrast</td><td>8000:1</td></tr>
+<tr class="la-highlight-row"><td>Yenileme Hızı</td><td>≥7680Hz</td></tr>
+<tr><td>Tarama</td><td>1/16 S</td></tr>
+<tr><td>Gri Seviye</td><td>14bit</td></tr>
+<tr><td>Çalışma Voltajı</td><td>4.5~5V</td></tr>
+<tr><td>Koruma Seviyesi</td><td>IP65</td></tr>
+</tbody>
+</table>
+</div>
+<div class="la-seo-text">
+<h3>H2.5 Dış Mekan RGB Panel Nedir?</h3>
+<p>H2.5 dış mekan RGB panel, yüksek piksel yoğunluğu sayesinde yakın ve orta izleme mesafesinde net görüntü sunan profesyonel LED modül çözümüdür.</p>
+<h3>H2.5 Nerelerde Kullanılır?</h3>
+<p>Dijital reklam ekranları, bina cephe LED ekranları, AVM dış cephe uygulamaları, şehir içi bilgi ekranları ve kurumsal dış mekan projelerinde tercih edilir.</p>
+</div>
+<div class="la-cta-section">
+<h3>H2.5 Panel Fiyat Teklifi Alın</h3>
+<p>Projenize özel metraj, kontrol sistemi ve kabin yapısına göre hızlı fiyat teklifi alın.</p>
+<a href="tel:+902122204004">+90 212 220 40 04</a>
+<a href="tel:+905438795108">+90 543 879 51 08</a>
+<a href="mailto:info@ledajans.com">info@ledajans.com</a>
+</div>
+</div>
