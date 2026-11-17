@@ -3,7 +3,7 @@
 // Canliya hicbir sey yazmaz. Calistir: node preview/server.mjs  ->  http://localhost:8090/__
 import http from 'node:http';import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const REP=path.join(ROOT,'assets','replacements','wp-content','uploads')+path.sep, MOB=path.join(ROOT,'assets','replacements','mobile-hero')+path.sep, PORT=Number(process.env.PORT||8090);
+const REP=path.join(ROOT,'assets','replacements','wp-content','uploads')+path.sep, MOB=path.join(ROOT,'assets','ledajans-mobile')+path.sep, PORT=Number(process.env.PORT||8090);
 const ORIGIN='https://ledajans.com';
 const types={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp'};
 const pages=[['/','Anasayfa'],['/projeler/','Projeler (proje kartları)'],['/kontrol-kartlari/','Kontrol kartları (banner + kart görselleri)'],['/program-indir/','Program indir (teknik destek banner)'],['/h1-25-ic-mekan-rgb-panel/','İç mekan RGB panel (turuncu banner)'],['/ofc-p8-dis-mekan-led-ekran/','OFC P8 dış mekan (banner)'],['/p1-25-cob-led-ekran/','P1.25 COB (sahne banner)'],['/dis-mekan-rgb-panel/','Dış mekan RGB panel (banner)'],['/p2-9-dis-mekan-rental-led-ekran/','Dış mekan rental (banner)'],['/p2-9-ic-mekan-rental-led-ekran/','İç mekan rental (banner)'],['/rental-ekran/','Rental ekran (kabin görselleri)'],['/guc-kaynaklari/','Güç kaynakları'],['/ic-mekan-rgb-panel/','İç mekan RGB panel (P1.53 modül)'],['/led-ekran-fiyatlari-2026/','Blog: LED ekran fiyatları 2026 (Basliksiz-5)'],['/led-ekran-nedir/','Blog: LED ekran nedir (kapak)'],['/huidu-wf1-wf2-wf4-led-kontrol-karti/','Blog: Huidu WF (A5-A4)'],['/pitch-led-nedir/','Pitch LED nedir (kontrolcü)']];

@@ -767,6 +767,15 @@ function ledajans_mp_v13_optimize($html) {
         $U . '2025/10/创联logo5.png'               => 'chuanglian-logo5-320.webp',
         $U . '2026/09/dis-mekan-led-ekran-1.webp' => 'dis-mekan-led-ekran-1-768.webp',
         $U . '2023/01/breadcrumb-01.jpg'         => 'breadcrumb-01-1280.webp',
+        // Urun sayfasi ust banner'lari (PNG, 200-470 KiB) -> mobil 960w WebP (7-68 KiB)
+        $U . '2026/04/Firefly_Gemini-Flash-1-scaled.png' => 'Firefly_Gemini-Flash-1-scaled-960.webp',
+        $U . '2026/04/Firefly_Gemini-Flash_LEDAJANS-sirketi-led-tabelalar-uretip-satip-montajini-yapiyor-harika-calisiyorlar-ve-535525-scaled.png' => 'Firefly_Gemini-Flash_LEDAJANS-sirketi-led-tabela-960.webp',
+        $U . '2026/04/Firefly_Gemini-Flash_LEDAJANS-yazisi-tamamen-turuncu-olsun-o-kadar-13541.png' => 'Firefly_Gemini-Flash_LEDAJANS-yazisi-tamamen-tur-960.webp',
+        $U . '2026/04/Kontrol-kartlari.png' => 'Kontrol-kartlari-960.webp',
+        $U . '2026/04/dis-mekan-gorsel-scaled.png' => 'dis-mekan-gorsel-scaled-960.webp',
+        $U . '2026/04/dis-mekan-rgb-scaled.png' => 'dis-mekan-rgb-scaled-960.webp',
+        $U . '2026/04/ic-mekan-gorsel-scaled.png' => 'ic-mekan-gorsel-scaled-960.webp',
+        $U . '2026/04/teknik-destek-scaled.png' => 'teknik-destek-scaled-960.webp',
     );
     $map = array();
     foreach ($variantSrc as $orig => $file) {

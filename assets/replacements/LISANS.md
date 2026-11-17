@@ -19,7 +19,7 @@
 | 2026/04/dis-mekan-rgb-scaled.png | 289192813 |
 | 2024/09/p1-25-gob-ic-mekan-rgb-led-panel.webp | 109100558 |
 | 2026/04/teknik-destek-scaled.png | 1214449400 |
-| 2026/01/500×1000-scaled.png, 2026/01/Air-II-scaled.png | 313764941 |
+| 2026/01/500×1000-scaled.png | 313764941 |
 | 2022/12/3.jpg | 106541462 |
 | 2022/12/5.jpg | 314893561 |
 | 2022/12/图4.jpg | 413779842 |
@@ -28,3 +28,5 @@
 | 2022/12/CgAGe1x3fbCAGufwAAGJHXg4uxM085.jpg | 738396784 |
 
 Kurtarma (stok değil): 2023/01/P2.5-550x632.jpg (sağlam P2.5.jpg'den kırpım), 2026/08/LedajansLogo.webp ve 2026/02/ledajans-logo.png (mevcut logo). Çizim: 2026/05/led-ekran-nedir-kapak.webp.
+
+Not: 2026/01/Air-II-scaled.png (Grand Air Serisi, /rental-ekran/) kullanıcı isteğiyle değiştirilmedi; eski hali korunur.
