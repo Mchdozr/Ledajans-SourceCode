@@ -30,15 +30,16 @@
     "colorlight-a40",
     "colorlight-a60-player",
     "colorlight-e120",
+    "dis-mekan-led-ekran-fiyatlari-2026",
     "e80",
     "gob-led-ekran-ne-zaman-tercih-edilir",
     "huidu-c08l-controller",
     "huidu-c16l",
-    "dis-mekan-led-ekran-fiyatlari-2026",
     "huidu-wf1-wf2-wf4-led-kontrol-karti",
     "ic-mekan-led-ekran-fiyatlari-2026",
     "led-ekran-fiyatlari-2026",
     "led-ekran-nasil-secilir-rehber",
+    "led-video-wall-nedir-secim-rehberi",
     "rental-led-ekran-kiralama-fiyatlari-2026"
   ],
   "topics": [
@@ -60,7 +61,7 @@
       "title": "LED Video Wall Nedir? Toplantı ve Lobi İçin Seçim Rehberi",
       "slug": "led-video-wall-nedir-secim-rehberi",
       "angle": "Kurumsal alıcı: pitch, kontrol, montaj, bütçe",
-      "status": "pending"
+      "status": "published"
     },
     {
       "id": "t03",

@@ -50,10 +50,15 @@ def load_env() -> tuple[str, str, str]:
     )
 
 
-def extract_meta(html: str) -> tuple[str, str]:
+def extract_meta(html: str) -> tuple[str, str, str]:
     desc = re.search(r"<!-- SEO Meta Description:\s*(.+?)\s*-->", html)
     kw = re.search(r"<!-- SEO Focus Keyword:\s*(.+?)\s*-->", html)
-    return (desc.group(1).strip() if desc else "", kw.group(1).strip() if kw else "")
+    title = re.search(r"<!-- SEO Title:\s*(.+?)\s*-->", html)
+    return (
+        desc.group(1).strip() if desc else "",
+        kw.group(1).strip() if kw else "",
+        title.group(1).strip() if title else "",
+    )
 
 
 def main() -> int:
@@ -104,7 +109,7 @@ def main() -> int:
         path = os.path.join(ROOT, rel.replace("/", os.sep))
         with open(path, encoding="utf-8") as f:
             content = f.read()
-        meta_desc, focus_kw = extract_meta(content)
+        meta_desc, focus_kw, seo_title = extract_meta(content)
         payload: dict = {
             "title": title,
             "slug": slug,
@@ -117,6 +122,8 @@ def main() -> int:
             meta: dict[str, str] = {"rank_math_description": meta_desc}
             if focus_kw:
                 meta["rank_math_focus_keyword"] = focus_kw
+            if seo_title:
+                meta["rank_math_title"] = seo_title
             payload["meta"] = meta
 
         print(f">> /{slug}/")
