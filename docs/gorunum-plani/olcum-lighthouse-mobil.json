@@ -1,0 +1,173 @@
+{
+ "blog": {
+  "perf": 54,
+  "a11y": 94,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 7.5,
+  "tbt_ms": 524,
+  "cls": 0
+ },
+ "cob-ekran": {
+  "perf": 62,
+  "a11y": 91,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 7.8,
+  "tbt_ms": 187,
+  "cls": 0.026
+ },
+ "colorlight": {
+  "perf": 66,
+  "a11y": 92,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 10.4,
+  "tbt_ms": 46,
+  "cls": 0
+ },
+ "dis-mekan-led-ekran": {
+  "perf": 65,
+  "a11y": 87,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 7.9,
+  "tbt_ms": 48,
+  "cls": 0.026
+ },
+ "dis-mekan-rgb-panel": {
+  "perf": 70,
+  "a11y": 90,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 6.5,
+  "tbt_ms": 34,
+  "cls": 0
+ },
+ "firma-bilgilerimiz": {
+  "perf": 63,
+  "a11y": 96,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 9.3,
+  "tbt_ms": 50,
+  "cls": 0.029
+ },
+ "guc-kaynaklari": {
+  "perf": 64,
+  "a11y": 94,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 12.4,
+  "tbt_ms": 25,
+  "cls": 0.0
+ },
+ "hakkimizda": {
+  "perf": 69,
+  "a11y": 100,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 5.8,
+  "tbt_ms": 147,
+  "cls": 0.0
+ },
+ "home": {
+  "perf": 65,
+  "a11y": 94,
+  "bp": 96,
+  "seo": 92,
+  "lcp_s": 5.0,
+  "tbt_ms": 253,
+  "cls": 0.001
+ },
+ "huidu-processor-hdplayer-indir": {
+  "perf": 64,
+  "a11y": 96,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 9.0,
+  "tbt_ms": 92,
+  "cls": 0
+ },
+ "ic-mekan-led-ekran": {
+  "perf": 66,
+  "a11y": 85,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 6.1,
+  "tbt_ms": 39,
+  "cls": 0.01
+ },
+ "ic-mekan-rgb-panel": {
+  "perf": 64,
+  "a11y": 86,
+  "bp": 96,
+  "seo": 92,
+  "lcp_s": 7.8,
+  "tbt_ms": 74,
+  "cls": 0
+ },
+ "iletisim": {
+  "perf": 74,
+  "a11y": 95,
+  "bp": 75,
+  "seo": 100,
+  "lcp_s": 4.7,
+  "tbt_ms": 186,
+  "cls": 0
+ },
+ "kontrol-kartlari": {
+  "perf": 55,
+  "a11y": 95,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 11.0,
+  "tbt_ms": 468,
+  "cls": 0.01
+ },
+ "led-ekran": {
+  "perf": 73,
+  "a11y": 96,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 5.1,
+  "tbt_ms": 141,
+  "cls": 0
+ },
+ "program-indir": {
+  "perf": 77,
+  "a11y": 96,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 4.5,
+  "tbt_ms": 127,
+  "cls": 0.011
+ },
+ "rental-ekran": {
+  "perf": 62,
+  "a11y": 86,
+  "bp": 75,
+  "seo": 92,
+  "lcp_s": 11.9,
+  "tbt_ms": 303,
+  "cls": 0.01
+ },
+ "sertifikalarimiz": {
+  "perf": 68,
+  "a11y": 96,
+  "bp": 96,
+  "seo": 100,
+  "lcp_s": 6.8,
+  "tbt_ms": 165,
+  "cls": 0
+ },
+ "teknik-destek-videolari": {
+  "perf": 77,
+  "a11y": 96,
+  "bp": 93,
+  "seo": 100,
+  "lcp_s": 2.5,
+  "tbt_ms": 446,
+  "cls": 0.01
+ }
+}

@@ -1,0 +1,881 @@
+{
+ "d:/": {
+  "title": "LED Ekran | Satış, Kiralama, Kurulum | LEDAJANS",
+  "h1": [
+   "LED Ekran Satış, Kiralama ve Kurulum"
+  ],
+  "h1n": 1,
+  "h2n": 12,
+  "fonts": {
+   "Kumbh Sans": 201,
+   "system-ui": 6
+  },
+  "small": 24,
+  "taps": 56,
+  "imgs": 73,
+  "broken": [],
+  "noalt": 15,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 10437,
+  "btns": 30,
+  "words": 1358
+ },
+ "d:/hakkimizda/": {
+  "title": "Hakkımızda | LEDAJANS",
+  "h1": [
+   "Hakkımızda"
+  ],
+  "h1n": 1,
+  "h2n": 2,
+  "fonts": {
+   "Kumbh Sans": 50,
+   "ui-sans-serif": 1
+  },
+  "small": 4,
+  "taps": 37,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 2623,
+  "btns": 7,
+  "words": 262
+ },
+ "d:/sertifikalarimiz/": {
+  "title": "Sertifikalarımız | LEDAJANS",
+  "h1": [
+   "Sertifikalarımız"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 48,
+   "ui-sans-serif": 1,
+   "system-ui": 74
+  },
+  "small": 10,
+  "taps": 46,
+  "imgs": 24,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 4807,
+  "btns": 7,
+  "words": 662
+ },
+ "d:/firma-bilgilerimiz/": {
+  "title": "Firma Bilgilerimiz - LEDAJANS",
+  "h1": [
+   "Firma Bilgilerimiz"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 72,
+   "ui-sans-serif": 1,
+   "ui-monospace": 5
+  },
+  "small": 2,
+  "taps": 38,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 3114,
+  "btns": 7,
+  "words": 288
+ },
+ "d:/led-ekran/": {
+  "title": "LED Ekran Modelleri | İç-Dış Mekan ve Kiralama | LEDAJANS",
+  "h1": [
+   "LED Ekran Çözümleri"
+  ],
+  "h1n": 1,
+  "h2n": 7,
+  "fonts": {
+   "Kumbh Sans": 54,
+   "system-ui": 77
+  },
+  "small": 2,
+  "taps": 56,
+  "imgs": 27,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 5204,
+  "btns": 7,
+  "words": 655
+ },
+ "d:/cob-ekran/": {
+  "title": "COB LED Ekran | Fine Pitch Smart Screen | LEDAJANS",
+  "h1": [
+   "COB - Smart Screen"
+  ],
+  "h1n": 1,
+  "h2n": 5,
+  "fonts": {
+   "Kumbh Sans": 116,
+   "ui-sans-serif": 118
+  },
+  "small": 49,
+  "taps": 52,
+  "imgs": 29,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 9236,
+  "btns": 15,
+  "words": 1091
+ },
+ "d:/ic-mekan-led-ekran/": {
+  "title": "İç Mekan LED Ekran | LEDAJANS",
+  "h1": [
+   "İç Mekan LED Ekran"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 174,
+   "ui-sans-serif": 4
+  },
+  "small": 2,
+  "taps": 78,
+  "imgs": 23,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 8679,
+  "btns": 12,
+  "words": 1812
+ },
+ "d:/dis-mekan-led-ekran/": {
+  "title": "Dış Mekan LED Ekran | LEDAJANS",
+  "h1": [
+   "Dış Mekan LED Ekran"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 153,
+   "ui-sans-serif": 15
+  },
+  "small": 6,
+  "taps": 73,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 7308,
+  "btns": 18,
+  "words": 913
+ },
+ "d:/rental-ekran/": {
+  "title": "LED Ekran Kiralama | LEDAJANS",
+  "h1": [
+   "LED Ekran Kiralama"
+  ],
+  "h1n": 1,
+  "h2n": 8,
+  "fonts": {
+   "Kumbh Sans": 116,
+   "ui-sans-serif": 53
+  },
+  "small": 9,
+  "taps": 65,
+  "imgs": 33,
+  "broken": [
+   "2026/01/Air-II-scaled.png",
+   "2026/01/Air-II-scaled.png"
+  ],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 7620,
+  "btns": 35,
+  "words": 929
+ },
+ "d:/ic-mekan-rgb-panel/": {
+  "title": "İç Mekan RGB Panel | LEDAJANS",
+  "h1": [
+   "İç Mekan RGB Panel"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 110,
+   "ui-sans-serif": 41
+  },
+  "small": 20,
+  "taps": 40,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 7979,
+  "btns": 12,
+  "words": 1378
+ },
+ "d:/dis-mekan-rgb-panel/": {
+  "title": "Dış Mekan RGB Panel | LEDAJANS",
+  "h1": [
+   "Dış Mekan RGB Panel"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 72,
+   "ui-sans-serif": 16
+  },
+  "small": 7,
+  "taps": 38,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 4312,
+  "btns": 12,
+  "words": 506
+ },
+ "d:/kontrol-kartlari/": {
+  "title": "Kontrol Kartları | LEDAJANS",
+  "h1": [
+   "Kontrol Kartları"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 281,
+   "ui-sans-serif": 1
+  },
+  "small": 2,
+  "taps": 43,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 8245,
+  "btns": 47,
+  "words": 1697
+ },
+ "d:/guc-kaynaklari/": {
+  "title": "Güç Kaynakları | LEDAJANS",
+  "h1": [
+   "Güç Kaynakları"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 83,
+   "ui-sans-serif": 1
+  },
+  "small": 2,
+  "taps": 37,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 4105,
+  "btns": 18,
+  "words": 441
+ },
+ "d:/blog/": {
+  "title": "LED Ekran Blog | Rehberler ve Fiyat Yazıları | LEDAJANS",
+  "h1": [
+   "Blog"
+  ],
+  "h1n": 1,
+  "h2n": 0,
+  "fonts": {
+   "Kumbh Sans": 76,
+   "ui-sans-serif": 1
+  },
+  "small": 20,
+  "taps": 47,
+  "imgs": 42,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 2410,
+  "btns": 7,
+  "words": 385
+ },
+ "d:/colorlight/": {
+  "title": "Colorlight - LEDAJANS",
+  "h1": [
+   "COLORLIGHT"
+  ],
+  "h1n": 1,
+  "h2n": 5,
+  "fonts": {
+   "Kumbh Sans": 49,
+   "ui-sans-serif": 27
+  },
+  "small": 5,
+  "taps": 38,
+  "imgs": 32,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 2636,
+  "btns": 7,
+  "words": 423
+ },
+ "d:/huidu-processor-hdplayer-indir/": {
+  "title": "Huidu Processor HDPlayer İndir - LEDAJANS",
+  "h1": [
+   "HUIDU"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 115,
+   "ui-sans-serif": 16
+  },
+  "small": 22,
+  "taps": 36,
+  "imgs": 38,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 3512,
+  "btns": 20,
+  "words": 483
+ },
+ "d:/program-indir/": {
+  "title": "Program İndir | LEDAJANS",
+  "h1": [
+   "Program İndir"
+  ],
+  "h1n": 1,
+  "h2n": 2,
+  "fonts": {
+   "Kumbh Sans": 147
+  },
+  "small": 30,
+  "taps": 37,
+  "imgs": 24,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 4045,
+  "btns": 13,
+  "words": 603
+ },
+ "d:/teknik-destek-videolari/": {
+  "title": "Teknik Destek Videoları | LEDAJANS",
+  "h1": [
+   "Teknik Destek Videoları"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 50,
+   "ui-sans-serif": 20
+  },
+  "small": 2,
+  "taps": 41,
+  "imgs": 17,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 2666,
+  "btns": 7,
+  "words": 357
+ },
+ "d:/iletisim/": {
+  "title": "İletişim | LEDAJANS",
+  "h1": [
+   "İletişim"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 71
+  },
+  "small": 8,
+  "taps": 41,
+  "imgs": 17,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 1425,
+  "iw": 1440,
+  "height": 2571,
+  "btns": 8,
+  "words": 289
+ },
+ "m:/": {
+  "title": "LED Ekran | Satış, Kiralama, Kurulum | LEDAJANS",
+  "h1": [
+   "LED Ekran Satış, Kiralama ve Kurulum"
+  ],
+  "h1n": 1,
+  "h2n": 12,
+  "fonts": {
+   "Kumbh Sans": 186,
+   "system-ui": 6
+  },
+  "small": 24,
+  "taps": 57,
+  "imgs": 73,
+  "broken": [],
+  "noalt": 15,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 16471,
+  "btns": 35,
+  "words": 1316
+ },
+ "m:/hakkimizda/": {
+  "title": "Hakkımızda | LEDAJANS",
+  "h1": [
+   "Hakkımızda"
+  ],
+  "h1n": 1,
+  "h2n": 2,
+  "fonts": {
+   "Kumbh Sans": 44,
+   "ui-sans-serif": 1
+  },
+  "small": 2,
+  "taps": 29,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5162,
+  "btns": 7,
+  "words": 251
+ },
+ "m:/sertifikalarimiz/": {
+  "title": "Sertifikalarımız | LEDAJANS",
+  "h1": [
+   "Sertifikalarımız"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 39,
+   "ui-sans-serif": 1,
+   "system-ui": 74
+  },
+  "small": 8,
+  "taps": 35,
+  "imgs": 24,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 9587,
+  "btns": 7,
+  "words": 642
+ },
+ "m:/firma-bilgilerimiz/": {
+  "title": "Firma Bilgilerimiz - LEDAJANS",
+  "h1": [
+   "Firma Bilgilerimiz"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 63,
+   "ui-sans-serif": 1,
+   "ui-monospace": 5
+  },
+  "small": 5,
+  "taps": 30,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5038,
+  "btns": 7,
+  "words": 268
+ },
+ "m:/led-ekran/": {
+  "title": "LED Ekran Modelleri | İç-Dış Mekan ve Kiralama | LEDAJANS",
+  "h1": [
+   "LED Ekran Çözümleri"
+  ],
+  "h1n": 1,
+  "h2n": 7,
+  "fonts": {
+   "Kumbh Sans": 45,
+   "system-ui": 77
+  },
+  "small": 0,
+  "taps": 39,
+  "imgs": 27,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 10969,
+  "btns": 7,
+  "words": 635
+ },
+ "m:/cob-ekran/": {
+  "title": "COB LED Ekran | Fine Pitch Smart Screen | LEDAJANS",
+  "h1": [
+   "COB - Smart Screen"
+  ],
+  "h1n": 1,
+  "h2n": 5,
+  "fonts": {
+   "Kumbh Sans": 107,
+   "ui-sans-serif": 118
+  },
+  "small": 47,
+  "taps": 44,
+  "imgs": 29,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 13555,
+  "btns": 15,
+  "words": 1071
+ },
+ "m:/ic-mekan-led-ekran/": {
+  "title": "İç Mekan LED Ekran | LEDAJANS",
+  "h1": [
+   "İç Mekan LED Ekran"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 165,
+   "ui-sans-serif": 4
+  },
+  "small": 2,
+  "taps": 71,
+  "imgs": 23,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 13446,
+  "btns": 12,
+  "words": 1792
+ },
+ "m:/dis-mekan-led-ekran/": {
+  "title": "Dış Mekan LED Ekran | LEDAJANS",
+  "h1": [
+   "Dış Mekan LED Ekran"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 144,
+   "ui-sans-serif": 15
+  },
+  "small": 6,
+  "taps": 62,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 11763,
+  "btns": 18,
+  "words": 893
+ },
+ "m:/rental-ekran/": {
+  "title": "LED Ekran Kiralama | LEDAJANS",
+  "h1": [
+   "LED Ekran Kiralama"
+  ],
+  "h1n": 1,
+  "h2n": 8,
+  "fonts": {
+   "Kumbh Sans": 107,
+   "ui-sans-serif": 53
+  },
+  "small": 9,
+  "taps": 41,
+  "imgs": 33,
+  "broken": [
+   "2026/01/Air-II-scaled.png"
+  ],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 12219,
+  "btns": 19,
+  "words": 909
+ },
+ "m:/ic-mekan-rgb-panel/": {
+  "title": "İç Mekan RGB Panel | LEDAJANS",
+  "h1": [
+   "İç Mekan RGB Panel"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 101,
+   "ui-sans-serif": 41
+  },
+  "small": 20,
+  "taps": 30,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 13716,
+  "btns": 12,
+  "words": 1358
+ },
+ "m:/dis-mekan-rgb-panel/": {
+  "title": "Dış Mekan RGB Panel | LEDAJANS",
+  "h1": [
+   "Dış Mekan RGB Panel"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 63,
+   "ui-sans-serif": 16
+  },
+  "small": 7,
+  "taps": 30,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 6987,
+  "btns": 12,
+  "words": 486
+ },
+ "m:/kontrol-kartlari/": {
+  "title": "Kontrol Kartları | LEDAJANS",
+  "h1": [
+   "Kontrol Kartları"
+  ],
+  "h1n": 1,
+  "h2n": 6,
+  "fonts": {
+   "Kumbh Sans": 272,
+   "ui-sans-serif": 1
+  },
+  "small": 124,
+  "taps": 29,
+  "imgs": 21,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 11733,
+  "btns": 47,
+  "words": 1677
+ },
+ "m:/guc-kaynaklari/": {
+  "title": "Güç Kaynakları | LEDAJANS",
+  "h1": [
+   "Güç Kaynakları"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 74,
+   "ui-sans-serif": 1
+  },
+  "small": 0,
+  "taps": 29,
+  "imgs": 20,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 6609,
+  "btns": 18,
+  "words": 421
+ },
+ "m:/blog/": {
+  "title": "LED Ekran Blog | Rehberler ve Fiyat Yazıları | LEDAJANS",
+  "h1": [
+   "Blog"
+  ],
+  "h1n": 1,
+  "h2n": 0,
+  "fonts": {
+   "Kumbh Sans": 67,
+   "ui-sans-serif": 1
+  },
+  "small": 18,
+  "taps": 41,
+  "imgs": 42,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5680,
+  "btns": 7,
+  "words": 365
+ },
+ "m:/colorlight/": {
+  "title": "Colorlight - LEDAJANS",
+  "h1": [
+   "COLORLIGHT"
+  ],
+  "h1n": 1,
+  "h2n": 5,
+  "fonts": {
+   "Kumbh Sans": 40,
+   "ui-sans-serif": 27
+  },
+  "small": 3,
+  "taps": 31,
+  "imgs": 32,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5702,
+  "btns": 7,
+  "words": 403
+ },
+ "m:/huidu-processor-hdplayer-indir/": {
+  "title": "Huidu Processor HDPlayer İndir - LEDAJANS",
+  "h1": [
+   "HUIDU"
+  ],
+  "h1n": 1,
+  "h2n": 4,
+  "fonts": {
+   "Kumbh Sans": 106,
+   "ui-sans-serif": 16
+  },
+  "small": 55,
+  "taps": 28,
+  "imgs": 38,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 6480,
+  "btns": 20,
+  "words": 463
+ },
+ "m:/program-indir/": {
+  "title": "Program İndir | LEDAJANS",
+  "h1": [
+   "Program İndir"
+  ],
+  "h1n": 1,
+  "h2n": 2,
+  "fonts": {
+   "Kumbh Sans": 138
+  },
+  "small": 28,
+  "taps": 29,
+  "imgs": 24,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 8659,
+  "btns": 13,
+  "words": 583
+ },
+ "m:/teknik-destek-videolari/": {
+  "title": "Teknik Destek Videoları | LEDAJANS",
+  "h1": [
+   "Teknik Destek Videoları"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 41,
+   "ui-sans-serif": 20
+  },
+  "small": 0,
+  "taps": 32,
+  "imgs": 17,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5846,
+  "btns": 7,
+  "words": 337
+ },
+ "m:/iletisim/": {
+  "title": "İletişim | LEDAJANS",
+  "h1": [
+   "İletişim"
+  ],
+  "h1n": 1,
+  "h2n": 3,
+  "fonts": {
+   "Kumbh Sans": 62
+  },
+  "small": 6,
+  "taps": 32,
+  "imgs": 17,
+  "broken": [],
+  "noalt": 6,
+  "overflowX": false,
+  "sw": 390,
+  "iw": 390,
+  "height": 5391,
+  "btns": 8,
+  "words": 269
+ }
+}
