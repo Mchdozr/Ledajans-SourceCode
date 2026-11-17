@@ -877,7 +877,11 @@ function ledajans_mp_v13_optimize($html) {
             // ust menu logo: kucuk, fold ustu -> normal yukleme (onceki lazy/low kaldirildi)
             $tag = preg_replace('#\s(?:loading|fetchpriority)=["\'][^"\']*["\']#i', '', $tag);
         }
-        if ($lazy && !$isHigh) {
+        // Yazar acikca eager dediyse dokunma (or. urun slider'i 1 sn icinde img.complete bakar ve
+        // yuklenmemisse slider'i gizler). Istisna: ISO sertifika seridi (fold alti, kontrol script'i yok).
+        $explicitEager = (bool) preg_match('#\sloading=["\']eager["\']#i', $tag)
+            && !preg_match('#/(?:iso-[0-9]+-[0-9]+-1|taha-led-14064-1)(?:-320)?\.webp#i', $tag);
+        if ($lazy && !$isHigh && !$explicitEager) {
             $tag = preg_replace('#\sloading=["\'][^"\']*["\']#i', '', $tag);
             $tag = preg_replace('#\s*(/?)>$#', ' loading="lazy"$1>', $tag, 1);
             $tag = str_replace('"/>', '" />', $tag);
@@ -911,24 +915,11 @@ function ledajans_mp_v13_optimize($html) {
         $part = preg_replace_callback('#<img\b[^>]*>#i', function ($m) use ($imgFix) {
             return $imgFix($m[0], true);
         }, $part);
-        // Proje videolari: autoplay yok, preload=none, gorunce oynat (asagidaki IO script)
-        $part = preg_replace_callback('#<video\b[^>]*>#i', function ($m) {
-            $tag = $m[0];
-            if (stripos($tag, 'autoplay') === false || stripos($tag, 'la1-video') !== false) {
-                return $tag;
-            }
-            $tag = preg_replace('#\sautoplay(?:=["\'][^"\']*["\'])?#i', '', $tag);
-            $tag = preg_replace('#\spreload=["\'][^"\']*["\']#i', '', $tag);
-            return preg_replace('#<video\b#i', '<video preload="none" data-lj-autoplay="1"', $tag, 1);
-        }, $part);
+        // Proje videolari: dokunulmaz. Sayfa script'i autoplay'i kaldirip preload=metadata ile
+        // ilk karede durduruyor (agda video basina ~0-64 KiB); "gorunce oynat" gorunumu degistirirdi.
         return $part;
     });
     $html = $head . $rest;
-
-    if (strpos($html, 'data-lj-autoplay') !== false && stripos($html, 'ledajansVideoIO') === false) {
-        $io = '<script id="ledajansVideoIO">(function(){var vs=[].slice.call(document.querySelectorAll("video[data-lj-autoplay]"));if(!vs.length){return;}function on(v){if(v.getAttribute("data-lj-on")){return;}v.setAttribute("data-lj-on","1");v.preload="auto";var p=v.play();if(p&&p.catch){p.catch(function(){});}}function off(v){if(!v.getAttribute("data-lj-on")){return;}v.removeAttribute("data-lj-on");try{v.pause();}catch(e){}}if(!("IntersectionObserver" in window)){vs.forEach(on);return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){on(e.target);}else{off(e.target);}});},{rootMargin:"200px 0px"});vs.forEach(function(v){io.observe(v);});})();</script>';
-        $html = str_ireplace('</body>', $io . '</body>', $html);
-    }
 
     // Ust menu logo onceden yuklensin mi? Hayir: 7.9KiB, normal oncelik yeterli.
     return $html;
