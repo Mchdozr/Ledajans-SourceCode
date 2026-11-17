@@ -18,6 +18,7 @@ Kullanim (repo kokunde, .env dolu):
 from __future__ import annotations
 
 import argparse
+import getpass
 import hashlib
 import io
 import json
@@ -46,7 +47,7 @@ DEPLOYER = os.path.join(ROOT, "deploy", "ledajans-deployer.php")
 MOBILE_UA = "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0 Mobile Safari/537.36"
 
 
-def load_env() -> tuple[str, str, str]:
+def load_env() -> tuple[str, str, str, str]:
     data: dict[str, str] = {}
     path = os.path.join(ROOT, ".env")
     if os.path.isfile(path):
@@ -59,7 +60,8 @@ def load_env() -> tuple[str, str, str]:
     site = (data.get("WP_SITE_URL") or os.environ.get("WP_SITE_URL") or "https://ledajans.com").rstrip("/")
     user = data.get("WP_USERNAME") or os.environ.get("WP_USERNAME") or ""
     pw = (data.get("WP_APP_PASSWORD") or os.environ.get("WP_APP_PASSWORD") or "").replace(" ", "")
-    return site, user, pw
+    login_pw = data.get("WP_LOGIN_PASSWORD") or os.environ.get("WP_LOGIN_PASSWORD") or ""
+    return site, user, pw, login_pw
 
 
 def collect() -> list[tuple[str, str]]:
@@ -143,7 +145,7 @@ def login(site, user, pw) -> requests.Session:
     r = s.post(f"{site}/wp-login.php", data={"log": user, "pwd": pw, "wp-submit": "Log In",
                "redirect_to": f"{site}/wp-admin/", "testcookie": "1"}, timeout=30, allow_redirects=True)
     if "wp-admin" not in r.url:
-        print("HATA: wp-login basarisiz (kullanici/sifre .env)")
+        print("HATA: wp-admin girisi basarisiz. GIRIS sifresi (normal hesap sifresi) gerekli; 2FA/captcha aciksa gecici kapatin.")
         sys.exit(1)
     return s
 
@@ -228,7 +230,7 @@ def main() -> int:
     ap.add_argument("--rollback", metavar="TAG")
     args = ap.parse_args()
 
-    site, user, pw = load_env()
+    site, user, pw, login_pw = load_env()
     items = collect()
     total = sum(os.path.getsize(p) for p, _ in items)
     print(f"site: {site}\ndosya: {len(items)} ({total // 1024} KiB) — {sum(1 for _, d in items if d.startswith('uploads/') and 'ledajans-mobile' not in d)} gorsel, "
@@ -247,20 +249,27 @@ def main() -> int:
         print("DRY-RUN OK — canliya yazilmadi. Gercek dagitim icin --dry-run olmadan calistirin.")
         return 0
 
+    # .env yoksa terminalde sor (sifreler ekranda gorunmez, dosyaya yazilmaz)
+    if not user:
+        user = input("WordPress kullanici adi: ").strip()
+    if not pw:
+        pw = getpass.getpass("WordPress UYGULAMA sifresi (Profil > Uygulama Sifreleri; REST icin): ").replace(" ", "")
+    if not login_pw:
+        login_pw = getpass.getpass("WordPress GIRIS sifresi (wp-admin; bos birakirsan uygulama sifresi denenir): ") or pw
     if not user or not pw:
-        print("HATA: .env icinde WP_USERNAME / WP_APP_PASSWORD gerekli")
+        print("HATA: kullanici adi ve uygulama sifresi gerekli")
         return 1
     auth = (user, pw)
     me = rest("GET", site, auth, "wp/v2/users/me", params={"context": "edit"})
     if me.status_code != 200:
-        print("HATA: REST yetki", me.status_code)
+        print("HATA: REST yetki", me.status_code, "- uygulama sifresi/kullanici adi hatali olabilir")
         return 1
     plugins = rest("GET", site, auth, "wp/v2/plugins").json()
     for p in plugins if isinstance(plugins, list) else []:
         if p.get("name") == "LEDAJANS Mobile Perf" and p.get("status") == "active":
             print("HATA: 'LEDAJANS Mobile Perf' normal eklenti olarak da aktif; once onu devre disi birakin (cakisma).")
             return 1
-    s = login(site, user, pw)
+    s = login(site, user, login_pw)
 
     if args.rollback:
         res = run_part(s, site, auth, make_zip([], args.rollback, "rollback", "rollback"), "rollback")
