@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<title>LEDAJANS Kelime Haritası</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: tek sütun rapor + yapışkan bölüm menüsü; kelime eleme bölümü tablo yerine satır kartları (telefonda tek sütuna iner).
+   Motif: LED modülünün R/G/B alt pikseli — işaret ve ayraçlarda küçük üçlü nokta. */
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --sunk:#E9EDF2; --ink:#121821; --muted:#5A6676; --line:#D5DCE4;
+  --accent:#1F4FD1; --accent-ink:#FFFFFF; --accent-soft:#E3EAFB;
+  --keep:#16794A; --keep-soft:#DDF2E6; --maybe:#A35B00; --maybe-soft:#FBEBD3; --drop:#B4232C; --drop-soft:#F8DEDF;
+  --p0:#1F4FD1; --p1:#3D6B8F; --p2:#6B7480; --px:#B4232C;
+  --r:#E23B3B; --g:#22A55A; --b:#2F6BFF;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1319; --surface:#151C25; --sunk:#1C2530; --ink:#E6EBF1; --muted:#97A3B3; --line:#2A3542;
+  --accent:#7EA2FF; --accent-ink:#0B1020; --accent-soft:#1D2A4A;
+  --keep:#5BD596; --keep-soft:#143223; --maybe:#F2B35A; --maybe-soft:#3A2B12; --drop:#FF8A8F; --drop-soft:#3D1A1D;
+  --p0:#7EA2FF; --p1:#8DB3D1; --p2:#97A3B3; --px:#FF8A8F; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --surface:#151C25; --sunk:#1C2530; --ink:#E6EBF1; --muted:#97A3B3; --line:#2A3542;
+  --accent:#7EA2FF; --accent-ink:#0B1020; --accent-soft:#1D2A4A;
+  --keep:#5BD596; --keep-soft:#143223; --maybe:#F2B35A; --maybe-soft:#3A2B12; --drop:#FF8A8F; --drop-soft:#3D1A1D;
+  --p0:#7EA2FF; --p1:#8DB3D1; --p2:#97A3B3; --px:#FF8A8F; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1120px;margin:0 auto;padding-block:28px 80px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,4.2vw,44px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(22px,2.6vw,28px);font-weight:700}
+h3{font-size:17px;font-weight:700}
+p{margin:0}
+.prose{max-width:68ch}
+a{color:var(--accent)}
+code,.mono{font-family:var(--f-mono);font-size:.92em}
+.num{font-variant-numeric:tabular-nums;font-family:var(--f-mono)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rgb{display:inline-flex;gap:3px;vertical-align:middle}
+.rgb i{width:6px;height:6px;border-radius:1px;display:block}
+.rgb i:nth-child(1){background:var(--r)}.rgb i:nth-child(2){background:var(--g)}.rgb i:nth-child(3){background:var(--b)}
+
+header.top{display:grid;gap:14px;padding-block:8px 24px;border-bottom:1px solid var(--line)}
+header.top .meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:13px}
+header.top .lede{font-size:17px;color:var(--ink);max-width:70ch}
+
+nav.sec{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;gap:4px;overflow-x:auto;padding-block:10px;margin-bottom:8px;scrollbar-width:none}
+nav.sec a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:14px;padding:6px 12px;border-radius:6px}
+nav.sec a:hover,nav.sec a:focus-visible{background:var(--sunk);color:var(--ink);outline:none}
+nav.sec a.on{background:var(--ink);color:var(--bg)}
+
+section{padding-block:40px 8px;scroll-margin-top:64px}
+section > .head{display:grid;gap:8px;margin-bottom:22px}
+section > .head p{color:var(--muted);max-width:72ch}
+
+/* Bulgular */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.find{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 16px 14px;display:grid;gap:8px;align-content:start;min-width:0}
+.find .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.find .fig{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:-.01em}
+.find p{font-size:14px;color:var(--muted)}
+.find p b{color:var(--ink);font-weight:600}
+.sev{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.sev.hi{background:var(--drop-soft);color:var(--drop)}
+.sev.md{background:var(--maybe-soft);color:var(--maybe)}
+.sev.ok{background:var(--keep-soft);color:var(--keep)}
+.subhead{margin:28px 0 12px;display:flex;align-items:center;gap:10px}
+
+.comp{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--sunk)}
+tr:last-child td{border-bottom:0}
+
+/* Kelime eleme */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;background:var(--sunk);border-radius:8px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--muted);font:500 13px var(--f-body);padding:6px 10px;border-radius:6px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .12)}
+select,input[type=search],input[type=text]{font:14px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+input[type=search]{min-width:0;flex:1 1 200px}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.tally{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:4;background:var(--surface);border:1px solid var(--line);border-radius:8px;
+  padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:14px}
+.tally .t{display:flex;align-items:baseline;gap:6px;font-size:13px;color:var(--muted)}
+.tally .t b{font-family:var(--f-mono);font-size:18px;color:var(--ink);font-weight:500}
+.tally .t.keep b{color:var(--keep)}.tally .t.maybe b{color:var(--maybe)}.tally .t.drop b{color:var(--drop)}
+.tally .bar{flex:1 1 160px;height:8px;border-radius:4px;background:var(--sunk);display:flex;overflow:hidden;min-width:120px}
+.tally .bar span{display:block;height:100%}
+.tally .sync{font-size:12px;color:var(--muted);font-family:var(--f-mono)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 13px var(--f-body);padding:7px 12px;border-radius:6px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(.97)}
+
+.kgroup{margin-top:22px}
+.kgroup > h3{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.kgroup > h3 .c{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-weight:400}
+.kw{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.3fr) minmax(0,1.5fr) auto;gap:6px 18px;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.kw[data-k="tut"]{border-left-color:var(--keep)}
+.kw[data-k="belki"]{border-left-color:var(--maybe)}
+.kw[data-k="ele"]{border-left-color:var(--drop);opacity:.72}
+.kw .name{display:grid;gap:4px;min-width:0}
+.kw .name strong{font-family:var(--f-display);font-size:16.5px;font-weight:700}
+.kw .vars{font-size:12.5px;color:var(--muted)}
+.kw .why{font-size:13.5px;color:var(--ink)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.pill{font-family:var(--f-mono);font-size:11px;padding:2px 7px;border-radius:4px;letter-spacing:.03em;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+.pill.P0{background:var(--p0);border-color:var(--p0);color:var(--accent-ink)}
+.pill.P1{border-color:var(--p1);color:var(--p1)}
+.pill.P2{border-color:var(--p2);color:var(--p2);border-style:dashed}
+.pill.X{border-color:var(--px);color:var(--px)}
+.metrics{display:grid;grid-template-columns:repeat(3,auto);gap:2px 14px;justify-content:start;font-size:12px;color:var(--muted)}
+.metrics b{display:block;font-family:var(--f-mono);font-size:15px;font-weight:500;color:var(--ink)}
+.metrics .na b{color:var(--muted)}
+.target{font-size:13px;min-width:0;overflow-wrap:anywhere}
+.target .u{font-family:var(--f-mono);font-size:12.5px}
+.target .new{color:var(--maybe);font-weight:600}
+.decide{display:flex;gap:4px}
+.decide button{border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 13px var(--f-body);padding:7px 11px;border-radius:6px;cursor:pointer;min-width:54px}
+.decide button[data-v="tut"][aria-pressed="true"]{background:var(--keep);border-color:var(--keep);color:var(--surface)}
+.decide button[data-v="belki"][aria-pressed="true"]{background:var(--maybe);border-color:var(--maybe);color:var(--surface)}
+.decide button[data-v="ele"][aria-pressed="true"]{background:var(--drop);border-color:var(--drop);color:var(--surface)}
+.kw details{grid-column:1 / -1;font-size:13.5px}
+.kw summary{cursor:pointer;color:var(--accent);font-size:13px;width:max-content;max-width:100%}
+.kw .detail{display:grid;gap:8px;padding-top:8px;color:var(--muted);max-width:90ch}
+.kw .detail b{color:var(--ink);font-weight:600}
+.kw .note{grid-column:1 / -1;display:flex;gap:8px}
+.kw .note input{flex:1;min-width:0;font-size:13px;padding:6px 9px}
+@media (max-width:820px){
+  .kw{grid-template-columns:minmax(0,1fr) auto}
+  .kw .metrics{grid-column:1 / -1;grid-row:2}
+  .kw .target{grid-column:1 / -1;grid-row:3}
+  .kw .decide{grid-column:2;grid-row:1;flex-direction:column}
+}
+
+/* Plan */
+.phases{display:grid;gap:14px}
+.phase{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.phase .when{display:grid;gap:4px;align-content:start}
+.phase .when b{font-family:var(--f-display);font-size:20px}
+.phase .when span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.phase ul{margin:0;padding-left:18px;display:grid;gap:7px}
+.phase li{max-width:80ch}
+.phase li .tag{font-family:var(--f-mono);font-size:10.5px;padding:1px 5px;border-radius:3px;margin-right:6px;vertical-align:1px;letter-spacing:.04em}
+.tag.seo{background:var(--accent-soft);color:var(--accent)}
+.tag.geo{background:var(--keep-soft);color:var(--keep)}
+.tag.vis{background:var(--maybe-soft);color:var(--maybe)}
+@media (max-width:640px){.phase{grid-template-columns:1fr;gap:10px}}
+
+.kpi{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-top:16px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.callout{border:1px dashed var(--accent);background:var(--accent-soft);border-radius:8px;padding:16px 18px;display:grid;gap:6px}
+.example{font-family:var(--f-mono);font-size:12.5px;background:var(--sunk);border-radius:6px;padding:12px;overflow-x:auto;white-space:pre;line-height:1.6}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);
+  padding:10px 16px;border-radius:8px;font-size:14px;z-index:20}
+textarea.out{width:100%;min-height:160px;font:12.5px var(--f-mono);background:var(--sunk);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:grid;gap:6px}
+@media (prefers-reduced-motion:no-preference){.kw{transition:opacity .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow"><span class="rgb"><i></i><i></i><i></i></span>&nbsp; ledajans.com · SEO + GEO taraması</div>
+  <h1>LEDAJANS Kelime Haritası</h1>
+  <p class="lede">Bu sayfada sitenin tarama sonuçlarını, hangi kelimelerde öne çıkması gerektiğini ve bunun planını bulacaksınız. Kelime listesinde her satırı <b>Tut</b>, <b>Belki</b> ya da <b>Ele</b> diye işaretleyin. Eleme bitince kalan kelimeler için görsel ve metin planını ayrıntılandıracağım.</p>
+  <div class="meta">
+    <span>Tarama: <span class="num">24.11.2026</span></span>
+    <span>Taranan Türkçe sayfa: <span class="num">177</span></span>
+    <span>GSC verisi: <span class="num">02.03–01.06.2026</span> (3 ay, 1.000 sorgu)</span>
+  </div>
+</header>
+
+<nav class="sec" aria-label="Bölümler">
+  <a href="#bulgular">Tarama bulguları</a>
+  <a href="#kelimeler">Kelime eleme</a>
+  <a href="#plan">Yol haritası</a>
+  <a href="#gorsel">Görsel ve metin uyumu</a>
+  <a href="#notlar">Veri notları</a>
+</nav>
+
+<!-- ============ BULGULAR ============ -->
+<section id="bulgular">
+  <div class="head">
+    <div class="eyebrow">1 · Mevcut durum</div>
+    <h2>Taramada ne bulduk?</h2>
+    <p>177 Türkçe URL tek tek indirildi. Her sayfada title, açıklama, H1/H2, kelime sayısı, görseller, schema ve linkler çıkarıldı. Rakamlar bu taramadan geliyor. Sıralama verileri ise depodaki GSC dökümünden alındı.</p>
+  </div>
+
+  <div class="findings">
+    <div class="find"><div class="top"><span class="fig num">46</span><span class="sev hi">Yüksek</span></div>
+      <h3>sayfa aynı meta açıklamayı kullanıyor</h3>
+      <p>"LED ekran satış, kiralama ve kurulum. Ücretsiz keşif…" metni <b>iç mekan, dış mekan, rental, RGB panel, LED ekran nedir, billboard</b> gibi para sayfalarında da duruyor. Google bu durumda açıklamayı kendisi yazıyor ve tıklama oranı düşüyor.</p></div>
+    <div class="find"><div class="top"><span class="fig num">%2,4</span><span class="sev hi">Yüksek</span></div>
+      <h3>"led ekran panel" kümesinde tıklama oranı</h3>
+      <p>2.470 gösterim alıp ortalama <b>4,5. sırada</b> olmasına rağmen sadece 59 tık geliyor. Sıralamayı değiştirmeden başlık ve açıklamayı düzeltmek en hızlı kazanç olur.</p></div>
+    <div class="find"><div class="top"><span class="fig num">2</span><span class="sev hi">Yüksek</span></div>
+      <h3>sayfa "led ekran" için yarışıyor</h3>
+      <p>Anasayfa (6,8. sıra) ile <code>/led-ekran/</code> hub'ı aynı kelimeyi hedefliyor. Hub'ın H1'i "LED Ekran Çözümleri", title'ı ise "LED Ekran Modelleri". Hangi sayfanın neyi hedefleyeceğine karar verilmeli.</p></div>
+    <div class="find"><div class="top"><span class="fig num">0</span><span class="sev hi">Yüksek · GEO</span></div>
+      <h3>fiyat sayfalarında rakam yok</h3>
+      <p>Hiçbir fiyat sayfasında TL veya $ bandı yok. Dış mekan fiyat sayfası sadece "göreceli bant" veriyor, genel fiyat rehberinin başlığı hâlâ "Mayıs Güncel". ChatGPT, Gemini ve Perplexity fiyat sorusunda <b>rakam veren</b> kaynağı alıntılıyor.</p></div>
+    <div class="find"><div class="top"><span class="fig num">23</span><span class="sev md">Orta</span></div>
+      <h3>sayfada H1 yok, 20+ sayfada birden fazla H1 var</h3>
+      <p>H1'i olmayanlar: rehber sayfaları (led-tabela, billboard, nits, pitch, LCD farkı, kurulum, bakım…). Birden fazla H1 olanlar: eski ürün yazıları (Huidu C16L'de 8 tane H1 var).</p></div>
+    <div class="find"><div class="top"><span class="fig num">%40</span><span class="sev md">Orta</span></div>
+      <h3>görselde alt metin eksik (1.870 / 4.667)</h3>
+      <p>Her sayfada footer galerisindeki ~10 görselin alt metni boş. COB sayfasında alt metinler "Slide 1…6". Dosya adlarında <code>Basliksiz-6-11.png</code>, <code>Arka-plani-kaldir-projesi</code> ve rastgele hash isimleri var.</p></div>
+    <div class="find"><div class="top"><span class="fig num">~3 sn</span><span class="sev md">Orta</span></div>
+      <h3>HTML yanıt süresi (ortalama)</h3>
+      <p>Bulut ortamından ölçüldü, sayfa başına 210–390 KB HTML. Görsellerin <b>2.563'ü JPG, 524'ü WebP</b>. Yeni yüklenen görseller WebP, eskiler değil.</p></div>
+    <div class="find"><div class="top"><span class="fig num">21</span><span class="sev md">Orta</span></div>
+      <h3>sitemap'te yönlendirilen URL var</h3>
+      <p><code>portfolio-sitemap.xml</code> içindeki <code>/case/…</code> adreslerinin hepsi <code>/projeler/</code>'e 301 ile yönleniyor. Bunlar sitemap'ten çıkarılmalı.</p></div>
+    <div class="find"><div class="top"><span class="fig num">2 / 177</span><span class="sev md">Orta · GEO</span></div>
+      <h3>sayfada Product, 2 sayfada LocalBusiness schema var</h3>
+      <p>P2.5 GOB, P1.86 COB gibi ürün sayfalarında Product schema yok ve bu sayfalar 300–390 kelime ile zayıf. Anasayfada <b>og:image yok</b>, yani link paylaşıldığında görsel çıkmıyor.</p></div>
+    <div class="find"><div class="top"><span class="fig num">7</span><span class="sev md">Orta</span></div>
+      <h3>önemli sayfa 250 kelimenin altında</h3>
+      <p>mağaza-vitrin (237 kelime), gob-led-ekran (228), cephe-led-ekran (238), fuar-led-ekran (210), pitch-seçim-rehberi (223), markalarımız (67), hakkımızda (186). Hakkımızda sayfası, GEO'da güven sinyali verdiği için önemli.</p></div>
+    <div class="find"><div class="top"><span class="fig num">TR yok</span><span class="sev md">Orta</span></div>
+      <h3>Ankara, İzmir, stadyum, otel, havalimanı sayfaları</h3>
+      <p>Bu sayfaların İngilizce ve Almanca versiyonu var ama Türkçesi yok (havalimanı hariç). Türkçe arama yapan kullanıcı karşılık bulamıyor.</p></div>
+    <div class="find"><div class="top"><span class="fig num">✓</span><span class="sev ok">İyi</span></div>
+      <h3>GEO'nun temeli kurulmuş</h3>
+      <p><code>llms.txt</code> mevcut, robots.txt'de GPTBot, PerplexityBot, Google-Extended ve anthropic-ai'ye izin verilmiş. 35 sayfada FAQ schema var, anasayfada Organization ve LocalBusiness tanımlı. Marka aramalarında 2–3. sırada.</p></div>
+  </div>
+
+  <div class="subhead"><span class="rgb"><i></i><i></i><i></i></span><h3>Rakip anasayfalarına kısa bakış</h3></div>
+  <div class="comp">
+    <table>
+      <thead><tr><th>Site</th><th>Title</th><th>Kelime</th><th>Öne çıkan iddia</th><th>Schema</th></tr></thead>
+      <tbody>
+        <tr><td><b>ledajans.com</b></td><td>LED Ekran | Satış, Kiralama, Kurulum | LEDAJANS</td><td class="num">1.368</td><td>Satış, kiralama, kurulum, ücretsiz keşif</td><td>Organization, LocalBusiness, FAQ yok*</td></tr>
+        <tr><td>mobiled.com.tr</td><td>LED Ekran Sistemleri | İç ve Dış Mekan, Mobil LED</td><td class="num">2.621</td><td>Kendi tesis, <b>3 yıl garanti, 7/24 servis</b>, 4.000+ proje</td><td>FAQPage, adres, saat</td></tr>
+        <tr><td>ledcraft.com.tr</td><td>Profesyonel LED Ekran Çözümleri ve LED Panel Sistemleri</td><td class="num">1.499</td><td>"Türkiye'nin lider LED ekran üreticisi"</td><td>Organization</td></tr>
+        <tr><td>retaled.com</td><td>Ankara LED Ekran Çözümleri</td><td class="num">1.002</td><td>Ankara odaklı, ölçüden servise tüm süreç</td><td>LocalBusiness benzeri</td></tr>
+        <tr><td>sahneva.com</td><td>Sahne, Podyum, LED Ekran & Ses Işık Kiralama</td><td class="num">1.414</td><td>700+ proje, Türkiye geneli kiralama</td><td>OfferCatalog, City</td></tr>
+        <tr><td>linsnled.com.tr</td><td>LED Ekran ve LED Modül Üreticisi</td><td class="num">563</td><td>Fabrika fiyatı, Novastar ve Meanwell</td><td>yok</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--muted);margin-top:8px">* Anasayfada "sık sorulan sorular" bölümü görünüyor ama FAQPage schema olarak işaretlenmemiş. Rakiplerin somut iddiaları (garanti süresi, proje sayısı) AI motorlarının "hangi firma?" cevaplarında kullandığı türden bilgiler. Sizdeki karşılıkları (2001'den beri faaliyet, ISO belgeleri, 3 ülkede ofis) metinlerde daha görünür olmalı.</p>
+</section>
+
+<!-- ============ KELİMELER ============ -->
+<section id="kelimeler">
+  <div class="head">
+    <div class="eyebrow">2 · Sizin kararınız</div>
+    <h2>Hangi kelimelerde öne çıkalım?</h2>
+    <p>57 aday kelimeyi 11 kümeye ayırdım. Her birinde GSC gösterimi, tıklama, ortalama sıra, hedef sayfa ve benim önerim var. Önerim sadece başlangıç noktası. Hizmet vermediğiniz ya da kârlı bulmadığınız kelimeyi elemeniz en doğrusu. Gerekirse not alanına kısa bir gerekçe yazın.</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Öneri filtresi" id="fOneri">
+      <button type="button" data-v="all" aria-pressed="true">Tümü</button>
+      <button type="button" data-v="P0" aria-pressed="false">Öncelikli</button>
+      <button type="button" data-v="P1" aria-pressed="false">Önerilen</button>
+      <button type="button" data-v="P2" aria-pressed="false">Opsiyonel</button>
+      <button type="button" data-v="X" aria-pressed="false">Önerilmez</button>
+    </div>
+    <div class="seg" role="group" aria-label="Karar filtresi" id="fKarar">
+      <button type="button" data-v="all" aria-pressed="true">Her karar</button>
+      <button type="button" data-v="none" aria-pressed="false">Kararsız</button>
+      <button type="button" data-v="tut" aria-pressed="false">Tut</button>
+      <button type="button" data-v="belki" aria-pressed="false">Belki</button>
+      <button type="button" data-v="ele" aria-pressed="false">Ele</button>
+    </div>
+    <input type="search" id="q" placeholder="Kelime ara…" aria-label="Kelime ara">
+  </div>
+
+  <div class="tally" id="tally" aria-live="polite">
+    <span class="t keep">Tut <b id="nTut">0</b></span>
+    <span class="t maybe">Belki <b id="nBelki">0</b></span>
+    <span class="t drop">Ele <b id="nEle">0</b></span>
+    <span class="t">Kararsız <b id="nNone">57</b></span>
+    <div class="bar" aria-hidden="true"><span id="bTut" style="background:var(--keep)"></span><span id="bBelki" style="background:var(--maybe)"></span><span id="bEle" style="background:var(--drop)"></span></div>
+    <span class="sync" id="sync">Kayıt yeri kontrol ediliyor…</span>
+    <button type="button" class="btn primary" id="export">Kararları kopyala</button>
+  </div>
+  <div id="exportBox" hidden style="margin-bottom:14px">
+    <textarea class="out" id="exportText" readonly aria-label="Kararların metni"></textarea>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:6px">Kopyalanamadıysa metni seçip sohbete yapıştırabilirsiniz. Sayfa claude.ai üzerinden açıldıysa kararlarınızı ben de doğrudan okuyabiliyorum.</p>
+  </div>
+
+  <div id="list"><p style="color:var(--muted)">Kelime listesi yükleniyor…</p></div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section id="plan">
+  <div class="head">
+    <div class="eyebrow">3 · Nasıl öne çıkacağız</div>
+    <h2>Yol haritası (6 ay)</h2>
+    <p>Sıra önemli. Teknik temizlik bitmeden yazılan yeni içerik, aynı sorunları taşır. Etiketler: <span class="tag seo" style="font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:3px">SEO</span> klasik arama, <span class="tag geo" style="font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:3px">GEO</span> yapay zeka cevaplarında alıntılanma, <span class="tag vis" style="font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:3px">GÖRSEL</span> görsel uyum. Eleme bitince her fazdaki işleri kalan kelimelere göre güncelleyeceğim.</p>
+  </div>
+  <div class="phases">
+    <div class="phase"><div class="when"><b>Faz 0</b><span>Hafta 1–2</span><span>Teknik temizlik</span></div>
+      <ul>
+        <li><span class="tag seo">SEO</span>Varsayılan açıklamayı kullanan 46 sayfaya özgün meta açıklama yazılacak. Önce para sayfaları: iç mekan, dış mekan, rental, iki RGB panel sayfası, cob, led-ekran-nedir.</li>
+        <li><span class="tag seo">SEO</span>"led ekran panel" kümesi için title ve açıklama yeniden yazılacak. Sıra 4,5, CTR %2,4; hedef CTR %5+.</li>
+        <li><span class="tag seo">SEO</span>23 rehber sayfasına tek H1 eklenecek. Eski ürün yazılarındaki fazla H1'ler H2'ye çevrilecek.</li>
+        <li><span class="tag seo">SEO</span>21 adet <code>/case/</code> URL'si sitemap'ten çıkarılacak. Birden fazla P10 sayfası (p10-panel, p10-kirmizi-panel, -2, p10-panel-kirmizi) tek kanonik sayfada birleştirilecek.</li>
+        <li><span class="tag seo">SEO</span>Kanibalizasyon kararı: Anasayfa "led ekran / led ekran firmaları" kelimelerini, <code>/led-ekran/</code> ise "led ekran modelleri / led ekran sistemleri" kelimelerini hedefleyecek. Hub'ın title ve H1'i birbiriyle uyumlu hale getirilecek.</li>
+        <li><span class="tag vis">GÖRSEL</span>Footer galerisindeki 10 görsele alt metin verilecek (tek düzeltme, 177 sayfayı birden etkiler). Anasayfaya 1200×630 og:image eklenecek.</li>
+        <li><span class="tag geo">GEO</span>Bing Webmaster Tools doğrulanacak ve IndexNow açılacak. ChatGPT'nin arama özelliği Bing dizinini kullanıyor. robots.txt'ye OAI-SearchBot ve ClaudeBot açıkça eklenecek.</li>
+      </ul></div>
+    <div class="phase"><div class="when"><b>Faz 1</b><span>Hafta 2–6</span><span>Para sayfaları</span></div>
+      <ul>
+        <li><span class="tag seo">SEO</span>Öncelikli kelimelerin hedef sayfaları 1.200–1.800 kelimeye çıkarılacak. Her sayfada şunlar olacak: ilk 100 kelimede kelimenin kendisi ve kısa bir cevap paragrafı, model ve teknik özellik tablosu (pitch, nit, IP, Hz, kabin ölçüsü, W/m²), kullanım senaryoları, kurulum süreci, 6–8 soruluk SSS, 3 gerçek proje kartı.</li>
+        <li><span class="tag geo">GEO</span>Fiyat sayfalarına TL/m² veya $/m² <b>aralık tablosu</b> eklenecek. Örnek satır: "P2.5 iç mekan, kurulum hariç". Yanına "Son güncelleme: Kasım 2026" ve neyin dahil olup olmadığı yazılacak. Rakamları sizden alacağım, ben uydurmam.</li>
+        <li><span class="tag geo">GEO</span>Her H2'nin altına 40–60 kelimelik, tek başına okunabilen bir cevap paragrafı yazılacak. AI motorları cevabı genellikle bu bloklardan alıyor.</li>
+        <li><span class="tag seo">SEO</span>Ürün sayfalarına Product + Offer (fiyat aralığı ya da "teklif üzerine") + additionalProperty schema'sı, hizmet sayfalarına Service + areaServed schema'sı eklenecek.</li>
+        <li><span class="tag seo">SEO</span>/rental-ekran/ sayfasının H1 ve H2'leri "LED Ekran Kiralama" diline çekilecek ("Rental" ikincil terim olarak kalacak).</li>
+      </ul></div>
+    <div class="phase"><div class="when"><b>Faz 2</b><span>Ay 2–3</span><span>Eksik sayfalar</span></div>
+      <ul>
+        <li><span class="tag seo">SEO</span>Eleme sonrasında kalan yeni sayfalar açılacak. Adaylar: şeffaf LED ekran, dikey/totem LED ekran, LED ekran servis ve tamir, Ankara ve İzmir (Türkçe), stadyum (Türkçe), elektrik tüketimi rehberi.</li>
+        <li><span class="tag geo">GEO</span><b>LED ekran hesaplama aracı</b>: genişlik, yükseklik ve pitch girilince çözünürlük, modül/kabin sayısı, ağırlık, tüketim ve önerilen izleme mesafesini veren bir araç. Bu tür araçlar kendiliğinden link alır ve AI motorları tarafından kaynak gösterilir.</li>
+        <li><span class="tag seo">SEO</span>İnce kalmış sayfalar (mağaza-vitrin, cephe, gob, fuar, pitch rehberi) en az 800 kelimeye çıkarılacak ya da başka bir sayfayla birleştirilecek.</li>
+        <li><span class="tag vis">GÖRSEL</span>Her yeni sayfa için gerçek proje fotoğrafı çekilecek veya seçilecek. Stok ve yapay zeka görseli sadece şema ve çizimlerde kullanılacak.</li>
+      </ul></div>
+    <div class="phase"><div class="when"><b>Faz 3</b><span>Ay 3–6</span><span>Otorite ve ölçüm</span></div>
+      <ul>
+        <li><span class="tag geo">GEO</span>Proje sayfaları vaka çalışmasına dönüştürülecek. Her projede şunlar yazılacak: müşteri tipi, şehir ve ilçe, ölçü (m²), pitch, parlaklık, kurulum süresi, öncesi/sonrası fotoğraf. AI motorları "kanıtlı" ve sayısal içeriği tercih ediyor.</li>
+        <li><span class="tag geo">GEO</span>Sizden bahseden dış kaynaklar artırılacak: Google Business Profile'da düzenli yorum ve fotoğraf, sektör dizinleri (firmasec vb.), sektör haber siteleri, fuar katılımcı listeleri. Organization schema'ya <code>sameAs</code> ile sosyal profiller ve dizin kayıtları eklenecek.</li>
+        <li><span class="tag geo">GEO</span>Yazar sayfası (E-E-A-T): blog yazıları "Led Ajans" yerine gerçek bir uzman profiliyle yayınlanacak. Profilde unvan, deneyim yılı ve sertifikalar yer alacak.</li>
+        <li><span class="tag geo">GEO</span>Aylık AI görünürlük ölçümü: seçilen kelimelerin soru halleri (listede "GEO sorusu" olarak verdim) ChatGPT, Gemini, Perplexity ve Copilot'a sorulacak. LEDAJANS'ın anılıp anılmadığı ve link verilip verilmediği tabloya işlenecek.</li>
+        <li><span class="tag seo">SEO</span>Haftalık blog akışı (mevcut pazartesi rutini) sadece seçilen kümelere bağlanacak. Her yazıdan ilgili para sayfasına en az 2 link verilecek.</li>
+      </ul></div>
+  </div>
+
+  <div class="kpi">
+    <table>
+      <thead><tr><th>Öncelikli kelime</th><th>Şu an (GSC ort. sıra)</th><th>3 ay hedefi</th><th>6 ay hedefi</th><th>Gerekçe</th></tr></thead>
+      <tbody>
+        <tr><td>led ekran</td><td class="num">6,8</td><td class="num">4–5</td><td class="num">1–3</td><td>Marka gücü ve gösterim var; kanibalizasyon çözülürse yükselir</td></tr>
+        <tr><td>led ekran panel</td><td class="num">4,5</td><td class="num">3–4</td><td class="num">1–3</td><td>Sıra hazır, asıl kazanç CTR'de (%2,4 → %5+)</td></tr>
+        <tr><td>iç mekan led ekran</td><td class="num">12,3</td><td class="num">8–10</td><td class="num">3–6</td><td>Sayfa güçlü (1.981 kelime), açıklama ve özellik tablosu eksik</td></tr>
+        <tr><td>dış mekan led ekran</td><td class="num">15,0</td><td class="num">10–12</td><td class="num">4–8</td><td>LG ve Samsung kurumsal sayfaları da rakip</td></tr>
+        <tr><td>led ekran fiyatları</td><td class="num">16,0</td><td class="num">10–12</td><td class="num">5–8</td><td>Rakam tablosu eklenirse en hızlı yükselecek sayfa</td></tr>
+        <tr><td>led ekran kiralama</td><td class="num">11,1</td><td class="num">8–10</td><td class="num">5–8</td><td>Prodüksiyon firmaları güçlü, yerel sonuçlar belirleyici</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Hedefler bu tür B2B sitelerde gördüğüm tipik hızlara göre yapılmış tahminlerdir, garanti değildir. Gerçek ilerlemeyi güncel GSC verisiyle ayda bir ölçeceğiz.</p>
+</section>
+
+<!-- ============ GÖRSEL & METİN ============ -->
+<section id="gorsel">
+  <div class="head">
+    <div class="eyebrow">4 · Eleme sonrası genişleyecek</div>
+    <h2>Görsel ve metin uyumu</h2>
+    <p>Bu bölümün ayrıntılı hali, eleme bittikten sonra <b>kalan her kelime için</b> ayrı bir brif olacak: hero görseli, dosya adı, alt metin, başlık hiyerarşisi, ilk paragraf, özellik tablosu ve SSS soruları. Aşağıda şimdiden uygulanabilecek kurallar ve bir örnek brif var.</p>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>Görselin metinle konuşması</h3>
+      <ul>
+        <li>Hero görseli kelimenin tam karşılığı olmalı. "Dış mekan LED ekran" sayfasında güneş altında bir cephe veya pano görünmeli, ürün kataloğundaki modül fotoğrafı burada yetmez.</li>
+        <li>Aynı görsel birden fazla para sayfasında kullanılmamalı. Şu an <code>dis-mekan-led-ekran-1.webp</code> hub sayfasında iki kez geçiyor.</li>
+        <li>Dosya adı: <code>kelime-ozellik-sehir.webp</code>. Örnek: <code>dis-mekan-led-ekran-p6-istanbul-cephe.webp</code>.</li>
+        <li>Alt metin sahneyi anlatmalı, kelimeyi zorla tekrar etmemeli. Örnek: "Şişli'de bina cephesine kurulmuş P6 dış mekan LED ekran, gündüz görünümü".</li>
+        <li>Teknik ürün görsellerinin altına figcaption ile özellik yazılmalı (pitch, nit, IP). Hem kullanıcı hem AI motoru bu bilgiyi okur.</li>
+        <li>Para sayfası başına en fazla 8–10 görsel, hepsi WebP, ekranın altındakiler lazy-load. og:image 1200×630, sayfaya özel.</li>
+      </ul></div>
+    <div class="panel"><h3>Metnin yapısı (GEO için)</h3>
+      <ul>
+        <li>Başlık sırası: H1'de kelimenin kendisi, H2'lerde kullanıcının sorduğu sorular ("Dış mekan LED ekran için kaç nit gerekir?").</li>
+        <li>İlk paragraf 2–3 cümleyle cevap vermeli: ne olduğu, kime uygun olduğu, fiyat aralığı ve teklif yolu.</li>
+        <li>Somut değerler kullanılmalı: "5.500–7.000 nit", "IP65 ön / IP54 arka", "3840 Hz", "~450 W/m² ortalama". Değerleri sizin teknik föylerinizden alacağız.</li>
+        <li>Her sayfada bir karşılaştırma tablosu olmalı (P3 / P4 / P6 / P8; SMD / GOB / COB). AI cevaplarında en çok alıntılanan biçim tablolar.</li>
+        <li>Güven bilgileri görünür yerde olmalı: 2001'den beri faaliyet, ISO 9001/14001/45001 belgeleri, Türkiye, Almanya ve KKTC ofisleri, garanti süresi.</li>
+        <li>Tarih yazılmalı: "Son güncelleme: Kasım 2026". Güncellik GEO'da sıralama faktörü.</li>
+      </ul></div>
+  </div>
+  <div class="subhead"><span class="rgb"><i></i><i></i><i></i></span><h3>Örnek brif: "dış mekan led ekran"</h3></div>
+  <div class="example">URL        /dis-mekan-led-ekran/
+Title      Dış Mekan LED Ekran | P3–P10 Outdoor, IP65 | LEDAJANS        (57 krk)
+Açıklama   Güneş altında okunur 5.500+ nit, IP65 dış mekan LED ekran. P3–P10 modeller,
+           İstanbul kurulum, ücretsiz keşif ve m² teklifi.                (~150 krk)
+H1         Dış Mekan LED Ekran
+İlk paragraf  Dış mekan LED ekran; cephe, billboard ve otopark gibi açık alanlar için
+           IP65 korumalı, 5.500 nit üzeri parlaklıkta... [fiyat bandı] [teklif linki]
+H2         Hangi piksel aralığı? (tablo: P3/P4/P6/P8/P10 · izleme mesafesi · kullanım)
+H2         Dış mekan LED ekran fiyatları 2026 (m² bandı → fiyat sayfasına link)
+H2         Kaç nit parlaklık gerekir?    H2  İzin ve kurulum süreci (İBB)
+H2         Projelerimiz (3 kart: şehir · m² · pitch · fotoğraf)    H2  SSS (6–8 soru)
+Hero       dis-mekan-led-ekran-p6-istanbul-cephe.webp — gerçek proje, gündüz çekimi
+Alt        "İstanbul'da bina cephesine kurulu P6 dış mekan LED ekran, gündüz"
+Schema     Service + Product(AggregateOffer) + FAQPage + BreadcrumbList</div>
+  <div class="callout" style="margin-top:14px"><b>Sonraki adım</b><p>Listede kararlarınızı verin. "Belki" dediklerinizi birlikte konuşabiliriz. Ardından kalan her kelime için bu örnekteki gibi bir brif, ilgili Elementor bölümü için metin taslağı ve görsel listesi hazırlayacağım.</p></div>
+</section>
+
+<!-- ============ NOTLAR ============ -->
+<section id="notlar">
+  <div class="head">
+    <div class="eyebrow">5 · Şeffaflık</div>
+    <h2>Veri notları ve sınırlar</h2>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>Elimizde olan</h3><ul>
+      <li>24.11.2026 tarihli canlı tarama: 177 Türkçe URL (sitemap kaynaklı, /en/ ve /de/ hariç).</li>
+      <li>Depodaki GSC dökümü: 02.03–01.06.2026, 1.000 sorgu, toplam 67.735 gösterim ve 3.589 tık.</li>
+      <li>6 rakibin anasayfası doğrudan tarandı (videowall.com.tr, ledas.com.tr, siriusled.com.tr ve theboxtec.com bağlantıya yanıt vermedi).</li>
+    </ul></div>
+    <div class="panel"><h3>Eksik olan, sizden istenebilecek</h3><ul>
+      <li><b>Güncel GSC dökümü</b> (son 3 ay, Eylül–Kasım). Elimdeki veri 6 aylık. Sorgular ve Sayfalar CSV'si yeterli.</li>
+      <li>Gerçek arama hacmi: Google Ads Anahtar Kelime Planlayıcı erişimi. Şu an gösterim sayısını hacim yerine kullanıyorum.</li>
+      <li>Google arama sonuçları bot doğrulaması yüzünden buradan otomatik çekilemedi. Rakip sıraları için manuel kontrol veya bir SERP aracı gerekiyor.</li>
+      <li>Fiyat bantları, garanti süresi ve proje sayıları gibi rakamlar sizden gelmeli.</li>
+    </ul></div>
+  </div>
+  <footer>
+    <span>Hazırlanma: 24 Kasım 2026 · Kaynak dosyalar: <code>SEO-GEO-STRATEJI/</code> klasörü (depo)</span>
+    <span>Kararlar claude.ai sayfasında otomatik kaydedilir. Yerel dosya olarak açıldığında kararlar sadece bu tarayıcıda tutulur; "Kararları kopyala" ile metin olarak alıp sohbete yapıştırabilirsiniz.</span>
+  </footer>
+</section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script id="kwdata" type="application/json">[{"id": "k01", "kume": "Çekirdek", "kw": "led ekran", "vars": ["led ekranlar", "ekran led", "let ekran", "ledekran", "led ekrani"], "niyet": "ticari", "hedef": "/ (anasayfa) + /led-ekran/", "oneri": "P0", "durum": "Anasayfa 6,8 ortalama sırada. /led-ekran/ hub'ı da aynı kelimeyi hedefliyor: iki sayfa birbirine rakip.", "neden": "Sitenin en büyük gösterim kaynağı. Ortalama 6,8'den ilk 3'e çıkmak tıklamayı kabaca 3 katına çıkarır.", "geo": "Türkiye'de LED ekran nereden alınır?", "imp": 8074, "clk": 227, "pos": 7.1}, {"id": "k02", "kume": "Çekirdek", "kw": "led ekran fiyatları", "vars": ["led ekran fiyatlari", "led ekran fiyat"], "niyet": "ticari", "hedef": "/led-ekran-fiyatlari-2026/", "oneri": "P0", "durum": "Ortalama 16. sırada. Fiyat sayfasında hiç TL veya $ rakamı yok, başlıkta da 'Mayıs Güncel' yazıyor.", "neden": "Satın almaya en yakın arama. AI motorları bu soruya rakam veren kaynağı alıntılıyor.", "geo": "2026'da LED ekran metrekare fiyatı ne kadar?", "imp": 438, "clk": 10, "pos": 16.0}, {"id": "k03", "kume": "Çekirdek", "kw": "led ekran m2 fiyatı", "vars": ["led ekran metrekare fiyatı", "led ekran m2 fiyatları", "led ekran metrekare fiyatları"], "niyet": "ticari", "hedef": "/led-ekran-fiyatlari-2026/", "oneri": "P0", "durum": "GSC'de sadece 7 gösterim, 41. sıra. Rakipler bu kelimeyi hedefliyor; bizde karşılığı olan bir bölüm yok.", "neden": "Fiyat aramalarının en somut hali. Ayrı sayfa açmaya gerek yok, fiyat sayfasında ayrı bir bölüm yeter.", "geo": "1 m² P2.5 iç mekan LED ekran kaç TL?", "imp": 7, "clk": 0, "pos": 41.1}, {"id": "k04", "kume": "Çekirdek", "kw": "led ekran firmaları", "vars": ["led ekran firması", "led ekran şirketleri"], "niyet": "ticari", "hedef": "/ (anasayfa)", "oneri": "P1", "durum": "Ortalama 3,5. sırada ve iyi durumda.", "neden": "B2B karar vericinin listeleme sorgusu. AI motorlarının 'firma önerisi' cevaplarında yer almak için de önemli.", "geo": "Türkiye'nin en iyi LED ekran firmaları hangileri?", "imp": 71, "clk": 5, "pos": 3.5}, {"id": "k05", "kume": "Çekirdek", "kw": "led ekran üreticisi", "vars": ["led ekran üreticileri", "türkiye led üreticileri", "led ekran üretici"], "niyet": "ticari", "hedef": "/hakkimizda/ + /", "oneri": "P1", "durum": "Gösterim az. Ledcraft ve Linsn ana sayfa başlıklarında 'üretici' iddiasını kullanıyor.", "neden": "Sadece gerçekten üretim ya da montaj yapıyorsanız seçin; iddia, kanıtla birlikte güç kazanır.", "geo": "Türkiye'de LED ekran üreten firmalar", "imp": 5, "clk": 0, "pos": 2.6}, {"id": "k06", "kume": "Çekirdek", "kw": "led ekran sistemleri", "vars": [], "niyet": "ticari", "hedef": "/led-ekran/", "oneri": "P1", "durum": "Ortalama 9,1. sırada, 169 gösterim.", "neden": "Kurumsal ve proje bazlı bir dil. Hub sayfasının ikincil kelimesi olarak uygun.", "geo": null, "imp": 169, "clk": 3, "pos": 9.1}, {"id": "k07", "kume": "Çekirdek", "kw": "led ekran satış", "vars": ["led ekran satışı"], "niyet": "ticari", "hedef": "/", "oneri": "P1", "durum": "Ortalama 11,7. sırada.", "neden": "Anasayfa H1'inde zaten geçiyor. Desteklemesi kolay.", "geo": null, "imp": 52, "clk": 1, "pos": 11.7}, {"id": "k08", "kume": "Mekan", "kw": "iç mekan led ekran", "vars": ["led ekran iç mekan", "ic mekan led ekran", "iç məkan led ekran", "led ekran indoor"], "niyet": "ticari", "hedef": "/ic-mekan-led-ekran/", "oneri": "P0", "durum": "Ortalama 13,2. sırada, 896+ gösterim. Meta açıklama sitenin varsayılan metni.", "neden": "Hacmi yüksek, ticari niyeti net. İlk 5'e girmesi gerçekçi.", "geo": "İç mekan LED ekran için hangi piksel aralığı seçilmeli?", "imp": 1188, "clk": 29, "pos": 12.3}, {"id": "k09", "kume": "Mekan", "kw": "iç mekan led ekran fiyatları", "vars": ["indoor led ekran fiyatları", "iç mekan led ekran fiyatı"], "niyet": "ticari", "hedef": "/ic-mekan-led-ekran-fiyatlari-2026/", "oneri": "P0", "durum": "Blog yazısı ortalama 15,1. sırada, CTR %5,7 ile iyi. 'indoor' varyasyonu 30. sırada.", "neden": "Rakam verilirse hızlı yükselir.", "geo": "İç mekan LED ekran fiyatları 2026", "imp": 475, "clk": 18, "pos": 20.9}, {"id": "k10", "kume": "Mekan", "kw": "indoor led ekran", "vars": ["indoor led screen"], "niyet": "ticari", "hedef": "/ic-mekan-led-ekran/", "oneri": "P1", "durum": "Ortalama 15,8. sırada.", "neden": "Aynı sayfanın İngilizce karşılığı. H2 ve alt metinlerde geçmesi yeterli.", "geo": null, "imp": 213, "clk": 8, "pos": 14.4}, {"id": "k11", "kume": "Mekan", "kw": "dış mekan led ekran", "vars": ["led ekran dış mekan", "dış mekan ekran", "dis mekan led ekran"], "niyet": "ticari", "hedef": "/dis-mekan-led-ekran/", "oneri": "P0", "durum": "Ortalama 15,3. sırada, 860+ gösterim. Meta açıklama varsayılan metin.", "neden": "En değerli 2. ticari küme; proje başına bütçe en yüksek segment.", "geo": "Dış mekan LED ekran için kaç nit parlaklık gerekir?", "imp": 953, "clk": 17, "pos": 15.0}, {"id": "k12", "kume": "Mekan", "kw": "dış mekan led ekran fiyatları", "vars": ["dış mekan led ekran fiyatı"], "niyet": "ticari", "hedef": "/dis-mekan-led-ekran-fiyatlari-2026/", "oneri": "P0", "durum": "Ortalama 20,8. sırada. Sayfa 386 kelime, içinde rakam yok, FAQ schema yok.", "neden": "İçerik derinleşirse ilk 10 gerçekçi.", "geo": "Dış mekan LED ekran m² fiyatı", "imp": 167, "clk": 5, "pos": 20.8}, {"id": "k13", "kume": "Mekan", "kw": "outdoor led ekran", "vars": ["led ekran outdoor", "outdoor led screen"], "niyet": "ticari", "hedef": "/dis-mekan-led-ekran/", "oneri": "P1", "durum": "Ortalama 17,8. sırada, 378 gösterim.", "neden": "Ayrı sayfa açılmaz, ana dış mekan sayfasıyla birlikte yükselir.", "geo": null, "imp": 438, "clk": 7, "pos": 16.3}, {"id": "k14", "kume": "Mekan", "kw": "açık hava led ekran", "vars": ["açık hava reklam ekranı"], "niyet": "ticari", "hedef": "/dis-mekan-led-ekran/", "oneri": "P2", "durum": "GSC'de veri yok.", "neden": "Reklamcı ve belediye dilinde geçiyor. Sayfaya eş anlamlı olarak eklemek yeterli.", "geo": null, "imp": 0, "clk": 0, "pos": null}, {"id": "k15", "kume": "Mekan", "kw": "cephe led ekran", "vars": ["dış cephe led ekran", "bina cephe led ekran"], "niyet": "ticari", "hedef": "/cephe-led-ekran/", "oneri": "P1", "durum": "'dış cephe' 34,5. sırada. Sayfa 238 kelime, çok zayıf.", "neden": "Proje bütçesi yüksek bir niş, rakip az. Sayfa genişletilirse hızlı sonuç alınır.", "geo": "Bina cephesine LED ekran için izin gerekir mi?", "imp": 44, "clk": 2, "pos": 34.5}, {"id": "k16", "kume": "Kiralama", "kw": "led ekran kiralama", "vars": ["kiralık led ekran", "led ekran kiralık"], "niyet": "ticari", "hedef": "/rental-ekran/", "oneri": "P0", "durum": "Ortalama 11,1. sırada. URL ve H2 'rental' diyor, kullanıcı 'kiralama' arıyor. Meta açıklama varsayılan metin.", "neden": "Etkinlik sektöründe sürekli talep var. Ancak Sahneva gibi prodüksiyon firmaları güçlü.", "geo": "Etkinlik için LED ekran kiralama günlük ne kadar?", "imp": 188, "clk": 2, "pos": 11.1}, {"id": "k17", "kume": "Kiralama", "kw": "led ekran kiralama fiyatları", "vars": ["rental led ekran kiralama fiyatları", "led ekran kiralama fiyatı"], "niyet": "ticari", "hedef": "/rental-led-ekran-kiralama-fiyatlari-2026/", "oneri": "P1", "durum": "Blog yazısı 402 kelime, içinde rakam yok.", "neden": "Günlük ve m² bazlı bir tablo verilirse alıntılanma şansı yüksek.", "geo": "LED ekran kiralama günlük fiyatı", "imp": 0, "clk": 0, "pos": null}, {"id": "k18", "kume": "Kiralama", "kw": "rental led ekran", "vars": ["rental led", "rental led panel", "rental kasa led ekran"], "niyet": "ticari", "hedef": "/rental-ekran/", "oneri": "P1", "durum": "Ortalama 13,6. sırada, CTR %5,6.", "neden": "Sektör içi (B2B) terim; kurumsal alıcılar ve organizatörler kullanıyor.", "geo": null, "imp": 193, "clk": 8, "pos": 13.0}, {"id": "k19", "kume": "Kiralama", "kw": "istanbul led ekran kiralama", "vars": [], "niyet": "lokal", "hedef": "/istanbul-led-ekran/ veya /rental-ekran/", "oneri": "P1", "durum": "Ortalama 28,7. sırada.", "neden": "Lokal ve ticari bir arama. İstanbul sayfasında ayrı bir bölüm açılırsa yükselir.", "geo": null, "imp": 28, "clk": 0, "pos": 28.7}, {"id": "k20", "kume": "Kiralama", "kw": "sahne led ekran", "vars": ["konser led ekran", "sahne led ekran kiralama"], "niyet": "ticari", "hedef": "/rental-ekran/", "oneri": "P2", "durum": "Veri yok.", "neden": "Prodüksiyon firmalarının alanı. Sadece hizmeti veriyorsanız seçin.", "geo": null, "imp": 1, "clk": 0, "pos": 2.0}, {"id": "k21", "kume": "Panel/Modül", "kw": "led ekran panel", "vars": ["led panel ekran", "led ekran paneli", "panel led ekran", "led display panel", "led ekran panelleri"], "niyet": "ticari", "hedef": "/ic-mekan-rgb-panel/ + /dis-mekan-rgb-panel/", "oneri": "P0", "durum": "Toplam 2.470 gösterim, 3,7–5. sıra ama CTR sadece %2,4. Başlık ve açıklama tıklatmıyor.", "neden": "Sıralama zaten iyi; title ve açıklamayı düzeltmek tek başına tıklamayı ikiye katlayabilir.", "geo": null, "imp": 2470, "clk": 59, "pos": 4.5}, {"id": "k22", "kume": "Panel/Modül", "kw": "rgb led panel", "vars": ["rgb panel", "rgb panel led", "led rgb panel", "rgb led", "rgb ekran"], "niyet": "ticari", "hedef": "/ic-mekan-rgb-panel/", "oneri": "P1", "durum": "'rgb panel' 15,6. sırada, 250 gösterim, 1 tık.", "neden": "Bayi ve tabelacı kitlesi. Tekrar eden B2B sipariş getirir.", "geo": null, "imp": 644, "clk": 3, "pos": 13.0}, {"id": "k23", "kume": "Panel/Modül", "kw": "p10 led panel", "vars": ["p10 panel", "p10 ekran", "p10", "led p10", "p10 rgb panel", "rgb p10 panel", "led p10 panel"], "niyet": "ticari", "hedef": "/p10-outdoor-rgb-panel/ + /p10-panel/", "oneri": "P1", "durum": "Toplam 500+ gösterim, 11–26. sıra. Birden çok P10 sayfası var (p10-panel, p10-kirmizi-panel, p10-kirmizi-panel-2…): kanibalizasyon riski.", "neden": "Hacim iyi; tek bir güçlü P10 sayfasında toplanmalı.", "geo": null, "imp": 507, "clk": 7, "pos": 14.3}, {"id": "k24", "kume": "Panel/Modül", "kw": "p5 led panel", "vars": ["p5 panel", "p5 rgb led panel", "p5 led ekran"], "niyet": "ticari", "hedef": "/p5-outdoor-rgb-panel/", "oneri": "P1", "durum": "Ortalama 5–8. sırada, 320 gösterim.", "neden": "Sıralama iyi, sayfa güçlendirilirse ilk 3 mümkün.", "geo": null, "imp": 321, "clk": 10, "pos": 7.5}, {"id": "k25", "kume": "Panel/Modül", "kw": "p2.5 / p3 led ekran", "vars": ["p2.5 led panel", "p3 panel", "p2.5 led ekran", "p3 led ekran", "p2 led ekran"], "niyet": "ticari", "hedef": "/p2-vs-p3-led-ekran/ + ürün sayfaları", "oneri": "P1", "durum": "Az gösterim ama niyet çok net.", "neden": "Piksel aralığını bilen alıcı, satın almaya yakındır.", "geo": "P2.5 mi P3 mü LED ekran almalıyım?", "imp": 86, "clk": 3, "pos": 7.7}, {"id": "k26", "kume": "Teknoloji", "kw": "cob led ekran", "vars": ["cob led", "cob", "cob ekran"], "niyet": "ticari", "hedef": "/cob-ekran/", "oneri": "P1", "durum": "Gösterim düşük. H1 'COB - Smart Screen' olduğu için anahtar kelime net değil.", "neden": "Yükselen teknoloji, rakip az. Erken girene avantaj sağlar.", "geo": "COB LED ekran ile SMD arasındaki fark nedir?", "imp": 61, "clk": 0, "pos": 8.6}, {"id": "k27", "kume": "Teknoloji", "kw": "gob led ekran", "vars": ["p1.86 gob", "p2.5 gob", "gob led"], "niyet": "ticari", "hedef": "/gob-led-ekran/", "oneri": "P2", "durum": "Sayfa 228 kelime, başlık İngilizce ('GOB LED Screen').", "neden": "Niş bir arama. COB kümesiyle birlikte ele alınabilir.", "geo": null, "imp": 15, "clk": 0, "pos": 5.7}, {"id": "k28", "kume": "Teknoloji", "kw": "şeffaf led ekran", "vars": ["şeffaf led", "transparent led ekran", "cam led ekran"], "niyet": "ticari", "hedef": "YENİ SAYFA", "oneri": "P1", "durum": "Bu kelime için sitede sayfa yok.", "neden": "Vitrin ve AVM'de hızla büyüyen bir ürün. Sadece bu ürünü tedarik edebiliyorsanız seçin.", "geo": "Şeffaf LED ekran nedir, fiyatı ne kadar?", "imp": 8, "clk": 0, "pos": 8.4}, {"id": "k29", "kume": "Teknoloji", "kw": "led video wall", "vars": ["video wall led", "videowall led ekran"], "niyet": "ticari", "hedef": "blog: LED Video Wall Nedir? + /toplanti-odasi-led-ekran/", "oneri": "P1", "durum": "Blog yazısı var. Rakip videowall.com.tr bu kelimeyi alan adında taşıyor.", "neden": "Kurumsal toplantı ve lobi alıcısı. LCD videowall'dan LED'e geçiş sorusu sık soruluyor.", "geo": "LCD video wall mı LED ekran mı?", "imp": 0, "clk": 0, "pos": null}, {"id": "k30", "kume": "Uygulama", "kw": "mağaza / vitrin led ekran", "vars": ["mağaza led ekran", "vitrin led ekran", "mağaza içi led ekran", "mağaza led ekran fiyatları", "led ekran mağaza", "vitrin ekranı"], "niyet": "ticari", "hedef": "/magaza-vitrin-led-ekran/", "oneri": "P1", "durum": "Ortalama 5–9. sırada ama sayfa sadece 237 kelime.", "neden": "Perakende zincirleri tekrar eden sipariş verir. Sayfa genişletilmeli.", "geo": "Mağaza vitrini için hangi LED ekran?", "imp": 279, "clk": 10, "pos": 7.7}, {"id": "k31", "kume": "Uygulama", "kw": "dikey / totem led ekran", "vars": ["dikey led ekran", "totem led ekran", "poster led ekran", "led totem"], "niyet": "ticari", "hedef": "YENİ SAYFA", "oneri": "P1", "durum": "'dikey led ekran' 107 gösterim, 9,5. sıra, 0 tık. Bu kelime için sitede sayfa yok.", "neden": "Hazır ürün (poster LED) olduğu için fiyatı net verilebilir, satışa dönüşmesi kolay.", "geo": "Totem LED ekran fiyatı", "imp": 107, "clk": 0, "pos": 9.5}, {"id": "k32", "kume": "Uygulama", "kw": "led reklam ekranı", "vars": ["reklam led ekran", "led ekran reklam", "dijital led ekran", "led panel reklam", "reklam led panel"], "niyet": "ticari", "hedef": "/billboard-led-ekran/ veya /dis-mekan-led-ekran/", "oneri": "P1", "durum": "375 gösterim, 8–9. sıra, neredeyse 0 tık.", "neden": "Reklamcı ve işletme sahibi kitlesi. Hangi sayfanın hedeflediği belirsiz.", "geo": null, "imp": 375, "clk": 2, "pos": 9.2}, {"id": "k33", "kume": "Uygulama", "kw": "billboard led ekran", "vars": ["dijital billboard"], "niyet": "ticari", "hedef": "/billboard-led-ekran/", "oneri": "P2", "durum": "Sayfada H1 yok, meta açıklama varsayılan metin.", "neden": "Hacmi düşük ama proje bütçesi yüksek.", "geo": null, "imp": 0, "clk": 0, "pos": null}, {"id": "k34", "kume": "Uygulama", "kw": "stadyum led ekran", "vars": ["skorbord led ekran", "çevre bant led ekran"], "niyet": "ticari", "hedef": "sadece EN/DE sayfası var", "oneri": "P2", "durum": "Türkçe sayfası yok, İngilizce ve Almancası var.", "neden": "Kulüp ve belediye ihaleleri için. Seyrek ama büyük işler.", "geo": null, "imp": 14, "clk": 0, "pos": 15.1}, {"id": "k35", "kume": "Uygulama", "kw": "toplantı odası led ekran", "vars": ["toplantı salonu led ekran"], "niyet": "ticari", "hedef": "/toplanti-odasi-led-ekran/", "oneri": "P2", "durum": "Sayfada H1 yok.", "neden": "Kurumsal B2B; LED video wall kümesiyle birleşebilir.", "geo": null, "imp": 0, "clk": 0, "pos": null}, {"id": "k36", "kume": "Uygulama", "kw": "led tabela / dijital tabela", "vars": ["dijital tabela", "led tabela", "dış mekan led tabela", "led tabela istanbul"], "niyet": "ticari", "hedef": "/led-tabela/", "oneri": "P2", "durum": "Ortalama 9–20. sırada. Sayfada H1 yok.", "neden": "Hacim orta. Esnaf kitlesi, bütçeler küçük.", "geo": null, "imp": 155, "clk": 1, "pos": 11.7}, {"id": "k37", "kume": "Uygulama", "kw": "kayan yazı led tabela", "vars": ["kayan yazı", "kayan yazı led", "kayan yazılı tabela"], "niyet": "ticari", "hedef": "/kayan-yazi/", "oneri": "P2", "durum": "138 gösterim, 24. sıra. Sayfada 2 H1 var.", "neden": "B2C ağırlıklı, düşük bütçeli. Panel satışını destekler.", "geo": null, "imp": 143, "clk": 1, "pos": 23.6}, {"id": "k38", "kume": "Lokal", "kw": "istanbul led ekran", "vars": ["led ekran istanbul"], "niyet": "lokal", "hedef": "/istanbul-led-ekran/", "oneri": "P1", "durum": "Ortalama 4–4,6. sırada, CTR %7.", "neden": "Merkezin bulunduğu şehir. Google Business Profile ile birlikte harita sonuçlarında öne çıkabilir.", "geo": "İstanbul'da LED ekran firması", "imp": 124, "clk": 9, "pos": 4.3}, {"id": "k39", "kume": "Lokal", "kw": "ankara / izmir led ekran", "vars": ["led ekran ankara", "ankara led ekran", "izmir led ekran", "ankara led ekran kiralama"], "niyet": "lokal", "hedef": "YENİ TR SAYFA (EN/DE'de var)", "oneri": "P1", "durum": "Bu şehirlerin İngilizce ve Almanca sayfası var, Türkçesi yok.", "neden": "Hazır içerik var, sadece Türkçeleştirilip yerelleştirilmesi gerekiyor. Ankara'da Reta LED güçlü.", "geo": null, "imp": 38, "clk": 1, "pos": 23.8}, {"id": "k40", "kume": "Servis", "kw": "led ekran tamiri / servis", "vars": ["led ekran tamiri", "led ekran servisi", "led panel tamiri", "panel tamiri", "ekran modül onarımı nedir", "ekran paneli tamiri"], "niyet": "servis", "hedef": "YENİ SAYFA: /led-ekran-servis-tamir/", "oneri": "P1", "durum": "435 gösterim, 0 tık. Arama sonuçlarını TV tamircileri dolduruyor.", "neden": "Kurulu ekran sahipleri bakım sözleşmesi müşterisidir. Sayfa 'profesyonel LED ekran servisi' diye konumlanmalı.", "geo": "LED ekranda modül arızası nasıl giderilir?", "imp": 435, "clk": 0, "pos": 13.3}, {"id": "k41", "kume": "Servis", "kw": "led ekran kurulumu", "vars": ["led ekran kurulum", "led ekran montajı"], "niyet": "servis", "hedef": "/led-ekran-kurulum/", "oneri": "P1", "durum": "6. sırada. Sayfada H1 yok.", "neden": "Satın alma sürecinin parçası; 'anahtar teslim' algısını güçlendirir.", "geo": "LED ekran kurulumu kaç gün sürer?", "imp": 47, "clk": 4, "pos": 6.0}, {"id": "k42", "kume": "Servis", "kw": "led ekran bakım", "vars": ["led ekran bakımı"], "niyet": "servis", "hedef": "/led-ekran-bakim/", "oneri": "P2", "durum": "Sayfada H1 yok.", "neden": "Servis kümesine bağlanabilir.", "geo": null, "imp": 0, "clk": 0, "pos": null}, {"id": "k43", "kume": "Kontrol/Yazılım", "kw": "led ekran kontrol kartı", "vars": ["led ekran kontrol programı", "led kontrol kartı", "kontrol kartı"], "niyet": "ticari", "hedef": "/kontrol-kartlari/", "oneri": "P1", "durum": "Ortalama 4,8. sırada.", "neden": "Bayi ve tamirci kitlesi. Yedek parça satışı tekrar eden gelir getirir.", "geo": null, "imp": 74, "clk": 3, "pos": 11.6}, {"id": "k44", "kume": "Kontrol/Yazılım", "kw": "novastar / colorlight / huidu", "vars": ["colorlight", "huidu", "novastar dh7508", "dh7508", "colorlight a35", "colorlight a60", "dh7516", "novastar dh7508-s"], "niyet": "navigasyon", "hedef": "/colorlight/, /huidu/, ürün sayfaları", "oneri": "P2", "durum": "Ortalama 2–8. sırada, iyi durumda.", "neden": "Marka ve model aramaları. Mevcut durumu korumak yeterli.", "geo": null, "imp": 731, "clk": 33, "pos": 5.6}, {"id": "k45", "kume": "Kontrol/Yazılım", "kw": "hd player indir", "vars": ["hd player", "hd player led programı", "huidu hd player", "hdplayer indir", "hd player download", "hdplayer", "hd2020", "ledart indir"], "niyet": "navigasyon", "hedef": "/program-indir/", "oneri": "P2", "durum": "Program kümesi toplam 4.000+ gösterim alıyor. /program-indir/ sitenin 2. en çok tıklanan sayfası.", "neden": "Trafik getirir ama satışa nadiren döner. Korunmalı, yeni yatırım gerekmez. Sayfadan satış sayfalarına link verilmeli.", "geo": null, "imp": 1706, "clk": 79, "pos": 7.5}, {"id": "k46", "kume": "Bilgi (GEO)", "kw": "led ekran nedir", "vars": ["led nedir", "led ekran ne demek"], "niyet": "bilgi", "hedef": "/led-ekran-nedir/", "oneri": "P1", "durum": "2.750 kelimelik rehber var ama bu kelimede 33. sırada. Meta açıklama varsayılan metin, sayfada iki ayrı başlık seviyesi karışık.", "neden": "AI motorlarının tanım cevaplarında kaynak gösterilmek için temel sayfa.", "geo": "LED ekran nedir, nasıl çalışır?", "imp": 4, "clk": 0, "pos": 33.2}, {"id": "k47", "kume": "Bilgi (GEO)", "kw": "piksel aralığı (pitch) nedir", "vars": ["pitch nedir", "piksel aralığı nedir", "pixel pitch nedir", "led ekran pitch"], "niyet": "bilgi", "hedef": "/pitch-led-nedir/ + /pitch-secim-rehberi/", "oneri": "P1", "durum": "İki ayrı sayfa var; biri 223 kelime. H1 yok.", "neden": "Hesaplama aracıyla birleşirse güçlü bir kaynak olur.", "geo": "Piksel aralığı ile izleme mesafesi nasıl hesaplanır?", "imp": 0, "clk": 0, "pos": null}, {"id": "k48", "kume": "Bilgi (GEO)", "kw": "nit / parlaklık nedir", "vars": ["nit değeri nedir", "nits", "nits ne demek", "nit nedir"], "niyet": "bilgi", "hedef": "/nits-parlaklik-nedir/", "oneri": "P2", "durum": "Ortalama 7–11. sırada, 160 gösterim.", "neden": "Bilgi araması; dış mekan sayfasına destek verir.", "geo": null, "imp": 172, "clk": 2, "pos": 8.4}, {"id": "k49", "kume": "Bilgi (GEO)", "kw": "led ekran vs lcd", "vars": ["led ekran lcd farkı", "led ve lcd farkı", "led mi lcd mi"], "niyet": "bilgi", "hedef": "/led-ekran-lcd-farki/", "oneri": "P1", "durum": "Sayfada H1 yok.", "neden": "Karşılaştırma soruları AI cevaplarında en çok alıntılanan içerik tipi.", "geo": "LED ekran ile LCD video wall arasındaki fark", "imp": 0, "clk": 0, "pos": null}, {"id": "k50", "kume": "Bilgi (GEO)", "kw": "led ekran elektrik tüketimi", "vars": ["led ekran kaç watt"], "niyet": "bilgi", "hedef": "YENİ İÇERİK", "oneri": "P1", "durum": "Bu konuda sitede içerik yok.", "neden": "İşletme maliyetini soran alıcı aşamasında. Somut kW/m² verileri AI motorlarında alıntılanır.", "geo": "1 m² LED ekran ne kadar elektrik harcar?", "imp": 0, "clk": 0, "pos": null}, {"id": "k51", "kume": "Bilgi (GEO)", "kw": "led ekran hesaplama", "vars": ["led hesapla.com", "ledhesapla", "led ekran boyut hesaplama"], "niyet": "bilgi", "hedef": "YENİ ARAÇ: /led-ekran-hesaplama/", "oneri": "P1", "durum": "'led hesapla' türü sorgular 87 gösterim alıyor. Bu kelime için sitede araç yok.", "neden": "Ölçü, çözünürlük, modül sayısı ve güç hesaplayan bir araç; doğal olarak link ve tekrar ziyaret getirir.", "geo": "3x2 metre P3 LED ekranın çözünürlüğü kaç?", "imp": 87, "clk": 2, "pos": 4.5}, {"id": "k52", "kume": "Bilgi (GEO)", "kw": "led ekran ömrü", "vars": ["led ekran kaç yıl dayanır"], "niyet": "bilgi", "hedef": "/led-ekran-omru/", "oneri": "P2", "durum": "Sayfa 281 kelime.", "neden": "Yatırım sorusu; fiyat sayfasına destek verir.", "geo": "LED ekran ömrü kaç saat?", "imp": 0, "clk": 0, "pos": null}, {"id": "x01", "kume": "Önerilmez", "kw": "led tv ekran tamiri", "vars": ["led tv panel tamiri"], "niyet": "servis", "hedef": "—", "oneri": "X", "durum": "50+ sırada.", "neden": "Ev TV tamiri, B2B'ye uymuyor; bu trafik satışa dönmez.", "geo": null, "imp": 71, "clk": 0, "pos": 52.0}, {"id": "x02", "kume": "Önerilmez", "kw": "60x60 led panel tamiri", "vars": [], "niyet": "servis", "hedef": "—", "oneri": "X", "durum": "168 gösterim, 1 tık.", "neden": "Bu bir aydınlatma (tavan) paneli araması, LED ekranla ilgisi yok.", "geo": null, "imp": 168, "clk": 1, "pos": 9.0}, {"id": "x03", "kume": "Önerilmez", "kw": "pcb nedir", "vars": ["pcb açılımı"], "niyet": "bilgi", "hedef": "/pcb-nedir/", "oneri": "X", "durum": "157 gösterim, 0 tık.", "neden": "Konu dışı genel elektronik araması. Sayfa kalabilir ama yatırım yapılmamalı.", "geo": null, "imp": 157, "clk": 0, "pos": 17.8}, {"id": "x04", "kume": "Önerilmez", "kw": "dış mekan led tv", "vars": ["outdoor led tv"], "niyet": "ticari", "hedef": "—", "oneri": "X", "durum": "105 gösterim.", "neden": "Televizyon ürünü arayan B2C kullanıcı.", "geo": null, "imp": 105, "clk": 1, "pos": 13.8}, {"id": "x05", "kume": "Önerilmez", "kw": "ledeksan", "vars": ["ledeksan perpa"], "niyet": "navigasyon", "hedef": "—", "oneri": "X", "durum": "570 gösterim, 1 tık.", "neden": "Başka bir firmanın markası; o firmayı arayan kullanıcı bizi tıklamaz.", "geo": null, "imp": 570, "clk": 1, "pos": 2.1}]</script>
+<script>
+(function(){
+  "use strict";
+  const KW = JSON.parse(document.getElementById("kwdata").textContent);
+  const ONERI = {P0:"Öncelikli",P1:"Önerilen",P2:"Opsiyonel",X:"Önerilmez"};
+  const NIYET = {ticari:"Ticari",bilgi:"Bilgi",servis:"Servis",lokal:"Lokal",navigasyon:"Navigasyon"};
+  const LSKEY = "ledajans-kelime-kararlari-v1";
+  let state = {};               // id -> {karar, not}
+  let db = null, col = null, mode = "local";
+  const fmt = n => n.toLocaleString("tr-TR");
+  const fmtPos = p => p == null ? "—" : p.toLocaleString("tr-TR",{minimumFractionDigits:1,maximumFractionDigits:1});
+  const el = (tag, attrs, ...kids) => { const e = document.createElement(tag);
+    if (attrs) for (const [k,v] of Object.entries(attrs)) { if (k==="class") e.className=v; else if (k==="text") e.textContent=v; else e.setAttribute(k,v); }
+    for (const k of kids) if (k!=null) e.append(k); return e; };
+
+  function loadLocal(){ try { const s = localStorage.getItem(LSKEY); if (s) state = JSON.parse(s) || {}; } catch(e){} }
+  function saveLocal(){ try { localStorage.setItem(LSKEY, JSON.stringify(state)); } catch(e){} }
+  function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,2200); }
+  function setSync(msg){ document.getElementById("sync").textContent = msg; }
+
+  async function persist(id){
+    const v = state[id] || {};
+    saveLocal();
+    if (mode === "db" && col){
+      try {
+        if (!v.karar && !v.not) await col.doc(id).delete();
+        else await col.doc(id).set({karar: v.karar || null, not: v.not || "", kelime: (KW.find(k=>k.id===id)||{}).kw || id, guncelleme: new Date().toISOString()});
+        setSync("Kaydedildi · claude.ai");
+      } catch(e){
+        if (e && e.code === "invalid_argument") { setSync("Bu görünümde sadece okuma izni var"); }
+        else setSync("Kaydedilemedi, tekrar deneyin");
+      }
+    }
+  }
+
+  // ---- render ----
+  const filt = {oneri:"all", karar:"all", q:""};
+  function rowFor(k){
+    const s = state[k.id] || {};
+    const row = el("article",{class:"kw","data-k":s.karar||"","data-id":k.id});
+    const name = el("div",{class:"name"},
+      el("div",{class:"badges"}, el("strong",{text:k.kw}), el("span",{class:"pill "+k.oneri,text:ONERI[k.oneri]}), el("span",{class:"pill",text:NIYET[k.niyet]||k.niyet})),
+      k.vars.length ? el("div",{class:"vars",text:"Varyasyonlar: "+k.vars.slice(0,6).join(", ")}) : null,
+      el("div",{class:"why",text:k.neden}));
+    const m = el("div",{class:"metrics"},
+      el("div",{class:k.imp?"":"na"}, el("b",{text:k.imp?fmt(k.imp):"—"}), "gösterim"),
+      el("div",{class:k.imp?"":"na"}, el("b",{text:k.imp?fmt(k.clk):"—"}), "tık"),
+      el("div",{class:k.pos?"":"na"}, el("b",{text:fmtPos(k.pos)}), "ort. sıra"));
+    const isNew = /YENİ/.test(k.hedef);
+    const tg = el("div",{class:"target"}, el("div",{class:"eyebrow",text:"Hedef sayfa"}), el("div",{class:isNew?"new":"u",text:k.hedef}));
+    const d = el("div",{class:"decide",role:"group","aria-label":k.kw+" kararı"});
+    for (const [v,l] of [["tut","Tut"],["belki","Belki"],["ele","Ele"]]){
+      const b = el("button",{type:"button","data-v":v,"aria-pressed":String(s.karar===v),text:l});
+      b.addEventListener("click",()=>{ const cur=(state[k.id]||{}); const nk = cur.karar===v?null:v; state[k.id]={...cur,karar:nk}; persist(k.id); update(k.id); });
+      d.append(b);
+    }
+    const det = el("details",null, el("summary",{text:"Mevcut durum ve GEO sorusu"}),
+      el("div",{class:"detail"},
+        el("p",null, el("b",{text:"Şu an: "}), k.durum),
+        k.geo ? el("p",null, el("b",{text:"AI'ya sorulacak hali: "}), "“"+k.geo+"”") : null));
+    const noteId = "not-"+k.id;
+    const inp = el("input",{type:"text",id:noteId,placeholder:"Not (isteğe bağlı): örn. bu ürünü satmıyoruz","aria-label":k.kw+" notu"});
+    inp.value = s.not || "";
+    let t; inp.addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ state[k.id]={...(state[k.id]||{}),not:inp.value.trim()}; persist(k.id); },700); });
+    row.append(name,m,tg,d,det,el("div",{class:"note"},inp));
+    return row;
+  }
+  function visible(k){
+    const s = (state[k.id]||{}).karar || "none";
+    if (filt.oneri!=="all" && k.oneri!==filt.oneri) return false;
+    if (filt.karar!=="all" && s!==filt.karar) return false;
+    if (filt.q){ const q=filt.q.toLocaleLowerCase("tr"); if (!(k.kw+" "+k.vars.join(" ")+" "+k.kume).toLocaleLowerCase("tr").includes(q)) return false; }
+    return true;
+  }
+  function render(){
+    const list = document.getElementById("list"); list.textContent="";
+    const groups = [];
+    for (const k of KW){ let g=groups.find(x=>x.name===k.kume); if(!g){g={name:k.kume,items:[]};groups.push(g);} g.items.push(k); }
+    let shown=0;
+    for (const g of groups){
+      const vis = g.items.filter(visible); if (!vis.length) continue;
+      const tot = g.items.reduce((a,b)=>a+b.imp,0);
+      const sec = el("div",{class:"kgroup"}, el("h3",null, el("span",{class:"rgb","aria-hidden":"true"},el("i"),el("i"),el("i")), g.name, el("span",{class:"c",text:g.items.length+" kelime · "+fmt(tot)+" gösterim"})));
+      for (const k of vis){ sec.append(rowFor(k)); shown++; }
+      list.append(sec);
+    }
+    if (!shown) list.append(el("p",{style:"color:var(--muted)",text:"Bu filtreye uyan kelime yok. Filtreyi değiştirin veya aramayı temizleyin."}));
+    tally();
+  }
+  function update(id){
+    const row = document.querySelector('.kw[data-id="'+id+'"]'); const s=state[id]||{};
+    if (row){ row.dataset.k = s.karar||""; row.querySelectorAll(".decide button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===s.karar)));
+      const inp=row.querySelector(".note input"); if (inp && document.activeElement!==inp) inp.value=s.not||""; }
+    if (filt.karar!=="all") render(); else tally();
+  }
+  function tally(){
+    const c={tut:0,belki:0,ele:0}; for (const k of KW){ const v=(state[k.id]||{}).karar; if (c[v]!=null) c[v]++; }
+    const none = KW.length-c.tut-c.belki-c.ele;
+    document.getElementById("nTut").textContent=c.tut; document.getElementById("nBelki").textContent=c.belki;
+    document.getElementById("nEle").textContent=c.ele; document.getElementById("nNone").textContent=none;
+    for (const [k,id] of [["tut","bTut"],["belki","bBelki"],["ele","bEle"]]) document.getElementById(id).style.width=(c[k]/KW.length*100)+"%";
+  }
+  function bindSeg(id,key){ const g=document.getElementById(id); g.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return;
+    g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); filt[key]=b.dataset.v; render(); }); }
+  bindSeg("fOneri","oneri"); bindSeg("fKarar","karar");
+  document.getElementById("q").addEventListener("input",e=>{ filt.q=e.target.value.trim(); render(); });
+
+  document.getElementById("export").addEventListener("click",()=>{
+    const lines=["LEDAJANS kelime kararları ("+new Date().toLocaleDateString("tr-TR")+")"];
+    for (const [v,l] of [["tut","TUT"],["belki","BELKİ"],["ele","ELE"],[undefined,"KARARSIZ"]]){
+      const ks = KW.filter(k=>((state[k.id]||{}).karar||undefined)===v); if(!ks.length) continue;
+      lines.push("", l+" ("+ks.length+")");
+      for (const k of ks){ const n=(state[k.id]||{}).not; lines.push("- "+k.kw+(n?"  — not: "+n:"")); }
+    }
+    const txt=lines.join("\n"); const box=document.getElementById("exportBox"), ta=document.getElementById("exportText");
+    ta.value=txt; box.hidden=false;
+    const done=()=>toast("Kararlar panoya kopyalandı");
+    try { navigator.clipboard.writeText(txt).then(done,()=>{ ta.focus(); ta.select(); toast("Metni seçtim, kopyalayabilirsiniz"); }); }
+    catch(e){ ta.focus(); ta.select(); }
+  });
+
+  // nav highlight
+  const links=[...document.querySelectorAll("nav.sec a")];
+  const io=new IntersectionObserver(es=>{ for (const e of es) if (e.isIntersecting){ links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)); } },{rootMargin:"-40% 0px -55% 0px"});
+  document.querySelectorAll("section[id]").forEach(s=>io.observe(s));
+
+  loadLocal(); render();
+  setSync("Bu tarayıcıya kaydediliyor");
+
+  // claude.ai db (varsa)
+  function tryDb(n){
+    if (!(window.claude && typeof window.claude.use === "function")){ if (n>0) setTimeout(()=>tryDb(n-1),400); return; }
+    window.claude.use("db").then(d=>{
+      if (!d) return; db=d; col=db.collection("kararlar");
+      const timer=setTimeout(()=>setSync("Paylaşılan kayda ulaşılamıyor, yerelde tutuluyor"),10000);
+      let first=true;
+      col.onSnapshot(snap=>{
+        if (!snap.metadata.fromCache) clearTimeout(timer);
+        mode="db";
+        const remote={}; snap.docs.forEach(doc=>{ const x=doc.data()||{}; remote[doc.id]={karar:x.karar||null,not:x.not||""}; });
+        if (first && snap.empty && Object.keys(state).length && !snap.metadata.fromCache){
+          // yerelde kalan eski kararları paylaşılan kayda taşı
+          first=false; (async()=>{ for (const id of Object.keys(state)) await persist(id); })(); return;
+        }
+        first=false;
+        state=remote; saveLocal(); render();
+        setSync(snap.metadata.hasPendingWrites ? "Kaydediliyor…" : "Kaydedildi · claude.ai");
+      }, ()=>{ clearTimeout(timer); mode="local"; setSync("Paylaşılan kayıt kapalı, yerelde tutuluyor"); });
+    }).catch(()=>{});
+  }
+  tryDb(10);
+})();
+</script>
+
+</body>
+</html>
