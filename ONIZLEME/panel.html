@@ -35,8 +35,8 @@ ul.notes{padding-left:18px;display:grid;gap:6px;max-width:80ch}
 <body><div class="wrap">
 <div class="eb">ledajans.com · yerel görünüm önizlemesi</div>
 <h1>Görünüm Önizlemesi</h1>
-<div class="warn">Canlı siteye hiçbir şey yazılmadı. Sayfaların metni, title'ı, açıklaması ve SEO ayarları 24.11.2026 canlı haliyle birebir aynı; üzerine sadece görünüm katmanı (CSS ve küçük bir JS) eklendi.</div>
-<p>Her sayfayı <b>Önce</b> (canlı yedeği) ve <b>Sonra</b> (yeni görünüm) olarak açıp karşılaştırabilirsiniz. Beğenmediğiniz değişikliği söyleyin, sadece onu geri alırım.</p>
+<div class="warn">Canlı siteye hiçbir şey yazılmadı. Şu an önizlemede hiçbir değişiklik yok: bütün sayfalar 24.11.2026 canlı yedeğiyle birebir aynı.</div>
+<p>Geri alınan görünüm denemesi <code>ONIZLEME/_arsiv-gorunum/</code>, SEO önerileri <code>ONIZLEME/_arsiv-seo/</code> klasöründe saklanıyor.</p>
 
 <h2>Sayfalar</h2>
 <div class="pages" id="pages"></div>
@@ -56,8 +56,8 @@ ul.notes{padding-left:18px;display:grid;gap:6px;max-width:80ch}
   const d=await (await fetch("/_onizleme/degisiklikler.json")).json();
   const ad={"/":"Anasayfa","/ic-mekan-led-ekran/":"İç mekan LED ekran","/dis-mekan-led-ekran/":"Dış mekan LED ekran","/rental-ekran/":"LED ekran kiralama",
     "/cob-ekran/":"COB LED ekran","/ic-mekan-rgb-panel/":"İç mekan RGB panel","/dis-mekan-rgb-panel/":"Dış mekan RGB panel"};
-  document.getElementById("pages").innerHTML=Object.keys(d.sayfalar).map(p=>`<div class="pg"><div><div>${esc(ad[p]||p)}</div><b>${esc(p)}</b></div><span><a href="/_once${esc(p)}">Önce</a><a href="${esc(p)}">Sonra →</a></span></div>`).join("");
-  document.getElementById("list").innerHTML=d.degisiklikler.map(c=>`<div class="ch"><div class="hd"><h3>${esc(c.baslik)}</h3><span class="pill">${esc(c.kapsam)}</span><span class="pill g">${esc(c.tur)}</span>${c.temsili?'<span class="pill t">temsilî görsel kullanıldı</span>':''}</div>
+  document.getElementById("pages").innerHTML=Object.keys(d.sayfalar||{"/":1}).map(p=>`<div class="pg"><div><div>${esc(ad[p]||p)}</div><b>${esc(p)}</b></div><span><a href="/_once${esc(p)}">Önce</a><a href="${esc(p)}">Sonra →</a></span></div>`).join("");
+  document.getElementById("list").innerHTML=!d.degisiklikler.length?"<p>Aktif değişiklik yok.</p>":d.degisiklikler.map(c=>`<div class="ch"><div class="hd"><h3>${esc(c.baslik)}</h3><span class="pill">${esc(c.kapsam)}</span><span class="pill g">${esc(c.tur)}</span>${c.temsili?'<span class="pill t">temsilî görsel kullanıldı</span>':''}</div>
     <div class="cols"><div><span class="k">Önce</span>${esc(c.once)}</div><div><span class="k">Sonra</span>${esc(c.sonra)}</div></div></div>`).join("");
   document.getElementById("notes").innerHTML=(d.notlar||[]).map(n=>`<li>${esc(n)}</li>`).join("");
 })();
