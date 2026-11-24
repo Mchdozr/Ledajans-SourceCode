@@ -1,0 +1,36 @@
+/* =====================================================================
+   Anasayfa
+   ===================================================================== */
+
+/* --- 1. "Hemen her sektördeyiz": dev logo yerine gerçek proje kolajı ------ */
+.lj-g-kolaj{
+  display:grid; grid-template-columns:1fr 1fr; gap:12px; aspect-ratio:1/1; max-height:560px;
+}
+.lj-g-kolaj figure{ margin:0; position:relative; border-radius:18px; overflow:hidden; background:#E5E7EB; min-height:0 }
+.lj-g-kolaj figure:first-child{ border-top-left-radius:0 }
+.lj-g-kolaj img,.lj-g-kolaj video{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease }
+.lj-g-kolaj figure:hover img,.lj-g-kolaj figure:hover video{ transform:scale(1.04) }
+.lj-g-kolaj figcaption{
+  position:absolute; left:10px; bottom:10px; background:rgba(17,24,39,.78); color:#fff;
+  font:600 12px/1.2 ui-sans-serif,system-ui,sans-serif; padding:6px 9px; border-radius:8px; letter-spacing:.01em;
+}
+.ledajans-about-image-container.lj-g-kolaj-var{ border-radius:0!important; box-shadow:none!important; overflow:visible!important }
+
+/* --- 2. "Ürünlerimiz" kartları: aynı oran, aynı çerçeve ------------------ */
+.products-card-inner{ border-radius:18px!important; border:1px solid #E8ECF1!important;
+  box-shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px rgba(16,24,40,.06)!important }
+.products-card:hover .products-card-inner{ border-color:#F46F2C!important; box-shadow:0 10px 28px rgba(244,111,44,.18)!important }
+.products-card-inner>div:first-child{
+  height:auto!important; aspect-ratio:16/10; padding:0!important; background:#F3F5F8!important;
+}
+.products-card-inner>div:first-child img{ object-fit:cover!important }
+.products-card-inner>div:first-child.lj-g-urun-kesik{ padding:18px!important }
+.products-card-inner>div:first-child.lj-g-urun-kesik img{ object-fit:contain!important }
+
+/* --- 3. Üst bant (hero) alt yazısı daha okunur -------------------------- */
+[data-id="e4b8d5d"] p{ color:#F3F4F6!important; text-shadow:0 1px 12px rgba(0,0,0,.45) }
+
+/* --- 4. Proje kartları: görsel oranı sabit ------------------------------- */
+.ledajans-project-image-wrap{ aspect-ratio:4/3; overflow:hidden }
+.ledajans-project-image{ width:100%; height:100%!important; object-fit:cover!important; transition:transform .4s ease }
+.ledajans-project-card:hover .ledajans-project-image{ transform:scale(1.04) }

@@ -1,16 +1,20 @@
-# SEO önizleme (yerel, canlıya dokunmaz)
+# Yerel önizleme (canlıya dokunmaz)
 
-Depo kökünden çalıştırın:
+Depo kökünden çalıştırın (Windows'ta `python`, macOS/Linux'ta `python3`):
 
-```bash
-python3 ONIZLEME/server.py
+```
+python ONIZLEME/server.py
 ```
 
-Sonra tarayıcıda **http://localhost:8080/_onizleme/** adresini açın.
+Tarayıcıda **http://localhost:8080/_onizleme/** adresini açın.
 
-- `/<yol>` → önerilen hali, `/_once/<yol>` → 24.11.2026 canlı yedeği
-- Yönlendirmeler, robots.txt ve sitemap'ler de yerelde önerilen haliyle çalışır
-- Gerekenler: Python 3.10+, `pip install beautifulsoup4`; görseller ve CSS canlı siteden yüklendiği için internet
-- Değişiklik listesi `build_preview.py` içindeki `PAGES` tablosunda; düzenledikten sonra `python3 ONIZLEME/build_preview.py`
+## Görünüm önizlemesi (varsayılan)
+- Sayfaların metni, title'ı, açıklaması ve SEO ayarları 24.11.2026 canlı yedeğiyle birebir aynı.
+- Üzerine sadece `gorunum/` klasöründeki CSS/JS katmanı eklenir. Hangi sayfaya hangi dosyanın ekleneceği `gorunum/degisiklikler.json` içinde.
+- Dosyaları kaydedip sayfayı yenilemek yeterli; sunucuyu yeniden başlatmaya gerek yok.
+- `/<yol>` yeni görünüm, `/_once/<yol>` canlı yedeği.
 
-Hiçbir script canlı siteye yazmaz. Canlıya alma ayrı bir adım olacak ve onayınızla yapılacak.
+## SEO önizlemesi (arşiv)
+- Title/meta/H1/yönlendirme önerileri `_arsiv-seo/` klasöründe saklanıyor: `python ONIZLEME/server.py --seo`
+
+Gerekenler: Python 3.10+, `pip install beautifulsoup4`, internet (görseller ve CSS canlı siteden yüklenir).

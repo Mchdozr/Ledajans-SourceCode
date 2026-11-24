@@ -1,0 +1,57 @@
+/* =====================================================================
+   Ürün sayfaları (iç mekan, dış mekan, kiralama, COB, iç/dış RGB panel)
+   ===================================================================== */
+
+/* --- 1. Üst bant (hero): görsel görünür, metin okunur ------------------- */
+.ledajans-blog-hero{
+  height:auto!important; min-height:300px; display:flex; align-items:center;
+  background-size:cover!important; background-position:center 40%!important;
+}
+@media (min-width:768px){ .ledajans-blog-hero{ min-height:400px } }
+/* Eski: tüm görseli %80-85 koyu örten düz katman → Yeni: solda koyu, sağda görsel açık */
+.ledajans-blog-hero-overlay{
+  background:linear-gradient(90deg,rgba(15,23,42,.94) 0%,rgba(15,23,42,.82) 34%,rgba(15,23,42,.35) 66%,rgba(15,23,42,.08) 100%)!important;
+}
+@media (max-width:767px){
+  .ledajans-blog-hero-overlay{background:linear-gradient(180deg,rgba(15,23,42,.55) 0%,rgba(15,23,42,.88) 100%)!important}
+}
+.ledajans-blog-hero-inner{ width:100%; padding-top:56px!important; padding-bottom:56px!important }
+.ledajans-blog-hero-content{ max-width:640px; position:relative }
+.ledajans-blog-hero-content::before{
+  content:""; display:block; width:56px; height:4px; border-radius:2px; background:#F46F2C; margin-bottom:18px;
+}
+.ledajans-blog-hero-title{ font-size:clamp(2rem,4.2vw,3.4rem)!important; line-height:1.08!important; letter-spacing:-.03em!important }
+.ledajans-blog-hero-subtitle{
+  margin-top:14px!important; color:#E5E7EB!important; font-size:clamp(.98rem,1.3vw,1.12rem)!important; line-height:1.6!important;
+}
+.ledajans-blog-hero-subtitle a{
+  color:#fff!important; text-decoration:underline!important; text-decoration-color:#F46F2C!important;
+  text-decoration-thickness:2px!important; text-underline-offset:4px; font-weight:600;
+}
+.ledajans-blog-hero-subtitle strong,.ledajans-blog-hero-subtitle b{ color:#FFB48A!important }
+
+/* --- 2. Ürün kaydırıcısı: sabit zemin, görsel kutuya sığar --------------- */
+.product-slider-container,.product-slider-wrapper{ border-radius:18px!important; overflow:hidden }
+.product-slider-viewport,.product-slide{ background:#F3F5F8!important }
+.product-slide img{ object-fit:contain!important; width:100%!important; max-height:440px; padding:20px; box-sizing:border-box }
+.product-slider-nav{
+  background:#fff!important; color:#111827!important; box-shadow:0 2px 10px rgba(16,24,40,.15)!important;
+  border-radius:50%!important;
+}
+.product-slider-dot{ transition:all .2s ease }
+
+/* --- 3. Sol "Ürünlerimiz" menüsü: kaydırırken görünür kalsın ------------- */
+@media (min-width:1025px){
+  .product-sidebar-wrapper{ position:sticky!important; top:100px; align-self:flex-start }
+}
+.product-sidebar-card{ border-radius:18px!important; border:1px solid #E8ECF1!important; box-shadow:0 1px 2px rgba(16,24,40,.05)!important }
+.product-sidebar-link{ border-radius:10px!important; transition:background-color .15s ease,color .15s ease!important }
+.product-sidebar-link:hover{ background:#FFF4EC!important; color:#D95A1A!important }
+
+/* --- 4. Özellik maddeleri ve hizmet kutuları ---------------------------- */
+.product-feature-item{ padding:12px 14px!important; background:#fff }
+.product-feature-icon,.product-service-icon,.product-contact-info-icon{ border-radius:10px!important }
+.product-features-title{ letter-spacing:-.02em }
+
+/* --- 5. Sekmeler (kiralama/dış mekan teknik tabloları) ------------------- */
+.lj-tab-btn{ border-radius:999px!important; transition:all .15s ease!important }

@@ -1,0 +1,95 @@
+/* =====================================================================
+   LEDAJANS görünüm tazeleme — ORTAK katman (anasayfa + 6 ürün sayfası)
+   Metin, başlık, link ve SEO etiketlerine dokunmaz; sadece görünüm.
+   Kimlik korunur: turuncu #F46F2C, koyu lacivert, mevcut yazı tipleri.
+   ===================================================================== */
+:root{
+  --lj-turuncu:#F46F2C; --lj-turuncu-koyu:#D95A1A; --lj-turuncu-acik:#FFF4EC;
+  --lj-murekkep:#111827; --lj-metin:#374151; --lj-soluk:#6B7280;
+  --lj-cizgi:#E8ECF1; --lj-zemin:#F6F7F9;
+  --lj-r:14px; --lj-golge:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.05);
+  --lj-golge-ust:0 6px 24px rgba(16,24,40,.10);
+}
+
+/* --- 1. Okunabilir gövde metni ------------------------------------------ */
+[data-elementor-type="wp-page"] .elementor-widget-container p,
+[data-elementor-type="wp-page"] .elementor-widget-container li{
+  line-height:1.75; color:var(--lj-metin);
+}
+[data-elementor-type="wp-page"] h2,[data-elementor-type="wp-page"] h3{
+  text-wrap:balance; letter-spacing:-.015em; color:var(--lj-murekkep);
+}
+
+/* --- 2. Kartlar: tek tip köşe, çizgi ve gölge --------------------------- */
+.product-feature-item,.product-service-item,.product-contact-info-item,
+.lj-card,.cob-feature-card,.cob-spec-card,.ledajans-project-card,
+.ledajans-blog-card,.ledajans-home-cert-card,.ledajans-brand-card{
+  border-radius:var(--lj-r)!important;
+  border:1px solid var(--lj-cizgi)!important;
+  box-shadow:var(--lj-golge)!important;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important;
+}
+.ledajans-project-card:hover,.ledajans-blog-card:hover,.lj-card:hover,
+.product-service-item:hover,.cob-feature-card:hover{
+  transform:translateY(-3px); box-shadow:var(--lj-golge-ust)!important; border-color:#F46F2C40!important;
+}
+
+/* --- 3. Butonlar: aynı köşe ve aynı ağırlık ----------------------------- */
+.product-phone-button,.lj-btn,.elementor-button,
+.ledajans-projects-filter-btn,[data-elementor-type="wp-page"] a[class*="btn"]{
+  border-radius:12px!important; font-weight:600!important; letter-spacing:.01em;
+  transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease!important;
+}
+.product-phone-button:hover,.lj-btn:hover,.elementor-button:hover{
+  transform:translateY(-1px); box-shadow:0 6px 16px rgba(244,111,44,.25);
+}
+
+/* --- 4. SSS akordeonları (ürün sayfalarında .la-faq-item, anasayfada details) */
+.la-faq-item,.ledajans-projects-faq details{
+  background:#fff; border:1px solid var(--lj-cizgi)!important; border-radius:12px!important;
+  margin:0 0 10px!important; box-shadow:var(--lj-golge); overflow:hidden;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.la-faq-item[open],.ledajans-projects-faq details[open]{
+  border-color:#F46F2C66!important; box-shadow:0 0 0 3px #F46F2C14,var(--lj-golge);
+}
+.la-faq-item>summary,.ledajans-projects-faq summary{
+  list-style:none; cursor:pointer; padding:16px 20px!important; font-weight:600!important;
+  color:var(--lj-murekkep)!important; display:flex; justify-content:space-between; align-items:center; gap:16px;
+}
+.la-faq-item>summary::-webkit-details-marker,.ledajans-projects-faq summary::-webkit-details-marker{display:none}
+.ledajans-projects-faq summary::after{
+  content:"+"; flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center;
+  background:var(--lj-turuncu-acik); color:var(--lj-turuncu); font-weight:700; font-size:18px; line-height:1;
+}
+.ledajans-projects-faq details[open] summary::after{content:"–"}
+.la-faq-icon{
+  flex:none; width:28px!important; height:28px!important; border-radius:50%; display:grid!important; place-items:center;
+  background:var(--lj-turuncu-acik)!important; color:var(--lj-turuncu)!important; font-weight:700;
+}
+.la-faq-body,.ledajans-projects-faq details>p{padding:0 20px 18px!important; color:var(--lj-metin); line-height:1.7}
+
+/* --- 5. Tablolar --------------------------------------------------------- */
+[data-elementor-type="wp-page"] table{border-collapse:separate!important; border-spacing:0; width:100%;
+  border:1px solid var(--lj-cizgi); border-radius:12px; overflow:hidden; font-size:15px}
+[data-elementor-type="wp-page"] th{background:var(--lj-turuncu-acik)!important; color:var(--lj-murekkep)!important;
+  font-weight:600; text-align:left; padding:12px 14px!important; border-bottom:1px solid #F46F2C33!important}
+[data-elementor-type="wp-page"] td{padding:11px 14px!important; border-bottom:1px solid var(--lj-cizgi)!important; color:var(--lj-metin)}
+[data-elementor-type="wp-page"] tr:last-child td{border-bottom:0!important}
+[data-elementor-type="wp-page"] tbody tr:nth-child(even) td{background:#FAFBFC}
+
+/* --- 6. "Teknik rehberler" link listeleri → etiket görünümü (JS sınıf ekler) */
+.lj-g-chips{display:flex!important; flex-wrap:wrap; gap:8px; padding:0!important; margin:12px 0 0!important; list-style:none!important}
+.lj-g-chips li{margin:0!important; padding:0!important; list-style:none!important}
+.lj-g-chips li::before,.lj-g-chips li::marker{content:none!important}
+.lj-g-chips a{display:inline-block; padding:7px 12px; border-radius:999px; background:#fff; border:1px solid var(--lj-cizgi);
+  color:var(--lj-murekkep)!important; font-size:14px; text-decoration:none!important; transition:all .15s ease}
+.lj-g-chips a:hover{border-color:var(--lj-turuncu); color:var(--lj-turuncu)!important; background:var(--lj-turuncu-acik)}
+
+/* --- 7. Klavye odağı görünür olsun -------------------------------------- */
+[data-elementor-type="wp-page"] a:focus-visible,[data-elementor-type="wp-page"] summary:focus-visible,
+[data-elementor-type="wp-page"] button:focus-visible{outline:3px solid #F46F2C80; outline-offset:2px; border-radius:6px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}

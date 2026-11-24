@@ -1,0 +1,111 @@
+{
+ "aciklama": "Sadece görünüm değişiklikleri. Metin, title, meta, H1, schema, alt metin ve yönlendirmelere dokunulmadı.",
+ "sayfalar": {
+  "/": [
+   "ortak.css",
+   "ortak.js",
+   "anasayfa.css",
+   "anasayfa.js"
+  ],
+  "/ic-mekan-led-ekran/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ],
+  "/dis-mekan-led-ekran/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ],
+  "/rental-ekran/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ],
+  "/cob-ekran/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ],
+  "/ic-mekan-rgb-panel/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ],
+  "/dis-mekan-rgb-panel/": [
+   "ortak.css",
+   "ortak.js",
+   "urun.css",
+   "urun.js"
+  ]
+ },
+ "degisiklikler": [
+  {
+   "kapsam": "Anasayfa",
+   "tur": "Görsel–metin uyumu",
+   "baslik": "\"Hemen her sektördeyiz\" bölümü",
+   "once": "Yarısı kesilmiş dev turuncu logo; metin sektörlerden bahsederken görselde sektör yok.",
+   "sonra": "Aynı sayfadaki gerçek proje videolarından 4'lü kolaj (küre ekran, iç mekan, rental, mağaza); sessiz ve döngüde oynuyor, her birinde küçük proje etiketi. \"25 Yıllık Tecrübe\" rozeti yerinde.",
+   "temsili": false
+  },
+  {
+   "kapsam": "Anasayfa",
+   "tur": "Görsel–metin uyumu",
+   "baslik": "\"Ürünlerimiz\" kartları",
+   "once": "Her kartın görseli farklı zeminde ve boyutta (beyaz dekupe, siyah zemin, fotoğraf).",
+   "sonra": "Bütün kartlar 16:10 aynı çerçevede; kategoriyle eşleşen görsel. Güç kaynağı kartı dekupe görselle, kutuya sığdırılmış.",
+   "temsili": true
+  },
+  {
+   "kapsam": "Anasayfa",
+   "tur": "Tasarım",
+   "baslik": "Proje kartları, SSS, üst bant",
+   "once": "Proje görselleri farklı yükseklikte; SSS tarayıcının varsayılan açılır kutusu; üst bant alt yazısı görselin üstünde zor okunuyor.",
+   "sonra": "Proje görselleri 4:3 sabit oran; SSS kart görünümünde, +/– işaretli, açık olan turuncu çerçeveli; alt yazıya hafif gölge.",
+   "temsili": false
+  },
+  {
+   "kapsam": "6 ürün sayfası",
+   "tur": "Görsel–metin uyumu",
+   "baslik": "Üst bant (hero) görseli",
+   "once": "Görsel %80–85 koyu katmanla neredeyse tamamen kapalı. Kiralama, COB ve iç RGB'de konuyla ilgisiz stok fotoğraf (COB ile iç RGB aynı fotoğrafı kullanıyor).",
+   "sonra": "Her sayfada konusuyla eşleşen görsel: dış mekanda gündüz cephe, iç mekanda lobi, kiralamada sahne, COB'da lobi, panellerde modül. Katman solda koyu (metin okunur), sağda açık (görsel görünür).",
+   "temsili": true
+  },
+  {
+   "kapsam": "6 ürün sayfası",
+   "tur": "Tasarım",
+   "baslik": "Üst bant tipografisi",
+   "once": "Turuncu alt satır koyu zeminde düşük kontrastlı ve küçük; bant 300px.",
+   "sonra": "Başlık daha büyük ve sıkı, üstünde turuncu çizgi; alt satır açık gri ve daha büyük; linkler beyaz, turuncu altı çizgili; bant masaüstünde 400px.",
+   "temsili": false
+  },
+  {
+   "kapsam": "6 ürün sayfası",
+   "tur": "Tasarım",
+   "baslik": "Ürün kaydırıcısı ve sol menü",
+   "once": "Görseller yüklenene kadar boş beyaz kutu; ok butonları silik; sol menü sayfa kayınca kayboluyor.",
+   "sonra": "Kaydırıcı açık gri zeminde, görsel kutuya sığar; oklar beyaz yuvarlak; masaüstünde \"Ürünlerimiz\" menüsü kaydırırken görünür kalır.",
+   "temsili": false
+  },
+  {
+   "kapsam": "Anasayfa + 6 ürün sayfası",
+   "tur": "Tasarım",
+   "baslik": "Kartlar, butonlar, tablolar, SSS, rehber linkleri",
+   "once": "Kartlarda farklı köşe ve gölgeler; tablolar çizgisiz; SSS düz liste; \"Teknik rehberler\" uzun madde listesi.",
+   "sonra": "Tek tip 14px köşe, ince çizgi ve hafif gölge; butonlarda aynı köşe ve hover; tablolarda turuncu başlık satırı ve zebra; rehber linkleri etiket görünümünde; klavye odağı görünür.",
+   "temsili": false
+  }
+ ],
+ "notlar": [
+  "\"Temsilî\" işaretli görseller sitenizde zaten yüklü ama yapay zekâ ile üretilmiş görseller. Görünümü göstermek için kullandım; canlıya almadan önce gerçek proje fotoğraflarınızla değiştirilmeleri önerilir.",
+  "Ürün kaydırıcılarındaki görsellerin bir kısmı 1,2 MB PNG; yavaş bağlantıda kutu boş görünüyor. Kalıcı çözüm görselleri WebP'ye çevirip küçültmek.",
+  "Kaydırıcılardaki büyük filigranlı kabin fotoğrafları ve RGB panel sayfalarındaki tedarikçi (GKGD) banner'ları değiştirilmedi; bunlar için yeni ürün fotoğrafı gerekiyor.",
+  "Mobilde sayfaların sağ kenarında ~12px turuncu bir şerit var. Bu canlı sitede de aynı şekilde görünüyor (bu değişikliklerden kaynaklanmıyor); ayrıca incelenmeli."
+ ]
+}

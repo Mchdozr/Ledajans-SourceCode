@@ -1,66 +1,49 @@
 #!/usr/bin/env python3
-"""LEDAJANS SEO önizleme sunucusu — sadece yerelde çalışır, canlı siteye hiçbir şey göndermez.
+"""LEDAJANS yerel önizleme sunucusu — canlı siteye hiçbir şey göndermez.
 
-Çalıştırma (depo kökünden):
-    python3 ONIZLEME/build_preview.py      # (yalnızca değişiklik listesi güncellendiyse)
-    python3 ONIZLEME/server.py             # → http://localhost:8080/_onizleme/
+Çalıştırma (depo kökünden, Windows'ta `python`):
+    python ONIZLEME/server.py            # GÖRÜNÜM önizlemesi → http://localhost:8080/_onizleme/
+    python ONIZLEME/server.py --seo      # arşivlenmiş SEO önizlemesi (title/meta/H1 vb.)
+    python ONIZLEME/server.py 8090       # farklı port
 
-Adresler:
-    /_onizleme/          değişiklik paneli (her sayfa için önce/sonra)
-    /<yol>               önerilen hali (değişmeyen sayfalar yedekteki canlı hali + ortak alt metin düzeltmeleri)
-    /_once/<yol>         24.11.2026 canlı yedeği, hiç değiştirilmemiş
-    /robots.txt, /page-sitemap.xml, /portfolio-sitemap.xml   önerilen halleri
-Görseller, CSS ve JS canlı siteden (ledajans.com) okunur; bu yüzden internet bağlantısı gerekir.
+Görünüm modu: sayfaların HTML'i ve metinleri 24.11.2026 canlı yedeğiyle BİREBİR aynıdır;
+üzerine yalnızca ONIZLEME/gorunum/ klasöründeki CSS/JS katmanı eklenir.
+Adresler: /<yol> önerilen görünüm · /_once/<yol> canlı yedeği (dokunulmamış) · /_onizleme/ panel
+Görseller, CSS ve JS canlı siteden (ledajans.com) okunur; internet bağlantısı gerekir.
 """
 from __future__ import annotations
 import html as H
-import json, re, sys, tarfile
+import json, re, sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parent
 YEDEK = ROOT.parent / "YEDEK" / "2026-11-24"
-SONRA = ROOT / "sonra"
+GORUNUM = ROOT / "gorunum"
+ARSIV = ROOT / "_arsiv-seo"
 sys.path.insert(0, str(ROOT))
 import build_preview as bp  # noqa: E402
-from bs4 import BeautifulSoup  # noqa: E402
 
-REPORT = json.loads((ROOT / "degisiklikler.json").read_text(encoding="utf-8"))
+SEO = "--seo" in sys.argv
 ORIG = bp.load_originals()
-REDIRECTS = REPORT["yonlendirmeler"]
-CHANGED = {p["yol"]: p for p in REPORT["sayfalar"]}
 A_HREF = re.compile(r'(<a\b[^>]*?\bhref=["\'])https?://(?:www\.)?ledajans\.com/', re.I)
+
+if SEO:
+    REPORT = json.loads((ARSIV / "degisiklikler.json").read_text(encoding="utf-8"))
+    REDIRECTS = REPORT["yonlendirmeler"]
+    CHANGED = {p["yol"]: len(p["degisiklikler"]) for p in REPORT["sayfalar"]}
+else:
+    REDIRECTS, CHANGED = {}, {}
+
+
+def gorunum_manifest() -> dict:
+    f = GORUNUM / "degisiklikler.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {"degisiklikler": []}
 
 
 def local_links(html: str, prefix: str = "/") -> str:
     return A_HREF.sub(lambda m: m.group(1) + prefix, html)
-
-
-def banner(path: str, mode: str) -> str:
-    p = CHANGED.get(path)
-    n = len(p["degisiklikler"]) if p else 0
-    if mode == "once":
-        txt = f'<b>ÖNCE</b> · 24.11.2026 canlı yedeği · <a href="{H.escape(path)}">Önerilen hali →</a>'
-        bg = "#5a6676"
-    else:
-        extra = f' · {n} değişiklik' if p else ' · bu sayfada içerik değişikliği yok (sadece ortak alt metinler)'
-        txt = (f'<b>ÖNİZLEME · CANLI DEĞİL</b>{extra} · <a href="/_once{H.escape(path)}">Canlı halini gör</a> · '
-               f'<a href="/_onizleme/#{H.escape(path)}">Panel</a>')
-        bg = "#1f4fd1"
-    css = ("<style>.lj-onizleme-giris{background:#fff8e1;border-left:4px solid #e0a100;padding:12px 14px;margin:12px 0;"
-           "font-size:16px;line-height:1.6;color:#222}.lj-onizleme-giris::before{content:'YENİ GİRİŞ PARAGRAFI (taslak) — ';"
-           "font:600 11px monospace;color:#a35b00;letter-spacing:.05em}.lj-yer-tutucu{background:#ffd54f;padding:0 4px;border-radius:3px;"
-           "font-weight:700}.lj-guncelleme{font-size:13px;color:#666;margin:4px 0 12px}"
-           "#lj-bant{position:fixed;left:12px;bottom:12px;z-index:2147483647;background:" + bg + ";color:#fff;font:14px/1.4 system-ui,sans-serif;"
-           "padding:10px 14px;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.25);max-width:calc(100vw - 24px)}#lj-bant a{color:#fff;text-decoration:underline}</style>")
-    return css + f'<div id="lj-bant">{txt}</div>'
-
-
-def inject(html: str, path: str, mode: str) -> str:
-    b = banner(path, mode)
-    i = html.rfind("</body>")
-    return html[:i] + b + html[i:] if i != -1 else html + b
 
 
 def norm(path: str) -> str:
@@ -70,31 +53,52 @@ def norm(path: str) -> str:
     return path
 
 
-def sitemap(name: str) -> str | None:
-    f = YEDEK / "sitemaps" / name
-    if not f.exists():
-        return None
-    x = f.read_text(encoding="utf-8")
-    if name == "portfolio-sitemap.xml":
-        x = re.sub(r"<url>\s*<loc>https://ledajans\.com/case/[^<]*</loc>.*?</url>", "", x, flags=re.S)
-    if name == "page-sitemap.xml":
-        add = "".join(f"<url><loc>https://ledajans.com{p}</loc></url>" for p in ("/ankara-led-ekran/", "/izmir-led-ekran/"))
-        x = x.replace("</urlset>", add + "</urlset>")
-    return x
+def overlay(path: str) -> str:
+    """Görünüm katmanı: gorunum/degisiklikler.json'da bu sayfa için listelenen CSS/JS dosyaları
+    (her istekte diskten okunur; dosyayı kaydedip sayfayı yenilemek yeterli)."""
+    if SEO:
+        return ""
+    files = gorunum_manifest().get("sayfalar", {}).get(path, [])
+    parts = []
+    for fn in files:
+        p = GORUNUM / fn
+        if not p.exists():
+            continue
+        body = p.read_text(encoding="utf-8")
+        if fn.endswith(".css"):
+            parts.append(f'<style id="lj-gorunum-{H.escape(fn)}">\n{body}\n</style>')
+        else:
+            parts.append(f'<script id="lj-gorunum-{H.escape(fn)}">\n{body}\n</script>')
+    return "\n".join(parts)
 
 
-ROBOTS_ADD = """
-# OpenAI arama ve kullanıcı istekleri (ChatGPT search)
-User-agent: OAI-SearchBot
-Allow: /
+def banner(path: str, mode: str) -> str:
+    if mode == "once":
+        txt, bg = f'<b>ÖNCE</b> · 24.11.2026 canlı yedeği · <a href="{H.escape(path)}">Önerilen görünüm →</a>', "#5a6676"
+    else:
+        label = "SEO ÖNİZLEMESİ (arşiv)" if SEO else "GÖRÜNÜM ÖNİZLEMESİ"
+        txt = (f'<b>{label} · CANLI DEĞİL</b> · <a href="/_once{H.escape(path)}">Canlı halini gör</a> · '
+               f'<a href="/_onizleme/">Panel</a>')
+        bg = "#1f4fd1"
+    css = ("<style>#lj-bant{position:fixed;left:12px;bottom:12px;z-index:2147483647;background:" + bg +
+           ";color:#fff;font:14px/1.4 system-ui,sans-serif;padding:10px 14px;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.25);"
+           "max-width:calc(100vw - 24px)}#lj-bant a{color:#fff;text-decoration:underline}"
+           ".lj-onizleme-giris{background:#fff8e1;border-left:4px solid #e0a100;padding:12px 14px;margin:12px 0}"
+           ".lj-yer-tutucu{background:#ffd54f;padding:0 4px;border-radius:3px;font-weight:700}</style>")
+    return css + f'<div id="lj-bant">{txt}</div>'
 
-User-agent: ChatGPT-User
-Allow: /
 
-# Anthropic (Claude)
-User-agent: ClaudeBot
-Allow: /
-"""
+def inject(html: str, path: str, mode: str) -> str:
+    add_head = overlay(path) if mode == "sonra" else ""
+    if add_head:
+        i = html.find("</head>")
+        html = html[:i] + add_head + html[i:] if i != -1 else add_head + html
+    b = banner(path, mode)
+    i = html.rfind("</body>")
+    return html[:i] + b + html[i:] if i != -1 else html + b
+
+
+ROBOTS_ADD = "\n# OpenAI arama\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\n# Anthropic\nUser-agent: ClaudeBot\nAllow: /\n"
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -103,6 +107,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
         self.send_header("X-Robots-Tag", "noindex")
         for k, v in (headers or {}).items():
             self.send_header(k, v)
@@ -115,14 +120,16 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urlparse(self.path).path
         if path in ("/_onizleme", "/_onizleme/"):
-            return self.send(200, (ROOT / "panel.html").read_text(encoding="utf-8"))
+            panel = (ARSIV / "panel.html") if SEO else (ROOT / "panel.html")
+            return self.send(200, panel.read_text(encoding="utf-8"))
         if path == "/_onizleme/degisiklikler.json":
-            return self.send(200, json.dumps(REPORT, ensure_ascii=False), "application/json; charset=utf-8")
+            body = (ARSIV / "degisiklikler.json").read_text(encoding="utf-8") if SEO else json.dumps(gorunum_manifest(), ensure_ascii=False)
+            return self.send(200, body, "application/json; charset=utf-8")
         if path == "/robots.txt":
-            return self.send(200, (YEDEK / "robots.txt").read_text(encoding="utf-8") + ROBOTS_ADD, "text/plain; charset=utf-8")
+            return self.send(200, (YEDEK / "robots.txt").read_text(encoding="utf-8") + (ROBOTS_ADD if SEO else ""), "text/plain; charset=utf-8")
         if path.endswith(".xml"):
-            x = sitemap(path.strip("/"))
-            return self.send(200, x, "application/xml; charset=utf-8") if x else self.send(404, "yok", "text/plain")
+            f = YEDEK / "sitemaps" / path.strip("/")
+            return self.send(200, f.read_text(encoding="utf-8"), "application/xml; charset=utf-8") if f.exists() else self.send(404, "yok", "text/plain")
         if path == "/favicon.ico":
             return self.send(404, "", "text/plain")
         mode = "sonra"
@@ -136,21 +143,22 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, inject(local_links(ORIG[f], "/_once/"), path, "once"))
         if path in REDIRECTS:
             return self.send(301, "", headers={"Location": REDIRECTS[path]})
-        if (SONRA / f).exists():
-            html = (SONRA / f).read_text(encoding="utf-8")
+        if SEO and (ARSIV / "sonra" / f).exists():
+            html = (ARSIV / "sonra" / f).read_text(encoding="utf-8")
         elif f in ORIG:
-            soup = BeautifulSoup(ORIG[f], "html.parser"); bp.fix_alts(soup); html = str(soup)
+            html = ORIG[f]  # görünüm modu: HTML birebir canlı yedeği
         else:
-            return self.send(404, f"<h1>404</h1><p>{H.escape(path)} yedekte yok. Canlıda bu tür adresler anasayfaya yönleniyor; "
-                                  "önerimiz gerçek 404 ya da en yakın konuya yönlendirme.</p><p><a href='/_onizleme/'>Panel</a></p>")
+            return self.send(404, f"<h1>404</h1><p>{H.escape(path)} yedekte yok.</p><p><a href='/_onizleme/'>Panel</a></p>")
         return self.send(200, inject(local_links(html), path, "sonra"))
 
 
 def main():
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    port = int(args[0]) if args else 8080
     srv = ThreadingHTTPServer(("127.0.0.1", port), Handler)
-    print(f"Önizleme hazır (canlı siteye dokunmaz):\n  Panel:     http://localhost:{port}/_onizleme/\n"
-          f"  Anasayfa:  http://localhost:{port}/\n  Canlı yedeği: http://localhost:{port}/_once/\nDurdurmak için Ctrl+C")
+    mode = "SEO (arşiv)" if SEO else "GÖRÜNÜM"
+    print(f"Önizleme hazır — mod: {mode} (canlı siteye dokunmaz)\n  Panel:        http://localhost:{port}/_onizleme/\n"
+          f"  Anasayfa:     http://localhost:{port}/\n  Canlı yedeği: http://localhost:{port}/_once/\nDurdurmak için Ctrl+C")
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
