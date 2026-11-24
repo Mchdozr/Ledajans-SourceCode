@@ -1,0 +1,913 @@
+{
+ "sayfalar": [
+  {
+   "yol": "/",
+   "dosya": "anasayfa.html",
+   "risk": "orta",
+   "brief": "b01",
+   "not": "'led ekran' için en hassas sayfa. Title, H1 ve görünen metin DEĞİŞMEDİ; sadece açıklama, SSS schema ve og:image eklendi. Canlıya en son alınmalı.",
+   "degisiklikler": [
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "2001'den beri LED ekran satış, kiralama ve kurulum. İç-dış mekan, COB ve rental modeller, 2 yıl garanti, ücretsiz keşif. İstanbul merkezli, Türkiye geneli."
+    ],
+    [
+     "og:image",
+     "(yok)",
+     "https://ledajans.com/wp-content/uploads/2026/09/dis-mekan-led-ekran-1.webp  (geçici; 1200×630 özel görsel hazırlanmalı)"
+    ],
+    [
+     "Schema",
+     "FAQPage yok",
+     "FAQPage eklendi (4 soru, sayfadaki mevcut SSS'den)"
+    ]
+   ],
+   "alt_sayisi": 11
+  },
+  {
+   "yol": "/led-ekran/",
+   "dosya": "led-ekran.html",
+   "risk": "düşük",
+   "brief": "b02",
+   "not": "Title hâlâ 'LED Ekran' ile başlıyor. Anasayfadan 2–3 hafta önce uygulanmalı ve izlenmeli.",
+   "degisiklikler": [
+    [
+     "Title",
+     "LED Ekran Modelleri | İç-Dış Mekan ve Kiralama | LEDAJANS",
+     "LED Ekran Modelleri ve Sistemleri | Karşılaştırma – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "İç mekan, dış mekan ve rental LED ekran modelleri. Kurulum, keşif ve B2B teklif. LEDAJANS İstanbul.",
+     "İç mekan, dış mekan, rental, COB ve GOB LED ekran modellerini piksel aralığı, parlaklık ve kullanım alanına göre karşılaştırın. Ücretsiz keşif ve teklif."
+    ],
+    [
+     "H1",
+     "LED Ekran Çözümleri",
+     "LED Ekran Modelleri"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran modelleri; kullanım yerine (iç mekan, dış mekan), kullanım şekline (sabit, kiralık) ve LED paketleme teknolojisine (SMD, GOB, COB) göre ayrılır. Aşağıdaki tablo, LEDAJANS'ın sunduğu tüm serileri piksel aralığı, parlaklık ve tipik kullanım alanıyla tek bakışta gösterir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/led-ekran-fiyatlari-2026/",
+   "dosya": "led-ekran-fiyatlari-2026.html",
+   "risk": "yok",
+   "brief": "b03",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "LED Ekran Fiyatları 2026 | LEDAJANS",
+     "LED Ekran Fiyatları 2026 | m² Fiyat Tablosu – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran m² fiyat aralığı 2026: iç mekan, dış mekan ve kiralama. Güncel liste ve teklif. LEDAJANS.",
+     "2026 LED ekran m² fiyatları: iç mekan, dış mekan, COB ve kiralama için güncel fiyat aralıkları, fiyatı etkileyen 7 faktör ve örnek proje maliyeti."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "12 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "Metin",
+     "(Mayıs Güncel)",
+     "kaldırıldı"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Kasım 2026 itibarıyla LED ekranın m² fiyatı, kurulum hariç iç mekan P2.5 için «X–Y TL», dış mekan P6.67 için «X–Y TL» ve COB P1.25 için «X–Y TL» aralığındadır. Nihai fiyatı piksel aralığı, toplam ölçü, kontrol sistemi ve konstrüksiyon belirler. Aşağıdaki tablo bu kalemleri ayrı ayrı gösterir."
+    ],
+    [
+     "Güncelleme tarihi",
+     "(yok)",
+     "Son güncelleme: Kasım 2026"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/ic-mekan-led-ekran/",
+   "dosya": "ic-mekan-led-ekran.html",
+   "risk": "yok",
+   "brief": "b04",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "İç Mekan LED Ekran | LEDAJANS",
+     "İç Mekan LED Ekran (Indoor) | P1.25–P4 Modeller – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "İç mekan LED ekran: P1.25–P4 piksel aralığı, 800–1500 nit, ≥3840Hz. Toplantı salonu, mağaza ve lobi için modeller, m² fiyat aralığı ve ücretsiz keşif."
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "İç mekan (indoor) LED ekran; toplantı salonu, mağaza, lobi, stüdyo ve AVM gibi kapalı alanlar için üretilen, 800–1500 nit parlaklıkta ve ≥3840Hz yenileme hızında modüler bir ekrandır. LEDAJANS iç mekan serisinde P1.25'ten P4'e kadar piksel aralığı sunar. Yaklaşık 2,5–5 metre izleme mesafesi için P2.5, 2 metreden yakın izleme için P1.86 veya COB önerilir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/ic-mekan-led-ekran-fiyatlari-2026/",
+   "dosya": "ic-mekan-led-ekran-fiyatlari-2026.html",
+   "risk": "yok",
+   "brief": "b05",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "İç Mekan LED Ekran Fiyatları 2026 | LEDAJANS",
+     "İç Mekan LED Ekran Fiyatları 2026 | m² Tablosu – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "İç mekan LED ekran m² fiyatları (Kasım 2026): P1.25, P1.86, P2.5, P3 ve COB için fiyat aralığı, kurulum maliyeti ve fiyatı etkileyen faktörler."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "7 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Kasım 2026'da iç mekan LED ekranın m² fiyatı, piksel aralığına göre kurulum hariç «X TL» (P4) ile «Y TL» (P1.25) arasındadır. Piksel aralığı küçüldükçe m²'deki LED sayısı karesel arttığı için fiyat da hızla yükselir: P1.25'te m² başına 640.000, P2.5'te 160.000 piksel vardır."
+    ],
+    [
+     "Güncelleme tarihi",
+     "(yok)",
+     "Son güncelleme: Kasım 2026"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/dis-mekan-led-ekran/",
+   "dosya": "dis-mekan-led-ekran.html",
+   "risk": "yok",
+   "brief": "b06",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Dış Mekan LED Ekran | LEDAJANS",
+     "Dış Mekan LED Ekran | Outdoor P2.5–P10, IP65 – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Dış mekan (outdoor) LED ekran: 5000–8000 nit, IP65, P2.5–P10. Açık hava reklam, cephe ve billboard için modeller, fiyat aralığı ve ücretsiz keşif."
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Dış mekan (outdoor) LED ekran; açık hava reklam panoları, bina cepheleri, billboard ve stadyumlarda güneş altında okunabilmesi için 5000–8000 nit parlaklık ve IP65 su-toz korumasıyla üretilen ekrandır. LEDAJANS'ın OFC serisi P2.5'ten P10'a kadar piksel aralığı sunar ve tüm dış mekan ekranlar 2 yıl garantilidir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/dis-mekan-led-ekran-fiyatlari-2026/",
+   "dosya": "dis-mekan-led-ekran-fiyatlari-2026.html",
+   "risk": "yok",
+   "brief": "b07",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Dış Mekan LED Ekran Fiyatları 2026 | LEDAJANS",
+     "Dış Mekan LED Ekran Fiyatları 2026 | m² Tablosu – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Dış mekan LED ekran m² fiyatları (Kasım 2026): P4–P10 fiyat aralığı, konstrüksiyon ve izin maliyetleri, enerji gideri ve örnek billboard bütçesi."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "7 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Kasım 2026'da dış mekan LED ekranın m² fiyatı, kurulum ve konstrüksiyon hariç P10 için «X TL», P6.67 için «Y TL» civarındadır. Dış mekanda toplam bütçenin önemli bir kısmını ekranın kendisi kadar çelik konstrüksiyon, statik proje ve belediye izni oluşturur."
+    ],
+    [
+     "Güncelleme tarihi",
+     "(yok)",
+     "Son güncelleme: Kasım 2026"
+    ],
+    [
+     "Schema",
+     "FAQPage yok",
+     "FAQPage eklendi (4 soru, sayfadaki S/C metninden)"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/rental-ekran/",
+   "dosya": "rental-ekran.html",
+   "risk": "yok",
+   "brief": "b08",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "LED Ekran Kiralama | LEDAJANS",
+     "LED Ekran Kiralama | Sahne, Fuar, Etkinlik – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Sahne, konser, fuar ve etkinlik için LED ekran kiralama. P1.9–P3.9 iç ve dış mekan rental kabinler, ≥7680Hz, kurulum dahil. Etkinliğinize özel teklif."
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran kiralama; konser, sahne, fuar, lansman ve kurumsal etkinliklerde birkaç günlüğüne kurulan, hızlı bağlantılı die-cast alüminyum kabinlerden oluşan ekran hizmetidir. LEDAJANS, P1.9–P3.9 iç mekan ve P2.6–P3.9 dış mekan rental kabinlerle (500×500 ve 500×1000 mm, ≥7680Hz) İstanbul başta olmak üzere Türkiye genelinde kurulumlu kiralama yapar."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/rental-led-ekran-kiralama-fiyatlari-2026/",
+   "dosya": "rental-led-ekran-kiralama-fiyatlari-2026.html",
+   "risk": "yok",
+   "brief": "b09",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Rental LED Ekran Kiralama Fiyatları 2026 | LEDAJANS",
+     "LED Ekran Kiralama Fiyatları 2026 | Günlük – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "2026 LED ekran kiralama fiyatları: m² ve günlük fiyat aralığı, kurulum-söküm, nakliye ve teknik ekip maliyeti. Konser, fuar ve kurumsal etkinlik örnekleri."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "7 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "H1",
+     "Rental LED Ekran Kiralama Fiyatları 2026",
+     "LED Ekran Kiralama Fiyatları 2026"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Kasım 2026'da iç mekan P3.9 LED ekranın günlük kiralama fiyatı, kurulum dahil «X TL/m²» civarındadır. Çok günlü kiralamalarda gün başı fiyat düşer. İstanbul dışı etkinliklerde nakliye ve ekip konaklaması ayrıca hesaplanır."
+    ],
+    [
+     "Güncelleme tarihi",
+     "(yok)",
+     "Son güncelleme: Kasım 2026"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/istanbul-led-ekran/",
+   "dosya": "istanbul-led-ekran.html",
+   "risk": "yok",
+   "brief": "b10",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "İstanbul LED Ekran | Satış, Kurulum ve Kiralama",
+     "İstanbul LED Ekran | Satış, Kurulum ve Kiralama – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "İstanbul LED ekran satış, kurulum ve kiralama. Şişli merkez, cephe, vitrin, AVM ve fuar. İBB izin dosyası ve keşif. LEDAJANS.",
+     "İstanbul'da LED ekran satış, kurulum ve kiralama. Şişli merkezli kendi ekibimizle keşif, İBB reklam izni desteği, AVM, cephe, mağaza ve fuar projeleri."
+    ],
+    [
+     "H1",
+     "İstanbul LED ekran",
+     "İstanbul LED Ekran"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LEDAJANS'ın merkezi İstanbul Şişli'dedir. İstanbul'daki LED ekran satış, kurulum ve kiralama projelerinde keşif, montaj ve servis kendi ekibimizle yapılır. Avrupa ve Anadolu yakasındaki cephe, mağaza, AVM ve fuar projeleri için ücretsiz keşif veriyoruz."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/ankara-led-ekran/",
+   "dosya": "ankara-led-ekran.html",
+   "risk": "yok",
+   "brief": "b11",
+   "not": "Sayfa noindex'ten çıkarılıyor ve sitemap'e ekleniyor.",
+   "degisiklikler": [
+    [
+     "Title",
+     "Ankara LED Screen | LEDAJANS",
+     "Ankara LED Ekran | Satış, Kurulum ve Kiralama – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "Ankara LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+     "Ankara'da LED ekran satış, kurulum ve kiralama. Kamu kurumları, AVM ve cephe projeleri için ücretsiz keşif, IP65 dış mekan modeller ve 2 yıl garanti."
+    ],
+    [
+     "Robots",
+     "follow, noindex",
+     "index, follow"
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "15 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "H1 (sayfada yoktu)",
+     "ilk H2: Ankara’da LED Ekran Çözümleri: Başkentin Dijital Yüzü",
+     "Ankara LED Ekran"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/izmir-led-ekran/",
+   "dosya": "izmir-led-ekran.html",
+   "risk": "yok",
+   "brief": "b11",
+   "not": "Sayfa noindex'ten çıkarılıyor ve sitemap'e ekleniyor.",
+   "degisiklikler": [
+    [
+     "Title",
+     "İzmir LED Screen | LEDAJANS",
+     "İzmir LED Ekran | Satış, Kurulum ve Kiralama – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "İzmir LED Screen. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+     "İzmir'de LED ekran satış, kurulum ve kiralama. Fuar, otel, AVM ve cephe projeleri için ücretsiz keşif, IP65 dış mekan modeller ve 2 yıl garanti."
+    ],
+    [
+     "Robots",
+     "follow, noindex",
+     "index, follow"
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "14 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "H1 (sayfada yoktu)",
+     "ilk H2: İzmir’de LED Ekran Çözümleri: Ege’nin Dijital Vitrini",
+     "İzmir LED Ekran"
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/ic-mekan-rgb-panel/",
+   "dosya": "ic-mekan-rgb-panel.html",
+   "risk": "yok",
+   "brief": "b12",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "İç Mekan RGB Panel | LEDAJANS",
+     "İç Mekan RGB LED Panel (Modül) | P1.25–P5 – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "İç mekan RGB LED ekran paneli: P1.25–P5 SMD, GOB ve flexible modüller, HUB75, 3840–6000Hz. Bayi ve projeler için toptan satış, teknik föy ve destek."
+    ],
+    [
+     "H1",
+     "İç Mekan RGB Panel",
+     "İç Mekan RGB LED Panel"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran paneli (modülü), LED ekranı oluşturan, üzerinde RGB LED'ler ve sürücü entegreleri bulunan, standart ölçülü (çoğunlukla 320×160 mm) yapı taşıdır. Paneller kabine veya konstrüksiyona monte edilir ve HUB75 kabloyla alıcı karta bağlanır. LEDAJANS iç mekan için P1.25–P5 SMD, GOB ve flexible, dış mekan için P2.5–P10 panel sunar."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/dis-mekan-rgb-panel/",
+   "dosya": "dis-mekan-rgb-panel.html",
+   "risk": "yok",
+   "brief": "b12",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Dış Mekan RGB Panel | LEDAJANS",
+     "Dış Mekan RGB LED Panel | P2.5–P10 Outdoor – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Dış mekan RGB LED ekran paneli: P2.5–P10 outdoor modüller, IP65, yüksek parlaklık. Tabela ve LED ekran üreticileri için toptan satış ve teknik destek."
+    ],
+    [
+     "H1",
+     "Dış Mekan RGB Panel",
+     "Dış Mekan RGB LED Panel"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Dış mekan RGB LED panel, açık havada kullanılan LED ekran ve tabelaların yapı taşı olan, IP65 korumalı ve yüksek parlaklıklı modüldür. LEDAJANS dış mekan için P2.5'ten P10'a kadar panel sunar; paneller HUB75 kabloyla alıcı karta bağlanır ve 320×160 mm standart ölçüdedir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/p10-panel/",
+   "dosya": "p10-panel.html",
+   "risk": "yok",
+   "brief": "b13",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "P10 Panel - LEDAJANS 4",
+     "P10 LED Panel | RGB, Kırmızı ve Beyaz Modeller – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "P10 Panel ile Akıllı LED Tabela Sistemlerinde Maksimum Görünürlük P10 panel, akıllı LED tabela çözümleri içinde hem fiyat/performans hem de dayanıklılık",
+     "P10 LED panel çeşitleri: dış mekan RGB, tek renk kırmızı ve beyaz modüller. 320×160 mm, kayan yazı ve LED tabela için toptan satış ve teknik destek."
+    ],
+    [
+     "H1",
+     "P10 Panel",
+     "P10 LED Panel"
+    ],
+    [
+     "Fazla H1",
+     "2 adet H1",
+     "1 H1, diğerleri H2'ye çevrildi"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "P10 LED panel, pikselleri arasında 10 mm mesafe bulunan, 320×160 mm ölçüsünde (32×16 piksel) LED modüldür. En çok kayan yazı, LED tabela ve uzaktan izlenen dış mekan ekranlarında kullanılır. Tek renk (kırmızı, beyaz) modeller metin için ekonomiktir, RGB modeller görüntü ve video da gösterebilir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/p5-outdoor-rgb-panel/",
+   "dosya": "p5-outdoor-rgb-panel.html",
+   "risk": "yok",
+   "brief": "b14",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "P5 Outdoor Rgb Panel - LEDAJANS",
+     "P5 Dış Mekan RGB LED Panel | 320×160 Outdoor – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "2.1.   Outdoor full color SMD Q5 8 scan module consists of red LED wafer、 green LED wafer and blue LED wafer packaged as a pixel and form a matrix，and then",
+     "P5 dış mekan RGB LED panel: 5 mm piksel aralığı, 320×160 mm, IP65, yüksek parlaklık. Teknik föy, uyumlu kontrol kartları ve toptan fiyat için teklif alın."
+    ],
+    [
+     "H1",
+     "P5 Outdoor Rgb Panel",
+     "P5 Dış Mekan RGB LED Panel"
+    ],
+    [
+     "Fazla H1",
+     "4 adet H1",
+     "1 H1, diğerleri H2'ye çevrildi"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "P5 dış mekan RGB LED panel, pikselleri arasında 5 mm mesafe bulunan, 320×160 mm ölçüsünde (64×32 piksel) tam renkli LED modüldür. Yaklaşık 5–15 metre izleme mesafesindeki tabela ve dış mekan ekranlar için uygundur. Aşağıdaki teknik bilgiler üretici föyünden alınmıştır."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/p5-indoor-rgb-panel/",
+   "dosya": "p5-indoor-rgb-panel.html",
+   "risk": "yok",
+   "brief": "b14",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "P5 Indoor Rgb Panel - LEDAJANS",
+     "P5 İç Mekan RGB LED Panel | 320×160 Indoor – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "This technical manual applies only to indoor Q5E16V4.6 (64* 32),constant current 1/16 scan with die-casting aluminum cabinet .",
+     "P5 iç mekan RGB LED panel: 5 mm piksel aralığı, 320×160 mm, 1/16 tarama. Mağaza ve salon ekranları için teknik föy, uyumlu kartlar ve toptan fiyat teklifi."
+    ],
+    [
+     "H1",
+     "P5 Indoor Rgb Panel",
+     "P5 İç Mekan RGB LED Panel"
+    ],
+    [
+     "Fazla H1",
+     "5 adet H1",
+     "1 H1, diğerleri H2'ye çevrildi"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "P5 iç mekan RGB LED panel, pikselleri arasında 5 mm mesafe bulunan, 320×160 mm ölçüsünde (64×32 piksel), 1/16 taramalı tam renkli LED modüldür. 5 metreden uzaktan izlenen mağaza ve salon ekranları için ekonomik bir seçenektir. Aşağıdaki teknik bilgiler üretici föyünden alınmıştır."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/p2-vs-p3-led-ekran/",
+   "dosya": "p2-vs-p3-led-ekran.html",
+   "risk": "yok",
+   "brief": "b15",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "P2 vs P3 LED Screen Karşılaştırma | LEDAJANS",
+     "P2.5 mi P3 mü? LED Ekran Karşılaştırması – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "P2 vs P3 LED Screen Karşılaştırma. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+     "P2, P2.5 ve P3 LED ekran farkı: çözünürlük, izleme mesafesi, fiyat ve kullanım alanı karşılaştırma tablosu. Hangi piksel aralığını seçeceğinizi öğrenin."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "9 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "H1 (sayfada yoktu)",
+     "ilk H2: P2 mi P3 mü? LED Ekran Pitch Karşılaştırması",
+     "P2.5 mi P3 mü? LED Ekran Karşılaştırması"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "4 metreden yakın izlenecekse P2.5, 4–8 metre için P3 yeterlidir. Aynı 3×2 m ekranda P2.5 1200×800 piksel, P3.07 ise yaklaşık 977×651 piksel verir. P2.5'in m² fiyatı P3'ten «%X» daha yüksektir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/cob-ekran/",
+   "dosya": "cob-ekran.html",
+   "risk": "yok",
+   "brief": "b16",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "COB LED Ekran | Fine Pitch Smart Screen | LEDAJANS",
+     "COB LED Ekran | P0.93–P1.87 Fine Pitch – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "COB LED ekran ve smart screen. İnce pitch, yüksek kontrast, iç mekan vitrin ve stüdyo. Ücretsiz keşif ve fiyat teklifi — LEDAJANS.",
+     "COB LED ekran: P0.93–P1.87 fine pitch, ≥3840Hz, ön bakım, darbeye dayanıklı yüzey. Toplantı salonu, kontrol odası ve showroom için modeller ve teklif."
+    ],
+    [
+     "H1",
+     "COB - Smart Screen",
+     "COB LED Ekran"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "COB (Chip on Board) LED ekran, LED çiplerinin ayrı paketler yerine doğrudan devre kartına yerleştirilip tek bir koruyucu katmanla kaplandığı fine pitch ekran teknolojisidir. SMD'ye göre darbeye ve neme daha dayanıklıdır, daha koyu siyah verir. LEDAJANS COB serisi P0.93, P1.25, P1.56 ve P1.87 piksel aralığında sunulur; P1.25 modelin ortalama tüketimi 200 W/m²'dir."
+    ]
+   ],
+   "alt_sayisi": 19
+  },
+  {
+   "yol": "/gob-led-ekran/",
+   "dosya": "gob-led-ekran.html",
+   "risk": "yok",
+   "brief": "b17",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "GOB LED Screen | LEDAJANS",
+     "GOB LED Ekran | Darbeye Dayanıklı İç Mekan – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "GOB LED ekran (Glue on Board): darbe ve neme dayanıklı indoor. GOB vs COB vs SMD. P1.25–P2.5. LEDAJANS teklif.",
+     "GOB (Glue on Board) LED ekran: yüzeyi epoksi kaplı, darbe ve neme dayanıklı iç mekan paneller. P0.93–P2.5, ≥6000Hz seçeneği, GOB-COB-SMD karşılaştırması."
+    ],
+    [
+     "H1",
+     "GOB LED ekran",
+     "GOB LED Ekran"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "GOB (Glue on Board) LED ekran, standart SMD LED'lerin üzerinin şeffaf epoksi tutkalla kaplanarak darbe, toz ve neme karşı korunduğu ekran tipidir. Lamba yüzeyi IP65 korumalı olduğu için insanların dokunabileceği AVM, mağaza, kiralama ve okul gibi alanlarda tercih edilir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/magaza-vitrin-led-ekran/",
+   "dosya": "magaza-vitrin-led-ekran.html",
+   "risk": "yok",
+   "brief": "b19",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Mağaza Vitrin LED Ekran | LEDAJANS",
+     "Mağaza ve Vitrin LED Ekran | P1.25–P2.5 – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "Mağaza LED ekran ve vitrin LED ekran: P1.25–P2.5 indoor, cam yansıması, AVM. LEDAJANS keşif ve fiyat teklifi.",
+     "Mağaza içi ve vitrin LED ekran: cam yansımasını yenen parlaklık, P1.25–P2.5 indoor ve GOB modeller, AVM projeleri. Ölçü ve fotoğrafla ücretsiz keşif."
+    ],
+    [
+     "H1",
+     "Mağaza ve vitrin LED ekran",
+     "Mağaza ve Vitrin LED Ekran"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Vitrin LED ekran, mağaza camının arkasına yerleştirilip caddeye bakan ve cam yansımasını yenmek için iç mekan ekranlardan daha yüksek parlaklıkla («genelde 2500+ nit; teyit») seçilen ekrandır. Mağaza içi ekranlarda ise 800–1200 nit yeterlidir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/kayan-yazi/",
+   "dosya": "kayan-yazi.html",
+   "risk": "yok",
+   "brief": "b20",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Kayan Yazı | LEDAJANS",
+     "Kayan Yazı LED Tabela | P10 Modeller ve Fiyat – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Kayan yazı LED tabela: P10 kırmızı, beyaz ve RGB modeller, Wi-Fi ve USB ile içerik, ölçüye özel üretim. Esnaf ve kurumlar için fiyat ve montaj."
+    ],
+    [
+     "H1",
+     "Kayan Yazı",
+     "Kayan Yazı LED Tabela"
+    ],
+    [
+     "Fazla H1",
+     "2 adet H1",
+     "1 H1, diğerleri H2'ye çevrildi"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Kayan yazı LED tabela, P10 LED panellerle yapılan ve metin ile basit animasyonları kaydırarak gösteren elektronik tabeladır. Tek renk (kırmızı, beyaz) modeller esnaf ve eczaneler için ekonomik çözümdür, RGB modeller görsel de gösterebilir. İçerik Wi-Fi veya USB ile telefondan ya da bilgisayardan değiştirilir."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/led-ekran-kurulum/",
+   "dosya": "led-ekran-kurulum.html",
+   "risk": "yok",
+   "brief": "b22",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "LED Screen Installation Rehberi | LEDAJANS",
+     "LED Ekran Kurulumu | Adım Adım Montaj Süreci – LEDAJANS"
+    ],
+    [
+     "Meta açıklama",
+     "LED Screen Installation Rehberi. Indoor and outdoor LED screens, rental and fine-pitch COB. Free site survey and B2B quote — LEDAJANS Istanbul.",
+     "LED ekran kurulumu nasıl yapılır? Keşif, statik hesap, konstrüksiyon, elektrik, montaj ve kalibrasyon adımları; süreler, izinler ve maliyet kalemleri."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "35 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "H1 (sayfada yoktu)",
+     "ilk H2: LED Ekran Kurulumu: Adım Adım Profesyonel Rehber",
+     "LED Ekran Kurulumu"
+    ],
+    [
+     "Rakam tutarlılığı",
+     "400-800 W/m² arasında değişir",
+     "modele göre değişir: LEDAJANS ürünlerinde ortalama tüketim 173–213 W/m² (rental) ve 200 W/m² (COB P1.25), maksimum tüketim 380–640 W/m² aralığındadır; dış mekan modellerde parlaklığa bağlı olarak daha yüksektir"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran kurulumu; keşif, statik hesap, konstrüksiyon, elektrik altyapısı, kabin montajı ve kalibrasyon adımlarından oluşur. 6 m²'lik bir iç mekan ekran «1 günde», 18 m²'lik bir dış mekan cephe ekranı ise izin süreci hariç «3–5 günde» kurulur."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/kontrol-kartlari/",
+   "dosya": "kontrol-kartlari.html",
+   "risk": "yok",
+   "brief": "b23",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "Kontrol Kartları | LEDAJANS",
+     "LED Ekran Kontrol Kartı: Novastar, Colorlight, Huidu"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "LED ekran kontrol kartları: senkron ve asenkron Novastar, Colorlight ve Huidu modelleri, gönderici ve alıcı kartlar. Doğru kart seçimi, stok ve destek."
+    ],
+    [
+     "H1",
+     "Kontrol Kartları",
+     "LED Ekran Kontrol Kartları"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran kontrol kartı, görüntü kaynağından (bilgisayar, medya oynatıcı) gelen içeriği LED modüllerin anlayacağı sinyale çeviren donanımdır. Senkron sistemler bilgisayar ekranını canlı yansıtır (ör. Novastar MCTRL gönderici + DH serisi alıcı). Asenkron kartlar içeriği kendi hafızasından oynatır (ör. Huidu, Colorlight A serisi)."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/program-indir/",
+   "dosya": "program-indir.html",
+   "risk": "düşük",
+   "brief": "b24",
+   "not": "Sitenin 2. trafik sayfası. 'hd player' sıralamasına dikkat; tek başına uygulanıp 2 hafta izlenmeli.",
+   "degisiklikler": [
+    [
+     "Title",
+     "Program İndir | LEDAJANS",
+     "HD Player, PlayMaster, LedArt İndir | LED Ekran Programları"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "Huidu HDPlayer, Colorlight PlayMaster, NovaLCT ve LedArt güncel sürümleri. Kılavuzlar, tarama dosyaları ve hangi kartın hangi programla çalıştığı."
+    ],
+    [
+     "H1",
+     "Program İndir",
+     "LED Ekran Programları – İndir"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "Bu sayfada LED ekran ve kayan yazı kontrol kartlarının programlarını indirebilirsiniz. Hangi programı kullanacağınız kartınızın markasına bağlıdır: Colorlight kartlar için PlayMaster, Huidu kartlar için HDPlayer, Novastar kartlar için NovaLCT, telefondan kontrol için LedArt."
+    ]
+   ],
+   "alt_sayisi": 9
+  },
+  {
+   "yol": "/led-ekran-nedir/",
+   "dosya": "led-ekran-nedir.html",
+   "risk": "yok",
+   "brief": "b25",
+   "not": "",
+   "degisiklikler": [
+    [
+     "Title",
+     "LED Ekran Nedir? Kapsamlı Rehber | LEDAJANS",
+     "LED Ekran Nedir? Çalışma Prensibi, Türleri ve Seçimi"
+    ],
+    [
+     "Meta açıklama",
+     "LED ekran satış, kiralama ve kurulum. Ücretsiz keşif ve B2B fiyat teklifi — LEDAJANS İstanbul.",
+     "LED ekran nedir, nasıl çalışır? SMD, COB ve GOB türleri, iç ve dış mekan farkı, piksel aralığı ve parlaklık seçimi. 2026 için sade bir teknik rehber."
+    ],
+    [
+     "Başlıklardaki emojiler",
+     "27 başlıkta emoji",
+     "kaldırıldı"
+    ],
+    [
+     "Giriş paragrafı (yeni)",
+     "(yok)",
+     "LED ekran; kırmızı, yeşil ve mavi LED'lerden oluşan piksellerin modüller halinde birleştirildiği ve görüntüyü arka ışık olmadan doğrudan ışık yayarak oluşturan ekrandır. LCD'den farklı olarak birleşim çizgisi olmadan istenen ölçüde büyütülebilir, 5000 nit üzerindeki parlaklığıyla dış mekanda da kullanılabilir."
+    ]
+   ],
+   "alt_sayisi": 9
+  }
+ ],
+ "yonlendirmeler": {
+  "/case/ic-mekan-led-ekran/": "/ic-mekan-led-ekran/",
+  "/case/dis-mekan-led-ekran/": "/dis-mekan-led-ekran/",
+  "/case/kontrol-kartlari/": "/kontrol-kartlari/",
+  "/case/rental-ekran/": "/rental-ekran/",
+  "/case/ic-mekan-rgb-panel/": "/ic-mekan-rgb-panel/",
+  "/led-ekran-kiralama/": "/rental-ekran/",
+  "/led-ekran-tamiri/": "/dip-led-panel-tamiri/",
+  "/led-ekran-servis/": "/dip-led-panel-tamiri/",
+  "/p10-panel-kirmizi-4/": "/p10-panel/",
+  "/dis-mekan-led-ekranlar/": "/dis-mekan-led-ekran/"
+ },
+ "genel_alt": [
+  [
+   "Alt metin",
+   "PH1.53-550x632.jpg: ''",
+   "Mimari maket üzerine kurulmuş kavisli iç mekan LED ekran"
+  ],
+  [
+   "Alt metin",
+   "P3-550x632.jpg: ''",
+   "Sahnede çiçek görüntüsü gösteren iç mekan LED ekran"
+  ],
+  [
+   "Alt metin",
+   "P1.25-2-550x632.jpg: ''",
+   "Toplantı salonunda üç bölümlü iç mekan LED ekran"
+  ],
+  [
+   "Alt metin",
+   "ec8726e1-1617-438d-927c-6904cf2506f4-550x632.jpg: ''",
+   "Salon sahnesinde duvara monte iç mekan LED ekran"
+  ],
+  [
+   "Alt metin",
+   "P2.5-550x632.jpg: ''",
+   "Balo salonunda şelale görüntüsü gösteren geniş iç mekan LED ekran"
+  ],
+  [
+   "Alt metin",
+   "fb8143a3-9d69-45a3-859c-2e2db66c334a-550x632.jpg: ''",
+   "Fuar alanında dikey totem LED ekranlar"
+  ],
+  [
+   "Alt metin",
+   "ledarabul.png: ''",
+   "LedAraBul logosu"
+  ],
+  [
+   "Alt metin",
+   "kacmasa.png: ''",
+   "Kacmasa logosu"
+  ],
+  [
+   "Alt metin",
+   "ZXASmpFRqe0AAAAASUVORK5CYII=: ''",
+   "Türkçe"
+  ],
+  [
+   "Alt metin",
+   "KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==: ''",
+   "English"
+  ],
+  [
+   "Alt metin",
+   "KR8xHicAAAAAElFTkSuQmCC: ''",
+   "Deutsch"
+  ]
+ ]
+}

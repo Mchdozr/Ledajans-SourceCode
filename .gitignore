@@ -20,3 +20,7 @@ AGENT-HUB/git-pull-log.txt
 *.local.md
 
 AGENT-HUB/_updraft-restore/
+
+# Canlı yedek: ham klasörler yerelde kalır, depoya sıkıştırılmış halleri girer
+YEDEK/*/html/
+YEDEK/*/rest/
