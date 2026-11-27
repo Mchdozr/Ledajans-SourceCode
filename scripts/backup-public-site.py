@@ -65,7 +65,7 @@ def main() -> int:
         if sm != "sitemap_index.xml":
             urls += [u for u in re.findall(r"<loc>([^<]+)</loc>", r.text) if "/wp-content/" not in u]
     for f in ["robots.txt", "llms.txt"]:
-        (out / f).write_text(requests.get(f"{SITE}/{f}", headers=H, timeout=60).text, encoding="utf-8")
+        (out / f).write_bytes(requests.get(f"{SITE}/{f}", headers=H, timeout=60).content)  # ham bayt: sunucu charset bildirmiyor
     extra = [SITE + p for p in REDIRECT_PROBES if p.endswith(("ankara-led-ekran/", "izmir-led-ekran/", "stadyum-led-ekran/", "otel-led-ekran/"))]
     urls = list(dict.fromkeys(urls + extra))
 

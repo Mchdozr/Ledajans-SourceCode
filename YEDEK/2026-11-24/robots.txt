@@ -1,6 +1,6 @@
 # LEDAJANS - robots.txt
 # Canonical host: https://ledajans.com
-# Son gÃ¼ncelleme: 2026-05-15
+# Son güncelleme: 2026-05-15
 
 User-agent: *
 Disallow: /wp-admin/
@@ -15,7 +15,7 @@ Allow: /wp-includes/js/
 # Sitemap
 Sitemap: https://ledajans.com/sitemap_index.xml
 
-# --- AI Bot PolitikasÄ± ---
+# --- AI Bot Politikası ---
 
 # OpenAI (ChatGPT)
 User-agent: GPTBot
@@ -26,7 +26,7 @@ Disallow: /wp-admin/
 User-agent: Google-Extended
 Allow: /
 
-# Common Crawl (eÄitim veri seti)
+# Common Crawl (eğitim veri seti)
 User-agent: CCBot
 Allow: /
 

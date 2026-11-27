@@ -1,0 +1,104 @@
+# LEDAJANS — LED Ekran Çözümleri
+> İstanbul merkezli LED ekran firması. 2001'den beri iç mekan, dış mekan, rental (kiralık) ve COB LED ekran satışı, kiralaması, kurulumu ve teknik servisi. Ekranlarda 2 yıl garanti, Türkiye geneli ücretsiz keşif.
+
+Son güncelleme: 2026-11-27
+Dil: Türkçe (İngilizce: https://ledajans.com/en/home-en/ · Almanca: https://ledajans.com/de/home-de/)
+
+## Kısa özet
+LEDAJANS (Taha LED Dış Ticaret A.Ş.), 2001'de İstanbul'da kurulmuş bir LED ekran firmasıdır. P0.93'ten P10'a kadar piksel aralığında iç ve dış mekan LED ekran, rental (kiralık) LED kabin, COB ve GOB fine pitch ekran, RGB LED panel modülü, kontrol kartı ve güç kaynağı satar; keşif, kurulum, kiralama ve teknik servisi kendi ekibiyle yapar. Türkiye (İstanbul), Almanya (Erkrath) ve KKTC (Girne) ofisleri vardır.
+
+## Şirket Bilgileri
+- Ticari Unvan: TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ
+- Marka: LEDAJANS
+- Kuruluş: 2001
+- Merkez: Halide Edip Adıvar Mah. Gül 2 Sk. No:10, 34382 Şişli/İstanbul, Türkiye
+- Telefon: +90 212 220 40 04
+- E-posta: info@ledajans.com
+- Web: https://ledajans.com
+
+## Ofisler
+- Türkiye (Merkez): Şişli/İstanbul — +90 212 220 40 04
+- Almanya: Heinrich-Hertz-Straße 50, 40699 Erkrath — +49 1521 2401915
+- Kıbrıs: Karaoğlanoğlu Cad. Yayla Aktiğin İş Hanı No:6, Lapta, Girne — +90 533 856 93 71
+
+## Hizmetler
+- LED ekran satışı (iç mekan ve dış mekan)
+- LED ekran kiralama (rental, etkinlik, fuar, konser)
+- LED ekran kurulum ve montaj
+- Teknik destek ve bakım (7/24)
+- LED ekran kontrol kartı ve güç kaynağı satışı
+- Proje danışmanlığı ve ücretsiz keşif
+
+## Ürün Kategorileri ve Teknik Değerler
+- İç Mekan LED Ekran: P1.25–P4 piksel aralığı, 800–1500 nit parlaklık, ≥3840 Hz yenileme, IP31 — toplantı salonu, mağaza, lobi, stüdyo. https://ledajans.com/ic-mekan-led-ekran/
+- Dış Mekan LED Ekran (OFC serisi): P2.5–P10, 4500–8000 nit, IP65 — cephe, billboard, stadyum, açık hava reklam. https://ledajans.com/dis-mekan-led-ekran/
+- Rental (Kiralık) LED Ekran (Grand Air serisi): iç mekan P1.9–P3.9, dış mekan P2.6–P3.9, die-cast alüminyum 500×500 ve 500×1000 mm kabin, ön bakım. https://ledajans.com/rental-ekran/
+- COB LED Ekran / Smart Screen: P0.93, P1.25, P1.56, P1.87 fine pitch, ≥3840 Hz, ön bakım. https://ledajans.com/cob-ekran/
+- GOB LED Ekran: epoksi kaplı, darbe ve neme dayanıklı yüzey, P0.93–P2.5. https://ledajans.com/gob-led-ekran/
+- RGB LED Panel Modülleri: iç mekan P1.25–P5 (SMD, GOB, flexible), dış mekan P2.5–P10; çoğunlukla 320×160 mm, HUB75. https://ledajans.com/ic-mekan-rgb-panel/ · https://ledajans.com/dis-mekan-rgb-panel/
+- Kontrol Kartları: Huidu, Colorlight, Novastar — senkron ve asenkron. https://ledajans.com/kontrol-kartlari/
+- Güç Kaynakları: Youyi, GKGD, Meanwell — 200 W, 300 W. https://ledajans.com/guc-kaynaklari/
+
+## Sık Sorulan Sorular
+- Hangi piksel aralığını seçmeliyim? Pratik kural: minimum izleme mesafesi (metre) yaklaşık piksel aralığı (mm) kadardır. 2 m'den yakın izleme için P1.25–P1.86 veya COB, 3–5 m için P2.5, uzak dış mekan izleme için P6–P10 uygundur. Rehber: https://ledajans.com/p2-vs-p3-led-ekran/
+- Dış mekan LED ekran kaç nit olmalı? Doğrudan güneş alan yüzeylerde en az 5000 nit; LEDAJANS dış mekan ekranları 4500–8000 nit aralığındadır.
+- İç ve dış mekan LED ekran farkı nedir? İç mekan: 800–1500 nit, P1.25–P4, IP31. Dış mekan: 4500–8000 nit, P2.5–P10, IP65.
+- COB ile SMD farkı nedir? COB'da LED çipleri doğrudan karta yerleştirilip tek katmanla kaplanır; darbeye ve neme daha dayanıklıdır, ince piksel aralığında tercih edilir. Rehber: https://ledajans.com/cob-led-ekran-nedir-avantajlari/
+- LED ekran fiyatı neye göre değişir? Piksel aralığı, toplam ölçü (m²), iç/dış mekan, kontrol sistemi, konstrüksiyon ve kurulum koşulları. Rehber: https://ledajans.com/led-ekran-fiyatlari-2026/
+- Kiralama yapıyor musunuz? Evet; konser, sahne, fuar ve kurumsal etkinlikler için kurulumlu LED ekran kiralaması yapılır. https://ledajans.com/rental-ekran/
+- Garanti süresi nedir? LED ekranlarda 2 yıl garanti verilir.
+- Hangi bölgelere hizmet veriyorsunuz? İstanbul merkezli; Türkiye geneli keşif ve kurulum, ayrıca Almanya ve KKTC ofisleri.
+
+## Kullanım Alanları
+- Mağaza ve AVM dijital reklamları
+- Stadyum skor tabloları ve çevre bant
+- Fuar ve etkinlik ekranları
+- Otel lobi ve toplantı odaları
+- Havalimanı bilgi ekranları (FIDS)
+- Billboard ve açık hava dijital reklam
+- Belediye bilgilendirme panoları
+- Eczane LED tabela ve hac LED
+- Cami minare saati ve bilgilendirme
+
+## Sertifikalar
+ISO 9001, ISO 14001, ISO 45001, ISO 27001, ISO 10002, ISO 14064-1, ISO 31000
+
+## Garanti ve Destek
+- 2 yıl tam parça garantisi
+- İstanbul merkezli teknik servis ekibi
+- Yerinde veya uzaktan arıza müdahale
+- Yedek parça stok garantisi
+- Ücretsiz kurulum danışmanlığı
+
+## Önemli Sayfalar
+- Ana Sayfa: https://ledajans.com/
+- LED Ekran Modelleri: https://ledajans.com/led-ekran/
+- İç Mekan LED Ekran: https://ledajans.com/ic-mekan-led-ekran/
+- Dış Mekan LED Ekran: https://ledajans.com/dis-mekan-led-ekran/
+- LED Ekran Kiralama: https://ledajans.com/rental-ekran/
+- COB LED Ekran: https://ledajans.com/cob-ekran/
+- GOB LED Ekran: https://ledajans.com/gob-led-ekran/
+- İstanbul LED Ekran: https://ledajans.com/istanbul-led-ekran/
+- Kontrol Kartları: https://ledajans.com/kontrol-kartlari/
+- Program İndir (HDPlayer, PlayMaster, NovaLCT, LedArt): https://ledajans.com/program-indir/
+- Projeler: https://ledajans.com/projeler/
+- Blog: https://ledajans.com/blog/
+- İletişim: https://ledajans.com/iletisim/
+- Hakkımızda: https://ledajans.com/hakkimizda/
+
+## Rehberler
+- LED Ekran Nedir?: https://ledajans.com/led-ekran-nedir/
+- LED Ekran Fiyatları 2026: https://ledajans.com/led-ekran-fiyatlari-2026/
+- İç Mekan LED Ekran Fiyatları 2026: https://ledajans.com/ic-mekan-led-ekran-fiyatlari-2026/
+- Dış Mekan LED Ekran Fiyatları 2026: https://ledajans.com/dis-mekan-led-ekran-fiyatlari-2026/
+- LED Ekran Kiralama Fiyatları 2026: https://ledajans.com/rental-led-ekran-kiralama-fiyatlari-2026/
+- P2 mi P3 mü?: https://ledajans.com/p2-vs-p3-led-ekran/
+- LED Ekran Kurulumu: https://ledajans.com/led-ekran-kurulum/
+- LED Ekran Nasıl Seçilir?: https://ledajans.com/led-ekran-nasil-secilir-rehber/
+
+## İletişim ve Teklif
+Ücretsiz keşif ve fiyat teklifi almak için:
+- Telefon: 0212 220 40 04
+- Mobil: 0543 879 51 08
+- E-posta: info@ledajans.com
+- Form: https://ledajans.com/iletisim/

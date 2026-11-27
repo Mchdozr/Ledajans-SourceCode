@@ -1,45 +1,45 @@
-# LEDAJANS â LED Ekran ÃÃ¶zÃ¼mleri
-> TÃ¼rkiye'nin gÃ¼venilir LED ekran tedarikÃ§isi. Ä°stanbul merkezli, 25 yÄ±llÄ±k sektÃ¶r tecrÃ¼besi.
+# LEDAJANS — LED Ekran Çözümleri
+> Türkiye'nin güvenilir LED ekran tedarikçisi. İstanbul merkezli, 25 yıllık sektör tecrübesi.
 
-## Åirket Bilgileri
-- Ticari Unvan: TAHA LED DIÅ TÄ°CARET ANONÄ°M ÅÄ°RKETÄ°
+## Şirket Bilgileri
+- Ticari Unvan: TAHA LED DIŞ TİCARET ANONİM ŞİRKETİ
 - Marka: LEDAJANS
-- KuruluÅ: 2001
-- Merkez: Halide Edip AdÄ±var Mah. GÃ¼l 2 Sk. No:10, 34382 ÅiÅli/Ä°stanbul, TÃ¼rkiye
+- Kuruluş: 2001
+- Merkez: Halide Edip Adıvar Mah. Gül 2 Sk. No:10, 34382 Şişli/İstanbul, Türkiye
 - Telefon: +90 212 220 40 04
 - E-posta: info@ledajans.com
 - Web: https://ledajans.com
 
 ## Ofisler
-- TÃ¼rkiye (Merkez): ÅiÅli/Ä°stanbul â +90 212 220 40 04
-- Almanya: Heinrich-Hertz-StraÃe 50, 40699 Erkrath â +49 1521 2401915
-- KÄ±brÄ±s: KaraoÄlanoÄlu Cad. Yayla AktiÄin Ä°Å HanÄ± No:6, Lapta, Girne â +90 533 856 93 71
+- Türkiye (Merkez): Şişli/İstanbul — +90 212 220 40 04
+- Almanya: Heinrich-Hertz-Straße 50, 40699 Erkrath — +49 1521 2401915
+- Kıbrıs: Karaoğlanoğlu Cad. Yayla Aktiğin İş Hanı No:6, Lapta, Girne — +90 533 856 93 71
 
 ## Hizmetler
-- LED ekran satÄ±ÅÄ± (iÃ§ mekan ve dÄ±Å mekan)
+- LED ekran satışı (iç mekan ve dış mekan)
 - LED ekran kiralama (rental, etkinlik, fuar, konser)
 - LED ekran kurulum ve montaj
-- Teknik destek ve bakÄ±m (7/24)
-- LED ekran kontrol kartÄ± ve gÃ¼Ã§ kaynaÄÄ± satÄ±ÅÄ±
-- Proje danÄ±ÅmanlÄ±ÄÄ± ve Ã¼cretsiz keÅif
+- Teknik destek ve bakım (7/24)
+- LED ekran kontrol kartı ve güç kaynağı satışı
+- Proje danışmanlığı ve ücretsiz keşif
 
-## ÃrÃ¼n Kategorileri
-- Ä°Ã§ Mekan LED Ekran: P0.93 â P5 piksel aralÄ±ÄÄ±, 3840Hz yenileme, sessiz Ã§alÄ±Åma
-- DÄ±Å Mekan LED Ekran: P2.5 â P10, IP65 korumalÄ±, 5000+ cd/mÂ² parlaklÄ±k
-- Rental LED Ekran: Die-cast alÃ¼minyum kasa, hÄ±zlÄ± kurulum, flight case
-- COB & Smart Screen: Yeni nesil COB teknolojisi, Ã¼stÃ¼n kontrast ve dayanÄ±klÄ±lÄ±k
-- RGB LED Panel ModÃ¼lleri: Ä°Ã§ ve dÄ±Å mekan, HUB75 arayÃ¼z, GOB ve flexible
-- Kontrol KartlarÄ±: Huidu, Colorlight, Novastar â senkron ve asenkron
-- GÃ¼Ã§ KaynaklarÄ±: Youyi, GKGD, Meanwell â 200W, 300W
+## Ürün Kategorileri
+- İç Mekan LED Ekran: P0.93 — P5 piksel aralığı, 3840Hz yenileme, sessiz çalışma
+- Dış Mekan LED Ekran: P2.5 — P10, IP65 korumalı, 5000+ cd/m² parlaklık
+- Rental LED Ekran: Die-cast alüminyum kasa, hızlı kurulum, flight case
+- COB & Smart Screen: Yeni nesil COB teknolojisi, üstün kontrast ve dayanıklılık
+- RGB LED Panel Modülleri: İç ve dış mekan, HUB75 arayüz, GOB ve flexible
+- Kontrol Kartları: Huidu, Colorlight, Novastar — senkron ve asenkron
+- Güç Kaynakları: Youyi, GKGD, Meanwell — 200W, 300W
 
-## KullanÄ±m AlanlarÄ±
-- MaÄaza ve AVM dijital reklamlarÄ±
-- Stadyum skor tablolarÄ± ve Ã§evre bant
-- Fuar ve etkinlik ekranlarÄ±
-- Otel lobi ve toplantÄ± odalarÄ±
-- HavalimanÄ± bilgi ekranlarÄ± (FIDS)
-- Billboard ve aÃ§Ä±k hava dijital reklam
-- Belediye bilgilendirme panolarÄ±
+## Kullanım Alanları
+- Mağaza ve AVM dijital reklamları
+- Stadyum skor tabloları ve çevre bant
+- Fuar ve etkinlik ekranları
+- Otel lobi ve toplantı odaları
+- Havalimanı bilgi ekranları (FIDS)
+- Billboard ve açık hava dijital reklam
+- Belediye bilgilendirme panoları
 - Eczane LED tabela ve hac LED
 - Cami minare saati ve bilgilendirme
 
@@ -47,26 +47,26 @@
 ISO 9001, ISO 14001, ISO 45001, ISO 27001, ISO 10002, ISO 14064-1, ISO 31000
 
 ## Garanti ve Destek
-- 2 yÄ±l tam parÃ§a garantisi
-- Ä°stanbul merkezli teknik servis ekibi
-- Yerinde veya uzaktan arÄ±za mÃ¼dahale
-- Yedek parÃ§a stok garantisi
-- Ãcretsiz kurulum danÄ±ÅmanlÄ±ÄÄ±
+- 2 yıl tam parça garantisi
+- İstanbul merkezli teknik servis ekibi
+- Yerinde veya uzaktan arıza müdahale
+- Yedek parça stok garantisi
+- Ücretsiz kurulum danışmanlığı
 
-## Ãnemli Sayfalar
+## Önemli Sayfalar
 - Ana Sayfa: https://ledajans.com/
-- LED Ekran ÃrÃ¼nleri: https://ledajans.com/led-ekran/
-- Ä°Ã§ Mekan LED Ekran: https://ledajans.com/ic-mekan-led-ekran/
-- DÄ±Å Mekan LED Ekran: https://ledajans.com/dis-mekan-led-ekran/
+- LED Ekran Ürünleri: https://ledajans.com/led-ekran/
+- İç Mekan LED Ekran: https://ledajans.com/ic-mekan-led-ekran/
+- Dış Mekan LED Ekran: https://ledajans.com/dis-mekan-led-ekran/
 - Rental LED Ekran: https://ledajans.com/rental-ekran/
 - COB Ekran: https://ledajans.com/cob-ekran/
-- Kontrol KartlarÄ±: https://ledajans.com/kontrol-kartlari/
+- Kontrol Kartları: https://ledajans.com/kontrol-kartlari/
 - Blog: https://ledajans.com/blog/
-- Ä°letiÅim: https://ledajans.com/iletisim/
-- HakkÄ±mÄ±zda: https://ledajans.com/hakkimizda/
+- İletişim: https://ledajans.com/iletisim/
+- Hakkımızda: https://ledajans.com/hakkimizda/
 
-## Ä°letiÅim ve Teklif
-Ãcretsiz keÅif ve fiyat teklifi almak iÃ§in:
+## İletişim ve Teklif
+Ücretsiz keşif ve fiyat teklifi almak için:
 - Telefon: 0212 220 40 04
 - Mobil: 0543 879 51 08
 - E-posta: info@ledajans.com
